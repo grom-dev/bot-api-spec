@@ -57,12 +57,480 @@ const getUpdates = defineMethod({
 
 const setWebhook = $todo()
 
+const deleteWebhook = $todo()
+
+const getWebhookInfo = $todo()
+
+const getMe = $todo()
+
+const logOut = $todo()
+
+const close = $todo()
+
+const sendMessage = $todo()
+
+const forwardMessage = $todo()
+
+const forwardMessages = $todo()
+
+const copyMessage = $todo()
+
+const copyMessages = $todo()
+
+const sendPhoto = $todo()
+
+const sendAudio = $todo()
+
+const sendDocument = $todo()
+
+const sendVideo = $todo()
+
+const sendAnimation = $todo()
+
+const sendVoice = $todo()
+
+const sendVideoNote = $todo()
+
+const sendPaidMedia = $todo()
+
+const sendMediaGroup = $todo()
+
+const sendLocation = $todo()
+
+const sendVenue = $todo()
+
+const sendContact = $todo()
+
+const sendPoll = $todo()
+
+const sendChecklist = $todo()
+
+const sendDice = $todo()
+
+const sendChatAction = $todo()
+
+const setMessageReaction = $todo()
+
+const getUserProfilePhotos = $todo()
+
+const setUserEmojiStatus = $todo()
+
+const getFile = $todo()
+
+const banChatMember = $todo()
+
+const unbanChatMember = $todo()
+
+const restrictChatMember = $todo()
+
+const promoteChatMember = $todo()
+
+const setChatAdministratorCustomTitle = $todo()
+
+const banChatSenderChat = $todo()
+
+const unbanChatSenderChat = $todo()
+
+const setChatPermissions = $todo()
+
+const exportChatInviteLink = $todo()
+
+const createChatInviteLink = $todo()
+
+const editChatInviteLink = $todo()
+
+const createChatSubscriptionInviteLink = $todo()
+
+const editChatSubscriptionInviteLink = $todo()
+
+const revokeChatInviteLink = $todo()
+
+const approveChatJoinRequest = $todo()
+
+const declineChatJoinRequest = $todo()
+
+const setChatPhoto = $todo()
+
+const deleteChatPhoto = $todo()
+
+const setChatTitle = $todo()
+
+const setChatDescription = $todo()
+
+const pinChatMessage = $todo()
+
+const unpinChatMessage = $todo()
+
+const unpinAllChatMessages = $todo()
+
+const leaveChat = $todo()
+
+const getChat = $todo()
+
+const getChatAdministrators = $todo()
+
+const getChatMemberCount = $todo()
+
+const getChatMember = $todo()
+
+const setChatStickerSet = $todo()
+
+const deleteChatStickerSet = $todo()
+
+const getForumTopicIconStickers = $todo()
+
+const createForumTopic = $todo()
+
+const editForumTopic = $todo()
+
+const closeForumTopic = $todo()
+
+const reopenForumTopic = $todo()
+
+const deleteForumTopic = $todo()
+
+const unpinAllForumTopicMessages = $todo()
+
+const editGeneralForumTopic = $todo()
+
+const closeGeneralForumTopic = $todo()
+
+const reopenGeneralForumTopic = $todo()
+
+const hideGeneralForumTopic = $todo()
+
+const unhideGeneralForumTopic = $todo()
+
+const unpinAllGeneralForumTopicMessages = $todo()
+
+const answerCallbackQuery = $todo()
+
+const getUserChatBoosts = $todo()
+
+const getBusinessConnection = $todo()
+
+const setMyCommands = $todo()
+
+const deleteMyCommands = $todo()
+
+const getMyCommands = $todo()
+
+const setMyName = $todo()
+
+const getMyName = $todo()
+
+const setMyDescription = $todo()
+
+const getMyDescription = $todo()
+
+const setMyShortDescription = $todo()
+
+const getMyShortDescription = $todo()
+
+const setChatMenuButton = $todo()
+
+const getChatMenuButton = $todo()
+
+const setMyDefaultAdministratorRights = $todo()
+
+const getMyDefaultAdministratorRights = $todo()
+
+const getAvailableGifts = $todo()
+
+const sendGift = $todo()
+
+const giftPremiumSubscription = $todo()
+
+const verifyUser = $todo()
+
+const verifyChat = $todo()
+
+const removeUserVerification = $todo()
+
+const removeChatVerification = $todo()
+
+const readBusinessMessage = $todo()
+
+const deleteBusinessMessages = $todo()
+
+const setBusinessAccountName = $todo()
+
+const setBusinessAccountUsername = $todo()
+
+const setBusinessAccountBio = $todo()
+
+const setBusinessAccountProfilePhoto = $todo()
+
+const removeBusinessAccountProfilePhoto = $todo()
+
+const setBusinessAccountGiftSettings = $todo()
+
+const getBusinessAccountStarBalance = $todo()
+
+const transferBusinessAccountStars = $todo()
+
+const getBusinessAccountGifts = $todo()
+
+const convertGiftToStars = $todo()
+
+const upgradeGift = $todo()
+
+const transferGift = $todo()
+
+const postStory = $todo()
+
+const editStory = $todo()
+
+const deleteStory = $todo()
+
+const editMessageText = $todo()
+
+const editMessageCaption = $todo()
+
+const editMessageMedia = $todo()
+
+const editMessageLiveLocation = $todo()
+
+const stopMessageLiveLocation = $todo()
+
+const editMessageChecklist = $todo()
+
+const editMessageReplyMarkup = $todo()
+
+const stopPoll = $todo()
+
+const approveSuggestedPost = $todo()
+
+const declineSuggestedPost = $todo()
+
+const deleteMessage = $todo()
+
+const deleteMessages = $todo()
+
+const sendSticker = $todo()
+
+const getStickerSet = $todo()
+
+const getCustomEmojiStickers = $todo()
+
+const uploadStickerFile = $todo()
+
+const createNewStickerSet = $todo()
+
+const addStickerToSet = $todo()
+
+const setStickerPositionInSet = $todo()
+
+const deleteStickerFromSet = $todo()
+
+const replaceStickerInSet = $todo()
+
+const setStickerEmojiList = $todo()
+
+const setStickerKeywords = $todo()
+
+const setStickerMaskPosition = $todo()
+
+const setStickerSetTitle = $todo()
+
+const setStickerSetThumbnail = $todo()
+
+const setCustomEmojiStickerSetThumbnail = $todo()
+
+const deleteStickerSet = $todo()
+
+const answerInlineQuery = $todo()
+
+const answerWebAppQuery = $todo()
+
+const savePreparedInlineMessage = $todo()
+
+const sendInvoice = $todo()
+
+const createInvoiceLink = $todo()
+
+const answerShippingQuery = $todo()
+
+const answerPreCheckoutQuery = $todo()
+
+const getMyStarBalance = $todo()
+
+const getStarTransactions = $todo()
+
+const refundStarPayment = $todo()
+
+const editUserStarSubscription = $todo()
+
+const setPassportDataErrors = $todo()
+
+const sendGame = $todo()
+
+const setGameScore = $todo()
+
+const getGameHighScores = $todo()
+
 /**
  * Definition of all Bot API methods as an object.
  */
 export const object = {
   getUpdates,
   setWebhook,
+  deleteWebhook,
+  getWebhookInfo,
+  getMe,
+  logOut,
+  close,
+  sendMessage,
+  forwardMessage,
+  forwardMessages,
+  copyMessage,
+  copyMessages,
+  sendPhoto,
+  sendAudio,
+  sendDocument,
+  sendVideo,
+  sendAnimation,
+  sendVoice,
+  sendVideoNote,
+  sendPaidMedia,
+  sendMediaGroup,
+  sendLocation,
+  sendVenue,
+  sendContact,
+  sendPoll,
+  sendChecklist,
+  sendDice,
+  sendChatAction,
+  setMessageReaction,
+  getUserProfilePhotos,
+  setUserEmojiStatus,
+  getFile,
+  banChatMember,
+  unbanChatMember,
+  restrictChatMember,
+  promoteChatMember,
+  setChatAdministratorCustomTitle,
+  banChatSenderChat,
+  unbanChatSenderChat,
+  setChatPermissions,
+  exportChatInviteLink,
+  createChatInviteLink,
+  editChatInviteLink,
+  createChatSubscriptionInviteLink,
+  editChatSubscriptionInviteLink,
+  revokeChatInviteLink,
+  approveChatJoinRequest,
+  declineChatJoinRequest,
+  setChatPhoto,
+  deleteChatPhoto,
+  setChatTitle,
+  setChatDescription,
+  pinChatMessage,
+  unpinChatMessage,
+  unpinAllChatMessages,
+  leaveChat,
+  getChat,
+  getChatAdministrators,
+  getChatMemberCount,
+  getChatMember,
+  setChatStickerSet,
+  deleteChatStickerSet,
+  getForumTopicIconStickers,
+  createForumTopic,
+  editForumTopic,
+  closeForumTopic,
+  reopenForumTopic,
+  deleteForumTopic,
+  unpinAllForumTopicMessages,
+  editGeneralForumTopic,
+  closeGeneralForumTopic,
+  reopenGeneralForumTopic,
+  hideGeneralForumTopic,
+  unhideGeneralForumTopic,
+  unpinAllGeneralForumTopicMessages,
+  answerCallbackQuery,
+  getUserChatBoosts,
+  getBusinessConnection,
+  setMyCommands,
+  deleteMyCommands,
+  getMyCommands,
+  setMyName,
+  getMyName,
+  setMyDescription,
+  getMyDescription,
+  setMyShortDescription,
+  getMyShortDescription,
+  setChatMenuButton,
+  getChatMenuButton,
+  setMyDefaultAdministratorRights,
+  getMyDefaultAdministratorRights,
+  getAvailableGifts,
+  sendGift,
+  giftPremiumSubscription,
+  verifyUser,
+  verifyChat,
+  removeUserVerification,
+  removeChatVerification,
+  readBusinessMessage,
+  deleteBusinessMessages,
+  setBusinessAccountName,
+  setBusinessAccountUsername,
+  setBusinessAccountBio,
+  setBusinessAccountProfilePhoto,
+  removeBusinessAccountProfilePhoto,
+  setBusinessAccountGiftSettings,
+  getBusinessAccountStarBalance,
+  transferBusinessAccountStars,
+  getBusinessAccountGifts,
+  convertGiftToStars,
+  upgradeGift,
+  transferGift,
+  postStory,
+  editStory,
+  deleteStory,
+  editMessageText,
+  editMessageCaption,
+  editMessageMedia,
+  editMessageLiveLocation,
+  stopMessageLiveLocation,
+  editMessageChecklist,
+  editMessageReplyMarkup,
+  stopPoll,
+  approveSuggestedPost,
+  declineSuggestedPost,
+  deleteMessage,
+  deleteMessages,
+  sendSticker,
+  getStickerSet,
+  getCustomEmojiStickers,
+  uploadStickerFile,
+  createNewStickerSet,
+  addStickerToSet,
+  setStickerPositionInSet,
+  deleteStickerFromSet,
+  replaceStickerInSet,
+  setStickerEmojiList,
+  setStickerKeywords,
+  setStickerMaskPosition,
+  setStickerSetTitle,
+  setStickerSetThumbnail,
+  setCustomEmojiStickerSetThumbnail,
+  deleteStickerSet,
+  answerInlineQuery,
+  answerWebAppQuery,
+  savePreparedInlineMessage,
+  sendInvoice,
+  createInvoiceLink,
+  answerShippingQuery,
+  answerPreCheckoutQuery,
+  getMyStarBalance,
+  getStarTransactions,
+  refundStarPayment,
+  editUserStarSubscription,
+  setPassportDataErrors,
+  sendGame,
+  setGameScore,
+  getGameHighScores,
 }
 
 /**
@@ -72,4 +540,160 @@ export const object = {
 export const array = [
   getUpdates,
   setWebhook,
+  deleteWebhook,
+  getWebhookInfo,
+  getMe,
+  logOut,
+  close,
+  sendMessage,
+  forwardMessage,
+  forwardMessages,
+  copyMessage,
+  copyMessages,
+  sendPhoto,
+  sendAudio,
+  sendDocument,
+  sendVideo,
+  sendAnimation,
+  sendVoice,
+  sendVideoNote,
+  sendPaidMedia,
+  sendMediaGroup,
+  sendLocation,
+  sendVenue,
+  sendContact,
+  sendPoll,
+  sendChecklist,
+  sendDice,
+  sendChatAction,
+  setMessageReaction,
+  getUserProfilePhotos,
+  setUserEmojiStatus,
+  getFile,
+  banChatMember,
+  unbanChatMember,
+  restrictChatMember,
+  promoteChatMember,
+  setChatAdministratorCustomTitle,
+  banChatSenderChat,
+  unbanChatSenderChat,
+  setChatPermissions,
+  exportChatInviteLink,
+  createChatInviteLink,
+  editChatInviteLink,
+  createChatSubscriptionInviteLink,
+  editChatSubscriptionInviteLink,
+  revokeChatInviteLink,
+  approveChatJoinRequest,
+  declineChatJoinRequest,
+  setChatPhoto,
+  deleteChatPhoto,
+  setChatTitle,
+  setChatDescription,
+  pinChatMessage,
+  unpinChatMessage,
+  unpinAllChatMessages,
+  leaveChat,
+  getChat,
+  getChatAdministrators,
+  getChatMemberCount,
+  getChatMember,
+  setChatStickerSet,
+  deleteChatStickerSet,
+  getForumTopicIconStickers,
+  createForumTopic,
+  editForumTopic,
+  closeForumTopic,
+  reopenForumTopic,
+  deleteForumTopic,
+  unpinAllForumTopicMessages,
+  editGeneralForumTopic,
+  closeGeneralForumTopic,
+  reopenGeneralForumTopic,
+  hideGeneralForumTopic,
+  unhideGeneralForumTopic,
+  unpinAllGeneralForumTopicMessages,
+  answerCallbackQuery,
+  getUserChatBoosts,
+  getBusinessConnection,
+  setMyCommands,
+  deleteMyCommands,
+  getMyCommands,
+  setMyName,
+  getMyName,
+  setMyDescription,
+  getMyDescription,
+  setMyShortDescription,
+  getMyShortDescription,
+  setChatMenuButton,
+  getChatMenuButton,
+  setMyDefaultAdministratorRights,
+  getMyDefaultAdministratorRights,
+  getAvailableGifts,
+  sendGift,
+  giftPremiumSubscription,
+  verifyUser,
+  verifyChat,
+  removeUserVerification,
+  removeChatVerification,
+  readBusinessMessage,
+  deleteBusinessMessages,
+  setBusinessAccountName,
+  setBusinessAccountUsername,
+  setBusinessAccountBio,
+  setBusinessAccountProfilePhoto,
+  removeBusinessAccountProfilePhoto,
+  setBusinessAccountGiftSettings,
+  getBusinessAccountStarBalance,
+  transferBusinessAccountStars,
+  getBusinessAccountGifts,
+  convertGiftToStars,
+  upgradeGift,
+  transferGift,
+  postStory,
+  editStory,
+  deleteStory,
+  editMessageText,
+  editMessageCaption,
+  editMessageMedia,
+  editMessageLiveLocation,
+  stopMessageLiveLocation,
+  editMessageChecklist,
+  editMessageReplyMarkup,
+  stopPoll,
+  approveSuggestedPost,
+  declineSuggestedPost,
+  deleteMessage,
+  deleteMessages,
+  sendSticker,
+  getStickerSet,
+  getCustomEmojiStickers,
+  uploadStickerFile,
+  createNewStickerSet,
+  addStickerToSet,
+  setStickerPositionInSet,
+  deleteStickerFromSet,
+  replaceStickerInSet,
+  setStickerEmojiList,
+  setStickerKeywords,
+  setStickerMaskPosition,
+  setStickerSetTitle,
+  setStickerSetThumbnail,
+  setCustomEmojiStickerSetThumbnail,
+  deleteStickerSet,
+  answerInlineQuery,
+  answerWebAppQuery,
+  savePreparedInlineMessage,
+  sendInvoice,
+  createInvoiceLink,
+  answerShippingQuery,
+  answerPreCheckoutQuery,
+  getMyStarBalance,
+  getStarTransactions,
+  refundStarPayment,
+  editUserStarSubscription,
+  setPassportDataErrors,
+  sendGame,
+  setGameScore,
+  getGameHighScores,
 ]

@@ -189,6 +189,550 @@ const Message = defineType({
   ],
 })
 
+const MessageId = $todo()
+
+const InaccessibleMessage = $todo()
+
+const MaybeInaccessibleMessage = $todo()
+
+const MessageEntity = $todo()
+
+const TextQuote = $todo()
+
+const ExternalReplyInfo = $todo()
+
+const ReplyParameters = $todo()
+
+const MessageOrigin = $todo()
+
+const MessageOriginUser = $todo()
+
+const MessageOriginHiddenUser = $todo()
+
+const MessageOriginChat = $todo()
+
+const MessageOriginChannel = $todo()
+
+const PhotoSize = $todo()
+
+const Animation = $todo()
+
+const Audio = $todo()
+
+const Document = $todo()
+
+const Story = $todo()
+
+const Video = $todo()
+
+const VideoNote = $todo()
+
+const Voice = $todo()
+
+const PaidMediaInfo = $todo()
+
+const PaidMedia = $todo()
+
+const PaidMediaPreview = $todo()
+
+const PaidMediaPhoto = $todo()
+
+const PaidMediaVideo = $todo()
+
+const Contact = $todo()
+
+const Dice = $todo()
+
+const PollOption = $todo()
+
+const InputPollOption = $todo()
+
+const PollAnswer = $todo()
+
+const Poll = $todo()
+
+const ChecklistTask = $todo()
+
+const Checklist = $todo()
+
+const InputChecklistTask = $todo()
+
+const InputChecklist = $todo()
+
+const ChecklistTasksDone = $todo()
+
+const ChecklistTasksAdded = $todo()
+
+const Location = $todo()
+
+const Venue = $todo()
+
+const WebAppData = $todo()
+
+const ProximityAlertTriggered = $todo()
+
+const MessageAutoDeleteTimerChanged = $todo()
+
+const ChatBoostAdded = $todo()
+
+const BackgroundFill = $todo()
+
+const BackgroundFillSolid = $todo()
+
+const BackgroundFillGradient = $todo()
+
+const BackgroundFillFreeformGradient = $todo()
+
+const BackgroundType = $todo()
+
+const BackgroundTypeFill = $todo()
+
+const BackgroundTypeWallpaper = $todo()
+
+const BackgroundTypePattern = $todo()
+
+const BackgroundTypeChatTheme = $todo()
+
+const ChatBackground = $todo()
+
+const ForumTopicCreated = $todo()
+
+const ForumTopicClosed = $todo()
+
+const ForumTopicEdited = $todo()
+
+const ForumTopicReopened = $todo()
+
+const GeneralForumTopicHidden = $todo()
+
+const GeneralForumTopicUnhidden = $todo()
+
+const SharedUser = $todo()
+
+const UsersShared = $todo()
+
+const ChatShared = $todo()
+
+const WriteAccessAllowed = $todo()
+
+const VideoChatScheduled = $todo()
+
+const VideoChatStarted = $todo()
+
+const VideoChatEnded = $todo()
+
+const VideoChatParticipantsInvited = $todo()
+
+const PaidMessagePriceChanged = $todo()
+
+const DirectMessagePriceChanged = $todo()
+
+const SuggestedPostApproved = $todo()
+
+const SuggestedPostApprovalFailed = $todo()
+
+const SuggestedPostDeclined = $todo()
+
+const SuggestedPostPaid = $todo()
+
+const SuggestedPostRefunded = $todo()
+
+const GiveawayCreated = $todo()
+
+const Giveaway = $todo()
+
+const GiveawayWinners = $todo()
+
+const GiveawayCompleted = $todo()
+
+const LinkPreviewOptions = $todo()
+
+const SuggestedPostPrice = $todo()
+
+const SuggestedPostInfo = $todo()
+
+const SuggestedPostParameters = $todo()
+
+const DirectMessagesTopic = $todo()
+
+const UserProfilePhotos = $todo()
+
+const File = $todo()
+
+const WebAppInfo = $todo()
+
+const ReplyKeyboardMarkup = $todo()
+
+const KeyboardButton = $todo()
+
+const KeyboardButtonRequestUsers = $todo()
+
+const KeyboardButtonRequestChat = $todo()
+
+const KeyboardButtonPollType = $todo()
+
+const ReplyKeyboardRemove = $todo()
+
+const InlineKeyboardMarkup = $todo()
+
+const InlineKeyboardButton = $todo()
+
+const LoginUrl = $todo()
+
+const SwitchInlineQueryChosenChat = $todo()
+
+const CopyTextButton = $todo()
+
+const CallbackQuery = $todo()
+
+const ForceReply = $todo()
+
+const ChatPhoto = $todo()
+
+const ChatInviteLink = $todo()
+
+const ChatAdministratorRights = $todo()
+
+const ChatMemberUpdated = $todo()
+
+const ChatMember = $todo()
+
+const ChatMemberOwner = $todo()
+
+const ChatMemberAdministrator = $todo()
+
+const ChatMemberMember = $todo()
+
+const ChatMemberRestricted = $todo()
+
+const ChatMemberLeft = $todo()
+
+const ChatMemberBanned = $todo()
+
+const ChatJoinRequest = $todo()
+
+const ChatPermissions = $todo()
+
+const Birthdate = $todo()
+
+const BusinessIntro = $todo()
+
+const BusinessLocation = $todo()
+
+const BusinessOpeningHoursInterval = $todo()
+
+const BusinessOpeningHours = $todo()
+
+const StoryAreaPosition = $todo()
+
+const LocationAddress = $todo()
+
+const StoryAreaType = $todo()
+
+const StoryAreaTypeLocation = $todo()
+
+const StoryAreaTypeSuggestedReaction = $todo()
+
+const StoryAreaTypeLink = $todo()
+
+const StoryAreaTypeWeather = $todo()
+
+const StoryAreaTypeUniqueGift = $todo()
+
+const StoryArea = $todo()
+
+const ChatLocation = $todo()
+
+const ReactionType = $todo()
+
+const ReactionTypeEmoji = $todo()
+
+const ReactionTypeCustomEmoji = $todo()
+
+const ReactionTypePaid = $todo()
+
+const ReactionCount = $todo()
+
+const MessageReactionUpdated = $todo()
+
+const MessageReactionCountUpdated = $todo()
+
+const ForumTopic = $todo()
+
+const Gift = $todo()
+
+const Gifts = $todo()
+
+const UniqueGiftModel = $todo()
+
+const UniqueGiftSymbol = $todo()
+
+const UniqueGiftBackdropColors = $todo()
+
+const UniqueGiftBackdrop = $todo()
+
+const UniqueGift = $todo()
+
+const GiftInfo = $todo()
+
+const UniqueGiftInfo = $todo()
+
+const OwnedGift = $todo()
+
+const OwnedGiftRegular = $todo()
+
+const OwnedGiftUnique = $todo()
+
+const OwnedGifts = $todo()
+
+const AcceptedGiftTypes = $todo()
+
+const StarAmount = $todo()
+
+const BotCommand = $todo()
+
+const BotCommandScope = $todo()
+
+const BotCommandScopeDefault = $todo()
+
+const BotCommandScopeAllPrivateChats = $todo()
+
+const BotCommandScopeAllGroupChats = $todo()
+
+const BotCommandScopeAllChatAdministrators = $todo()
+
+const BotCommandScopeChat = $todo()
+
+const BotCommandScopeChatAdministrators = $todo()
+
+const BotCommandScopeChatMember = $todo()
+
+const BotName = $todo()
+
+const BotDescription = $todo()
+
+const BotShortDescription = $todo()
+
+const MenuButton = $todo()
+
+const MenuButtonCommands = $todo()
+
+const MenuButtonWebApp = $todo()
+
+const MenuButtonDefault = $todo()
+
+const ChatBoostSource = $todo()
+
+const ChatBoostSourcePremium = $todo()
+
+const ChatBoostSourceGiftCode = $todo()
+
+const ChatBoostSourceGiveaway = $todo()
+
+const ChatBoost = $todo()
+
+const ChatBoostUpdated = $todo()
+
+const ChatBoostRemoved = $todo()
+
+const UserChatBoosts = $todo()
+
+const BusinessBotRights = $todo()
+
+const BusinessConnection = $todo()
+
+const BusinessMessagesDeleted = $todo()
+
+const ResponseParameters = $todo()
+
+const InputMedia = $todo()
+
+const InputMediaPhoto = $todo()
+
+const InputMediaVideo = $todo()
+
+const InputMediaAnimation = $todo()
+
+const InputMediaAudio = $todo()
+
+const InputMediaDocument = $todo()
+
+const InputFile = $todo()
+
+const InputPaidMedia = $todo()
+
+const InputPaidMediaPhoto = $todo()
+
+const InputPaidMediaVideo = $todo()
+
+const InputProfilePhoto = $todo()
+
+const InputProfilePhotoStatic = $todo()
+
+const InputProfilePhotoAnimated = $todo()
+
+const InputStoryContent = $todo()
+
+const InputStoryContentPhoto = $todo()
+
+const InputStoryContentVideo = $todo()
+
+const Sticker = $todo()
+
+const StickerSet = $todo()
+
+const MaskPosition = $todo()
+
+const InputSticker = $todo()
+
+const InlineQuery = $todo()
+
+const InlineQueryResultsButton = $todo()
+
+const InlineQueryResult = $todo()
+
+const InlineQueryResultArticle = $todo()
+
+const InlineQueryResultPhoto = $todo()
+
+const InlineQueryResultGif = $todo()
+
+const InlineQueryResultMpeg4Gif = $todo()
+
+const InlineQueryResultVideo = $todo()
+
+const InlineQueryResultAudio = $todo()
+
+const InlineQueryResultVoice = $todo()
+
+const InlineQueryResultDocument = $todo()
+
+const InlineQueryResultLocation = $todo()
+
+const InlineQueryResultVenue = $todo()
+
+const InlineQueryResultContact = $todo()
+
+const InlineQueryResultGame = $todo()
+
+const InlineQueryResultCachedPhoto = $todo()
+
+const InlineQueryResultCachedGif = $todo()
+
+const InlineQueryResultCachedMpeg4Gif = $todo()
+
+const InlineQueryResultCachedSticker = $todo()
+
+const InlineQueryResultCachedDocument = $todo()
+
+const InlineQueryResultCachedVideo = $todo()
+
+const InlineQueryResultCachedVoice = $todo()
+
+const InlineQueryResultCachedAudio = $todo()
+
+const InputMessageContent = $todo()
+
+const InputTextMessageContent = $todo()
+
+const InputLocationMessageContent = $todo()
+
+const InputVenueMessageContent = $todo()
+
+const InputContactMessageContent = $todo()
+
+const InputInvoiceMessageContent = $todo()
+
+const ChosenInlineResult = $todo()
+
+const SentWebAppMessage = $todo()
+
+const PreparedInlineMessage = $todo()
+
+const LabeledPrice = $todo()
+
+const Invoice = $todo()
+
+const ShippingAddress = $todo()
+
+const OrderInfo = $todo()
+
+const ShippingOption = $todo()
+
+const SuccessfulPayment = $todo()
+
+const RefundedPayment = $todo()
+
+const ShippingQuery = $todo()
+
+const PreCheckoutQuery = $todo()
+
+const PaidMediaPurchased = $todo()
+
+const RevenueWithdrawalState = $todo()
+
+const RevenueWithdrawalStatePending = $todo()
+
+const RevenueWithdrawalStateSucceeded = $todo()
+
+const RevenueWithdrawalStateFailed = $todo()
+
+const AffiliateInfo = $todo()
+
+const TransactionPartner = $todo()
+
+const TransactionPartnerUser = $todo()
+
+const TransactionPartnerChat = $todo()
+
+const TransactionPartnerAffiliateProgram = $todo()
+
+const TransactionPartnerFragment = $todo()
+
+const TransactionPartnerTelegramAds = $todo()
+
+const TransactionPartnerTelegramApi = $todo()
+
+const TransactionPartnerOther = $todo()
+
+const StarTransaction = $todo()
+
+const StarTransactions = $todo()
+
+const PassportData = $todo()
+
+const PassportFile = $todo()
+
+const EncryptedPassportElement = $todo()
+
+const EncryptedCredentials = $todo()
+
+const PassportElementError = $todo()
+
+const PassportElementErrorDataField = $todo()
+
+const PassportElementErrorFrontSide = $todo()
+
+const PassportElementErrorReverseSide = $todo()
+
+const PassportElementErrorSelfie = $todo()
+
+const PassportElementErrorFile = $todo()
+
+const PassportElementErrorFiles = $todo()
+
+const PassportElementErrorTranslationFile = $todo()
+
+const PassportElementErrorTranslationFiles = $todo()
+
+const PassportElementErrorUnspecified = $todo()
+
+const Game = $todo()
+
+const CallbackGame = $todo()
+
+const GameHighScore = $todo()
+
 /**
  * Definition of all Bot API types as an object.
  */
@@ -199,6 +743,278 @@ export const object = {
   Chat,
   ChatFullInfo,
   Message,
+  MessageId,
+  InaccessibleMessage,
+  MaybeInaccessibleMessage,
+  MessageEntity,
+  TextQuote,
+  ExternalReplyInfo,
+  ReplyParameters,
+  MessageOrigin,
+  MessageOriginUser,
+  MessageOriginHiddenUser,
+  MessageOriginChat,
+  MessageOriginChannel,
+  PhotoSize,
+  Animation,
+  Audio,
+  Document,
+  Story,
+  Video,
+  VideoNote,
+  Voice,
+  PaidMediaInfo,
+  PaidMedia,
+  PaidMediaPreview,
+  PaidMediaPhoto,
+  PaidMediaVideo,
+  Contact,
+  Dice,
+  PollOption,
+  InputPollOption,
+  PollAnswer,
+  Poll,
+  ChecklistTask,
+  Checklist,
+  InputChecklistTask,
+  InputChecklist,
+  ChecklistTasksDone,
+  ChecklistTasksAdded,
+  Location,
+  Venue,
+  WebAppData,
+  ProximityAlertTriggered,
+  MessageAutoDeleteTimerChanged,
+  ChatBoostAdded,
+  BackgroundFill,
+  BackgroundFillSolid,
+  BackgroundFillGradient,
+  BackgroundFillFreeformGradient,
+  BackgroundType,
+  BackgroundTypeFill,
+  BackgroundTypeWallpaper,
+  BackgroundTypePattern,
+  BackgroundTypeChatTheme,
+  ChatBackground,
+  ForumTopicCreated,
+  ForumTopicClosed,
+  ForumTopicEdited,
+  ForumTopicReopened,
+  GeneralForumTopicHidden,
+  GeneralForumTopicUnhidden,
+  SharedUser,
+  UsersShared,
+  ChatShared,
+  WriteAccessAllowed,
+  VideoChatScheduled,
+  VideoChatStarted,
+  VideoChatEnded,
+  VideoChatParticipantsInvited,
+  PaidMessagePriceChanged,
+  DirectMessagePriceChanged,
+  SuggestedPostApproved,
+  SuggestedPostApprovalFailed,
+  SuggestedPostDeclined,
+  SuggestedPostPaid,
+  SuggestedPostRefunded,
+  GiveawayCreated,
+  Giveaway,
+  GiveawayWinners,
+  GiveawayCompleted,
+  LinkPreviewOptions,
+  SuggestedPostPrice,
+  SuggestedPostInfo,
+  SuggestedPostParameters,
+  DirectMessagesTopic,
+  UserProfilePhotos,
+  File,
+  WebAppInfo,
+  ReplyKeyboardMarkup,
+  KeyboardButton,
+  KeyboardButtonRequestUsers,
+  KeyboardButtonRequestChat,
+  KeyboardButtonPollType,
+  ReplyKeyboardRemove,
+  InlineKeyboardMarkup,
+  InlineKeyboardButton,
+  LoginUrl,
+  SwitchInlineQueryChosenChat,
+  CopyTextButton,
+  CallbackQuery,
+  ForceReply,
+  ChatPhoto,
+  ChatInviteLink,
+  ChatAdministratorRights,
+  ChatMemberUpdated,
+  ChatMember,
+  ChatMemberOwner,
+  ChatMemberAdministrator,
+  ChatMemberMember,
+  ChatMemberRestricted,
+  ChatMemberLeft,
+  ChatMemberBanned,
+  ChatJoinRequest,
+  ChatPermissions,
+  Birthdate,
+  BusinessIntro,
+  BusinessLocation,
+  BusinessOpeningHoursInterval,
+  BusinessOpeningHours,
+  StoryAreaPosition,
+  LocationAddress,
+  StoryAreaType,
+  StoryAreaTypeLocation,
+  StoryAreaTypeSuggestedReaction,
+  StoryAreaTypeLink,
+  StoryAreaTypeWeather,
+  StoryAreaTypeUniqueGift,
+  StoryArea,
+  ChatLocation,
+  ReactionType,
+  ReactionTypeEmoji,
+  ReactionTypeCustomEmoji,
+  ReactionTypePaid,
+  ReactionCount,
+  MessageReactionUpdated,
+  MessageReactionCountUpdated,
+  ForumTopic,
+  Gift,
+  Gifts,
+  UniqueGiftModel,
+  UniqueGiftSymbol,
+  UniqueGiftBackdropColors,
+  UniqueGiftBackdrop,
+  UniqueGift,
+  GiftInfo,
+  UniqueGiftInfo,
+  OwnedGift,
+  OwnedGiftRegular,
+  OwnedGiftUnique,
+  OwnedGifts,
+  AcceptedGiftTypes,
+  StarAmount,
+  BotCommand,
+  BotCommandScope,
+  BotCommandScopeDefault,
+  BotCommandScopeAllPrivateChats,
+  BotCommandScopeAllGroupChats,
+  BotCommandScopeAllChatAdministrators,
+  BotCommandScopeChat,
+  BotCommandScopeChatAdministrators,
+  BotCommandScopeChatMember,
+  BotName,
+  BotDescription,
+  BotShortDescription,
+  MenuButton,
+  MenuButtonCommands,
+  MenuButtonWebApp,
+  MenuButtonDefault,
+  ChatBoostSource,
+  ChatBoostSourcePremium,
+  ChatBoostSourceGiftCode,
+  ChatBoostSourceGiveaway,
+  ChatBoost,
+  ChatBoostUpdated,
+  ChatBoostRemoved,
+  UserChatBoosts,
+  BusinessBotRights,
+  BusinessConnection,
+  BusinessMessagesDeleted,
+  ResponseParameters,
+  InputMedia,
+  InputMediaPhoto,
+  InputMediaVideo,
+  InputMediaAnimation,
+  InputMediaAudio,
+  InputMediaDocument,
+  InputFile,
+  InputPaidMedia,
+  InputPaidMediaPhoto,
+  InputPaidMediaVideo,
+  InputProfilePhoto,
+  InputProfilePhotoStatic,
+  InputProfilePhotoAnimated,
+  InputStoryContent,
+  InputStoryContentPhoto,
+  InputStoryContentVideo,
+  Sticker,
+  StickerSet,
+  MaskPosition,
+  InputSticker,
+  InlineQuery,
+  InlineQueryResultsButton,
+  InlineQueryResult,
+  InlineQueryResultArticle,
+  InlineQueryResultPhoto,
+  InlineQueryResultGif,
+  InlineQueryResultMpeg4Gif,
+  InlineQueryResultVideo,
+  InlineQueryResultAudio,
+  InlineQueryResultVoice,
+  InlineQueryResultDocument,
+  InlineQueryResultLocation,
+  InlineQueryResultVenue,
+  InlineQueryResultContact,
+  InlineQueryResultGame,
+  InlineQueryResultCachedPhoto,
+  InlineQueryResultCachedGif,
+  InlineQueryResultCachedMpeg4Gif,
+  InlineQueryResultCachedSticker,
+  InlineQueryResultCachedDocument,
+  InlineQueryResultCachedVideo,
+  InlineQueryResultCachedVoice,
+  InlineQueryResultCachedAudio,
+  InputMessageContent,
+  InputTextMessageContent,
+  InputLocationMessageContent,
+  InputVenueMessageContent,
+  InputContactMessageContent,
+  InputInvoiceMessageContent,
+  ChosenInlineResult,
+  SentWebAppMessage,
+  PreparedInlineMessage,
+  LabeledPrice,
+  Invoice,
+  ShippingAddress,
+  OrderInfo,
+  ShippingOption,
+  SuccessfulPayment,
+  RefundedPayment,
+  ShippingQuery,
+  PreCheckoutQuery,
+  PaidMediaPurchased,
+  RevenueWithdrawalState,
+  RevenueWithdrawalStatePending,
+  RevenueWithdrawalStateSucceeded,
+  RevenueWithdrawalStateFailed,
+  AffiliateInfo,
+  TransactionPartner,
+  TransactionPartnerUser,
+  TransactionPartnerChat,
+  TransactionPartnerAffiliateProgram,
+  TransactionPartnerFragment,
+  TransactionPartnerTelegramAds,
+  TransactionPartnerTelegramApi,
+  TransactionPartnerOther,
+  StarTransaction,
+  StarTransactions,
+  PassportData,
+  PassportFile,
+  EncryptedPassportElement,
+  EncryptedCredentials,
+  PassportElementError,
+  PassportElementErrorDataField,
+  PassportElementErrorFrontSide,
+  PassportElementErrorReverseSide,
+  PassportElementErrorSelfie,
+  PassportElementErrorFile,
+  PassportElementErrorFiles,
+  PassportElementErrorTranslationFile,
+  PassportElementErrorTranslationFiles,
+  PassportElementErrorUnspecified,
+  Game,
+  CallbackGame,
+  GameHighScore,
 }
 
 /**
@@ -212,4 +1028,276 @@ export const array = [
   Chat,
   ChatFullInfo,
   Message,
+  MessageId,
+  InaccessibleMessage,
+  MaybeInaccessibleMessage,
+  MessageEntity,
+  TextQuote,
+  ExternalReplyInfo,
+  ReplyParameters,
+  MessageOrigin,
+  MessageOriginUser,
+  MessageOriginHiddenUser,
+  MessageOriginChat,
+  MessageOriginChannel,
+  PhotoSize,
+  Animation,
+  Audio,
+  Document,
+  Story,
+  Video,
+  VideoNote,
+  Voice,
+  PaidMediaInfo,
+  PaidMedia,
+  PaidMediaPreview,
+  PaidMediaPhoto,
+  PaidMediaVideo,
+  Contact,
+  Dice,
+  PollOption,
+  InputPollOption,
+  PollAnswer,
+  Poll,
+  ChecklistTask,
+  Checklist,
+  InputChecklistTask,
+  InputChecklist,
+  ChecklistTasksDone,
+  ChecklistTasksAdded,
+  Location,
+  Venue,
+  WebAppData,
+  ProximityAlertTriggered,
+  MessageAutoDeleteTimerChanged,
+  ChatBoostAdded,
+  BackgroundFill,
+  BackgroundFillSolid,
+  BackgroundFillGradient,
+  BackgroundFillFreeformGradient,
+  BackgroundType,
+  BackgroundTypeFill,
+  BackgroundTypeWallpaper,
+  BackgroundTypePattern,
+  BackgroundTypeChatTheme,
+  ChatBackground,
+  ForumTopicCreated,
+  ForumTopicClosed,
+  ForumTopicEdited,
+  ForumTopicReopened,
+  GeneralForumTopicHidden,
+  GeneralForumTopicUnhidden,
+  SharedUser,
+  UsersShared,
+  ChatShared,
+  WriteAccessAllowed,
+  VideoChatScheduled,
+  VideoChatStarted,
+  VideoChatEnded,
+  VideoChatParticipantsInvited,
+  PaidMessagePriceChanged,
+  DirectMessagePriceChanged,
+  SuggestedPostApproved,
+  SuggestedPostApprovalFailed,
+  SuggestedPostDeclined,
+  SuggestedPostPaid,
+  SuggestedPostRefunded,
+  GiveawayCreated,
+  Giveaway,
+  GiveawayWinners,
+  GiveawayCompleted,
+  LinkPreviewOptions,
+  SuggestedPostPrice,
+  SuggestedPostInfo,
+  SuggestedPostParameters,
+  DirectMessagesTopic,
+  UserProfilePhotos,
+  File,
+  WebAppInfo,
+  ReplyKeyboardMarkup,
+  KeyboardButton,
+  KeyboardButtonRequestUsers,
+  KeyboardButtonRequestChat,
+  KeyboardButtonPollType,
+  ReplyKeyboardRemove,
+  InlineKeyboardMarkup,
+  InlineKeyboardButton,
+  LoginUrl,
+  SwitchInlineQueryChosenChat,
+  CopyTextButton,
+  CallbackQuery,
+  ForceReply,
+  ChatPhoto,
+  ChatInviteLink,
+  ChatAdministratorRights,
+  ChatMemberUpdated,
+  ChatMember,
+  ChatMemberOwner,
+  ChatMemberAdministrator,
+  ChatMemberMember,
+  ChatMemberRestricted,
+  ChatMemberLeft,
+  ChatMemberBanned,
+  ChatJoinRequest,
+  ChatPermissions,
+  Birthdate,
+  BusinessIntro,
+  BusinessLocation,
+  BusinessOpeningHoursInterval,
+  BusinessOpeningHours,
+  StoryAreaPosition,
+  LocationAddress,
+  StoryAreaType,
+  StoryAreaTypeLocation,
+  StoryAreaTypeSuggestedReaction,
+  StoryAreaTypeLink,
+  StoryAreaTypeWeather,
+  StoryAreaTypeUniqueGift,
+  StoryArea,
+  ChatLocation,
+  ReactionType,
+  ReactionTypeEmoji,
+  ReactionTypeCustomEmoji,
+  ReactionTypePaid,
+  ReactionCount,
+  MessageReactionUpdated,
+  MessageReactionCountUpdated,
+  ForumTopic,
+  Gift,
+  Gifts,
+  UniqueGiftModel,
+  UniqueGiftSymbol,
+  UniqueGiftBackdropColors,
+  UniqueGiftBackdrop,
+  UniqueGift,
+  GiftInfo,
+  UniqueGiftInfo,
+  OwnedGift,
+  OwnedGiftRegular,
+  OwnedGiftUnique,
+  OwnedGifts,
+  AcceptedGiftTypes,
+  StarAmount,
+  BotCommand,
+  BotCommandScope,
+  BotCommandScopeDefault,
+  BotCommandScopeAllPrivateChats,
+  BotCommandScopeAllGroupChats,
+  BotCommandScopeAllChatAdministrators,
+  BotCommandScopeChat,
+  BotCommandScopeChatAdministrators,
+  BotCommandScopeChatMember,
+  BotName,
+  BotDescription,
+  BotShortDescription,
+  MenuButton,
+  MenuButtonCommands,
+  MenuButtonWebApp,
+  MenuButtonDefault,
+  ChatBoostSource,
+  ChatBoostSourcePremium,
+  ChatBoostSourceGiftCode,
+  ChatBoostSourceGiveaway,
+  ChatBoost,
+  ChatBoostUpdated,
+  ChatBoostRemoved,
+  UserChatBoosts,
+  BusinessBotRights,
+  BusinessConnection,
+  BusinessMessagesDeleted,
+  ResponseParameters,
+  InputMedia,
+  InputMediaPhoto,
+  InputMediaVideo,
+  InputMediaAnimation,
+  InputMediaAudio,
+  InputMediaDocument,
+  InputFile,
+  InputPaidMedia,
+  InputPaidMediaPhoto,
+  InputPaidMediaVideo,
+  InputProfilePhoto,
+  InputProfilePhotoStatic,
+  InputProfilePhotoAnimated,
+  InputStoryContent,
+  InputStoryContentPhoto,
+  InputStoryContentVideo,
+  Sticker,
+  StickerSet,
+  MaskPosition,
+  InputSticker,
+  InlineQuery,
+  InlineQueryResultsButton,
+  InlineQueryResult,
+  InlineQueryResultArticle,
+  InlineQueryResultPhoto,
+  InlineQueryResultGif,
+  InlineQueryResultMpeg4Gif,
+  InlineQueryResultVideo,
+  InlineQueryResultAudio,
+  InlineQueryResultVoice,
+  InlineQueryResultDocument,
+  InlineQueryResultLocation,
+  InlineQueryResultVenue,
+  InlineQueryResultContact,
+  InlineQueryResultGame,
+  InlineQueryResultCachedPhoto,
+  InlineQueryResultCachedGif,
+  InlineQueryResultCachedMpeg4Gif,
+  InlineQueryResultCachedSticker,
+  InlineQueryResultCachedDocument,
+  InlineQueryResultCachedVideo,
+  InlineQueryResultCachedVoice,
+  InlineQueryResultCachedAudio,
+  InputMessageContent,
+  InputTextMessageContent,
+  InputLocationMessageContent,
+  InputVenueMessageContent,
+  InputContactMessageContent,
+  InputInvoiceMessageContent,
+  ChosenInlineResult,
+  SentWebAppMessage,
+  PreparedInlineMessage,
+  LabeledPrice,
+  Invoice,
+  ShippingAddress,
+  OrderInfo,
+  ShippingOption,
+  SuccessfulPayment,
+  RefundedPayment,
+  ShippingQuery,
+  PreCheckoutQuery,
+  PaidMediaPurchased,
+  RevenueWithdrawalState,
+  RevenueWithdrawalStatePending,
+  RevenueWithdrawalStateSucceeded,
+  RevenueWithdrawalStateFailed,
+  AffiliateInfo,
+  TransactionPartner,
+  TransactionPartnerUser,
+  TransactionPartnerChat,
+  TransactionPartnerAffiliateProgram,
+  TransactionPartnerFragment,
+  TransactionPartnerTelegramAds,
+  TransactionPartnerTelegramApi,
+  TransactionPartnerOther,
+  StarTransaction,
+  StarTransactions,
+  PassportData,
+  PassportFile,
+  EncryptedPassportElement,
+  EncryptedCredentials,
+  PassportElementError,
+  PassportElementErrorDataField,
+  PassportElementErrorFrontSide,
+  PassportElementErrorReverseSide,
+  PassportElementErrorSelfie,
+  PassportElementErrorFile,
+  PassportElementErrorFiles,
+  PassportElementErrorTranslationFile,
+  PassportElementErrorTranslationFiles,
+  PassportElementErrorUnspecified,
+  Game,
+  CallbackGame,
+  GameHighScore,
 ]
