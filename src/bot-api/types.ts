@@ -68,6 +68,146 @@ const Chat = $todo()
 
 const ChatFullInfo = $todo()
 
+const MessageId = $todo()
+
+const MessageEntity = $todo()
+
+const PhotoSize = $todo()
+
+const Animation = $todo()
+
+const Audio = $todo()
+
+const Document = $todo()
+
+const Video = $todo()
+
+const VideoNote = $todo()
+
+const Voice = $todo()
+
+const Contact = $todo()
+
+const Dice = $todo()
+
+const PollOption = $todo()
+
+const PollAnswer = $todo()
+
+const Poll = $todo()
+
+const Location = $todo()
+
+const Venue = $todo()
+
+const WebAppData = $todo()
+
+const ProximityAlertTriggered = $todo()
+
+const MessageAutoDeleteTimerChanged = $todo()
+
+const ForumTopicCreated = $todo()
+
+const ForumTopicEdited = $todo()
+
+const ForumTopicClosed = $todo()
+
+const ForumTopicReopened = $todo()
+
+const GeneralForumTopicHidden = $todo()
+
+const GeneralForumTopicUnhidden = $todo()
+
+const UserShared = $todo()
+
+const ChatShared = $todo()
+
+const WriteAccessAllowed = $todo()
+
+const VideoChatScheduled = $todo()
+
+const VideoChatStarted = $todo()
+
+const VideoChatEnded = $todo()
+
+const VideoChatParticipantsInvited = $todo()
+
+const UserProfilePhotos = $todo()
+
+const File = $todo()
+
+const WebAppInfo = $todo()
+
+const ReplyKeyboardMarkup = $todo()
+
+const KeyboardButton = $todo()
+
+const KeyboardButtonPollType = $todo()
+
+const ReplyKeyboardRemove = $todo()
+
+const InlineKeyboardMarkup = $todo()
+
+const InlineKeyboardButton = $todo()
+
+const LoginUrl = $todo()
+
+const SwitchInlineQueryChosenChat = $todo()
+
+const CallbackQuery = $todo()
+
+const ForceReply = $todo()
+
+const ChatPhoto = $todo()
+
+const ChatInviteLink = $todo()
+
+const ChatAdministratorRights = $todo()
+
+const ChatMember = $todo()
+
+const ChatMemberOwner = $todo()
+
+const ChatMemberAdministrator = $todo()
+
+const ChatMemberMember = $todo()
+
+const ChatMemberRestricted = $todo()
+
+const ChatMemberLeft = $todo()
+
+const ChatMemberBanned = $todo()
+
+const ChatMemberUpdated = $todo()
+
+const ChatPermissions = $todo()
+
+const ChatLocation = $todo()
+
+const ChatJoinRequest = $todo()
+
+const ChatBoost = $todo()
+
+const ChatBoostRemoved = $todo()
+
+const BusinessConnection = $todo()
+
+const BusinessMessagesDeleted = $todo()
+
+const BusinessMessage = $todo()
+
+const MessageReaction = $todo()
+
+const MessageReactionCount = $todo()
+
+const Story = $todo()
+
+const ChatBackground = $todo()
+
+const StoryDeleted = $todo()
+
+const ChatBoostUpdated = $todo()
+
 const Message = defineType({
   name: 'Message',
   description: $descriptionMd(`This object represents a message.`),
@@ -198,6 +338,76 @@ export const object = {
   User,
   Chat,
   ChatFullInfo,
+  MessageId,
+  MessageEntity,
+  PhotoSize,
+  Animation,
+  Audio,
+  Document,
+  Video,
+  VideoNote,
+  Voice,
+  Contact,
+  Dice,
+  PollOption,
+  PollAnswer,
+  Poll,
+  Location,
+  Venue,
+  WebAppData,
+  ProximityAlertTriggered,
+  MessageAutoDeleteTimerChanged,
+  ForumTopicCreated,
+  ForumTopicEdited,
+  ForumTopicClosed,
+  ForumTopicReopened,
+  GeneralForumTopicHidden,
+  GeneralForumTopicUnhidden,
+  UserShared,
+  ChatShared,
+  WriteAccessAllowed,
+  VideoChatScheduled,
+  VideoChatStarted,
+  VideoChatEnded,
+  VideoChatParticipantsInvited,
+  UserProfilePhotos,
+  File,
+  WebAppInfo,
+  ReplyKeyboardMarkup,
+  KeyboardButton,
+  KeyboardButtonPollType,
+  ReplyKeyboardRemove,
+  InlineKeyboardMarkup,
+  InlineKeyboardButton,
+  LoginUrl,
+  SwitchInlineQueryChosenChat,
+  CallbackQuery,
+  ForceReply,
+  ChatPhoto,
+  ChatInviteLink,
+  ChatAdministratorRights,
+  ChatMember,
+  ChatMemberOwner,
+  ChatMemberAdministrator,
+  ChatMemberMember,
+  ChatMemberRestricted,
+  ChatMemberLeft,
+  ChatMemberBanned,
+  ChatMemberUpdated,
+  ChatPermissions,
+  ChatLocation,
+  ChatJoinRequest,
+  ChatBoost,
+  ChatBoostRemoved,
+  BusinessConnection,
+  BusinessMessagesDeleted,
+  BusinessMessage,
+  MessageReaction,
+  MessageReactionCount,
+  Story,
+  ChatBackground,
+  StoryDeleted,
+  ChatBoostUpdated,
   Message,
 }
 
@@ -211,5 +421,75 @@ export const array = [
   User,
   Chat,
   ChatFullInfo,
+  MessageId,
+  MessageEntity,
+  PhotoSize,
+  Animation,
+  Audio,
+  Document,
+  Video,
+  VideoNote,
+  Voice,
+  Contact,
+  Dice,
+  PollOption,
+  PollAnswer,
+  Poll,
+  Location,
+  Venue,
+  WebAppData,
+  ProximityAlertTriggered,
+  MessageAutoDeleteTimerChanged,
+  ForumTopicCreated,
+  ForumTopicEdited,
+  ForumTopicClosed,
+  ForumTopicReopened,
+  GeneralForumTopicHidden,
+  GeneralForumTopicUnhidden,
+  UserShared,
+  ChatShared,
+  WriteAccessAllowed,
+  VideoChatScheduled,
+  VideoChatStarted,
+  VideoChatEnded,
+  VideoChatParticipantsInvited,
+  UserProfilePhotos,
+  File,
+  WebAppInfo,
+  ReplyKeyboardMarkup,
+  KeyboardButton,
+  KeyboardButtonPollType,
+  ReplyKeyboardRemove,
+  InlineKeyboardMarkup,
+  InlineKeyboardButton,
+  LoginUrl,
+  SwitchInlineQueryChosenChat,
+  CallbackQuery,
+  ForceReply,
+  ChatPhoto,
+  ChatInviteLink,
+  ChatAdministratorRights,
+  ChatMember,
+  ChatMemberOwner,
+  ChatMemberAdministrator,
+  ChatMemberMember,
+  ChatMemberRestricted,
+  ChatMemberLeft,
+  ChatMemberBanned,
+  ChatMemberUpdated,
+  ChatPermissions,
+  ChatLocation,
+  ChatJoinRequest,
+  ChatBoost,
+  ChatBoostRemoved,
+  BusinessConnection,
+  BusinessMessagesDeleted,
+  BusinessMessage,
+  MessageReaction,
+  MessageReactionCount,
+  Story,
+  ChatBackground,
+  StoryDeleted,
+  ChatBoostUpdated,
   Message,
 ]
