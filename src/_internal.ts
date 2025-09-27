@@ -1,4 +1,4 @@
-import type { types } from './bot-api'
+import type { typesMap } from './bot-api'
 import type {
   ApiMethod,
   ApiType,
@@ -56,7 +56,7 @@ export function $inputFile(): ValueTypeInputFile {
   return { kind: 'input-file' }
 }
 
-export function $apiType<T extends keyof typeof types>(name: T): ValueTypeApiType {
+export function $apiType<T extends keyof typeof typesMap>(name: T): ValueTypeApiType {
   return { kind: 'api-type', name }
 }
 
@@ -67,3 +67,6 @@ export function $arrayOf(of: ValueType): ValueTypeArray {
 export function $unionOf(types: Array<ValueType>): ValueTypeUnion {
   return { kind: 'union', types }
 }
+
+// @ts-expect-error It's a todo.
+export function $todo(_label?: string): never {}

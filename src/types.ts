@@ -91,16 +91,6 @@ export interface FieldOrParam {
 
 /**
  * Description of a type/method/field/parameter.
- *
- * It's copied from the official docs by following the rules:
- * - formatting is preserved in Markdown format;
- * - all sentences end with a period;
- * - "*Optional.*" parts are omitted (instead, the `required` property is set
- *   to `false`);
- * - "JSON-serialized ..." parts are omitted (instead, the `jsonSerialized`
- *   property is set to `true`);
- * - "it has at most 52 significant bits, so a 64-bit ..." parts are omitted
- *   (instead, such `Integer` types are represented as `int52`);
  */
 export interface Description {
   markdown: string
@@ -114,8 +104,9 @@ export type ValueType
     | ValueTypeBoolean
     | ValueTypeInteger32
     | ValueTypeInteger52
-    | ValueTypeUnixTimestamp
     | ValueTypeFloat
+    | ValueTypeUnixTimestamp
+    | ValueTypeBase64
     | ValueTypeInputFile
     | ValueTypeApiType
     | ValueTypeArray
@@ -123,8 +114,6 @@ export type ValueType
 
 /**
  * `String` value type.
- *
- * If `literal` is provided, it means this is a string literal.
  */
 export interface ValueTypeString {
   kind: 'str'
@@ -132,9 +121,15 @@ export interface ValueTypeString {
 }
 
 /**
+ * `String` value type, with base64 encoded data.
+ */
+export interface ValueTypeBase64 {
+  kind: 'base64'
+  literal?: string
+}
+
+/**
  * `Boolean` value type.
- *
- * If `literal` is provided, it means this is a boolean literal.
  */
 export interface ValueTypeBoolean {
   kind: 'bool'
@@ -146,12 +141,13 @@ export interface ValueTypeBoolean {
  */
 export interface ValueTypeInteger32 {
   kind: 'int32'
+  literal?: number
 }
 
 /**
- * `Integer` value type, which has at most 52 significant bits, so a 64-bit
- * integer or double-precision float type are safe for storing values of this
- * type.
+ * `Integer` value type, which may have more than 32 significant bits, but has
+ * at most 52 significant bits, so a 64-bit integer or double-precision float
+ * type are safe for storing values of this type.
  */
 export interface ValueTypeInteger52 {
   kind: 'int52'

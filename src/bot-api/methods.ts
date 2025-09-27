@@ -1,11 +1,23 @@
+/**
+ * This module contains all methods specified in the Bot API. Each method is
+ * defined as a constant with identifier equal to the name of the method. All
+ * methods and their parameters are declared in the same order as they appear
+ * in the official docs. {@link defineMethod} internal function is used to
+ * define a method.
+ *
+ * @todo Define all the missing methods and parameters.
+ * @module
+ */
+
 import {
   $apiType,
   $arrayOf,
   $descriptionMd,
   $int32,
   $str,
+  $todo,
   defineMethod,
-} from '../internal'
+} from '../_internal'
 
 const getUpdates = defineMethod({
   name: 'getUpdates',
@@ -43,6 +55,21 @@ const getUpdates = defineMethod({
   returns: $arrayOf($apiType('Update')),
 })
 
-export default {
+const setWebhook = $todo()
+
+/**
+ * Definition of all Bot API methods as an object.
+ */
+export const object = {
   getUpdates,
+  setWebhook,
 }
+
+/**
+ * Definition of all Bot API methods as an array. Order of the methods is the
+ * same as they appear in the official docs.
+ */
+export const array = [
+  getUpdates,
+  setWebhook,
+]
