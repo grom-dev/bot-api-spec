@@ -346,7 +346,7 @@ function isMethodWithoutParams(_name: string, description: Description): boolean
 }
 
 function typeOrMethodDescriptionFromEl($el: Cheerio<Element>): Description {
-  return { markdown: turndown.turndown($el.html() ?? '') }
+  return { markdown: turndown.turndown(htmlOfAll($el)) }
 }
 
 function paramOrFieldDescriptionFromEl($el: Cheerio<Element>, name: string, type: ValueType): {
@@ -355,7 +355,7 @@ function paramOrFieldDescriptionFromEl($el: Cheerio<Element>, name: string, type
   isJsonSerialized: boolean
   isInt52: boolean
 } {
-  let markdown = turndown.turndown($el.html() ?? '').trim()
+  let markdown = turndown.turndown(htmlOfAll($el)).trim()
   let isOptional = false
   let isJsonSerialized = false
   let isInt52 = false
@@ -526,6 +526,13 @@ function genMethodsModule(methods: Array<ApiMethod>): string {
     ...methods.map(({ name }) => `${name},`),
     ']',
   ].join('\n')
+}
+
+function htmlOfAll($match: Cheerio<Element>): string {
+  return $match
+    .toArray()
+    .map(el => $(el).html() ?? '')
+    .join('<br>')
 }
 
 function one<T>($el: Cheerio<T>): T {

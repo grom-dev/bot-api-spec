@@ -2519,7 +2519,7 @@ const InaccessibleMessage: ApiType = {
 const MaybeInaccessibleMessage: ApiType = {
   name: 'MaybeInaccessibleMessage',
   description: {
-    markdown: 'This object describes a message that can be inaccessible to the bot. It can be one of',
+    markdown: 'This object describes a message that can be inaccessible to the bot. It can be one of  \n-   [Message](https://core.telegram.org/bots/api#message)\n-   [InaccessibleMessage](https://core.telegram.org/bots/api#inaccessiblemessage)',
   },
   oneOf: [
     {
@@ -3101,7 +3101,7 @@ const ReplyParameters: ApiType = {
 const MessageOrigin: ApiType = {
   name: 'MessageOrigin',
   description: {
-    markdown: 'This object describes the origin of a message. It can be one of',
+    markdown: 'This object describes the origin of a message. It can be one of  \n-   [MessageOriginUser](https://core.telegram.org/bots/api#messageoriginuser)\n-   [MessageOriginHiddenUser](https://core.telegram.org/bots/api#messageoriginhiddenuser)\n-   [MessageOriginChat](https://core.telegram.org/bots/api#messageoriginchat)\n-   [MessageOriginChannel](https://core.telegram.org/bots/api#messageoriginchannel)',
   },
   oneOf: [
     {
@@ -4030,7 +4030,7 @@ const PaidMediaInfo: ApiType = {
 const PaidMedia: ApiType = {
   name: 'PaidMedia',
   description: {
-    markdown: 'This object describes paid media. Currently, it can be one of',
+    markdown: 'This object describes paid media. Currently, it can be one of  \n-   [PaidMediaPreview](https://core.telegram.org/bots/api#paidmediapreview)\n-   [PaidMediaPhoto](https://core.telegram.org/bots/api#paidmediaphoto)\n-   [PaidMediaVideo](https://core.telegram.org/bots/api#paidmediavideo)',
   },
   oneOf: [
     {
@@ -5236,7 +5236,7 @@ const ChatBoostAdded: ApiType = {
 const BackgroundFill: ApiType = {
   name: 'BackgroundFill',
   description: {
-    markdown: 'This object describes the way a background is filled based on the selected colors. Currently, it can be one of',
+    markdown: 'This object describes the way a background is filled based on the selected colors. Currently, it can be one of  \n-   [BackgroundFillSolid](https://core.telegram.org/bots/api#backgroundfillsolid)\n-   [BackgroundFillGradient](https://core.telegram.org/bots/api#backgroundfillgradient)\n-   [BackgroundFillFreeformGradient](https://core.telegram.org/bots/api#backgroundfillfreeformgradient)',
   },
   oneOf: [
     {
@@ -5375,7 +5375,7 @@ const BackgroundFillFreeformGradient: ApiType = {
 const BackgroundType: ApiType = {
   name: 'BackgroundType',
   description: {
-    markdown: 'This object describes the type of a background. Currently, it can be one of',
+    markdown: 'This object describes the type of a background. Currently, it can be one of  \n-   [BackgroundTypeFill](https://core.telegram.org/bots/api#backgroundtypefill)\n-   [BackgroundTypeWallpaper](https://core.telegram.org/bots/api#backgroundtypewallpaper)\n-   [BackgroundTypePattern](https://core.telegram.org/bots/api#backgroundtypepattern)\n-   [BackgroundTypeChatTheme](https://core.telegram.org/bots/api#backgroundtypechattheme)',
   },
   oneOf: [
     {
@@ -6858,7 +6858,7 @@ const UserProfilePhotos: ApiType = {
 const File: ApiType = {
   name: 'File',
   description: {
-    markdown: 'This object represents a file ready to be downloaded. The file can be downloaded via the link `https://api.telegram.org/file/bot<token>/<file_path>`. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling [getFile](https://core.telegram.org/bots/api#getfile).',
+    markdown: 'This object represents a file ready to be downloaded. The file can be downloaded via the link `https://api.telegram.org/file/bot<token>/<file_path>`. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling [getFile](https://core.telegram.org/bots/api#getfile).  \n\nThe maximum file size to download is 20 MB',
   },
   fields: [
     {
@@ -7013,7 +7013,7 @@ const ReplyKeyboardMarkup: ApiType = {
 const KeyboardButton: ApiType = {
   name: 'KeyboardButton',
   description: {
-    markdown: 'This object represents one button of the reply keyboard. At most one of the optional fields must be used to specify type of the button. For simple text buttons, _String_ can be used instead of this object to specify the button text.',
+    markdown: 'This object represents one button of the reply keyboard. At most one of the optional fields must be used to specify type of the button. For simple text buttons, _String_ can be used instead of this object to specify the button text.  \n**Note:** _request\\_users_ and _request\\_chat_ options will only work in Telegram versions released after 3 February, 2023. Older clients will display _unsupported message_.',
   },
   fields: [
     {
@@ -7535,7 +7535,7 @@ const InlineKeyboardButton: ApiType = {
 const LoginUrl: ApiType = {
   name: 'LoginUrl',
   description: {
-    markdown: 'This object represents a parameter of the inline keyboard button used to automatically authorize a user. Serves as a great replacement for the [Telegram Login Widget](https://core.telegram.org/widgets/login) when the user is coming from Telegram. All the user needs to do is tap/click a button and confirm that they want to log in:',
+    markdown: 'This object represents a parameter of the inline keyboard button used to automatically authorize a user. Serves as a great replacement for the [Telegram Login Widget](https://core.telegram.org/widgets/login) when the user is coming from Telegram. All the user needs to do is tap/click a button and confirm that they want to log in:  \n[![TITLE](/file/811140909/1631/20k1Z53eiyY.23995/c541e89b74253623d9 "TITLE")](https://core.telegram.org/file/811140015/1734/8VZFkwWXalM.97872/6127fa62d8a0bf2b3c)  \nTelegram apps support these buttons as of [version 5.7](https://telegram.org/blog/privacy-discussions-web-bots#meet-seamless-web-bots).  \n\nSample bot: [@discussbot](https://t.me/discussbot)',
   },
   fields: [
     {
@@ -7672,7 +7672,7 @@ const CopyTextButton: ApiType = {
 const CallbackQuery: ApiType = {
   name: 'CallbackQuery',
   description: {
-    markdown: 'This object represents an incoming callback query from a callback button in an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards). If the button that originated the query was attached to a message sent by the bot, the field _message_ will be present. If the button was attached to a message sent via the bot (in [inline mode](https://core.telegram.org/bots/api#inline-mode)), the field _inline\\_message\\_id_ will be present. Exactly one of the fields _data_ or _game\\_short\\_name_ will be present.',
+    markdown: 'This object represents an incoming callback query from a callback button in an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards). If the button that originated the query was attached to a message sent by the bot, the field _message_ will be present. If the button was attached to a message sent via the bot (in [inline mode](https://core.telegram.org/bots/api#inline-mode)), the field _inline\\_message\\_id_ will be present. Exactly one of the fields _data_ or _game\\_short\\_name_ will be present.  \n\n**NOTE:** After the user presses a callback button, Telegram clients will display a progress bar until you call [answerCallbackQuery](https://core.telegram.org/bots/api#answercallbackquery). It is, therefore, necessary to react by calling [answerCallbackQuery](https://core.telegram.org/bots/api#answercallbackquery) even if no notification to the user is needed (e.g., without specifying any of the optional parameters).',
   },
   fields: [
     {
@@ -7760,7 +7760,7 @@ const CallbackQuery: ApiType = {
 const ForceReply: ApiType = {
   name: 'ForceReply',
   description: {
-    markdown: 'Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot\'s message and tapped \'Reply\'). This can be extremely useful if you want to create user-friendly step-by-step interfaces without having to sacrifice [privacy mode](https://core.telegram.org/bots/features#privacy-mode). Not supported in channels and for messages sent on behalf of a Telegram Business account.',
+    markdown: 'Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot\'s message and tapped \'Reply\'). This can be extremely useful if you want to create user-friendly step-by-step interfaces without having to sacrifice [privacy mode](https://core.telegram.org/bots/features#privacy-mode). Not supported in channels and for messages sent on behalf of a Telegram Business account.  \n\n**Example:** A [poll bot](https://t.me/PollBot) for groups runs in privacy mode (only receives commands, replies to its messages and mentions). There could be two ways to create a new poll:\n\n-   Explain the user how to send a command with parameters (e.g. /newpoll question answer1 answer2). May be appealing for hardcore users but lacks modern day polish.\n-   Guide the user through a step-by-step process. \'Please send me your question\', \'Cool, now let\'s add the first answer option\', \'Great. Keep adding answer options, then send /done when you\'re ready\'.\n\nThe last option is definitely more attractive. And if you use [ForceReply](https://core.telegram.org/bots/api#forcereply) in your bot\'s questions, it will receive the user\'s answers even if it only receives replies, commands and mentions - without any extra work for the user.',
   },
   fields: [
     {
@@ -8274,7 +8274,7 @@ const ChatMemberUpdated: ApiType = {
 const ChatMember: ApiType = {
   name: 'ChatMember',
   description: {
-    markdown: 'This object contains information about one member of a chat. Currently, the following 6 types of chat members are supported:',
+    markdown: 'This object contains information about one member of a chat. Currently, the following 6 types of chat members are supported:  \n-   [ChatMemberOwner](https://core.telegram.org/bots/api#chatmemberowner)\n-   [ChatMemberAdministrator](https://core.telegram.org/bots/api#chatmemberadministrator)\n-   [ChatMemberMember](https://core.telegram.org/bots/api#chatmembermember)\n-   [ChatMemberRestricted](https://core.telegram.org/bots/api#chatmemberrestricted)\n-   [ChatMemberLeft](https://core.telegram.org/bots/api#chatmemberleft)\n-   [ChatMemberBanned](https://core.telegram.org/bots/api#chatmemberbanned)',
   },
   oneOf: [
     {
@@ -9469,7 +9469,7 @@ const LocationAddress: ApiType = {
 const StoryAreaType: ApiType = {
   name: 'StoryAreaType',
   description: {
-    markdown: 'Describes the type of a clickable area on a story. Currently, it can be one of',
+    markdown: 'Describes the type of a clickable area on a story. Currently, it can be one of  \n-   [StoryAreaTypeLocation](https://core.telegram.org/bots/api#storyareatypelocation)\n-   [StoryAreaTypeSuggestedReaction](https://core.telegram.org/bots/api#storyareatypesuggestedreaction)\n-   [StoryAreaTypeLink](https://core.telegram.org/bots/api#storyareatypelink)\n-   [StoryAreaTypeWeather](https://core.telegram.org/bots/api#storyareatypeweather)\n-   [StoryAreaTypeUniqueGift](https://core.telegram.org/bots/api#storyareatypeuniquegift)',
   },
   oneOf: [
     {
@@ -9786,7 +9786,7 @@ const ChatLocation: ApiType = {
 const ReactionType: ApiType = {
   name: 'ReactionType',
   description: {
-    markdown: 'This object describes the type of a reaction. Currently, it can be one of',
+    markdown: 'This object describes the type of a reaction. Currently, it can be one of  \n-   [ReactionTypeEmoji](https://core.telegram.org/bots/api#reactiontypeemoji)\n-   [ReactionTypeCustomEmoji](https://core.telegram.org/bots/api#reactiontypecustomemoji)\n-   [ReactionTypePaid](https://core.telegram.org/bots/api#reactiontypepaid)',
   },
   oneOf: [
     {
@@ -10693,7 +10693,7 @@ const UniqueGiftInfo: ApiType = {
 const OwnedGift: ApiType = {
   name: 'OwnedGift',
   description: {
-    markdown: 'This object describes a gift received and owned by a user or a chat. Currently, it can be one of',
+    markdown: 'This object describes a gift received and owned by a user or a chat. Currently, it can be one of  \n-   [OwnedGiftRegular](https://core.telegram.org/bots/api#ownedgiftregular)\n-   [OwnedGiftUnique](https://core.telegram.org/bots/api#ownedgiftunique)',
   },
   oneOf: [
     {
@@ -11145,7 +11145,7 @@ const BotCommand: ApiType = {
 const BotCommandScope: ApiType = {
   name: 'BotCommandScope',
   description: {
-    markdown: 'This object represents the scope to which bot commands are applied. Currently, the following 7 scopes are supported:',
+    markdown: 'This object represents the scope to which bot commands are applied. Currently, the following 7 scopes are supported:  \n-   [BotCommandScopeDefault](https://core.telegram.org/bots/api#botcommandscopedefault)\n-   [BotCommandScopeAllPrivateChats](https://core.telegram.org/bots/api#botcommandscopeallprivatechats)\n-   [BotCommandScopeAllGroupChats](https://core.telegram.org/bots/api#botcommandscopeallgroupchats)\n-   [BotCommandScopeAllChatAdministrators](https://core.telegram.org/bots/api#botcommandscopeallchatadministrators)\n-   [BotCommandScopeChat](https://core.telegram.org/bots/api#botcommandscopechat)\n-   [BotCommandScopeChatAdministrators](https://core.telegram.org/bots/api#botcommandscopechatadministrators)\n-   [BotCommandScopeChatMember](https://core.telegram.org/bots/api#botcommandscopechatmember)',
   },
   oneOf: [
     {
@@ -11450,7 +11450,7 @@ const BotShortDescription: ApiType = {
 const MenuButton: ApiType = {
   name: 'MenuButton',
   description: {
-    markdown: 'This object describes the bot\'s menu button in a private chat. It should be one of',
+    markdown: 'This object describes the bot\'s menu button in a private chat. It should be one of  \n-   [MenuButtonCommands](https://core.telegram.org/bots/api#menubuttoncommands)\n-   [MenuButtonWebApp](https://core.telegram.org/bots/api#menubuttonwebapp)\n-   [MenuButtonDefault](https://core.telegram.org/bots/api#menubuttondefault)\n  \nIf a menu button other than [MenuButtonDefault](https://core.telegram.org/bots/api#menubuttondefault) is set for a private chat, then it is applied in the chat. Otherwise the default menu button is applied. By default, the menu button opens the list of bot commands.',
   },
   oneOf: [
     {
@@ -11554,7 +11554,7 @@ const MenuButtonDefault: ApiType = {
 const ChatBoostSource: ApiType = {
   name: 'ChatBoostSource',
   description: {
-    markdown: 'This object describes the source of a chat boost. It can be one of',
+    markdown: 'This object describes the source of a chat boost. It can be one of  \n-   [ChatBoostSourcePremium](https://core.telegram.org/bots/api#chatboostsourcepremium)\n-   [ChatBoostSourceGiftCode](https://core.telegram.org/bots/api#chatboostsourcegiftcode)\n-   [ChatBoostSourceGiveaway](https://core.telegram.org/bots/api#chatboostsourcegiveaway)',
   },
   oneOf: [
     {
@@ -12202,7 +12202,7 @@ const ResponseParameters: ApiType = {
 const InputMedia: ApiType = {
   name: 'InputMedia',
   description: {
-    markdown: 'This object represents the content of a media message to be sent. It should be one of',
+    markdown: 'This object represents the content of a media message to be sent. It should be one of  \n-   [InputMediaAnimation](https://core.telegram.org/bots/api#inputmediaanimation)\n-   [InputMediaDocument](https://core.telegram.org/bots/api#inputmediadocument)\n-   [InputMediaAudio](https://core.telegram.org/bots/api#inputmediaaudio)\n-   [InputMediaPhoto](https://core.telegram.org/bots/api#inputmediaphoto)\n-   [InputMediaVideo](https://core.telegram.org/bots/api#inputmediavideo)',
   },
   oneOf: [
     {
@@ -12824,7 +12824,7 @@ const InputMediaDocument: ApiType = {
 const InputPaidMedia: ApiType = {
   name: 'InputPaidMedia',
   description: {
-    markdown: 'This object describes the paid media to be sent. Currently, it can be one of',
+    markdown: 'This object describes the paid media to be sent. Currently, it can be one of  \n-   [InputPaidMediaPhoto](https://core.telegram.org/bots/api#inputpaidmediaphoto)\n-   [InputPaidMediaVideo](https://core.telegram.org/bots/api#inputpaidmediavideo)',
   },
   oneOf: [
     {
@@ -12980,7 +12980,7 @@ const InputPaidMediaVideo: ApiType = {
 const InputProfilePhoto: ApiType = {
   name: 'InputProfilePhoto',
   description: {
-    markdown: 'This object describes a profile photo to set. Currently, it can be one of',
+    markdown: 'This object describes a profile photo to set. Currently, it can be one of  \n-   [InputProfilePhotoStatic](https://core.telegram.org/bots/api#inputprofilephotostatic)\n-   [InputProfilePhotoAnimated](https://core.telegram.org/bots/api#inputprofilephotoanimated)',
   },
   oneOf: [
     {
@@ -13070,7 +13070,7 @@ const InputProfilePhotoAnimated: ApiType = {
 const InputStoryContent: ApiType = {
   name: 'InputStoryContent',
   description: {
-    markdown: 'This object describes the content of a story to post. Currently, it can be one of',
+    markdown: 'This object describes the content of a story to post. Currently, it can be one of  \n-   [InputStoryContentPhoto](https://core.telegram.org/bots/api#inputstorycontentphoto)\n-   [InputStoryContentVideo](https://core.telegram.org/bots/api#inputstorycontentvideo)',
   },
   oneOf: [
     {
@@ -13673,7 +13673,7 @@ const InlineQueryResultsButton: ApiType = {
 const InlineQueryResult: ApiType = {
   name: 'InlineQueryResult',
   description: {
-    markdown: 'This object represents one result of an inline query. Telegram clients currently support results of the following 20 types:',
+    markdown: 'This object represents one result of an inline query. Telegram clients currently support results of the following 20 types:  \n-   [InlineQueryResultCachedAudio](https://core.telegram.org/bots/api#inlinequeryresultcachedaudio)\n-   [InlineQueryResultCachedDocument](https://core.telegram.org/bots/api#inlinequeryresultcacheddocument)\n-   [InlineQueryResultCachedGif](https://core.telegram.org/bots/api#inlinequeryresultcachedgif)\n-   [InlineQueryResultCachedMpeg4Gif](https://core.telegram.org/bots/api#inlinequeryresultcachedmpeg4gif)\n-   [InlineQueryResultCachedPhoto](https://core.telegram.org/bots/api#inlinequeryresultcachedphoto)\n-   [InlineQueryResultCachedSticker](https://core.telegram.org/bots/api#inlinequeryresultcachedsticker)\n-   [InlineQueryResultCachedVideo](https://core.telegram.org/bots/api#inlinequeryresultcachedvideo)\n-   [InlineQueryResultCachedVoice](https://core.telegram.org/bots/api#inlinequeryresultcachedvoice)\n-   [InlineQueryResultArticle](https://core.telegram.org/bots/api#inlinequeryresultarticle)\n-   [InlineQueryResultAudio](https://core.telegram.org/bots/api#inlinequeryresultaudio)\n-   [InlineQueryResultContact](https://core.telegram.org/bots/api#inlinequeryresultcontact)\n-   [InlineQueryResultGame](https://core.telegram.org/bots/api#inlinequeryresultgame)\n-   [InlineQueryResultDocument](https://core.telegram.org/bots/api#inlinequeryresultdocument)\n-   [InlineQueryResultGif](https://core.telegram.org/bots/api#inlinequeryresultgif)\n-   [InlineQueryResultLocation](https://core.telegram.org/bots/api#inlinequeryresultlocation)\n-   [InlineQueryResultMpeg4Gif](https://core.telegram.org/bots/api#inlinequeryresultmpeg4gif)\n-   [InlineQueryResultPhoto](https://core.telegram.org/bots/api#inlinequeryresultphoto)\n-   [InlineQueryResultVenue](https://core.telegram.org/bots/api#inlinequeryresultvenue)\n-   [InlineQueryResultVideo](https://core.telegram.org/bots/api#inlinequeryresultvideo)\n-   [InlineQueryResultVoice](https://core.telegram.org/bots/api#inlinequeryresultvoice)\n  \n**Note:** All URLs passed in inline query results will be available to end users and therefore must be assumed to be **public**.',
   },
   oneOf: [
     {
@@ -14412,7 +14412,7 @@ const InlineQueryResultMpeg4Gif: ApiType = {
 const InlineQueryResultVideo: ApiType = {
   name: 'InlineQueryResultVideo',
   description: {
-    markdown: 'Represents a link to a page containing an embedded video player or a video file. By default, this video file will be sent by the user with an optional caption. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the video.',
+    markdown: 'Represents a link to a page containing an embedded video player or a video file. By default, this video file will be sent by the user with an optional caption. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the video.  \n\nIf an InlineQueryResultVideo message contains an embedded video (e.g., YouTube), you **must** replace its content using _input\\_message\\_content_.',
   },
   fields: [
     {
@@ -16490,7 +16490,7 @@ const InlineQueryResultCachedAudio: ApiType = {
 const InputMessageContent: ApiType = {
   name: 'InputMessageContent',
   description: {
-    markdown: 'This object represents the content of a message to be sent as a result of an inline query. Telegram clients currently support the following 5 types:',
+    markdown: 'This object represents the content of a message to be sent as a result of an inline query. Telegram clients currently support the following 5 types:  \n-   [InputTextMessageContent](https://core.telegram.org/bots/api#inputtextmessagecontent)\n-   [InputLocationMessageContent](https://core.telegram.org/bots/api#inputlocationmessagecontent)\n-   [InputVenueMessageContent](https://core.telegram.org/bots/api#inputvenuemessagecontent)\n-   [InputContactMessageContent](https://core.telegram.org/bots/api#inputcontactmessagecontent)\n-   [InputInvoiceMessageContent](https://core.telegram.org/bots/api#inputinvoicemessagecontent)',
   },
   oneOf: [
     {
@@ -17038,7 +17038,7 @@ const InputInvoiceMessageContent: ApiType = {
 const ChosenInlineResult: ApiType = {
   name: 'ChosenInlineResult',
   description: {
-    markdown: 'Represents a [result](https://core.telegram.org/bots/api#inlinequeryresult) of an inline query that was chosen by the user and sent to their chat partner.',
+    markdown: 'Represents a [result](https://core.telegram.org/bots/api#inlinequeryresult) of an inline query that was chosen by the user and sent to their chat partner.  \n**Note:** It is necessary to enable [inline feedback](https://core.telegram.org/bots/inline#collecting-feedback) via [@BotFather](https://t.me/botfather) in order to receive these objects in updates.',
   },
   fields: [
     {
@@ -17786,7 +17786,7 @@ const PaidMediaPurchased: ApiType = {
 const RevenueWithdrawalState: ApiType = {
   name: 'RevenueWithdrawalState',
   description: {
-    markdown: 'This object describes the state of a revenue withdrawal operation. Currently, it can be one of',
+    markdown: 'This object describes the state of a revenue withdrawal operation. Currently, it can be one of  \n-   [RevenueWithdrawalStatePending](https://core.telegram.org/bots/api#revenuewithdrawalstatepending)\n-   [RevenueWithdrawalStateSucceeded](https://core.telegram.org/bots/api#revenuewithdrawalstatesucceeded)\n-   [RevenueWithdrawalStateFailed](https://core.telegram.org/bots/api#revenuewithdrawalstatefailed)',
   },
   oneOf: [
     {
@@ -17955,7 +17955,7 @@ const AffiliateInfo: ApiType = {
 const TransactionPartner: ApiType = {
   name: 'TransactionPartner',
   description: {
-    markdown: 'This object describes the source of a transaction, or its recipient for outgoing transactions. Currently, it can be one of',
+    markdown: 'This object describes the source of a transaction, or its recipient for outgoing transactions. Currently, it can be one of  \n-   [TransactionPartnerUser](https://core.telegram.org/bots/api#transactionpartneruser)\n-   [TransactionPartnerChat](https://core.telegram.org/bots/api#transactionpartnerchat)\n-   [TransactionPartnerAffiliateProgram](https://core.telegram.org/bots/api#transactionpartneraffiliateprogram)\n-   [TransactionPartnerFragment](https://core.telegram.org/bots/api#transactionpartnerfragment)\n-   [TransactionPartnerTelegramAds](https://core.telegram.org/bots/api#transactionpartnertelegramads)\n-   [TransactionPartnerTelegramApi](https://core.telegram.org/bots/api#transactionpartnertelegramapi)\n-   [TransactionPartnerOther](https://core.telegram.org/bots/api#transactionpartnerother)',
   },
   oneOf: [
     {
@@ -18670,7 +18670,7 @@ const EncryptedCredentials: ApiType = {
 const PassportElementError: ApiType = {
   name: 'PassportElementError',
   description: {
-    markdown: 'This object represents an error in the Telegram Passport element which was submitted that should be resolved by the user. It should be one of:',
+    markdown: 'This object represents an error in the Telegram Passport element which was submitted that should be resolved by the user. It should be one of:  \n-   [PassportElementErrorDataField](https://core.telegram.org/bots/api#passportelementerrordatafield)\n-   [PassportElementErrorFrontSide](https://core.telegram.org/bots/api#passportelementerrorfrontside)\n-   [PassportElementErrorReverseSide](https://core.telegram.org/bots/api#passportelementerrorreverseside)\n-   [PassportElementErrorSelfie](https://core.telegram.org/bots/api#passportelementerrorselfie)\n-   [PassportElementErrorFile](https://core.telegram.org/bots/api#passportelementerrorfile)\n-   [PassportElementErrorFiles](https://core.telegram.org/bots/api#passportelementerrorfiles)\n-   [PassportElementErrorTranslationFile](https://core.telegram.org/bots/api#passportelementerrortranslationfile)\n-   [PassportElementErrorTranslationFiles](https://core.telegram.org/bots/api#passportelementerrortranslationfiles)\n-   [PassportElementErrorUnspecified](https://core.telegram.org/bots/api#passportelementerrorunspecified)',
   },
   oneOf: [
     {
