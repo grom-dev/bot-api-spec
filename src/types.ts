@@ -1,3 +1,5 @@
+import type { types } from './bot-api'
+
 /**
  * Type defined in the API. It can either be an {@link ApiTypeObject object}
  * or a {@link ApiTypeOneOf union}.
@@ -37,7 +39,7 @@ export interface ApiTypeOneOf {
   /**
    * Array of possible types this type can be.
    */
-  oneOf: Array<ApiType>
+  oneOf: Array<ValueTypeApiType>
 }
 
 export interface ApiMethod {
@@ -59,7 +61,7 @@ export interface ApiMethod {
   /**
    * Type of the value this method returns.
    */
-  returns: ValueType
+  returnType: ValueType
 }
 
 export interface FieldOrParam {
@@ -105,8 +107,6 @@ export type ValueType
     | ValueTypeInteger32
     | ValueTypeInteger52
     | ValueTypeFloat
-    | ValueTypeUnixTimestamp
-    | ValueTypeBase64
     | ValueTypeInputFile
     | ValueTypeApiType
     | ValueTypeArray
@@ -117,14 +117,6 @@ export type ValueType
  */
 export interface ValueTypeString {
   kind: 'str'
-  literal?: string
-}
-
-/**
- * `String` value type, with base64 encoded data.
- */
-export interface ValueTypeBase64 {
-  kind: 'base64'
   literal?: string
 }
 
@@ -154,13 +146,6 @@ export interface ValueTypeInteger52 {
 }
 
 /**
- * `Integer` value type, which represents the Unix time.
- */
-export interface ValueTypeUnixTimestamp {
-  kind: 'unix-timestamp'
-}
-
-/**
  * `Float` value type.
  */
 export interface ValueTypeFloat {
@@ -179,7 +164,7 @@ export interface ValueTypeInputFile {
  */
 export interface ValueTypeApiType {
   kind: 'api-type'
-  name: string
+  name: keyof typeof types
 }
 
 /**

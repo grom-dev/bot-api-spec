@@ -5,7 +5,7 @@
     "moduleDetection": "force",
     "module": "preserve",
     "moduleResolution": "bundler",
-    "types": [],
+    "types": ["bun"],
     "allowImportingTsExtensions": true,
     "allowJs": true,
     "checkJs": true,
@@ -17,10 +17,13 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noEmit": true,
-    "outDir": "dist",
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts", "eslint.config.js"],
+  "include": [
+    "src/**/*.ts",
+    "scripts/**/*.ts",
+    "eslint.config.js"
+  ],
   "exclude": ["node_modules", "dist"]
 }

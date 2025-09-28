@@ -3,14 +3,22 @@
   "type": "module",
   "version": "0.1.0",
   "scripts": {
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "generate": "bun run ./scripts/gen.ts"
   },
   "peerDependencies": {
     "typescript": "^5.9.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^5.4.1",
+    "@types/bun": "^1.2.22",
+    "@types/turndown": "^5.0.5",
+    "cheerio": "^1.1.2",
+    "domhandler": "^5.0.3",
     "eslint": "^9.36.0",
-    "eslint-plugin-format": "^1.0.1"
+    "eslint-plugin-format": "^1.0.1",
+    "turndown": "^7.2.1"
   }
 }
