@@ -479,6 +479,8 @@ function genTypesModule(types: Array<ApiType>): string {
     '',
     'import type { ApiType } from "../types.ts"',
     '',
+    '// No-op identity function to fix "circular dependency" type error.',
+    '// See: https://github.com/grom-dev/bot-api-spec/pull/7',
     'const t = (apiType: ApiType): ApiType => apiType',
     '',
     ...types.map(type => `const ${type.name} = t(${JSON.stringify(type, null, 2)})\n`),
