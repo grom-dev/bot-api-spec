@@ -6,7 +6,9 @@
 
 import type { ApiType } from '../types.ts'
 
-const Update: ApiType = {
+const t = (apiType: ApiType): ApiType => apiType
+
+const Update = t({
   name: 'Update',
   description: {
     markdown: 'This [object](https://core.telegram.org/bots/api#available-types) represents an incoming update.  \nAt most **one** of the optional parameters can be present in any given update.',
@@ -300,9 +302,9 @@ const Update: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const WebhookInfo: ApiType = {
+const WebhookInfo = t({
   name: 'WebhookInfo',
   description: {
     markdown: 'Describes the current status of a webhook.',
@@ -411,9 +413,9 @@ const WebhookInfo: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const User: ApiType = {
+const User = t({
   name: 'User',
   description: {
     markdown: 'This object represents a Telegram user or bot.',
@@ -565,9 +567,9 @@ const User: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Chat: ApiType = {
+const Chat = t({
   name: 'Chat',
   description: {
     markdown: 'This object represents a chat.',
@@ -664,9 +666,9 @@ const Chat: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatFullInfo: ApiType = {
+const ChatFullInfo = t({
   name: 'ChatFullInfo',
   description: {
     markdown: 'This object contains full information about a chat.',
@@ -1220,9 +1222,9 @@ const ChatFullInfo: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Message: ApiType = {
+const Message = t({
   name: 'Message',
   description: {
     markdown: 'This object represents a message.',
@@ -2451,9 +2453,9 @@ const Message: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const MessageId: ApiType = {
+const MessageId = t({
   name: 'MessageId',
   description: {
     markdown: 'This object represents a unique message identifier.',
@@ -2471,9 +2473,9 @@ const MessageId: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InaccessibleMessage: ApiType = {
+const InaccessibleMessage = t({
   name: 'InaccessibleMessage',
   description: {
     markdown: 'This object describes a message that was deleted or is otherwise inaccessible to the bot.',
@@ -2514,9 +2516,9 @@ const InaccessibleMessage: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const MaybeInaccessibleMessage: ApiType = {
+const MaybeInaccessibleMessage = t({
   name: 'MaybeInaccessibleMessage',
   description: {
     markdown: 'This object describes a message that can be inaccessible to the bot. It can be one of  \n-   [Message](https://core.telegram.org/bots/api#message)\n-   [InaccessibleMessage](https://core.telegram.org/bots/api#inaccessiblemessage)',
@@ -2531,9 +2533,9 @@ const MaybeInaccessibleMessage: ApiType = {
       name: 'InaccessibleMessage',
     },
   ],
-}
+})
 
-const MessageEntity: ApiType = {
+const MessageEntity = t({
   name: 'MessageEntity',
   description: {
     markdown: 'This object represents one special entity in a text message. For example, hashtags, usernames, URLs, etc.',
@@ -2618,9 +2620,9 @@ const MessageEntity: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const TextQuote: ApiType = {
+const TextQuote = t({
   name: 'TextQuote',
   description: {
     markdown: 'This object contains information about the quoted part of a message that is replied to by the given message.',
@@ -2676,9 +2678,9 @@ const TextQuote: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ExternalReplyInfo: ApiType = {
+const ExternalReplyInfo = t({
   name: 'ExternalReplyInfo',
   description: {
     markdown: 'This object contains information about a message that is being replied to, which may come from another chat or forum topic.',
@@ -2987,9 +2989,9 @@ const ExternalReplyInfo: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ReplyParameters: ApiType = {
+const ReplyParameters = t({
   name: 'ReplyParameters',
   description: {
     markdown: 'Describes reply parameters for the message that is being sent.',
@@ -3096,9 +3098,9 @@ const ReplyParameters: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const MessageOrigin: ApiType = {
+const MessageOrigin = t({
   name: 'MessageOrigin',
   description: {
     markdown: 'This object describes the origin of a message. It can be one of  \n-   [MessageOriginUser](https://core.telegram.org/bots/api#messageoriginuser)\n-   [MessageOriginHiddenUser](https://core.telegram.org/bots/api#messageoriginhiddenuser)\n-   [MessageOriginChat](https://core.telegram.org/bots/api#messageoriginchat)\n-   [MessageOriginChannel](https://core.telegram.org/bots/api#messageoriginchannel)',
@@ -3121,9 +3123,9 @@ const MessageOrigin: ApiType = {
       name: 'MessageOriginChannel',
     },
   ],
-}
+})
 
-const MessageOriginUser: ApiType = {
+const MessageOriginUser = t({
   name: 'MessageOriginUser',
   description: {
     markdown: 'The message was originally sent by a known user.',
@@ -3164,9 +3166,9 @@ const MessageOriginUser: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const MessageOriginHiddenUser: ApiType = {
+const MessageOriginHiddenUser = t({
   name: 'MessageOriginHiddenUser',
   description: {
     markdown: 'The message was originally sent by an unknown user.',
@@ -3206,9 +3208,9 @@ const MessageOriginHiddenUser: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const MessageOriginChat: ApiType = {
+const MessageOriginChat = t({
   name: 'MessageOriginChat',
   description: {
     markdown: 'The message was originally sent on behalf of a chat to a group chat.',
@@ -3260,9 +3262,9 @@ const MessageOriginChat: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const MessageOriginChannel: ApiType = {
+const MessageOriginChannel = t({
   name: 'MessageOriginChannel',
   description: {
     markdown: 'The message was originally sent to a channel chat.',
@@ -3325,9 +3327,9 @@ const MessageOriginChannel: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PhotoSize: ApiType = {
+const PhotoSize = t({
   name: 'PhotoSize',
   description: {
     markdown: 'This object represents one size of a photo or a [file](https://core.telegram.org/bots/api#document) / [sticker](https://core.telegram.org/bots/api#sticker) thumbnail.',
@@ -3389,9 +3391,9 @@ const PhotoSize: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Animation: ApiType = {
+const Animation = t({
   name: 'Animation',
   description: {
     markdown: 'This object represents an animation file (GIF or H.264/MPEG-4 AVC video without sound).',
@@ -3498,9 +3500,9 @@ const Animation: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Audio: ApiType = {
+const Audio = t({
   name: 'Audio',
   description: {
     markdown: 'This object represents an audio file to be treated as music by the Telegram clients.',
@@ -3607,9 +3609,9 @@ const Audio: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Document: ApiType = {
+const Document = t({
   name: 'Document',
   description: {
     markdown: 'This object represents a general file (as opposed to [photos](https://core.telegram.org/bots/api#photosize), [voice messages](https://core.telegram.org/bots/api#voice) and [audio files](https://core.telegram.org/bots/api#audio)).',
@@ -3683,9 +3685,9 @@ const Document: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Story: ApiType = {
+const Story = t({
   name: 'Story',
   description: {
     markdown: 'This object represents a story.',
@@ -3715,9 +3717,9 @@ const Story: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Video: ApiType = {
+const Video = t({
   name: 'Video',
   description: {
     markdown: 'This object represents a video file.',
@@ -3850,9 +3852,9 @@ const Video: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const VideoNote: ApiType = {
+const VideoNote = t({
   name: 'VideoNote',
   description: {
     markdown: 'This object represents a [video message](https://telegram.org/blog/video-messages-and-telescope) (available in Telegram apps as of [v.4.0](https://telegram.org/blog/video-messages-and-telescope)).',
@@ -3926,9 +3928,9 @@ const VideoNote: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Voice: ApiType = {
+const Voice = t({
   name: 'Voice',
   description: {
     markdown: 'This object represents a voice note.',
@@ -3990,9 +3992,9 @@ const Voice: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PaidMediaInfo: ApiType = {
+const PaidMediaInfo = t({
   name: 'PaidMediaInfo',
   description: {
     markdown: 'Describes the paid media added to a message.',
@@ -4025,9 +4027,9 @@ const PaidMediaInfo: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PaidMedia: ApiType = {
+const PaidMedia = t({
   name: 'PaidMedia',
   description: {
     markdown: 'This object describes paid media. Currently, it can be one of  \n-   [PaidMediaPreview](https://core.telegram.org/bots/api#paidmediapreview)\n-   [PaidMediaPhoto](https://core.telegram.org/bots/api#paidmediaphoto)\n-   [PaidMediaVideo](https://core.telegram.org/bots/api#paidmediavideo)',
@@ -4046,9 +4048,9 @@ const PaidMedia: ApiType = {
       name: 'PaidMediaVideo',
     },
   ],
-}
+})
 
-const PaidMediaPreview: ApiType = {
+const PaidMediaPreview = t({
   name: 'PaidMediaPreview',
   description: {
     markdown: 'The paid media isn\'t available before the payment.',
@@ -4099,9 +4101,9 @@ const PaidMediaPreview: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PaidMediaPhoto: ApiType = {
+const PaidMediaPhoto = t({
   name: 'PaidMediaPhoto',
   description: {
     markdown: 'The paid media is a photo.',
@@ -4134,9 +4136,9 @@ const PaidMediaPhoto: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PaidMediaVideo: ApiType = {
+const PaidMediaVideo = t({
   name: 'PaidMediaVideo',
   description: {
     markdown: 'The paid media is a video.',
@@ -4166,9 +4168,9 @@ const PaidMediaVideo: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Contact: ApiType = {
+const Contact = t({
   name: 'Contact',
   description: {
     markdown: 'This object represents a phone contact.',
@@ -4230,9 +4232,9 @@ const Contact: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Dice: ApiType = {
+const Dice = t({
   name: 'Dice',
   description: {
     markdown: 'This object represents an animated emoji that displays a random value.',
@@ -4261,9 +4263,9 @@ const Dice: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PollOption: ApiType = {
+const PollOption = t({
   name: 'PollOption',
   description: {
     markdown: 'This object contains information about one answer option in a poll.',
@@ -4307,9 +4309,9 @@ const PollOption: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputPollOption: ApiType = {
+const InputPollOption = t({
   name: 'InputPollOption',
   description: {
     markdown: 'This object contains information about one answer option in a poll to be sent.',
@@ -4353,9 +4355,9 @@ const InputPollOption: ApiType = {
       jsonSerialized: true,
     },
   ],
-}
+})
 
-const PollAnswer: ApiType = {
+const PollAnswer = t({
   name: 'PollAnswer',
   description: {
     markdown: 'This object represents an answer of a user in a non-anonymous poll.',
@@ -4411,9 +4413,9 @@ const PollAnswer: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Poll: ApiType = {
+const Poll = t({
   name: 'Poll',
   description: {
     markdown: 'This object contains information about a poll.',
@@ -4586,9 +4588,9 @@ const Poll: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChecklistTask: ApiType = {
+const ChecklistTask = t({
   name: 'ChecklistTask',
   description: {
     markdown: 'Describes a task in a checklist.',
@@ -4655,9 +4657,9 @@ const ChecklistTask: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Checklist: ApiType = {
+const Checklist = t({
   name: 'Checklist',
   description: {
     markdown: 'Describes a checklist.',
@@ -4729,9 +4731,9 @@ const Checklist: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputChecklistTask: ApiType = {
+const InputChecklistTask = t({
   name: 'InputChecklistTask',
   description: {
     markdown: 'Describes a task to add to a checklist.',
@@ -4786,9 +4788,9 @@ const InputChecklistTask: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputChecklist: ApiType = {
+const InputChecklist = t({
   name: 'InputChecklist',
   description: {
     markdown: 'Describes a checklist to create.',
@@ -4869,9 +4871,9 @@ const InputChecklist: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChecklistTasksDone: ApiType = {
+const ChecklistTasksDone = t({
   name: 'ChecklistTasksDone',
   description: {
     markdown: 'Describes a service message about checklist tasks marked as done or not done.',
@@ -4918,9 +4920,9 @@ const ChecklistTasksDone: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChecklistTasksAdded: ApiType = {
+const ChecklistTasksAdded = t({
   name: 'ChecklistTasksAdded',
   description: {
     markdown: 'Describes a service message about tasks added to a checklist.',
@@ -4954,9 +4956,9 @@ const ChecklistTasksAdded: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Location: ApiType = {
+const Location = t({
   name: 'Location',
   description: {
     markdown: 'This object represents a point on the map.',
@@ -5029,9 +5031,9 @@ const Location: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Venue: ApiType = {
+const Venue = t({
   name: 'Venue',
   description: {
     markdown: 'This object represents a venue.',
@@ -5116,9 +5118,9 @@ const Venue: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const WebAppData: ApiType = {
+const WebAppData = t({
   name: 'WebAppData',
   description: {
     markdown: 'Describes data sent from a [Web App](https://core.telegram.org/bots/webapps) to the bot.',
@@ -5147,9 +5149,9 @@ const WebAppData: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ProximityAlertTriggered: ApiType = {
+const ProximityAlertTriggered = t({
   name: 'ProximityAlertTriggered',
   description: {
     markdown: 'This object represents the content of a service message, sent whenever a user in the chat triggers a proximity alert set by another user.',
@@ -5191,9 +5193,9 @@ const ProximityAlertTriggered: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const MessageAutoDeleteTimerChanged: ApiType = {
+const MessageAutoDeleteTimerChanged = t({
   name: 'MessageAutoDeleteTimerChanged',
   description: {
     markdown: 'This object represents a service message about a change in auto-delete timer settings.',
@@ -5211,9 +5213,9 @@ const MessageAutoDeleteTimerChanged: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatBoostAdded: ApiType = {
+const ChatBoostAdded = t({
   name: 'ChatBoostAdded',
   description: {
     markdown: 'This object represents a service message about a user boosting a chat.',
@@ -5231,9 +5233,9 @@ const ChatBoostAdded: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BackgroundFill: ApiType = {
+const BackgroundFill = t({
   name: 'BackgroundFill',
   description: {
     markdown: 'This object describes the way a background is filled based on the selected colors. Currently, it can be one of  \n-   [BackgroundFillSolid](https://core.telegram.org/bots/api#backgroundfillsolid)\n-   [BackgroundFillGradient](https://core.telegram.org/bots/api#backgroundfillgradient)\n-   [BackgroundFillFreeformGradient](https://core.telegram.org/bots/api#backgroundfillfreeformgradient)',
@@ -5252,9 +5254,9 @@ const BackgroundFill: ApiType = {
       name: 'BackgroundFillFreeformGradient',
     },
   ],
-}
+})
 
-const BackgroundFillSolid: ApiType = {
+const BackgroundFillSolid = t({
   name: 'BackgroundFillSolid',
   description: {
     markdown: 'The background is filled using the selected color.',
@@ -5283,9 +5285,9 @@ const BackgroundFillSolid: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BackgroundFillGradient: ApiType = {
+const BackgroundFillGradient = t({
   name: 'BackgroundFillGradient',
   description: {
     markdown: 'The background is a gradient fill.',
@@ -5336,9 +5338,9 @@ const BackgroundFillGradient: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BackgroundFillFreeformGradient: ApiType = {
+const BackgroundFillFreeformGradient = t({
   name: 'BackgroundFillFreeformGradient',
   description: {
     markdown: 'The background is a freeform gradient that rotates after every message in the chat.',
@@ -5370,9 +5372,9 @@ const BackgroundFillFreeformGradient: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BackgroundType: ApiType = {
+const BackgroundType = t({
   name: 'BackgroundType',
   description: {
     markdown: 'This object describes the type of a background. Currently, it can be one of  \n-   [BackgroundTypeFill](https://core.telegram.org/bots/api#backgroundtypefill)\n-   [BackgroundTypeWallpaper](https://core.telegram.org/bots/api#backgroundtypewallpaper)\n-   [BackgroundTypePattern](https://core.telegram.org/bots/api#backgroundtypepattern)\n-   [BackgroundTypeChatTheme](https://core.telegram.org/bots/api#backgroundtypechattheme)',
@@ -5395,9 +5397,9 @@ const BackgroundType: ApiType = {
       name: 'BackgroundTypeChatTheme',
     },
   ],
-}
+})
 
-const BackgroundTypeFill: ApiType = {
+const BackgroundTypeFill = t({
   name: 'BackgroundTypeFill',
   description: {
     markdown: 'The background is automatically filled based on the selected colors.',
@@ -5438,9 +5440,9 @@ const BackgroundTypeFill: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BackgroundTypeWallpaper: ApiType = {
+const BackgroundTypeWallpaper = t({
   name: 'BackgroundTypeWallpaper',
   description: {
     markdown: 'The background is a wallpaper in the JPEG format.',
@@ -5505,9 +5507,9 @@ const BackgroundTypeWallpaper: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BackgroundTypePattern: ApiType = {
+const BackgroundTypePattern = t({
   name: 'BackgroundTypePattern',
   description: {
     markdown: 'The background is a .PNG or .TGV (gzipped subset of SVG with MIME type “application/x-tgwallpattern”) pattern to be combined with the background fill chosen by the user.',
@@ -5584,9 +5586,9 @@ const BackgroundTypePattern: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BackgroundTypeChatTheme: ApiType = {
+const BackgroundTypeChatTheme = t({
   name: 'BackgroundTypeChatTheme',
   description: {
     markdown: 'The background is taken directly from a built-in chat theme.',
@@ -5615,9 +5617,9 @@ const BackgroundTypeChatTheme: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatBackground: ApiType = {
+const ChatBackground = t({
   name: 'ChatBackground',
   description: {
     markdown: 'This object represents a chat background.',
@@ -5636,9 +5638,9 @@ const ChatBackground: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ForumTopicCreated: ApiType = {
+const ForumTopicCreated = t({
   name: 'ForumTopicCreated',
   description: {
     markdown: 'This object represents a service message about a new forum topic created in the chat.',
@@ -5678,17 +5680,17 @@ const ForumTopicCreated: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ForumTopicClosed: ApiType = {
+const ForumTopicClosed = t({
   name: 'ForumTopicClosed',
   description: {
     markdown: 'This object represents a service message about a forum topic closed in the chat. Currently holds no information.',
   },
   fields: [],
-}
+})
 
-const ForumTopicEdited: ApiType = {
+const ForumTopicEdited = t({
   name: 'ForumTopicEdited',
   description: {
     markdown: 'This object represents a service message about an edited forum topic.',
@@ -5717,33 +5719,33 @@ const ForumTopicEdited: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ForumTopicReopened: ApiType = {
+const ForumTopicReopened = t({
   name: 'ForumTopicReopened',
   description: {
     markdown: 'This object represents a service message about a forum topic reopened in the chat. Currently holds no information.',
   },
   fields: [],
-}
+})
 
-const GeneralForumTopicHidden: ApiType = {
+const GeneralForumTopicHidden = t({
   name: 'GeneralForumTopicHidden',
   description: {
     markdown: 'This object represents a service message about General forum topic hidden in the chat. Currently holds no information.',
   },
   fields: [],
-}
+})
 
-const GeneralForumTopicUnhidden: ApiType = {
+const GeneralForumTopicUnhidden = t({
   name: 'GeneralForumTopicUnhidden',
   description: {
     markdown: 'This object represents a service message about General forum topic unhidden in the chat. Currently holds no information.',
   },
   fields: [],
-}
+})
 
-const SharedUser: ApiType = {
+const SharedUser = t({
   name: 'SharedUser',
   description: {
     markdown: 'This object contains information about a user that was shared with the bot using a [KeyboardButtonRequestUsers](https://core.telegram.org/bots/api#keyboardbuttonrequestusers) button.',
@@ -5809,9 +5811,9 @@ const SharedUser: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const UsersShared: ApiType = {
+const UsersShared = t({
   name: 'UsersShared',
   description: {
     markdown: 'This object contains information about the users whose identifiers were shared with the bot using a [KeyboardButtonRequestUsers](https://core.telegram.org/bots/api#keyboardbuttonrequestusers) button.',
@@ -5844,9 +5846,9 @@ const UsersShared: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatShared: ApiType = {
+const ChatShared = t({
   name: 'ChatShared',
   description: {
     markdown: 'This object contains information about a chat that was shared with the bot using a [KeyboardButtonRequestChat](https://core.telegram.org/bots/api#keyboardbuttonrequestchat) button.',
@@ -5912,9 +5914,9 @@ const ChatShared: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const WriteAccessAllowed: ApiType = {
+const WriteAccessAllowed = t({
   name: 'WriteAccessAllowed',
   description: {
     markdown: 'This object represents a service message about a user allowing a bot to write messages after adding it to the attachment menu, launching a Web App from a link, or accepting an explicit request from a Web App sent by the method [requestWriteAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps).',
@@ -5954,9 +5956,9 @@ const WriteAccessAllowed: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const VideoChatScheduled: ApiType = {
+const VideoChatScheduled = t({
   name: 'VideoChatScheduled',
   description: {
     markdown: 'This object represents a service message about a video chat scheduled in the chat.',
@@ -5974,17 +5976,17 @@ const VideoChatScheduled: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const VideoChatStarted: ApiType = {
+const VideoChatStarted = t({
   name: 'VideoChatStarted',
   description: {
     markdown: 'This object represents a service message about a video chat started in the chat. Currently holds no information.',
   },
   fields: [],
-}
+})
 
-const VideoChatEnded: ApiType = {
+const VideoChatEnded = t({
   name: 'VideoChatEnded',
   description: {
     markdown: 'This object represents a service message about a video chat ended in the chat.',
@@ -6002,9 +6004,9 @@ const VideoChatEnded: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const VideoChatParticipantsInvited: ApiType = {
+const VideoChatParticipantsInvited = t({
   name: 'VideoChatParticipantsInvited',
   description: {
     markdown: 'This object represents a service message about new members invited to a video chat.',
@@ -6026,9 +6028,9 @@ const VideoChatParticipantsInvited: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PaidMessagePriceChanged: ApiType = {
+const PaidMessagePriceChanged = t({
   name: 'PaidMessagePriceChanged',
   description: {
     markdown: 'Describes a service message about a change in the price of paid messages within a chat.',
@@ -6046,9 +6048,9 @@ const PaidMessagePriceChanged: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const DirectMessagePriceChanged: ApiType = {
+const DirectMessagePriceChanged = t({
   name: 'DirectMessagePriceChanged',
   description: {
     markdown: 'Describes a service message about a change in the price of direct messages sent to a channel chat.',
@@ -6077,9 +6079,9 @@ const DirectMessagePriceChanged: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const SuggestedPostApproved: ApiType = {
+const SuggestedPostApproved = t({
   name: 'SuggestedPostApproved',
   description: {
     markdown: 'Describes a service message about the approval of a suggested post.',
@@ -6121,9 +6123,9 @@ const SuggestedPostApproved: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const SuggestedPostApprovalFailed: ApiType = {
+const SuggestedPostApprovalFailed = t({
   name: 'SuggestedPostApprovalFailed',
   description: {
     markdown: 'Describes a service message about the failed approval of a suggested post. Currently, only caused by insufficient user funds at the time of approval.',
@@ -6154,9 +6156,9 @@ const SuggestedPostApprovalFailed: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const SuggestedPostDeclined: ApiType = {
+const SuggestedPostDeclined = t({
   name: 'SuggestedPostDeclined',
   description: {
     markdown: 'Describes a service message about the rejection of a suggested post.',
@@ -6186,9 +6188,9 @@ const SuggestedPostDeclined: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const SuggestedPostPaid: ApiType = {
+const SuggestedPostPaid = t({
   name: 'SuggestedPostPaid',
   description: {
     markdown: 'Describes a service message about a successful payment for a suggested post.',
@@ -6241,9 +6243,9 @@ const SuggestedPostPaid: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const SuggestedPostRefunded: ApiType = {
+const SuggestedPostRefunded = t({
   name: 'SuggestedPostRefunded',
   description: {
     markdown: 'Describes a service message about a payment refund for a suggested post.',
@@ -6273,9 +6275,9 @@ const SuggestedPostRefunded: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const GiveawayCreated: ApiType = {
+const GiveawayCreated = t({
   name: 'GiveawayCreated',
   description: {
     markdown: 'This object represents a service message about the creation of a scheduled giveaway.',
@@ -6293,9 +6295,9 @@ const GiveawayCreated: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Giveaway: ApiType = {
+const Giveaway = t({
   name: 'Giveaway',
   description: {
     markdown: 'This object represents a message about a scheduled giveaway.',
@@ -6410,9 +6412,9 @@ const Giveaway: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const GiveawayWinners: ApiType = {
+const GiveawayWinners = t({
   name: 'GiveawayWinners',
   description: {
     markdown: 'This object represents a message about the completion of a giveaway with public winners.',
@@ -6558,9 +6560,9 @@ const GiveawayWinners: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const GiveawayCompleted: ApiType = {
+const GiveawayCompleted = t({
   name: 'GiveawayCompleted',
   description: {
     markdown: 'This object represents a service message about the completion of a giveaway without public winners.',
@@ -6613,9 +6615,9 @@ const GiveawayCompleted: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const LinkPreviewOptions: ApiType = {
+const LinkPreviewOptions = t({
   name: 'LinkPreviewOptions',
   description: {
     markdown: 'Describes the options used for link preview generation.',
@@ -6677,9 +6679,9 @@ const LinkPreviewOptions: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const SuggestedPostPrice: ApiType = {
+const SuggestedPostPrice = t({
   name: 'SuggestedPostPrice',
   description: {
     markdown: 'Describes the price of a suggested post.',
@@ -6708,9 +6710,9 @@ const SuggestedPostPrice: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const SuggestedPostInfo: ApiType = {
+const SuggestedPostInfo = t({
   name: 'SuggestedPostInfo',
   description: {
     markdown: 'Contains information about a suggested post.',
@@ -6751,9 +6753,9 @@ const SuggestedPostInfo: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const SuggestedPostParameters: ApiType = {
+const SuggestedPostParameters = t({
   name: 'SuggestedPostParameters',
   description: {
     markdown: 'Contains parameters of a post that is being suggested by the bot.',
@@ -6783,9 +6785,9 @@ const SuggestedPostParameters: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const DirectMessagesTopic: ApiType = {
+const DirectMessagesTopic = t({
   name: 'DirectMessagesTopic',
   description: {
     markdown: 'Describes a topic of a direct messages chat.',
@@ -6815,9 +6817,9 @@ const DirectMessagesTopic: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const UserProfilePhotos: ApiType = {
+const UserProfilePhotos = t({
   name: 'UserProfilePhotos',
   description: {
     markdown: 'This object represent a user\'s profile pictures.',
@@ -6853,9 +6855,9 @@ const UserProfilePhotos: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const File: ApiType = {
+const File = t({
   name: 'File',
   description: {
     markdown: 'This object represents a file ready to be downloaded. The file can be downloaded via the link `https://api.telegram.org/file/bot<token>/<file_path>`. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling [getFile](https://core.telegram.org/bots/api#getfile).  \n\nThe maximum file size to download is 20 MB',
@@ -6906,9 +6908,9 @@ const File: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const WebAppInfo: ApiType = {
+const WebAppInfo = t({
   name: 'WebAppInfo',
   description: {
     markdown: 'Describes a [Web App](https://core.telegram.org/bots/webapps).',
@@ -6926,9 +6928,9 @@ const WebAppInfo: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ReplyKeyboardMarkup: ApiType = {
+const ReplyKeyboardMarkup = t({
   name: 'ReplyKeyboardMarkup',
   description: {
     markdown: 'This object represents a [custom keyboard](https://core.telegram.org/bots/features#keyboards) with reply options (see [Introduction to bots](https://core.telegram.org/bots/features#keyboards) for details and examples). Not supported in channels and for messages sent on behalf of a Telegram Business account.',
@@ -7008,9 +7010,9 @@ const ReplyKeyboardMarkup: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const KeyboardButton: ApiType = {
+const KeyboardButton = t({
   name: 'KeyboardButton',
   description: {
     markdown: 'This object represents one button of the reply keyboard. At most one of the optional fields must be used to specify type of the button. For simple text buttons, _String_ can be used instead of this object to specify the button text.  \n**Note:** _request\\_users_ and _request\\_chat_ options will only work in Telegram versions released after 3 February, 2023. Older clients will display _unsupported message_.',
@@ -7098,9 +7100,9 @@ const KeyboardButton: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const KeyboardButtonRequestUsers: ApiType = {
+const KeyboardButtonRequestUsers = t({
   name: 'KeyboardButtonRequestUsers',
   description: {
     markdown: 'This object defines the criteria used to request suitable users. Information about the selected users will be shared with the bot when the corresponding button is pressed. [More about requesting users »](https://core.telegram.org/bots/features#chat-and-user-selection)',
@@ -7184,9 +7186,9 @@ const KeyboardButtonRequestUsers: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const KeyboardButtonRequestChat: ApiType = {
+const KeyboardButtonRequestChat = t({
   name: 'KeyboardButtonRequestChat',
   description: {
     markdown: 'This object defines the criteria used to request a suitable chat. Information about the selected chat will be shared with the bot when the corresponding button is pressed. The bot will be granted requested rights in the chat if appropriate. [More about requesting chats »](https://core.telegram.org/bots/features#chat-and-user-selection).',
@@ -7316,9 +7318,9 @@ const KeyboardButtonRequestChat: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const KeyboardButtonPollType: ApiType = {
+const KeyboardButtonPollType = t({
   name: 'KeyboardButtonPollType',
   description: {
     markdown: 'This object represents type of a poll, which is allowed to be created and sent when the corresponding button is pressed.',
@@ -7336,9 +7338,9 @@ const KeyboardButtonPollType: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ReplyKeyboardRemove: ApiType = {
+const ReplyKeyboardRemove = t({
   name: 'ReplyKeyboardRemove',
   description: {
     markdown: 'Upon receiving a message with this object, Telegram clients will remove the current custom keyboard and display the default letter-keyboard. By default, custom keyboards are displayed until a new keyboard is sent by a bot. An exception is made for one-time keyboards that are hidden immediately after the user presses a button (see [ReplyKeyboardMarkup](https://core.telegram.org/bots/api#replykeyboardmarkup)). Not supported in channels and for messages sent on behalf of a Telegram Business account.',
@@ -7368,9 +7370,9 @@ const ReplyKeyboardRemove: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineKeyboardMarkup: ApiType = {
+const InlineKeyboardMarkup = t({
   name: 'InlineKeyboardMarkup',
   description: {
     markdown: 'This object represents an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) that appears right next to the message it belongs to.',
@@ -7395,9 +7397,9 @@ const InlineKeyboardMarkup: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineKeyboardButton: ApiType = {
+const InlineKeyboardButton = t({
   name: 'InlineKeyboardButton',
   description: {
     markdown: 'This object represents one button of an inline keyboard. Exactly one of the optional fields must be used to specify type of the button.',
@@ -7530,9 +7532,9 @@ const InlineKeyboardButton: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const LoginUrl: ApiType = {
+const LoginUrl = t({
   name: 'LoginUrl',
   description: {
     markdown: 'This object represents a parameter of the inline keyboard button used to automatically authorize a user. Serves as a great replacement for the [Telegram Login Widget](https://core.telegram.org/widgets/login) when the user is coming from Telegram. All the user needs to do is tap/click a button and confirm that they want to log in:  \n[![TITLE](/file/811140909/1631/20k1Z53eiyY.23995/c541e89b74253623d9 "TITLE")](https://core.telegram.org/file/811140015/1734/8VZFkwWXalM.97872/6127fa62d8a0bf2b3c)  \nTelegram apps support these buttons as of [version 5.7](https://telegram.org/blog/privacy-discussions-web-bots#meet-seamless-web-bots).  \n\nSample bot: [@discussbot](https://t.me/discussbot)',
@@ -7583,9 +7585,9 @@ const LoginUrl: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const SwitchInlineQueryChosenChat: ApiType = {
+const SwitchInlineQueryChosenChat = t({
   name: 'SwitchInlineQueryChosenChat',
   description: {
     markdown: 'This object represents an inline button that switches the current user to inline mode in a chosen chat, with an optional default inline query.',
@@ -7647,9 +7649,9 @@ const SwitchInlineQueryChosenChat: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const CopyTextButton: ApiType = {
+const CopyTextButton = t({
   name: 'CopyTextButton',
   description: {
     markdown: 'This object represents an inline keyboard button that copies specified text to the clipboard.',
@@ -7667,9 +7669,9 @@ const CopyTextButton: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const CallbackQuery: ApiType = {
+const CallbackQuery = t({
   name: 'CallbackQuery',
   description: {
     markdown: 'This object represents an incoming callback query from a callback button in an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards). If the button that originated the query was attached to a message sent by the bot, the field _message_ will be present. If the button was attached to a message sent via the bot (in [inline mode](https://core.telegram.org/bots/api#inline-mode)), the field _inline\\_message\\_id_ will be present. Exactly one of the fields _data_ or _game\\_short\\_name_ will be present.  \n\n**NOTE:** After the user presses a callback button, Telegram clients will display a progress bar until you call [answerCallbackQuery](https://core.telegram.org/bots/api#answercallbackquery). It is, therefore, necessary to react by calling [answerCallbackQuery](https://core.telegram.org/bots/api#answercallbackquery) even if no notification to the user is needed (e.g., without specifying any of the optional parameters).',
@@ -7755,9 +7757,9 @@ const CallbackQuery: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ForceReply: ApiType = {
+const ForceReply = t({
   name: 'ForceReply',
   description: {
     markdown: 'Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot\'s message and tapped \'Reply\'). This can be extremely useful if you want to create user-friendly step-by-step interfaces without having to sacrifice [privacy mode](https://core.telegram.org/bots/features#privacy-mode). Not supported in channels and for messages sent on behalf of a Telegram Business account.  \n\n**Example:** A [poll bot](https://t.me/PollBot) for groups runs in privacy mode (only receives commands, replies to its messages and mentions). There could be two ways to create a new poll:\n\n-   Explain the user how to send a command with parameters (e.g. /newpoll question answer1 answer2). May be appealing for hardcore users but lacks modern day polish.\n-   Guide the user through a step-by-step process. \'Please send me your question\', \'Cool, now let\'s add the first answer option\', \'Great. Keep adding answer options, then send /done when you\'re ready\'.\n\nThe last option is definitely more attractive. And if you use [ForceReply](https://core.telegram.org/bots/api#forcereply) in your bot\'s questions, it will receive the user\'s answers even if it only receives replies, commands and mentions - without any extra work for the user.',
@@ -7798,9 +7800,9 @@ const ForceReply: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatPhoto: ApiType = {
+const ChatPhoto = t({
   name: 'ChatPhoto',
   description: {
     markdown: 'This object represents a chat photo.',
@@ -7851,9 +7853,9 @@ const ChatPhoto: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatInviteLink: ApiType = {
+const ChatInviteLink = t({
   name: 'ChatInviteLink',
   description: {
     markdown: 'Represents an invite link for a chat.',
@@ -7982,9 +7984,9 @@ const ChatInviteLink: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatAdministratorRights: ApiType = {
+const ChatAdministratorRights = t({
   name: 'ChatAdministratorRights',
   description: {
     markdown: 'Represents the rights of an administrator in a chat.',
@@ -8167,9 +8169,9 @@ const ChatAdministratorRights: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatMemberUpdated: ApiType = {
+const ChatMemberUpdated = t({
   name: 'ChatMemberUpdated',
   description: {
     markdown: 'This object represents changes in the status of a chat member.',
@@ -8269,9 +8271,9 @@ const ChatMemberUpdated: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatMember: ApiType = {
+const ChatMember = t({
   name: 'ChatMember',
   description: {
     markdown: 'This object contains information about one member of a chat. Currently, the following 6 types of chat members are supported:  \n-   [ChatMemberOwner](https://core.telegram.org/bots/api#chatmemberowner)\n-   [ChatMemberAdministrator](https://core.telegram.org/bots/api#chatmemberadministrator)\n-   [ChatMemberMember](https://core.telegram.org/bots/api#chatmembermember)\n-   [ChatMemberRestricted](https://core.telegram.org/bots/api#chatmemberrestricted)\n-   [ChatMemberLeft](https://core.telegram.org/bots/api#chatmemberleft)\n-   [ChatMemberBanned](https://core.telegram.org/bots/api#chatmemberbanned)',
@@ -8302,9 +8304,9 @@ const ChatMember: ApiType = {
       name: 'ChatMemberBanned',
     },
   ],
-}
+})
 
-const ChatMemberOwner: ApiType = {
+const ChatMemberOwner = t({
   name: 'ChatMemberOwner',
   description: {
     markdown: 'Represents a [chat member](https://core.telegram.org/bots/api#chatmember) that owns the chat and has all administrator privileges.',
@@ -8356,9 +8358,9 @@ const ChatMemberOwner: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatMemberAdministrator: ApiType = {
+const ChatMemberAdministrator = t({
   name: 'ChatMemberAdministrator',
   description: {
     markdown: 'Represents a [chat member](https://core.telegram.org/bots/api#chatmember) that has some additional privileges.',
@@ -8586,9 +8588,9 @@ const ChatMemberAdministrator: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatMemberMember: ApiType = {
+const ChatMemberMember = t({
   name: 'ChatMemberMember',
   description: {
     markdown: 'Represents a [chat member](https://core.telegram.org/bots/api#chatmember) that has no additional privileges or restrictions.',
@@ -8629,9 +8631,9 @@ const ChatMemberMember: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatMemberRestricted: ApiType = {
+const ChatMemberRestricted = t({
   name: 'ChatMemberRestricted',
   description: {
     markdown: 'Represents a [chat member](https://core.telegram.org/bots/api#chatmember) that is under certain restrictions in the chat. Supergroups only.',
@@ -8837,9 +8839,9 @@ const ChatMemberRestricted: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatMemberLeft: ApiType = {
+const ChatMemberLeft = t({
   name: 'ChatMemberLeft',
   description: {
     markdown: 'Represents a [chat member](https://core.telegram.org/bots/api#chatmember) that isn\'t currently a member of the chat, but may join it themselves.',
@@ -8869,9 +8871,9 @@ const ChatMemberLeft: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatMemberBanned: ApiType = {
+const ChatMemberBanned = t({
   name: 'ChatMemberBanned',
   description: {
     markdown: 'Represents a [chat member](https://core.telegram.org/bots/api#chatmember) that was banned in the chat and can\'t return to the chat or view chat messages.',
@@ -8912,9 +8914,9 @@ const ChatMemberBanned: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatJoinRequest: ApiType = {
+const ChatJoinRequest = t({
   name: 'ChatJoinRequest',
   description: {
     markdown: 'Represents a join request sent to a chat.',
@@ -8990,9 +8992,9 @@ const ChatJoinRequest: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatPermissions: ApiType = {
+const ChatPermissions = t({
   name: 'ChatPermissions',
   description: {
     markdown: 'Describes actions that a non-administrator user is allowed to take in a chat.',
@@ -9153,9 +9155,9 @@ const ChatPermissions: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Birthdate: ApiType = {
+const Birthdate = t({
   name: 'Birthdate',
   description: {
     markdown: 'Describes the birthdate of a user.',
@@ -9195,9 +9197,9 @@ const Birthdate: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BusinessIntro: ApiType = {
+const BusinessIntro = t({
   name: 'BusinessIntro',
   description: {
     markdown: 'Contains information about the start page settings of a Telegram Business account.',
@@ -9238,9 +9240,9 @@ const BusinessIntro: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BusinessLocation: ApiType = {
+const BusinessLocation = t({
   name: 'BusinessLocation',
   description: {
     markdown: 'Contains information about the location of a Telegram Business account.',
@@ -9270,9 +9272,9 @@ const BusinessLocation: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BusinessOpeningHoursInterval: ApiType = {
+const BusinessOpeningHoursInterval = t({
   name: 'BusinessOpeningHoursInterval',
   description: {
     markdown: 'Describes an interval of time during which a business is open.',
@@ -9301,9 +9303,9 @@ const BusinessOpeningHoursInterval: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BusinessOpeningHours: ApiType = {
+const BusinessOpeningHours = t({
   name: 'BusinessOpeningHours',
   description: {
     markdown: 'Describes the opening hours of a business.',
@@ -9336,9 +9338,9 @@ const BusinessOpeningHours: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const StoryAreaPosition: ApiType = {
+const StoryAreaPosition = t({
   name: 'StoryAreaPosition',
   description: {
     markdown: 'Describes the position of a clickable area within a story.',
@@ -9411,9 +9413,9 @@ const StoryAreaPosition: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const LocationAddress: ApiType = {
+const LocationAddress = t({
   name: 'LocationAddress',
   description: {
     markdown: 'Describes the physical address of a location.',
@@ -9464,9 +9466,9 @@ const LocationAddress: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const StoryAreaType: ApiType = {
+const StoryAreaType = t({
   name: 'StoryAreaType',
   description: {
     markdown: 'Describes the type of a clickable area on a story. Currently, it can be one of  \n-   [StoryAreaTypeLocation](https://core.telegram.org/bots/api#storyareatypelocation)\n-   [StoryAreaTypeSuggestedReaction](https://core.telegram.org/bots/api#storyareatypesuggestedreaction)\n-   [StoryAreaTypeLink](https://core.telegram.org/bots/api#storyareatypelink)\n-   [StoryAreaTypeWeather](https://core.telegram.org/bots/api#storyareatypeweather)\n-   [StoryAreaTypeUniqueGift](https://core.telegram.org/bots/api#storyareatypeuniquegift)',
@@ -9493,9 +9495,9 @@ const StoryAreaType: ApiType = {
       name: 'StoryAreaTypeUniqueGift',
     },
   ],
-}
+})
 
-const StoryAreaTypeLocation: ApiType = {
+const StoryAreaTypeLocation = t({
   name: 'StoryAreaTypeLocation',
   description: {
     markdown: 'Describes a story area pointing to a location. Currently, a story can have up to 10 location areas.',
@@ -9547,9 +9549,9 @@ const StoryAreaTypeLocation: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const StoryAreaTypeSuggestedReaction: ApiType = {
+const StoryAreaTypeSuggestedReaction = t({
   name: 'StoryAreaTypeSuggestedReaction',
   description: {
     markdown: 'Describes a story area pointing to a suggested reaction. Currently, a story can have up to 5 suggested reaction areas.',
@@ -9601,9 +9603,9 @@ const StoryAreaTypeSuggestedReaction: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const StoryAreaTypeLink: ApiType = {
+const StoryAreaTypeLink = t({
   name: 'StoryAreaTypeLink',
   description: {
     markdown: 'Describes a story area pointing to an HTTP or tg:// link. Currently, a story can have up to 3 link areas.',
@@ -9632,9 +9634,9 @@ const StoryAreaTypeLink: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const StoryAreaTypeWeather: ApiType = {
+const StoryAreaTypeWeather = t({
   name: 'StoryAreaTypeWeather',
   description: {
     markdown: 'Describes a story area containing weather information. Currently, a story can have up to 3 weather areas.',
@@ -9685,9 +9687,9 @@ const StoryAreaTypeWeather: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const StoryAreaTypeUniqueGift: ApiType = {
+const StoryAreaTypeUniqueGift = t({
   name: 'StoryAreaTypeUniqueGift',
   description: {
     markdown: 'Describes a story area pointing to a unique gift. Currently, a story can have at most 1 unique gift area.',
@@ -9716,9 +9718,9 @@ const StoryAreaTypeUniqueGift: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const StoryArea: ApiType = {
+const StoryArea = t({
   name: 'StoryArea',
   description: {
     markdown: 'Describes a clickable area on a story media.',
@@ -9749,9 +9751,9 @@ const StoryArea: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatLocation: ApiType = {
+const ChatLocation = t({
   name: 'ChatLocation',
   description: {
     markdown: 'Represents a location to which a chat is connected.',
@@ -9781,9 +9783,9 @@ const ChatLocation: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ReactionType: ApiType = {
+const ReactionType = t({
   name: 'ReactionType',
   description: {
     markdown: 'This object describes the type of a reaction. Currently, it can be one of  \n-   [ReactionTypeEmoji](https://core.telegram.org/bots/api#reactiontypeemoji)\n-   [ReactionTypeCustomEmoji](https://core.telegram.org/bots/api#reactiontypecustomemoji)\n-   [ReactionTypePaid](https://core.telegram.org/bots/api#reactiontypepaid)',
@@ -9802,9 +9804,9 @@ const ReactionType: ApiType = {
       name: 'ReactionTypePaid',
     },
   ],
-}
+})
 
-const ReactionTypeEmoji: ApiType = {
+const ReactionTypeEmoji = t({
   name: 'ReactionTypeEmoji',
   description: {
     markdown: 'The reaction is based on an emoji.',
@@ -9833,9 +9835,9 @@ const ReactionTypeEmoji: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ReactionTypeCustomEmoji: ApiType = {
+const ReactionTypeCustomEmoji = t({
   name: 'ReactionTypeCustomEmoji',
   description: {
     markdown: 'The reaction is based on a custom emoji.',
@@ -9864,9 +9866,9 @@ const ReactionTypeCustomEmoji: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ReactionTypePaid: ApiType = {
+const ReactionTypePaid = t({
   name: 'ReactionTypePaid',
   description: {
     markdown: 'The reaction is paid.',
@@ -9884,9 +9886,9 @@ const ReactionTypePaid: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ReactionCount: ApiType = {
+const ReactionCount = t({
   name: 'ReactionCount',
   description: {
     markdown: 'Represents a reaction added to a message along with the number of times it was added.',
@@ -9916,9 +9918,9 @@ const ReactionCount: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const MessageReactionUpdated: ApiType = {
+const MessageReactionUpdated = t({
   name: 'MessageReactionUpdated',
   description: {
     markdown: 'This object represents a change of a reaction on a message performed by a user.',
@@ -10013,9 +10015,9 @@ const MessageReactionUpdated: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const MessageReactionCountUpdated: ApiType = {
+const MessageReactionCountUpdated = t({
   name: 'MessageReactionCountUpdated',
   description: {
     markdown: 'This object represents reaction changes on a message with anonymous reactions.',
@@ -10071,9 +10073,9 @@ const MessageReactionCountUpdated: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ForumTopic: ApiType = {
+const ForumTopic = t({
   name: 'ForumTopic',
   description: {
     markdown: 'This object represents a forum topic.',
@@ -10124,9 +10126,9 @@ const ForumTopic: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Gift: ApiType = {
+const Gift = t({
   name: 'Gift',
   description: {
     markdown: 'This object represents a gift that can be sent by the bot.',
@@ -10212,9 +10214,9 @@ const Gift: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Gifts: ApiType = {
+const Gifts = t({
   name: 'Gifts',
   description: {
     markdown: 'This object represent a list of gifts.',
@@ -10236,9 +10238,9 @@ const Gifts: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const UniqueGiftModel: ApiType = {
+const UniqueGiftModel = t({
   name: 'UniqueGiftModel',
   description: {
     markdown: 'This object describes the model of a unique gift.',
@@ -10279,9 +10281,9 @@ const UniqueGiftModel: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const UniqueGiftSymbol: ApiType = {
+const UniqueGiftSymbol = t({
   name: 'UniqueGiftSymbol',
   description: {
     markdown: 'This object describes the symbol shown on the pattern of a unique gift.',
@@ -10322,9 +10324,9 @@ const UniqueGiftSymbol: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const UniqueGiftBackdropColors: ApiType = {
+const UniqueGiftBackdropColors = t({
   name: 'UniqueGiftBackdropColors',
   description: {
     markdown: 'This object describes the colors of the backdrop of a unique gift.',
@@ -10375,9 +10377,9 @@ const UniqueGiftBackdropColors: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const UniqueGiftBackdrop: ApiType = {
+const UniqueGiftBackdrop = t({
   name: 'UniqueGiftBackdrop',
   description: {
     markdown: 'This object describes the backdrop of a unique gift.',
@@ -10418,9 +10420,9 @@ const UniqueGiftBackdrop: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const UniqueGift: ApiType = {
+const UniqueGift = t({
   name: 'UniqueGift',
   description: {
     markdown: 'This object describes a unique gift that was upgraded from a regular gift.',
@@ -10508,9 +10510,9 @@ const UniqueGift: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const GiftInfo: ApiType = {
+const GiftInfo = t({
   name: 'GiftInfo',
   description: {
     markdown: 'Describes a service message about a regular gift that was sent or received.',
@@ -10612,9 +10614,9 @@ const GiftInfo: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const UniqueGiftInfo: ApiType = {
+const UniqueGiftInfo = t({
   name: 'UniqueGiftInfo',
   description: {
     markdown: 'Describes a service message about a unique gift that was sent or received.',
@@ -10688,9 +10690,9 @@ const UniqueGiftInfo: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const OwnedGift: ApiType = {
+const OwnedGift = t({
   name: 'OwnedGift',
   description: {
     markdown: 'This object describes a gift received and owned by a user or a chat. Currently, it can be one of  \n-   [OwnedGiftRegular](https://core.telegram.org/bots/api#ownedgiftregular)\n-   [OwnedGiftUnique](https://core.telegram.org/bots/api#ownedgiftunique)',
@@ -10705,9 +10707,9 @@ const OwnedGift: ApiType = {
       name: 'OwnedGiftUnique',
     },
   ],
-}
+})
 
-const OwnedGiftRegular: ApiType = {
+const OwnedGiftRegular = t({
   name: 'OwnedGiftRegular',
   description: {
     markdown: 'Describes a regular gift owned by a user or a chat.',
@@ -10867,9 +10869,9 @@ const OwnedGiftRegular: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const OwnedGiftUnique: ApiType = {
+const OwnedGiftUnique = t({
   name: 'OwnedGiftUnique',
   description: {
     markdown: 'Describes a unique gift received and owned by a user or a chat.',
@@ -10979,9 +10981,9 @@ const OwnedGiftUnique: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const OwnedGifts: ApiType = {
+const OwnedGifts = t({
   name: 'OwnedGifts',
   description: {
     markdown: 'Contains the list of gifts received and owned by a user or a chat.',
@@ -11025,9 +11027,9 @@ const OwnedGifts: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const AcceptedGiftTypes: ApiType = {
+const AcceptedGiftTypes = t({
   name: 'AcceptedGiftTypes',
   description: {
     markdown: 'This object describes the types of gifts that can be gifted to a user or a chat.',
@@ -11078,9 +11080,9 @@ const AcceptedGiftTypes: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const StarAmount: ApiType = {
+const StarAmount = t({
   name: 'StarAmount',
   description: {
     markdown: 'Describes an amount of Telegram Stars.',
@@ -11109,9 +11111,9 @@ const StarAmount: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BotCommand: ApiType = {
+const BotCommand = t({
   name: 'BotCommand',
   description: {
     markdown: 'This object represents a bot command.',
@@ -11140,9 +11142,9 @@ const BotCommand: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BotCommandScope: ApiType = {
+const BotCommandScope = t({
   name: 'BotCommandScope',
   description: {
     markdown: 'This object represents the scope to which bot commands are applied. Currently, the following 7 scopes are supported:  \n-   [BotCommandScopeDefault](https://core.telegram.org/bots/api#botcommandscopedefault)\n-   [BotCommandScopeAllPrivateChats](https://core.telegram.org/bots/api#botcommandscopeallprivatechats)\n-   [BotCommandScopeAllGroupChats](https://core.telegram.org/bots/api#botcommandscopeallgroupchats)\n-   [BotCommandScopeAllChatAdministrators](https://core.telegram.org/bots/api#botcommandscopeallchatadministrators)\n-   [BotCommandScopeChat](https://core.telegram.org/bots/api#botcommandscopechat)\n-   [BotCommandScopeChatAdministrators](https://core.telegram.org/bots/api#botcommandscopechatadministrators)\n-   [BotCommandScopeChatMember](https://core.telegram.org/bots/api#botcommandscopechatmember)',
@@ -11177,9 +11179,9 @@ const BotCommandScope: ApiType = {
       name: 'BotCommandScopeChatMember',
     },
   ],
-}
+})
 
-const BotCommandScopeDefault: ApiType = {
+const BotCommandScopeDefault = t({
   name: 'BotCommandScopeDefault',
   description: {
     markdown: 'Represents the default [scope](https://core.telegram.org/bots/api#botcommandscope) of bot commands. Default commands are used if no commands with a [narrower scope](https://core.telegram.org/bots/api#determining-list-of-commands) are specified for the user.',
@@ -11197,9 +11199,9 @@ const BotCommandScopeDefault: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BotCommandScopeAllPrivateChats: ApiType = {
+const BotCommandScopeAllPrivateChats = t({
   name: 'BotCommandScopeAllPrivateChats',
   description: {
     markdown: 'Represents the [scope](https://core.telegram.org/bots/api#botcommandscope) of bot commands, covering all private chats.',
@@ -11217,9 +11219,9 @@ const BotCommandScopeAllPrivateChats: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BotCommandScopeAllGroupChats: ApiType = {
+const BotCommandScopeAllGroupChats = t({
   name: 'BotCommandScopeAllGroupChats',
   description: {
     markdown: 'Represents the [scope](https://core.telegram.org/bots/api#botcommandscope) of bot commands, covering all group and supergroup chats.',
@@ -11237,9 +11239,9 @@ const BotCommandScopeAllGroupChats: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BotCommandScopeAllChatAdministrators: ApiType = {
+const BotCommandScopeAllChatAdministrators = t({
   name: 'BotCommandScopeAllChatAdministrators',
   description: {
     markdown: 'Represents the [scope](https://core.telegram.org/bots/api#botcommandscope) of bot commands, covering all group and supergroup chat administrators.',
@@ -11257,9 +11259,9 @@ const BotCommandScopeAllChatAdministrators: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BotCommandScopeChat: ApiType = {
+const BotCommandScopeChat = t({
   name: 'BotCommandScopeChat',
   description: {
     markdown: 'Represents the [scope](https://core.telegram.org/bots/api#botcommandscope) of bot commands, covering a specific chat.',
@@ -11296,9 +11298,9 @@ const BotCommandScopeChat: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BotCommandScopeChatAdministrators: ApiType = {
+const BotCommandScopeChatAdministrators = t({
   name: 'BotCommandScopeChatAdministrators',
   description: {
     markdown: 'Represents the [scope](https://core.telegram.org/bots/api#botcommandscope) of bot commands, covering all administrators of a specific group or supergroup chat.',
@@ -11335,9 +11337,9 @@ const BotCommandScopeChatAdministrators: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BotCommandScopeChatMember: ApiType = {
+const BotCommandScopeChatMember = t({
   name: 'BotCommandScopeChatMember',
   description: {
     markdown: 'Represents the [scope](https://core.telegram.org/bots/api#botcommandscope) of bot commands, covering a specific member of a group or supergroup chat.',
@@ -11385,9 +11387,9 @@ const BotCommandScopeChatMember: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BotName: ApiType = {
+const BotName = t({
   name: 'BotName',
   description: {
     markdown: 'This object represents the bot\'s name.',
@@ -11405,9 +11407,9 @@ const BotName: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BotDescription: ApiType = {
+const BotDescription = t({
   name: 'BotDescription',
   description: {
     markdown: 'This object represents the bot\'s description.',
@@ -11425,9 +11427,9 @@ const BotDescription: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BotShortDescription: ApiType = {
+const BotShortDescription = t({
   name: 'BotShortDescription',
   description: {
     markdown: 'This object represents the bot\'s short description.',
@@ -11445,9 +11447,9 @@ const BotShortDescription: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const MenuButton: ApiType = {
+const MenuButton = t({
   name: 'MenuButton',
   description: {
     markdown: 'This object describes the bot\'s menu button in a private chat. It should be one of  \n-   [MenuButtonCommands](https://core.telegram.org/bots/api#menubuttoncommands)\n-   [MenuButtonWebApp](https://core.telegram.org/bots/api#menubuttonwebapp)\n-   [MenuButtonDefault](https://core.telegram.org/bots/api#menubuttondefault)\n  \nIf a menu button other than [MenuButtonDefault](https://core.telegram.org/bots/api#menubuttondefault) is set for a private chat, then it is applied in the chat. Otherwise the default menu button is applied. By default, the menu button opens the list of bot commands.',
@@ -11466,9 +11468,9 @@ const MenuButton: ApiType = {
       name: 'MenuButtonDefault',
     },
   ],
-}
+})
 
-const MenuButtonCommands: ApiType = {
+const MenuButtonCommands = t({
   name: 'MenuButtonCommands',
   description: {
     markdown: 'Represents a menu button, which opens the bot\'s list of commands.',
@@ -11486,9 +11488,9 @@ const MenuButtonCommands: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const MenuButtonWebApp: ApiType = {
+const MenuButtonWebApp = t({
   name: 'MenuButtonWebApp',
   description: {
     markdown: 'Represents a menu button, which launches a [Web App](https://core.telegram.org/bots/webapps).',
@@ -11529,9 +11531,9 @@ const MenuButtonWebApp: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const MenuButtonDefault: ApiType = {
+const MenuButtonDefault = t({
   name: 'MenuButtonDefault',
   description: {
     markdown: 'Describes that no specific value for the menu button was set.',
@@ -11549,9 +11551,9 @@ const MenuButtonDefault: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatBoostSource: ApiType = {
+const ChatBoostSource = t({
   name: 'ChatBoostSource',
   description: {
     markdown: 'This object describes the source of a chat boost. It can be one of  \n-   [ChatBoostSourcePremium](https://core.telegram.org/bots/api#chatboostsourcepremium)\n-   [ChatBoostSourceGiftCode](https://core.telegram.org/bots/api#chatboostsourcegiftcode)\n-   [ChatBoostSourceGiveaway](https://core.telegram.org/bots/api#chatboostsourcegiveaway)',
@@ -11570,9 +11572,9 @@ const ChatBoostSource: ApiType = {
       name: 'ChatBoostSourceGiveaway',
     },
   ],
-}
+})
 
-const ChatBoostSourcePremium: ApiType = {
+const ChatBoostSourcePremium = t({
   name: 'ChatBoostSourcePremium',
   description: {
     markdown: 'The boost was obtained by subscribing to Telegram Premium or by gifting a Telegram Premium subscription to another user.',
@@ -11602,9 +11604,9 @@ const ChatBoostSourcePremium: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatBoostSourceGiftCode: ApiType = {
+const ChatBoostSourceGiftCode = t({
   name: 'ChatBoostSourceGiftCode',
   description: {
     markdown: 'The boost was obtained by the creation of Telegram Premium gift codes to boost a chat. Each such code boosts the chat 4 times for the duration of the corresponding Telegram Premium subscription.',
@@ -11634,9 +11636,9 @@ const ChatBoostSourceGiftCode: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatBoostSourceGiveaway: ApiType = {
+const ChatBoostSourceGiveaway = t({
   name: 'ChatBoostSourceGiveaway',
   description: {
     markdown: 'The boost was obtained by the creation of a Telegram Premium or a Telegram Star giveaway. This boosts the chat 4 times for the duration of the corresponding Telegram Premium subscription for Telegram Premium giveaways and _prize\\_star\\_count_ / 500 times for one year for Telegram Star giveaways.',
@@ -11700,9 +11702,9 @@ const ChatBoostSourceGiveaway: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatBoost: ApiType = {
+const ChatBoost = t({
   name: 'ChatBoost',
   description: {
     markdown: 'This object contains information about a chat boost.',
@@ -11754,9 +11756,9 @@ const ChatBoost: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatBoostUpdated: ApiType = {
+const ChatBoostUpdated = t({
   name: 'ChatBoostUpdated',
   description: {
     markdown: 'This object represents a boost added to a chat or changed.',
@@ -11787,9 +11789,9 @@ const ChatBoostUpdated: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChatBoostRemoved: ApiType = {
+const ChatBoostRemoved = t({
   name: 'ChatBoostRemoved',
   description: {
     markdown: 'This object represents a boost removed from a chat.',
@@ -11842,9 +11844,9 @@ const ChatBoostRemoved: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const UserChatBoosts: ApiType = {
+const UserChatBoosts = t({
   name: 'UserChatBoosts',
   description: {
     markdown: 'This object represents a list of boosts added to a chat by a user.',
@@ -11866,9 +11868,9 @@ const UserChatBoosts: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BusinessBotRights: ApiType = {
+const BusinessBotRights = t({
   name: 'BusinessBotRights',
   description: {
     markdown: 'Represents the rights of a business bot.',
@@ -12043,9 +12045,9 @@ const BusinessBotRights: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BusinessConnection: ApiType = {
+const BusinessConnection = t({
   name: 'BusinessConnection',
   description: {
     markdown: 'Describes the connection of the bot with a business account.',
@@ -12120,9 +12122,9 @@ const BusinessConnection: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const BusinessMessagesDeleted: ApiType = {
+const BusinessMessagesDeleted = t({
   name: 'BusinessMessagesDeleted',
   description: {
     markdown: 'This object is received when messages are deleted from a connected business account.',
@@ -12166,9 +12168,9 @@ const BusinessMessagesDeleted: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ResponseParameters: ApiType = {
+const ResponseParameters = t({
   name: 'ResponseParameters',
   description: {
     markdown: 'Describes why a request was unsuccessful.',
@@ -12197,9 +12199,9 @@ const ResponseParameters: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputMedia: ApiType = {
+const InputMedia = t({
   name: 'InputMedia',
   description: {
     markdown: 'This object represents the content of a media message to be sent. It should be one of  \n-   [InputMediaAnimation](https://core.telegram.org/bots/api#inputmediaanimation)\n-   [InputMediaDocument](https://core.telegram.org/bots/api#inputmediadocument)\n-   [InputMediaAudio](https://core.telegram.org/bots/api#inputmediaaudio)\n-   [InputMediaPhoto](https://core.telegram.org/bots/api#inputmediaphoto)\n-   [InputMediaVideo](https://core.telegram.org/bots/api#inputmediavideo)',
@@ -12226,9 +12228,9 @@ const InputMedia: ApiType = {
       name: 'InputMediaVideo',
     },
   ],
-}
+})
 
-const InputMediaPhoto: ApiType = {
+const InputMediaPhoto = t({
   name: 'InputMediaPhoto',
   description: {
     markdown: 'Represents a photo to be sent.',
@@ -12316,9 +12318,9 @@ const InputMediaPhoto: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputMediaVideo: ApiType = {
+const InputMediaVideo = t({
   name: 'InputMediaVideo',
   description: {
     markdown: 'Represents a video to be sent.',
@@ -12483,9 +12485,9 @@ const InputMediaVideo: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputMediaAnimation: ApiType = {
+const InputMediaAnimation = t({
   name: 'InputMediaAnimation',
   description: {
     markdown: 'Represents an animation file (GIF or H.264/MPEG-4 AVC video without sound) to be sent.',
@@ -12617,9 +12619,9 @@ const InputMediaAnimation: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputMediaAudio: ApiType = {
+const InputMediaAudio = t({
   name: 'InputMediaAudio',
   description: {
     markdown: 'Represents an audio file to be treated as music to be sent.',
@@ -12729,9 +12731,9 @@ const InputMediaAudio: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputMediaDocument: ApiType = {
+const InputMediaDocument = t({
   name: 'InputMediaDocument',
   description: {
     markdown: 'Represents a general file to be sent.',
@@ -12819,9 +12821,9 @@ const InputMediaDocument: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputPaidMedia: ApiType = {
+const InputPaidMedia = t({
   name: 'InputPaidMedia',
   description: {
     markdown: 'This object describes the paid media to be sent. Currently, it can be one of  \n-   [InputPaidMediaPhoto](https://core.telegram.org/bots/api#inputpaidmediaphoto)\n-   [InputPaidMediaVideo](https://core.telegram.org/bots/api#inputpaidmediavideo)',
@@ -12836,9 +12838,9 @@ const InputPaidMedia: ApiType = {
       name: 'InputPaidMediaVideo',
     },
   ],
-}
+})
 
-const InputPaidMediaPhoto: ApiType = {
+const InputPaidMediaPhoto = t({
   name: 'InputPaidMediaPhoto',
   description: {
     markdown: 'The paid media to send is a photo.',
@@ -12867,9 +12869,9 @@ const InputPaidMediaPhoto: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputPaidMediaVideo: ApiType = {
+const InputPaidMediaVideo = t({
   name: 'InputPaidMediaVideo',
   description: {
     markdown: 'The paid media to send is a video.',
@@ -12975,9 +12977,9 @@ const InputPaidMediaVideo: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputProfilePhoto: ApiType = {
+const InputProfilePhoto = t({
   name: 'InputProfilePhoto',
   description: {
     markdown: 'This object describes a profile photo to set. Currently, it can be one of  \n-   [InputProfilePhotoStatic](https://core.telegram.org/bots/api#inputprofilephotostatic)\n-   [InputProfilePhotoAnimated](https://core.telegram.org/bots/api#inputprofilephotoanimated)',
@@ -12992,9 +12994,9 @@ const InputProfilePhoto: ApiType = {
       name: 'InputProfilePhotoAnimated',
     },
   ],
-}
+})
 
-const InputProfilePhotoStatic: ApiType = {
+const InputProfilePhotoStatic = t({
   name: 'InputProfilePhotoStatic',
   description: {
     markdown: 'A static profile photo in the .JPG format.',
@@ -13023,9 +13025,9 @@ const InputProfilePhotoStatic: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputProfilePhotoAnimated: ApiType = {
+const InputProfilePhotoAnimated = t({
   name: 'InputProfilePhotoAnimated',
   description: {
     markdown: 'An animated profile photo in the MPEG4 format.',
@@ -13065,9 +13067,9 @@ const InputProfilePhotoAnimated: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputStoryContent: ApiType = {
+const InputStoryContent = t({
   name: 'InputStoryContent',
   description: {
     markdown: 'This object describes the content of a story to post. Currently, it can be one of  \n-   [InputStoryContentPhoto](https://core.telegram.org/bots/api#inputstorycontentphoto)\n-   [InputStoryContentVideo](https://core.telegram.org/bots/api#inputstorycontentvideo)',
@@ -13082,9 +13084,9 @@ const InputStoryContent: ApiType = {
       name: 'InputStoryContentVideo',
     },
   ],
-}
+})
 
-const InputStoryContentPhoto: ApiType = {
+const InputStoryContentPhoto = t({
   name: 'InputStoryContentPhoto',
   description: {
     markdown: 'Describes a photo to post as a story.',
@@ -13113,9 +13115,9 @@ const InputStoryContentPhoto: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputStoryContentVideo: ApiType = {
+const InputStoryContentVideo = t({
   name: 'InputStoryContentVideo',
   description: {
     markdown: 'Describes a video to post as a story.',
@@ -13177,9 +13179,9 @@ const InputStoryContentVideo: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Sticker: ApiType = {
+const Sticker = t({
   name: 'Sticker',
   description: {
     markdown: 'This object represents a sticker.',
@@ -13355,9 +13357,9 @@ const Sticker: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const StickerSet: ApiType = {
+const StickerSet = t({
   name: 'StickerSet',
   description: {
     markdown: 'This object represents a sticker set.',
@@ -13424,9 +13426,9 @@ const StickerSet: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const MaskPosition: ApiType = {
+const MaskPosition = t({
   name: 'MaskPosition',
   description: {
     markdown: 'This object describes the position on faces where a mask should be placed by default.',
@@ -13477,9 +13479,9 @@ const MaskPosition: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputSticker: ApiType = {
+const InputSticker = t({
   name: 'InputSticker',
   description: {
     markdown: 'This object describes a sticker to be added to a sticker set.',
@@ -13548,9 +13550,9 @@ const InputSticker: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQuery: ApiType = {
+const InlineQuery = t({
   name: 'InlineQuery',
   description: {
     markdown: 'This object represents an incoming inline query. When the user sends an empty query, your bot could return some default or trending results.',
@@ -13625,9 +13627,9 @@ const InlineQuery: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultsButton: ApiType = {
+const InlineQueryResultsButton = t({
   name: 'InlineQueryResultsButton',
   description: {
     markdown: 'This object represents a button to be shown above inline query results. You **must** use exactly one of the optional fields.',
@@ -13668,9 +13670,9 @@ const InlineQueryResultsButton: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResult: ApiType = {
+const InlineQueryResult = t({
   name: 'InlineQueryResult',
   description: {
     markdown: 'This object represents one result of an inline query. Telegram clients currently support results of the following 20 types:  \n-   [InlineQueryResultCachedAudio](https://core.telegram.org/bots/api#inlinequeryresultcachedaudio)\n-   [InlineQueryResultCachedDocument](https://core.telegram.org/bots/api#inlinequeryresultcacheddocument)\n-   [InlineQueryResultCachedGif](https://core.telegram.org/bots/api#inlinequeryresultcachedgif)\n-   [InlineQueryResultCachedMpeg4Gif](https://core.telegram.org/bots/api#inlinequeryresultcachedmpeg4gif)\n-   [InlineQueryResultCachedPhoto](https://core.telegram.org/bots/api#inlinequeryresultcachedphoto)\n-   [InlineQueryResultCachedSticker](https://core.telegram.org/bots/api#inlinequeryresultcachedsticker)\n-   [InlineQueryResultCachedVideo](https://core.telegram.org/bots/api#inlinequeryresultcachedvideo)\n-   [InlineQueryResultCachedVoice](https://core.telegram.org/bots/api#inlinequeryresultcachedvoice)\n-   [InlineQueryResultArticle](https://core.telegram.org/bots/api#inlinequeryresultarticle)\n-   [InlineQueryResultAudio](https://core.telegram.org/bots/api#inlinequeryresultaudio)\n-   [InlineQueryResultContact](https://core.telegram.org/bots/api#inlinequeryresultcontact)\n-   [InlineQueryResultGame](https://core.telegram.org/bots/api#inlinequeryresultgame)\n-   [InlineQueryResultDocument](https://core.telegram.org/bots/api#inlinequeryresultdocument)\n-   [InlineQueryResultGif](https://core.telegram.org/bots/api#inlinequeryresultgif)\n-   [InlineQueryResultLocation](https://core.telegram.org/bots/api#inlinequeryresultlocation)\n-   [InlineQueryResultMpeg4Gif](https://core.telegram.org/bots/api#inlinequeryresultmpeg4gif)\n-   [InlineQueryResultPhoto](https://core.telegram.org/bots/api#inlinequeryresultphoto)\n-   [InlineQueryResultVenue](https://core.telegram.org/bots/api#inlinequeryresultvenue)\n-   [InlineQueryResultVideo](https://core.telegram.org/bots/api#inlinequeryresultvideo)\n-   [InlineQueryResultVoice](https://core.telegram.org/bots/api#inlinequeryresultvoice)\n  \n**Note:** All URLs passed in inline query results will be available to end users and therefore must be assumed to be **public**.',
@@ -13757,9 +13759,9 @@ const InlineQueryResult: ApiType = {
       name: 'InlineQueryResultVoice',
     },
   ],
-}
+})
 
-const InlineQueryResultArticle: ApiType = {
+const InlineQueryResultArticle = t({
   name: 'InlineQueryResultArticle',
   description: {
     markdown: 'Represents a link to an article or web page.',
@@ -13878,9 +13880,9 @@ const InlineQueryResultArticle: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultPhoto: ApiType = {
+const InlineQueryResultPhoto = t({
   name: 'InlineQueryResultPhoto',
   description: {
     markdown: 'Represents a link to a photo. By default, this photo will be sent by the user with optional caption. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the photo.',
@@ -14047,9 +14049,9 @@ const InlineQueryResultPhoto: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultGif: ApiType = {
+const InlineQueryResultGif = t({
   name: 'InlineQueryResultGif',
   description: {
     markdown: 'Represents a link to an animated GIF file. By default, this animated GIF file will be sent by the user with optional caption. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the animation.',
@@ -14227,9 +14229,9 @@ const InlineQueryResultGif: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultMpeg4Gif: ApiType = {
+const InlineQueryResultMpeg4Gif = t({
   name: 'InlineQueryResultMpeg4Gif',
   description: {
     markdown: 'Represents a link to a video animation (H.264/MPEG-4 AVC video without sound). By default, this animated MPEG-4 file will be sent by the user with optional caption. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the animation.',
@@ -14407,9 +14409,9 @@ const InlineQueryResultMpeg4Gif: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultVideo: ApiType = {
+const InlineQueryResultVideo = t({
   name: 'InlineQueryResultVideo',
   description: {
     markdown: 'Represents a link to a page containing an embedded video player or a video file. By default, this video file will be sent by the user with an optional caption. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the video.  \n\nIf an InlineQueryResultVideo message contains an embedded video (e.g., YouTube), you **must** replace its content using _input\\_message\\_content_.',
@@ -14598,9 +14600,9 @@ const InlineQueryResultVideo: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultAudio: ApiType = {
+const InlineQueryResultAudio = t({
   name: 'InlineQueryResultAudio',
   description: {
     markdown: 'Represents a link to an MP3 audio file. By default, this audio file will be sent by the user. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the audio.',
@@ -14734,9 +14736,9 @@ const InlineQueryResultAudio: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultVoice: ApiType = {
+const InlineQueryResultVoice = t({
   name: 'InlineQueryResultVoice',
   description: {
     markdown: 'Represents a link to a voice recording in an .OGG container encoded with OPUS. By default, this voice recording will be sent by the user. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the the voice message.',
@@ -14859,9 +14861,9 @@ const InlineQueryResultVoice: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultDocument: ApiType = {
+const InlineQueryResultDocument = t({
   name: 'InlineQueryResultDocument',
   description: {
     markdown: 'Represents a link to a file. By default, this file will be sent by the user with an optional caption. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the file. Currently, only **.PDF** and **.ZIP** files can be sent using this method.',
@@ -15028,9 +15030,9 @@ const InlineQueryResultDocument: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultLocation: ApiType = {
+const InlineQueryResultLocation = t({
   name: 'InlineQueryResultLocation',
   description: {
     markdown: 'Represents a location on a map. By default, the location will be sent by the user. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the location.',
@@ -15193,9 +15195,9 @@ const InlineQueryResultLocation: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultVenue: ApiType = {
+const InlineQueryResultVenue = t({
   name: 'InlineQueryResultVenue',
   description: {
     markdown: 'Represents a venue. By default, the venue will be sent by the user. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the venue.',
@@ -15369,9 +15371,9 @@ const InlineQueryResultVenue: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultContact: ApiType = {
+const InlineQueryResultContact = t({
   name: 'InlineQueryResultContact',
   description: {
     markdown: 'Represents a contact with a phone number. By default, this contact will be sent by the user. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the contact.',
@@ -15501,9 +15503,9 @@ const InlineQueryResultContact: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultGame: ApiType = {
+const InlineQueryResultGame = t({
   name: 'InlineQueryResultGame',
   description: {
     markdown: 'Represents a [Game](https://core.telegram.org/bots/api#games).',
@@ -15555,9 +15557,9 @@ const InlineQueryResultGame: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultCachedPhoto: ApiType = {
+const InlineQueryResultCachedPhoto = t({
   name: 'InlineQueryResultCachedPhoto',
   description: {
     markdown: 'Represents a link to a photo stored on the Telegram servers. By default, this photo will be sent by the user with an optional caption. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the photo.',
@@ -15691,9 +15693,9 @@ const InlineQueryResultCachedPhoto: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultCachedGif: ApiType = {
+const InlineQueryResultCachedGif = t({
   name: 'InlineQueryResultCachedGif',
   description: {
     markdown: 'Represents a link to an animated GIF file stored on the Telegram servers. By default, this animated GIF file will be sent by the user with an optional caption. Alternatively, you can use _input\\_message\\_content_ to send a message with specified content instead of the animation.',
@@ -15816,9 +15818,9 @@ const InlineQueryResultCachedGif: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultCachedMpeg4Gif: ApiType = {
+const InlineQueryResultCachedMpeg4Gif = t({
   name: 'InlineQueryResultCachedMpeg4Gif',
   description: {
     markdown: 'Represents a link to a video animation (H.264/MPEG-4 AVC video without sound) stored on the Telegram servers. By default, this animated MPEG-4 file will be sent by the user with an optional caption. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the animation.',
@@ -15941,9 +15943,9 @@ const InlineQueryResultCachedMpeg4Gif: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultCachedSticker: ApiType = {
+const InlineQueryResultCachedSticker = t({
   name: 'InlineQueryResultCachedSticker',
   description: {
     markdown: 'Represents a link to a sticker stored on the Telegram servers. By default, this sticker will be sent by the user. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the sticker.',
@@ -16007,9 +16009,9 @@ const InlineQueryResultCachedSticker: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultCachedDocument: ApiType = {
+const InlineQueryResultCachedDocument = t({
   name: 'InlineQueryResultCachedDocument',
   description: {
     markdown: 'Represents a link to a file stored on the Telegram servers. By default, this file will be sent by the user with an optional caption. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the file.',
@@ -16132,9 +16134,9 @@ const InlineQueryResultCachedDocument: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultCachedVideo: ApiType = {
+const InlineQueryResultCachedVideo = t({
   name: 'InlineQueryResultCachedVideo',
   description: {
     markdown: 'Represents a link to a video file stored on the Telegram servers. By default, this video file will be sent by the user with an optional caption. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the video.',
@@ -16268,9 +16270,9 @@ const InlineQueryResultCachedVideo: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultCachedVoice: ApiType = {
+const InlineQueryResultCachedVoice = t({
   name: 'InlineQueryResultCachedVoice',
   description: {
     markdown: 'Represents a link to a voice message stored on the Telegram servers. By default, this voice message will be sent by the user. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the voice message.',
@@ -16382,9 +16384,9 @@ const InlineQueryResultCachedVoice: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InlineQueryResultCachedAudio: ApiType = {
+const InlineQueryResultCachedAudio = t({
   name: 'InlineQueryResultCachedAudio',
   description: {
     markdown: 'Represents a link to an MP3 audio file stored on the Telegram servers. By default, this audio file will be sent by the user. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the audio.',
@@ -16485,9 +16487,9 @@ const InlineQueryResultCachedAudio: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputMessageContent: ApiType = {
+const InputMessageContent = t({
   name: 'InputMessageContent',
   description: {
     markdown: 'This object represents the content of a message to be sent as a result of an inline query. Telegram clients currently support the following 5 types:  \n-   [InputTextMessageContent](https://core.telegram.org/bots/api#inputtextmessagecontent)\n-   [InputLocationMessageContent](https://core.telegram.org/bots/api#inputlocationmessagecontent)\n-   [InputVenueMessageContent](https://core.telegram.org/bots/api#inputvenuemessagecontent)\n-   [InputContactMessageContent](https://core.telegram.org/bots/api#inputcontactmessagecontent)\n-   [InputInvoiceMessageContent](https://core.telegram.org/bots/api#inputinvoicemessagecontent)',
@@ -16514,9 +16516,9 @@ const InputMessageContent: ApiType = {
       name: 'InputInvoiceMessageContent',
     },
   ],
-}
+})
 
-const InputTextMessageContent: ApiType = {
+const InputTextMessageContent = t({
   name: 'InputTextMessageContent',
   description: {
     markdown: 'Represents the [content](https://core.telegram.org/bots/api#inputmessagecontent) of a text message to be sent as the result of an inline query.',
@@ -16572,9 +16574,9 @@ const InputTextMessageContent: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputLocationMessageContent: ApiType = {
+const InputLocationMessageContent = t({
   name: 'InputLocationMessageContent',
   description: {
     markdown: 'Represents the [content](https://core.telegram.org/bots/api#inputmessagecontent) of a location message to be sent as the result of an inline query.',
@@ -16647,9 +16649,9 @@ const InputLocationMessageContent: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputVenueMessageContent: ApiType = {
+const InputVenueMessageContent = t({
   name: 'InputVenueMessageContent',
   description: {
     markdown: 'Represents the [content](https://core.telegram.org/bots/api#inputmessagecontent) of a venue message to be sent as the result of an inline query.',
@@ -16744,9 +16746,9 @@ const InputVenueMessageContent: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputContactMessageContent: ApiType = {
+const InputContactMessageContent = t({
   name: 'InputContactMessageContent',
   description: {
     markdown: 'Represents the [content](https://core.telegram.org/bots/api#inputmessagecontent) of a contact message to be sent as the result of an inline query.',
@@ -16797,9 +16799,9 @@ const InputContactMessageContent: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const InputInvoiceMessageContent: ApiType = {
+const InputInvoiceMessageContent = t({
   name: 'InputInvoiceMessageContent',
   description: {
     markdown: 'Represents the [content](https://core.telegram.org/bots/api#inputmessagecontent) of an invoice message to be sent as the result of an inline query.',
@@ -17033,9 +17035,9 @@ const InputInvoiceMessageContent: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ChosenInlineResult: ApiType = {
+const ChosenInlineResult = t({
   name: 'ChosenInlineResult',
   description: {
     markdown: 'Represents a [result](https://core.telegram.org/bots/api#inlinequeryresult) of an inline query that was chosen by the user and sent to their chat partner.  \n**Note:** It is necessary to enable [inline feedback](https://core.telegram.org/bots/inline#collecting-feedback) via [@BotFather](https://t.me/botfather) in order to receive these objects in updates.',
@@ -17099,9 +17101,9 @@ const ChosenInlineResult: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const SentWebAppMessage: ApiType = {
+const SentWebAppMessage = t({
   name: 'SentWebAppMessage',
   description: {
     markdown: 'Describes an inline message sent by a [Web App](https://core.telegram.org/bots/webapps) on behalf of a user.',
@@ -17119,9 +17121,9 @@ const SentWebAppMessage: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PreparedInlineMessage: ApiType = {
+const PreparedInlineMessage = t({
   name: 'PreparedInlineMessage',
   description: {
     markdown: 'Describes an inline message to be sent by a user of a Mini App.',
@@ -17150,9 +17152,9 @@ const PreparedInlineMessage: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const LabeledPrice: ApiType = {
+const LabeledPrice = t({
   name: 'LabeledPrice',
   description: {
     markdown: 'This object represents a portion of the price for goods or services.',
@@ -17181,9 +17183,9 @@ const LabeledPrice: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Invoice: ApiType = {
+const Invoice = t({
   name: 'Invoice',
   description: {
     markdown: 'This object contains basic information about an invoice.',
@@ -17245,9 +17247,9 @@ const Invoice: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ShippingAddress: ApiType = {
+const ShippingAddress = t({
   name: 'ShippingAddress',
   description: {
     markdown: 'This object represents a shipping address.',
@@ -17320,9 +17322,9 @@ const ShippingAddress: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const OrderInfo: ApiType = {
+const OrderInfo = t({
   name: 'OrderInfo',
   description: {
     markdown: 'This object represents information about an order.',
@@ -17374,9 +17376,9 @@ const OrderInfo: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ShippingOption: ApiType = {
+const ShippingOption = t({
   name: 'ShippingOption',
   description: {
     markdown: 'This object represents one shipping option.',
@@ -17420,9 +17422,9 @@ const ShippingOption: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const SuccessfulPayment: ApiType = {
+const SuccessfulPayment = t({
   name: 'SuccessfulPayment',
   description: {
     markdown: 'This object contains basic information about a successful payment. Note that if the buyer initiates a chargeback with the relevant payment provider following this transaction, the funds may be debited from your balance. This is outside of Telegram\'s control.',
@@ -17542,9 +17544,9 @@ const SuccessfulPayment: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const RefundedPayment: ApiType = {
+const RefundedPayment = t({
   name: 'RefundedPayment',
   description: {
     markdown: 'This object contains basic information about a refunded payment.',
@@ -17606,9 +17608,9 @@ const RefundedPayment: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const ShippingQuery: ApiType = {
+const ShippingQuery = t({
   name: 'ShippingQuery',
   description: {
     markdown: 'This object contains information about an incoming shipping query.',
@@ -17661,9 +17663,9 @@ const ShippingQuery: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PreCheckoutQuery: ApiType = {
+const PreCheckoutQuery = t({
   name: 'PreCheckoutQuery',
   description: {
     markdown: 'This object contains information about an incoming pre-checkout query.',
@@ -17749,9 +17751,9 @@ const PreCheckoutQuery: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PaidMediaPurchased: ApiType = {
+const PaidMediaPurchased = t({
   name: 'PaidMediaPurchased',
   description: {
     markdown: 'This object contains information about a paid media purchase.',
@@ -17781,9 +17783,9 @@ const PaidMediaPurchased: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const RevenueWithdrawalState: ApiType = {
+const RevenueWithdrawalState = t({
   name: 'RevenueWithdrawalState',
   description: {
     markdown: 'This object describes the state of a revenue withdrawal operation. Currently, it can be one of  \n-   [RevenueWithdrawalStatePending](https://core.telegram.org/bots/api#revenuewithdrawalstatepending)\n-   [RevenueWithdrawalStateSucceeded](https://core.telegram.org/bots/api#revenuewithdrawalstatesucceeded)\n-   [RevenueWithdrawalStateFailed](https://core.telegram.org/bots/api#revenuewithdrawalstatefailed)',
@@ -17802,9 +17804,9 @@ const RevenueWithdrawalState: ApiType = {
       name: 'RevenueWithdrawalStateFailed',
     },
   ],
-}
+})
 
-const RevenueWithdrawalStatePending: ApiType = {
+const RevenueWithdrawalStatePending = t({
   name: 'RevenueWithdrawalStatePending',
   description: {
     markdown: 'The withdrawal is in progress.',
@@ -17822,9 +17824,9 @@ const RevenueWithdrawalStatePending: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const RevenueWithdrawalStateSucceeded: ApiType = {
+const RevenueWithdrawalStateSucceeded = t({
   name: 'RevenueWithdrawalStateSucceeded',
   description: {
     markdown: 'The withdrawal succeeded.',
@@ -17864,9 +17866,9 @@ const RevenueWithdrawalStateSucceeded: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const RevenueWithdrawalStateFailed: ApiType = {
+const RevenueWithdrawalStateFailed = t({
   name: 'RevenueWithdrawalStateFailed',
   description: {
     markdown: 'The withdrawal failed and the transaction was refunded.',
@@ -17884,9 +17886,9 @@ const RevenueWithdrawalStateFailed: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const AffiliateInfo: ApiType = {
+const AffiliateInfo = t({
   name: 'AffiliateInfo',
   description: {
     markdown: 'Contains information about the affiliate that received a commission via this transaction.',
@@ -17950,9 +17952,9 @@ const AffiliateInfo: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const TransactionPartner: ApiType = {
+const TransactionPartner = t({
   name: 'TransactionPartner',
   description: {
     markdown: 'This object describes the source of a transaction, or its recipient for outgoing transactions. Currently, it can be one of  \n-   [TransactionPartnerUser](https://core.telegram.org/bots/api#transactionpartneruser)\n-   [TransactionPartnerChat](https://core.telegram.org/bots/api#transactionpartnerchat)\n-   [TransactionPartnerAffiliateProgram](https://core.telegram.org/bots/api#transactionpartneraffiliateprogram)\n-   [TransactionPartnerFragment](https://core.telegram.org/bots/api#transactionpartnerfragment)\n-   [TransactionPartnerTelegramAds](https://core.telegram.org/bots/api#transactionpartnertelegramads)\n-   [TransactionPartnerTelegramApi](https://core.telegram.org/bots/api#transactionpartnertelegramapi)\n-   [TransactionPartnerOther](https://core.telegram.org/bots/api#transactionpartnerother)',
@@ -17987,9 +17989,9 @@ const TransactionPartner: ApiType = {
       name: 'TransactionPartnerOther',
     },
   ],
-}
+})
 
-const TransactionPartnerUser: ApiType = {
+const TransactionPartnerUser = t({
   name: 'TransactionPartnerUser',
   description: {
     markdown: 'Describes a transaction with a user.',
@@ -18113,9 +18115,9 @@ const TransactionPartnerUser: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const TransactionPartnerChat: ApiType = {
+const TransactionPartnerChat = t({
   name: 'TransactionPartnerChat',
   description: {
     markdown: 'Describes a transaction with a chat.',
@@ -18157,9 +18159,9 @@ const TransactionPartnerChat: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const TransactionPartnerAffiliateProgram: ApiType = {
+const TransactionPartnerAffiliateProgram = t({
   name: 'TransactionPartnerAffiliateProgram',
   description: {
     markdown: 'Describes the affiliate program that issued the affiliate commission received via this transaction.',
@@ -18200,9 +18202,9 @@ const TransactionPartnerAffiliateProgram: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const TransactionPartnerFragment: ApiType = {
+const TransactionPartnerFragment = t({
   name: 'TransactionPartnerFragment',
   description: {
     markdown: 'Describes a withdrawal transaction with Fragment.',
@@ -18232,9 +18234,9 @@ const TransactionPartnerFragment: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const TransactionPartnerTelegramAds: ApiType = {
+const TransactionPartnerTelegramAds = t({
   name: 'TransactionPartnerTelegramAds',
   description: {
     markdown: 'Describes a withdrawal transaction to the Telegram Ads platform.',
@@ -18252,9 +18254,9 @@ const TransactionPartnerTelegramAds: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const TransactionPartnerTelegramApi: ApiType = {
+const TransactionPartnerTelegramApi = t({
   name: 'TransactionPartnerTelegramApi',
   description: {
     markdown: 'Describes a transaction with payment for [paid broadcasting](https://core.telegram.org/bots/api#paid-broadcasts).',
@@ -18283,9 +18285,9 @@ const TransactionPartnerTelegramApi: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const TransactionPartnerOther: ApiType = {
+const TransactionPartnerOther = t({
   name: 'TransactionPartnerOther',
   description: {
     markdown: 'Describes a transaction with an unknown source or recipient.',
@@ -18303,9 +18305,9 @@ const TransactionPartnerOther: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const StarTransaction: ApiType = {
+const StarTransaction = t({
   name: 'StarTransaction',
   description: {
     markdown: 'Describes a Telegram Star transaction. Note that if the buyer initiates a chargeback with the payment provider from whom they acquired Stars (e.g., Apple, Google) following this transaction, the refunded Stars will be deducted from the bot\'s balance. This is outside of Telegram\'s control.',
@@ -18380,9 +18382,9 @@ const StarTransaction: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const StarTransactions: ApiType = {
+const StarTransactions = t({
   name: 'StarTransactions',
   description: {
     markdown: 'Contains a list of Telegram Star transactions.',
@@ -18404,9 +18406,9 @@ const StarTransactions: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PassportData: ApiType = {
+const PassportData = t({
   name: 'PassportData',
   description: {
     markdown: 'Describes Telegram Passport data shared with the bot by the user.',
@@ -18440,9 +18442,9 @@ const PassportData: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PassportFile: ApiType = {
+const PassportFile = t({
   name: 'PassportFile',
   description: {
     markdown: 'This object represents a file uploaded to Telegram Passport. Currently all Telegram Passport files are in JPEG format when decrypted and don\'t exceed 10MB.',
@@ -18493,9 +18495,9 @@ const PassportFile: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const EncryptedPassportElement: ApiType = {
+const EncryptedPassportElement = t({
   name: 'EncryptedPassportElement',
   description: {
     markdown: 'Describes documents or other Telegram Passport elements shared with the bot by the user.',
@@ -18623,9 +18625,9 @@ const EncryptedPassportElement: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const EncryptedCredentials: ApiType = {
+const EncryptedCredentials = t({
   name: 'EncryptedCredentials',
   description: {
     markdown: 'Describes data required for decrypting and authenticating [EncryptedPassportElement](https://core.telegram.org/bots/api#encryptedpassportelement). See the [Telegram Passport Documentation](https://core.telegram.org/passport#receiving-information) for a complete description of the data decryption and authentication processes.',
@@ -18665,9 +18667,9 @@ const EncryptedCredentials: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PassportElementError: ApiType = {
+const PassportElementError = t({
   name: 'PassportElementError',
   description: {
     markdown: 'This object represents an error in the Telegram Passport element which was submitted that should be resolved by the user. It should be one of:  \n-   [PassportElementErrorDataField](https://core.telegram.org/bots/api#passportelementerrordatafield)\n-   [PassportElementErrorFrontSide](https://core.telegram.org/bots/api#passportelementerrorfrontside)\n-   [PassportElementErrorReverseSide](https://core.telegram.org/bots/api#passportelementerrorreverseside)\n-   [PassportElementErrorSelfie](https://core.telegram.org/bots/api#passportelementerrorselfie)\n-   [PassportElementErrorFile](https://core.telegram.org/bots/api#passportelementerrorfile)\n-   [PassportElementErrorFiles](https://core.telegram.org/bots/api#passportelementerrorfiles)\n-   [PassportElementErrorTranslationFile](https://core.telegram.org/bots/api#passportelementerrortranslationfile)\n-   [PassportElementErrorTranslationFiles](https://core.telegram.org/bots/api#passportelementerrortranslationfiles)\n-   [PassportElementErrorUnspecified](https://core.telegram.org/bots/api#passportelementerrorunspecified)',
@@ -18710,9 +18712,9 @@ const PassportElementError: ApiType = {
       name: 'PassportElementErrorUnspecified',
     },
   ],
-}
+})
 
-const PassportElementErrorDataField: ApiType = {
+const PassportElementErrorDataField = t({
   name: 'PassportElementErrorDataField',
   description: {
     markdown: 'Represents an issue in one of the data fields that was provided by the user. The error is considered resolved when the field\'s value changes.',
@@ -18774,9 +18776,9 @@ const PassportElementErrorDataField: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PassportElementErrorFrontSide: ApiType = {
+const PassportElementErrorFrontSide = t({
   name: 'PassportElementErrorFrontSide',
   description: {
     markdown: 'Represents an issue with the front side of a document. The error is considered resolved when the file with the front side of the document changes.',
@@ -18827,9 +18829,9 @@ const PassportElementErrorFrontSide: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PassportElementErrorReverseSide: ApiType = {
+const PassportElementErrorReverseSide = t({
   name: 'PassportElementErrorReverseSide',
   description: {
     markdown: 'Represents an issue with the reverse side of a document. The error is considered resolved when the file with reverse side of the document changes.',
@@ -18880,9 +18882,9 @@ const PassportElementErrorReverseSide: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PassportElementErrorSelfie: ApiType = {
+const PassportElementErrorSelfie = t({
   name: 'PassportElementErrorSelfie',
   description: {
     markdown: 'Represents an issue with the selfie with a document. The error is considered resolved when the file with the selfie changes.',
@@ -18933,9 +18935,9 @@ const PassportElementErrorSelfie: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PassportElementErrorFile: ApiType = {
+const PassportElementErrorFile = t({
   name: 'PassportElementErrorFile',
   description: {
     markdown: 'Represents an issue with a document scan. The error is considered resolved when the file with the document scan changes.',
@@ -18986,9 +18988,9 @@ const PassportElementErrorFile: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PassportElementErrorFiles: ApiType = {
+const PassportElementErrorFiles = t({
   name: 'PassportElementErrorFiles',
   description: {
     markdown: 'Represents an issue with a list of scans. The error is considered resolved when the list of files containing the scans changes.',
@@ -19042,9 +19044,9 @@ const PassportElementErrorFiles: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PassportElementErrorTranslationFile: ApiType = {
+const PassportElementErrorTranslationFile = t({
   name: 'PassportElementErrorTranslationFile',
   description: {
     markdown: 'Represents an issue with one of the files that constitute the translation of a document. The error is considered resolved when the file changes.',
@@ -19095,9 +19097,9 @@ const PassportElementErrorTranslationFile: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PassportElementErrorTranslationFiles: ApiType = {
+const PassportElementErrorTranslationFiles = t({
   name: 'PassportElementErrorTranslationFiles',
   description: {
     markdown: 'Represents an issue with the translated version of a document. The error is considered resolved when a file with the document translation change.',
@@ -19151,9 +19153,9 @@ const PassportElementErrorTranslationFiles: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const PassportElementErrorUnspecified: ApiType = {
+const PassportElementErrorUnspecified = t({
   name: 'PassportElementErrorUnspecified',
   description: {
     markdown: 'Represents an issue in an unspecified place. The error is considered resolved when new data is added.',
@@ -19204,9 +19206,9 @@ const PassportElementErrorUnspecified: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const Game: ApiType = {
+const Game = t({
   name: 'Game',
   description: {
     markdown: 'This object represents a game. Use BotFather to create and edit games, their short names will act as unique identifiers.',
@@ -19288,17 +19290,17 @@ const Game: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
-const CallbackGame: ApiType = {
+const CallbackGame = t({
   name: 'CallbackGame',
   description: {
     markdown: 'A placeholder, currently holds no information. Use [BotFather](https://t.me/botfather) to set up your game.',
   },
   fields: [],
-}
+})
 
-const GameHighScore: ApiType = {
+const GameHighScore = t({
   name: 'GameHighScore',
   description: {
     markdown: 'This object represents one row of the high scores table for a game.',
@@ -19339,7 +19341,7 @@ const GameHighScore: ApiType = {
       jsonSerialized: false,
     },
   ],
-}
+})
 
 /**
  * Definition of all Bot API types as an object.
