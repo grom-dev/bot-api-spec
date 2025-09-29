@@ -61,8 +61,11 @@ const getUpdates: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'array',
+    of: {
+      kind: 'api-type',
+      name: 'Update',
+    },
   },
 }
 
@@ -155,7 +158,7 @@ const setWebhook: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -179,7 +182,7 @@ const deleteWebhook: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -190,8 +193,8 @@ const getWebhookInfo: ApiMethod = {
   },
   parameters: [],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'WebhookInfo',
   },
 }
 
@@ -202,8 +205,8 @@ const getMe: ApiMethod = {
   },
   parameters: [],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'User',
   },
 }
 
@@ -215,7 +218,7 @@ const logOut: ApiMethod = {
   parameters: [],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -227,7 +230,7 @@ const close: ApiMethod = {
   parameters: [],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -437,8 +440,8 @@ const sendMessage: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -566,8 +569,8 @@ const forwardMessage: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -675,8 +678,11 @@ const forwardMessages: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'array',
+    of: {
+      kind: 'api-type',
+      name: 'MessageId',
+    },
   },
 }
 
@@ -904,8 +910,8 @@ const copyMessage: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'MessageId',
   },
 }
 
@@ -1024,8 +1030,11 @@ const copyMessages: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'array',
+    of: {
+      kind: 'api-type',
+      name: 'MessageId',
+    },
   },
 }
 
@@ -1264,8 +1273,8 @@ const sendPhoto: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -1534,8 +1543,8 @@ const sendAudio: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -1782,8 +1791,8 @@ const sendDocument: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -2115,8 +2124,8 @@ const sendVideo: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -2407,8 +2416,8 @@ const sendAnimation: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -2636,8 +2645,8 @@ const sendVoice: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -2858,8 +2867,8 @@ const sendVideoNote: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -3094,8 +3103,8 @@ const sendPaidMedia: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -3247,8 +3256,11 @@ const sendMediaGroup: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'array',
+    of: {
+      kind: 'api-type',
+      name: 'Message',
+    },
   },
 }
 
@@ -3475,8 +3487,8 @@ const sendLocation: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -3725,8 +3737,8 @@ const sendVenue: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -3931,8 +3943,8 @@ const sendContact: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -4236,8 +4248,8 @@ const sendPoll: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -4340,8 +4352,8 @@ const sendChecklist: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -4513,8 +4525,8 @@ const sendDice: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -4579,7 +4591,7 @@ const sendChatAction: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -4648,7 +4660,7 @@ const setMessageReaction: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -4693,8 +4705,8 @@ const getUserProfilePhotos: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'UserProfilePhotos',
   },
 }
 
@@ -4740,7 +4752,7 @@ const setUserEmojiStatus: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -4763,8 +4775,8 @@ const getFile: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'File',
   },
 }
 
@@ -4829,7 +4841,7 @@ const banChatMember: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -4883,7 +4895,7 @@ const unbanChatMember: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -4960,7 +4972,7 @@ const restrictChatMember: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -5179,7 +5191,7 @@ const promoteChatMember: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -5233,7 +5245,7 @@ const setChatAdministratorCustomTitle: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -5276,7 +5288,7 @@ const banChatSenderChat: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -5319,7 +5331,7 @@ const unbanChatSenderChat: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -5374,7 +5386,7 @@ const setChatPermissions: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -5405,8 +5417,7 @@ const exportChatInviteLink: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'str',
   },
 }
 
@@ -5481,8 +5492,8 @@ const createChatInviteLink: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'ChatInviteLink',
   },
 }
 
@@ -5568,8 +5579,8 @@ const editChatInviteLink: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'ChatInviteLink',
   },
 }
 
@@ -5633,8 +5644,8 @@ const createChatSubscriptionInviteLink: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'ChatInviteLink',
   },
 }
 
@@ -5687,8 +5698,8 @@ const editChatSubscriptionInviteLink: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'ChatInviteLink',
   },
 }
 
@@ -5730,8 +5741,8 @@ const revokeChatInviteLink: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'ChatInviteLink',
   },
 }
 
@@ -5774,7 +5785,7 @@ const approveChatJoinRequest: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -5817,7 +5828,7 @@ const declineChatJoinRequest: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -5860,7 +5871,7 @@ const setChatPhoto: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -5892,7 +5903,7 @@ const deleteChatPhoto: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -5935,7 +5946,7 @@ const setChatTitle: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -5978,7 +5989,7 @@ const setChatDescription: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6043,7 +6054,7 @@ const pinChatMessage: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6097,7 +6108,7 @@ const unpinChatMessage: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6129,7 +6140,7 @@ const unpinAllChatMessages: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6161,7 +6172,7 @@ const leaveChat: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6192,8 +6203,8 @@ const getChat: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'ChatFullInfo',
   },
 }
 
@@ -6224,8 +6235,11 @@ const getChatAdministrators: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'array',
+    of: {
+      kind: 'api-type',
+      name: 'ChatMember',
+    },
   },
 }
 
@@ -6256,8 +6270,7 @@ const getChatMemberCount: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'int32',
   },
 }
 
@@ -6299,8 +6312,8 @@ const getChatMember: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'ChatMember',
   },
 }
 
@@ -6343,7 +6356,7 @@ const setChatStickerSet: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6375,7 +6388,7 @@ const deleteChatStickerSet: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6386,8 +6399,11 @@ const getForumTopicIconStickers: ApiMethod = {
   },
   parameters: [],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'array',
+    of: {
+      kind: 'api-type',
+      name: 'Sticker',
+    },
   },
 }
 
@@ -6451,8 +6467,8 @@ const createForumTopic: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'ForumTopic',
   },
 }
 
@@ -6517,7 +6533,7 @@ const editForumTopic: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6560,7 +6576,7 @@ const closeForumTopic: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6603,7 +6619,7 @@ const reopenForumTopic: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6646,7 +6662,7 @@ const deleteForumTopic: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6689,7 +6705,7 @@ const unpinAllForumTopicMessages: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6732,7 +6748,7 @@ const editGeneralForumTopic: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6764,7 +6780,7 @@ const closeGeneralForumTopic: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6796,7 +6812,7 @@ const reopenGeneralForumTopic: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6828,7 +6844,7 @@ const hideGeneralForumTopic: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6860,7 +6876,7 @@ const unhideGeneralForumTopic: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6892,7 +6908,7 @@ const unpinAllGeneralForumTopicMessages: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -6960,7 +6976,7 @@ const answerCallbackQuery: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7002,8 +7018,8 @@ const getUserChatBoosts: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'UserChatBoosts',
   },
 }
 
@@ -7026,8 +7042,8 @@ const getBusinessConnection: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'BusinessConnection',
   },
 }
 
@@ -7078,7 +7094,7 @@ const setMyCommands: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7114,7 +7130,7 @@ const deleteMyCommands: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7149,8 +7165,11 @@ const getMyCommands: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'array',
+    of: {
+      kind: 'api-type',
+      name: 'BotCommand',
+    },
   },
 }
 
@@ -7185,7 +7204,7 @@ const setMyName: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7208,8 +7227,8 @@ const getMyName: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'BotName',
   },
 }
 
@@ -7244,7 +7263,7 @@ const setMyDescription: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7267,8 +7286,8 @@ const getMyDescription: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'BotDescription',
   },
 }
 
@@ -7303,7 +7322,7 @@ const setMyShortDescription: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7326,8 +7345,8 @@ const getMyShortDescription: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'BotShortDescription',
   },
 }
 
@@ -7363,7 +7382,7 @@ const setChatMenuButton: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7386,8 +7405,8 @@ const getChatMenuButton: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'MenuButton',
   },
 }
 
@@ -7423,7 +7442,7 @@ const setMyDefaultAdministratorRights: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7446,8 +7465,8 @@ const getMyDefaultAdministratorRights: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'ChatAdministratorRights',
   },
 }
 
@@ -7458,8 +7477,8 @@ const getAvailableGifts: ApiMethod = {
   },
   parameters: [],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Gifts',
   },
 }
 
@@ -7561,7 +7580,7 @@ const sendGift: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7644,7 +7663,7 @@ const giftPremiumSubscription: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7679,7 +7698,7 @@ const verifyUser: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7722,7 +7741,7 @@ const verifyChat: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7746,7 +7765,7 @@ const removeUserVerification: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7778,7 +7797,7 @@ const removeChatVerification: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7824,7 +7843,7 @@ const readBusinessMessage: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7862,7 +7881,7 @@ const deleteBusinessMessages: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7908,7 +7927,7 @@ const setBusinessAccountName: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7943,7 +7962,7 @@ const setBusinessAccountUsername: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -7978,7 +7997,7 @@ const setBusinessAccountBio: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -8025,7 +8044,7 @@ const setBusinessAccountProfilePhoto: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -8060,7 +8079,7 @@ const removeBusinessAccountProfilePhoto: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -8107,7 +8126,7 @@ const setBusinessAccountGiftSettings: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -8130,8 +8149,8 @@ const getBusinessAccountStarBalance: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'StarAmount',
   },
 }
 
@@ -8166,7 +8185,7 @@ const transferBusinessAccountStars: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -8277,8 +8296,8 @@ const getBusinessAccountGifts: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'OwnedGifts',
   },
 }
 
@@ -8313,7 +8332,7 @@ const convertGiftToStars: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -8370,7 +8389,7 @@ const upgradeGift: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -8427,7 +8446,7 @@ const transferGift: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -8547,8 +8566,8 @@ const postStory: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Story',
   },
 }
 
@@ -8646,8 +8665,8 @@ const editStory: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Story',
   },
 }
 
@@ -8682,7 +8701,7 @@ const deleteStory: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -8807,8 +8826,16 @@ const editMessageText: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'union',
+    types: [
+      {
+        kind: 'api-type',
+        name: 'Message',
+      },
+      {
+        kind: 'bool',
+      },
+    ],
   },
 }
 
@@ -8932,8 +8959,16 @@ const editMessageCaption: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'union',
+    types: [
+      {
+        kind: 'api-type',
+        name: 'Message',
+      },
+      {
+        kind: 'bool',
+      },
+    ],
   },
 }
 
@@ -9021,8 +9056,16 @@ const editMessageMedia: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'union',
+    types: [
+      {
+        kind: 'api-type',
+        name: 'Message',
+      },
+      {
+        kind: 'bool',
+      },
+    ],
   },
 }
 
@@ -9164,8 +9207,16 @@ const editMessageLiveLocation: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'union',
+    types: [
+      {
+        kind: 'api-type',
+        name: 'Message',
+      },
+      {
+        kind: 'bool',
+      },
+    ],
   },
 }
 
@@ -9241,8 +9292,17 @@ const stopMessageLiveLocation: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'union',
+    types: [
+      {
+        kind: 'api-type',
+        name: 'Message',
+      },
+      {
+        kind: 'bool',
+        literal: true,
+      },
+    ],
   },
 }
 
@@ -9311,8 +9371,8 @@ const editMessageChecklist: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -9388,8 +9448,17 @@ const editMessageReplyMarkup: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'union',
+    types: [
+      {
+        kind: 'api-type',
+        name: 'Message',
+      },
+      {
+        kind: 'bool',
+        literal: true,
+      },
+    ],
   },
 }
 
@@ -9454,8 +9523,8 @@ const stopPoll: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Poll',
   },
 }
 
@@ -9501,7 +9570,7 @@ const approveSuggestedPost: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -9547,7 +9616,7 @@ const declineSuggestedPost: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -9590,7 +9659,7 @@ const deleteMessage: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -9636,7 +9705,7 @@ const deleteMessages: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -9827,8 +9896,8 @@ const sendSticker: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -9851,8 +9920,8 @@ const getStickerSet: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'StickerSet',
   },
 }
 
@@ -9878,8 +9947,11 @@ const getCustomEmojiStickers: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'array',
+    of: {
+      kind: 'api-type',
+      name: 'Sticker',
+    },
   },
 }
 
@@ -9924,8 +9996,8 @@ const uploadStickerFile: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'File',
   },
 }
 
@@ -10008,7 +10080,7 @@ const createNewStickerSet: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -10055,7 +10127,7 @@ const addStickerToSet: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -10090,7 +10162,7 @@ const setStickerPositionInSet: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -10114,7 +10186,7 @@ const deleteStickerFromSet: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -10172,7 +10244,7 @@ const replaceStickerInSet: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -10210,7 +10282,7 @@ const setStickerEmojiList: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -10248,7 +10320,7 @@ const setStickerKeywords: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -10284,7 +10356,7 @@ const setStickerMaskPosition: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -10319,7 +10391,7 @@ const setStickerSetTitle: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -10384,7 +10456,7 @@ const setStickerSetThumbnail: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -10419,7 +10491,7 @@ const setCustomEmojiStickerSetThumbnail: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -10443,7 +10515,7 @@ const deleteStickerSet: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -10527,7 +10599,7 @@ const answerInlineQuery: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -10562,8 +10634,8 @@ const answerWebAppQuery: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'SentWebAppMessage',
   },
 }
 
@@ -10642,8 +10714,8 @@ const savePreparedInlineMessage: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'PreparedInlineMessage',
   },
 }
 
@@ -11014,8 +11086,8 @@ const sendInvoice: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -11276,8 +11348,7 @@ const createInvoiceLink: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'str',
   },
 }
 
@@ -11338,7 +11409,7 @@ const answerShippingQuery: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -11384,7 +11455,7 @@ const answerPreCheckoutQuery: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -11395,8 +11466,8 @@ const getMyStarBalance: ApiMethod = {
   },
   parameters: [],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'StarAmount',
   },
 }
 
@@ -11430,8 +11501,8 @@ const getStarTransactions: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'StarTransactions',
   },
 }
 
@@ -11466,7 +11537,7 @@ const refundStarPayment: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -11512,7 +11583,7 @@ const editUserStarSubscription: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -11551,7 +11622,7 @@ const setPassportDataErrors: ApiMethod = {
   ],
   returnType: {
     kind: 'bool',
-    literal: false,
+    literal: true,
   },
 }
 
@@ -11675,8 +11746,8 @@ const sendGame: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'api-type',
+    name: 'Message',
   },
 }
 
@@ -11765,8 +11836,17 @@ const setGameScore: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'union',
+    types: [
+      {
+        kind: 'api-type',
+        name: 'Message',
+      },
+      {
+        kind: 'bool',
+        literal: true,
+      },
+    ],
   },
 }
 
@@ -11822,8 +11902,11 @@ const getGameHighScores: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
-    literal: false,
+    kind: 'array',
+    of: {
+      kind: 'api-type',
+      name: 'GameHighScore',
+    },
   },
 }
 
