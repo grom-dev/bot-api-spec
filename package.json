@@ -6,7 +6,8 @@
     "typecheck": "tsc",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "generate": "bun run ./scripts/gen.ts"
+    "gen:spec": "bun run ./scripts/gen.ts",
+    "gen:return-types": "bun run ./scripts/gen-return-types.ts"
   },
   "peerDependencies": {
     "typescript": "^5.9.2"

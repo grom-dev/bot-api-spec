@@ -20,11 +20,12 @@ import assert from 'node:assert'
 import { join } from 'node:path'
 import { load } from 'cheerio'
 import Turndown from 'turndown'
+import { returnTypes } from './data/return-types.gen.ts'
 
 const PASCAL_CASE_REGEX = /^[A-Z][a-zA-Z\d]+$/
 const CAMEL_CASE_REGEX = /^[a-z][a-zA-Z]+$/
 const SNAKE_CASE_REGEX = /^[a-z][a-z_\d]+$/
-
+export const UNKOWN_VALUE_TYPE = { kind: 'unknown' } as unknown as ValueType
 const IGNORED_API_TYPES = new Set(['InputFile'])
 
 let $: CheerioAPI
@@ -121,7 +122,8 @@ function parseApiType(name: string, $heading: Cheerio<Element>): ApiType {
 function parseApiMethod(name: string, $heading: Cheerio<Element>): ApiMethod {
   const { table, rest } = sectionElements($heading)
   const description = typeOrMethodDescriptionFromEl($(rest))
-  const returnType = T_bool(false) // TODO
+  const returnTypes_ = returnTypes as Record<string, Record<string, ValueType>>
+  const returnType = returnTypes_[name]?.[description.markdown] ?? UNKOWN_VALUE_TYPE
   if (table) {
     return {
       name,
@@ -544,4 +546,6 @@ function one<T>($el: Cheerio<T>): T {
   return els[0]!
 }
 
-await main()
+if (import.meta.main) {
+  await main()
+}
