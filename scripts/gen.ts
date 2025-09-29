@@ -360,10 +360,9 @@ function paramOrFieldDescriptionFromEl($el: Cheerio<Element>, name: string, type
   let isJsonSerialized = false
   let isInt52 = false
 
-  const OPTIONAL_PREFIX = '_Optional_.'
-  if (markdown.startsWith(OPTIONAL_PREFIX)) {
+  if (markdown.startsWith('_Optional_.')) {
     isOptional = true
-    markdown = markdown.slice(OPTIONAL_PREFIX.length).trim()
+    markdown = markdown.slice('_Optional_.'.length).trim()
   }
 
   // EXCEPTION
