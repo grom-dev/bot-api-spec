@@ -224,10 +224,20 @@ function fieldFromTableRow(
     isOptional,
     isJsonSerialized,
     isInt52,
+    literal,
   } = paramOrFieldDescriptionFromEl($description, name, type)
   if (isInt52) {
     assert(type.kind === 'int32')
     type = T_int52()
+  }
+  if (literal !== undefined) {
+    if (type.kind === 'str') {
+      type = T_str(literal as string)
+    } else if (type.kind === 'int32') {
+      type = T_int32(literal as number)
+    } else if (type.kind === 'bool') {
+      type = T_bool(literal as boolean)
+    }
   }
   return {
     name,
@@ -261,11 +271,21 @@ function paramFromTableRow(
     isOptional,
     isJsonSerialized,
     isInt52,
+    literal,
   } = paramOrFieldDescriptionFromEl($description, name, type)
   assert(!isOptional) // params have separate "Required" column and should not have "_Optional._" prefix
   if (isInt52) {
     assert(type.kind === 'int32')
     type = T_int52()
+  }
+  if (literal !== undefined) {
+    if (type.kind === 'str') {
+      type = T_str(literal as string)
+    } else if (type.kind === 'int32') {
+      type = T_int32(literal as number)
+    } else if (type.kind === 'bool') {
+      type = T_bool(literal as boolean)
+    }
   }
   return {
     name,
@@ -354,11 +374,13 @@ function paramOrFieldDescriptionFromEl($el: Cheerio<Element>, name: string, type
   isOptional: boolean
   isJsonSerialized: boolean
   isInt52: boolean
+  literal?: string | number | boolean
 } {
   let markdown = turndown.turndown(htmlOfAll($el)).trim()
   let isOptional = false
   let isJsonSerialized = false
   let isInt52 = false
+  let literal: string | number | boolean | undefined = undefined
 
   if (markdown.startsWith('_Optional_.')) {
     isOptional = true
@@ -425,11 +447,39 @@ function paramOrFieldDescriptionFromEl($el: Cheerio<Element>, name: string, type
   assert(!(/some programming languages may have difficulty/i.test(markdown)), `some programming languages may have difficulty in description: ${markdown}`)
   assert(!(/64[- ]bit/i.test(markdown)), `64-bit in description: ${markdown}`)
 
+  // Check for "always X" pattern
+  // Handle various formats: "always "value"", "always _value_", "always \"value\"", "always number"
+  const alwaysPatterns = [
+    /\balways\s+[\u201C\u201D""]([^"\u201C\u201D]+)[\u201C\u201D""]/i, // Unicode and regular quotes
+    /\balways\s+_([^_]+)_/i,     // italics
+    /\balways\s+(\d+)/i          // numbers
+  ]
+  
+  let alwaysMatch = null
+  for (const pattern of alwaysPatterns) {
+    alwaysMatch = markdown.match(pattern)
+    if (alwaysMatch) break
+  }
+  
+  if (alwaysMatch) {
+    let literalValue = alwaysMatch[1]
+    // Remove escaped underscores from the literal value
+    literalValue = literalValue.replace(/\\_/g, '_')
+    if (type.kind === 'str') {
+      literal = literalValue
+    } else if (type.kind === 'int32' || type.kind === 'int52') {
+      literal = parseInt(literalValue, 10)
+    } else if (type.kind === 'bool') {
+      literal = literalValue.toLowerCase() === 'true'
+    }
+  }
+
   return {
     description: { markdown },
     isOptional,
     isJsonSerialized,
     isInt52,
+    literal,
   }
 }
 
@@ -441,8 +491,8 @@ function T_bool(literal?: boolean): ValueTypeBoolean {
   return { kind: 'bool', literal }
 }
 
-function T_int32(): ValueTypeInteger32 {
-  return { kind: 'int32' }
+function T_int32(literal?: number): ValueTypeInteger32 {
+  return { kind: 'int32', literal }
 }
 
 function T_int52(): ValueTypeInteger52 {
