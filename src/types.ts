@@ -23,6 +23,8 @@ export interface ApiTypeObject {
    * Fields of the object representing this type.
    */
   fields: Array<FieldOrParam>
+
+  oneOf?: never
 }
 
 export interface ApiTypeOneOf {
@@ -40,6 +42,8 @@ export interface ApiTypeOneOf {
    * Array of possible types this type can be.
    */
   oneOf: Array<ValueTypeApiType>
+
+  fields?: never
 }
 
 export interface ApiMethod {
