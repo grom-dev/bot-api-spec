@@ -1,10 +1,11 @@
 import type { ValueType, ValueTypeApiType } from '../src/index.ts'
 import { join } from 'node:path'
 import { z } from 'zod'
-import { methodList } from '../src/bot-api/index.ts'
+import { methods } from '../src/bot-api/index.ts'
 import { UNKOWN_VALUE_TYPE } from './gen.ts'
 
 async function main() {
+  const methodList = Object.values(methods)
   const llm = new Llm(env('OPENAI_API_KEY'), env('OPENAI_MODEL'))
   console.log(`Generating return types for ${methodList.length} methods...`)
   const returnTypes = {} as Record<string, Record<string, ValueType>>

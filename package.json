@@ -2,24 +2,42 @@
   "name": "@grom.js/bot-api-spec",
   "type": "module",
   "version": "0.1.0",
+  "description": "Telegram Bot API specification as a collection of JavaScript objects in a custom format.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grom-dev/bot-api-spec.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "typecheck": "tsc",
+    "build": "tsdown",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "gen:spec": "bun run ./scripts/gen.ts",
-    "gen:return-types": "bun run ./scripts/gen-return-types.ts"
-  },
-  "peerDependencies": {
-    "typescript": "^5.9.2"
+    "gen:return-types": "bun run ./scripts/gen-return-types.ts",
+    "release": "bumpp"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^5.4.1",
     "@types/bun": "^1.2.22",
     "@types/turndown": "^5.0.5",
+    "bumpp": "^10.2.3",
     "cheerio": "^1.1.2",
     "domhandler": "^5.0.3",
     "eslint": "^9.36.0",
     "eslint-plugin-format": "^1.0.1",
-    "turndown": "^7.2.1"
+    "tsdown": "^0.15.5",
+    "turndown": "^7.2.1",
+    "typescript": "^5.9.2",
+    "zod": "^4.1.11"
   }
 }
