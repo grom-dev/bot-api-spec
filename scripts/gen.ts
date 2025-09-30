@@ -489,18 +489,11 @@ function genTypesModule(types: Array<ApiType>): string {
     '',
     '/**',
     ' * Definition of all Bot API types as an object.',
+    ' * Properties are created in the same order as they appear in the docs.',
     ' */',
-    'export const object = {',
+    'export const types = {',
     ...types.map(({ name }) => `${name},`),
     '}',
-    '',
-    '/**',
-    ' * Definition of all Bot API types as an array.',
-    ' * Order is the same as they appear in the official docs.',
-    ' */',
-    'export const array = [',
-    ...types.map(({ name }) => `${name},`),
-    ']',
   ].join('\n')
 }
 
@@ -518,18 +511,11 @@ function genMethodsModule(methods: Array<ApiMethod>): string {
     '',
     '/**',
     ' * Definition of all Bot API methods as an object.',
+    ' * Properties are created in the same order as they appear in the docs.',
     ' */',
-    'export const object = {',
+    'export const methods = {',
     ...methods.map(({ name }) => `${name},`),
     '}',
-    '',
-    '/**',
-    ' * Definition of all Bot API methods as an array.',
-    ' * Order is the same as they appear in the official docs.',
-    ' */',
-    'export const array = [',
-    ...methods.map(({ name }) => `${name},`),
-    ']',
   ].join('\n')
 }
 

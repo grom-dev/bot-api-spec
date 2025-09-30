@@ -9,12 +9,10 @@ Automatically generate tools, libraries, MCP servers, custom documentations, etc
 ## Usage
 
 ```ts
-import { BotApiSpec } from '@grom.js/bot-api-spec'
+import { types, methods } from '@grom.js/bot-api-spec'
 
-BotApiSpec.methods    // { getUpdates: <definition of getUpdates>, ... }
-BotApiSpec.methodList // [ <definition of getUpdates>, ... ]
-BotApiSpec.types      // { Update: <definition of Update>, ... }
-BotApiSpec.typeList   // [ <definition of Update>, ... }
+console.log(types)   // { Update: <definition of Update>, ... }
+console.log(methods) // { getUpdates: <definition of getUpdates>, ... }
 ```
 
 ## Format
