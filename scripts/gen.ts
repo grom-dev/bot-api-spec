@@ -84,7 +84,7 @@ async function parseBotApi(url: string): Promise<{
 
 function parseApiType(name: string, $heading: Cheerio<Element>): ApiType {
   const { table, rest } = sectionElements($heading)
-  const description = typeOrMethodDescriptionFromEl($(rest))
+  const description: Description = { markdown: toMarkdown($(rest)) }
   if (table) {
     return {
       name,
@@ -121,7 +121,7 @@ function parseApiType(name: string, $heading: Cheerio<Element>): ApiType {
 
 function parseApiMethod(name: string, $heading: Cheerio<Element>): ApiMethod {
   const { table, rest } = sectionElements($heading)
-  const description = typeOrMethodDescriptionFromEl($(rest))
+  const description: Description = { markdown: toMarkdown($(rest)) }
   const returnTypes_ = returnTypes as Record<string, Record<string, ValueType>>
   const returnType = returnTypes_[name]?.[description.markdown] ?? UNKOWN_VALUE_TYPE
   if (table) {
@@ -226,7 +226,7 @@ function fieldFromTableRow(
     isOptional,
     isJsonSerialized,
     isInt52,
-  } = paramOrFieldDescriptionFromEl($description, name, type)
+  } = paramOrFieldDescriptionFromTd($description, name, type)
   if (isInt52) {
     assert(type.type === 'int32')
     type = T_int52()
@@ -263,7 +263,7 @@ function paramFromTableRow(
     isOptional,
     isJsonSerialized,
     isInt52,
-  } = paramOrFieldDescriptionFromEl($description, name, type)
+  } = paramOrFieldDescriptionFromTd($description, name, type)
   assert(!isOptional) // params have separate "Required" column and should not have "_Optional._" prefix
   if (isInt52) {
     assert(type.type === 'int32')
@@ -347,17 +347,14 @@ function isMethodWithoutParams(_name: string, description: Description): boolean
   return /requires no parameters/i.test(description.markdown)
 }
 
-function typeOrMethodDescriptionFromEl($el: Cheerio<Element>): Description {
-  return { markdown: turndown.turndown(htmlOfAll($el)) }
-}
-
-function paramOrFieldDescriptionFromEl($el: Cheerio<Element>, name: string, type: ValueType): {
+function paramOrFieldDescriptionFromTd($td: Cheerio<Element>, name: string, type: ValueType): {
   description: Description
   isOptional: boolean
   isJsonSerialized: boolean
   isInt52: boolean
 } {
-  let markdown = turndown.turndown(htmlOfAll($el)).trim()
+  assert(one($td).tagName === 'td')
+  let markdown = toMarkdown($td)
   let isOptional = false
   let isJsonSerialized = false
   let isInt52 = false
@@ -519,11 +516,8 @@ function genMethodsModule(methods: Array<ApiMethod>): string {
   ].join('\n')
 }
 
-function htmlOfAll($match: Cheerio<Element>): string {
-  return $match
-    .toArray()
-    .map(el => $(el).html() ?? '')
-    .join('<br>')
+function toMarkdown($match: Cheerio<Element>): string {
+  return turndown.turndown($.html($match)).trim()
 }
 
 function one<T>($el: Cheerio<T>): T {
