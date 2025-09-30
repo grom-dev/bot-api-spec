@@ -19,7 +19,7 @@ const Update = t({
     {
       name: 'update_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The update\'s unique identifier. Update identifiers start from a certain positive number and increase sequentially. This identifier becomes especially handy if you\'re using [webhooks](https://core.telegram.org/bots/api#setwebhook), since it allows you to ignore repeated updates or to restore the correct update sequence, should they get out of order. If there are no new updates for at least a week, then identifier of the next update will be chosen randomly instead of sequentially.',
@@ -30,7 +30,7 @@ const Update = t({
     {
       name: 'message',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       description: {
@@ -42,7 +42,7 @@ const Update = t({
     {
       name: 'edited_message',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       description: {
@@ -54,7 +54,7 @@ const Update = t({
     {
       name: 'channel_post',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       description: {
@@ -66,7 +66,7 @@ const Update = t({
     {
       name: 'edited_channel_post',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       description: {
@@ -78,7 +78,7 @@ const Update = t({
     {
       name: 'business_connection',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'BusinessConnection',
       },
       description: {
@@ -90,7 +90,7 @@ const Update = t({
     {
       name: 'business_message',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       description: {
@@ -102,7 +102,7 @@ const Update = t({
     {
       name: 'edited_business_message',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       description: {
@@ -114,7 +114,7 @@ const Update = t({
     {
       name: 'deleted_business_messages',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'BusinessMessagesDeleted',
       },
       description: {
@@ -126,7 +126,7 @@ const Update = t({
     {
       name: 'message_reaction',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'MessageReactionUpdated',
       },
       description: {
@@ -138,7 +138,7 @@ const Update = t({
     {
       name: 'message_reaction_count',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'MessageReactionCountUpdated',
       },
       description: {
@@ -150,7 +150,7 @@ const Update = t({
     {
       name: 'inline_query',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineQuery',
       },
       description: {
@@ -162,7 +162,7 @@ const Update = t({
     {
       name: 'chosen_inline_result',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChosenInlineResult',
       },
       description: {
@@ -174,7 +174,7 @@ const Update = t({
     {
       name: 'callback_query',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'CallbackQuery',
       },
       description: {
@@ -186,7 +186,7 @@ const Update = t({
     {
       name: 'shipping_query',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ShippingQuery',
       },
       description: {
@@ -198,7 +198,7 @@ const Update = t({
     {
       name: 'pre_checkout_query',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PreCheckoutQuery',
       },
       description: {
@@ -210,7 +210,7 @@ const Update = t({
     {
       name: 'purchased_paid_media',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PaidMediaPurchased',
       },
       description: {
@@ -222,7 +222,7 @@ const Update = t({
     {
       name: 'poll',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Poll',
       },
       description: {
@@ -234,7 +234,7 @@ const Update = t({
     {
       name: 'poll_answer',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PollAnswer',
       },
       description: {
@@ -246,7 +246,7 @@ const Update = t({
     {
       name: 'my_chat_member',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatMemberUpdated',
       },
       description: {
@@ -258,7 +258,7 @@ const Update = t({
     {
       name: 'chat_member',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatMemberUpdated',
       },
       description: {
@@ -270,7 +270,7 @@ const Update = t({
     {
       name: 'chat_join_request',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatJoinRequest',
       },
       description: {
@@ -282,7 +282,7 @@ const Update = t({
     {
       name: 'chat_boost',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatBoostUpdated',
       },
       description: {
@@ -294,7 +294,7 @@ const Update = t({
     {
       name: 'removed_chat_boost',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatBoostRemoved',
       },
       description: {
@@ -315,7 +315,7 @@ const WebhookInfo = t({
     {
       name: 'url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Webhook URL, may be empty if webhook is not set up',
@@ -326,7 +326,7 @@ const WebhookInfo = t({
     {
       name: 'has_custom_certificate',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if a custom certificate was provided for webhook certificate checks',
@@ -337,7 +337,7 @@ const WebhookInfo = t({
     {
       name: 'pending_update_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of updates awaiting delivery',
@@ -348,7 +348,7 @@ const WebhookInfo = t({
     {
       name: 'ip_address',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Currently used webhook IP address',
@@ -359,7 +359,7 @@ const WebhookInfo = t({
     {
       name: 'last_error_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unix time for the most recent error that happened when trying to deliver an update via webhook',
@@ -370,7 +370,7 @@ const WebhookInfo = t({
     {
       name: 'last_error_message',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error message in human-readable format for the most recent error that happened when trying to deliver an update via webhook',
@@ -381,7 +381,7 @@ const WebhookInfo = t({
     {
       name: 'last_synchronization_error_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unix time of the most recent error that happened when trying to synchronize available updates with Telegram datacenters',
@@ -392,7 +392,7 @@ const WebhookInfo = t({
     {
       name: 'max_connections',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery',
@@ -403,9 +403,9 @@ const WebhookInfo = t({
     {
       name: 'allowed_updates',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'str',
+          type: 'str',
         },
       },
       description: {
@@ -426,7 +426,7 @@ const User = t({
     {
       name: 'id',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'Unique identifier for this user or bot.',
@@ -437,7 +437,7 @@ const User = t({
     {
       name: 'is_bot',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if this user is a bot',
@@ -448,7 +448,7 @@ const User = t({
     {
       name: 'first_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'User\'s or bot\'s first name',
@@ -459,7 +459,7 @@ const User = t({
     {
       name: 'last_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'User\'s or bot\'s last name',
@@ -470,7 +470,7 @@ const User = t({
     {
       name: 'username',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'User\'s or bot\'s username',
@@ -481,7 +481,7 @@ const User = t({
     {
       name: 'language_code',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: '[IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) of the user\'s language',
@@ -492,7 +492,7 @@ const User = t({
     {
       name: 'is_premium',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -504,7 +504,7 @@ const User = t({
     {
       name: 'added_to_attachment_menu',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -516,7 +516,7 @@ const User = t({
     {
       name: 'can_join_groups',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the bot can be invited to groups. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
@@ -527,7 +527,7 @@ const User = t({
     {
       name: 'can_read_all_group_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if [privacy mode](https://core.telegram.org/bots/features#privacy-mode) is disabled for the bot. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
@@ -538,7 +538,7 @@ const User = t({
     {
       name: 'supports_inline_queries',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the bot supports inline queries. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
@@ -549,7 +549,7 @@ const User = t({
     {
       name: 'can_connect_to_business',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the bot can be connected to a Telegram Business account to receive its messages. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
@@ -560,7 +560,7 @@ const User = t({
     {
       name: 'has_main_web_app',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the bot has a main Web App. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
@@ -580,7 +580,7 @@ const Chat = t({
     {
       name: 'id',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'Unique identifier for this chat.',
@@ -591,7 +591,7 @@ const Chat = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the chat, can be either “private”, “group”, “supergroup” or “channel”',
@@ -602,7 +602,7 @@ const Chat = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title, for supergroups, channels and group chats',
@@ -613,7 +613,7 @@ const Chat = t({
     {
       name: 'username',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Username, for private chats, supergroups and channels if available',
@@ -624,7 +624,7 @@ const Chat = t({
     {
       name: 'first_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'First name of the other party in a private chat',
@@ -635,7 +635,7 @@ const Chat = t({
     {
       name: 'last_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Last name of the other party in a private chat',
@@ -646,7 +646,7 @@ const Chat = t({
     {
       name: 'is_forum',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -658,7 +658,7 @@ const Chat = t({
     {
       name: 'is_direct_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -679,7 +679,7 @@ const ChatFullInfo = t({
     {
       name: 'id',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'Unique identifier for this chat.',
@@ -690,7 +690,7 @@ const ChatFullInfo = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the chat, can be either “private”, “group”, “supergroup” or “channel”',
@@ -701,7 +701,7 @@ const ChatFullInfo = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title, for supergroups, channels and group chats',
@@ -712,7 +712,7 @@ const ChatFullInfo = t({
     {
       name: 'username',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Username, for private chats, supergroups and channels if available',
@@ -723,7 +723,7 @@ const ChatFullInfo = t({
     {
       name: 'first_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'First name of the other party in a private chat',
@@ -734,7 +734,7 @@ const ChatFullInfo = t({
     {
       name: 'last_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Last name of the other party in a private chat',
@@ -745,7 +745,7 @@ const ChatFullInfo = t({
     {
       name: 'is_forum',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -757,7 +757,7 @@ const ChatFullInfo = t({
     {
       name: 'is_direct_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -769,7 +769,7 @@ const ChatFullInfo = t({
     {
       name: 'accent_color_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the accent color for the chat name and backgrounds of the chat photo, reply header, and link preview. See [accent colors](https://core.telegram.org/bots/api#accent-colors) for more details.',
@@ -780,7 +780,7 @@ const ChatFullInfo = t({
     {
       name: 'max_reaction_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The maximum number of reactions that can be set on a message in the chat',
@@ -791,7 +791,7 @@ const ChatFullInfo = t({
     {
       name: 'photo',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatPhoto',
       },
       description: {
@@ -803,9 +803,9 @@ const ChatFullInfo = t({
     {
       name: 'active_usernames',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'str',
+          type: 'str',
         },
       },
       description: {
@@ -817,7 +817,7 @@ const ChatFullInfo = t({
     {
       name: 'birthdate',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Birthdate',
       },
       description: {
@@ -829,7 +829,7 @@ const ChatFullInfo = t({
     {
       name: 'business_intro',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'BusinessIntro',
       },
       description: {
@@ -841,7 +841,7 @@ const ChatFullInfo = t({
     {
       name: 'business_location',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'BusinessLocation',
       },
       description: {
@@ -853,7 +853,7 @@ const ChatFullInfo = t({
     {
       name: 'business_opening_hours',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'BusinessOpeningHours',
       },
       description: {
@@ -865,7 +865,7 @@ const ChatFullInfo = t({
     {
       name: 'personal_chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -877,7 +877,7 @@ const ChatFullInfo = t({
     {
       name: 'parent_chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -889,9 +889,9 @@ const ChatFullInfo = t({
     {
       name: 'available_reactions',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'ReactionType',
         },
       },
@@ -904,7 +904,7 @@ const ChatFullInfo = t({
     {
       name: 'background_custom_emoji_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Custom emoji identifier of the emoji chosen by the chat for the reply header and link preview background',
@@ -915,7 +915,7 @@ const ChatFullInfo = t({
     {
       name: 'profile_accent_color_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the accent color for the chat\'s profile background. See [profile accent colors](https://core.telegram.org/bots/api#profile-accent-colors) for more details.',
@@ -926,7 +926,7 @@ const ChatFullInfo = t({
     {
       name: 'profile_background_custom_emoji_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Custom emoji identifier of the emoji chosen by the chat for its profile background',
@@ -937,7 +937,7 @@ const ChatFullInfo = t({
     {
       name: 'emoji_status_custom_emoji_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Custom emoji identifier of the emoji status of the chat or the other party in a private chat',
@@ -948,7 +948,7 @@ const ChatFullInfo = t({
     {
       name: 'emoji_status_expiration_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Expiration date of the emoji status of the chat or the other party in a private chat, in Unix time, if any',
@@ -959,7 +959,7 @@ const ChatFullInfo = t({
     {
       name: 'bio',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Bio of the other party in a private chat',
@@ -970,7 +970,7 @@ const ChatFullInfo = t({
     {
       name: 'has_private_forwards',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -982,7 +982,7 @@ const ChatFullInfo = t({
     {
       name: 'has_restricted_voice_and_video_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -994,7 +994,7 @@ const ChatFullInfo = t({
     {
       name: 'join_to_send_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1006,7 +1006,7 @@ const ChatFullInfo = t({
     {
       name: 'join_by_request',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1018,7 +1018,7 @@ const ChatFullInfo = t({
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Description, for groups, supergroups and channel chats',
@@ -1029,7 +1029,7 @@ const ChatFullInfo = t({
     {
       name: 'invite_link',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Primary invite link, for groups, supergroups and channel chats',
@@ -1040,7 +1040,7 @@ const ChatFullInfo = t({
     {
       name: 'pinned_message',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       description: {
@@ -1052,7 +1052,7 @@ const ChatFullInfo = t({
     {
       name: 'permissions',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatPermissions',
       },
       description: {
@@ -1064,7 +1064,7 @@ const ChatFullInfo = t({
     {
       name: 'accepted_gift_types',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'AcceptedGiftTypes',
       },
       description: {
@@ -1076,7 +1076,7 @@ const ChatFullInfo = t({
     {
       name: 'can_send_paid_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1088,7 +1088,7 @@ const ChatFullInfo = t({
     {
       name: 'slow_mode_delay',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'For supergroups, the minimum allowed delay between consecutive messages sent by each unprivileged user; in seconds',
@@ -1099,7 +1099,7 @@ const ChatFullInfo = t({
     {
       name: 'unrestrict_boost_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'For supergroups, the minimum number of boosts that a non-administrator user needs to add in order to ignore slow mode and chat permissions',
@@ -1110,7 +1110,7 @@ const ChatFullInfo = t({
     {
       name: 'message_auto_delete_time',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The time after which all messages sent to the chat will be automatically deleted; in seconds',
@@ -1121,7 +1121,7 @@ const ChatFullInfo = t({
     {
       name: 'has_aggressive_anti_spam_enabled',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1133,7 +1133,7 @@ const ChatFullInfo = t({
     {
       name: 'has_hidden_members',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1145,7 +1145,7 @@ const ChatFullInfo = t({
     {
       name: 'has_protected_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1157,7 +1157,7 @@ const ChatFullInfo = t({
     {
       name: 'has_visible_history',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1169,7 +1169,7 @@ const ChatFullInfo = t({
     {
       name: 'sticker_set_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'For supergroups, name of the group sticker set',
@@ -1180,7 +1180,7 @@ const ChatFullInfo = t({
     {
       name: 'can_set_sticker_set',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1192,7 +1192,7 @@ const ChatFullInfo = t({
     {
       name: 'custom_emoji_sticker_set_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'For supergroups, the name of the group\'s custom emoji sticker set. Custom emoji from this set can be used by all users and bots in the group.',
@@ -1203,7 +1203,7 @@ const ChatFullInfo = t({
     {
       name: 'linked_chat_id',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'Unique identifier for the linked chat, i.e. the discussion group identifier for a channel and vice versa; for supergroups and channel chats.',
@@ -1214,7 +1214,7 @@ const ChatFullInfo = t({
     {
       name: 'location',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatLocation',
       },
       description: {
@@ -1235,7 +1235,7 @@ const Message = t({
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique message identifier inside this chat. In specific instances (e.g., message containing a video sent to a big chat), the server might automatically schedule a message instead of sending it immediately. In such cases, this field will be 0 and the relevant message will be unusable until it is actually sent',
@@ -1246,7 +1246,7 @@ const Message = t({
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of a message thread to which the message belongs; for supergroups only',
@@ -1257,7 +1257,7 @@ const Message = t({
     {
       name: 'direct_messages_topic',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'DirectMessagesTopic',
       },
       description: {
@@ -1269,7 +1269,7 @@ const Message = t({
     {
       name: 'from',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -1281,7 +1281,7 @@ const Message = t({
     {
       name: 'sender_chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -1293,7 +1293,7 @@ const Message = t({
     {
       name: 'sender_boost_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'If the sender of the message boosted the chat, the number of boosts added by the user',
@@ -1304,7 +1304,7 @@ const Message = t({
     {
       name: 'sender_business_bot',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -1316,7 +1316,7 @@ const Message = t({
     {
       name: 'date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date the message was sent in Unix time. It is always a positive number, representing a valid date.',
@@ -1327,7 +1327,7 @@ const Message = t({
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection from which the message was received. If non-empty, the message belongs to a chat of the corresponding business account that is independent from any potential bot chat which might share the same identifier.',
@@ -1338,7 +1338,7 @@ const Message = t({
     {
       name: 'chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -1350,7 +1350,7 @@ const Message = t({
     {
       name: 'forward_origin',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'MessageOrigin',
       },
       description: {
@@ -1362,7 +1362,7 @@ const Message = t({
     {
       name: 'is_topic_message',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1374,7 +1374,7 @@ const Message = t({
     {
       name: 'is_automatic_forward',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1386,7 +1386,7 @@ const Message = t({
     {
       name: 'reply_to_message',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       description: {
@@ -1398,7 +1398,7 @@ const Message = t({
     {
       name: 'external_reply',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ExternalReplyInfo',
       },
       description: {
@@ -1410,7 +1410,7 @@ const Message = t({
     {
       name: 'quote',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'TextQuote',
       },
       description: {
@@ -1422,7 +1422,7 @@ const Message = t({
     {
       name: 'reply_to_story',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Story',
       },
       description: {
@@ -1434,7 +1434,7 @@ const Message = t({
     {
       name: 'reply_to_checklist_task_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the specific checklist task that is being replied to',
@@ -1445,7 +1445,7 @@ const Message = t({
     {
       name: 'via_bot',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -1457,7 +1457,7 @@ const Message = t({
     {
       name: 'edit_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date the message was last edited in Unix time',
@@ -1468,7 +1468,7 @@ const Message = t({
     {
       name: 'has_protected_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1480,7 +1480,7 @@ const Message = t({
     {
       name: 'is_from_offline',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1492,7 +1492,7 @@ const Message = t({
     {
       name: 'is_paid_post',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1504,7 +1504,7 @@ const Message = t({
     {
       name: 'media_group_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The unique identifier of a media message group this message belongs to',
@@ -1515,7 +1515,7 @@ const Message = t({
     {
       name: 'author_signature',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Signature of the post author for messages in channels, or the custom title of an anonymous group administrator',
@@ -1526,7 +1526,7 @@ const Message = t({
     {
       name: 'paid_star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of Telegram Stars that were paid by the sender of the message to send it',
@@ -1537,7 +1537,7 @@ const Message = t({
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'For text messages, the actual UTF-8 text of the message',
@@ -1548,9 +1548,9 @@ const Message = t({
     {
       name: 'entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -1563,7 +1563,7 @@ const Message = t({
     {
       name: 'link_preview_options',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'LinkPreviewOptions',
       },
       description: {
@@ -1575,7 +1575,7 @@ const Message = t({
     {
       name: 'suggested_post_info',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostInfo',
       },
       description: {
@@ -1587,7 +1587,7 @@ const Message = t({
     {
       name: 'effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect added to the message',
@@ -1598,7 +1598,7 @@ const Message = t({
     {
       name: 'animation',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Animation',
       },
       description: {
@@ -1610,7 +1610,7 @@ const Message = t({
     {
       name: 'audio',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Audio',
       },
       description: {
@@ -1622,7 +1622,7 @@ const Message = t({
     {
       name: 'document',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Document',
       },
       description: {
@@ -1634,7 +1634,7 @@ const Message = t({
     {
       name: 'paid_media',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PaidMediaInfo',
       },
       description: {
@@ -1646,9 +1646,9 @@ const Message = t({
     {
       name: 'photo',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'PhotoSize',
         },
       },
@@ -1661,7 +1661,7 @@ const Message = t({
     {
       name: 'sticker',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Sticker',
       },
       description: {
@@ -1673,7 +1673,7 @@ const Message = t({
     {
       name: 'story',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Story',
       },
       description: {
@@ -1685,7 +1685,7 @@ const Message = t({
     {
       name: 'video',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Video',
       },
       description: {
@@ -1697,7 +1697,7 @@ const Message = t({
     {
       name: 'video_note',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'VideoNote',
       },
       description: {
@@ -1709,7 +1709,7 @@ const Message = t({
     {
       name: 'voice',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Voice',
       },
       description: {
@@ -1721,7 +1721,7 @@ const Message = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption for the animation, audio, document, paid media, photo, video or voice',
@@ -1732,9 +1732,9 @@ const Message = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -1747,7 +1747,7 @@ const Message = t({
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1759,7 +1759,7 @@ const Message = t({
     {
       name: 'has_media_spoiler',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1771,7 +1771,7 @@ const Message = t({
     {
       name: 'checklist',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Checklist',
       },
       description: {
@@ -1783,7 +1783,7 @@ const Message = t({
     {
       name: 'contact',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Contact',
       },
       description: {
@@ -1795,7 +1795,7 @@ const Message = t({
     {
       name: 'dice',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Dice',
       },
       description: {
@@ -1807,7 +1807,7 @@ const Message = t({
     {
       name: 'game',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Game',
       },
       description: {
@@ -1819,7 +1819,7 @@ const Message = t({
     {
       name: 'poll',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Poll',
       },
       description: {
@@ -1831,7 +1831,7 @@ const Message = t({
     {
       name: 'venue',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Venue',
       },
       description: {
@@ -1843,7 +1843,7 @@ const Message = t({
     {
       name: 'location',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Location',
       },
       description: {
@@ -1855,9 +1855,9 @@ const Message = t({
     {
       name: 'new_chat_members',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'User',
         },
       },
@@ -1870,7 +1870,7 @@ const Message = t({
     {
       name: 'left_chat_member',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -1882,7 +1882,7 @@ const Message = t({
     {
       name: 'new_chat_title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A chat title was changed to this value',
@@ -1893,9 +1893,9 @@ const Message = t({
     {
       name: 'new_chat_photo',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'PhotoSize',
         },
       },
@@ -1908,7 +1908,7 @@ const Message = t({
     {
       name: 'delete_chat_photo',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1920,7 +1920,7 @@ const Message = t({
     {
       name: 'group_chat_created',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1932,7 +1932,7 @@ const Message = t({
     {
       name: 'supergroup_chat_created',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1944,7 +1944,7 @@ const Message = t({
     {
       name: 'channel_chat_created',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -1956,7 +1956,7 @@ const Message = t({
     {
       name: 'message_auto_delete_timer_changed',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'MessageAutoDeleteTimerChanged',
       },
       description: {
@@ -1968,7 +1968,7 @@ const Message = t({
     {
       name: 'migrate_to_chat_id',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'The group has been migrated to a supergroup with the specified identifier.',
@@ -1979,7 +1979,7 @@ const Message = t({
     {
       name: 'migrate_from_chat_id',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'The supergroup has been migrated from a group with the specified identifier.',
@@ -1990,7 +1990,7 @@ const Message = t({
     {
       name: 'pinned_message',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'MaybeInaccessibleMessage',
       },
       description: {
@@ -2002,7 +2002,7 @@ const Message = t({
     {
       name: 'invoice',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Invoice',
       },
       description: {
@@ -2014,7 +2014,7 @@ const Message = t({
     {
       name: 'successful_payment',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuccessfulPayment',
       },
       description: {
@@ -2026,7 +2026,7 @@ const Message = t({
     {
       name: 'refunded_payment',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'RefundedPayment',
       },
       description: {
@@ -2038,7 +2038,7 @@ const Message = t({
     {
       name: 'users_shared',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'UsersShared',
       },
       description: {
@@ -2050,7 +2050,7 @@ const Message = t({
     {
       name: 'chat_shared',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatShared',
       },
       description: {
@@ -2062,7 +2062,7 @@ const Message = t({
     {
       name: 'gift',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'GiftInfo',
       },
       description: {
@@ -2074,7 +2074,7 @@ const Message = t({
     {
       name: 'unique_gift',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'UniqueGiftInfo',
       },
       description: {
@@ -2086,7 +2086,7 @@ const Message = t({
     {
       name: 'connected_website',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The domain name of the website on which the user has logged in. [More about Telegram Login »](https://core.telegram.org/widgets/login)',
@@ -2097,7 +2097,7 @@ const Message = t({
     {
       name: 'write_access_allowed',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'WriteAccessAllowed',
       },
       description: {
@@ -2109,7 +2109,7 @@ const Message = t({
     {
       name: 'passport_data',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PassportData',
       },
       description: {
@@ -2121,7 +2121,7 @@ const Message = t({
     {
       name: 'proximity_alert_triggered',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ProximityAlertTriggered',
       },
       description: {
@@ -2133,7 +2133,7 @@ const Message = t({
     {
       name: 'boost_added',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatBoostAdded',
       },
       description: {
@@ -2145,7 +2145,7 @@ const Message = t({
     {
       name: 'chat_background_set',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatBackground',
       },
       description: {
@@ -2157,7 +2157,7 @@ const Message = t({
     {
       name: 'checklist_tasks_done',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChecklistTasksDone',
       },
       description: {
@@ -2169,7 +2169,7 @@ const Message = t({
     {
       name: 'checklist_tasks_added',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChecklistTasksAdded',
       },
       description: {
@@ -2181,7 +2181,7 @@ const Message = t({
     {
       name: 'direct_message_price_changed',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'DirectMessagePriceChanged',
       },
       description: {
@@ -2193,7 +2193,7 @@ const Message = t({
     {
       name: 'forum_topic_created',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ForumTopicCreated',
       },
       description: {
@@ -2205,7 +2205,7 @@ const Message = t({
     {
       name: 'forum_topic_edited',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ForumTopicEdited',
       },
       description: {
@@ -2217,7 +2217,7 @@ const Message = t({
     {
       name: 'forum_topic_closed',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ForumTopicClosed',
       },
       description: {
@@ -2229,7 +2229,7 @@ const Message = t({
     {
       name: 'forum_topic_reopened',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ForumTopicReopened',
       },
       description: {
@@ -2241,7 +2241,7 @@ const Message = t({
     {
       name: 'general_forum_topic_hidden',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'GeneralForumTopicHidden',
       },
       description: {
@@ -2253,7 +2253,7 @@ const Message = t({
     {
       name: 'general_forum_topic_unhidden',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'GeneralForumTopicUnhidden',
       },
       description: {
@@ -2265,7 +2265,7 @@ const Message = t({
     {
       name: 'giveaway_created',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'GiveawayCreated',
       },
       description: {
@@ -2277,7 +2277,7 @@ const Message = t({
     {
       name: 'giveaway',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Giveaway',
       },
       description: {
@@ -2289,7 +2289,7 @@ const Message = t({
     {
       name: 'giveaway_winners',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'GiveawayWinners',
       },
       description: {
@@ -2301,7 +2301,7 @@ const Message = t({
     {
       name: 'giveaway_completed',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'GiveawayCompleted',
       },
       description: {
@@ -2313,7 +2313,7 @@ const Message = t({
     {
       name: 'paid_message_price_changed',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PaidMessagePriceChanged',
       },
       description: {
@@ -2325,7 +2325,7 @@ const Message = t({
     {
       name: 'suggested_post_approved',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostApproved',
       },
       description: {
@@ -2337,7 +2337,7 @@ const Message = t({
     {
       name: 'suggested_post_approval_failed',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostApprovalFailed',
       },
       description: {
@@ -2349,7 +2349,7 @@ const Message = t({
     {
       name: 'suggested_post_declined',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostDeclined',
       },
       description: {
@@ -2361,7 +2361,7 @@ const Message = t({
     {
       name: 'suggested_post_paid',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostPaid',
       },
       description: {
@@ -2373,7 +2373,7 @@ const Message = t({
     {
       name: 'suggested_post_refunded',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostRefunded',
       },
       description: {
@@ -2385,7 +2385,7 @@ const Message = t({
     {
       name: 'video_chat_scheduled',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'VideoChatScheduled',
       },
       description: {
@@ -2397,7 +2397,7 @@ const Message = t({
     {
       name: 'video_chat_started',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'VideoChatStarted',
       },
       description: {
@@ -2409,7 +2409,7 @@ const Message = t({
     {
       name: 'video_chat_ended',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'VideoChatEnded',
       },
       description: {
@@ -2421,7 +2421,7 @@ const Message = t({
     {
       name: 'video_chat_participants_invited',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'VideoChatParticipantsInvited',
       },
       description: {
@@ -2433,7 +2433,7 @@ const Message = t({
     {
       name: 'web_app_data',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'WebAppData',
       },
       description: {
@@ -2445,7 +2445,7 @@ const Message = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -2466,7 +2466,7 @@ const MessageId = t({
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique message identifier. In specific instances (e.g., message containing a video sent to a big chat), the server might automatically schedule a message instead of sending it immediately. In such cases, this field will be 0 and the relevant message will be unusable until it is actually sent',
@@ -2486,7 +2486,7 @@ const InaccessibleMessage = t({
     {
       name: 'chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -2498,7 +2498,7 @@ const InaccessibleMessage = t({
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique message identifier inside the chat',
@@ -2509,7 +2509,7 @@ const InaccessibleMessage = t({
     {
       name: 'date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Always 0. The field can be used to differentiate regular and inaccessible messages.',
@@ -2527,11 +2527,11 @@ const MaybeInaccessibleMessage = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'Message',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InaccessibleMessage',
     },
   ],
@@ -2546,7 +2546,7 @@ const MessageEntity = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the entity. Currently, can be “mention” (`@username`), “hashtag” (`#hashtag` or `#hashtag@chatusername`), “cashtag” (`$USD` or `$USD@chatusername`), “bot\\_command” (`/start@jobs_bot`), “url” (`https://telegram.org`), “email” (`do-not-reply@telegram.org`), “phone\\_number” (`+1-212-555-0123`), “bold” (**bold text**), “italic” (_italic text_), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “blockquote” (block quotation), “expandable\\_blockquote” (collapsed-by-default block quotation), “code” (monowidth string), “pre” (monowidth block), “text\\_link” (for clickable text URLs), “text\\_mention” (for users [without usernames](https://telegram.org/blog/edit#new-mentions)), “custom\\_emoji” (for inline custom emoji stickers)',
@@ -2557,7 +2557,7 @@ const MessageEntity = t({
     {
       name: 'offset',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Offset in [UTF-16 code units](https://core.telegram.org/api/entities#entity-length) to the start of the entity',
@@ -2568,7 +2568,7 @@ const MessageEntity = t({
     {
       name: 'length',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Length of the entity in [UTF-16 code units](https://core.telegram.org/api/entities#entity-length)',
@@ -2579,7 +2579,7 @@ const MessageEntity = t({
     {
       name: 'url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'For “text\\_link” only, URL that will be opened after user taps on the text',
@@ -2590,7 +2590,7 @@ const MessageEntity = t({
     {
       name: 'user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -2602,7 +2602,7 @@ const MessageEntity = t({
     {
       name: 'language',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'For “pre” only, the programming language of the entity text',
@@ -2613,7 +2613,7 @@ const MessageEntity = t({
     {
       name: 'custom_emoji_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'For “custom\\_emoji” only, unique identifier of the custom emoji. Use [getCustomEmojiStickers](https://core.telegram.org/bots/api#getcustomemojistickers) to get full information about the sticker',
@@ -2633,7 +2633,7 @@ const TextQuote = t({
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text of the quoted part of a message that is replied to by the given message',
@@ -2644,9 +2644,9 @@ const TextQuote = t({
     {
       name: 'entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -2659,7 +2659,7 @@ const TextQuote = t({
     {
       name: 'position',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Approximate quote position in the original message in UTF-16 code units as specified by the sender',
@@ -2670,7 +2670,7 @@ const TextQuote = t({
     {
       name: 'is_manual',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -2691,7 +2691,7 @@ const ExternalReplyInfo = t({
     {
       name: 'origin',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'MessageOrigin',
       },
       description: {
@@ -2703,7 +2703,7 @@ const ExternalReplyInfo = t({
     {
       name: 'chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -2715,7 +2715,7 @@ const ExternalReplyInfo = t({
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique message identifier inside the original chat. Available only if the original chat is a supergroup or a channel.',
@@ -2726,7 +2726,7 @@ const ExternalReplyInfo = t({
     {
       name: 'link_preview_options',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'LinkPreviewOptions',
       },
       description: {
@@ -2738,7 +2738,7 @@ const ExternalReplyInfo = t({
     {
       name: 'animation',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Animation',
       },
       description: {
@@ -2750,7 +2750,7 @@ const ExternalReplyInfo = t({
     {
       name: 'audio',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Audio',
       },
       description: {
@@ -2762,7 +2762,7 @@ const ExternalReplyInfo = t({
     {
       name: 'document',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Document',
       },
       description: {
@@ -2774,7 +2774,7 @@ const ExternalReplyInfo = t({
     {
       name: 'paid_media',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PaidMediaInfo',
       },
       description: {
@@ -2786,9 +2786,9 @@ const ExternalReplyInfo = t({
     {
       name: 'photo',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'PhotoSize',
         },
       },
@@ -2801,7 +2801,7 @@ const ExternalReplyInfo = t({
     {
       name: 'sticker',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Sticker',
       },
       description: {
@@ -2813,7 +2813,7 @@ const ExternalReplyInfo = t({
     {
       name: 'story',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Story',
       },
       description: {
@@ -2825,7 +2825,7 @@ const ExternalReplyInfo = t({
     {
       name: 'video',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Video',
       },
       description: {
@@ -2837,7 +2837,7 @@ const ExternalReplyInfo = t({
     {
       name: 'video_note',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'VideoNote',
       },
       description: {
@@ -2849,7 +2849,7 @@ const ExternalReplyInfo = t({
     {
       name: 'voice',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Voice',
       },
       description: {
@@ -2861,7 +2861,7 @@ const ExternalReplyInfo = t({
     {
       name: 'has_media_spoiler',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -2873,7 +2873,7 @@ const ExternalReplyInfo = t({
     {
       name: 'checklist',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Checklist',
       },
       description: {
@@ -2885,7 +2885,7 @@ const ExternalReplyInfo = t({
     {
       name: 'contact',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Contact',
       },
       description: {
@@ -2897,7 +2897,7 @@ const ExternalReplyInfo = t({
     {
       name: 'dice',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Dice',
       },
       description: {
@@ -2909,7 +2909,7 @@ const ExternalReplyInfo = t({
     {
       name: 'game',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Game',
       },
       description: {
@@ -2921,7 +2921,7 @@ const ExternalReplyInfo = t({
     {
       name: 'giveaway',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Giveaway',
       },
       description: {
@@ -2933,7 +2933,7 @@ const ExternalReplyInfo = t({
     {
       name: 'giveaway_winners',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'GiveawayWinners',
       },
       description: {
@@ -2945,7 +2945,7 @@ const ExternalReplyInfo = t({
     {
       name: 'invoice',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Invoice',
       },
       description: {
@@ -2957,7 +2957,7 @@ const ExternalReplyInfo = t({
     {
       name: 'location',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Location',
       },
       description: {
@@ -2969,7 +2969,7 @@ const ExternalReplyInfo = t({
     {
       name: 'poll',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Poll',
       },
       description: {
@@ -2981,7 +2981,7 @@ const ExternalReplyInfo = t({
     {
       name: 'venue',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Venue',
       },
       description: {
@@ -3002,7 +3002,7 @@ const ReplyParameters = t({
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the message that will be replied to in the current chat, or in the chat _chat\\_id_ if it is specified',
@@ -3013,13 +3013,13 @@ const ReplyParameters = t({
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -3032,7 +3032,7 @@ const ReplyParameters = t({
     {
       name: 'allow_sending_without_reply',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the message should be sent even if the specified message to be replied to is not found. Always _False_ for replies in another chat or forum topic. Always _True_ for messages sent on behalf of a business account.',
@@ -3043,7 +3043,7 @@ const ReplyParameters = t({
     {
       name: 'quote',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Quoted part of the message to be replied to; 0-1024 characters after entities parsing. The quote must be an exact substring of the message to be replied to, including _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, and _custom\\_emoji_ entities. The message will fail to send if the quote isn\'t found in the original message.',
@@ -3054,7 +3054,7 @@ const ReplyParameters = t({
     {
       name: 'quote_parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the quote. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -3065,9 +3065,9 @@ const ReplyParameters = t({
     {
       name: 'quote_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -3080,7 +3080,7 @@ const ReplyParameters = t({
     {
       name: 'quote_position',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Position of the quote in the original message in UTF-16 code units',
@@ -3091,7 +3091,7 @@ const ReplyParameters = t({
     {
       name: 'checklist_task_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the specific checklist task to be replied to',
@@ -3109,19 +3109,19 @@ const MessageOrigin = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'MessageOriginUser',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'MessageOriginHiddenUser',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'MessageOriginChat',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'MessageOriginChannel',
     },
   ],
@@ -3136,7 +3136,7 @@ const MessageOriginUser = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the message origin, always “user”',
@@ -3147,7 +3147,7 @@ const MessageOriginUser = t({
     {
       name: 'date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date the message was sent originally in Unix time',
@@ -3158,7 +3158,7 @@ const MessageOriginUser = t({
     {
       name: 'sender_user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -3179,7 +3179,7 @@ const MessageOriginHiddenUser = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the message origin, always “hidden\\_user”',
@@ -3190,7 +3190,7 @@ const MessageOriginHiddenUser = t({
     {
       name: 'date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date the message was sent originally in Unix time',
@@ -3201,7 +3201,7 @@ const MessageOriginHiddenUser = t({
     {
       name: 'sender_user_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Name of the user that sent the message originally',
@@ -3221,7 +3221,7 @@ const MessageOriginChat = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the message origin, always “chat”',
@@ -3232,7 +3232,7 @@ const MessageOriginChat = t({
     {
       name: 'date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date the message was sent originally in Unix time',
@@ -3243,7 +3243,7 @@ const MessageOriginChat = t({
     {
       name: 'sender_chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -3255,7 +3255,7 @@ const MessageOriginChat = t({
     {
       name: 'author_signature',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'For messages originally sent by an anonymous chat administrator, original message author signature',
@@ -3275,7 +3275,7 @@ const MessageOriginChannel = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the message origin, always “channel”',
@@ -3286,7 +3286,7 @@ const MessageOriginChannel = t({
     {
       name: 'date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date the message was sent originally in Unix time',
@@ -3297,7 +3297,7 @@ const MessageOriginChannel = t({
     {
       name: 'chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -3309,7 +3309,7 @@ const MessageOriginChannel = t({
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique message identifier inside the chat',
@@ -3320,7 +3320,7 @@ const MessageOriginChannel = t({
     {
       name: 'author_signature',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Signature of the original post author',
@@ -3340,7 +3340,7 @@ const PhotoSize = t({
     {
       name: 'file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
@@ -3351,7 +3351,7 @@ const PhotoSize = t({
     {
       name: 'file_unique_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
@@ -3362,7 +3362,7 @@ const PhotoSize = t({
     {
       name: 'width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Photo width',
@@ -3373,7 +3373,7 @@ const PhotoSize = t({
     {
       name: 'height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Photo height',
@@ -3384,7 +3384,7 @@ const PhotoSize = t({
     {
       name: 'file_size',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'File size in bytes',
@@ -3404,7 +3404,7 @@ const Animation = t({
     {
       name: 'file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
@@ -3415,7 +3415,7 @@ const Animation = t({
     {
       name: 'file_unique_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
@@ -3426,7 +3426,7 @@ const Animation = t({
     {
       name: 'width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video width as defined by the sender',
@@ -3437,7 +3437,7 @@ const Animation = t({
     {
       name: 'height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video height as defined by the sender',
@@ -3448,7 +3448,7 @@ const Animation = t({
     {
       name: 'duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Duration of the video in seconds as defined by the sender',
@@ -3459,7 +3459,7 @@ const Animation = t({
     {
       name: 'thumbnail',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PhotoSize',
       },
       description: {
@@ -3471,7 +3471,7 @@ const Animation = t({
     {
       name: 'file_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Original animation filename as defined by the sender',
@@ -3482,7 +3482,7 @@ const Animation = t({
     {
       name: 'mime_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'MIME type of the file as defined by the sender',
@@ -3493,7 +3493,7 @@ const Animation = t({
     {
       name: 'file_size',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'File size in bytes.',
@@ -3513,7 +3513,7 @@ const Audio = t({
     {
       name: 'file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
@@ -3524,7 +3524,7 @@ const Audio = t({
     {
       name: 'file_unique_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
@@ -3535,7 +3535,7 @@ const Audio = t({
     {
       name: 'duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Duration of the audio in seconds as defined by the sender',
@@ -3546,7 +3546,7 @@ const Audio = t({
     {
       name: 'performer',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Performer of the audio as defined by the sender or by audio tags',
@@ -3557,7 +3557,7 @@ const Audio = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title of the audio as defined by the sender or by audio tags',
@@ -3568,7 +3568,7 @@ const Audio = t({
     {
       name: 'file_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Original filename as defined by the sender',
@@ -3579,7 +3579,7 @@ const Audio = t({
     {
       name: 'mime_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'MIME type of the file as defined by the sender',
@@ -3590,7 +3590,7 @@ const Audio = t({
     {
       name: 'file_size',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'File size in bytes.',
@@ -3601,7 +3601,7 @@ const Audio = t({
     {
       name: 'thumbnail',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PhotoSize',
       },
       description: {
@@ -3622,7 +3622,7 @@ const Document = t({
     {
       name: 'file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
@@ -3633,7 +3633,7 @@ const Document = t({
     {
       name: 'file_unique_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
@@ -3644,7 +3644,7 @@ const Document = t({
     {
       name: 'thumbnail',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PhotoSize',
       },
       description: {
@@ -3656,7 +3656,7 @@ const Document = t({
     {
       name: 'file_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Original filename as defined by the sender',
@@ -3667,7 +3667,7 @@ const Document = t({
     {
       name: 'mime_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'MIME type of the file as defined by the sender',
@@ -3678,7 +3678,7 @@ const Document = t({
     {
       name: 'file_size',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'File size in bytes.',
@@ -3698,7 +3698,7 @@ const Story = t({
     {
       name: 'chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -3710,7 +3710,7 @@ const Story = t({
     {
       name: 'id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the story in the chat',
@@ -3730,7 +3730,7 @@ const Video = t({
     {
       name: 'file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
@@ -3741,7 +3741,7 @@ const Video = t({
     {
       name: 'file_unique_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
@@ -3752,7 +3752,7 @@ const Video = t({
     {
       name: 'width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video width as defined by the sender',
@@ -3763,7 +3763,7 @@ const Video = t({
     {
       name: 'height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video height as defined by the sender',
@@ -3774,7 +3774,7 @@ const Video = t({
     {
       name: 'duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Duration of the video in seconds as defined by the sender',
@@ -3785,7 +3785,7 @@ const Video = t({
     {
       name: 'thumbnail',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PhotoSize',
       },
       description: {
@@ -3797,9 +3797,9 @@ const Video = t({
     {
       name: 'cover',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'PhotoSize',
         },
       },
@@ -3812,7 +3812,7 @@ const Video = t({
     {
       name: 'start_timestamp',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Timestamp in seconds from which the video will play in the message',
@@ -3823,7 +3823,7 @@ const Video = t({
     {
       name: 'file_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Original filename as defined by the sender',
@@ -3834,7 +3834,7 @@ const Video = t({
     {
       name: 'mime_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'MIME type of the file as defined by the sender',
@@ -3845,7 +3845,7 @@ const Video = t({
     {
       name: 'file_size',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'File size in bytes.',
@@ -3865,7 +3865,7 @@ const VideoNote = t({
     {
       name: 'file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
@@ -3876,7 +3876,7 @@ const VideoNote = t({
     {
       name: 'file_unique_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
@@ -3887,7 +3887,7 @@ const VideoNote = t({
     {
       name: 'length',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video width and height (diameter of the video message) as defined by the sender',
@@ -3898,7 +3898,7 @@ const VideoNote = t({
     {
       name: 'duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Duration of the video in seconds as defined by the sender',
@@ -3909,7 +3909,7 @@ const VideoNote = t({
     {
       name: 'thumbnail',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PhotoSize',
       },
       description: {
@@ -3921,7 +3921,7 @@ const VideoNote = t({
     {
       name: 'file_size',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'File size in bytes',
@@ -3941,7 +3941,7 @@ const Voice = t({
     {
       name: 'file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
@@ -3952,7 +3952,7 @@ const Voice = t({
     {
       name: 'file_unique_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
@@ -3963,7 +3963,7 @@ const Voice = t({
     {
       name: 'duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Duration of the audio in seconds as defined by the sender',
@@ -3974,7 +3974,7 @@ const Voice = t({
     {
       name: 'mime_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'MIME type of the file as defined by the sender',
@@ -3985,7 +3985,7 @@ const Voice = t({
     {
       name: 'file_size',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'File size in bytes.',
@@ -4005,7 +4005,7 @@ const PaidMediaInfo = t({
     {
       name: 'star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of Telegram Stars that must be paid to buy access to the media',
@@ -4016,9 +4016,9 @@ const PaidMediaInfo = t({
     {
       name: 'paid_media',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'PaidMedia',
         },
       },
@@ -4038,15 +4038,15 @@ const PaidMedia = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'PaidMediaPreview',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'PaidMediaPhoto',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'PaidMediaVideo',
     },
   ],
@@ -4061,7 +4061,7 @@ const PaidMediaPreview = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the paid media, always “preview”',
@@ -4072,7 +4072,7 @@ const PaidMediaPreview = t({
     {
       name: 'width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Media width as defined by the sender',
@@ -4083,7 +4083,7 @@ const PaidMediaPreview = t({
     {
       name: 'height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Media height as defined by the sender',
@@ -4094,7 +4094,7 @@ const PaidMediaPreview = t({
     {
       name: 'duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Duration of the media in seconds as defined by the sender',
@@ -4114,7 +4114,7 @@ const PaidMediaPhoto = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the paid media, always “photo”',
@@ -4125,9 +4125,9 @@ const PaidMediaPhoto = t({
     {
       name: 'photo',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'PhotoSize',
         },
       },
@@ -4149,7 +4149,7 @@ const PaidMediaVideo = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the paid media, always “video”',
@@ -4160,7 +4160,7 @@ const PaidMediaVideo = t({
     {
       name: 'video',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Video',
       },
       description: {
@@ -4181,7 +4181,7 @@ const Contact = t({
     {
       name: 'phone_number',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Contact\'s phone number',
@@ -4192,7 +4192,7 @@ const Contact = t({
     {
       name: 'first_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Contact\'s first name',
@@ -4203,7 +4203,7 @@ const Contact = t({
     {
       name: 'last_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Contact\'s last name',
@@ -4214,7 +4214,7 @@ const Contact = t({
     {
       name: 'user_id',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'Contact\'s user identifier in Telegram.',
@@ -4225,7 +4225,7 @@ const Contact = t({
     {
       name: 'vcard',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard)',
@@ -4245,7 +4245,7 @@ const Dice = t({
     {
       name: 'emoji',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Emoji on which the dice throw animation is based',
@@ -4256,7 +4256,7 @@ const Dice = t({
     {
       name: 'value',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Value of the dice, 1-6 for “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”, “![🎯](//telegram.org/img/emoji/40/F09F8EAF.png)” and “![🎳](//telegram.org/img/emoji/40/F09F8EB3.png)” base emoji, 1-5 for “![🏀](//telegram.org/img/emoji/40/F09F8F80.png)” and “![⚽](//telegram.org/img/emoji/40/E29ABD.png)” base emoji, 1-64 for “![🎰](//telegram.org/img/emoji/40/F09F8EB0.png)” base emoji',
@@ -4276,7 +4276,7 @@ const PollOption = t({
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Option text, 1-100 characters',
@@ -4287,9 +4287,9 @@ const PollOption = t({
     {
       name: 'text_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -4302,7 +4302,7 @@ const PollOption = t({
     {
       name: 'voter_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of users that voted for this option',
@@ -4322,7 +4322,7 @@ const InputPollOption = t({
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Option text, 1-100 characters',
@@ -4333,7 +4333,7 @@ const InputPollOption = t({
     {
       name: 'text_parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Currently, only custom emoji entities are allowed',
@@ -4344,9 +4344,9 @@ const InputPollOption = t({
     {
       name: 'text_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -4368,7 +4368,7 @@ const PollAnswer = t({
     {
       name: 'poll_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique poll identifier',
@@ -4379,7 +4379,7 @@ const PollAnswer = t({
     {
       name: 'voter_chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -4391,7 +4391,7 @@ const PollAnswer = t({
     {
       name: 'user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -4403,9 +4403,9 @@ const PollAnswer = t({
     {
       name: 'option_ids',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'int32',
+          type: 'int32',
         },
       },
       description: {
@@ -4426,7 +4426,7 @@ const Poll = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique poll identifier',
@@ -4437,7 +4437,7 @@ const Poll = t({
     {
       name: 'question',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Poll question, 1-300 characters',
@@ -4448,9 +4448,9 @@ const Poll = t({
     {
       name: 'question_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -4463,9 +4463,9 @@ const Poll = t({
     {
       name: 'options',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'PollOption',
         },
       },
@@ -4478,7 +4478,7 @@ const Poll = t({
     {
       name: 'total_voter_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Total number of users that voted in the poll',
@@ -4489,7 +4489,7 @@ const Poll = t({
     {
       name: 'is_closed',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the poll is closed',
@@ -4500,7 +4500,7 @@ const Poll = t({
     {
       name: 'is_anonymous',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the poll is anonymous',
@@ -4511,7 +4511,7 @@ const Poll = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Poll type, currently can be “regular” or “quiz”',
@@ -4522,7 +4522,7 @@ const Poll = t({
     {
       name: 'allows_multiple_answers',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the poll allows multiple answers',
@@ -4533,7 +4533,7 @@ const Poll = t({
     {
       name: 'correct_option_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: '0-based identifier of the correct answer option. Available only for polls in the quiz mode, which are closed, or was sent (not forwarded) by the bot or to the private chat with the bot.',
@@ -4544,7 +4544,7 @@ const Poll = t({
     {
       name: 'explanation',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll, 0-200 characters',
@@ -4555,9 +4555,9 @@ const Poll = t({
     {
       name: 'explanation_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -4570,7 +4570,7 @@ const Poll = t({
     {
       name: 'open_period',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Amount of time in seconds the poll will be active after creation',
@@ -4581,7 +4581,7 @@ const Poll = t({
     {
       name: 'close_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Point in time (Unix timestamp) when the poll will be automatically closed',
@@ -4601,7 +4601,7 @@ const ChecklistTask = t({
     {
       name: 'id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the task',
@@ -4612,7 +4612,7 @@ const ChecklistTask = t({
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text of the task',
@@ -4623,9 +4623,9 @@ const ChecklistTask = t({
     {
       name: 'text_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -4638,7 +4638,7 @@ const ChecklistTask = t({
     {
       name: 'completed_by_user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -4650,7 +4650,7 @@ const ChecklistTask = t({
     {
       name: 'completion_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Point in time (Unix timestamp) when the task was completed; 0 if the task wasn\'t completed',
@@ -4670,7 +4670,7 @@ const Checklist = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title of the checklist',
@@ -4681,9 +4681,9 @@ const Checklist = t({
     {
       name: 'title_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -4696,9 +4696,9 @@ const Checklist = t({
     {
       name: 'tasks',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'ChecklistTask',
         },
       },
@@ -4711,7 +4711,7 @@ const Checklist = t({
     {
       name: 'others_can_add_tasks',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -4723,7 +4723,7 @@ const Checklist = t({
     {
       name: 'others_can_mark_tasks_as_done',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -4744,7 +4744,7 @@ const InputChecklistTask = t({
     {
       name: 'id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the task; must be positive and unique among all task identifiers currently present in the checklist',
@@ -4755,7 +4755,7 @@ const InputChecklistTask = t({
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text of the task; 1-100 characters after entities parsing',
@@ -4766,7 +4766,7 @@ const InputChecklistTask = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -4777,9 +4777,9 @@ const InputChecklistTask = t({
     {
       name: 'text_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -4801,7 +4801,7 @@ const InputChecklist = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title of the checklist; 1-255 characters after entities parsing',
@@ -4812,7 +4812,7 @@ const InputChecklist = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the title. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -4823,9 +4823,9 @@ const InputChecklist = t({
     {
       name: 'title_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -4838,9 +4838,9 @@ const InputChecklist = t({
     {
       name: 'tasks',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'InputChecklistTask',
         },
       },
@@ -4853,7 +4853,7 @@ const InputChecklist = t({
     {
       name: 'others_can_add_tasks',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if other users can add tasks to the checklist',
@@ -4864,7 +4864,7 @@ const InputChecklist = t({
     {
       name: 'others_can_mark_tasks_as_done',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if other users can mark tasks as done or not done in the checklist',
@@ -4884,7 +4884,7 @@ const ChecklistTasksDone = t({
     {
       name: 'checklist_message',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       description: {
@@ -4896,9 +4896,9 @@ const ChecklistTasksDone = t({
     {
       name: 'marked_as_done_task_ids',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'int32',
+          type: 'int32',
         },
       },
       description: {
@@ -4910,9 +4910,9 @@ const ChecklistTasksDone = t({
     {
       name: 'marked_as_not_done_task_ids',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'int32',
+          type: 'int32',
         },
       },
       description: {
@@ -4933,7 +4933,7 @@ const ChecklistTasksAdded = t({
     {
       name: 'checklist_message',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       description: {
@@ -4945,9 +4945,9 @@ const ChecklistTasksAdded = t({
     {
       name: 'tasks',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'ChecklistTask',
         },
       },
@@ -4969,7 +4969,7 @@ const Location = t({
     {
       name: 'latitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Latitude as defined by the sender',
@@ -4980,7 +4980,7 @@ const Location = t({
     {
       name: 'longitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Longitude as defined by the sender',
@@ -4991,7 +4991,7 @@ const Location = t({
     {
       name: 'horizontal_accuracy',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'The radius of uncertainty for the location, measured in meters; 0-1500',
@@ -5002,7 +5002,7 @@ const Location = t({
     {
       name: 'live_period',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Time relative to the message sending date, during which the location can be updated; in seconds. For active live locations only.',
@@ -5013,7 +5013,7 @@ const Location = t({
     {
       name: 'heading',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The direction in which user is moving, in degrees; 1-360. For active live locations only.',
@@ -5024,7 +5024,7 @@ const Location = t({
     {
       name: 'proximity_alert_radius',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The maximum distance for proximity alerts about approaching another chat member, in meters. For sent live locations only.',
@@ -5044,7 +5044,7 @@ const Venue = t({
     {
       name: 'location',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Location',
       },
       description: {
@@ -5056,7 +5056,7 @@ const Venue = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Name of the venue',
@@ -5067,7 +5067,7 @@ const Venue = t({
     {
       name: 'address',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Address of the venue',
@@ -5078,7 +5078,7 @@ const Venue = t({
     {
       name: 'foursquare_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Foursquare identifier of the venue',
@@ -5089,7 +5089,7 @@ const Venue = t({
     {
       name: 'foursquare_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Foursquare type of the venue. (For example, “arts\\_entertainment/default”, “arts\\_entertainment/aquarium” or “food/icecream”.)',
@@ -5100,7 +5100,7 @@ const Venue = t({
     {
       name: 'google_place_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Google Places identifier of the venue',
@@ -5111,7 +5111,7 @@ const Venue = t({
     {
       name: 'google_place_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)',
@@ -5131,7 +5131,7 @@ const WebAppData = t({
     {
       name: 'data',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The data. Be aware that a bad client can send arbitrary data in this field.',
@@ -5142,7 +5142,7 @@ const WebAppData = t({
     {
       name: 'button_text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text of the _web\\_app_ keyboard button from which the Web App was opened. Be aware that a bad client can send arbitrary data in this field.',
@@ -5162,7 +5162,7 @@ const ProximityAlertTriggered = t({
     {
       name: 'traveler',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -5174,7 +5174,7 @@ const ProximityAlertTriggered = t({
     {
       name: 'watcher',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -5186,7 +5186,7 @@ const ProximityAlertTriggered = t({
     {
       name: 'distance',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The distance between the users',
@@ -5206,7 +5206,7 @@ const MessageAutoDeleteTimerChanged = t({
     {
       name: 'message_auto_delete_time',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'New auto-delete time for messages in the chat; in seconds',
@@ -5226,7 +5226,7 @@ const ChatBoostAdded = t({
     {
       name: 'boost_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of boosts added by the user',
@@ -5244,15 +5244,15 @@ const BackgroundFill = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'BackgroundFillSolid',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'BackgroundFillGradient',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'BackgroundFillFreeformGradient',
     },
   ],
@@ -5267,7 +5267,7 @@ const BackgroundFillSolid = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the background fill, always “solid”',
@@ -5278,7 +5278,7 @@ const BackgroundFillSolid = t({
     {
       name: 'color',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The color of the background fill in the RGB24 format',
@@ -5298,7 +5298,7 @@ const BackgroundFillGradient = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the background fill, always “gradient”',
@@ -5309,7 +5309,7 @@ const BackgroundFillGradient = t({
     {
       name: 'top_color',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Top color of the gradient in the RGB24 format',
@@ -5320,7 +5320,7 @@ const BackgroundFillGradient = t({
     {
       name: 'bottom_color',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Bottom color of the gradient in the RGB24 format',
@@ -5331,7 +5331,7 @@ const BackgroundFillGradient = t({
     {
       name: 'rotation_angle',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Clockwise rotation angle of the background fill in degrees; 0-359',
@@ -5351,7 +5351,7 @@ const BackgroundFillFreeformGradient = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the background fill, always “freeform\\_gradient”',
@@ -5362,9 +5362,9 @@ const BackgroundFillFreeformGradient = t({
     {
       name: 'colors',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'int32',
+          type: 'int32',
         },
       },
       description: {
@@ -5383,19 +5383,19 @@ const BackgroundType = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'BackgroundTypeFill',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'BackgroundTypeWallpaper',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'BackgroundTypePattern',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'BackgroundTypeChatTheme',
     },
   ],
@@ -5410,7 +5410,7 @@ const BackgroundTypeFill = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the background, always “fill”',
@@ -5421,7 +5421,7 @@ const BackgroundTypeFill = t({
     {
       name: 'fill',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'BackgroundFill',
       },
       description: {
@@ -5433,7 +5433,7 @@ const BackgroundTypeFill = t({
     {
       name: 'dark_theme_dimming',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Dimming of the background in dark themes, as a percentage; 0-100',
@@ -5453,7 +5453,7 @@ const BackgroundTypeWallpaper = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the background, always “wallpaper”',
@@ -5464,7 +5464,7 @@ const BackgroundTypeWallpaper = t({
     {
       name: 'document',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Document',
       },
       description: {
@@ -5476,7 +5476,7 @@ const BackgroundTypeWallpaper = t({
     {
       name: 'dark_theme_dimming',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Dimming of the background in dark themes, as a percentage; 0-100',
@@ -5487,7 +5487,7 @@ const BackgroundTypeWallpaper = t({
     {
       name: 'is_blurred',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -5499,7 +5499,7 @@ const BackgroundTypeWallpaper = t({
     {
       name: 'is_moving',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -5520,7 +5520,7 @@ const BackgroundTypePattern = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the background, always “pattern”',
@@ -5531,7 +5531,7 @@ const BackgroundTypePattern = t({
     {
       name: 'document',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Document',
       },
       description: {
@@ -5543,7 +5543,7 @@ const BackgroundTypePattern = t({
     {
       name: 'fill',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'BackgroundFill',
       },
       description: {
@@ -5555,7 +5555,7 @@ const BackgroundTypePattern = t({
     {
       name: 'intensity',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Intensity of the pattern when it is shown above the filled background; 0-100',
@@ -5566,7 +5566,7 @@ const BackgroundTypePattern = t({
     {
       name: 'is_inverted',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -5578,7 +5578,7 @@ const BackgroundTypePattern = t({
     {
       name: 'is_moving',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -5599,7 +5599,7 @@ const BackgroundTypeChatTheme = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the background, always “chat\\_theme”',
@@ -5610,7 +5610,7 @@ const BackgroundTypeChatTheme = t({
     {
       name: 'theme_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Name of the chat theme, which is usually an emoji',
@@ -5630,7 +5630,7 @@ const ChatBackground = t({
     {
       name: 'type',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'BackgroundType',
       },
       description: {
@@ -5651,7 +5651,7 @@ const ForumTopicCreated = t({
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Name of the topic',
@@ -5662,7 +5662,7 @@ const ForumTopicCreated = t({
     {
       name: 'icon_color',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Color of the topic icon in RGB format',
@@ -5673,7 +5673,7 @@ const ForumTopicCreated = t({
     {
       name: 'icon_custom_emoji_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the custom emoji shown as the topic icon',
@@ -5701,7 +5701,7 @@ const ForumTopicEdited = t({
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'New name of the topic, if it was edited',
@@ -5712,7 +5712,7 @@ const ForumTopicEdited = t({
     {
       name: 'icon_custom_emoji_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'New identifier of the custom emoji shown as the topic icon, if it was edited; an empty string if the icon was removed',
@@ -5756,7 +5756,7 @@ const SharedUser = t({
     {
       name: 'user_id',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'Identifier of the shared user.  The bot may not have access to the user and could be unable to use this identifier, unless the user is already known to the bot by some other means.',
@@ -5767,7 +5767,7 @@ const SharedUser = t({
     {
       name: 'first_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'First name of the user, if the name was requested by the bot',
@@ -5778,7 +5778,7 @@ const SharedUser = t({
     {
       name: 'last_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Last name of the user, if the name was requested by the bot',
@@ -5789,7 +5789,7 @@ const SharedUser = t({
     {
       name: 'username',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Username of the user, if the username was requested by the bot',
@@ -5800,9 +5800,9 @@ const SharedUser = t({
     {
       name: 'photo',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'PhotoSize',
         },
       },
@@ -5824,7 +5824,7 @@ const UsersShared = t({
     {
       name: 'request_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the request',
@@ -5835,9 +5835,9 @@ const UsersShared = t({
     {
       name: 'users',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'SharedUser',
         },
       },
@@ -5859,7 +5859,7 @@ const ChatShared = t({
     {
       name: 'request_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the request',
@@ -5870,7 +5870,7 @@ const ChatShared = t({
     {
       name: 'chat_id',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'Identifier of the shared chat.  The bot may not have access to the chat and could be unable to use this identifier, unless the chat is already known to the bot by some other means.',
@@ -5881,7 +5881,7 @@ const ChatShared = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title of the chat, if the title was requested by the bot.',
@@ -5892,7 +5892,7 @@ const ChatShared = t({
     {
       name: 'username',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Username of the chat, if the username was requested by the bot and available.',
@@ -5903,9 +5903,9 @@ const ChatShared = t({
     {
       name: 'photo',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'PhotoSize',
         },
       },
@@ -5927,7 +5927,7 @@ const WriteAccessAllowed = t({
     {
       name: 'from_request',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the access was granted after the user accepted an explicit request from a Web App sent by the method [requestWriteAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps)',
@@ -5938,7 +5938,7 @@ const WriteAccessAllowed = t({
     {
       name: 'web_app_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Name of the Web App, if the access was granted when the Web App was launched from a link',
@@ -5949,7 +5949,7 @@ const WriteAccessAllowed = t({
     {
       name: 'from_attachment_menu',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the access was granted when the bot was added to the attachment or side menu',
@@ -5969,7 +5969,7 @@ const VideoChatScheduled = t({
     {
       name: 'start_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Point in time (Unix timestamp) when the video chat is supposed to be started by a chat administrator',
@@ -5997,7 +5997,7 @@ const VideoChatEnded = t({
     {
       name: 'duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video chat duration in seconds',
@@ -6017,9 +6017,9 @@ const VideoChatParticipantsInvited = t({
     {
       name: 'users',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'User',
         },
       },
@@ -6041,7 +6041,7 @@ const PaidMessagePriceChanged = t({
     {
       name: 'paid_message_star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The new number of Telegram Stars that must be paid by non-administrator users of the supergroup chat for each sent message',
@@ -6061,7 +6061,7 @@ const DirectMessagePriceChanged = t({
     {
       name: 'are_direct_messages_enabled',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if direct messages are enabled for the channel chat; false otherwise',
@@ -6072,7 +6072,7 @@ const DirectMessagePriceChanged = t({
     {
       name: 'direct_message_star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The new number of Telegram Stars that must be paid by users for each direct message sent to the channel. Does not apply to users who have been exempted by administrators. Defaults to 0.',
@@ -6092,7 +6092,7 @@ const SuggestedPostApproved = t({
     {
       name: 'suggested_post_message',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       description: {
@@ -6104,7 +6104,7 @@ const SuggestedPostApproved = t({
     {
       name: 'price',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostPrice',
       },
       description: {
@@ -6116,7 +6116,7 @@ const SuggestedPostApproved = t({
     {
       name: 'send_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date when the post will be published',
@@ -6136,7 +6136,7 @@ const SuggestedPostApprovalFailed = t({
     {
       name: 'suggested_post_message',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       description: {
@@ -6148,7 +6148,7 @@ const SuggestedPostApprovalFailed = t({
     {
       name: 'price',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostPrice',
       },
       description: {
@@ -6169,7 +6169,7 @@ const SuggestedPostDeclined = t({
     {
       name: 'suggested_post_message',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       description: {
@@ -6181,7 +6181,7 @@ const SuggestedPostDeclined = t({
     {
       name: 'comment',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Comment with which the post was declined',
@@ -6201,7 +6201,7 @@ const SuggestedPostPaid = t({
     {
       name: 'suggested_post_message',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       description: {
@@ -6213,7 +6213,7 @@ const SuggestedPostPaid = t({
     {
       name: 'currency',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Currency in which the payment was made. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins',
@@ -6224,7 +6224,7 @@ const SuggestedPostPaid = t({
     {
       name: 'amount',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The amount of the currency that was received by the channel in nanotoncoins; for payments in toncoins only',
@@ -6235,7 +6235,7 @@ const SuggestedPostPaid = t({
     {
       name: 'star_amount',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'StarAmount',
       },
       description: {
@@ -6256,7 +6256,7 @@ const SuggestedPostRefunded = t({
     {
       name: 'suggested_post_message',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       description: {
@@ -6268,7 +6268,7 @@ const SuggestedPostRefunded = t({
     {
       name: 'reason',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Reason for the refund. Currently, one of “post\\_deleted” if the post was deleted within 24 hours of being posted or removed from scheduled messages without being posted, or “payment\\_refunded” if the payer refunded their payment.',
@@ -6288,7 +6288,7 @@ const GiveawayCreated = t({
     {
       name: 'prize_star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of Telegram Stars to be split between giveaway winners; for Telegram Star giveaways only',
@@ -6308,9 +6308,9 @@ const Giveaway = t({
     {
       name: 'chats',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'Chat',
         },
       },
@@ -6323,7 +6323,7 @@ const Giveaway = t({
     {
       name: 'winners_selection_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Point in time (Unix timestamp) when winners of the giveaway will be selected',
@@ -6334,7 +6334,7 @@ const Giveaway = t({
     {
       name: 'winner_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of users which are supposed to be selected as winners of the giveaway',
@@ -6345,7 +6345,7 @@ const Giveaway = t({
     {
       name: 'only_new_members',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -6357,7 +6357,7 @@ const Giveaway = t({
     {
       name: 'has_public_winners',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -6369,7 +6369,7 @@ const Giveaway = t({
     {
       name: 'prize_description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Description of additional giveaway prize',
@@ -6380,9 +6380,9 @@ const Giveaway = t({
     {
       name: 'country_codes',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'str',
+          type: 'str',
         },
       },
       description: {
@@ -6394,7 +6394,7 @@ const Giveaway = t({
     {
       name: 'prize_star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of Telegram Stars to be split between giveaway winners; for Telegram Star giveaways only',
@@ -6405,7 +6405,7 @@ const Giveaway = t({
     {
       name: 'premium_subscription_month_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of months the Telegram Premium subscription won from the giveaway will be active for; for Telegram Premium giveaways only',
@@ -6425,7 +6425,7 @@ const GiveawayWinners = t({
     {
       name: 'chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -6437,7 +6437,7 @@ const GiveawayWinners = t({
     {
       name: 'giveaway_message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the message with the giveaway in the chat',
@@ -6448,7 +6448,7 @@ const GiveawayWinners = t({
     {
       name: 'winners_selection_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Point in time (Unix timestamp) when winners of the giveaway were selected',
@@ -6459,7 +6459,7 @@ const GiveawayWinners = t({
     {
       name: 'winner_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Total number of winners in the giveaway',
@@ -6470,9 +6470,9 @@ const GiveawayWinners = t({
     {
       name: 'winners',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'User',
         },
       },
@@ -6485,7 +6485,7 @@ const GiveawayWinners = t({
     {
       name: 'additional_chat_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of other chats the user had to join in order to be eligible for the giveaway',
@@ -6496,7 +6496,7 @@ const GiveawayWinners = t({
     {
       name: 'prize_star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of Telegram Stars that were split between giveaway winners; for Telegram Star giveaways only',
@@ -6507,7 +6507,7 @@ const GiveawayWinners = t({
     {
       name: 'premium_subscription_month_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of months the Telegram Premium subscription won from the giveaway will be active for; for Telegram Premium giveaways only',
@@ -6518,7 +6518,7 @@ const GiveawayWinners = t({
     {
       name: 'unclaimed_prize_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of undistributed prizes',
@@ -6529,7 +6529,7 @@ const GiveawayWinners = t({
     {
       name: 'only_new_members',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -6541,7 +6541,7 @@ const GiveawayWinners = t({
     {
       name: 'was_refunded',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -6553,7 +6553,7 @@ const GiveawayWinners = t({
     {
       name: 'prize_description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Description of additional giveaway prize',
@@ -6573,7 +6573,7 @@ const GiveawayCompleted = t({
     {
       name: 'winner_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of winners in the giveaway',
@@ -6584,7 +6584,7 @@ const GiveawayCompleted = t({
     {
       name: 'unclaimed_prize_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of undistributed prizes',
@@ -6595,7 +6595,7 @@ const GiveawayCompleted = t({
     {
       name: 'giveaway_message',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       description: {
@@ -6607,7 +6607,7 @@ const GiveawayCompleted = t({
     {
       name: 'is_star_giveaway',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -6628,7 +6628,7 @@ const LinkPreviewOptions = t({
     {
       name: 'is_disabled',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the link preview is disabled',
@@ -6639,7 +6639,7 @@ const LinkPreviewOptions = t({
     {
       name: 'url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'URL to use for the link preview. If empty, then the first URL found in the message text will be used',
@@ -6650,7 +6650,7 @@ const LinkPreviewOptions = t({
     {
       name: 'prefer_small_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the media in the link preview is supposed to be shrunk; ignored if the URL isn\'t explicitly specified or media size change isn\'t supported for the preview',
@@ -6661,7 +6661,7 @@ const LinkPreviewOptions = t({
     {
       name: 'prefer_large_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the media in the link preview is supposed to be enlarged; ignored if the URL isn\'t explicitly specified or media size change isn\'t supported for the preview',
@@ -6672,7 +6672,7 @@ const LinkPreviewOptions = t({
     {
       name: 'show_above_text',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the link preview must be shown above the message text; otherwise, the link preview will be shown below the message text',
@@ -6692,7 +6692,7 @@ const SuggestedPostPrice = t({
     {
       name: 'currency',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Currency in which the post will be paid. Currently, must be one of “XTR” for Telegram Stars or “TON” for toncoins',
@@ -6703,7 +6703,7 @@ const SuggestedPostPrice = t({
     {
       name: 'amount',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The amount of the currency that will be paid for the post in the _smallest units_ of the currency, i.e. Telegram Stars or nanotoncoins. Currently, price in Telegram Stars must be between 5 and 100000, and price in nanotoncoins must be between 10000000 and 10000000000000.',
@@ -6723,7 +6723,7 @@ const SuggestedPostInfo = t({
     {
       name: 'state',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'State of the suggested post. Currently, it can be one of “pending”, “approved”, “declined”.',
@@ -6734,7 +6734,7 @@ const SuggestedPostInfo = t({
     {
       name: 'price',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostPrice',
       },
       description: {
@@ -6746,7 +6746,7 @@ const SuggestedPostInfo = t({
     {
       name: 'send_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Proposed send date of the post. If the field is omitted, then the post can be published at any time within 30 days at the sole discretion of the user or administrator who approves it.',
@@ -6766,7 +6766,7 @@ const SuggestedPostParameters = t({
     {
       name: 'price',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostPrice',
       },
       description: {
@@ -6778,7 +6778,7 @@ const SuggestedPostParameters = t({
     {
       name: 'send_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Proposed send date of the post. If specified, then the date must be between 300 second and 2678400 seconds (30 days) in the future. If the field is omitted, then the post can be published at any time within 30 days at the sole discretion of the user who approves it.',
@@ -6798,7 +6798,7 @@ const DirectMessagesTopic = t({
     {
       name: 'topic_id',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'Unique identifier of the topic.',
@@ -6809,7 +6809,7 @@ const DirectMessagesTopic = t({
     {
       name: 'user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -6830,7 +6830,7 @@ const UserProfilePhotos = t({
     {
       name: 'total_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Total number of profile pictures the target user has',
@@ -6841,11 +6841,11 @@ const UserProfilePhotos = t({
     {
       name: 'photos',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'array',
+          type: 'array',
           of: {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'PhotoSize',
           },
         },
@@ -6868,7 +6868,7 @@ const File = t({
     {
       name: 'file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
@@ -6879,7 +6879,7 @@ const File = t({
     {
       name: 'file_unique_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
@@ -6890,7 +6890,7 @@ const File = t({
     {
       name: 'file_size',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'File size in bytes.',
@@ -6901,7 +6901,7 @@ const File = t({
     {
       name: 'file_path',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File path. Use `https://api.telegram.org/file/bot<token>/<file_path>` to get the file.',
@@ -6921,7 +6921,7 @@ const WebAppInfo = t({
     {
       name: 'url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'An HTTPS URL of a Web App to be opened with additional data as specified in [Initializing Web Apps](https://core.telegram.org/bots/webapps#initializing-mini-apps)',
@@ -6941,11 +6941,11 @@ const ReplyKeyboardMarkup = t({
     {
       name: 'keyboard',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'array',
+          type: 'array',
           of: {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'KeyboardButton',
           },
         },
@@ -6959,7 +6959,7 @@ const ReplyKeyboardMarkup = t({
     {
       name: 'is_persistent',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Requests clients to always show the keyboard when the regular keyboard is hidden. Defaults to _false_, in which case the custom keyboard can be hidden and opened with a keyboard icon.',
@@ -6970,7 +6970,7 @@ const ReplyKeyboardMarkup = t({
     {
       name: 'resize_keyboard',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Requests clients to resize the keyboard vertically for optimal fit (e.g., make the keyboard smaller if there are just two rows of buttons). Defaults to _false_, in which case the custom keyboard is always of the same height as the app\'s standard keyboard.',
@@ -6981,7 +6981,7 @@ const ReplyKeyboardMarkup = t({
     {
       name: 'one_time_keyboard',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Requests clients to hide the keyboard as soon as it\'s been used. The keyboard will still be available, but clients will automatically display the usual letter-keyboard in the chat - the user can press a special button in the input field to see the custom keyboard again. Defaults to _false_.',
@@ -6992,7 +6992,7 @@ const ReplyKeyboardMarkup = t({
     {
       name: 'input_field_placeholder',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The placeholder to be shown in the input field when the keyboard is active; 1-64 characters',
@@ -7003,7 +7003,7 @@ const ReplyKeyboardMarkup = t({
     {
       name: 'selective',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the _text_ of the [Message](https://core.telegram.org/bots/api#message) object; 2) if the bot\'s message is a reply to a message in the same chat and forum topic, sender of the original message.  \n  \n_Example:_ A user requests to change the bot\'s language, bot replies to the request with a keyboard to select the new language. Other users in the group don\'t see the keyboard.',
@@ -7023,7 +7023,7 @@ const KeyboardButton = t({
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text of the button. If none of the optional fields are used, it will be sent as a message when the button is pressed',
@@ -7034,7 +7034,7 @@ const KeyboardButton = t({
     {
       name: 'request_users',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'KeyboardButtonRequestUsers',
       },
       description: {
@@ -7046,7 +7046,7 @@ const KeyboardButton = t({
     {
       name: 'request_chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'KeyboardButtonRequestChat',
       },
       description: {
@@ -7058,7 +7058,7 @@ const KeyboardButton = t({
     {
       name: 'request_contact',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'If _True_, the user\'s phone number will be sent as a contact when the button is pressed. Available in private chats only.',
@@ -7069,7 +7069,7 @@ const KeyboardButton = t({
     {
       name: 'request_location',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'If _True_, the user\'s current location will be sent when the button is pressed. Available in private chats only.',
@@ -7080,7 +7080,7 @@ const KeyboardButton = t({
     {
       name: 'request_poll',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'KeyboardButtonPollType',
       },
       description: {
@@ -7092,7 +7092,7 @@ const KeyboardButton = t({
     {
       name: 'web_app',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'WebAppInfo',
       },
       description: {
@@ -7113,7 +7113,7 @@ const KeyboardButtonRequestUsers = t({
     {
       name: 'request_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Signed 32-bit identifier of the request that will be received back in the [UsersShared](https://core.telegram.org/bots/api#usersshared) object. Must be unique within the message',
@@ -7124,7 +7124,7 @@ const KeyboardButtonRequestUsers = t({
     {
       name: 'user_is_bot',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to request bots, pass _False_ to request regular users. If not specified, no additional restrictions are applied.',
@@ -7135,7 +7135,7 @@ const KeyboardButtonRequestUsers = t({
     {
       name: 'user_is_premium',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to request premium users, pass _False_ to request non-premium users. If not specified, no additional restrictions are applied.',
@@ -7146,7 +7146,7 @@ const KeyboardButtonRequestUsers = t({
     {
       name: 'max_quantity',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The maximum number of users to be selected; 1-10. Defaults to 1.',
@@ -7157,7 +7157,7 @@ const KeyboardButtonRequestUsers = t({
     {
       name: 'request_name',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to request the users\' first and last names',
@@ -7168,7 +7168,7 @@ const KeyboardButtonRequestUsers = t({
     {
       name: 'request_username',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to request the users\' usernames',
@@ -7179,7 +7179,7 @@ const KeyboardButtonRequestUsers = t({
     {
       name: 'request_photo',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to request the users\' photos',
@@ -7199,7 +7199,7 @@ const KeyboardButtonRequestChat = t({
     {
       name: 'request_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Signed 32-bit identifier of the request, which will be received back in the [ChatShared](https://core.telegram.org/bots/api#chatshared) object. Must be unique within the message',
@@ -7210,7 +7210,7 @@ const KeyboardButtonRequestChat = t({
     {
       name: 'chat_is_channel',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to request a channel chat, pass _False_ to request a group or a supergroup chat.',
@@ -7221,7 +7221,7 @@ const KeyboardButtonRequestChat = t({
     {
       name: 'chat_is_forum',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to request a forum supergroup, pass _False_ to request a non-forum chat. If not specified, no additional restrictions are applied.',
@@ -7232,7 +7232,7 @@ const KeyboardButtonRequestChat = t({
     {
       name: 'chat_has_username',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to request a supergroup or a channel with a username, pass _False_ to request a chat without a username. If not specified, no additional restrictions are applied.',
@@ -7243,7 +7243,7 @@ const KeyboardButtonRequestChat = t({
     {
       name: 'chat_is_created',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to request a chat owned by the user. Otherwise, no additional restrictions are applied.',
@@ -7254,7 +7254,7 @@ const KeyboardButtonRequestChat = t({
     {
       name: 'user_administrator_rights',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatAdministratorRights',
       },
       description: {
@@ -7266,7 +7266,7 @@ const KeyboardButtonRequestChat = t({
     {
       name: 'bot_administrator_rights',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatAdministratorRights',
       },
       description: {
@@ -7278,7 +7278,7 @@ const KeyboardButtonRequestChat = t({
     {
       name: 'bot_is_member',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to request a chat with the bot as a member. Otherwise, no additional restrictions are applied.',
@@ -7289,7 +7289,7 @@ const KeyboardButtonRequestChat = t({
     {
       name: 'request_title',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to request the chat\'s title',
@@ -7300,7 +7300,7 @@ const KeyboardButtonRequestChat = t({
     {
       name: 'request_username',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to request the chat\'s username',
@@ -7311,7 +7311,7 @@ const KeyboardButtonRequestChat = t({
     {
       name: 'request_photo',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to request the chat\'s photo',
@@ -7331,7 +7331,7 @@ const KeyboardButtonPollType = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'If _quiz_ is passed, the user will be allowed to create only polls in the quiz mode. If _regular_ is passed, only regular polls will be allowed. Otherwise, the user will be allowed to create a poll of any type.',
@@ -7351,7 +7351,7 @@ const ReplyKeyboardRemove = t({
     {
       name: 'remove_keyboard',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -7363,7 +7363,7 @@ const ReplyKeyboardRemove = t({
     {
       name: 'selective',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Use this parameter if you want to remove the keyboard for specific users only. Targets: 1) users that are @mentioned in the _text_ of the [Message](https://core.telegram.org/bots/api#message) object; 2) if the bot\'s message is a reply to a message in the same chat and forum topic, sender of the original message.  \n  \n_Example:_ A user votes in a poll, bot returns confirmation message in reply to the vote and removes the keyboard for that user, while still showing the keyboard with poll options to users who haven\'t voted yet.',
@@ -7383,11 +7383,11 @@ const InlineKeyboardMarkup = t({
     {
       name: 'inline_keyboard',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'array',
+          type: 'array',
           of: {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardButton',
           },
         },
@@ -7410,7 +7410,7 @@ const InlineKeyboardButton = t({
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Label text on the button',
@@ -7421,7 +7421,7 @@ const InlineKeyboardButton = t({
     {
       name: 'url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'HTTP or tg:// URL to be opened when the button is pressed. Links `tg://user?id=<user_id>` can be used to mention a user by their identifier without using a username, if this is allowed by their privacy settings.',
@@ -7432,7 +7432,7 @@ const InlineKeyboardButton = t({
     {
       name: 'callback_data',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Data to be sent in a [callback query](https://core.telegram.org/bots/api#callbackquery) to the bot when the button is pressed, 1-64 bytes',
@@ -7443,7 +7443,7 @@ const InlineKeyboardButton = t({
     {
       name: 'web_app',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'WebAppInfo',
       },
       description: {
@@ -7455,7 +7455,7 @@ const InlineKeyboardButton = t({
     {
       name: 'login_url',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'LoginUrl',
       },
       description: {
@@ -7467,7 +7467,7 @@ const InlineKeyboardButton = t({
     {
       name: 'switch_inline_query',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'If set, pressing the button will prompt the user to select one of their chats, open that chat and insert the bot\'s username and the specified inline query in the input field. May be empty, in which case just the bot\'s username will be inserted. Not supported for messages sent in channel direct messages chats and on behalf of a Telegram Business account.',
@@ -7478,7 +7478,7 @@ const InlineKeyboardButton = t({
     {
       name: 'switch_inline_query_current_chat',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'If set, pressing the button will insert the bot\'s username and the specified inline query in the current chat\'s input field. May be empty, in which case only the bot\'s username will be inserted.  \n  \nThis offers a quick way for the user to open your bot in inline mode in the same chat - good for selecting something from multiple options. Not supported in channels and for messages sent in channel direct messages chats and on behalf of a Telegram Business account.',
@@ -7489,7 +7489,7 @@ const InlineKeyboardButton = t({
     {
       name: 'switch_inline_query_chosen_chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SwitchInlineQueryChosenChat',
       },
       description: {
@@ -7501,7 +7501,7 @@ const InlineKeyboardButton = t({
     {
       name: 'copy_text',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'CopyTextButton',
       },
       description: {
@@ -7513,7 +7513,7 @@ const InlineKeyboardButton = t({
     {
       name: 'callback_game',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'CallbackGame',
       },
       description: {
@@ -7525,7 +7525,7 @@ const InlineKeyboardButton = t({
     {
       name: 'pay',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Specify _True_, to send a [Pay button](https://core.telegram.org/bots/api#payments). Substrings “![⭐](//telegram.org/img/emoji/40/E2AD90.png)” and “XTR” in the buttons\'s text will be replaced with a Telegram Star icon.  \n  \n**NOTE:** This type of button **must** always be the first button in the first row and can only be used in invoice messages.',
@@ -7545,7 +7545,7 @@ const LoginUrl = t({
     {
       name: 'url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'An HTTPS URL to be opened with user authorization data added to the query string when the button is pressed. If the user refuses to provide authorization data, the original URL without information about the user will be opened. The data added is the same as described in [Receiving authorization data](https://core.telegram.org/widgets/login#receiving-authorization-data).  \n  \n**NOTE:** You **must** always check the hash of the received data to verify the authentication and the integrity of the data as described in [Checking authorization](https://core.telegram.org/widgets/login#checking-authorization).',
@@ -7556,7 +7556,7 @@ const LoginUrl = t({
     {
       name: 'forward_text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'New text of the button in forwarded messages.',
@@ -7567,7 +7567,7 @@ const LoginUrl = t({
     {
       name: 'bot_username',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Username of a bot, which will be used for user authorization. See [Setting up a bot](https://core.telegram.org/widgets/login#setting-up-a-bot) for more details. If not specified, the current bot\'s username will be assumed. The _url_\'s domain must be the same as the domain linked with the bot. See [Linking your domain to the bot](https://core.telegram.org/widgets/login#linking-your-domain-to-the-bot) for more details.',
@@ -7578,7 +7578,7 @@ const LoginUrl = t({
     {
       name: 'request_write_access',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to request the permission for your bot to send messages to the user.',
@@ -7598,7 +7598,7 @@ const SwitchInlineQueryChosenChat = t({
     {
       name: 'query',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The default inline query to be inserted in the input field. If left empty, only the bot\'s username will be inserted',
@@ -7609,7 +7609,7 @@ const SwitchInlineQueryChosenChat = t({
     {
       name: 'allow_user_chats',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if private chats with users can be chosen',
@@ -7620,7 +7620,7 @@ const SwitchInlineQueryChosenChat = t({
     {
       name: 'allow_bot_chats',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if private chats with bots can be chosen',
@@ -7631,7 +7631,7 @@ const SwitchInlineQueryChosenChat = t({
     {
       name: 'allow_group_chats',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if group and supergroup chats can be chosen',
@@ -7642,7 +7642,7 @@ const SwitchInlineQueryChosenChat = t({
     {
       name: 'allow_channel_chats',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if channel chats can be chosen',
@@ -7662,7 +7662,7 @@ const CopyTextButton = t({
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The text to be copied to the clipboard; 1-256 characters',
@@ -7682,7 +7682,7 @@ const CallbackQuery = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this query',
@@ -7693,7 +7693,7 @@ const CallbackQuery = t({
     {
       name: 'from',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -7705,7 +7705,7 @@ const CallbackQuery = t({
     {
       name: 'message',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'MaybeInaccessibleMessage',
       },
       description: {
@@ -7717,7 +7717,7 @@ const CallbackQuery = t({
     {
       name: 'inline_message_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Identifier of the message sent via the bot in inline mode, that originated the query.',
@@ -7728,7 +7728,7 @@ const CallbackQuery = t({
     {
       name: 'chat_instance',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Global identifier, uniquely corresponding to the chat to which the message with the callback button was sent. Useful for high scores in [games](https://core.telegram.org/bots/api#games).',
@@ -7739,7 +7739,7 @@ const CallbackQuery = t({
     {
       name: 'data',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Data associated with the callback button. Be aware that the message originated the query can contain no callback buttons with this data.',
@@ -7750,7 +7750,7 @@ const CallbackQuery = t({
     {
       name: 'game_short_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Short name of a [Game](https://core.telegram.org/bots/api#games) to be returned, serves as the unique identifier for the game',
@@ -7770,7 +7770,7 @@ const ForceReply = t({
     {
       name: 'force_reply',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -7782,7 +7782,7 @@ const ForceReply = t({
     {
       name: 'input_field_placeholder',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The placeholder to be shown in the input field when the reply is active; 1-64 characters',
@@ -7793,7 +7793,7 @@ const ForceReply = t({
     {
       name: 'selective',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Use this parameter if you want to force reply from specific users only. Targets: 1) users that are @mentioned in the _text_ of the [Message](https://core.telegram.org/bots/api#message) object; 2) if the bot\'s message is a reply to a message in the same chat and forum topic, sender of the original message.',
@@ -7813,7 +7813,7 @@ const ChatPhoto = t({
     {
       name: 'small_file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File identifier of small (160x160) chat photo. This file\\_id can be used only for photo download and only for as long as the photo is not changed.',
@@ -7824,7 +7824,7 @@ const ChatPhoto = t({
     {
       name: 'small_file_unique_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique file identifier of small (160x160) chat photo, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
@@ -7835,7 +7835,7 @@ const ChatPhoto = t({
     {
       name: 'big_file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File identifier of big (640x640) chat photo. This file\\_id can be used only for photo download and only for as long as the photo is not changed.',
@@ -7846,7 +7846,7 @@ const ChatPhoto = t({
     {
       name: 'big_file_unique_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique file identifier of big (640x640) chat photo, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
@@ -7866,7 +7866,7 @@ const ChatInviteLink = t({
     {
       name: 'invite_link',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The invite link. If the link was created by another chat administrator, then the second part of the link will be replaced with “…”.',
@@ -7877,7 +7877,7 @@ const ChatInviteLink = t({
     {
       name: 'creator',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -7889,7 +7889,7 @@ const ChatInviteLink = t({
     {
       name: 'creates_join_request',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if users joining the chat via the link need to be approved by chat administrators',
@@ -7900,7 +7900,7 @@ const ChatInviteLink = t({
     {
       name: 'is_primary',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the link is primary',
@@ -7911,7 +7911,7 @@ const ChatInviteLink = t({
     {
       name: 'is_revoked',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the link is revoked',
@@ -7922,7 +7922,7 @@ const ChatInviteLink = t({
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Invite link name',
@@ -7933,7 +7933,7 @@ const ChatInviteLink = t({
     {
       name: 'expire_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Point in time (Unix timestamp) when the link will expire or has been expired',
@@ -7944,7 +7944,7 @@ const ChatInviteLink = t({
     {
       name: 'member_limit',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999',
@@ -7955,7 +7955,7 @@ const ChatInviteLink = t({
     {
       name: 'pending_join_request_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of pending join requests created using this link',
@@ -7966,7 +7966,7 @@ const ChatInviteLink = t({
     {
       name: 'subscription_period',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of seconds the subscription will be active for before the next payment',
@@ -7977,7 +7977,7 @@ const ChatInviteLink = t({
     {
       name: 'subscription_price',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The amount of Telegram Stars a user must pay initially and after each subsequent subscription period to be a member of the chat using the link',
@@ -7997,7 +7997,7 @@ const ChatAdministratorRights = t({
     {
       name: 'is_anonymous',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user\'s presence in the chat is hidden',
@@ -8008,7 +8008,7 @@ const ChatAdministratorRights = t({
     {
       name: 'can_manage_chat',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages, ignore slow mode, and send messages to the chat without paying Telegram Stars. Implied by any other administrator privilege.',
@@ -8019,7 +8019,7 @@ const ChatAdministratorRights = t({
     {
       name: 'can_delete_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can delete messages of other users',
@@ -8030,7 +8030,7 @@ const ChatAdministratorRights = t({
     {
       name: 'can_manage_video_chats',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can manage video chats',
@@ -8041,7 +8041,7 @@ const ChatAdministratorRights = t({
     {
       name: 'can_restrict_members',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can restrict, ban or unban chat members, or access supergroup statistics',
@@ -8052,7 +8052,7 @@ const ChatAdministratorRights = t({
     {
       name: 'can_promote_members',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can add new administrators with a subset of their own privileges or demote administrators that they have promoted, directly or indirectly (promoted by administrators that were appointed by the user)',
@@ -8063,7 +8063,7 @@ const ChatAdministratorRights = t({
     {
       name: 'can_change_info',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to change the chat title, photo and other settings',
@@ -8074,7 +8074,7 @@ const ChatAdministratorRights = t({
     {
       name: 'can_invite_users',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to invite new users to the chat',
@@ -8085,7 +8085,7 @@ const ChatAdministratorRights = t({
     {
       name: 'can_post_stories',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can post stories to the chat',
@@ -8096,7 +8096,7 @@ const ChatAdministratorRights = t({
     {
       name: 'can_edit_stories',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can edit stories posted by other users, post stories to the chat page, pin chat stories, and access the chat\'s story archive',
@@ -8107,7 +8107,7 @@ const ChatAdministratorRights = t({
     {
       name: 'can_delete_stories',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can delete stories posted by other users',
@@ -8118,7 +8118,7 @@ const ChatAdministratorRights = t({
     {
       name: 'can_post_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can post messages in the channel, approve suggested posts, or access channel statistics; for channels only',
@@ -8129,7 +8129,7 @@ const ChatAdministratorRights = t({
     {
       name: 'can_edit_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can edit messages of other users and can pin messages; for channels only',
@@ -8140,7 +8140,7 @@ const ChatAdministratorRights = t({
     {
       name: 'can_pin_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to pin messages; for groups and supergroups only',
@@ -8151,7 +8151,7 @@ const ChatAdministratorRights = t({
     {
       name: 'can_manage_topics',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only',
@@ -8162,7 +8162,7 @@ const ChatAdministratorRights = t({
     {
       name: 'can_manage_direct_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can manage direct messages of the channel and decline suggested posts; for channels only',
@@ -8182,7 +8182,7 @@ const ChatMemberUpdated = t({
     {
       name: 'chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -8194,7 +8194,7 @@ const ChatMemberUpdated = t({
     {
       name: 'from',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -8206,7 +8206,7 @@ const ChatMemberUpdated = t({
     {
       name: 'date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date the change was done in Unix time',
@@ -8217,7 +8217,7 @@ const ChatMemberUpdated = t({
     {
       name: 'old_chat_member',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatMember',
       },
       description: {
@@ -8229,7 +8229,7 @@ const ChatMemberUpdated = t({
     {
       name: 'new_chat_member',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatMember',
       },
       description: {
@@ -8241,7 +8241,7 @@ const ChatMemberUpdated = t({
     {
       name: 'invite_link',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatInviteLink',
       },
       description: {
@@ -8253,7 +8253,7 @@ const ChatMemberUpdated = t({
     {
       name: 'via_join_request',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user joined the chat after sending a direct join request without using an invite link and being approved by an administrator',
@@ -8264,7 +8264,7 @@ const ChatMemberUpdated = t({
     {
       name: 'via_chat_folder_invite_link',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user joined the chat via a chat folder invite link',
@@ -8282,27 +8282,27 @@ const ChatMember = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'ChatMemberOwner',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'ChatMemberAdministrator',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'ChatMemberMember',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'ChatMemberRestricted',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'ChatMemberLeft',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'ChatMemberBanned',
     },
   ],
@@ -8317,7 +8317,7 @@ const ChatMemberOwner = t({
     {
       name: 'status',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The member\'s status in the chat, always “creator”',
@@ -8328,7 +8328,7 @@ const ChatMemberOwner = t({
     {
       name: 'user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -8340,7 +8340,7 @@ const ChatMemberOwner = t({
     {
       name: 'is_anonymous',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user\'s presence in the chat is hidden',
@@ -8351,7 +8351,7 @@ const ChatMemberOwner = t({
     {
       name: 'custom_title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Custom title for this user',
@@ -8371,7 +8371,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'status',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The member\'s status in the chat, always “administrator”',
@@ -8382,7 +8382,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -8394,7 +8394,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'can_be_edited',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the bot is allowed to edit administrator privileges of that user',
@@ -8405,7 +8405,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'is_anonymous',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user\'s presence in the chat is hidden',
@@ -8416,7 +8416,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'can_manage_chat',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages, ignore slow mode, and send messages to the chat without paying Telegram Stars. Implied by any other administrator privilege.',
@@ -8427,7 +8427,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'can_delete_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can delete messages of other users',
@@ -8438,7 +8438,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'can_manage_video_chats',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can manage video chats',
@@ -8449,7 +8449,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'can_restrict_members',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can restrict, ban or unban chat members, or access supergroup statistics',
@@ -8460,7 +8460,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'can_promote_members',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can add new administrators with a subset of their own privileges or demote administrators that they have promoted, directly or indirectly (promoted by administrators that were appointed by the user)',
@@ -8471,7 +8471,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'can_change_info',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to change the chat title, photo and other settings',
@@ -8482,7 +8482,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'can_invite_users',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to invite new users to the chat',
@@ -8493,7 +8493,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'can_post_stories',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can post stories to the chat',
@@ -8504,7 +8504,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'can_edit_stories',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can edit stories posted by other users, post stories to the chat page, pin chat stories, and access the chat\'s story archive',
@@ -8515,7 +8515,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'can_delete_stories',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can delete stories posted by other users',
@@ -8526,7 +8526,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'can_post_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can post messages in the channel, approve suggested posts, or access channel statistics; for channels only',
@@ -8537,7 +8537,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'can_edit_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can edit messages of other users and can pin messages; for channels only',
@@ -8548,7 +8548,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'can_pin_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to pin messages; for groups and supergroups only',
@@ -8559,7 +8559,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'can_manage_topics',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only',
@@ -8570,7 +8570,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'can_manage_direct_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the administrator can manage direct messages of the channel and decline suggested posts; for channels only',
@@ -8581,7 +8581,7 @@ const ChatMemberAdministrator = t({
     {
       name: 'custom_title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Custom title for this user',
@@ -8601,7 +8601,7 @@ const ChatMemberMember = t({
     {
       name: 'status',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The member\'s status in the chat, always “member”',
@@ -8612,7 +8612,7 @@ const ChatMemberMember = t({
     {
       name: 'user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -8624,7 +8624,7 @@ const ChatMemberMember = t({
     {
       name: 'until_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date when the user\'s subscription will expire; Unix time',
@@ -8644,7 +8644,7 @@ const ChatMemberRestricted = t({
     {
       name: 'status',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The member\'s status in the chat, always “restricted”',
@@ -8655,7 +8655,7 @@ const ChatMemberRestricted = t({
     {
       name: 'user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -8667,7 +8667,7 @@ const ChatMemberRestricted = t({
     {
       name: 'is_member',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is a member of the chat at the moment of the request',
@@ -8678,7 +8678,7 @@ const ChatMemberRestricted = t({
     {
       name: 'can_send_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send text messages, contacts, giveaways, giveaway winners, invoices, locations and venues',
@@ -8689,7 +8689,7 @@ const ChatMemberRestricted = t({
     {
       name: 'can_send_audios',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send audios',
@@ -8700,7 +8700,7 @@ const ChatMemberRestricted = t({
     {
       name: 'can_send_documents',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send documents',
@@ -8711,7 +8711,7 @@ const ChatMemberRestricted = t({
     {
       name: 'can_send_photos',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send photos',
@@ -8722,7 +8722,7 @@ const ChatMemberRestricted = t({
     {
       name: 'can_send_videos',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send videos',
@@ -8733,7 +8733,7 @@ const ChatMemberRestricted = t({
     {
       name: 'can_send_video_notes',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send video notes',
@@ -8744,7 +8744,7 @@ const ChatMemberRestricted = t({
     {
       name: 'can_send_voice_notes',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send voice notes',
@@ -8755,7 +8755,7 @@ const ChatMemberRestricted = t({
     {
       name: 'can_send_polls',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send polls and checklists',
@@ -8766,7 +8766,7 @@ const ChatMemberRestricted = t({
     {
       name: 'can_send_other_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send animations, games, stickers and use inline bots',
@@ -8777,7 +8777,7 @@ const ChatMemberRestricted = t({
     {
       name: 'can_add_web_page_previews',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to add web page previews to their messages',
@@ -8788,7 +8788,7 @@ const ChatMemberRestricted = t({
     {
       name: 'can_change_info',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to change the chat title, photo and other settings',
@@ -8799,7 +8799,7 @@ const ChatMemberRestricted = t({
     {
       name: 'can_invite_users',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to invite new users to the chat',
@@ -8810,7 +8810,7 @@ const ChatMemberRestricted = t({
     {
       name: 'can_pin_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to pin messages',
@@ -8821,7 +8821,7 @@ const ChatMemberRestricted = t({
     {
       name: 'can_manage_topics',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to create forum topics',
@@ -8832,7 +8832,7 @@ const ChatMemberRestricted = t({
     {
       name: 'until_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date when restrictions will be lifted for this user; Unix time. If 0, then the user is restricted forever',
@@ -8852,7 +8852,7 @@ const ChatMemberLeft = t({
     {
       name: 'status',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The member\'s status in the chat, always “left”',
@@ -8863,7 +8863,7 @@ const ChatMemberLeft = t({
     {
       name: 'user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -8884,7 +8884,7 @@ const ChatMemberBanned = t({
     {
       name: 'status',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The member\'s status in the chat, always “kicked”',
@@ -8895,7 +8895,7 @@ const ChatMemberBanned = t({
     {
       name: 'user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -8907,7 +8907,7 @@ const ChatMemberBanned = t({
     {
       name: 'until_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date when restrictions will be lifted for this user; Unix time. If 0, then the user is banned forever',
@@ -8927,7 +8927,7 @@ const ChatJoinRequest = t({
     {
       name: 'chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -8939,7 +8939,7 @@ const ChatJoinRequest = t({
     {
       name: 'from',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -8951,7 +8951,7 @@ const ChatJoinRequest = t({
     {
       name: 'user_chat_id',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'Identifier of a private chat with the user who sent the join request.  The bot can use this identifier for 5 minutes to send messages until the join request is processed, assuming no other administrator contacted the user.',
@@ -8962,7 +8962,7 @@ const ChatJoinRequest = t({
     {
       name: 'date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date the request was sent in Unix time',
@@ -8973,7 +8973,7 @@ const ChatJoinRequest = t({
     {
       name: 'bio',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Bio of the user.',
@@ -8984,7 +8984,7 @@ const ChatJoinRequest = t({
     {
       name: 'invite_link',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatInviteLink',
       },
       description: {
@@ -9005,7 +9005,7 @@ const ChatPermissions = t({
     {
       name: 'can_send_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send text messages, contacts, giveaways, giveaway winners, invoices, locations and venues',
@@ -9016,7 +9016,7 @@ const ChatPermissions = t({
     {
       name: 'can_send_audios',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send audios',
@@ -9027,7 +9027,7 @@ const ChatPermissions = t({
     {
       name: 'can_send_documents',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send documents',
@@ -9038,7 +9038,7 @@ const ChatPermissions = t({
     {
       name: 'can_send_photos',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send photos',
@@ -9049,7 +9049,7 @@ const ChatPermissions = t({
     {
       name: 'can_send_videos',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send videos',
@@ -9060,7 +9060,7 @@ const ChatPermissions = t({
     {
       name: 'can_send_video_notes',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send video notes',
@@ -9071,7 +9071,7 @@ const ChatPermissions = t({
     {
       name: 'can_send_voice_notes',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send voice notes',
@@ -9082,7 +9082,7 @@ const ChatPermissions = t({
     {
       name: 'can_send_polls',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send polls and checklists',
@@ -9093,7 +9093,7 @@ const ChatPermissions = t({
     {
       name: 'can_send_other_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to send animations, games, stickers and use inline bots',
@@ -9104,7 +9104,7 @@ const ChatPermissions = t({
     {
       name: 'can_add_web_page_previews',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to add web page previews to their messages',
@@ -9115,7 +9115,7 @@ const ChatPermissions = t({
     {
       name: 'can_change_info',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to change the chat title, photo and other settings. Ignored in public supergroups',
@@ -9126,7 +9126,7 @@ const ChatPermissions = t({
     {
       name: 'can_invite_users',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to invite new users to the chat',
@@ -9137,7 +9137,7 @@ const ChatPermissions = t({
     {
       name: 'can_pin_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to pin messages. Ignored in public supergroups',
@@ -9148,7 +9148,7 @@ const ChatPermissions = t({
     {
       name: 'can_manage_topics',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the user is allowed to create forum topics. If omitted defaults to the value of can\\_pin\\_messages',
@@ -9168,7 +9168,7 @@ const Birthdate = t({
     {
       name: 'day',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Day of the user\'s birth; 1-31',
@@ -9179,7 +9179,7 @@ const Birthdate = t({
     {
       name: 'month',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Month of the user\'s birth; 1-12',
@@ -9190,7 +9190,7 @@ const Birthdate = t({
     {
       name: 'year',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Year of the user\'s birth',
@@ -9210,7 +9210,7 @@ const BusinessIntro = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title text of the business intro',
@@ -9221,7 +9221,7 @@ const BusinessIntro = t({
     {
       name: 'message',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Message text of the business intro',
@@ -9232,7 +9232,7 @@ const BusinessIntro = t({
     {
       name: 'sticker',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Sticker',
       },
       description: {
@@ -9253,7 +9253,7 @@ const BusinessLocation = t({
     {
       name: 'address',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Address of the business',
@@ -9264,7 +9264,7 @@ const BusinessLocation = t({
     {
       name: 'location',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Location',
       },
       description: {
@@ -9285,7 +9285,7 @@ const BusinessOpeningHoursInterval = t({
     {
       name: 'opening_minute',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The minute\'s sequence number in a week, starting on Monday, marking the start of the time interval during which the business is open; 0 - 7 \\* 24 \\* 60',
@@ -9296,7 +9296,7 @@ const BusinessOpeningHoursInterval = t({
     {
       name: 'closing_minute',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The minute\'s sequence number in a week, starting on Monday, marking the end of the time interval during which the business is open; 0 - 8 \\* 24 \\* 60',
@@ -9316,7 +9316,7 @@ const BusinessOpeningHours = t({
     {
       name: 'time_zone_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique name of the time zone for which the opening hours are defined',
@@ -9327,9 +9327,9 @@ const BusinessOpeningHours = t({
     {
       name: 'opening_hours',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'BusinessOpeningHoursInterval',
         },
       },
@@ -9351,7 +9351,7 @@ const StoryAreaPosition = t({
     {
       name: 'x_percentage',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'The abscissa of the area\'s center, as a percentage of the media width',
@@ -9362,7 +9362,7 @@ const StoryAreaPosition = t({
     {
       name: 'y_percentage',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'The ordinate of the area\'s center, as a percentage of the media height',
@@ -9373,7 +9373,7 @@ const StoryAreaPosition = t({
     {
       name: 'width_percentage',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'The width of the area\'s rectangle, as a percentage of the media width',
@@ -9384,7 +9384,7 @@ const StoryAreaPosition = t({
     {
       name: 'height_percentage',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'The height of the area\'s rectangle, as a percentage of the media height',
@@ -9395,7 +9395,7 @@ const StoryAreaPosition = t({
     {
       name: 'rotation_angle',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'The clockwise rotation angle of the rectangle, in degrees; 0-360',
@@ -9406,7 +9406,7 @@ const StoryAreaPosition = t({
     {
       name: 'corner_radius_percentage',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'The radius of the rectangle corner rounding, as a percentage of the media width',
@@ -9426,7 +9426,7 @@ const LocationAddress = t({
     {
       name: 'country_code',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The two-letter ISO 3166-1 alpha-2 country code of the country where the location is located',
@@ -9437,7 +9437,7 @@ const LocationAddress = t({
     {
       name: 'state',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'State of the location',
@@ -9448,7 +9448,7 @@ const LocationAddress = t({
     {
       name: 'city',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'City of the location',
@@ -9459,7 +9459,7 @@ const LocationAddress = t({
     {
       name: 'street',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Street address of the location',
@@ -9477,23 +9477,23 @@ const StoryAreaType = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'StoryAreaTypeLocation',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'StoryAreaTypeSuggestedReaction',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'StoryAreaTypeLink',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'StoryAreaTypeWeather',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'StoryAreaTypeUniqueGift',
     },
   ],
@@ -9508,7 +9508,7 @@ const StoryAreaTypeLocation = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the area, always “location”',
@@ -9519,7 +9519,7 @@ const StoryAreaTypeLocation = t({
     {
       name: 'latitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Location latitude in degrees',
@@ -9530,7 +9530,7 @@ const StoryAreaTypeLocation = t({
     {
       name: 'longitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Location longitude in degrees',
@@ -9541,7 +9541,7 @@ const StoryAreaTypeLocation = t({
     {
       name: 'address',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'LocationAddress',
       },
       description: {
@@ -9562,7 +9562,7 @@ const StoryAreaTypeSuggestedReaction = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the area, always “suggested\\_reaction”',
@@ -9573,7 +9573,7 @@ const StoryAreaTypeSuggestedReaction = t({
     {
       name: 'reaction_type',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReactionType',
       },
       description: {
@@ -9585,7 +9585,7 @@ const StoryAreaTypeSuggestedReaction = t({
     {
       name: 'is_dark',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the reaction area has a dark background',
@@ -9596,7 +9596,7 @@ const StoryAreaTypeSuggestedReaction = t({
     {
       name: 'is_flipped',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if reaction area corner is flipped',
@@ -9616,7 +9616,7 @@ const StoryAreaTypeLink = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the area, always “link”',
@@ -9627,7 +9627,7 @@ const StoryAreaTypeLink = t({
     {
       name: 'url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'HTTP or tg:// URL to be opened when the area is clicked',
@@ -9647,7 +9647,7 @@ const StoryAreaTypeWeather = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the area, always “weather”',
@@ -9658,7 +9658,7 @@ const StoryAreaTypeWeather = t({
     {
       name: 'temperature',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Temperature, in degree Celsius',
@@ -9669,7 +9669,7 @@ const StoryAreaTypeWeather = t({
     {
       name: 'emoji',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Emoji representing the weather',
@@ -9680,7 +9680,7 @@ const StoryAreaTypeWeather = t({
     {
       name: 'background_color',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'A color of the area background in the ARGB format',
@@ -9700,7 +9700,7 @@ const StoryAreaTypeUniqueGift = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the area, always “unique\\_gift”',
@@ -9711,7 +9711,7 @@ const StoryAreaTypeUniqueGift = t({
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique name of the gift',
@@ -9731,7 +9731,7 @@ const StoryArea = t({
     {
       name: 'position',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'StoryAreaPosition',
       },
       description: {
@@ -9743,7 +9743,7 @@ const StoryArea = t({
     {
       name: 'type',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'StoryAreaType',
       },
       description: {
@@ -9764,7 +9764,7 @@ const ChatLocation = t({
     {
       name: 'location',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Location',
       },
       description: {
@@ -9776,7 +9776,7 @@ const ChatLocation = t({
     {
       name: 'address',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Location address; 1-64 characters, as defined by the chat owner',
@@ -9794,15 +9794,15 @@ const ReactionType = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'ReactionTypeEmoji',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'ReactionTypeCustomEmoji',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'ReactionTypePaid',
     },
   ],
@@ -9817,7 +9817,7 @@ const ReactionTypeEmoji = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the reaction, always “emoji”',
@@ -9828,7 +9828,7 @@ const ReactionTypeEmoji = t({
     {
       name: 'emoji',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Reaction emoji. Currently, it can be one of "![❤](//telegram.org/img/emoji/40/E29DA4.png)", "![👍](//telegram.org/img/emoji/40/F09F918D.png)", "![👎](//telegram.org/img/emoji/40/F09F918E.png)", "![🔥](//telegram.org/img/emoji/40/F09F94A5.png)", "![🥰](//telegram.org/img/emoji/40/F09FA5B0.png)", "![👏](//telegram.org/img/emoji/40/F09F918F.png)", "![😁](//telegram.org/img/emoji/40/F09F9881.png)", "![🤔](//telegram.org/img/emoji/40/F09FA494.png)", "![🤯](//telegram.org/img/emoji/40/F09FA4AF.png)", "![😱](//telegram.org/img/emoji/40/F09F98B1.png)", "![🤬](//telegram.org/img/emoji/40/F09FA4AC.png)", "![😢](//telegram.org/img/emoji/40/F09F98A2.png)", "![🎉](//telegram.org/img/emoji/40/F09F8E89.png)", "![🤩](//telegram.org/img/emoji/40/F09FA4A9.png)", "![🤮](//telegram.org/img/emoji/40/F09FA4AE.png)", "![💩](//telegram.org/img/emoji/40/F09F92A9.png)", "![🙏](//telegram.org/img/emoji/40/F09F998F.png)", "![👌](//telegram.org/img/emoji/40/F09F918C.png)", "![🕊](//telegram.org/img/emoji/40/F09F958A.png)", "![🤡](//telegram.org/img/emoji/40/F09FA4A1.png)", "![🥱](//telegram.org/img/emoji/40/F09FA5B1.png)", "![🥴](//telegram.org/img/emoji/40/F09FA5B4.png)", "![😍](//telegram.org/img/emoji/40/F09F988D.png)", "![🐳](//telegram.org/img/emoji/40/F09F90B3.png)", "![❤‍🔥](//telegram.org/img/emoji/40/E29DA4E2808DF09F94A5.png)", "![🌚](//telegram.org/img/emoji/40/F09F8C9A.png)", "![🌭](//telegram.org/img/emoji/40/F09F8CAD.png)", "![💯](//telegram.org/img/emoji/40/F09F92AF.png)", "![🤣](//telegram.org/img/emoji/40/F09FA4A3.png)", "![⚡](//telegram.org/img/emoji/40/E29AA1.png)", "![🍌](//telegram.org/img/emoji/40/F09F8D8C.png)", "![🏆](//telegram.org/img/emoji/40/F09F8F86.png)", "![💔](//telegram.org/img/emoji/40/F09F9294.png)", "![🤨](//telegram.org/img/emoji/40/F09FA4A8.png)", "![😐](//telegram.org/img/emoji/40/F09F9890.png)", "![🍓](//telegram.org/img/emoji/40/F09F8D93.png)", "![🍾](//telegram.org/img/emoji/40/F09F8DBE.png)", "![💋](//telegram.org/img/emoji/40/F09F928B.png)", "![🖕](//telegram.org/img/emoji/40/F09F9695.png)", "![😈](//telegram.org/img/emoji/40/F09F9888.png)", "![😴](//telegram.org/img/emoji/40/F09F98B4.png)", "![😭](//telegram.org/img/emoji/40/F09F98AD.png)", "![🤓](//telegram.org/img/emoji/40/F09FA493.png)", "![👻](//telegram.org/img/emoji/40/F09F91BB.png)", "![👨‍💻](//telegram.org/img/emoji/40/F09F91A8E2808DF09F92BB.png)", "![👀](//telegram.org/img/emoji/40/F09F9180.png)", "![🎃](//telegram.org/img/emoji/40/F09F8E83.png)", "![🙈](//telegram.org/img/emoji/40/F09F9988.png)", "![😇](//telegram.org/img/emoji/40/F09F9887.png)", "![😨](//telegram.org/img/emoji/40/F09F98A8.png)", "![🤝](//telegram.org/img/emoji/40/F09FA49D.png)", "![✍](//telegram.org/img/emoji/40/E29C8D.png)", "![🤗](//telegram.org/img/emoji/40/F09FA497.png)", "![🫡](//telegram.org/img/emoji/40/F09FABA1.png)", "![🎅](//telegram.org/img/emoji/40/F09F8E85.png)", "![🎄](//telegram.org/img/emoji/40/F09F8E84.png)", "![☃](//telegram.org/img/emoji/40/E29883.png)", "![💅](//telegram.org/img/emoji/40/F09F9285.png)", "![🤪](//telegram.org/img/emoji/40/F09FA4AA.png)", "![🗿](//telegram.org/img/emoji/40/F09F97BF.png)", "![🆒](//telegram.org/img/emoji/40/F09F8692.png)", "![💘](//telegram.org/img/emoji/40/F09F9298.png)", "![🙉](//telegram.org/img/emoji/40/F09F9989.png)", "![🦄](//telegram.org/img/emoji/40/F09FA684.png)", "![😘](//telegram.org/img/emoji/40/F09F9898.png)", "![💊](//telegram.org/img/emoji/40/F09F928A.png)", "![🙊](//telegram.org/img/emoji/40/F09F998A.png)", "![😎](//telegram.org/img/emoji/40/F09F988E.png)", "![👾](//telegram.org/img/emoji/40/F09F91BE.png)", "![🤷‍♂](//telegram.org/img/emoji/40/F09FA4B7E2808DE29982.png)", "![🤷](//telegram.org/img/emoji/40/F09FA4B7.png)", "![🤷‍♀](//telegram.org/img/emoji/40/F09FA4B7E2808DE29980.png)", "![😡](//telegram.org/img/emoji/40/F09F98A1.png)"',
@@ -9848,7 +9848,7 @@ const ReactionTypeCustomEmoji = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the reaction, always “custom\\_emoji”',
@@ -9859,7 +9859,7 @@ const ReactionTypeCustomEmoji = t({
     {
       name: 'custom_emoji_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Custom emoji identifier',
@@ -9879,7 +9879,7 @@ const ReactionTypePaid = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the reaction, always “paid”',
@@ -9899,7 +9899,7 @@ const ReactionCount = t({
     {
       name: 'type',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReactionType',
       },
       description: {
@@ -9911,7 +9911,7 @@ const ReactionCount = t({
     {
       name: 'total_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of times the reaction was added',
@@ -9931,7 +9931,7 @@ const MessageReactionUpdated = t({
     {
       name: 'chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -9943,7 +9943,7 @@ const MessageReactionUpdated = t({
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the message inside the chat',
@@ -9954,7 +9954,7 @@ const MessageReactionUpdated = t({
     {
       name: 'user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -9966,7 +9966,7 @@ const MessageReactionUpdated = t({
     {
       name: 'actor_chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -9978,7 +9978,7 @@ const MessageReactionUpdated = t({
     {
       name: 'date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date of the change in Unix time',
@@ -9989,9 +9989,9 @@ const MessageReactionUpdated = t({
     {
       name: 'old_reaction',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'ReactionType',
         },
       },
@@ -10004,9 +10004,9 @@ const MessageReactionUpdated = t({
     {
       name: 'new_reaction',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'ReactionType',
         },
       },
@@ -10028,7 +10028,7 @@ const MessageReactionCountUpdated = t({
     {
       name: 'chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -10040,7 +10040,7 @@ const MessageReactionCountUpdated = t({
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique message identifier inside the chat',
@@ -10051,7 +10051,7 @@ const MessageReactionCountUpdated = t({
     {
       name: 'date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date of the change in Unix time',
@@ -10062,9 +10062,9 @@ const MessageReactionCountUpdated = t({
     {
       name: 'reactions',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'ReactionCount',
         },
       },
@@ -10086,7 +10086,7 @@ const ForumTopic = t({
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the forum topic',
@@ -10097,7 +10097,7 @@ const ForumTopic = t({
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Name of the topic',
@@ -10108,7 +10108,7 @@ const ForumTopic = t({
     {
       name: 'icon_color',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Color of the topic icon in RGB format',
@@ -10119,7 +10119,7 @@ const ForumTopic = t({
     {
       name: 'icon_custom_emoji_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the custom emoji shown as the topic icon',
@@ -10139,7 +10139,7 @@ const Gift = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the gift',
@@ -10150,7 +10150,7 @@ const Gift = t({
     {
       name: 'sticker',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Sticker',
       },
       description: {
@@ -10162,7 +10162,7 @@ const Gift = t({
     {
       name: 'star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of Telegram Stars that must be paid to send the sticker',
@@ -10173,7 +10173,7 @@ const Gift = t({
     {
       name: 'upgrade_star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of Telegram Stars that must be paid to upgrade the gift to a unique one',
@@ -10184,7 +10184,7 @@ const Gift = t({
     {
       name: 'total_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The total number of the gifts of this type that can be sent; for limited gifts only',
@@ -10195,7 +10195,7 @@ const Gift = t({
     {
       name: 'remaining_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of remaining gifts of this type that can be sent; for limited gifts only',
@@ -10206,7 +10206,7 @@ const Gift = t({
     {
       name: 'publisher_chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -10227,9 +10227,9 @@ const Gifts = t({
     {
       name: 'gifts',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'Gift',
         },
       },
@@ -10251,7 +10251,7 @@ const UniqueGiftModel = t({
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Name of the model',
@@ -10262,7 +10262,7 @@ const UniqueGiftModel = t({
     {
       name: 'sticker',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Sticker',
       },
       description: {
@@ -10274,7 +10274,7 @@ const UniqueGiftModel = t({
     {
       name: 'rarity_per_mille',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of unique gifts that receive this model for every 1000 gifts upgraded',
@@ -10294,7 +10294,7 @@ const UniqueGiftSymbol = t({
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Name of the symbol',
@@ -10305,7 +10305,7 @@ const UniqueGiftSymbol = t({
     {
       name: 'sticker',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Sticker',
       },
       description: {
@@ -10317,7 +10317,7 @@ const UniqueGiftSymbol = t({
     {
       name: 'rarity_per_mille',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of unique gifts that receive this model for every 1000 gifts upgraded',
@@ -10337,7 +10337,7 @@ const UniqueGiftBackdropColors = t({
     {
       name: 'center_color',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The color in the center of the backdrop in RGB format',
@@ -10348,7 +10348,7 @@ const UniqueGiftBackdropColors = t({
     {
       name: 'edge_color',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The color on the edges of the backdrop in RGB format',
@@ -10359,7 +10359,7 @@ const UniqueGiftBackdropColors = t({
     {
       name: 'symbol_color',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The color to be applied to the symbol in RGB format',
@@ -10370,7 +10370,7 @@ const UniqueGiftBackdropColors = t({
     {
       name: 'text_color',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The color for the text on the backdrop in RGB format',
@@ -10390,7 +10390,7 @@ const UniqueGiftBackdrop = t({
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Name of the backdrop',
@@ -10401,7 +10401,7 @@ const UniqueGiftBackdrop = t({
     {
       name: 'colors',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'UniqueGiftBackdropColors',
       },
       description: {
@@ -10413,7 +10413,7 @@ const UniqueGiftBackdrop = t({
     {
       name: 'rarity_per_mille',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of unique gifts that receive this backdrop for every 1000 gifts upgraded',
@@ -10433,7 +10433,7 @@ const UniqueGift = t({
     {
       name: 'base_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Human-readable name of the regular gift from which this unique gift was upgraded',
@@ -10444,7 +10444,7 @@ const UniqueGift = t({
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique name of the gift. This name can be used in `https://t.me/nft/...` links and story areas',
@@ -10455,7 +10455,7 @@ const UniqueGift = t({
     {
       name: 'number',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique number of the upgraded gift among gifts upgraded from the same regular gift',
@@ -10466,7 +10466,7 @@ const UniqueGift = t({
     {
       name: 'model',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'UniqueGiftModel',
       },
       description: {
@@ -10478,7 +10478,7 @@ const UniqueGift = t({
     {
       name: 'symbol',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'UniqueGiftSymbol',
       },
       description: {
@@ -10490,7 +10490,7 @@ const UniqueGift = t({
     {
       name: 'backdrop',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'UniqueGiftBackdrop',
       },
       description: {
@@ -10502,7 +10502,7 @@ const UniqueGift = t({
     {
       name: 'publisher_chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -10523,7 +10523,7 @@ const GiftInfo = t({
     {
       name: 'gift',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Gift',
       },
       description: {
@@ -10535,7 +10535,7 @@ const GiftInfo = t({
     {
       name: 'owned_gift_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the received gift for the bot; only present for gifts received on behalf of business accounts',
@@ -10546,7 +10546,7 @@ const GiftInfo = t({
     {
       name: 'convert_star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of Telegram Stars that can be claimed by the receiver by converting the gift; omitted if conversion to Telegram Stars is impossible',
@@ -10557,7 +10557,7 @@ const GiftInfo = t({
     {
       name: 'prepaid_upgrade_star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of Telegram Stars that were prepaid by the sender for the ability to upgrade the gift',
@@ -10568,7 +10568,7 @@ const GiftInfo = t({
     {
       name: 'can_be_upgraded',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -10580,7 +10580,7 @@ const GiftInfo = t({
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text of the message that was added to the gift',
@@ -10591,9 +10591,9 @@ const GiftInfo = t({
     {
       name: 'entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -10606,7 +10606,7 @@ const GiftInfo = t({
     {
       name: 'is_private',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -10627,7 +10627,7 @@ const UniqueGiftInfo = t({
     {
       name: 'gift',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'UniqueGift',
       },
       description: {
@@ -10639,7 +10639,7 @@ const UniqueGiftInfo = t({
     {
       name: 'origin',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, or “resale” for gifts bought from other users',
@@ -10650,7 +10650,7 @@ const UniqueGiftInfo = t({
     {
       name: 'last_resale_star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'For gifts bought from other users, the price paid for the gift',
@@ -10661,7 +10661,7 @@ const UniqueGiftInfo = t({
     {
       name: 'owned_gift_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the received gift for the bot; only present for gifts received on behalf of business accounts',
@@ -10672,7 +10672,7 @@ const UniqueGiftInfo = t({
     {
       name: 'transfer_star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of Telegram Stars that must be paid to transfer the gift; omitted if the bot cannot transfer the gift',
@@ -10683,7 +10683,7 @@ const UniqueGiftInfo = t({
     {
       name: 'next_transfer_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now',
@@ -10701,11 +10701,11 @@ const OwnedGift = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'OwnedGiftRegular',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'OwnedGiftUnique',
     },
   ],
@@ -10720,7 +10720,7 @@ const OwnedGiftRegular = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the gift, always “regular”',
@@ -10731,7 +10731,7 @@ const OwnedGiftRegular = t({
     {
       name: 'gift',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Gift',
       },
       description: {
@@ -10743,7 +10743,7 @@ const OwnedGiftRegular = t({
     {
       name: 'owned_gift_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the gift for the bot; for gifts received on behalf of business accounts only',
@@ -10754,7 +10754,7 @@ const OwnedGiftRegular = t({
     {
       name: 'sender_user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -10766,7 +10766,7 @@ const OwnedGiftRegular = t({
     {
       name: 'send_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date the gift was sent in Unix time',
@@ -10777,7 +10777,7 @@ const OwnedGiftRegular = t({
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text of the message that was added to the gift',
@@ -10788,9 +10788,9 @@ const OwnedGiftRegular = t({
     {
       name: 'entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -10803,7 +10803,7 @@ const OwnedGiftRegular = t({
     {
       name: 'is_private',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -10815,7 +10815,7 @@ const OwnedGiftRegular = t({
     {
       name: 'is_saved',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -10827,7 +10827,7 @@ const OwnedGiftRegular = t({
     {
       name: 'can_be_upgraded',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -10839,7 +10839,7 @@ const OwnedGiftRegular = t({
     {
       name: 'was_refunded',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -10851,7 +10851,7 @@ const OwnedGiftRegular = t({
     {
       name: 'convert_star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of Telegram Stars that can be claimed by the receiver instead of the gift; omitted if the gift cannot be converted to Telegram Stars',
@@ -10862,7 +10862,7 @@ const OwnedGiftRegular = t({
     {
       name: 'prepaid_upgrade_star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of Telegram Stars that were paid by the sender for the ability to upgrade the gift',
@@ -10882,7 +10882,7 @@ const OwnedGiftUnique = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the gift, always “unique”',
@@ -10893,7 +10893,7 @@ const OwnedGiftUnique = t({
     {
       name: 'gift',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'UniqueGift',
       },
       description: {
@@ -10905,7 +10905,7 @@ const OwnedGiftUnique = t({
     {
       name: 'owned_gift_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the received gift for the bot; for gifts received on behalf of business accounts only',
@@ -10916,7 +10916,7 @@ const OwnedGiftUnique = t({
     {
       name: 'sender_user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -10928,7 +10928,7 @@ const OwnedGiftUnique = t({
     {
       name: 'send_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date the gift was sent in Unix time',
@@ -10939,7 +10939,7 @@ const OwnedGiftUnique = t({
     {
       name: 'is_saved',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -10951,7 +10951,7 @@ const OwnedGiftUnique = t({
     {
       name: 'can_be_transferred',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -10963,7 +10963,7 @@ const OwnedGiftUnique = t({
     {
       name: 'transfer_star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of Telegram Stars that must be paid to transfer the gift; omitted if the bot cannot transfer the gift',
@@ -10974,7 +10974,7 @@ const OwnedGiftUnique = t({
     {
       name: 'next_transfer_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now',
@@ -10994,7 +10994,7 @@ const OwnedGifts = t({
     {
       name: 'total_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The total number of gifts owned by the user or the chat',
@@ -11005,9 +11005,9 @@ const OwnedGifts = t({
     {
       name: 'gifts',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'OwnedGift',
         },
       },
@@ -11020,7 +11020,7 @@ const OwnedGifts = t({
     {
       name: 'next_offset',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Offset for the next request. If empty, then there are no more results',
@@ -11040,7 +11040,7 @@ const AcceptedGiftTypes = t({
     {
       name: 'unlimited_gifts',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if unlimited regular gifts are accepted',
@@ -11051,7 +11051,7 @@ const AcceptedGiftTypes = t({
     {
       name: 'limited_gifts',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if limited regular gifts are accepted',
@@ -11062,7 +11062,7 @@ const AcceptedGiftTypes = t({
     {
       name: 'unique_gifts',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if unique gifts or gifts that can be upgraded to unique for free are accepted',
@@ -11073,7 +11073,7 @@ const AcceptedGiftTypes = t({
     {
       name: 'premium_subscription',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if a Telegram Premium subscription is accepted',
@@ -11093,7 +11093,7 @@ const StarAmount = t({
     {
       name: 'amount',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Integer amount of Telegram Stars, rounded to 0; can be negative',
@@ -11104,7 +11104,7 @@ const StarAmount = t({
     {
       name: 'nanostar_amount',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of 1/1000000000 shares of Telegram Stars; from -999999999 to 999999999; can be negative if and only if _amount_ is non-positive',
@@ -11124,7 +11124,7 @@ const BotCommand = t({
     {
       name: 'command',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text of the command; 1-32 characters. Can contain only lowercase English letters, digits and underscores.',
@@ -11135,7 +11135,7 @@ const BotCommand = t({
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Description of the command; 1-256 characters.',
@@ -11153,31 +11153,31 @@ const BotCommandScope = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'BotCommandScopeDefault',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'BotCommandScopeAllPrivateChats',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'BotCommandScopeAllGroupChats',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'BotCommandScopeAllChatAdministrators',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'BotCommandScopeChat',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'BotCommandScopeChatAdministrators',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'BotCommandScopeChatMember',
     },
   ],
@@ -11192,7 +11192,7 @@ const BotCommandScopeDefault = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Scope type, must be _default_',
@@ -11212,7 +11212,7 @@ const BotCommandScopeAllPrivateChats = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Scope type, must be _all\\_private\\_chats_',
@@ -11232,7 +11232,7 @@ const BotCommandScopeAllGroupChats = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Scope type, must be _all\\_group\\_chats_',
@@ -11252,7 +11252,7 @@ const BotCommandScopeAllChatAdministrators = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Scope type, must be _all\\_chat\\_administrators_',
@@ -11272,7 +11272,7 @@ const BotCommandScopeChat = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Scope type, must be _chat_',
@@ -11283,13 +11283,13 @@ const BotCommandScopeChat = t({
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -11311,7 +11311,7 @@ const BotCommandScopeChatAdministrators = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Scope type, must be _chat\\_administrators_',
@@ -11322,13 +11322,13 @@ const BotCommandScopeChatAdministrators = t({
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -11350,7 +11350,7 @@ const BotCommandScopeChatMember = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Scope type, must be _chat\\_member_',
@@ -11361,13 +11361,13 @@ const BotCommandScopeChatMember = t({
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -11380,7 +11380,7 @@ const BotCommandScopeChatMember = t({
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target user',
@@ -11400,7 +11400,7 @@ const BotName = t({
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The bot\'s name',
@@ -11420,7 +11420,7 @@ const BotDescription = t({
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The bot\'s description',
@@ -11440,7 +11440,7 @@ const BotShortDescription = t({
     {
       name: 'short_description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The bot\'s short description',
@@ -11458,15 +11458,15 @@ const MenuButton = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'MenuButtonCommands',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'MenuButtonWebApp',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'MenuButtonDefault',
     },
   ],
@@ -11481,7 +11481,7 @@ const MenuButtonCommands = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the button, must be _commands_',
@@ -11501,7 +11501,7 @@ const MenuButtonWebApp = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the button, must be _web\\_app_',
@@ -11512,7 +11512,7 @@ const MenuButtonWebApp = t({
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text on the button',
@@ -11523,7 +11523,7 @@ const MenuButtonWebApp = t({
     {
       name: 'web_app',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'WebAppInfo',
       },
       description: {
@@ -11544,7 +11544,7 @@ const MenuButtonDefault = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the button, must be _default_',
@@ -11562,15 +11562,15 @@ const ChatBoostSource = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'ChatBoostSourcePremium',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'ChatBoostSourceGiftCode',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'ChatBoostSourceGiveaway',
     },
   ],
@@ -11585,7 +11585,7 @@ const ChatBoostSourcePremium = t({
     {
       name: 'source',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Source of the boost, always “premium”',
@@ -11596,7 +11596,7 @@ const ChatBoostSourcePremium = t({
     {
       name: 'user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -11617,7 +11617,7 @@ const ChatBoostSourceGiftCode = t({
     {
       name: 'source',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Source of the boost, always “gift\\_code”',
@@ -11628,7 +11628,7 @@ const ChatBoostSourceGiftCode = t({
     {
       name: 'user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -11649,7 +11649,7 @@ const ChatBoostSourceGiveaway = t({
     {
       name: 'source',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Source of the boost, always “giveaway”',
@@ -11660,7 +11660,7 @@ const ChatBoostSourceGiveaway = t({
     {
       name: 'giveaway_message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of a message in the chat with the giveaway; the message could have been deleted already. May be 0 if the message isn\'t sent yet.',
@@ -11671,7 +11671,7 @@ const ChatBoostSourceGiveaway = t({
     {
       name: 'user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -11683,7 +11683,7 @@ const ChatBoostSourceGiveaway = t({
     {
       name: 'prize_star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of Telegram Stars to be split between giveaway winners; for Telegram Star giveaways only',
@@ -11694,7 +11694,7 @@ const ChatBoostSourceGiveaway = t({
     {
       name: 'is_unclaimed',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -11715,7 +11715,7 @@ const ChatBoost = t({
     {
       name: 'boost_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the boost',
@@ -11726,7 +11726,7 @@ const ChatBoost = t({
     {
       name: 'add_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Point in time (Unix timestamp) when the chat was boosted',
@@ -11737,7 +11737,7 @@ const ChatBoost = t({
     {
       name: 'expiration_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Point in time (Unix timestamp) when the boost will automatically expire, unless the booster\'s Telegram Premium subscription is prolonged',
@@ -11748,7 +11748,7 @@ const ChatBoost = t({
     {
       name: 'source',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatBoostSource',
       },
       description: {
@@ -11769,7 +11769,7 @@ const ChatBoostUpdated = t({
     {
       name: 'chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -11781,7 +11781,7 @@ const ChatBoostUpdated = t({
     {
       name: 'boost',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatBoost',
       },
       description: {
@@ -11802,7 +11802,7 @@ const ChatBoostRemoved = t({
     {
       name: 'chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -11814,7 +11814,7 @@ const ChatBoostRemoved = t({
     {
       name: 'boost_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the boost',
@@ -11825,7 +11825,7 @@ const ChatBoostRemoved = t({
     {
       name: 'remove_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Point in time (Unix timestamp) when the boost was removed',
@@ -11836,7 +11836,7 @@ const ChatBoostRemoved = t({
     {
       name: 'source',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatBoostSource',
       },
       description: {
@@ -11857,9 +11857,9 @@ const UserChatBoosts = t({
     {
       name: 'boosts',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'ChatBoost',
         },
       },
@@ -11881,7 +11881,7 @@ const BusinessBotRights = t({
     {
       name: 'can_reply',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -11893,7 +11893,7 @@ const BusinessBotRights = t({
     {
       name: 'can_read_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -11905,7 +11905,7 @@ const BusinessBotRights = t({
     {
       name: 'can_delete_sent_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -11917,7 +11917,7 @@ const BusinessBotRights = t({
     {
       name: 'can_delete_all_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -11929,7 +11929,7 @@ const BusinessBotRights = t({
     {
       name: 'can_edit_name',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -11941,7 +11941,7 @@ const BusinessBotRights = t({
     {
       name: 'can_edit_bio',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -11953,7 +11953,7 @@ const BusinessBotRights = t({
     {
       name: 'can_edit_profile_photo',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -11965,7 +11965,7 @@ const BusinessBotRights = t({
     {
       name: 'can_edit_username',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -11977,7 +11977,7 @@ const BusinessBotRights = t({
     {
       name: 'can_change_gift_settings',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -11989,7 +11989,7 @@ const BusinessBotRights = t({
     {
       name: 'can_view_gifts_and_stars',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -12001,7 +12001,7 @@ const BusinessBotRights = t({
     {
       name: 'can_convert_gifts_to_stars',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -12013,7 +12013,7 @@ const BusinessBotRights = t({
     {
       name: 'can_transfer_and_upgrade_gifts',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -12025,7 +12025,7 @@ const BusinessBotRights = t({
     {
       name: 'can_transfer_stars',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -12037,7 +12037,7 @@ const BusinessBotRights = t({
     {
       name: 'can_manage_stories',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -12058,7 +12058,7 @@ const BusinessConnection = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -12069,7 +12069,7 @@ const BusinessConnection = t({
     {
       name: 'user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -12081,7 +12081,7 @@ const BusinessConnection = t({
     {
       name: 'user_chat_id',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'Identifier of a private chat with the user who created the business connection.',
@@ -12092,7 +12092,7 @@ const BusinessConnection = t({
     {
       name: 'date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date the connection was established in Unix time',
@@ -12103,7 +12103,7 @@ const BusinessConnection = t({
     {
       name: 'rights',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'BusinessBotRights',
       },
       description: {
@@ -12115,7 +12115,7 @@ const BusinessConnection = t({
     {
       name: 'is_enabled',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the connection is active',
@@ -12135,7 +12135,7 @@ const BusinessMessagesDeleted = t({
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -12146,7 +12146,7 @@ const BusinessMessagesDeleted = t({
     {
       name: 'chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -12158,9 +12158,9 @@ const BusinessMessagesDeleted = t({
     {
       name: 'message_ids',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'int32',
+          type: 'int32',
         },
       },
       description: {
@@ -12181,7 +12181,7 @@ const ResponseParameters = t({
     {
       name: 'migrate_to_chat_id',
       type: {
-        kind: 'int52',
+        type: 'int52',
       },
       description: {
         markdown: 'The group has been migrated to a supergroup with the specified identifier.',
@@ -12192,7 +12192,7 @@ const ResponseParameters = t({
     {
       name: 'retry_after',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'In case of exceeding flood control, the number of seconds left to wait before the request can be repeated',
@@ -12210,23 +12210,23 @@ const InputMedia = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InputMediaAnimation',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InputMediaDocument',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InputMediaAudio',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InputMediaPhoto',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InputMediaVideo',
     },
   ],
@@ -12241,7 +12241,7 @@ const InputMediaPhoto = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _photo_',
@@ -12252,7 +12252,7 @@ const InputMediaPhoto = t({
     {
       name: 'media',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -12263,7 +12263,7 @@ const InputMediaPhoto = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the photo to be sent, 0-1024 characters after entities parsing',
@@ -12274,7 +12274,7 @@ const InputMediaPhoto = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -12285,9 +12285,9 @@ const InputMediaPhoto = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -12300,7 +12300,7 @@ const InputMediaPhoto = t({
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
@@ -12311,7 +12311,7 @@ const InputMediaPhoto = t({
     {
       name: 'has_spoiler',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the photo needs to be covered with a spoiler animation',
@@ -12331,7 +12331,7 @@ const InputMediaVideo = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _video_',
@@ -12342,7 +12342,7 @@ const InputMediaVideo = t({
     {
       name: 'media',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -12353,7 +12353,7 @@ const InputMediaVideo = t({
     {
       name: 'thumbnail',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -12364,7 +12364,7 @@ const InputMediaVideo = t({
     {
       name: 'cover',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Cover for the video in the message. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -12375,7 +12375,7 @@ const InputMediaVideo = t({
     {
       name: 'start_timestamp',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Start timestamp for the video in the message',
@@ -12386,7 +12386,7 @@ const InputMediaVideo = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the video to be sent, 0-1024 characters after entities parsing',
@@ -12397,7 +12397,7 @@ const InputMediaVideo = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -12408,9 +12408,9 @@ const InputMediaVideo = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -12423,7 +12423,7 @@ const InputMediaVideo = t({
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
@@ -12434,7 +12434,7 @@ const InputMediaVideo = t({
     {
       name: 'width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video width',
@@ -12445,7 +12445,7 @@ const InputMediaVideo = t({
     {
       name: 'height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video height',
@@ -12456,7 +12456,7 @@ const InputMediaVideo = t({
     {
       name: 'duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video duration in seconds',
@@ -12467,7 +12467,7 @@ const InputMediaVideo = t({
     {
       name: 'supports_streaming',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the uploaded video is suitable for streaming',
@@ -12478,7 +12478,7 @@ const InputMediaVideo = t({
     {
       name: 'has_spoiler',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the video needs to be covered with a spoiler animation',
@@ -12498,7 +12498,7 @@ const InputMediaAnimation = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _animation_',
@@ -12509,7 +12509,7 @@ const InputMediaAnimation = t({
     {
       name: 'media',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -12520,7 +12520,7 @@ const InputMediaAnimation = t({
     {
       name: 'thumbnail',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -12531,7 +12531,7 @@ const InputMediaAnimation = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the animation to be sent, 0-1024 characters after entities parsing',
@@ -12542,7 +12542,7 @@ const InputMediaAnimation = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the animation caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -12553,9 +12553,9 @@ const InputMediaAnimation = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -12568,7 +12568,7 @@ const InputMediaAnimation = t({
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
@@ -12579,7 +12579,7 @@ const InputMediaAnimation = t({
     {
       name: 'width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Animation width',
@@ -12590,7 +12590,7 @@ const InputMediaAnimation = t({
     {
       name: 'height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Animation height',
@@ -12601,7 +12601,7 @@ const InputMediaAnimation = t({
     {
       name: 'duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Animation duration in seconds',
@@ -12612,7 +12612,7 @@ const InputMediaAnimation = t({
     {
       name: 'has_spoiler',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the animation needs to be covered with a spoiler animation',
@@ -12632,7 +12632,7 @@ const InputMediaAudio = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _audio_',
@@ -12643,7 +12643,7 @@ const InputMediaAudio = t({
     {
       name: 'media',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -12654,7 +12654,7 @@ const InputMediaAudio = t({
     {
       name: 'thumbnail',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -12665,7 +12665,7 @@ const InputMediaAudio = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the audio to be sent, 0-1024 characters after entities parsing',
@@ -12676,7 +12676,7 @@ const InputMediaAudio = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the audio caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -12687,9 +12687,9 @@ const InputMediaAudio = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -12702,7 +12702,7 @@ const InputMediaAudio = t({
     {
       name: 'duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Duration of the audio in seconds',
@@ -12713,7 +12713,7 @@ const InputMediaAudio = t({
     {
       name: 'performer',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Performer of the audio',
@@ -12724,7 +12724,7 @@ const InputMediaAudio = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title of the audio',
@@ -12744,7 +12744,7 @@ const InputMediaDocument = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _document_',
@@ -12755,7 +12755,7 @@ const InputMediaDocument = t({
     {
       name: 'media',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -12766,7 +12766,7 @@ const InputMediaDocument = t({
     {
       name: 'thumbnail',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -12777,7 +12777,7 @@ const InputMediaDocument = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the document to be sent, 0-1024 characters after entities parsing',
@@ -12788,7 +12788,7 @@ const InputMediaDocument = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -12799,9 +12799,9 @@ const InputMediaDocument = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -12814,7 +12814,7 @@ const InputMediaDocument = t({
     {
       name: 'disable_content_type_detection',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Disables automatic server-side content type detection for files uploaded using multipart/form-data. Always _True_, if the document is sent as part of an album.',
@@ -12832,11 +12832,11 @@ const InputPaidMedia = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InputPaidMediaPhoto',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InputPaidMediaVideo',
     },
   ],
@@ -12851,7 +12851,7 @@ const InputPaidMediaPhoto = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the media, must be _photo_',
@@ -12862,7 +12862,7 @@ const InputPaidMediaPhoto = t({
     {
       name: 'media',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -12882,7 +12882,7 @@ const InputPaidMediaVideo = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the media, must be _video_',
@@ -12893,7 +12893,7 @@ const InputPaidMediaVideo = t({
     {
       name: 'media',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -12904,7 +12904,7 @@ const InputPaidMediaVideo = t({
     {
       name: 'thumbnail',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -12915,7 +12915,7 @@ const InputPaidMediaVideo = t({
     {
       name: 'cover',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Cover for the video in the message. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -12926,7 +12926,7 @@ const InputPaidMediaVideo = t({
     {
       name: 'start_timestamp',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Start timestamp for the video in the message',
@@ -12937,7 +12937,7 @@ const InputPaidMediaVideo = t({
     {
       name: 'width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video width',
@@ -12948,7 +12948,7 @@ const InputPaidMediaVideo = t({
     {
       name: 'height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video height',
@@ -12959,7 +12959,7 @@ const InputPaidMediaVideo = t({
     {
       name: 'duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video duration in seconds',
@@ -12970,7 +12970,7 @@ const InputPaidMediaVideo = t({
     {
       name: 'supports_streaming',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the uploaded video is suitable for streaming',
@@ -12988,11 +12988,11 @@ const InputProfilePhoto = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InputProfilePhotoStatic',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InputProfilePhotoAnimated',
     },
   ],
@@ -13007,7 +13007,7 @@ const InputProfilePhotoStatic = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the profile photo, must be _static_',
@@ -13018,7 +13018,7 @@ const InputProfilePhotoStatic = t({
     {
       name: 'photo',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The static profile photo. Profile photos can\'t be reused and can only be uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the photo was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -13038,7 +13038,7 @@ const InputProfilePhotoAnimated = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the profile photo, must be _animated_',
@@ -13049,7 +13049,7 @@ const InputProfilePhotoAnimated = t({
     {
       name: 'animation',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The animated profile photo. Profile photos can\'t be reused and can only be uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the photo was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -13060,7 +13060,7 @@ const InputProfilePhotoAnimated = t({
     {
       name: 'main_frame_timestamp',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Timestamp in seconds of the frame that will be used as the static profile photo. Defaults to 0.0.',
@@ -13078,11 +13078,11 @@ const InputStoryContent = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InputStoryContentPhoto',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InputStoryContentVideo',
     },
   ],
@@ -13097,7 +13097,7 @@ const InputStoryContentPhoto = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the content, must be _photo_',
@@ -13108,7 +13108,7 @@ const InputStoryContentPhoto = t({
     {
       name: 'photo',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The photo to post as a story. The photo must be of the size 1080x1920 and must not exceed 10 MB. The photo can\'t be reused and can only be uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the photo was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -13128,7 +13128,7 @@ const InputStoryContentVideo = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the content, must be _video_',
@@ -13139,7 +13139,7 @@ const InputStoryContentVideo = t({
     {
       name: 'video',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The video to post as a story. The video must be of the size 720x1280, streamable, encoded with H.265 codec, with key frames added each second in the MPEG4 format, and must not exceed 30 MB. The video can\'t be reused and can only be uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the video was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -13150,7 +13150,7 @@ const InputStoryContentVideo = t({
     {
       name: 'duration',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Precise duration of the video in seconds; 0-60',
@@ -13161,7 +13161,7 @@ const InputStoryContentVideo = t({
     {
       name: 'cover_frame_timestamp',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Timestamp in seconds of the frame that will be used as the static cover for the story. Defaults to 0.0.',
@@ -13172,7 +13172,7 @@ const InputStoryContentVideo = t({
     {
       name: 'is_animation',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the video has no sound',
@@ -13192,7 +13192,7 @@ const Sticker = t({
     {
       name: 'file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
@@ -13203,7 +13203,7 @@ const Sticker = t({
     {
       name: 'file_unique_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
@@ -13214,7 +13214,7 @@ const Sticker = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the sticker, currently one of “regular”, “mask”, “custom\\_emoji”. The type of the sticker is independent from its format, which is determined by the fields _is\\_animated_ and _is\\_video_.',
@@ -13225,7 +13225,7 @@ const Sticker = t({
     {
       name: 'width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Sticker width',
@@ -13236,7 +13236,7 @@ const Sticker = t({
     {
       name: 'height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Sticker height',
@@ -13247,7 +13247,7 @@ const Sticker = t({
     {
       name: 'is_animated',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the sticker is [animated](https://telegram.org/blog/animated-stickers)',
@@ -13258,7 +13258,7 @@ const Sticker = t({
     {
       name: 'is_video',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the sticker is a [video sticker](https://telegram.org/blog/video-stickers-better-reactions)',
@@ -13269,7 +13269,7 @@ const Sticker = t({
     {
       name: 'thumbnail',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PhotoSize',
       },
       description: {
@@ -13281,7 +13281,7 @@ const Sticker = t({
     {
       name: 'emoji',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Emoji associated with the sticker',
@@ -13292,7 +13292,7 @@ const Sticker = t({
     {
       name: 'set_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Name of the sticker set to which the sticker belongs',
@@ -13303,7 +13303,7 @@ const Sticker = t({
     {
       name: 'premium_animation',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'File',
       },
       description: {
@@ -13315,7 +13315,7 @@ const Sticker = t({
     {
       name: 'mask_position',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'MaskPosition',
       },
       description: {
@@ -13327,7 +13327,7 @@ const Sticker = t({
     {
       name: 'custom_emoji_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'For custom emoji stickers, unique identifier of the custom emoji',
@@ -13338,7 +13338,7 @@ const Sticker = t({
     {
       name: 'needs_repainting',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -13350,7 +13350,7 @@ const Sticker = t({
     {
       name: 'file_size',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'File size in bytes',
@@ -13370,7 +13370,7 @@ const StickerSet = t({
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Sticker set name',
@@ -13381,7 +13381,7 @@ const StickerSet = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Sticker set title',
@@ -13392,7 +13392,7 @@ const StickerSet = t({
     {
       name: 'sticker_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of stickers in the set, currently one of “regular”, “mask”, “custom\\_emoji”',
@@ -13403,9 +13403,9 @@ const StickerSet = t({
     {
       name: 'stickers',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'Sticker',
         },
       },
@@ -13418,7 +13418,7 @@ const StickerSet = t({
     {
       name: 'thumbnail',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PhotoSize',
       },
       description: {
@@ -13439,7 +13439,7 @@ const MaskPosition = t({
     {
       name: 'point',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The part of the face relative to which the mask should be placed. One of “forehead”, “eyes”, “mouth”, or “chin”.',
@@ -13450,7 +13450,7 @@ const MaskPosition = t({
     {
       name: 'x_shift',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Shift by X-axis measured in widths of the mask scaled to the face size, from left to right. For example, choosing -1.0 will place mask just to the left of the default mask position.',
@@ -13461,7 +13461,7 @@ const MaskPosition = t({
     {
       name: 'y_shift',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Shift by Y-axis measured in heights of the mask scaled to the face size, from top to bottom. For example, 1.0 will place the mask just below the default mask position.',
@@ -13472,7 +13472,7 @@ const MaskPosition = t({
     {
       name: 'scale',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Mask scaling coefficient. For example, 2.0 means double size.',
@@ -13492,7 +13492,7 @@ const InputSticker = t({
     {
       name: 'sticker',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The added sticker. Pass a _file\\_id_ as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new file using multipart/form-data under <file\\_attach\\_name> name. Animated and video stickers can\'t be uploaded via HTTP URL. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -13503,7 +13503,7 @@ const InputSticker = t({
     {
       name: 'format',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Format of the added sticker, must be one of “static” for a **.WEBP** or **.PNG** image, “animated” for a **.TGS** animation, “video” for a **.WEBM** video',
@@ -13514,9 +13514,9 @@ const InputSticker = t({
     {
       name: 'emoji_list',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'str',
+          type: 'str',
         },
       },
       description: {
@@ -13528,7 +13528,7 @@ const InputSticker = t({
     {
       name: 'mask_position',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'MaskPosition',
       },
       description: {
@@ -13540,9 +13540,9 @@ const InputSticker = t({
     {
       name: 'keywords',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'str',
+          type: 'str',
         },
       },
       description: {
@@ -13563,7 +13563,7 @@ const InlineQuery = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this query',
@@ -13574,7 +13574,7 @@ const InlineQuery = t({
     {
       name: 'from',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -13586,7 +13586,7 @@ const InlineQuery = t({
     {
       name: 'query',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text of the query (up to 256 characters)',
@@ -13597,7 +13597,7 @@ const InlineQuery = t({
     {
       name: 'offset',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Offset of the results to be returned, can be controlled by the bot',
@@ -13608,7 +13608,7 @@ const InlineQuery = t({
     {
       name: 'chat_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the chat from which the inline query was sent. Can be either “sender” for a private chat with the inline query sender, “private”, “group”, “supergroup”, or “channel”. The chat type should be always known for requests sent from official clients and most third-party clients, unless the request was sent from a secret chat',
@@ -13619,7 +13619,7 @@ const InlineQuery = t({
     {
       name: 'location',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Location',
       },
       description: {
@@ -13640,7 +13640,7 @@ const InlineQueryResultsButton = t({
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Label text on the button',
@@ -13651,7 +13651,7 @@ const InlineQueryResultsButton = t({
     {
       name: 'web_app',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'WebAppInfo',
       },
       description: {
@@ -13663,7 +13663,7 @@ const InlineQueryResultsButton = t({
     {
       name: 'start_parameter',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: '[Deep-linking](https://core.telegram.org/bots/features#deep-linking) parameter for the /start message sent to the bot when a user presses the button. 1-64 characters, only `A-Z`, `a-z`, `0-9`, `_` and `-` are allowed.  \n  \n_Example:_ An inline bot that sends YouTube videos can ask the user to connect the bot to their YouTube account to adapt search results accordingly. To do this, it displays a \'Connect your YouTube account\' button above the results, or even before showing any. The user presses the button, switches to a private chat with the bot and, in doing so, passes a start parameter that instructs the bot to return an OAuth link. Once done, the bot can offer a [_switch\\_inline_](https://core.telegram.org/bots/api#inlinekeyboardmarkup) button so that the user can easily return to the chat where they wanted to use the bot\'s inline capabilities.',
@@ -13681,83 +13681,83 @@ const InlineQueryResult = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultCachedAudio',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultCachedDocument',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultCachedGif',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultCachedMpeg4Gif',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultCachedPhoto',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultCachedSticker',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultCachedVideo',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultCachedVoice',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultArticle',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultAudio',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultContact',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultGame',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultDocument',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultGif',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultLocation',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultMpeg4Gif',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultPhoto',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultVenue',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultVideo',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InlineQueryResultVoice',
     },
   ],
@@ -13772,7 +13772,7 @@ const InlineQueryResultArticle = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _article_',
@@ -13783,7 +13783,7 @@ const InlineQueryResultArticle = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 Bytes',
@@ -13794,7 +13794,7 @@ const InlineQueryResultArticle = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title of the result',
@@ -13805,7 +13805,7 @@ const InlineQueryResultArticle = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -13817,7 +13817,7 @@ const InlineQueryResultArticle = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -13829,7 +13829,7 @@ const InlineQueryResultArticle = t({
     {
       name: 'url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'URL of the result',
@@ -13840,7 +13840,7 @@ const InlineQueryResultArticle = t({
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Short description of the result',
@@ -13851,7 +13851,7 @@ const InlineQueryResultArticle = t({
     {
       name: 'thumbnail_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Url of the thumbnail for the result',
@@ -13862,7 +13862,7 @@ const InlineQueryResultArticle = t({
     {
       name: 'thumbnail_width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Thumbnail width',
@@ -13873,7 +13873,7 @@ const InlineQueryResultArticle = t({
     {
       name: 'thumbnail_height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Thumbnail height',
@@ -13893,7 +13893,7 @@ const InlineQueryResultPhoto = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _photo_',
@@ -13904,7 +13904,7 @@ const InlineQueryResultPhoto = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 bytes',
@@ -13915,7 +13915,7 @@ const InlineQueryResultPhoto = t({
     {
       name: 'photo_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A valid URL of the photo. Photo must be in **JPEG** format. Photo size must not exceed 5MB',
@@ -13926,7 +13926,7 @@ const InlineQueryResultPhoto = t({
     {
       name: 'thumbnail_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'URL of the thumbnail for the photo',
@@ -13937,7 +13937,7 @@ const InlineQueryResultPhoto = t({
     {
       name: 'photo_width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Width of the photo',
@@ -13948,7 +13948,7 @@ const InlineQueryResultPhoto = t({
     {
       name: 'photo_height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Height of the photo',
@@ -13959,7 +13959,7 @@ const InlineQueryResultPhoto = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title for the result',
@@ -13970,7 +13970,7 @@ const InlineQueryResultPhoto = t({
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Short description of the result',
@@ -13981,7 +13981,7 @@ const InlineQueryResultPhoto = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the photo to be sent, 0-1024 characters after entities parsing',
@@ -13992,7 +13992,7 @@ const InlineQueryResultPhoto = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -14003,9 +14003,9 @@ const InlineQueryResultPhoto = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -14018,7 +14018,7 @@ const InlineQueryResultPhoto = t({
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
@@ -14029,7 +14029,7 @@ const InlineQueryResultPhoto = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -14041,7 +14041,7 @@ const InlineQueryResultPhoto = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -14062,7 +14062,7 @@ const InlineQueryResultGif = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _gif_',
@@ -14073,7 +14073,7 @@ const InlineQueryResultGif = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 bytes',
@@ -14084,7 +14084,7 @@ const InlineQueryResultGif = t({
     {
       name: 'gif_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A valid URL for the GIF file',
@@ -14095,7 +14095,7 @@ const InlineQueryResultGif = t({
     {
       name: 'gif_width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Width of the GIF',
@@ -14106,7 +14106,7 @@ const InlineQueryResultGif = t({
     {
       name: 'gif_height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Height of the GIF',
@@ -14117,7 +14117,7 @@ const InlineQueryResultGif = t({
     {
       name: 'gif_duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Duration of the GIF in seconds',
@@ -14128,7 +14128,7 @@ const InlineQueryResultGif = t({
     {
       name: 'thumbnail_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'URL of the static (JPEG or GIF) or animated (MPEG4) thumbnail for the result',
@@ -14139,7 +14139,7 @@ const InlineQueryResultGif = t({
     {
       name: 'thumbnail_mime_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”',
@@ -14150,7 +14150,7 @@ const InlineQueryResultGif = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title for the result',
@@ -14161,7 +14161,7 @@ const InlineQueryResultGif = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the GIF file to be sent, 0-1024 characters after entities parsing',
@@ -14172,7 +14172,7 @@ const InlineQueryResultGif = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -14183,9 +14183,9 @@ const InlineQueryResultGif = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -14198,7 +14198,7 @@ const InlineQueryResultGif = t({
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
@@ -14209,7 +14209,7 @@ const InlineQueryResultGif = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -14221,7 +14221,7 @@ const InlineQueryResultGif = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -14242,7 +14242,7 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _mpeg4\\_gif_',
@@ -14253,7 +14253,7 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 bytes',
@@ -14264,7 +14264,7 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'mpeg4_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A valid URL for the MPEG4 file',
@@ -14275,7 +14275,7 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'mpeg4_width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video width',
@@ -14286,7 +14286,7 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'mpeg4_height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video height',
@@ -14297,7 +14297,7 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'mpeg4_duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video duration in seconds',
@@ -14308,7 +14308,7 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'thumbnail_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'URL of the static (JPEG or GIF) or animated (MPEG4) thumbnail for the result',
@@ -14319,7 +14319,7 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'thumbnail_mime_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”',
@@ -14330,7 +14330,7 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title for the result',
@@ -14341,7 +14341,7 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the MPEG-4 file to be sent, 0-1024 characters after entities parsing',
@@ -14352,7 +14352,7 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -14363,9 +14363,9 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -14378,7 +14378,7 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
@@ -14389,7 +14389,7 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -14401,7 +14401,7 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -14422,7 +14422,7 @@ const InlineQueryResultVideo = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _video_',
@@ -14433,7 +14433,7 @@ const InlineQueryResultVideo = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 bytes',
@@ -14444,7 +14444,7 @@ const InlineQueryResultVideo = t({
     {
       name: 'video_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A valid URL for the embedded video player or video file',
@@ -14455,7 +14455,7 @@ const InlineQueryResultVideo = t({
     {
       name: 'mime_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'MIME type of the content of the video URL, “text/html” or “video/mp4”',
@@ -14466,7 +14466,7 @@ const InlineQueryResultVideo = t({
     {
       name: 'thumbnail_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'URL of the thumbnail (JPEG only) for the video',
@@ -14477,7 +14477,7 @@ const InlineQueryResultVideo = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title for the result',
@@ -14488,7 +14488,7 @@ const InlineQueryResultVideo = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the video to be sent, 0-1024 characters after entities parsing',
@@ -14499,7 +14499,7 @@ const InlineQueryResultVideo = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -14510,9 +14510,9 @@ const InlineQueryResultVideo = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -14525,7 +14525,7 @@ const InlineQueryResultVideo = t({
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
@@ -14536,7 +14536,7 @@ const InlineQueryResultVideo = t({
     {
       name: 'video_width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video width',
@@ -14547,7 +14547,7 @@ const InlineQueryResultVideo = t({
     {
       name: 'video_height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video height',
@@ -14558,7 +14558,7 @@ const InlineQueryResultVideo = t({
     {
       name: 'video_duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video duration in seconds',
@@ -14569,7 +14569,7 @@ const InlineQueryResultVideo = t({
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Short description of the result',
@@ -14580,7 +14580,7 @@ const InlineQueryResultVideo = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -14592,7 +14592,7 @@ const InlineQueryResultVideo = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -14613,7 +14613,7 @@ const InlineQueryResultAudio = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _audio_',
@@ -14624,7 +14624,7 @@ const InlineQueryResultAudio = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 bytes',
@@ -14635,7 +14635,7 @@ const InlineQueryResultAudio = t({
     {
       name: 'audio_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A valid URL for the audio file',
@@ -14646,7 +14646,7 @@ const InlineQueryResultAudio = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title',
@@ -14657,7 +14657,7 @@ const InlineQueryResultAudio = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption, 0-1024 characters after entities parsing',
@@ -14668,7 +14668,7 @@ const InlineQueryResultAudio = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the audio caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -14679,9 +14679,9 @@ const InlineQueryResultAudio = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -14694,7 +14694,7 @@ const InlineQueryResultAudio = t({
     {
       name: 'performer',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Performer',
@@ -14705,7 +14705,7 @@ const InlineQueryResultAudio = t({
     {
       name: 'audio_duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Audio duration in seconds',
@@ -14716,7 +14716,7 @@ const InlineQueryResultAudio = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -14728,7 +14728,7 @@ const InlineQueryResultAudio = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -14749,7 +14749,7 @@ const InlineQueryResultVoice = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _voice_',
@@ -14760,7 +14760,7 @@ const InlineQueryResultVoice = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 bytes',
@@ -14771,7 +14771,7 @@ const InlineQueryResultVoice = t({
     {
       name: 'voice_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A valid URL for the voice recording',
@@ -14782,7 +14782,7 @@ const InlineQueryResultVoice = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Recording title',
@@ -14793,7 +14793,7 @@ const InlineQueryResultVoice = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption, 0-1024 characters after entities parsing',
@@ -14804,7 +14804,7 @@ const InlineQueryResultVoice = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the voice message caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -14815,9 +14815,9 @@ const InlineQueryResultVoice = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -14830,7 +14830,7 @@ const InlineQueryResultVoice = t({
     {
       name: 'voice_duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Recording duration in seconds',
@@ -14841,7 +14841,7 @@ const InlineQueryResultVoice = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -14853,7 +14853,7 @@ const InlineQueryResultVoice = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -14874,7 +14874,7 @@ const InlineQueryResultDocument = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _document_',
@@ -14885,7 +14885,7 @@ const InlineQueryResultDocument = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 bytes',
@@ -14896,7 +14896,7 @@ const InlineQueryResultDocument = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title for the result',
@@ -14907,7 +14907,7 @@ const InlineQueryResultDocument = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the document to be sent, 0-1024 characters after entities parsing',
@@ -14918,7 +14918,7 @@ const InlineQueryResultDocument = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -14929,9 +14929,9 @@ const InlineQueryResultDocument = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -14944,7 +14944,7 @@ const InlineQueryResultDocument = t({
     {
       name: 'document_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A valid URL for the file',
@@ -14955,7 +14955,7 @@ const InlineQueryResultDocument = t({
     {
       name: 'mime_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'MIME type of the content of the file, either “application/pdf” or “application/zip”',
@@ -14966,7 +14966,7 @@ const InlineQueryResultDocument = t({
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Short description of the result',
@@ -14977,7 +14977,7 @@ const InlineQueryResultDocument = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -14989,7 +14989,7 @@ const InlineQueryResultDocument = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -15001,7 +15001,7 @@ const InlineQueryResultDocument = t({
     {
       name: 'thumbnail_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'URL of the thumbnail (JPEG only) for the file',
@@ -15012,7 +15012,7 @@ const InlineQueryResultDocument = t({
     {
       name: 'thumbnail_width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Thumbnail width',
@@ -15023,7 +15023,7 @@ const InlineQueryResultDocument = t({
     {
       name: 'thumbnail_height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Thumbnail height',
@@ -15043,7 +15043,7 @@ const InlineQueryResultLocation = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _location_',
@@ -15054,7 +15054,7 @@ const InlineQueryResultLocation = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 Bytes',
@@ -15065,7 +15065,7 @@ const InlineQueryResultLocation = t({
     {
       name: 'latitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Location latitude in degrees',
@@ -15076,7 +15076,7 @@ const InlineQueryResultLocation = t({
     {
       name: 'longitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Location longitude in degrees',
@@ -15087,7 +15087,7 @@ const InlineQueryResultLocation = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Location title',
@@ -15098,7 +15098,7 @@ const InlineQueryResultLocation = t({
     {
       name: 'horizontal_accuracy',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'The radius of uncertainty for the location, measured in meters; 0-1500',
@@ -15109,7 +15109,7 @@ const InlineQueryResultLocation = t({
     {
       name: 'live_period',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Period in seconds during which the location can be updated, should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.',
@@ -15120,7 +15120,7 @@ const InlineQueryResultLocation = t({
     {
       name: 'heading',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.',
@@ -15131,7 +15131,7 @@ const InlineQueryResultLocation = t({
     {
       name: 'proximity_alert_radius',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.',
@@ -15142,7 +15142,7 @@ const InlineQueryResultLocation = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -15154,7 +15154,7 @@ const InlineQueryResultLocation = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -15166,7 +15166,7 @@ const InlineQueryResultLocation = t({
     {
       name: 'thumbnail_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Url of the thumbnail for the result',
@@ -15177,7 +15177,7 @@ const InlineQueryResultLocation = t({
     {
       name: 'thumbnail_width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Thumbnail width',
@@ -15188,7 +15188,7 @@ const InlineQueryResultLocation = t({
     {
       name: 'thumbnail_height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Thumbnail height',
@@ -15208,7 +15208,7 @@ const InlineQueryResultVenue = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _venue_',
@@ -15219,7 +15219,7 @@ const InlineQueryResultVenue = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 Bytes',
@@ -15230,7 +15230,7 @@ const InlineQueryResultVenue = t({
     {
       name: 'latitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Latitude of the venue location in degrees',
@@ -15241,7 +15241,7 @@ const InlineQueryResultVenue = t({
     {
       name: 'longitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Longitude of the venue location in degrees',
@@ -15252,7 +15252,7 @@ const InlineQueryResultVenue = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title of the venue',
@@ -15263,7 +15263,7 @@ const InlineQueryResultVenue = t({
     {
       name: 'address',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Address of the venue',
@@ -15274,7 +15274,7 @@ const InlineQueryResultVenue = t({
     {
       name: 'foursquare_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Foursquare identifier of the venue if known',
@@ -15285,7 +15285,7 @@ const InlineQueryResultVenue = t({
     {
       name: 'foursquare_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Foursquare type of the venue, if known. (For example, “arts\\_entertainment/default”, “arts\\_entertainment/aquarium” or “food/icecream”.)',
@@ -15296,7 +15296,7 @@ const InlineQueryResultVenue = t({
     {
       name: 'google_place_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Google Places identifier of the venue',
@@ -15307,7 +15307,7 @@ const InlineQueryResultVenue = t({
     {
       name: 'google_place_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)',
@@ -15318,7 +15318,7 @@ const InlineQueryResultVenue = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -15330,7 +15330,7 @@ const InlineQueryResultVenue = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -15342,7 +15342,7 @@ const InlineQueryResultVenue = t({
     {
       name: 'thumbnail_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Url of the thumbnail for the result',
@@ -15353,7 +15353,7 @@ const InlineQueryResultVenue = t({
     {
       name: 'thumbnail_width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Thumbnail width',
@@ -15364,7 +15364,7 @@ const InlineQueryResultVenue = t({
     {
       name: 'thumbnail_height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Thumbnail height',
@@ -15384,7 +15384,7 @@ const InlineQueryResultContact = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _contact_',
@@ -15395,7 +15395,7 @@ const InlineQueryResultContact = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 Bytes',
@@ -15406,7 +15406,7 @@ const InlineQueryResultContact = t({
     {
       name: 'phone_number',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Contact\'s phone number',
@@ -15417,7 +15417,7 @@ const InlineQueryResultContact = t({
     {
       name: 'first_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Contact\'s first name',
@@ -15428,7 +15428,7 @@ const InlineQueryResultContact = t({
     {
       name: 'last_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Contact\'s last name',
@@ -15439,7 +15439,7 @@ const InlineQueryResultContact = t({
     {
       name: 'vcard',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes',
@@ -15450,7 +15450,7 @@ const InlineQueryResultContact = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -15462,7 +15462,7 @@ const InlineQueryResultContact = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -15474,7 +15474,7 @@ const InlineQueryResultContact = t({
     {
       name: 'thumbnail_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Url of the thumbnail for the result',
@@ -15485,7 +15485,7 @@ const InlineQueryResultContact = t({
     {
       name: 'thumbnail_width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Thumbnail width',
@@ -15496,7 +15496,7 @@ const InlineQueryResultContact = t({
     {
       name: 'thumbnail_height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Thumbnail height',
@@ -15516,7 +15516,7 @@ const InlineQueryResultGame = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _game_',
@@ -15527,7 +15527,7 @@ const InlineQueryResultGame = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 bytes',
@@ -15538,7 +15538,7 @@ const InlineQueryResultGame = t({
     {
       name: 'game_short_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Short name of the game',
@@ -15549,7 +15549,7 @@ const InlineQueryResultGame = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -15570,7 +15570,7 @@ const InlineQueryResultCachedPhoto = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _photo_',
@@ -15581,7 +15581,7 @@ const InlineQueryResultCachedPhoto = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 bytes',
@@ -15592,7 +15592,7 @@ const InlineQueryResultCachedPhoto = t({
     {
       name: 'photo_file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A valid file identifier of the photo',
@@ -15603,7 +15603,7 @@ const InlineQueryResultCachedPhoto = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title for the result',
@@ -15614,7 +15614,7 @@ const InlineQueryResultCachedPhoto = t({
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Short description of the result',
@@ -15625,7 +15625,7 @@ const InlineQueryResultCachedPhoto = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the photo to be sent, 0-1024 characters after entities parsing',
@@ -15636,7 +15636,7 @@ const InlineQueryResultCachedPhoto = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -15647,9 +15647,9 @@ const InlineQueryResultCachedPhoto = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -15662,7 +15662,7 @@ const InlineQueryResultCachedPhoto = t({
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
@@ -15673,7 +15673,7 @@ const InlineQueryResultCachedPhoto = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -15685,7 +15685,7 @@ const InlineQueryResultCachedPhoto = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -15706,7 +15706,7 @@ const InlineQueryResultCachedGif = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _gif_',
@@ -15717,7 +15717,7 @@ const InlineQueryResultCachedGif = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 bytes',
@@ -15728,7 +15728,7 @@ const InlineQueryResultCachedGif = t({
     {
       name: 'gif_file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A valid file identifier for the GIF file',
@@ -15739,7 +15739,7 @@ const InlineQueryResultCachedGif = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title for the result',
@@ -15750,7 +15750,7 @@ const InlineQueryResultCachedGif = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the GIF file to be sent, 0-1024 characters after entities parsing',
@@ -15761,7 +15761,7 @@ const InlineQueryResultCachedGif = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -15772,9 +15772,9 @@ const InlineQueryResultCachedGif = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -15787,7 +15787,7 @@ const InlineQueryResultCachedGif = t({
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
@@ -15798,7 +15798,7 @@ const InlineQueryResultCachedGif = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -15810,7 +15810,7 @@ const InlineQueryResultCachedGif = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -15831,7 +15831,7 @@ const InlineQueryResultCachedMpeg4Gif = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _mpeg4\\_gif_',
@@ -15842,7 +15842,7 @@ const InlineQueryResultCachedMpeg4Gif = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 bytes',
@@ -15853,7 +15853,7 @@ const InlineQueryResultCachedMpeg4Gif = t({
     {
       name: 'mpeg4_file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A valid file identifier for the MPEG4 file',
@@ -15864,7 +15864,7 @@ const InlineQueryResultCachedMpeg4Gif = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title for the result',
@@ -15875,7 +15875,7 @@ const InlineQueryResultCachedMpeg4Gif = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the MPEG-4 file to be sent, 0-1024 characters after entities parsing',
@@ -15886,7 +15886,7 @@ const InlineQueryResultCachedMpeg4Gif = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -15897,9 +15897,9 @@ const InlineQueryResultCachedMpeg4Gif = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -15912,7 +15912,7 @@ const InlineQueryResultCachedMpeg4Gif = t({
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
@@ -15923,7 +15923,7 @@ const InlineQueryResultCachedMpeg4Gif = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -15935,7 +15935,7 @@ const InlineQueryResultCachedMpeg4Gif = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -15956,7 +15956,7 @@ const InlineQueryResultCachedSticker = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _sticker_',
@@ -15967,7 +15967,7 @@ const InlineQueryResultCachedSticker = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 bytes',
@@ -15978,7 +15978,7 @@ const InlineQueryResultCachedSticker = t({
     {
       name: 'sticker_file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A valid file identifier of the sticker',
@@ -15989,7 +15989,7 @@ const InlineQueryResultCachedSticker = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -16001,7 +16001,7 @@ const InlineQueryResultCachedSticker = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -16022,7 +16022,7 @@ const InlineQueryResultCachedDocument = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _document_',
@@ -16033,7 +16033,7 @@ const InlineQueryResultCachedDocument = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 bytes',
@@ -16044,7 +16044,7 @@ const InlineQueryResultCachedDocument = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title for the result',
@@ -16055,7 +16055,7 @@ const InlineQueryResultCachedDocument = t({
     {
       name: 'document_file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A valid file identifier for the file',
@@ -16066,7 +16066,7 @@ const InlineQueryResultCachedDocument = t({
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Short description of the result',
@@ -16077,7 +16077,7 @@ const InlineQueryResultCachedDocument = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the document to be sent, 0-1024 characters after entities parsing',
@@ -16088,7 +16088,7 @@ const InlineQueryResultCachedDocument = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -16099,9 +16099,9 @@ const InlineQueryResultCachedDocument = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -16114,7 +16114,7 @@ const InlineQueryResultCachedDocument = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -16126,7 +16126,7 @@ const InlineQueryResultCachedDocument = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -16147,7 +16147,7 @@ const InlineQueryResultCachedVideo = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _video_',
@@ -16158,7 +16158,7 @@ const InlineQueryResultCachedVideo = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 bytes',
@@ -16169,7 +16169,7 @@ const InlineQueryResultCachedVideo = t({
     {
       name: 'video_file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A valid file identifier for the video file',
@@ -16180,7 +16180,7 @@ const InlineQueryResultCachedVideo = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title for the result',
@@ -16191,7 +16191,7 @@ const InlineQueryResultCachedVideo = t({
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Short description of the result',
@@ -16202,7 +16202,7 @@ const InlineQueryResultCachedVideo = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the video to be sent, 0-1024 characters after entities parsing',
@@ -16213,7 +16213,7 @@ const InlineQueryResultCachedVideo = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -16224,9 +16224,9 @@ const InlineQueryResultCachedVideo = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -16239,7 +16239,7 @@ const InlineQueryResultCachedVideo = t({
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
@@ -16250,7 +16250,7 @@ const InlineQueryResultCachedVideo = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -16262,7 +16262,7 @@ const InlineQueryResultCachedVideo = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -16283,7 +16283,7 @@ const InlineQueryResultCachedVoice = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _voice_',
@@ -16294,7 +16294,7 @@ const InlineQueryResultCachedVoice = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 bytes',
@@ -16305,7 +16305,7 @@ const InlineQueryResultCachedVoice = t({
     {
       name: 'voice_file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A valid file identifier for the voice message',
@@ -16316,7 +16316,7 @@ const InlineQueryResultCachedVoice = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Voice message title',
@@ -16327,7 +16327,7 @@ const InlineQueryResultCachedVoice = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption, 0-1024 characters after entities parsing',
@@ -16338,7 +16338,7 @@ const InlineQueryResultCachedVoice = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the voice message caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -16349,9 +16349,9 @@ const InlineQueryResultCachedVoice = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -16364,7 +16364,7 @@ const InlineQueryResultCachedVoice = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -16376,7 +16376,7 @@ const InlineQueryResultCachedVoice = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -16397,7 +16397,7 @@ const InlineQueryResultCachedAudio = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the result, must be _audio_',
@@ -16408,7 +16408,7 @@ const InlineQueryResultCachedAudio = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this result, 1-64 bytes',
@@ -16419,7 +16419,7 @@ const InlineQueryResultCachedAudio = t({
     {
       name: 'audio_file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A valid file identifier for the audio file',
@@ -16430,7 +16430,7 @@ const InlineQueryResultCachedAudio = t({
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption, 0-1024 characters after entities parsing',
@@ -16441,7 +16441,7 @@ const InlineQueryResultCachedAudio = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the audio caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -16452,9 +16452,9 @@ const InlineQueryResultCachedAudio = t({
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -16467,7 +16467,7 @@ const InlineQueryResultCachedAudio = t({
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -16479,7 +16479,7 @@ const InlineQueryResultCachedAudio = t({
     {
       name: 'input_message_content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMessageContent',
       },
       description: {
@@ -16498,23 +16498,23 @@ const InputMessageContent = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InputTextMessageContent',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InputLocationMessageContent',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InputVenueMessageContent',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InputContactMessageContent',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'InputInvoiceMessageContent',
     },
   ],
@@ -16529,7 +16529,7 @@ const InputTextMessageContent = t({
     {
       name: 'message_text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text of the message to be sent, 1-4096 characters',
@@ -16540,7 +16540,7 @@ const InputTextMessageContent = t({
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -16551,9 +16551,9 @@ const InputTextMessageContent = t({
     {
       name: 'entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -16566,7 +16566,7 @@ const InputTextMessageContent = t({
     {
       name: 'link_preview_options',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'LinkPreviewOptions',
       },
       description: {
@@ -16587,7 +16587,7 @@ const InputLocationMessageContent = t({
     {
       name: 'latitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Latitude of the location in degrees',
@@ -16598,7 +16598,7 @@ const InputLocationMessageContent = t({
     {
       name: 'longitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Longitude of the location in degrees',
@@ -16609,7 +16609,7 @@ const InputLocationMessageContent = t({
     {
       name: 'horizontal_accuracy',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'The radius of uncertainty for the location, measured in meters; 0-1500',
@@ -16620,7 +16620,7 @@ const InputLocationMessageContent = t({
     {
       name: 'live_period',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Period in seconds during which the location can be updated, should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.',
@@ -16631,7 +16631,7 @@ const InputLocationMessageContent = t({
     {
       name: 'heading',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.',
@@ -16642,7 +16642,7 @@ const InputLocationMessageContent = t({
     {
       name: 'proximity_alert_radius',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.',
@@ -16662,7 +16662,7 @@ const InputVenueMessageContent = t({
     {
       name: 'latitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Latitude of the venue in degrees',
@@ -16673,7 +16673,7 @@ const InputVenueMessageContent = t({
     {
       name: 'longitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Longitude of the venue in degrees',
@@ -16684,7 +16684,7 @@ const InputVenueMessageContent = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Name of the venue',
@@ -16695,7 +16695,7 @@ const InputVenueMessageContent = t({
     {
       name: 'address',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Address of the venue',
@@ -16706,7 +16706,7 @@ const InputVenueMessageContent = t({
     {
       name: 'foursquare_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Foursquare identifier of the venue, if known',
@@ -16717,7 +16717,7 @@ const InputVenueMessageContent = t({
     {
       name: 'foursquare_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Foursquare type of the venue, if known. (For example, “arts\\_entertainment/default”, “arts\\_entertainment/aquarium” or “food/icecream”.)',
@@ -16728,7 +16728,7 @@ const InputVenueMessageContent = t({
     {
       name: 'google_place_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Google Places identifier of the venue',
@@ -16739,7 +16739,7 @@ const InputVenueMessageContent = t({
     {
       name: 'google_place_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)',
@@ -16759,7 +16759,7 @@ const InputContactMessageContent = t({
     {
       name: 'phone_number',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Contact\'s phone number',
@@ -16770,7 +16770,7 @@ const InputContactMessageContent = t({
     {
       name: 'first_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Contact\'s first name',
@@ -16781,7 +16781,7 @@ const InputContactMessageContent = t({
     {
       name: 'last_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Contact\'s last name',
@@ -16792,7 +16792,7 @@ const InputContactMessageContent = t({
     {
       name: 'vcard',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes',
@@ -16812,7 +16812,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Product name, 1-32 characters',
@@ -16823,7 +16823,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Product description, 1-255 characters',
@@ -16834,7 +16834,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'payload',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes.',
@@ -16845,7 +16845,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'provider_token',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Payment provider token, obtained via [@BotFather](https://t.me/botfather). Pass an empty string for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -16856,7 +16856,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'currency',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/bots/payments#supported-currencies). Pass “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -16867,9 +16867,9 @@ const InputInvoiceMessageContent = t({
     {
       name: 'prices',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'LabeledPrice',
         },
       },
@@ -16882,7 +16882,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'max_tip_amount',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The maximum accepted amount for tips in the _smallest units_ of the currency (integer, **not** float/double). For example, for a maximum tip of `US$ 1.45` pass `max_tip_amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -16893,9 +16893,9 @@ const InputInvoiceMessageContent = t({
     {
       name: 'suggested_tip_amounts',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'int32',
+          type: 'int32',
         },
       },
       description: {
@@ -16907,7 +16907,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'provider_data',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A JSON-serialized object for data about the invoice, which will be shared with the payment provider. A detailed description of the required fields should be provided by the payment provider.',
@@ -16918,7 +16918,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'photo_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service.',
@@ -16929,7 +16929,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'photo_size',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Photo size in bytes',
@@ -16940,7 +16940,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'photo_width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Photo width',
@@ -16951,7 +16951,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'photo_height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Photo height',
@@ -16962,7 +16962,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'need_name',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if you require the user\'s full name to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -16973,7 +16973,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'need_phone_number',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if you require the user\'s phone number to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -16984,7 +16984,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'need_email',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if you require the user\'s email address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -16995,7 +16995,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'need_shipping_address',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if you require the user\'s shipping address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -17006,7 +17006,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'send_phone_number_to_provider',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the user\'s phone number should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -17017,7 +17017,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'send_email_to_provider',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the user\'s email address should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -17028,7 +17028,7 @@ const InputInvoiceMessageContent = t({
     {
       name: 'is_flexible',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the final price depends on the shipping method. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -17048,7 +17048,7 @@ const ChosenInlineResult = t({
     {
       name: 'result_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The unique identifier for the result that was chosen',
@@ -17059,7 +17059,7 @@ const ChosenInlineResult = t({
     {
       name: 'from',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -17071,7 +17071,7 @@ const ChosenInlineResult = t({
     {
       name: 'location',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Location',
       },
       description: {
@@ -17083,7 +17083,7 @@ const ChosenInlineResult = t({
     {
       name: 'inline_message_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Identifier of the sent inline message. Available only if there is an [inline keyboard](https://core.telegram.org/bots/api#inlinekeyboardmarkup) attached to the message. Will be also received in [callback queries](https://core.telegram.org/bots/api#callbackquery) and can be used to [edit](https://core.telegram.org/bots/api#updating-messages) the message.',
@@ -17094,7 +17094,7 @@ const ChosenInlineResult = t({
     {
       name: 'query',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The query that was used to obtain the result',
@@ -17114,7 +17114,7 @@ const SentWebAppMessage = t({
     {
       name: 'inline_message_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Identifier of the sent inline message. Available only if there is an [inline keyboard](https://core.telegram.org/bots/api#inlinekeyboardmarkup) attached to the message.',
@@ -17134,7 +17134,7 @@ const PreparedInlineMessage = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the prepared message',
@@ -17145,7 +17145,7 @@ const PreparedInlineMessage = t({
     {
       name: 'expiration_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Expiration date of the prepared message, in Unix time. Expired prepared messages can no longer be used',
@@ -17165,7 +17165,7 @@ const LabeledPrice = t({
     {
       name: 'label',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Portion label',
@@ -17176,7 +17176,7 @@ const LabeledPrice = t({
     {
       name: 'amount',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Price of the product in the _smallest units_ of the [currency](https://core.telegram.org/bots/payments#supported-currencies) (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).',
@@ -17196,7 +17196,7 @@ const Invoice = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Product name',
@@ -17207,7 +17207,7 @@ const Invoice = t({
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Product description',
@@ -17218,7 +17218,7 @@ const Invoice = t({
     {
       name: 'start_parameter',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique bot deep-linking parameter that can be used to generate this invoice',
@@ -17229,7 +17229,7 @@ const Invoice = t({
     {
       name: 'currency',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90)',
@@ -17240,7 +17240,7 @@ const Invoice = t({
     {
       name: 'total_amount',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Total price in the _smallest units_ of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).',
@@ -17260,7 +17260,7 @@ const ShippingAddress = t({
     {
       name: 'country_code',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code',
@@ -17271,7 +17271,7 @@ const ShippingAddress = t({
     {
       name: 'state',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'State, if applicable',
@@ -17282,7 +17282,7 @@ const ShippingAddress = t({
     {
       name: 'city',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'City',
@@ -17293,7 +17293,7 @@ const ShippingAddress = t({
     {
       name: 'street_line1',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'First line for the address',
@@ -17304,7 +17304,7 @@ const ShippingAddress = t({
     {
       name: 'street_line2',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Second line for the address',
@@ -17315,7 +17315,7 @@ const ShippingAddress = t({
     {
       name: 'post_code',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Address post code',
@@ -17335,7 +17335,7 @@ const OrderInfo = t({
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'User name',
@@ -17346,7 +17346,7 @@ const OrderInfo = t({
     {
       name: 'phone_number',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'User\'s phone number',
@@ -17357,7 +17357,7 @@ const OrderInfo = t({
     {
       name: 'email',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'User email',
@@ -17368,7 +17368,7 @@ const OrderInfo = t({
     {
       name: 'shipping_address',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ShippingAddress',
       },
       description: {
@@ -17389,7 +17389,7 @@ const ShippingOption = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Shipping option identifier',
@@ -17400,7 +17400,7 @@ const ShippingOption = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Option title',
@@ -17411,9 +17411,9 @@ const ShippingOption = t({
     {
       name: 'prices',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'LabeledPrice',
         },
       },
@@ -17435,7 +17435,7 @@ const SuccessfulPayment = t({
     {
       name: 'currency',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90)',
@@ -17446,7 +17446,7 @@ const SuccessfulPayment = t({
     {
       name: 'total_amount',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Total price in the _smallest units_ of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).',
@@ -17457,7 +17457,7 @@ const SuccessfulPayment = t({
     {
       name: 'invoice_payload',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Bot-specified invoice payload',
@@ -17468,7 +17468,7 @@ const SuccessfulPayment = t({
     {
       name: 'subscription_expiration_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Expiration date of the subscription, in Unix time; for recurring payments only',
@@ -17479,7 +17479,7 @@ const SuccessfulPayment = t({
     {
       name: 'is_recurring',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -17491,7 +17491,7 @@ const SuccessfulPayment = t({
     {
       name: 'is_first_recurring',
       type: {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
       description: {
@@ -17503,7 +17503,7 @@ const SuccessfulPayment = t({
     {
       name: 'shipping_option_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Identifier of the shipping option chosen by the user',
@@ -17514,7 +17514,7 @@ const SuccessfulPayment = t({
     {
       name: 'order_info',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'OrderInfo',
       },
       description: {
@@ -17526,7 +17526,7 @@ const SuccessfulPayment = t({
     {
       name: 'telegram_payment_charge_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Telegram payment identifier',
@@ -17537,7 +17537,7 @@ const SuccessfulPayment = t({
     {
       name: 'provider_payment_charge_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Provider payment identifier',
@@ -17557,7 +17557,7 @@ const RefundedPayment = t({
     {
       name: 'currency',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90). Currently, always “XTR”',
@@ -17568,7 +17568,7 @@ const RefundedPayment = t({
     {
       name: 'total_amount',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Total refunded price in the _smallest units_ of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45`, `total_amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).',
@@ -17579,7 +17579,7 @@ const RefundedPayment = t({
     {
       name: 'invoice_payload',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Bot-specified invoice payload',
@@ -17590,7 +17590,7 @@ const RefundedPayment = t({
     {
       name: 'telegram_payment_charge_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Telegram payment identifier',
@@ -17601,7 +17601,7 @@ const RefundedPayment = t({
     {
       name: 'provider_payment_charge_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Provider payment identifier',
@@ -17621,7 +17621,7 @@ const ShippingQuery = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique query identifier',
@@ -17632,7 +17632,7 @@ const ShippingQuery = t({
     {
       name: 'from',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -17644,7 +17644,7 @@ const ShippingQuery = t({
     {
       name: 'invoice_payload',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Bot-specified invoice payload',
@@ -17655,7 +17655,7 @@ const ShippingQuery = t({
     {
       name: 'shipping_address',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ShippingAddress',
       },
       description: {
@@ -17676,7 +17676,7 @@ const PreCheckoutQuery = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique query identifier',
@@ -17687,7 +17687,7 @@ const PreCheckoutQuery = t({
     {
       name: 'from',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -17699,7 +17699,7 @@ const PreCheckoutQuery = t({
     {
       name: 'currency',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90)',
@@ -17710,7 +17710,7 @@ const PreCheckoutQuery = t({
     {
       name: 'total_amount',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Total price in the _smallest units_ of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).',
@@ -17721,7 +17721,7 @@ const PreCheckoutQuery = t({
     {
       name: 'invoice_payload',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Bot-specified invoice payload',
@@ -17732,7 +17732,7 @@ const PreCheckoutQuery = t({
     {
       name: 'shipping_option_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Identifier of the shipping option chosen by the user',
@@ -17743,7 +17743,7 @@ const PreCheckoutQuery = t({
     {
       name: 'order_info',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'OrderInfo',
       },
       description: {
@@ -17764,7 +17764,7 @@ const PaidMediaPurchased = t({
     {
       name: 'from',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -17776,7 +17776,7 @@ const PaidMediaPurchased = t({
     {
       name: 'paid_media_payload',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Bot-specified paid media payload',
@@ -17794,15 +17794,15 @@ const RevenueWithdrawalState = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'RevenueWithdrawalStatePending',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'RevenueWithdrawalStateSucceeded',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'RevenueWithdrawalStateFailed',
     },
   ],
@@ -17817,7 +17817,7 @@ const RevenueWithdrawalStatePending = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the state, always “pending”',
@@ -17837,7 +17837,7 @@ const RevenueWithdrawalStateSucceeded = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the state, always “succeeded”',
@@ -17848,7 +17848,7 @@ const RevenueWithdrawalStateSucceeded = t({
     {
       name: 'date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date the withdrawal was completed in Unix time',
@@ -17859,7 +17859,7 @@ const RevenueWithdrawalStateSucceeded = t({
     {
       name: 'url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'An HTTPS URL that can be used to see transaction details',
@@ -17879,7 +17879,7 @@ const RevenueWithdrawalStateFailed = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the state, always “failed”',
@@ -17899,7 +17899,7 @@ const AffiliateInfo = t({
     {
       name: 'affiliate_user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -17911,7 +17911,7 @@ const AffiliateInfo = t({
     {
       name: 'affiliate_chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -17923,7 +17923,7 @@ const AffiliateInfo = t({
     {
       name: 'commission_per_mille',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of Telegram Stars received by the affiliate for each 1000 Telegram Stars received by the bot from referred users',
@@ -17934,7 +17934,7 @@ const AffiliateInfo = t({
     {
       name: 'amount',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Integer amount of Telegram Stars received by the affiliate from the transaction, rounded to 0; can be negative for refunds',
@@ -17945,7 +17945,7 @@ const AffiliateInfo = t({
     {
       name: 'nanostar_amount',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of 1/1000000000 shares of Telegram Stars received by the affiliate; from -999999999 to 999999999; can be negative for refunds',
@@ -17963,31 +17963,31 @@ const TransactionPartner = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'TransactionPartnerUser',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'TransactionPartnerChat',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'TransactionPartnerAffiliateProgram',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'TransactionPartnerFragment',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'TransactionPartnerTelegramAds',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'TransactionPartnerTelegramApi',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'TransactionPartnerOther',
     },
   ],
@@ -18002,7 +18002,7 @@ const TransactionPartnerUser = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the transaction partner, always “user”',
@@ -18013,7 +18013,7 @@ const TransactionPartnerUser = t({
     {
       name: 'transaction_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the transaction, currently one of “invoice\\_payment” for payments via invoices, “paid\\_media\\_payment” for payments for paid media, “gift\\_purchase” for gifts sent by the bot, “premium\\_purchase” for Telegram Premium subscriptions gifted by the bot, “business\\_account\\_transfer” for direct transfers from managed business accounts',
@@ -18024,7 +18024,7 @@ const TransactionPartnerUser = t({
     {
       name: 'user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -18036,7 +18036,7 @@ const TransactionPartnerUser = t({
     {
       name: 'affiliate',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'AffiliateInfo',
       },
       description: {
@@ -18048,7 +18048,7 @@ const TransactionPartnerUser = t({
     {
       name: 'invoice_payload',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Bot-specified invoice payload. Can be available only for “invoice\\_payment” transactions.',
@@ -18059,7 +18059,7 @@ const TransactionPartnerUser = t({
     {
       name: 'subscription_period',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The duration of the paid subscription. Can be available only for “invoice\\_payment” transactions.',
@@ -18070,9 +18070,9 @@ const TransactionPartnerUser = t({
     {
       name: 'paid_media',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'PaidMedia',
         },
       },
@@ -18085,7 +18085,7 @@ const TransactionPartnerUser = t({
     {
       name: 'paid_media_payload',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Bot-specified paid media payload. Can be available only for “paid\\_media\\_payment” transactions.',
@@ -18096,7 +18096,7 @@ const TransactionPartnerUser = t({
     {
       name: 'gift',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Gift',
       },
       description: {
@@ -18108,7 +18108,7 @@ const TransactionPartnerUser = t({
     {
       name: 'premium_subscription_duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of months the gifted Telegram Premium subscription will be active for; for “premium\\_purchase” transactions only',
@@ -18128,7 +18128,7 @@ const TransactionPartnerChat = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the transaction partner, always “chat”',
@@ -18139,7 +18139,7 @@ const TransactionPartnerChat = t({
     {
       name: 'chat',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Chat',
       },
       description: {
@@ -18151,7 +18151,7 @@ const TransactionPartnerChat = t({
     {
       name: 'gift',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Gift',
       },
       description: {
@@ -18172,7 +18172,7 @@ const TransactionPartnerAffiliateProgram = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the transaction partner, always “affiliate\\_program”',
@@ -18183,7 +18183,7 @@ const TransactionPartnerAffiliateProgram = t({
     {
       name: 'sponsor_user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -18195,7 +18195,7 @@ const TransactionPartnerAffiliateProgram = t({
     {
       name: 'commission_per_mille',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of Telegram Stars received by the bot for each 1000 Telegram Stars received by the affiliate program sponsor from referred users',
@@ -18215,7 +18215,7 @@ const TransactionPartnerFragment = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the transaction partner, always “fragment”',
@@ -18226,7 +18226,7 @@ const TransactionPartnerFragment = t({
     {
       name: 'withdrawal_state',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'RevenueWithdrawalState',
       },
       description: {
@@ -18247,7 +18247,7 @@ const TransactionPartnerTelegramAds = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the transaction partner, always “telegram\\_ads”',
@@ -18267,7 +18267,7 @@ const TransactionPartnerTelegramApi = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the transaction partner, always “telegram\\_api”',
@@ -18278,7 +18278,7 @@ const TransactionPartnerTelegramApi = t({
     {
       name: 'request_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of successful requests that exceeded regular limits and were therefore billed',
@@ -18298,7 +18298,7 @@ const TransactionPartnerOther = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of the transaction partner, always “other”',
@@ -18318,7 +18318,7 @@ const StarTransaction = t({
     {
       name: 'id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the transaction. Coincides with the identifier of the original transaction for refund transactions. Coincides with _SuccessfulPayment.telegram\\_payment\\_charge\\_id_ for successful incoming payments from users.',
@@ -18329,7 +18329,7 @@ const StarTransaction = t({
     {
       name: 'amount',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Integer amount of Telegram Stars transferred by the transaction',
@@ -18340,7 +18340,7 @@ const StarTransaction = t({
     {
       name: 'nanostar_amount',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of 1/1000000000 shares of Telegram Stars transferred by the transaction; from 0 to 999999999',
@@ -18351,7 +18351,7 @@ const StarTransaction = t({
     {
       name: 'date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date the transaction was created in Unix time',
@@ -18362,7 +18362,7 @@ const StarTransaction = t({
     {
       name: 'source',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'TransactionPartner',
       },
       description: {
@@ -18374,7 +18374,7 @@ const StarTransaction = t({
     {
       name: 'receiver',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'TransactionPartner',
       },
       description: {
@@ -18395,9 +18395,9 @@ const StarTransactions = t({
     {
       name: 'transactions',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'StarTransaction',
         },
       },
@@ -18419,9 +18419,9 @@ const PassportData = t({
     {
       name: 'data',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'EncryptedPassportElement',
         },
       },
@@ -18434,7 +18434,7 @@ const PassportData = t({
     {
       name: 'credentials',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'EncryptedCredentials',
       },
       description: {
@@ -18455,7 +18455,7 @@ const PassportFile = t({
     {
       name: 'file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
@@ -18466,7 +18466,7 @@ const PassportFile = t({
     {
       name: 'file_unique_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
@@ -18477,7 +18477,7 @@ const PassportFile = t({
     {
       name: 'file_size',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'File size in bytes',
@@ -18488,7 +18488,7 @@ const PassportFile = t({
     {
       name: 'file_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unix time when the file was uploaded',
@@ -18508,7 +18508,7 @@ const EncryptedPassportElement = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Element type. One of “personal\\_details”, “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”, “address”, “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration”, “temporary\\_registration”, “phone\\_number”, “email”.',
@@ -18519,7 +18519,7 @@ const EncryptedPassportElement = t({
     {
       name: 'data',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Base64-encoded encrypted Telegram Passport element data provided by the user; available only for “personal\\_details”, “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport” and “address” types. Can be decrypted and verified using the accompanying [EncryptedCredentials](https://core.telegram.org/bots/api#encryptedcredentials).',
@@ -18530,7 +18530,7 @@ const EncryptedPassportElement = t({
     {
       name: 'phone_number',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'User\'s verified phone number; available only for “phone\\_number” type',
@@ -18541,7 +18541,7 @@ const EncryptedPassportElement = t({
     {
       name: 'email',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'User\'s verified email address; available only for “email” type',
@@ -18552,9 +18552,9 @@ const EncryptedPassportElement = t({
     {
       name: 'files',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'PassportFile',
         },
       },
@@ -18567,7 +18567,7 @@ const EncryptedPassportElement = t({
     {
       name: 'front_side',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PassportFile',
       },
       description: {
@@ -18579,7 +18579,7 @@ const EncryptedPassportElement = t({
     {
       name: 'reverse_side',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PassportFile',
       },
       description: {
@@ -18591,7 +18591,7 @@ const EncryptedPassportElement = t({
     {
       name: 'selfie',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'PassportFile',
       },
       description: {
@@ -18603,9 +18603,9 @@ const EncryptedPassportElement = t({
     {
       name: 'translation',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'PassportFile',
         },
       },
@@ -18618,7 +18618,7 @@ const EncryptedPassportElement = t({
     {
       name: 'hash',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Base64-encoded element hash for using in [PassportElementErrorUnspecified](https://core.telegram.org/bots/api#passportelementerrorunspecified)',
@@ -18638,7 +18638,7 @@ const EncryptedCredentials = t({
     {
       name: 'data',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Base64-encoded encrypted JSON-serialized data with unique user\'s payload, data hashes and secrets required for [EncryptedPassportElement](https://core.telegram.org/bots/api#encryptedpassportelement) decryption and authentication',
@@ -18649,7 +18649,7 @@ const EncryptedCredentials = t({
     {
       name: 'hash',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Base64-encoded data hash for data authentication',
@@ -18660,7 +18660,7 @@ const EncryptedCredentials = t({
     {
       name: 'secret',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Base64-encoded secret, encrypted with the bot\'s public RSA key, required for data decryption',
@@ -18678,39 +18678,39 @@ const PassportElementError = t({
   },
   oneOf: [
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'PassportElementErrorDataField',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'PassportElementErrorFrontSide',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'PassportElementErrorReverseSide',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'PassportElementErrorSelfie',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'PassportElementErrorFile',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'PassportElementErrorFiles',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'PassportElementErrorTranslationFile',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'PassportElementErrorTranslationFiles',
     },
     {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'PassportElementErrorUnspecified',
     },
   ],
@@ -18725,7 +18725,7 @@ const PassportElementErrorDataField = t({
     {
       name: 'source',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error source, must be _data_',
@@ -18736,7 +18736,7 @@ const PassportElementErrorDataField = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The section of the user\'s Telegram Passport which has the error, one of “personal\\_details”, “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”, “address”',
@@ -18747,7 +18747,7 @@ const PassportElementErrorDataField = t({
     {
       name: 'field_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Name of the data field which has the error',
@@ -18758,7 +18758,7 @@ const PassportElementErrorDataField = t({
     {
       name: 'data_hash',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Base64-encoded data hash',
@@ -18769,7 +18769,7 @@ const PassportElementErrorDataField = t({
     {
       name: 'message',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error message',
@@ -18789,7 +18789,7 @@ const PassportElementErrorFrontSide = t({
     {
       name: 'source',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error source, must be _front\\_side_',
@@ -18800,7 +18800,7 @@ const PassportElementErrorFrontSide = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The section of the user\'s Telegram Passport which has the issue, one of “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”',
@@ -18811,7 +18811,7 @@ const PassportElementErrorFrontSide = t({
     {
       name: 'file_hash',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Base64-encoded hash of the file with the front side of the document',
@@ -18822,7 +18822,7 @@ const PassportElementErrorFrontSide = t({
     {
       name: 'message',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error message',
@@ -18842,7 +18842,7 @@ const PassportElementErrorReverseSide = t({
     {
       name: 'source',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error source, must be _reverse\\_side_',
@@ -18853,7 +18853,7 @@ const PassportElementErrorReverseSide = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The section of the user\'s Telegram Passport which has the issue, one of “driver\\_license”, “identity\\_card”',
@@ -18864,7 +18864,7 @@ const PassportElementErrorReverseSide = t({
     {
       name: 'file_hash',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Base64-encoded hash of the file with the reverse side of the document',
@@ -18875,7 +18875,7 @@ const PassportElementErrorReverseSide = t({
     {
       name: 'message',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error message',
@@ -18895,7 +18895,7 @@ const PassportElementErrorSelfie = t({
     {
       name: 'source',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error source, must be _selfie_',
@@ -18906,7 +18906,7 @@ const PassportElementErrorSelfie = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The section of the user\'s Telegram Passport which has the issue, one of “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”',
@@ -18917,7 +18917,7 @@ const PassportElementErrorSelfie = t({
     {
       name: 'file_hash',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Base64-encoded hash of the file with the selfie',
@@ -18928,7 +18928,7 @@ const PassportElementErrorSelfie = t({
     {
       name: 'message',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error message',
@@ -18948,7 +18948,7 @@ const PassportElementErrorFile = t({
     {
       name: 'source',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error source, must be _file_',
@@ -18959,7 +18959,7 @@ const PassportElementErrorFile = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The section of the user\'s Telegram Passport which has the issue, one of “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration”, “temporary\\_registration”',
@@ -18970,7 +18970,7 @@ const PassportElementErrorFile = t({
     {
       name: 'file_hash',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Base64-encoded file hash',
@@ -18981,7 +18981,7 @@ const PassportElementErrorFile = t({
     {
       name: 'message',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error message',
@@ -19001,7 +19001,7 @@ const PassportElementErrorFiles = t({
     {
       name: 'source',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error source, must be _files_',
@@ -19012,7 +19012,7 @@ const PassportElementErrorFiles = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The section of the user\'s Telegram Passport which has the issue, one of “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration”, “temporary\\_registration”',
@@ -19023,9 +19023,9 @@ const PassportElementErrorFiles = t({
     {
       name: 'file_hashes',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'str',
+          type: 'str',
         },
       },
       description: {
@@ -19037,7 +19037,7 @@ const PassportElementErrorFiles = t({
     {
       name: 'message',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error message',
@@ -19057,7 +19057,7 @@ const PassportElementErrorTranslationFile = t({
     {
       name: 'source',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error source, must be _translation\\_file_',
@@ -19068,7 +19068,7 @@ const PassportElementErrorTranslationFile = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of element of the user\'s Telegram Passport which has the issue, one of “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”, “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration”, “temporary\\_registration”',
@@ -19079,7 +19079,7 @@ const PassportElementErrorTranslationFile = t({
     {
       name: 'file_hash',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Base64-encoded file hash',
@@ -19090,7 +19090,7 @@ const PassportElementErrorTranslationFile = t({
     {
       name: 'message',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error message',
@@ -19110,7 +19110,7 @@ const PassportElementErrorTranslationFiles = t({
     {
       name: 'source',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error source, must be _translation\\_files_',
@@ -19121,7 +19121,7 @@ const PassportElementErrorTranslationFiles = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of element of the user\'s Telegram Passport which has the issue, one of “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”, “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration”, “temporary\\_registration”',
@@ -19132,9 +19132,9 @@ const PassportElementErrorTranslationFiles = t({
     {
       name: 'file_hashes',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'str',
+          type: 'str',
         },
       },
       description: {
@@ -19146,7 +19146,7 @@ const PassportElementErrorTranslationFiles = t({
     {
       name: 'message',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error message',
@@ -19166,7 +19166,7 @@ const PassportElementErrorUnspecified = t({
     {
       name: 'source',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error source, must be _unspecified_',
@@ -19177,7 +19177,7 @@ const PassportElementErrorUnspecified = t({
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of element of the user\'s Telegram Passport which has the issue',
@@ -19188,7 +19188,7 @@ const PassportElementErrorUnspecified = t({
     {
       name: 'element_hash',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Base64-encoded element hash',
@@ -19199,7 +19199,7 @@ const PassportElementErrorUnspecified = t({
     {
       name: 'message',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Error message',
@@ -19219,7 +19219,7 @@ const Game = t({
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Title of the game',
@@ -19230,7 +19230,7 @@ const Game = t({
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Description of the game',
@@ -19241,9 +19241,9 @@ const Game = t({
     {
       name: 'photo',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'PhotoSize',
         },
       },
@@ -19256,7 +19256,7 @@ const Game = t({
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Brief description of the game or high scores included in the game message. Can be automatically edited to include current high scores for the game when the bot calls [setGameScore](https://core.telegram.org/bots/api#setgamescore), or manually edited using [editMessageText](https://core.telegram.org/bots/api#editmessagetext). 0-4096 characters.',
@@ -19267,9 +19267,9 @@ const Game = t({
     {
       name: 'text_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -19282,7 +19282,7 @@ const Game = t({
     {
       name: 'animation',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Animation',
       },
       description: {
@@ -19311,7 +19311,7 @@ const GameHighScore = t({
     {
       name: 'position',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Position in high score table for the game',
@@ -19322,7 +19322,7 @@ const GameHighScore = t({
     {
       name: 'user',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'User',
       },
       description: {
@@ -19334,7 +19334,7 @@ const GameHighScore = t({
     {
       name: 'score',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Score',

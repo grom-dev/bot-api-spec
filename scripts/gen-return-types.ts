@@ -42,38 +42,38 @@ function isUnknownValueType(value: ValueType) {
   return JSON.stringify(value) === JSON.stringify(UNKOWN_VALUE_TYPE)
 }
 
-const ZValueType: z.ZodType<ValueType> = z.discriminatedUnion('kind', [
+const ZValueType: z.ZodType<ValueType> = z.discriminatedUnion('type', [
   z.object({
-    kind: z.literal('str'),
+    type: z.literal('str'),
     literal: z.string().optional(),
   }),
   z.object({
-    kind: z.literal('bool'),
+    type: z.literal('bool'),
     literal: z.boolean().optional(),
   }),
   z.object({
-    kind: z.literal('int32'),
+    type: z.literal('int32'),
     literal: z.number().optional(),
   }),
   z.object({
-    kind: z.literal('int52'),
+    type: z.literal('int52'),
   }),
   z.object({
-    kind: z.literal('float'),
+    type: z.literal('float'),
   }),
   z.object({
-    kind: z.literal('input-file'),
+    type: z.literal('input-file'),
   }),
   z.object({
-    kind: z.literal('api-type'),
+    type: z.literal('api-type'),
     name: z.custom<ValueTypeApiType['name']>(),
   }),
   z.object({
-    kind: z.literal('array'),
+    type: z.literal('array'),
     of: z.lazy(() => ZValueType),
   }),
   z.object({
-    kind: z.literal('union'),
+    type: z.literal('union'),
     types: z.array(z.lazy(() => ZValueType)),
   }),
 ])
@@ -86,14 +86,14 @@ Here are the TypeScript definition of the ValueType:
 
 \`\`\`
 type ValueType = /* union of the types below */
-interface TString { kind: 'str', literal?: string }
-interface TBoolean { kind: 'bool', literal?: boolean }
-interface TInteger { kind: 'int32', literal?: number }
-interface TFloat { kind: 'float' }
-interface TInputFile { kind: 'input-file' }
-interface TApiType { kind: 'api-type', name: string }
-interface TArray { kind: 'array', of: ValueType }
-interface TUnion { kind: 'union', types: Array<ValueType> }
+interface TString { type: 'str', literal?: string }
+interface TBoolean { type: 'bool', literal?: boolean }
+interface TInteger { type: 'int32', literal?: number }
+interface TFloat { type: 'float' }
+interface TInputFile { type: 'input-file' }
+interface TApiType { type: 'api-type', name: string }
+interface TArray { type: 'array', of: ValueType }
+interface TUnion { type: 'union', types: Array<ValueType> }
 \`\`\`
 
 Value type can be on of the following:
@@ -106,11 +106,11 @@ Value type can be on of the following:
 - Array of value types
 - Union of value types
 
-Set precise type when possible, i.e. if description says "returns True" — set {"kind":"bool",literal:true}, not just {"kind":"bool"}.
+Set precise type when possible, i.e. if description says "returns True" — set {"type":"bool",literal:true}, not just {"type":"bool"}.
 
 Your answer will provided directly to "JSON.parse" function.
 ANSWER ONLY WITH A VALID JSON for value of type ValueType.
-Like this: {"kind":"str"}
+Like this: {"type":"str"}
 `.trim()
 
 class Llm {

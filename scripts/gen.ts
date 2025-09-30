@@ -25,7 +25,7 @@ import { returnTypes } from './data/return-types.gen.ts'
 const PASCAL_CASE_REGEX = /^[A-Z][a-zA-Z\d]+$/
 const CAMEL_CASE_REGEX = /^[a-z][a-zA-Z]+$/
 const SNAKE_CASE_REGEX = /^[a-z][a-z_\d]+$/
-export const UNKOWN_VALUE_TYPE = { kind: 'unknown' } as unknown as ValueType
+export const UNKOWN_VALUE_TYPE = { type: 'unknown' } as unknown as ValueType
 const IGNORED_API_TYPES = new Set(['InputFile'])
 
 let $: CheerioAPI
@@ -228,7 +228,7 @@ function fieldFromTableRow(
     isInt52,
   } = paramOrFieldDescriptionFromEl($description, name, type)
   if (isInt52) {
-    assert(type.kind === 'int32')
+    assert(type.type === 'int32')
     type = T_int52()
   }
   return {
@@ -266,7 +266,7 @@ function paramFromTableRow(
   } = paramOrFieldDescriptionFromEl($description, name, type)
   assert(!isOptional) // params have separate "Required" column and should not have "_Optional._" prefix
   if (isInt52) {
-    assert(type.kind === 'int32')
+    assert(type.type === 'int32')
     type = T_int52()
   }
   return {
@@ -375,33 +375,33 @@ function paramOrFieldDescriptionFromEl($el: Cheerio<Element>, name: string, type
       || markdown.includes('JSON-serialized data about the invoice')
     )
   ) {
-    assert(type.kind === 'str')
+    assert(type.type === 'str')
   }
   // EXCEPTION
   else if (
     name === 'data'
     && markdown.includes('Base64-encoded encrypted JSON-serialized data')
   ) {
-    assert(type.kind === 'str')
+    assert(type.type === 'str')
   }
   else if (/JSON-serialized/i.test(markdown)) {
     if (markdown.includes('A JSON-serialized list')) {
-      assert(type.kind === 'array')
+      assert(type.type === 'array')
       markdown = markdown.replace('A JSON-serialized list', 'An array')
       isJsonSerialized = true
     }
     else if (markdown.includes('Price breakdown, a JSON-serialized list')) {
-      assert(type.kind === 'array')
+      assert(type.type === 'array')
       markdown = markdown.replace('Price breakdown, a JSON-serialized list', 'Price breakdown, an array')
       isJsonSerialized = true
     }
     else if (markdown.includes('A JSON-serialized array')) {
-      assert(type.kind === 'array')
+      assert(type.type === 'array')
       markdown = markdown.replace('A JSON-serialized array', 'An array')
       isJsonSerialized = true
     }
     else if (markdown.includes('A JSON-serialized object')) {
-      assert(type.kind === 'api-type' || type.kind === 'union', `expected object type, got ${type.kind}`)
+      assert(type.type === 'api-type' || type.type === 'union', `expected object type, got ${type.type}`)
       markdown = markdown.replace('A JSON-serialized object', 'An object')
       isJsonSerialized = true
     }
@@ -409,7 +409,7 @@ function paramOrFieldDescriptionFromEl($el: Cheerio<Element>, name: string, type
   }
 
   if (/some programming languages may have difficulty/i.test(markdown)) {
-    assert(type.kind === 'int32')
+    assert(type.type === 'int32')
     for (const variant of [
       'This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a 64-bit integer or double-precision float type are safe for storing this identifier.',
       'This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so 64-bit integers or double-precision float types are safe for storing these identifiers.',
@@ -436,39 +436,39 @@ function paramOrFieldDescriptionFromEl($el: Cheerio<Element>, name: string, type
 }
 
 function T_str(literal?: string): ValueTypeString {
-  return { kind: 'str', literal }
+  return { type: 'str', literal }
 }
 
 function T_bool(literal?: boolean): ValueTypeBoolean {
-  return { kind: 'bool', literal }
+  return { type: 'bool', literal }
 }
 
 function T_int32(): ValueTypeInteger32 {
-  return { kind: 'int32' }
+  return { type: 'int32' }
 }
 
 function T_int52(): ValueTypeInteger52 {
-  return { kind: 'int52' }
+  return { type: 'int52' }
 }
 
 function T_float(): ValueTypeFloat {
-  return { kind: 'float' }
+  return { type: 'float' }
 }
 
 function T_inputFile(): ValueTypeInputFile {
-  return { kind: 'input-file' }
+  return { type: 'input-file' }
 }
 
 function T_apiType(name: string): ValueTypeApiType {
-  return { kind: 'api-type', name: name as any }
+  return { type: 'api-type', name: name as any }
 }
 
 function T_arrayOf(of: ValueType): ValueTypeArray {
-  return { kind: 'array', of }
+  return { type: 'array', of }
 }
 
 function T_unionOf(types: Array<ValueType>): ValueTypeUnion {
-  return { kind: 'union', types }
+  return { type: 'union', types }
 }
 
 function genTypesModule(types: Array<ApiType>): string {

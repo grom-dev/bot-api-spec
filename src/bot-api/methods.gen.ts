@@ -15,7 +15,7 @@ const getUpdates: ApiMethod = {
     {
       name: 'offset',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the first update to be returned. Must be greater by one than the highest among the identifiers of previously received updates. By default, updates starting with the earliest unconfirmed update are returned. An update is considered confirmed as soon as [getUpdates](https://core.telegram.org/bots/api#getupdates) is called with an _offset_ higher than its _update\\_id_. The negative offset can be specified to retrieve updates starting from _\\-offset_ update from the end of the updates queue. All previous updates will be forgotten.',
@@ -26,7 +26,7 @@ const getUpdates: ApiMethod = {
     {
       name: 'limit',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Limits the number of updates to be retrieved. Values between 1-100 are accepted. Defaults to 100.',
@@ -37,7 +37,7 @@ const getUpdates: ApiMethod = {
     {
       name: 'timeout',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Timeout in seconds for long polling. Defaults to 0, i.e. usual short polling. Should be positive, short polling should be used for testing purposes only.',
@@ -48,9 +48,9 @@ const getUpdates: ApiMethod = {
     {
       name: 'allowed_updates',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'str',
+          type: 'str',
         },
       },
       description: {
@@ -61,9 +61,9 @@ const getUpdates: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'array',
+    type: 'array',
     of: {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'Update',
     },
   },
@@ -78,7 +78,7 @@ const setWebhook: ApiMethod = {
     {
       name: 'url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'HTTPS URL to send updates to. Use an empty string to remove webhook integration',
@@ -89,7 +89,7 @@ const setWebhook: ApiMethod = {
     {
       name: 'certificate',
       type: {
-        kind: 'input-file',
+        type: 'input-file',
       },
       description: {
         markdown: 'Upload your public key certificate so that the root certificate in use can be checked. See our [self-signed guide](https://core.telegram.org/bots/self-signed) for details.',
@@ -100,7 +100,7 @@ const setWebhook: ApiMethod = {
     {
       name: 'ip_address',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The fixed IP address which will be used to send webhook requests instead of the IP address resolved through DNS',
@@ -111,7 +111,7 @@ const setWebhook: ApiMethod = {
     {
       name: 'max_connections',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery, 1-100. Defaults to _40_. Use lower values to limit the load on your bot\'s server, and higher values to increase your bot\'s throughput.',
@@ -122,9 +122,9 @@ const setWebhook: ApiMethod = {
     {
       name: 'allowed_updates',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'str',
+          type: 'str',
         },
       },
       description: {
@@ -136,7 +136,7 @@ const setWebhook: ApiMethod = {
     {
       name: 'drop_pending_updates',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to drop all pending updates',
@@ -147,7 +147,7 @@ const setWebhook: ApiMethod = {
     {
       name: 'secret_token',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A secret token to be sent in a header “X-Telegram-Bot-Api-Secret-Token” in every webhook request, 1-256 characters. Only characters `A-Z`, `a-z`, `0-9`, `_` and `-` are allowed. The header is useful to ensure that the request comes from a webhook set by you.',
@@ -157,7 +157,7 @@ const setWebhook: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -171,7 +171,7 @@ const deleteWebhook: ApiMethod = {
     {
       name: 'drop_pending_updates',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to drop all pending updates',
@@ -181,7 +181,7 @@ const deleteWebhook: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -193,7 +193,7 @@ const getWebhookInfo: ApiMethod = {
   },
   parameters: [],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'WebhookInfo',
   },
 }
@@ -205,7 +205,7 @@ const getMe: ApiMethod = {
   },
   parameters: [],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'User',
   },
 }
@@ -217,7 +217,7 @@ const logOut: ApiMethod = {
   },
   parameters: [],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -229,7 +229,7 @@ const close: ApiMethod = {
   },
   parameters: [],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -243,7 +243,7 @@ const sendMessage: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -254,13 +254,13 @@ const sendMessage: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -273,7 +273,7 @@ const sendMessage: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -284,7 +284,7 @@ const sendMessage: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
@@ -295,7 +295,7 @@ const sendMessage: ApiMethod = {
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text of the message to be sent, 1-4096 characters after entities parsing',
@@ -306,7 +306,7 @@ const sendMessage: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -317,9 +317,9 @@ const sendMessage: ApiMethod = {
     {
       name: 'entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -332,7 +332,7 @@ const sendMessage: ApiMethod = {
     {
       name: 'link_preview_options',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'LinkPreviewOptions',
       },
       description: {
@@ -344,7 +344,7 @@ const sendMessage: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -355,7 +355,7 @@ const sendMessage: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -366,7 +366,7 @@ const sendMessage: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -377,7 +377,7 @@ const sendMessage: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -388,7 +388,7 @@ const sendMessage: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -400,7 +400,7 @@ const sendMessage: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -412,22 +412,22 @@ const sendMessage: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardRemove',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ForceReply',
           },
         ],
@@ -440,7 +440,7 @@ const sendMessage: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -454,13 +454,13 @@ const forwardMessage: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -473,7 +473,7 @@ const forwardMessage: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -484,7 +484,7 @@ const forwardMessage: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be forwarded; required if the message is forwarded to a direct messages chat',
@@ -495,13 +495,13 @@ const forwardMessage: ApiMethod = {
     {
       name: 'from_chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -514,7 +514,7 @@ const forwardMessage: ApiMethod = {
     {
       name: 'video_start_timestamp',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'New start timestamp for the forwarded video in the message',
@@ -525,7 +525,7 @@ const forwardMessage: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -536,7 +536,7 @@ const forwardMessage: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the forwarded message from forwarding and saving',
@@ -547,7 +547,7 @@ const forwardMessage: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -559,7 +559,7 @@ const forwardMessage: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Message identifier in the chat specified in _from\\_chat\\_id_',
@@ -569,7 +569,7 @@ const forwardMessage: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -583,13 +583,13 @@ const forwardMessages: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -602,7 +602,7 @@ const forwardMessages: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -613,7 +613,7 @@ const forwardMessages: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the messages will be forwarded; required if the messages are forwarded to a direct messages chat',
@@ -624,13 +624,13 @@ const forwardMessages: ApiMethod = {
     {
       name: 'from_chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -643,9 +643,9 @@ const forwardMessages: ApiMethod = {
     {
       name: 'message_ids',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'int32',
+          type: 'int32',
         },
       },
       description: {
@@ -657,7 +657,7 @@ const forwardMessages: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -668,7 +668,7 @@ const forwardMessages: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the forwarded messages from forwarding and saving',
@@ -678,9 +678,9 @@ const forwardMessages: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'array',
+    type: 'array',
     of: {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'MessageId',
     },
   },
@@ -695,13 +695,13 @@ const copyMessage: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -714,7 +714,7 @@ const copyMessage: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -725,7 +725,7 @@ const copyMessage: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
@@ -736,13 +736,13 @@ const copyMessage: ApiMethod = {
     {
       name: 'from_chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -755,7 +755,7 @@ const copyMessage: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Message identifier in the chat specified in _from\\_chat\\_id_',
@@ -766,7 +766,7 @@ const copyMessage: ApiMethod = {
     {
       name: 'video_start_timestamp',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'New start timestamp for the copied video in the message',
@@ -777,7 +777,7 @@ const copyMessage: ApiMethod = {
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'New caption for media, 0-1024 characters after entities parsing. If not specified, the original caption is kept',
@@ -788,7 +788,7 @@ const copyMessage: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the new caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -799,9 +799,9 @@ const copyMessage: ApiMethod = {
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -814,7 +814,7 @@ const copyMessage: ApiMethod = {
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media. Ignored if a new caption isn\'t specified.',
@@ -825,7 +825,7 @@ const copyMessage: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -836,7 +836,7 @@ const copyMessage: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -847,7 +847,7 @@ const copyMessage: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -858,7 +858,7 @@ const copyMessage: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -870,7 +870,7 @@ const copyMessage: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -882,22 +882,22 @@ const copyMessage: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardRemove',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ForceReply',
           },
         ],
@@ -910,7 +910,7 @@ const copyMessage: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'MessageId',
   },
 }
@@ -924,13 +924,13 @@ const copyMessages: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -943,7 +943,7 @@ const copyMessages: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -954,7 +954,7 @@ const copyMessages: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat',
@@ -965,13 +965,13 @@ const copyMessages: ApiMethod = {
     {
       name: 'from_chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -984,9 +984,9 @@ const copyMessages: ApiMethod = {
     {
       name: 'message_ids',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'int32',
+          type: 'int32',
         },
       },
       description: {
@@ -998,7 +998,7 @@ const copyMessages: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -1009,7 +1009,7 @@ const copyMessages: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent messages from forwarding and saving',
@@ -1020,7 +1020,7 @@ const copyMessages: ApiMethod = {
     {
       name: 'remove_caption',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to copy the messages without their captions',
@@ -1030,9 +1030,9 @@ const copyMessages: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'array',
+    type: 'array',
     of: {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'MessageId',
     },
   },
@@ -1047,7 +1047,7 @@ const sendPhoto: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -1058,13 +1058,13 @@ const sendPhoto: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -1077,7 +1077,7 @@ const sendPhoto: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -1088,7 +1088,7 @@ const sendPhoto: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
@@ -1099,13 +1099,13 @@ const sendPhoto: ApiMethod = {
     {
       name: 'photo',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'input-file',
+            type: 'input-file',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -1118,7 +1118,7 @@ const sendPhoto: ApiMethod = {
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Photo caption (may also be used when resending photos by _file\\_id_), 0-1024 characters after entities parsing',
@@ -1129,7 +1129,7 @@ const sendPhoto: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -1140,9 +1140,9 @@ const sendPhoto: ApiMethod = {
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -1155,7 +1155,7 @@ const sendPhoto: ApiMethod = {
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
@@ -1166,7 +1166,7 @@ const sendPhoto: ApiMethod = {
     {
       name: 'has_spoiler',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the photo needs to be covered with a spoiler animation',
@@ -1177,7 +1177,7 @@ const sendPhoto: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -1188,7 +1188,7 @@ const sendPhoto: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -1199,7 +1199,7 @@ const sendPhoto: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -1210,7 +1210,7 @@ const sendPhoto: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -1221,7 +1221,7 @@ const sendPhoto: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -1233,7 +1233,7 @@ const sendPhoto: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -1245,22 +1245,22 @@ const sendPhoto: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardRemove',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ForceReply',
           },
         ],
@@ -1273,7 +1273,7 @@ const sendPhoto: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -1287,7 +1287,7 @@ const sendAudio: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -1298,13 +1298,13 @@ const sendAudio: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -1317,7 +1317,7 @@ const sendAudio: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -1328,7 +1328,7 @@ const sendAudio: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
@@ -1339,13 +1339,13 @@ const sendAudio: ApiMethod = {
     {
       name: 'audio',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'input-file',
+            type: 'input-file',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -1358,7 +1358,7 @@ const sendAudio: ApiMethod = {
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Audio caption, 0-1024 characters after entities parsing',
@@ -1369,7 +1369,7 @@ const sendAudio: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the audio caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -1380,9 +1380,9 @@ const sendAudio: ApiMethod = {
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -1395,7 +1395,7 @@ const sendAudio: ApiMethod = {
     {
       name: 'duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Duration of the audio in seconds',
@@ -1406,7 +1406,7 @@ const sendAudio: ApiMethod = {
     {
       name: 'performer',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Performer',
@@ -1417,7 +1417,7 @@ const sendAudio: ApiMethod = {
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Track name',
@@ -1428,13 +1428,13 @@ const sendAudio: ApiMethod = {
     {
       name: 'thumbnail',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'input-file',
+            type: 'input-file',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -1447,7 +1447,7 @@ const sendAudio: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -1458,7 +1458,7 @@ const sendAudio: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -1469,7 +1469,7 @@ const sendAudio: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -1480,7 +1480,7 @@ const sendAudio: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -1491,7 +1491,7 @@ const sendAudio: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -1503,7 +1503,7 @@ const sendAudio: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -1515,22 +1515,22 @@ const sendAudio: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardRemove',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ForceReply',
           },
         ],
@@ -1543,7 +1543,7 @@ const sendAudio: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -1557,7 +1557,7 @@ const sendDocument: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -1568,13 +1568,13 @@ const sendDocument: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -1587,7 +1587,7 @@ const sendDocument: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -1598,7 +1598,7 @@ const sendDocument: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
@@ -1609,13 +1609,13 @@ const sendDocument: ApiMethod = {
     {
       name: 'document',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'input-file',
+            type: 'input-file',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -1628,13 +1628,13 @@ const sendDocument: ApiMethod = {
     {
       name: 'thumbnail',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'input-file',
+            type: 'input-file',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -1647,7 +1647,7 @@ const sendDocument: ApiMethod = {
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Document caption (may also be used when resending documents by _file\\_id_), 0-1024 characters after entities parsing',
@@ -1658,7 +1658,7 @@ const sendDocument: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -1669,9 +1669,9 @@ const sendDocument: ApiMethod = {
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -1684,7 +1684,7 @@ const sendDocument: ApiMethod = {
     {
       name: 'disable_content_type_detection',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Disables automatic server-side content type detection for files uploaded using multipart/form-data',
@@ -1695,7 +1695,7 @@ const sendDocument: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -1706,7 +1706,7 @@ const sendDocument: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -1717,7 +1717,7 @@ const sendDocument: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -1728,7 +1728,7 @@ const sendDocument: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -1739,7 +1739,7 @@ const sendDocument: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -1751,7 +1751,7 @@ const sendDocument: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -1763,22 +1763,22 @@ const sendDocument: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardRemove',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ForceReply',
           },
         ],
@@ -1791,7 +1791,7 @@ const sendDocument: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -1805,7 +1805,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -1816,13 +1816,13 @@ const sendVideo: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -1835,7 +1835,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -1846,7 +1846,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
@@ -1857,13 +1857,13 @@ const sendVideo: ApiMethod = {
     {
       name: 'video',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'input-file',
+            type: 'input-file',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -1876,7 +1876,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Duration of sent video in seconds',
@@ -1887,7 +1887,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video width',
@@ -1898,7 +1898,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video height',
@@ -1909,13 +1909,13 @@ const sendVideo: ApiMethod = {
     {
       name: 'thumbnail',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'input-file',
+            type: 'input-file',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -1928,13 +1928,13 @@ const sendVideo: ApiMethod = {
     {
       name: 'cover',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'input-file',
+            type: 'input-file',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -1947,7 +1947,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'start_timestamp',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Start timestamp for the video in the message',
@@ -1958,7 +1958,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Video caption (may also be used when resending videos by _file\\_id_), 0-1024 characters after entities parsing',
@@ -1969,7 +1969,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -1980,9 +1980,9 @@ const sendVideo: ApiMethod = {
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -1995,7 +1995,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
@@ -2006,7 +2006,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'has_spoiler',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the video needs to be covered with a spoiler animation',
@@ -2017,7 +2017,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'supports_streaming',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the uploaded video is suitable for streaming',
@@ -2028,7 +2028,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -2039,7 +2039,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -2050,7 +2050,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -2061,7 +2061,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -2072,7 +2072,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -2084,7 +2084,7 @@ const sendVideo: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -2096,22 +2096,22 @@ const sendVideo: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardRemove',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ForceReply',
           },
         ],
@@ -2124,7 +2124,7 @@ const sendVideo: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -2138,7 +2138,7 @@ const sendAnimation: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -2149,13 +2149,13 @@ const sendAnimation: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -2168,7 +2168,7 @@ const sendAnimation: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -2179,7 +2179,7 @@ const sendAnimation: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
@@ -2190,13 +2190,13 @@ const sendAnimation: ApiMethod = {
     {
       name: 'animation',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'input-file',
+            type: 'input-file',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -2209,7 +2209,7 @@ const sendAnimation: ApiMethod = {
     {
       name: 'duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Duration of sent animation in seconds',
@@ -2220,7 +2220,7 @@ const sendAnimation: ApiMethod = {
     {
       name: 'width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Animation width',
@@ -2231,7 +2231,7 @@ const sendAnimation: ApiMethod = {
     {
       name: 'height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Animation height',
@@ -2242,13 +2242,13 @@ const sendAnimation: ApiMethod = {
     {
       name: 'thumbnail',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'input-file',
+            type: 'input-file',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -2261,7 +2261,7 @@ const sendAnimation: ApiMethod = {
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Animation caption (may also be used when resending animation by _file\\_id_), 0-1024 characters after entities parsing',
@@ -2272,7 +2272,7 @@ const sendAnimation: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the animation caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -2283,9 +2283,9 @@ const sendAnimation: ApiMethod = {
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -2298,7 +2298,7 @@ const sendAnimation: ApiMethod = {
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
@@ -2309,7 +2309,7 @@ const sendAnimation: ApiMethod = {
     {
       name: 'has_spoiler',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the animation needs to be covered with a spoiler animation',
@@ -2320,7 +2320,7 @@ const sendAnimation: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -2331,7 +2331,7 @@ const sendAnimation: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -2342,7 +2342,7 @@ const sendAnimation: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -2353,7 +2353,7 @@ const sendAnimation: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -2364,7 +2364,7 @@ const sendAnimation: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -2376,7 +2376,7 @@ const sendAnimation: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -2388,22 +2388,22 @@ const sendAnimation: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardRemove',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ForceReply',
           },
         ],
@@ -2416,7 +2416,7 @@ const sendAnimation: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -2430,7 +2430,7 @@ const sendVoice: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -2441,13 +2441,13 @@ const sendVoice: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -2460,7 +2460,7 @@ const sendVoice: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -2471,7 +2471,7 @@ const sendVoice: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
@@ -2482,13 +2482,13 @@ const sendVoice: ApiMethod = {
     {
       name: 'voice',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'input-file',
+            type: 'input-file',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -2501,7 +2501,7 @@ const sendVoice: ApiMethod = {
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Voice message caption, 0-1024 characters after entities parsing',
@@ -2512,7 +2512,7 @@ const sendVoice: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the voice message caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -2523,9 +2523,9 @@ const sendVoice: ApiMethod = {
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -2538,7 +2538,7 @@ const sendVoice: ApiMethod = {
     {
       name: 'duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Duration of the voice message in seconds',
@@ -2549,7 +2549,7 @@ const sendVoice: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -2560,7 +2560,7 @@ const sendVoice: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -2571,7 +2571,7 @@ const sendVoice: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -2582,7 +2582,7 @@ const sendVoice: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -2593,7 +2593,7 @@ const sendVoice: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -2605,7 +2605,7 @@ const sendVoice: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -2617,22 +2617,22 @@ const sendVoice: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardRemove',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ForceReply',
           },
         ],
@@ -2645,7 +2645,7 @@ const sendVoice: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -2659,7 +2659,7 @@ const sendVideoNote: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -2670,13 +2670,13 @@ const sendVideoNote: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -2689,7 +2689,7 @@ const sendVideoNote: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -2700,7 +2700,7 @@ const sendVideoNote: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
@@ -2711,13 +2711,13 @@ const sendVideoNote: ApiMethod = {
     {
       name: 'video_note',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'input-file',
+            type: 'input-file',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -2730,7 +2730,7 @@ const sendVideoNote: ApiMethod = {
     {
       name: 'duration',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Duration of sent video in seconds',
@@ -2741,7 +2741,7 @@ const sendVideoNote: ApiMethod = {
     {
       name: 'length',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Video width and height, i.e. diameter of the video message',
@@ -2752,13 +2752,13 @@ const sendVideoNote: ApiMethod = {
     {
       name: 'thumbnail',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'input-file',
+            type: 'input-file',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -2771,7 +2771,7 @@ const sendVideoNote: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -2782,7 +2782,7 @@ const sendVideoNote: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -2793,7 +2793,7 @@ const sendVideoNote: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -2804,7 +2804,7 @@ const sendVideoNote: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -2815,7 +2815,7 @@ const sendVideoNote: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -2827,7 +2827,7 @@ const sendVideoNote: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -2839,22 +2839,22 @@ const sendVideoNote: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardRemove',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ForceReply',
           },
         ],
@@ -2867,7 +2867,7 @@ const sendVideoNote: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -2881,7 +2881,7 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -2892,13 +2892,13 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -2911,7 +2911,7 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -2922,7 +2922,7 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
@@ -2933,7 +2933,7 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of Telegram Stars that must be paid to buy access to the media; 1-10000',
@@ -2944,9 +2944,9 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'media',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'InputPaidMedia',
         },
       },
@@ -2959,7 +2959,7 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'payload',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Bot-defined paid media payload, 0-128 bytes. This will not be displayed to the user, use it for your internal processes.',
@@ -2970,7 +2970,7 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Media caption, 0-1024 characters after entities parsing',
@@ -2981,7 +2981,7 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the media caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -2992,9 +2992,9 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -3007,7 +3007,7 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
@@ -3018,7 +3018,7 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -3029,7 +3029,7 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -3040,7 +3040,7 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -3051,7 +3051,7 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -3063,7 +3063,7 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -3075,22 +3075,22 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardRemove',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ForceReply',
           },
         ],
@@ -3103,7 +3103,7 @@ const sendPaidMedia: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -3117,7 +3117,7 @@ const sendMediaGroup: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -3128,13 +3128,13 @@ const sendMediaGroup: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -3147,7 +3147,7 @@ const sendMediaGroup: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -3158,7 +3158,7 @@ const sendMediaGroup: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat',
@@ -3169,24 +3169,24 @@ const sendMediaGroup: ApiMethod = {
     {
       name: 'media',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'union',
+          type: 'union',
           types: [
             {
-              kind: 'api-type',
+              type: 'api-type',
               name: 'InputMediaAudio',
             },
             {
-              kind: 'api-type',
+              type: 'api-type',
               name: 'InputMediaDocument',
             },
             {
-              kind: 'api-type',
+              type: 'api-type',
               name: 'InputMediaPhoto',
             },
             {
-              kind: 'api-type',
+              type: 'api-type',
               name: 'InputMediaVideo',
             },
           ],
@@ -3201,7 +3201,7 @@ const sendMediaGroup: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -3212,7 +3212,7 @@ const sendMediaGroup: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent messages from forwarding and saving',
@@ -3223,7 +3223,7 @@ const sendMediaGroup: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -3234,7 +3234,7 @@ const sendMediaGroup: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -3245,7 +3245,7 @@ const sendMediaGroup: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -3256,9 +3256,9 @@ const sendMediaGroup: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'array',
+    type: 'array',
     of: {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'Message',
     },
   },
@@ -3273,7 +3273,7 @@ const sendLocation: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -3284,13 +3284,13 @@ const sendLocation: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -3303,7 +3303,7 @@ const sendLocation: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -3314,7 +3314,7 @@ const sendLocation: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
@@ -3325,7 +3325,7 @@ const sendLocation: ApiMethod = {
     {
       name: 'latitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Latitude of the location',
@@ -3336,7 +3336,7 @@ const sendLocation: ApiMethod = {
     {
       name: 'longitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Longitude of the location',
@@ -3347,7 +3347,7 @@ const sendLocation: ApiMethod = {
     {
       name: 'horizontal_accuracy',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'The radius of uncertainty for the location, measured in meters; 0-1500',
@@ -3358,7 +3358,7 @@ const sendLocation: ApiMethod = {
     {
       name: 'live_period',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Period in seconds during which the location will be updated (see [Live Locations](https://telegram.org/blog/live-locations), should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.',
@@ -3369,7 +3369,7 @@ const sendLocation: ApiMethod = {
     {
       name: 'heading',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.',
@@ -3380,7 +3380,7 @@ const sendLocation: ApiMethod = {
     {
       name: 'proximity_alert_radius',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.',
@@ -3391,7 +3391,7 @@ const sendLocation: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -3402,7 +3402,7 @@ const sendLocation: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -3413,7 +3413,7 @@ const sendLocation: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -3424,7 +3424,7 @@ const sendLocation: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -3435,7 +3435,7 @@ const sendLocation: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -3447,7 +3447,7 @@ const sendLocation: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -3459,22 +3459,22 @@ const sendLocation: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardRemove',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ForceReply',
           },
         ],
@@ -3487,7 +3487,7 @@ const sendLocation: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -3501,7 +3501,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -3512,13 +3512,13 @@ const sendVenue: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -3531,7 +3531,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -3542,7 +3542,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
@@ -3553,7 +3553,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'latitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Latitude of the venue',
@@ -3564,7 +3564,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'longitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Longitude of the venue',
@@ -3575,7 +3575,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Name of the venue',
@@ -3586,7 +3586,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'address',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Address of the venue',
@@ -3597,7 +3597,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'foursquare_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Foursquare identifier of the venue',
@@ -3608,7 +3608,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'foursquare_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Foursquare type of the venue, if known. (For example, “arts\\_entertainment/default”, “arts\\_entertainment/aquarium” or “food/icecream”.)',
@@ -3619,7 +3619,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'google_place_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Google Places identifier of the venue',
@@ -3630,7 +3630,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'google_place_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)',
@@ -3641,7 +3641,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -3652,7 +3652,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -3663,7 +3663,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -3674,7 +3674,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -3685,7 +3685,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -3697,7 +3697,7 @@ const sendVenue: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -3709,22 +3709,22 @@ const sendVenue: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardRemove',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ForceReply',
           },
         ],
@@ -3737,7 +3737,7 @@ const sendVenue: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -3751,7 +3751,7 @@ const sendContact: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -3762,13 +3762,13 @@ const sendContact: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -3781,7 +3781,7 @@ const sendContact: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -3792,7 +3792,7 @@ const sendContact: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
@@ -3803,7 +3803,7 @@ const sendContact: ApiMethod = {
     {
       name: 'phone_number',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Contact\'s phone number',
@@ -3814,7 +3814,7 @@ const sendContact: ApiMethod = {
     {
       name: 'first_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Contact\'s first name',
@@ -3825,7 +3825,7 @@ const sendContact: ApiMethod = {
     {
       name: 'last_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Contact\'s last name',
@@ -3836,7 +3836,7 @@ const sendContact: ApiMethod = {
     {
       name: 'vcard',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes',
@@ -3847,7 +3847,7 @@ const sendContact: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -3858,7 +3858,7 @@ const sendContact: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -3869,7 +3869,7 @@ const sendContact: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -3880,7 +3880,7 @@ const sendContact: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -3891,7 +3891,7 @@ const sendContact: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -3903,7 +3903,7 @@ const sendContact: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -3915,22 +3915,22 @@ const sendContact: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardRemove',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ForceReply',
           },
         ],
@@ -3943,7 +3943,7 @@ const sendContact: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -3957,7 +3957,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -3968,13 +3968,13 @@ const sendPoll: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -3987,7 +3987,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -3998,7 +3998,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'question',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Poll question, 1-300 characters',
@@ -4009,7 +4009,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'question_parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the question. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Currently, only custom emoji entities are allowed',
@@ -4020,9 +4020,9 @@ const sendPoll: ApiMethod = {
     {
       name: 'question_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -4035,9 +4035,9 @@ const sendPoll: ApiMethod = {
     {
       name: 'options',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'InputPollOption',
         },
       },
@@ -4050,7 +4050,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'is_anonymous',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the poll needs to be anonymous, defaults to _True_',
@@ -4061,7 +4061,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Poll type, “quiz” or “regular”, defaults to “regular”',
@@ -4072,7 +4072,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'allows_multiple_answers',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to _False_',
@@ -4083,7 +4083,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'correct_option_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: '0-based identifier of the correct answer option, required for polls in quiz mode',
@@ -4094,7 +4094,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'explanation',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll, 0-200 characters with at most 2 line feeds after entities parsing',
@@ -4105,7 +4105,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'explanation_parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the explanation. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -4116,9 +4116,9 @@ const sendPoll: ApiMethod = {
     {
       name: 'explanation_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -4131,7 +4131,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'open_period',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Amount of time in seconds the poll will be active after creation, 5-600. Can\'t be used together with _close\\_date_.',
@@ -4142,7 +4142,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'close_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Point in time (Unix timestamp) when the poll will be automatically closed. Must be at least 5 and no more than 600 seconds in the future. Can\'t be used together with _open\\_period_.',
@@ -4153,7 +4153,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'is_closed',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the poll needs to be immediately closed. This can be useful for poll preview.',
@@ -4164,7 +4164,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -4175,7 +4175,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -4186,7 +4186,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -4197,7 +4197,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -4208,7 +4208,7 @@ const sendPoll: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -4220,22 +4220,22 @@ const sendPoll: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardRemove',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ForceReply',
           },
         ],
@@ -4248,7 +4248,7 @@ const sendPoll: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -4262,7 +4262,7 @@ const sendChecklist: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -4273,7 +4273,7 @@ const sendChecklist: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target chat',
@@ -4284,7 +4284,7 @@ const sendChecklist: ApiMethod = {
     {
       name: 'checklist',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputChecklist',
       },
       description: {
@@ -4296,7 +4296,7 @@ const sendChecklist: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message silently. Users will receive a notification with no sound.',
@@ -4307,7 +4307,7 @@ const sendChecklist: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -4318,7 +4318,7 @@ const sendChecklist: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message',
@@ -4329,7 +4329,7 @@ const sendChecklist: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -4341,7 +4341,7 @@ const sendChecklist: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -4352,7 +4352,7 @@ const sendChecklist: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -4366,7 +4366,7 @@ const sendDice: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -4377,13 +4377,13 @@ const sendDice: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -4396,7 +4396,7 @@ const sendDice: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -4407,7 +4407,7 @@ const sendDice: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
@@ -4418,7 +4418,7 @@ const sendDice: ApiMethod = {
     {
       name: 'emoji',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Emoji on which the dice throw animation is based. Currently, must be one of “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”, “![🎯](//telegram.org/img/emoji/40/F09F8EAF.png)”, “![🏀](//telegram.org/img/emoji/40/F09F8F80.png)”, “![⚽](//telegram.org/img/emoji/40/E29ABD.png)”, “![🎳](//telegram.org/img/emoji/40/F09F8EB3.png)”, or “![🎰](//telegram.org/img/emoji/40/F09F8EB0.png)”. Dice can have values 1-6 for “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”, “![🎯](//telegram.org/img/emoji/40/F09F8EAF.png)” and “![🎳](//telegram.org/img/emoji/40/F09F8EB3.png)”, values 1-5 for “![🏀](//telegram.org/img/emoji/40/F09F8F80.png)” and “![⚽](//telegram.org/img/emoji/40/E29ABD.png)”, and values 1-64 for “![🎰](//telegram.org/img/emoji/40/F09F8EB0.png)”. Defaults to “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”',
@@ -4429,7 +4429,7 @@ const sendDice: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -4440,7 +4440,7 @@ const sendDice: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding',
@@ -4451,7 +4451,7 @@ const sendDice: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -4462,7 +4462,7 @@ const sendDice: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -4473,7 +4473,7 @@ const sendDice: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -4485,7 +4485,7 @@ const sendDice: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -4497,22 +4497,22 @@ const sendDice: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardRemove',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ForceReply',
           },
         ],
@@ -4525,7 +4525,7 @@ const sendDice: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -4539,7 +4539,7 @@ const sendChatAction: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the action will be sent',
@@ -4550,13 +4550,13 @@ const sendChatAction: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -4569,7 +4569,7 @@ const sendChatAction: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread; for supergroups only',
@@ -4580,7 +4580,7 @@ const sendChatAction: ApiMethod = {
     {
       name: 'action',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of action to broadcast. Choose one, depending on what the user is about to receive: _typing_ for [text messages](https://core.telegram.org/bots/api#sendmessage), _upload\\_photo_ for [photos](https://core.telegram.org/bots/api#sendphoto), _record\\_video_ or _upload\\_video_ for [videos](https://core.telegram.org/bots/api#sendvideo), _record\\_voice_ or _upload\\_voice_ for [voice notes](https://core.telegram.org/bots/api#sendvoice), _upload\\_document_ for [general files](https://core.telegram.org/bots/api#senddocument), _choose\\_sticker_ for [stickers](https://core.telegram.org/bots/api#sendsticker), _find\\_location_ for [location data](https://core.telegram.org/bots/api#sendlocation), _record\\_video\\_note_ or _upload\\_video\\_note_ for [video notes](https://core.telegram.org/bots/api#sendvideonote).',
@@ -4590,7 +4590,7 @@ const sendChatAction: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -4604,13 +4604,13 @@ const setMessageReaction: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -4623,7 +4623,7 @@ const setMessageReaction: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the target message. If the message belongs to a media group, the reaction is set to the first non-deleted message in the group instead.',
@@ -4634,9 +4634,9 @@ const setMessageReaction: ApiMethod = {
     {
       name: 'reaction',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'ReactionType',
         },
       },
@@ -4649,7 +4649,7 @@ const setMessageReaction: ApiMethod = {
     {
       name: 'is_big',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to set the reaction with a big animation',
@@ -4659,7 +4659,7 @@ const setMessageReaction: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -4673,7 +4673,7 @@ const getUserProfilePhotos: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target user',
@@ -4684,7 +4684,7 @@ const getUserProfilePhotos: ApiMethod = {
     {
       name: 'offset',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Sequential number of the first photo to be returned. By default, all photos are returned.',
@@ -4695,7 +4695,7 @@ const getUserProfilePhotos: ApiMethod = {
     {
       name: 'limit',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Limits the number of photos to be retrieved. Values between 1-100 are accepted. Defaults to 100.',
@@ -4705,7 +4705,7 @@ const getUserProfilePhotos: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'UserProfilePhotos',
   },
 }
@@ -4719,7 +4719,7 @@ const setUserEmojiStatus: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target user',
@@ -4730,7 +4730,7 @@ const setUserEmojiStatus: ApiMethod = {
     {
       name: 'emoji_status_custom_emoji_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Custom emoji identifier of the emoji status to set. Pass an empty string to remove the status.',
@@ -4741,7 +4741,7 @@ const setUserEmojiStatus: ApiMethod = {
     {
       name: 'emoji_status_expiration_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Expiration date of the emoji status, if any',
@@ -4751,7 +4751,7 @@ const setUserEmojiStatus: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -4765,7 +4765,7 @@ const getFile: ApiMethod = {
     {
       name: 'file_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File identifier to get information about',
@@ -4775,7 +4775,7 @@ const getFile: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'File',
   },
 }
@@ -4789,13 +4789,13 @@ const banChatMember: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -4808,7 +4808,7 @@ const banChatMember: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target user',
@@ -4819,7 +4819,7 @@ const banChatMember: ApiMethod = {
     {
       name: 'until_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date when the user will be unbanned; Unix time. If user is banned for more than 366 days or less than 30 seconds from the current time they are considered to be banned forever. Applied for supergroups and channels only.',
@@ -4830,7 +4830,7 @@ const banChatMember: ApiMethod = {
     {
       name: 'revoke_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to delete all messages from the chat for the user that is being removed. If _False_, the user will be able to see messages in the group that were sent before the user was removed. Always _True_ for supergroups and channels.',
@@ -4840,7 +4840,7 @@ const banChatMember: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -4854,13 +4854,13 @@ const unbanChatMember: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -4873,7 +4873,7 @@ const unbanChatMember: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target user',
@@ -4884,7 +4884,7 @@ const unbanChatMember: ApiMethod = {
     {
       name: 'only_if_banned',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Do nothing if the user is not banned',
@@ -4894,7 +4894,7 @@ const unbanChatMember: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -4908,13 +4908,13 @@ const restrictChatMember: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -4927,7 +4927,7 @@ const restrictChatMember: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target user',
@@ -4938,7 +4938,7 @@ const restrictChatMember: ApiMethod = {
     {
       name: 'permissions',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatPermissions',
       },
       description: {
@@ -4950,7 +4950,7 @@ const restrictChatMember: ApiMethod = {
     {
       name: 'use_independent_chat_permissions',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if chat permissions are set independently. Otherwise, the _can\\_send\\_other\\_messages_ and _can\\_add\\_web\\_page\\_previews_ permissions will imply the _can\\_send\\_messages_, _can\\_send\\_audios_, _can\\_send\\_documents_, _can\\_send\\_photos_, _can\\_send\\_videos_, _can\\_send\\_video\\_notes_, and _can\\_send\\_voice\\_notes_ permissions; the _can\\_send\\_polls_ permission will imply the _can\\_send\\_messages_ permission.',
@@ -4961,7 +4961,7 @@ const restrictChatMember: ApiMethod = {
     {
       name: 'until_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Date when restrictions will be lifted for the user; Unix time. If user is restricted for more than 366 days or less than 30 seconds from the current time, they are considered to be restricted forever',
@@ -4971,7 +4971,7 @@ const restrictChatMember: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -4985,13 +4985,13 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5004,7 +5004,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target user',
@@ -5015,7 +5015,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'is_anonymous',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the administrator\'s presence in the chat is hidden',
@@ -5026,7 +5026,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'can_manage_chat',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages, ignore slow mode, and send messages to the chat without paying Telegram Stars. Implied by any other administrator privilege.',
@@ -5037,7 +5037,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'can_delete_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the administrator can delete messages of other users',
@@ -5048,7 +5048,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'can_manage_video_chats',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the administrator can manage video chats',
@@ -5059,7 +5059,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'can_restrict_members',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the administrator can restrict, ban or unban chat members, or access supergroup statistics',
@@ -5070,7 +5070,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'can_promote_members',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the administrator can add new administrators with a subset of their own privileges or demote administrators that they have promoted, directly or indirectly (promoted by administrators that were appointed by him)',
@@ -5081,7 +5081,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'can_change_info',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the administrator can change chat title, photo and other settings',
@@ -5092,7 +5092,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'can_invite_users',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the administrator can invite new users to the chat',
@@ -5103,7 +5103,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'can_post_stories',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the administrator can post stories to the chat',
@@ -5114,7 +5114,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'can_edit_stories',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the administrator can edit stories posted by other users, post stories to the chat page, pin chat stories, and access the chat\'s story archive',
@@ -5125,7 +5125,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'can_delete_stories',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the administrator can delete stories posted by other users',
@@ -5136,7 +5136,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'can_post_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the administrator can post messages in the channel, approve suggested posts, or access channel statistics; for channels only',
@@ -5147,7 +5147,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'can_edit_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the administrator can edit messages of other users and can pin messages; for channels only',
@@ -5158,7 +5158,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'can_pin_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the administrator can pin messages; for supergroups only',
@@ -5169,7 +5169,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'can_manage_topics',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only',
@@ -5180,7 +5180,7 @@ const promoteChatMember: ApiMethod = {
     {
       name: 'can_manage_direct_messages',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the administrator can manage direct messages within the channel and decline suggested posts; for channels only',
@@ -5190,7 +5190,7 @@ const promoteChatMember: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -5204,13 +5204,13 @@ const setChatAdministratorCustomTitle: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5223,7 +5223,7 @@ const setChatAdministratorCustomTitle: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target user',
@@ -5234,7 +5234,7 @@ const setChatAdministratorCustomTitle: ApiMethod = {
     {
       name: 'custom_title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'New custom title for the administrator; 0-16 characters, emoji are not allowed',
@@ -5244,7 +5244,7 @@ const setChatAdministratorCustomTitle: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -5258,13 +5258,13 @@ const banChatSenderChat: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5277,7 +5277,7 @@ const banChatSenderChat: ApiMethod = {
     {
       name: 'sender_chat_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target sender chat',
@@ -5287,7 +5287,7 @@ const banChatSenderChat: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -5301,13 +5301,13 @@ const unbanChatSenderChat: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5320,7 +5320,7 @@ const unbanChatSenderChat: ApiMethod = {
     {
       name: 'sender_chat_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target sender chat',
@@ -5330,7 +5330,7 @@ const unbanChatSenderChat: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -5344,13 +5344,13 @@ const setChatPermissions: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5363,7 +5363,7 @@ const setChatPermissions: ApiMethod = {
     {
       name: 'permissions',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatPermissions',
       },
       description: {
@@ -5375,7 +5375,7 @@ const setChatPermissions: ApiMethod = {
     {
       name: 'use_independent_chat_permissions',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if chat permissions are set independently. Otherwise, the _can\\_send\\_other\\_messages_ and _can\\_add\\_web\\_page\\_previews_ permissions will imply the _can\\_send\\_messages_, _can\\_send\\_audios_, _can\\_send\\_documents_, _can\\_send\\_photos_, _can\\_send\\_videos_, _can\\_send\\_video\\_notes_, and _can\\_send\\_voice\\_notes_ permissions; the _can\\_send\\_polls_ permission will imply the _can\\_send\\_messages_ permission.',
@@ -5385,7 +5385,7 @@ const setChatPermissions: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -5399,13 +5399,13 @@ const exportChatInviteLink: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5417,7 +5417,7 @@ const exportChatInviteLink: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'str',
+    type: 'str',
   },
 }
 
@@ -5430,13 +5430,13 @@ const createChatInviteLink: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5449,7 +5449,7 @@ const createChatInviteLink: ApiMethod = {
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Invite link name; 0-32 characters',
@@ -5460,7 +5460,7 @@ const createChatInviteLink: ApiMethod = {
     {
       name: 'expire_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Point in time (Unix timestamp) when the link will expire',
@@ -5471,7 +5471,7 @@ const createChatInviteLink: ApiMethod = {
     {
       name: 'member_limit',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999',
@@ -5482,7 +5482,7 @@ const createChatInviteLink: ApiMethod = {
     {
       name: 'creates_join_request',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if users joining the chat via the link need to be approved by chat administrators. If _True_, _member\\_limit_ can\'t be specified',
@@ -5492,7 +5492,7 @@ const createChatInviteLink: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'ChatInviteLink',
   },
 }
@@ -5506,13 +5506,13 @@ const editChatInviteLink: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5525,7 +5525,7 @@ const editChatInviteLink: ApiMethod = {
     {
       name: 'invite_link',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The invite link to edit',
@@ -5536,7 +5536,7 @@ const editChatInviteLink: ApiMethod = {
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Invite link name; 0-32 characters',
@@ -5547,7 +5547,7 @@ const editChatInviteLink: ApiMethod = {
     {
       name: 'expire_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Point in time (Unix timestamp) when the link will expire',
@@ -5558,7 +5558,7 @@ const editChatInviteLink: ApiMethod = {
     {
       name: 'member_limit',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999',
@@ -5569,7 +5569,7 @@ const editChatInviteLink: ApiMethod = {
     {
       name: 'creates_join_request',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: '_True_, if users joining the chat via the link need to be approved by chat administrators. If _True_, _member\\_limit_ can\'t be specified',
@@ -5579,7 +5579,7 @@ const editChatInviteLink: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'ChatInviteLink',
   },
 }
@@ -5593,13 +5593,13 @@ const createChatSubscriptionInviteLink: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5612,7 +5612,7 @@ const createChatSubscriptionInviteLink: ApiMethod = {
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Invite link name; 0-32 characters',
@@ -5623,7 +5623,7 @@ const createChatSubscriptionInviteLink: ApiMethod = {
     {
       name: 'subscription_period',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of seconds the subscription will be active for before the next payment. Currently, it must always be 2592000 (30 days).',
@@ -5634,7 +5634,7 @@ const createChatSubscriptionInviteLink: ApiMethod = {
     {
       name: 'subscription_price',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The amount of Telegram Stars a user must pay initially and after each subsequent subscription period to be a member of the chat; 1-10000',
@@ -5644,7 +5644,7 @@ const createChatSubscriptionInviteLink: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'ChatInviteLink',
   },
 }
@@ -5658,13 +5658,13 @@ const editChatSubscriptionInviteLink: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5677,7 +5677,7 @@ const editChatSubscriptionInviteLink: ApiMethod = {
     {
       name: 'invite_link',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The invite link to edit',
@@ -5688,7 +5688,7 @@ const editChatSubscriptionInviteLink: ApiMethod = {
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Invite link name; 0-32 characters',
@@ -5698,7 +5698,7 @@ const editChatSubscriptionInviteLink: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'ChatInviteLink',
   },
 }
@@ -5712,13 +5712,13 @@ const revokeChatInviteLink: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5731,7 +5731,7 @@ const revokeChatInviteLink: ApiMethod = {
     {
       name: 'invite_link',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The invite link to revoke',
@@ -5741,7 +5741,7 @@ const revokeChatInviteLink: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'ChatInviteLink',
   },
 }
@@ -5755,13 +5755,13 @@ const approveChatJoinRequest: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5774,7 +5774,7 @@ const approveChatJoinRequest: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target user',
@@ -5784,7 +5784,7 @@ const approveChatJoinRequest: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -5798,13 +5798,13 @@ const declineChatJoinRequest: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5817,7 +5817,7 @@ const declineChatJoinRequest: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target user',
@@ -5827,7 +5827,7 @@ const declineChatJoinRequest: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -5841,13 +5841,13 @@ const setChatPhoto: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5860,7 +5860,7 @@ const setChatPhoto: ApiMethod = {
     {
       name: 'photo',
       type: {
-        kind: 'input-file',
+        type: 'input-file',
       },
       description: {
         markdown: 'New chat photo, uploaded using multipart/form-data',
@@ -5870,7 +5870,7 @@ const setChatPhoto: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -5884,13 +5884,13 @@ const deleteChatPhoto: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5902,7 +5902,7 @@ const deleteChatPhoto: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -5916,13 +5916,13 @@ const setChatTitle: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5935,7 +5935,7 @@ const setChatTitle: ApiMethod = {
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'New chat title, 1-128 characters',
@@ -5945,7 +5945,7 @@ const setChatTitle: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -5959,13 +5959,13 @@ const setChatDescription: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -5978,7 +5978,7 @@ const setChatDescription: ApiMethod = {
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'New chat description, 0-255 characters',
@@ -5988,7 +5988,7 @@ const setChatDescription: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6002,7 +6002,7 @@ const pinChatMessage: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be pinned',
@@ -6013,13 +6013,13 @@ const pinChatMessage: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6032,7 +6032,7 @@ const pinChatMessage: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of a message to pin',
@@ -6043,7 +6043,7 @@ const pinChatMessage: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if it is not necessary to send a notification to all chat members about the new pinned message. Notifications are always disabled in channels and private chats.',
@@ -6053,7 +6053,7 @@ const pinChatMessage: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6067,7 +6067,7 @@ const unpinChatMessage: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be unpinned',
@@ -6078,13 +6078,13 @@ const unpinChatMessage: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6097,7 +6097,7 @@ const unpinChatMessage: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the message to unpin. Required if _business\\_connection\\_id_ is specified. If not specified, the most recent pinned message (by sending date) will be unpinned.',
@@ -6107,7 +6107,7 @@ const unpinChatMessage: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6121,13 +6121,13 @@ const unpinAllChatMessages: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6139,7 +6139,7 @@ const unpinAllChatMessages: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6153,13 +6153,13 @@ const leaveChat: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6171,7 +6171,7 @@ const leaveChat: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6185,13 +6185,13 @@ const getChat: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6203,7 +6203,7 @@ const getChat: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'ChatFullInfo',
   },
 }
@@ -6217,13 +6217,13 @@ const getChatAdministrators: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6235,9 +6235,9 @@ const getChatAdministrators: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'array',
+    type: 'array',
     of: {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'ChatMember',
     },
   },
@@ -6252,13 +6252,13 @@ const getChatMemberCount: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6270,7 +6270,7 @@ const getChatMemberCount: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'int32',
+    type: 'int32',
   },
 }
 
@@ -6283,13 +6283,13 @@ const getChatMember: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6302,7 +6302,7 @@ const getChatMember: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target user',
@@ -6312,7 +6312,7 @@ const getChatMember: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'ChatMember',
   },
 }
@@ -6326,13 +6326,13 @@ const setChatStickerSet: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6345,7 +6345,7 @@ const setChatStickerSet: ApiMethod = {
     {
       name: 'sticker_set_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Name of the sticker set to be set as the group sticker set',
@@ -6355,7 +6355,7 @@ const setChatStickerSet: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6369,13 +6369,13 @@ const deleteChatStickerSet: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6387,7 +6387,7 @@ const deleteChatStickerSet: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6399,9 +6399,9 @@ const getForumTopicIconStickers: ApiMethod = {
   },
   parameters: [],
   returnType: {
-    kind: 'array',
+    type: 'array',
     of: {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'Sticker',
     },
   },
@@ -6416,13 +6416,13 @@ const createForumTopic: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6435,7 +6435,7 @@ const createForumTopic: ApiMethod = {
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Topic name, 1-128 characters',
@@ -6446,7 +6446,7 @@ const createForumTopic: ApiMethod = {
     {
       name: 'icon_color',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Color of the topic icon in RGB format. Currently, must be one of 7322096 (0x6FB9F0), 16766590 (0xFFD67E), 13338331 (0xCB86DB), 9367192 (0x8EEE98), 16749490 (0xFF93B2), or 16478047 (0xFB6F5F)',
@@ -6457,7 +6457,7 @@ const createForumTopic: ApiMethod = {
     {
       name: 'icon_custom_emoji_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api#getforumtopiciconstickers) to get all allowed custom emoji identifiers.',
@@ -6467,7 +6467,7 @@ const createForumTopic: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'ForumTopic',
   },
 }
@@ -6481,13 +6481,13 @@ const editForumTopic: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6500,7 +6500,7 @@ const editForumTopic: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread of the forum topic',
@@ -6511,7 +6511,7 @@ const editForumTopic: ApiMethod = {
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'New topic name, 0-128 characters. If not specified or empty, the current name of the topic will be kept',
@@ -6522,7 +6522,7 @@ const editForumTopic: ApiMethod = {
     {
       name: 'icon_custom_emoji_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'New unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api#getforumtopiciconstickers) to get all allowed custom emoji identifiers. Pass an empty string to remove the icon. If not specified, the current icon will be kept',
@@ -6532,7 +6532,7 @@ const editForumTopic: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6546,13 +6546,13 @@ const closeForumTopic: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6565,7 +6565,7 @@ const closeForumTopic: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread of the forum topic',
@@ -6575,7 +6575,7 @@ const closeForumTopic: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6589,13 +6589,13 @@ const reopenForumTopic: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6608,7 +6608,7 @@ const reopenForumTopic: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread of the forum topic',
@@ -6618,7 +6618,7 @@ const reopenForumTopic: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6632,13 +6632,13 @@ const deleteForumTopic: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6651,7 +6651,7 @@ const deleteForumTopic: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread of the forum topic',
@@ -6661,7 +6661,7 @@ const deleteForumTopic: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6675,13 +6675,13 @@ const unpinAllForumTopicMessages: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6694,7 +6694,7 @@ const unpinAllForumTopicMessages: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread of the forum topic',
@@ -6704,7 +6704,7 @@ const unpinAllForumTopicMessages: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6718,13 +6718,13 @@ const editGeneralForumTopic: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6737,7 +6737,7 @@ const editGeneralForumTopic: ApiMethod = {
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'New topic name, 1-128 characters',
@@ -6747,7 +6747,7 @@ const editGeneralForumTopic: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6761,13 +6761,13 @@ const closeGeneralForumTopic: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6779,7 +6779,7 @@ const closeGeneralForumTopic: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6793,13 +6793,13 @@ const reopenGeneralForumTopic: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6811,7 +6811,7 @@ const reopenGeneralForumTopic: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6825,13 +6825,13 @@ const hideGeneralForumTopic: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6843,7 +6843,7 @@ const hideGeneralForumTopic: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6857,13 +6857,13 @@ const unhideGeneralForumTopic: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6875,7 +6875,7 @@ const unhideGeneralForumTopic: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6889,13 +6889,13 @@ const unpinAllGeneralForumTopicMessages: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -6907,7 +6907,7 @@ const unpinAllGeneralForumTopicMessages: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6921,7 +6921,7 @@ const answerCallbackQuery: ApiMethod = {
     {
       name: 'callback_query_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for the query to be answered',
@@ -6932,7 +6932,7 @@ const answerCallbackQuery: ApiMethod = {
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text of the notification. If not specified, nothing will be shown to the user, 0-200 characters',
@@ -6943,7 +6943,7 @@ const answerCallbackQuery: ApiMethod = {
     {
       name: 'show_alert',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'If _True_, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to _false_.',
@@ -6954,7 +6954,7 @@ const answerCallbackQuery: ApiMethod = {
     {
       name: 'url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'URL that will be opened by the user\'s client. If you have created a [Game](https://core.telegram.org/bots/api#game) and accepted the conditions via [@BotFather](https://t.me/botfather), specify the URL that opens your game - note that this will only work if the query comes from a [_callback\\_game_](https://core.telegram.org/bots/api#inlinekeyboardbutton) button.  \n  \nOtherwise, you may use links like `t.me/your_bot?start=XXXX` that open your bot with a parameter.',
@@ -6965,7 +6965,7 @@ const answerCallbackQuery: ApiMethod = {
     {
       name: 'cache_time',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The maximum amount of time in seconds that the result of the callback query may be cached client-side. Telegram apps will support caching starting in version 3.14. Defaults to 0.',
@@ -6975,7 +6975,7 @@ const answerCallbackQuery: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -6989,13 +6989,13 @@ const getUserChatBoosts: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -7008,7 +7008,7 @@ const getUserChatBoosts: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target user',
@@ -7018,7 +7018,7 @@ const getUserChatBoosts: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'UserChatBoosts',
   },
 }
@@ -7032,7 +7032,7 @@ const getBusinessConnection: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -7042,7 +7042,7 @@ const getBusinessConnection: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'BusinessConnection',
   },
 }
@@ -7056,9 +7056,9 @@ const setMyCommands: ApiMethod = {
     {
       name: 'commands',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'BotCommand',
         },
       },
@@ -7071,7 +7071,7 @@ const setMyCommands: ApiMethod = {
     {
       name: 'scope',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'BotCommandScope',
       },
       description: {
@@ -7083,7 +7083,7 @@ const setMyCommands: ApiMethod = {
     {
       name: 'language_code',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands',
@@ -7093,7 +7093,7 @@ const setMyCommands: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7107,7 +7107,7 @@ const deleteMyCommands: ApiMethod = {
     {
       name: 'scope',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'BotCommandScope',
       },
       description: {
@@ -7119,7 +7119,7 @@ const deleteMyCommands: ApiMethod = {
     {
       name: 'language_code',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands',
@@ -7129,7 +7129,7 @@ const deleteMyCommands: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7143,7 +7143,7 @@ const getMyCommands: ApiMethod = {
     {
       name: 'scope',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'BotCommandScope',
       },
       description: {
@@ -7155,7 +7155,7 @@ const getMyCommands: ApiMethod = {
     {
       name: 'language_code',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A two-letter ISO 639-1 language code or an empty string',
@@ -7165,9 +7165,9 @@ const getMyCommands: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'array',
+    type: 'array',
     of: {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'BotCommand',
     },
   },
@@ -7182,7 +7182,7 @@ const setMyName: ApiMethod = {
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'New bot name; 0-64 characters. Pass an empty string to remove the dedicated name for the given language.',
@@ -7193,7 +7193,7 @@ const setMyName: ApiMethod = {
     {
       name: 'language_code',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A two-letter ISO 639-1 language code. If empty, the name will be shown to all users for whose language there is no dedicated name.',
@@ -7203,7 +7203,7 @@ const setMyName: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7217,7 +7217,7 @@ const getMyName: ApiMethod = {
     {
       name: 'language_code',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A two-letter ISO 639-1 language code or an empty string',
@@ -7227,7 +7227,7 @@ const getMyName: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'BotName',
   },
 }
@@ -7241,7 +7241,7 @@ const setMyDescription: ApiMethod = {
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'New bot description; 0-512 characters. Pass an empty string to remove the dedicated description for the given language.',
@@ -7252,7 +7252,7 @@ const setMyDescription: ApiMethod = {
     {
       name: 'language_code',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A two-letter ISO 639-1 language code. If empty, the description will be applied to all users for whose language there is no dedicated description.',
@@ -7262,7 +7262,7 @@ const setMyDescription: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7276,7 +7276,7 @@ const getMyDescription: ApiMethod = {
     {
       name: 'language_code',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A two-letter ISO 639-1 language code or an empty string',
@@ -7286,7 +7286,7 @@ const getMyDescription: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'BotDescription',
   },
 }
@@ -7300,7 +7300,7 @@ const setMyShortDescription: ApiMethod = {
     {
       name: 'short_description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'New short description for the bot; 0-120 characters. Pass an empty string to remove the dedicated short description for the given language.',
@@ -7311,7 +7311,7 @@ const setMyShortDescription: ApiMethod = {
     {
       name: 'language_code',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A two-letter ISO 639-1 language code. If empty, the short description will be applied to all users for whose language there is no dedicated short description.',
@@ -7321,7 +7321,7 @@ const setMyShortDescription: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7335,7 +7335,7 @@ const getMyShortDescription: ApiMethod = {
     {
       name: 'language_code',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'A two-letter ISO 639-1 language code or an empty string',
@@ -7345,7 +7345,7 @@ const getMyShortDescription: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'BotShortDescription',
   },
 }
@@ -7359,7 +7359,7 @@ const setChatMenuButton: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target private chat. If not specified, default bot\'s menu button will be changed',
@@ -7370,7 +7370,7 @@ const setChatMenuButton: ApiMethod = {
     {
       name: 'menu_button',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'MenuButton',
       },
       description: {
@@ -7381,7 +7381,7 @@ const setChatMenuButton: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7395,7 +7395,7 @@ const getChatMenuButton: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target private chat. If not specified, default bot\'s menu button will be returned',
@@ -7405,7 +7405,7 @@ const getChatMenuButton: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'MenuButton',
   },
 }
@@ -7419,7 +7419,7 @@ const setMyDefaultAdministratorRights: ApiMethod = {
     {
       name: 'rights',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ChatAdministratorRights',
       },
       description: {
@@ -7431,7 +7431,7 @@ const setMyDefaultAdministratorRights: ApiMethod = {
     {
       name: 'for_channels',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to change the default administrator rights of the bot in channels. Otherwise, the default administrator rights of the bot for groups and supergroups will be changed.',
@@ -7441,7 +7441,7 @@ const setMyDefaultAdministratorRights: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7455,7 +7455,7 @@ const getMyDefaultAdministratorRights: ApiMethod = {
     {
       name: 'for_channels',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to get default administrator rights of the bot in channels. Otherwise, default administrator rights of the bot for groups and supergroups will be returned.',
@@ -7465,7 +7465,7 @@ const getMyDefaultAdministratorRights: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'ChatAdministratorRights',
   },
 }
@@ -7477,7 +7477,7 @@ const getAvailableGifts: ApiMethod = {
   },
   parameters: [],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Gifts',
   },
 }
@@ -7491,7 +7491,7 @@ const sendGift: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Required if _chat\\_id_ is not specified. Unique identifier of the target user who will receive the gift.',
@@ -7502,13 +7502,13 @@ const sendGift: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -7521,7 +7521,7 @@ const sendGift: ApiMethod = {
     {
       name: 'gift_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Identifier of the gift',
@@ -7532,7 +7532,7 @@ const sendGift: ApiMethod = {
     {
       name: 'pay_for_upgrade',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to pay for the gift upgrade from the bot\'s balance, thereby making the upgrade free for the receiver',
@@ -7543,7 +7543,7 @@ const sendGift: ApiMethod = {
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text that will be shown along with the gift; 0-128 characters',
@@ -7554,7 +7554,7 @@ const sendGift: ApiMethod = {
     {
       name: 'text_parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.',
@@ -7565,9 +7565,9 @@ const sendGift: ApiMethod = {
     {
       name: 'text_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -7579,7 +7579,7 @@ const sendGift: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7593,7 +7593,7 @@ const giftPremiumSubscription: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target user who will receive a Telegram Premium subscription',
@@ -7604,7 +7604,7 @@ const giftPremiumSubscription: ApiMethod = {
     {
       name: 'month_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of months the Telegram Premium subscription will be active for the user; must be one of 3, 6, or 12',
@@ -7615,7 +7615,7 @@ const giftPremiumSubscription: ApiMethod = {
     {
       name: 'star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of Telegram Stars to pay for the Telegram Premium subscription; must be 1000 for 3 months, 1500 for 6 months, and 2500 for 12 months',
@@ -7626,7 +7626,7 @@ const giftPremiumSubscription: ApiMethod = {
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Text that will be shown along with the service message about the subscription; 0-128 characters',
@@ -7637,7 +7637,7 @@ const giftPremiumSubscription: ApiMethod = {
     {
       name: 'text_parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.',
@@ -7648,9 +7648,9 @@ const giftPremiumSubscription: ApiMethod = {
     {
       name: 'text_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -7662,7 +7662,7 @@ const giftPremiumSubscription: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7676,7 +7676,7 @@ const verifyUser: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target user',
@@ -7687,7 +7687,7 @@ const verifyUser: ApiMethod = {
     {
       name: 'custom_description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Custom description for the verification; 0-70 characters. Must be empty if the organization isn\'t allowed to provide a custom verification description.',
@@ -7697,7 +7697,7 @@ const verifyUser: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7711,13 +7711,13 @@ const verifyChat: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -7730,7 +7730,7 @@ const verifyChat: ApiMethod = {
     {
       name: 'custom_description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Custom description for the verification; 0-70 characters. Must be empty if the organization isn\'t allowed to provide a custom verification description.',
@@ -7740,7 +7740,7 @@ const verifyChat: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7754,7 +7754,7 @@ const removeUserVerification: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target user',
@@ -7764,7 +7764,7 @@ const removeUserVerification: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7778,13 +7778,13 @@ const removeChatVerification: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -7796,7 +7796,7 @@ const removeChatVerification: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7810,7 +7810,7 @@ const readBusinessMessage: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which to read the message',
@@ -7821,7 +7821,7 @@ const readBusinessMessage: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the chat in which the message was received. The chat must have been active in the last 24 hours.',
@@ -7832,7 +7832,7 @@ const readBusinessMessage: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the message to mark as read',
@@ -7842,7 +7842,7 @@ const readBusinessMessage: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7856,7 +7856,7 @@ const deleteBusinessMessages: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which to delete the messages',
@@ -7867,9 +7867,9 @@ const deleteBusinessMessages: ApiMethod = {
     {
       name: 'message_ids',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'int32',
+          type: 'int32',
         },
       },
       description: {
@@ -7880,7 +7880,7 @@ const deleteBusinessMessages: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7894,7 +7894,7 @@ const setBusinessAccountName: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -7905,7 +7905,7 @@ const setBusinessAccountName: ApiMethod = {
     {
       name: 'first_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The new value of the first name for the business account; 1-64 characters',
@@ -7916,7 +7916,7 @@ const setBusinessAccountName: ApiMethod = {
     {
       name: 'last_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The new value of the last name for the business account; 0-64 characters',
@@ -7926,7 +7926,7 @@ const setBusinessAccountName: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7940,7 +7940,7 @@ const setBusinessAccountUsername: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -7951,7 +7951,7 @@ const setBusinessAccountUsername: ApiMethod = {
     {
       name: 'username',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The new value of the username for the business account; 0-32 characters',
@@ -7961,7 +7961,7 @@ const setBusinessAccountUsername: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -7975,7 +7975,7 @@ const setBusinessAccountBio: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -7986,7 +7986,7 @@ const setBusinessAccountBio: ApiMethod = {
     {
       name: 'bio',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'The new value of the bio for the business account; 0-140 characters',
@@ -7996,7 +7996,7 @@ const setBusinessAccountBio: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -8010,7 +8010,7 @@ const setBusinessAccountProfilePhoto: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -8021,7 +8021,7 @@ const setBusinessAccountProfilePhoto: ApiMethod = {
     {
       name: 'photo',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputProfilePhoto',
       },
       description: {
@@ -8033,7 +8033,7 @@ const setBusinessAccountProfilePhoto: ApiMethod = {
     {
       name: 'is_public',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to set the public photo, which will be visible even if the main photo is hidden by the business account\'s privacy settings. An account can have only one public photo.',
@@ -8043,7 +8043,7 @@ const setBusinessAccountProfilePhoto: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -8057,7 +8057,7 @@ const removeBusinessAccountProfilePhoto: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -8068,7 +8068,7 @@ const removeBusinessAccountProfilePhoto: ApiMethod = {
     {
       name: 'is_public',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to remove the public photo, which is visible even if the main photo is hidden by the business account\'s privacy settings. After the main photo is removed, the previous profile photo (if present) becomes the main photo.',
@@ -8078,7 +8078,7 @@ const removeBusinessAccountProfilePhoto: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -8092,7 +8092,7 @@ const setBusinessAccountGiftSettings: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -8103,7 +8103,7 @@ const setBusinessAccountGiftSettings: ApiMethod = {
     {
       name: 'show_gift_button',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if a button for sending a gift to the user or by the business account must always be shown in the input field',
@@ -8114,7 +8114,7 @@ const setBusinessAccountGiftSettings: ApiMethod = {
     {
       name: 'accepted_gift_types',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'AcceptedGiftTypes',
       },
       description: {
@@ -8125,7 +8125,7 @@ const setBusinessAccountGiftSettings: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -8139,7 +8139,7 @@ const getBusinessAccountStarBalance: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -8149,7 +8149,7 @@ const getBusinessAccountStarBalance: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'StarAmount',
   },
 }
@@ -8163,7 +8163,7 @@ const transferBusinessAccountStars: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -8174,7 +8174,7 @@ const transferBusinessAccountStars: ApiMethod = {
     {
       name: 'star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of Telegram Stars to transfer; 1-10000',
@@ -8184,7 +8184,7 @@ const transferBusinessAccountStars: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -8198,7 +8198,7 @@ const getBusinessAccountGifts: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -8209,7 +8209,7 @@ const getBusinessAccountGifts: ApiMethod = {
     {
       name: 'exclude_unsaved',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to exclude gifts that aren\'t saved to the account\'s profile page',
@@ -8220,7 +8220,7 @@ const getBusinessAccountGifts: ApiMethod = {
     {
       name: 'exclude_saved',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to exclude gifts that are saved to the account\'s profile page',
@@ -8231,7 +8231,7 @@ const getBusinessAccountGifts: ApiMethod = {
     {
       name: 'exclude_unlimited',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to exclude gifts that can be purchased an unlimited number of times',
@@ -8242,7 +8242,7 @@ const getBusinessAccountGifts: ApiMethod = {
     {
       name: 'exclude_limited',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to exclude gifts that can be purchased a limited number of times',
@@ -8253,7 +8253,7 @@ const getBusinessAccountGifts: ApiMethod = {
     {
       name: 'exclude_unique',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to exclude unique gifts',
@@ -8264,7 +8264,7 @@ const getBusinessAccountGifts: ApiMethod = {
     {
       name: 'sort_by_price',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to sort results by gift price instead of send date. Sorting is applied before pagination.',
@@ -8275,7 +8275,7 @@ const getBusinessAccountGifts: ApiMethod = {
     {
       name: 'offset',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results',
@@ -8286,7 +8286,7 @@ const getBusinessAccountGifts: ApiMethod = {
     {
       name: 'limit',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The maximum number of gifts to be returned; 1-100. Defaults to 100',
@@ -8296,7 +8296,7 @@ const getBusinessAccountGifts: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'OwnedGifts',
   },
 }
@@ -8310,7 +8310,7 @@ const convertGiftToStars: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -8321,7 +8321,7 @@ const convertGiftToStars: ApiMethod = {
     {
       name: 'owned_gift_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the regular gift that should be converted to Telegram Stars',
@@ -8331,7 +8331,7 @@ const convertGiftToStars: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -8345,7 +8345,7 @@ const upgradeGift: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -8356,7 +8356,7 @@ const upgradeGift: ApiMethod = {
     {
       name: 'owned_gift_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the regular gift that should be upgraded to a unique one',
@@ -8367,7 +8367,7 @@ const upgradeGift: ApiMethod = {
     {
       name: 'keep_original_details',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to keep the original gift text, sender and receiver in the upgraded gift',
@@ -8378,7 +8378,7 @@ const upgradeGift: ApiMethod = {
     {
       name: 'star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The amount of Telegram Stars that will be paid for the upgrade from the business account balance. If `gift.prepaid_upgrade_star_count > 0`, then pass 0, otherwise, the _can\\_transfer\\_stars_ business bot right is required and `gift.upgrade_star_count` must be passed.',
@@ -8388,7 +8388,7 @@ const upgradeGift: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -8402,7 +8402,7 @@ const transferGift: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -8413,7 +8413,7 @@ const transferGift: ApiMethod = {
     {
       name: 'owned_gift_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the regular gift that should be transferred',
@@ -8424,7 +8424,7 @@ const transferGift: ApiMethod = {
     {
       name: 'new_owner_chat_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the chat which will own the gift. The chat must be active in the last 24 hours.',
@@ -8435,7 +8435,7 @@ const transferGift: ApiMethod = {
     {
       name: 'star_count',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The amount of Telegram Stars that will be paid for the transfer from the business account balance. If positive, then the _can\\_transfer\\_stars_ business bot right is required.',
@@ -8445,7 +8445,7 @@ const transferGift: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -8459,7 +8459,7 @@ const postStory: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -8470,7 +8470,7 @@ const postStory: ApiMethod = {
     {
       name: 'content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputStoryContent',
       },
       description: {
@@ -8482,7 +8482,7 @@ const postStory: ApiMethod = {
     {
       name: 'active_period',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Period after which the story is moved to the archive, in seconds; must be one of `6 * 3600`, `12 * 3600`, `86400`, or `2 * 86400`',
@@ -8493,7 +8493,7 @@ const postStory: ApiMethod = {
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the story, 0-2048 characters after entities parsing',
@@ -8504,7 +8504,7 @@ const postStory: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the story caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -8515,9 +8515,9 @@ const postStory: ApiMethod = {
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -8530,9 +8530,9 @@ const postStory: ApiMethod = {
     {
       name: 'areas',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'StoryArea',
         },
       },
@@ -8545,7 +8545,7 @@ const postStory: ApiMethod = {
     {
       name: 'post_to_chat_page',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to keep the story accessible after it expires',
@@ -8556,7 +8556,7 @@ const postStory: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the content of the story must be protected from forwarding and screenshotting',
@@ -8566,7 +8566,7 @@ const postStory: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Story',
   },
 }
@@ -8580,7 +8580,7 @@ const editStory: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -8591,7 +8591,7 @@ const editStory: ApiMethod = {
     {
       name: 'story_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the story to edit',
@@ -8602,7 +8602,7 @@ const editStory: ApiMethod = {
     {
       name: 'content',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputStoryContent',
       },
       description: {
@@ -8614,7 +8614,7 @@ const editStory: ApiMethod = {
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Caption of the story, 0-2048 characters after entities parsing',
@@ -8625,7 +8625,7 @@ const editStory: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the story caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -8636,9 +8636,9 @@ const editStory: ApiMethod = {
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -8651,9 +8651,9 @@ const editStory: ApiMethod = {
     {
       name: 'areas',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'StoryArea',
         },
       },
@@ -8665,7 +8665,7 @@ const editStory: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Story',
   },
 }
@@ -8679,7 +8679,7 @@ const deleteStory: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection',
@@ -8690,7 +8690,7 @@ const deleteStory: ApiMethod = {
     {
       name: 'story_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the story to delete',
@@ -8700,7 +8700,7 @@ const deleteStory: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -8714,7 +8714,7 @@ const editMessageText: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message to be edited was sent',
@@ -8725,13 +8725,13 @@ const editMessageText: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -8744,7 +8744,7 @@ const editMessageText: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit',
@@ -8755,7 +8755,7 @@ const editMessageText: ApiMethod = {
     {
       name: 'inline_message_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
@@ -8766,7 +8766,7 @@ const editMessageText: ApiMethod = {
     {
       name: 'text',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'New text of the message, 1-4096 characters after entities parsing',
@@ -8777,7 +8777,7 @@ const editMessageText: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -8788,9 +8788,9 @@ const editMessageText: ApiMethod = {
     {
       name: 'entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -8803,7 +8803,7 @@ const editMessageText: ApiMethod = {
     {
       name: 'link_preview_options',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'LinkPreviewOptions',
       },
       description: {
@@ -8815,7 +8815,7 @@ const editMessageText: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -8826,14 +8826,14 @@ const editMessageText: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'union',
+    type: 'union',
     types: [
       {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       {
-        kind: 'bool',
+        type: 'bool',
       },
     ],
   },
@@ -8848,7 +8848,7 @@ const editMessageCaption: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message to be edited was sent',
@@ -8859,13 +8859,13 @@ const editMessageCaption: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -8878,7 +8878,7 @@ const editMessageCaption: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit',
@@ -8889,7 +8889,7 @@ const editMessageCaption: ApiMethod = {
     {
       name: 'inline_message_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
@@ -8900,7 +8900,7 @@ const editMessageCaption: ApiMethod = {
     {
       name: 'caption',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'New caption of the message, 0-1024 characters after entities parsing',
@@ -8911,7 +8911,7 @@ const editMessageCaption: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Mode for parsing entities in the message caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -8922,9 +8922,9 @@ const editMessageCaption: ApiMethod = {
     {
       name: 'caption_entities',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'MessageEntity',
         },
       },
@@ -8937,7 +8937,7 @@ const editMessageCaption: ApiMethod = {
     {
       name: 'show_caption_above_media',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_, if the caption must be shown above the message media. Supported only for animation, photo and video messages.',
@@ -8948,7 +8948,7 @@ const editMessageCaption: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -8959,14 +8959,14 @@ const editMessageCaption: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'union',
+    type: 'union',
     types: [
       {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       {
-        kind: 'bool',
+        type: 'bool',
       },
     ],
   },
@@ -8981,7 +8981,7 @@ const editMessageMedia: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message to be edited was sent',
@@ -8992,13 +8992,13 @@ const editMessageMedia: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -9011,7 +9011,7 @@ const editMessageMedia: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit',
@@ -9022,7 +9022,7 @@ const editMessageMedia: ApiMethod = {
     {
       name: 'inline_message_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
@@ -9033,7 +9033,7 @@ const editMessageMedia: ApiMethod = {
     {
       name: 'media',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputMedia',
       },
       description: {
@@ -9045,7 +9045,7 @@ const editMessageMedia: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -9056,14 +9056,14 @@ const editMessageMedia: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'union',
+    type: 'union',
     types: [
       {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       {
-        kind: 'bool',
+        type: 'bool',
       },
     ],
   },
@@ -9078,7 +9078,7 @@ const editMessageLiveLocation: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message to be edited was sent',
@@ -9089,13 +9089,13 @@ const editMessageLiveLocation: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -9108,7 +9108,7 @@ const editMessageLiveLocation: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit',
@@ -9119,7 +9119,7 @@ const editMessageLiveLocation: ApiMethod = {
     {
       name: 'inline_message_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
@@ -9130,7 +9130,7 @@ const editMessageLiveLocation: ApiMethod = {
     {
       name: 'latitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Latitude of new location',
@@ -9141,7 +9141,7 @@ const editMessageLiveLocation: ApiMethod = {
     {
       name: 'longitude',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'Longitude of new location',
@@ -9152,7 +9152,7 @@ const editMessageLiveLocation: ApiMethod = {
     {
       name: 'live_period',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'New period in seconds during which the location can be updated, starting from the message send date. If 0x7FFFFFFF is specified, then the location can be updated forever. Otherwise, the new value must not exceed the current _live\\_period_ by more than a day, and the live location expiration date must remain within the next 90 days. If not specified, then _live\\_period_ remains unchanged',
@@ -9163,7 +9163,7 @@ const editMessageLiveLocation: ApiMethod = {
     {
       name: 'horizontal_accuracy',
       type: {
-        kind: 'float',
+        type: 'float',
       },
       description: {
         markdown: 'The radius of uncertainty for the location, measured in meters; 0-1500',
@@ -9174,7 +9174,7 @@ const editMessageLiveLocation: ApiMethod = {
     {
       name: 'heading',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.',
@@ -9185,7 +9185,7 @@ const editMessageLiveLocation: ApiMethod = {
     {
       name: 'proximity_alert_radius',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.',
@@ -9196,7 +9196,7 @@ const editMessageLiveLocation: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -9207,14 +9207,14 @@ const editMessageLiveLocation: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'union',
+    type: 'union',
     types: [
       {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       {
-        kind: 'bool',
+        type: 'bool',
       },
     ],
   },
@@ -9229,7 +9229,7 @@ const stopMessageLiveLocation: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message to be edited was sent',
@@ -9240,13 +9240,13 @@ const stopMessageLiveLocation: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -9259,7 +9259,7 @@ const stopMessageLiveLocation: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message with live location to stop',
@@ -9270,7 +9270,7 @@ const stopMessageLiveLocation: ApiMethod = {
     {
       name: 'inline_message_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
@@ -9281,7 +9281,7 @@ const stopMessageLiveLocation: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -9292,14 +9292,14 @@ const stopMessageLiveLocation: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'union',
+    type: 'union',
     types: [
       {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
     ],
@@ -9315,7 +9315,7 @@ const editMessageChecklist: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -9326,7 +9326,7 @@ const editMessageChecklist: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target chat',
@@ -9337,7 +9337,7 @@ const editMessageChecklist: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message',
@@ -9348,7 +9348,7 @@ const editMessageChecklist: ApiMethod = {
     {
       name: 'checklist',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputChecklist',
       },
       description: {
@@ -9360,7 +9360,7 @@ const editMessageChecklist: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -9371,7 +9371,7 @@ const editMessageChecklist: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -9385,7 +9385,7 @@ const editMessageReplyMarkup: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message to be edited was sent',
@@ -9396,13 +9396,13 @@ const editMessageReplyMarkup: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -9415,7 +9415,7 @@ const editMessageReplyMarkup: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit',
@@ -9426,7 +9426,7 @@ const editMessageReplyMarkup: ApiMethod = {
     {
       name: 'inline_message_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
@@ -9437,7 +9437,7 @@ const editMessageReplyMarkup: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -9448,14 +9448,14 @@ const editMessageReplyMarkup: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'union',
+    type: 'union',
     types: [
       {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
     ],
@@ -9471,7 +9471,7 @@ const stopPoll: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message to be edited was sent',
@@ -9482,13 +9482,13 @@ const stopPoll: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -9501,7 +9501,7 @@ const stopPoll: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the original message with the poll',
@@ -9512,7 +9512,7 @@ const stopPoll: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -9523,7 +9523,7 @@ const stopPoll: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Poll',
   },
 }
@@ -9537,7 +9537,7 @@ const approveSuggestedPost: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target direct messages chat',
@@ -9548,7 +9548,7 @@ const approveSuggestedPost: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of a suggested post message to approve',
@@ -9559,7 +9559,7 @@ const approveSuggestedPost: ApiMethod = {
     {
       name: 'send_date',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Point in time (Unix timestamp) when the post is expected to be published; omit if the date has already been specified when the suggested post was created. If specified, then the date must be not more than 2678400 seconds (30 days) in the future',
@@ -9569,7 +9569,7 @@ const approveSuggestedPost: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -9583,7 +9583,7 @@ const declineSuggestedPost: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target direct messages chat',
@@ -9594,7 +9594,7 @@ const declineSuggestedPost: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of a suggested post message to decline',
@@ -9605,7 +9605,7 @@ const declineSuggestedPost: ApiMethod = {
     {
       name: 'comment',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Comment for the creator of the suggested post; 0-128 characters',
@@ -9615,7 +9615,7 @@ const declineSuggestedPost: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -9629,13 +9629,13 @@ const deleteMessage: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -9648,7 +9648,7 @@ const deleteMessage: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the message to delete',
@@ -9658,7 +9658,7 @@ const deleteMessage: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -9672,13 +9672,13 @@ const deleteMessages: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -9691,9 +9691,9 @@ const deleteMessages: ApiMethod = {
     {
       name: 'message_ids',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'int32',
+          type: 'int32',
         },
       },
       description: {
@@ -9704,7 +9704,7 @@ const deleteMessages: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -9718,7 +9718,7 @@ const sendSticker: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -9729,13 +9729,13 @@ const sendSticker: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -9748,7 +9748,7 @@ const sendSticker: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -9759,7 +9759,7 @@ const sendSticker: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
@@ -9770,13 +9770,13 @@ const sendSticker: ApiMethod = {
     {
       name: 'sticker',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'input-file',
+            type: 'input-file',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -9789,7 +9789,7 @@ const sendSticker: ApiMethod = {
     {
       name: 'emoji',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Emoji associated with the sticker; only for just uploaded stickers',
@@ -9800,7 +9800,7 @@ const sendSticker: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -9811,7 +9811,7 @@ const sendSticker: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -9822,7 +9822,7 @@ const sendSticker: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -9833,7 +9833,7 @@ const sendSticker: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -9844,7 +9844,7 @@ const sendSticker: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -9856,7 +9856,7 @@ const sendSticker: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -9868,22 +9868,22 @@ const sendSticker: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'InlineKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardMarkup',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ReplyKeyboardRemove',
           },
           {
-            kind: 'api-type',
+            type: 'api-type',
             name: 'ForceReply',
           },
         ],
@@ -9896,7 +9896,7 @@ const sendSticker: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -9910,7 +9910,7 @@ const getStickerSet: ApiMethod = {
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Name of the sticker set',
@@ -9920,7 +9920,7 @@ const getStickerSet: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'StickerSet',
   },
 }
@@ -9934,9 +9934,9 @@ const getCustomEmojiStickers: ApiMethod = {
     {
       name: 'custom_emoji_ids',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'str',
+          type: 'str',
         },
       },
       description: {
@@ -9947,9 +9947,9 @@ const getCustomEmojiStickers: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'array',
+    type: 'array',
     of: {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'Sticker',
     },
   },
@@ -9964,7 +9964,7 @@ const uploadStickerFile: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'User identifier of sticker file owner',
@@ -9975,7 +9975,7 @@ const uploadStickerFile: ApiMethod = {
     {
       name: 'sticker',
       type: {
-        kind: 'input-file',
+        type: 'input-file',
       },
       description: {
         markdown: 'A file with the sticker in .WEBP, .PNG, .TGS, or .WEBM format. See [](https://core.telegram.org/stickers)[https://core.telegram.org/stickers](https://core.telegram.org/stickers) for technical requirements. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
@@ -9986,7 +9986,7 @@ const uploadStickerFile: ApiMethod = {
     {
       name: 'sticker_format',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Format of the sticker, must be one of “static”, “animated”, “video”',
@@ -9996,7 +9996,7 @@ const uploadStickerFile: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'File',
   },
 }
@@ -10010,7 +10010,7 @@ const createNewStickerSet: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'User identifier of created sticker set owner',
@@ -10021,7 +10021,7 @@ const createNewStickerSet: ApiMethod = {
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Short name of sticker set, to be used in `t.me/addstickers/` URLs (e.g., _animals_). Can contain only English letters, digits and underscores. Must begin with a letter, can\'t contain consecutive underscores and must end in `"_by_<bot_username>"`. `<bot_username>` is case insensitive. 1-64 characters.',
@@ -10032,7 +10032,7 @@ const createNewStickerSet: ApiMethod = {
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Sticker set title, 1-64 characters',
@@ -10043,9 +10043,9 @@ const createNewStickerSet: ApiMethod = {
     {
       name: 'stickers',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'InputSticker',
         },
       },
@@ -10058,7 +10058,7 @@ const createNewStickerSet: ApiMethod = {
     {
       name: 'sticker_type',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Type of stickers in the set, pass “regular”, “mask”, or “custom\\_emoji”. By default, a regular sticker set is created.',
@@ -10069,7 +10069,7 @@ const createNewStickerSet: ApiMethod = {
     {
       name: 'needs_repainting',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if stickers in the sticker set must be repainted to the color of text when used in messages, the accent color if used as emoji status, white on chat photos, or another appropriate color based on context; for custom emoji sticker sets only',
@@ -10079,7 +10079,7 @@ const createNewStickerSet: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -10093,7 +10093,7 @@ const addStickerToSet: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'User identifier of sticker set owner',
@@ -10104,7 +10104,7 @@ const addStickerToSet: ApiMethod = {
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Sticker set name',
@@ -10115,7 +10115,7 @@ const addStickerToSet: ApiMethod = {
     {
       name: 'sticker',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputSticker',
       },
       description: {
@@ -10126,7 +10126,7 @@ const addStickerToSet: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -10140,7 +10140,7 @@ const setStickerPositionInSet: ApiMethod = {
     {
       name: 'sticker',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File identifier of the sticker',
@@ -10151,7 +10151,7 @@ const setStickerPositionInSet: ApiMethod = {
     {
       name: 'position',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'New sticker position in the set, zero-based',
@@ -10161,7 +10161,7 @@ const setStickerPositionInSet: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -10175,7 +10175,7 @@ const deleteStickerFromSet: ApiMethod = {
     {
       name: 'sticker',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File identifier of the sticker',
@@ -10185,7 +10185,7 @@ const deleteStickerFromSet: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -10199,7 +10199,7 @@ const replaceStickerInSet: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'User identifier of the sticker set owner',
@@ -10210,7 +10210,7 @@ const replaceStickerInSet: ApiMethod = {
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Sticker set name',
@@ -10221,7 +10221,7 @@ const replaceStickerInSet: ApiMethod = {
     {
       name: 'old_sticker',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File identifier of the replaced sticker',
@@ -10232,7 +10232,7 @@ const replaceStickerInSet: ApiMethod = {
     {
       name: 'sticker',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InputSticker',
       },
       description: {
@@ -10243,7 +10243,7 @@ const replaceStickerInSet: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -10257,7 +10257,7 @@ const setStickerEmojiList: ApiMethod = {
     {
       name: 'sticker',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File identifier of the sticker',
@@ -10268,9 +10268,9 @@ const setStickerEmojiList: ApiMethod = {
     {
       name: 'emoji_list',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'str',
+          type: 'str',
         },
       },
       description: {
@@ -10281,7 +10281,7 @@ const setStickerEmojiList: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -10295,7 +10295,7 @@ const setStickerKeywords: ApiMethod = {
     {
       name: 'sticker',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File identifier of the sticker',
@@ -10306,9 +10306,9 @@ const setStickerKeywords: ApiMethod = {
     {
       name: 'keywords',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'str',
+          type: 'str',
         },
       },
       description: {
@@ -10319,7 +10319,7 @@ const setStickerKeywords: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -10333,7 +10333,7 @@ const setStickerMaskPosition: ApiMethod = {
     {
       name: 'sticker',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'File identifier of the sticker',
@@ -10344,7 +10344,7 @@ const setStickerMaskPosition: ApiMethod = {
     {
       name: 'mask_position',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'MaskPosition',
       },
       description: {
@@ -10355,7 +10355,7 @@ const setStickerMaskPosition: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -10369,7 +10369,7 @@ const setStickerSetTitle: ApiMethod = {
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Sticker set name',
@@ -10380,7 +10380,7 @@ const setStickerSetTitle: ApiMethod = {
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Sticker set title, 1-64 characters',
@@ -10390,7 +10390,7 @@ const setStickerSetTitle: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -10404,7 +10404,7 @@ const setStickerSetThumbnail: ApiMethod = {
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Sticker set name',
@@ -10415,7 +10415,7 @@ const setStickerSetThumbnail: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'User identifier of the sticker set owner',
@@ -10426,13 +10426,13 @@ const setStickerSetThumbnail: ApiMethod = {
     {
       name: 'thumbnail',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'input-file',
+            type: 'input-file',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -10445,7 +10445,7 @@ const setStickerSetThumbnail: ApiMethod = {
     {
       name: 'format',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Format of the thumbnail, must be one of “static” for a **.WEBP** or **.PNG** image, “animated” for a **.TGS** animation, or “video” for a **.WEBM** video',
@@ -10455,7 +10455,7 @@ const setStickerSetThumbnail: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -10469,7 +10469,7 @@ const setCustomEmojiStickerSetThumbnail: ApiMethod = {
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Sticker set name',
@@ -10480,7 +10480,7 @@ const setCustomEmojiStickerSetThumbnail: ApiMethod = {
     {
       name: 'custom_emoji_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Custom emoji identifier of a sticker from the sticker set; pass an empty string to drop the thumbnail and use the first sticker as the thumbnail.',
@@ -10490,7 +10490,7 @@ const setCustomEmojiStickerSetThumbnail: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -10504,7 +10504,7 @@ const deleteStickerSet: ApiMethod = {
     {
       name: 'name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Sticker set name',
@@ -10514,7 +10514,7 @@ const deleteStickerSet: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -10528,7 +10528,7 @@ const answerInlineQuery: ApiMethod = {
     {
       name: 'inline_query_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for the answered query',
@@ -10539,9 +10539,9 @@ const answerInlineQuery: ApiMethod = {
     {
       name: 'results',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'InlineQueryResult',
         },
       },
@@ -10554,7 +10554,7 @@ const answerInlineQuery: ApiMethod = {
     {
       name: 'cache_time',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The maximum amount of time in seconds that the result of the inline query may be cached on the server. Defaults to 300.',
@@ -10565,7 +10565,7 @@ const answerInlineQuery: ApiMethod = {
     {
       name: 'is_personal',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if results may be cached on the server side only for the user that sent the query. By default, results may be returned to any user who sends the same query.',
@@ -10576,7 +10576,7 @@ const answerInlineQuery: ApiMethod = {
     {
       name: 'next_offset',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Pass the offset that a client should send in the next query with the same text to receive more results. Pass an empty string if there are no more results or if you don\'t support pagination. Offset length can\'t exceed 64 bytes.',
@@ -10587,7 +10587,7 @@ const answerInlineQuery: ApiMethod = {
     {
       name: 'button',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineQueryResultsButton',
       },
       description: {
@@ -10598,7 +10598,7 @@ const answerInlineQuery: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -10612,7 +10612,7 @@ const answerWebAppQuery: ApiMethod = {
     {
       name: 'web_app_query_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for the query to be answered',
@@ -10623,7 +10623,7 @@ const answerWebAppQuery: ApiMethod = {
     {
       name: 'result',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineQueryResult',
       },
       description: {
@@ -10634,7 +10634,7 @@ const answerWebAppQuery: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'SentWebAppMessage',
   },
 }
@@ -10648,7 +10648,7 @@ const savePreparedInlineMessage: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier of the target user that can use the prepared message',
@@ -10659,7 +10659,7 @@ const savePreparedInlineMessage: ApiMethod = {
     {
       name: 'result',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineQueryResult',
       },
       description: {
@@ -10671,7 +10671,7 @@ const savePreparedInlineMessage: ApiMethod = {
     {
       name: 'allow_user_chats',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the message can be sent to private chats with users',
@@ -10682,7 +10682,7 @@ const savePreparedInlineMessage: ApiMethod = {
     {
       name: 'allow_bot_chats',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the message can be sent to private chats with bots',
@@ -10693,7 +10693,7 @@ const savePreparedInlineMessage: ApiMethod = {
     {
       name: 'allow_group_chats',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the message can be sent to group and supergroup chats',
@@ -10704,7 +10704,7 @@ const savePreparedInlineMessage: ApiMethod = {
     {
       name: 'allow_channel_chats',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the message can be sent to channel chats',
@@ -10714,7 +10714,7 @@ const savePreparedInlineMessage: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'PreparedInlineMessage',
   },
 }
@@ -10728,13 +10728,13 @@ const sendInvoice: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'union',
+        type: 'union',
         types: [
           {
-            kind: 'int32',
+            type: 'int32',
           },
           {
-            kind: 'str',
+            type: 'str',
           },
         ],
       },
@@ -10747,7 +10747,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -10758,7 +10758,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'direct_messages_topic_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
@@ -10769,7 +10769,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Product name, 1-32 characters',
@@ -10780,7 +10780,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Product description, 1-255 characters',
@@ -10791,7 +10791,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'payload',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes.',
@@ -10802,7 +10802,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'provider_token',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Payment provider token, obtained via [@BotFather](https://t.me/botfather). Pass an empty string for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -10813,7 +10813,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'currency',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/bots/payments#supported-currencies). Pass “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -10824,9 +10824,9 @@ const sendInvoice: ApiMethod = {
     {
       name: 'prices',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'LabeledPrice',
         },
       },
@@ -10839,7 +10839,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'max_tip_amount',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The maximum accepted amount for tips in the _smallest units_ of the currency (integer, **not** float/double). For example, for a maximum tip of `US$ 1.45` pass `max_tip_amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -10850,9 +10850,9 @@ const sendInvoice: ApiMethod = {
     {
       name: 'suggested_tip_amounts',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'int32',
+          type: 'int32',
         },
       },
       description: {
@@ -10864,7 +10864,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'start_parameter',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique deep-linking parameter. If left empty, **forwarded copies** of the sent message will have a _Pay_ button, allowing multiple users to pay directly from the forwarded message, using the same invoice. If non-empty, forwarded copies of the sent message will have a _URL_ button with a deep link to the bot (instead of a _Pay_ button), with the value used as the start parameter',
@@ -10875,7 +10875,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'provider_data',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'JSON-serialized data about the invoice, which will be shared with the payment provider. A detailed description of required fields should be provided by the payment provider.',
@@ -10886,7 +10886,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'photo_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service. People like it better when they see what they are paying for.',
@@ -10897,7 +10897,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'photo_size',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Photo size in bytes',
@@ -10908,7 +10908,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'photo_width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Photo width',
@@ -10919,7 +10919,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'photo_height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Photo height',
@@ -10930,7 +10930,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'need_name',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if you require the user\'s full name to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -10941,7 +10941,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'need_phone_number',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if you require the user\'s phone number to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -10952,7 +10952,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'need_email',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if you require the user\'s email address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -10963,7 +10963,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'need_shipping_address',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if you require the user\'s shipping address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -10974,7 +10974,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'send_phone_number_to_provider',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the user\'s phone number should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -10985,7 +10985,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'send_email_to_provider',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the user\'s email address should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -10996,7 +10996,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'is_flexible',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the final price depends on the shipping method. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -11007,7 +11007,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -11018,7 +11018,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -11029,7 +11029,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -11040,7 +11040,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -11051,7 +11051,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'suggested_post_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'SuggestedPostParameters',
       },
       description: {
@@ -11063,7 +11063,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -11075,7 +11075,7 @@ const sendInvoice: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -11086,7 +11086,7 @@ const sendInvoice: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -11100,7 +11100,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the link will be created. For payments in [Telegram Stars](https://t.me/BotNews/90) only.',
@@ -11111,7 +11111,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'title',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Product name, 1-32 characters',
@@ -11122,7 +11122,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'description',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Product description, 1-255 characters',
@@ -11133,7 +11133,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'payload',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes.',
@@ -11144,7 +11144,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'provider_token',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Payment provider token, obtained via [@BotFather](https://t.me/botfather). Pass an empty string for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -11155,7 +11155,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'currency',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/bots/payments#supported-currencies). Pass “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -11166,9 +11166,9 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'prices',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'LabeledPrice',
         },
       },
@@ -11181,7 +11181,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'subscription_period',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The number of seconds the subscription will be active for before the next payment. The currency must be set to “XTR” (Telegram Stars) if the parameter is used. Currently, it must always be 2592000 (30 days) if specified. Any number of subscriptions can be active for a given bot at the same time, including multiple concurrent subscriptions from the same user. Subscription price must no exceed 10000 Telegram Stars.',
@@ -11192,7 +11192,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'max_tip_amount',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The maximum accepted amount for tips in the _smallest units_ of the currency (integer, **not** float/double). For example, for a maximum tip of `US$ 1.45` pass `max_tip_amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -11203,9 +11203,9 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'suggested_tip_amounts',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'int32',
+          type: 'int32',
         },
       },
       description: {
@@ -11217,7 +11217,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'provider_data',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'JSON-serialized data about the invoice, which will be shared with the payment provider. A detailed description of required fields should be provided by the payment provider.',
@@ -11228,7 +11228,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'photo_url',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service.',
@@ -11239,7 +11239,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'photo_size',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Photo size in bytes',
@@ -11250,7 +11250,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'photo_width',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Photo width',
@@ -11261,7 +11261,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'photo_height',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Photo height',
@@ -11272,7 +11272,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'need_name',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if you require the user\'s full name to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -11283,7 +11283,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'need_phone_number',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if you require the user\'s phone number to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -11294,7 +11294,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'need_email',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if you require the user\'s email address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -11305,7 +11305,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'need_shipping_address',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if you require the user\'s shipping address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -11316,7 +11316,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'send_phone_number_to_provider',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the user\'s phone number should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -11327,7 +11327,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'send_email_to_provider',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the user\'s email address should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -11338,7 +11338,7 @@ const createInvoiceLink: ApiMethod = {
     {
       name: 'is_flexible',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the final price depends on the shipping method. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
@@ -11348,7 +11348,7 @@ const createInvoiceLink: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'str',
+    type: 'str',
   },
 }
 
@@ -11361,7 +11361,7 @@ const answerShippingQuery: ApiMethod = {
     {
       name: 'shipping_query_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for the query to be answered',
@@ -11372,7 +11372,7 @@ const answerShippingQuery: ApiMethod = {
     {
       name: 'ok',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if delivery to the specified address is possible and _False_ if there are any problems (for example, if delivery to the specified address is not possible)',
@@ -11383,9 +11383,9 @@ const answerShippingQuery: ApiMethod = {
     {
       name: 'shipping_options',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'ShippingOption',
         },
       },
@@ -11398,7 +11398,7 @@ const answerShippingQuery: ApiMethod = {
     {
       name: 'error_message',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Required if _ok_ is _False_. Error message in human readable form that explains why it is impossible to complete the order (e.g. “Sorry, delivery to your desired address is unavailable”). Telegram will display this message to the user.',
@@ -11408,7 +11408,7 @@ const answerShippingQuery: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -11422,7 +11422,7 @@ const answerPreCheckoutQuery: ApiMethod = {
     {
       name: 'pre_checkout_query_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier for the query to be answered',
@@ -11433,7 +11433,7 @@ const answerPreCheckoutQuery: ApiMethod = {
     {
       name: 'ok',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Specify _True_ if everything is alright (goods are available, etc.) and the bot is ready to proceed with the order. Use _False_ if there are any problems.',
@@ -11444,7 +11444,7 @@ const answerPreCheckoutQuery: ApiMethod = {
     {
       name: 'error_message',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Required if _ok_ is _False_. Error message in human readable form that explains the reason for failure to proceed with the checkout (e.g. "Sorry, somebody just bought the last of our amazing black T-shirts while you were busy filling out your payment details. Please choose a different color or garment!"). Telegram will display this message to the user.',
@@ -11454,7 +11454,7 @@ const answerPreCheckoutQuery: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -11466,7 +11466,7 @@ const getMyStarBalance: ApiMethod = {
   },
   parameters: [],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'StarAmount',
   },
 }
@@ -11480,7 +11480,7 @@ const getStarTransactions: ApiMethod = {
     {
       name: 'offset',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Number of transactions to skip in the response',
@@ -11491,7 +11491,7 @@ const getStarTransactions: ApiMethod = {
     {
       name: 'limit',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'The maximum number of transactions to be retrieved. Values between 1-100 are accepted. Defaults to 100.',
@@ -11501,7 +11501,7 @@ const getStarTransactions: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'StarTransactions',
   },
 }
@@ -11515,7 +11515,7 @@ const refundStarPayment: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the user whose payment will be refunded',
@@ -11526,7 +11526,7 @@ const refundStarPayment: ApiMethod = {
     {
       name: 'telegram_payment_charge_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Telegram payment identifier',
@@ -11536,7 +11536,7 @@ const refundStarPayment: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -11550,7 +11550,7 @@ const editUserStarSubscription: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Identifier of the user whose subscription will be edited',
@@ -11561,7 +11561,7 @@ const editUserStarSubscription: ApiMethod = {
     {
       name: 'telegram_payment_charge_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Telegram payment identifier for the subscription',
@@ -11572,7 +11572,7 @@ const editUserStarSubscription: ApiMethod = {
     {
       name: 'is_canceled',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to cancel extension of the user subscription; the subscription must be active up to the end of the current subscription period. Pass _False_ to allow the user to re-enable a subscription that was previously canceled by the bot.',
@@ -11582,7 +11582,7 @@ const editUserStarSubscription: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -11596,7 +11596,7 @@ const setPassportDataErrors: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'User identifier',
@@ -11607,9 +11607,9 @@ const setPassportDataErrors: ApiMethod = {
     {
       name: 'errors',
       type: {
-        kind: 'array',
+        type: 'array',
         of: {
-          kind: 'api-type',
+          type: 'api-type',
           name: 'PassportElementError',
         },
       },
@@ -11621,7 +11621,7 @@ const setPassportDataErrors: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'bool',
+    type: 'bool',
     literal: true,
   },
 }
@@ -11635,7 +11635,7 @@ const sendGame: ApiMethod = {
     {
       name: 'business_connection_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
@@ -11646,7 +11646,7 @@ const sendGame: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target chat. Games can\'t be sent to channel direct messages chats and channel chats.',
@@ -11657,7 +11657,7 @@ const sendGame: ApiMethod = {
     {
       name: 'message_thread_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
@@ -11668,7 +11668,7 @@ const sendGame: ApiMethod = {
     {
       name: 'game_short_name',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Short name of the game, serves as the unique identifier for the game. Set up your games via [@BotFather](https://t.me/botfather).',
@@ -11679,7 +11679,7 @@ const sendGame: ApiMethod = {
     {
       name: 'disable_notification',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
@@ -11690,7 +11690,7 @@ const sendGame: ApiMethod = {
     {
       name: 'protect_content',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
@@ -11701,7 +11701,7 @@ const sendGame: ApiMethod = {
     {
       name: 'allow_paid_broadcast',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
@@ -11712,7 +11712,7 @@ const sendGame: ApiMethod = {
     {
       name: 'message_effect_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
@@ -11723,7 +11723,7 @@ const sendGame: ApiMethod = {
     {
       name: 'reply_parameters',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'ReplyParameters',
       },
       description: {
@@ -11735,7 +11735,7 @@ const sendGame: ApiMethod = {
     {
       name: 'reply_markup',
       type: {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
@@ -11746,7 +11746,7 @@ const sendGame: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'api-type',
+    type: 'api-type',
     name: 'Message',
   },
 }
@@ -11760,7 +11760,7 @@ const setGameScore: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'User identifier',
@@ -11771,7 +11771,7 @@ const setGameScore: ApiMethod = {
     {
       name: 'score',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'New score, must be non-negative',
@@ -11782,7 +11782,7 @@ const setGameScore: ApiMethod = {
     {
       name: 'force',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters',
@@ -11793,7 +11793,7 @@ const setGameScore: ApiMethod = {
     {
       name: 'disable_edit_message',
       type: {
-        kind: 'bool',
+        type: 'bool',
       },
       description: {
         markdown: 'Pass _True_ if the game message should not be automatically edited to include the current scoreboard',
@@ -11804,7 +11804,7 @@ const setGameScore: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat',
@@ -11815,7 +11815,7 @@ const setGameScore: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the sent message',
@@ -11826,7 +11826,7 @@ const setGameScore: ApiMethod = {
     {
       name: 'inline_message_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
@@ -11836,14 +11836,14 @@ const setGameScore: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'union',
+    type: 'union',
     types: [
       {
-        kind: 'api-type',
+        type: 'api-type',
         name: 'Message',
       },
       {
-        kind: 'bool',
+        type: 'bool',
         literal: true,
       },
     ],
@@ -11859,7 +11859,7 @@ const getGameHighScores: ApiMethod = {
     {
       name: 'user_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Target user id',
@@ -11870,7 +11870,7 @@ const getGameHighScores: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat',
@@ -11881,7 +11881,7 @@ const getGameHighScores: ApiMethod = {
     {
       name: 'message_id',
       type: {
-        kind: 'int32',
+        type: 'int32',
       },
       description: {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the sent message',
@@ -11892,7 +11892,7 @@ const getGameHighScores: ApiMethod = {
     {
       name: 'inline_message_id',
       type: {
-        kind: 'str',
+        type: 'str',
       },
       description: {
         markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
@@ -11902,9 +11902,9 @@ const getGameHighScores: ApiMethod = {
     },
   ],
   returnType: {
-    kind: 'array',
+    type: 'array',
     of: {
-      kind: 'api-type',
+      type: 'api-type',
       name: 'GameHighScore',
     },
   },

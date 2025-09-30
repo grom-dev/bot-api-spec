@@ -116,7 +116,7 @@ export type ValueType
  * `String` value type.
  */
 export interface ValueTypeString {
-  kind: 'str'
+  type: 'str'
   literal?: string
 }
 
@@ -124,7 +124,7 @@ export interface ValueTypeString {
  * `Boolean` value type.
  */
 export interface ValueTypeBoolean {
-  kind: 'bool'
+  type: 'bool'
   literal?: boolean
 }
 
@@ -132,7 +132,7 @@ export interface ValueTypeBoolean {
  * `Integer` value type, which fits in a 32-bit integer.
  */
 export interface ValueTypeInteger32 {
-  kind: 'int32'
+  type: 'int32'
   literal?: number
 }
 
@@ -142,28 +142,28 @@ export interface ValueTypeInteger32 {
  * type are safe for storing values of this type.
  */
 export interface ValueTypeInteger52 {
-  kind: 'int52'
+  type: 'int52'
 }
 
 /**
  * `Float` value type.
  */
 export interface ValueTypeFloat {
-  kind: 'float'
+  type: 'float'
 }
 
 /**
  * [`InputFile`](https://core.telegram.org/bots/api#inputfile) value type.
  */
 export interface ValueTypeInputFile {
-  kind: 'input-file'
+  type: 'input-file'
 }
 
 /**
  * Any {@link ApiType} value type.
  */
 export interface ValueTypeApiType {
-  kind: 'api-type'
+  type: 'api-type'
   name: keyof typeof types
 }
 
@@ -171,7 +171,7 @@ export interface ValueTypeApiType {
  * Array of any value type.
  */
 export interface ValueTypeArray {
-  kind: 'array'
+  type: 'array'
   of: ValueType
 }
 
@@ -179,6 +179,6 @@ export interface ValueTypeArray {
  * Union of any value types.
  */
 export interface ValueTypeUnion {
-  kind: 'union'
+  type: 'union'
   types: Array<ValueType>
 }
