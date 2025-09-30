@@ -1,7 +1,5 @@
 [Telegram Bot API](https://core.telegram.org/bots/api) specification as a collection of JavaScript objects in a [custom format](#format).
 
-> ⚠️ Work in progress.
-
 ## Motivation
 
 Automatically generate tools, libraries, MCP servers, custom documentations, etc.
@@ -31,7 +29,6 @@ Below are the rules how we map type of a field/parameter to the `ValueType`:
 - _Type_ is _Boolean_ — `{ type: 'bool' }`
 - _Type_ is _True_ — `{ type: 'bool', literal: true }`
 - _Type_ is _Float_ — `{ type: 'float' }`
-- _Description_ says "always X" — `{ type: ..., literal: X }`
 - _Type_ is _InputFile_ — `{ type: 'input-file' }`
 - _Type_ is _X_, where X is any API type — `{ type: 'api-type', name: X }`
 - _Type_ is _Array of X_ — `{ type: 'array', of: X }`
