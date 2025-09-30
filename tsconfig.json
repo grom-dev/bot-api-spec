@@ -23,6 +23,7 @@
   "include": [
     "src/**/*.ts",
     "scripts/**/*.ts",
+    "tsdown.config.ts",
     "eslint.config.js"
   ],
   "exclude": ["node_modules", "dist"]
