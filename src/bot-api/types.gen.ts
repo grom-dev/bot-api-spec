@@ -13,7 +13,7 @@ const t = (apiType: ApiType): ApiType => apiType
 const Update = t({
   name: 'Update',
   description: {
-    markdown: 'This [object](https://core.telegram.org/bots/api#available-types) represents an incoming update.  \nAt most **one** of the optional parameters can be present in any given update.',
+    markdown: 'This [object](https://core.telegram.org/bots/api#available-types) represents an incoming update.\n\nAt most **one** of the optional parameters can be present in any given update.',
   },
   fields: [
     {
@@ -7006,7 +7006,7 @@ const ReplyKeyboardMarkup = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the _text_ of the [Message](https://core.telegram.org/bots/api#message) object; 2) if the bot\'s message is a reply to a message in the same chat and forum topic, sender of the original message.  \n  \n_Example:_ A user requests to change the bot\'s language, bot replies to the request with a keyboard to select the new language. Other users in the group don\'t see the keyboard.',
+        markdown: 'Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the _text_ of the [Message](https://core.telegram.org/bots/api#message) object; 2) if the bot\'s message is a reply to a message in the same chat and forum topic, sender of the original message.\n\n_Example:_ A user requests to change the bot\'s language, bot replies to the request with a keyboard to select the new language. Other users in the group don\'t see the keyboard.',
       },
       required: false,
       jsonSerialized: false,
@@ -7366,7 +7366,7 @@ const ReplyKeyboardRemove = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Use this parameter if you want to remove the keyboard for specific users only. Targets: 1) users that are @mentioned in the _text_ of the [Message](https://core.telegram.org/bots/api#message) object; 2) if the bot\'s message is a reply to a message in the same chat and forum topic, sender of the original message.  \n  \n_Example:_ A user votes in a poll, bot returns confirmation message in reply to the vote and removes the keyboard for that user, while still showing the keyboard with poll options to users who haven\'t voted yet.',
+        markdown: 'Use this parameter if you want to remove the keyboard for specific users only. Targets: 1) users that are @mentioned in the _text_ of the [Message](https://core.telegram.org/bots/api#message) object; 2) if the bot\'s message is a reply to a message in the same chat and forum topic, sender of the original message.\n\n_Example:_ A user votes in a poll, bot returns confirmation message in reply to the vote and removes the keyboard for that user, while still showing the keyboard with poll options to users who haven\'t voted yet.',
       },
       required: false,
       jsonSerialized: false,
@@ -7481,7 +7481,7 @@ const InlineKeyboardButton = t({
         type: 'str',
       },
       description: {
-        markdown: 'If set, pressing the button will insert the bot\'s username and the specified inline query in the current chat\'s input field. May be empty, in which case only the bot\'s username will be inserted.  \n  \nThis offers a quick way for the user to open your bot in inline mode in the same chat - good for selecting something from multiple options. Not supported in channels and for messages sent in channel direct messages chats and on behalf of a Telegram Business account.',
+        markdown: 'If set, pressing the button will insert the bot\'s username and the specified inline query in the current chat\'s input field. May be empty, in which case only the bot\'s username will be inserted.\n\nThis offers a quick way for the user to open your bot in inline mode in the same chat - good for selecting something from multiple options. Not supported in channels and for messages sent in channel direct messages chats and on behalf of a Telegram Business account.',
       },
       required: false,
       jsonSerialized: false,
@@ -7517,7 +7517,7 @@ const InlineKeyboardButton = t({
         name: 'CallbackGame',
       },
       description: {
-        markdown: 'Description of the game that will be launched when the user presses the button.  \n  \n**NOTE:** This type of button **must** always be the first button in the first row.',
+        markdown: 'Description of the game that will be launched when the user presses the button.\n\n**NOTE:** This type of button **must** always be the first button in the first row.',
       },
       required: false,
       jsonSerialized: false,
@@ -7528,7 +7528,7 @@ const InlineKeyboardButton = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Specify _True_, to send a [Pay button](https://core.telegram.org/bots/api#payments). Substrings “![⭐](//telegram.org/img/emoji/40/E2AD90.png)” and “XTR” in the buttons\'s text will be replaced with a Telegram Star icon.  \n  \n**NOTE:** This type of button **must** always be the first button in the first row and can only be used in invoice messages.',
+        markdown: 'Specify _True_, to send a [Pay button](https://core.telegram.org/bots/api#payments). Substrings “![⭐](//telegram.org/img/emoji/40/E2AD90.png)” and “XTR” in the buttons\'s text will be replaced with a Telegram Star icon.\n\n**NOTE:** This type of button **must** always be the first button in the first row and can only be used in invoice messages.',
       },
       required: false,
       jsonSerialized: false,
@@ -7548,7 +7548,7 @@ const LoginUrl = t({
         type: 'str',
       },
       description: {
-        markdown: 'An HTTPS URL to be opened with user authorization data added to the query string when the button is pressed. If the user refuses to provide authorization data, the original URL without information about the user will be opened. The data added is the same as described in [Receiving authorization data](https://core.telegram.org/widgets/login#receiving-authorization-data).  \n  \n**NOTE:** You **must** always check the hash of the received data to verify the authentication and the integrity of the data as described in [Checking authorization](https://core.telegram.org/widgets/login#checking-authorization).',
+        markdown: 'An HTTPS URL to be opened with user authorization data added to the query string when the button is pressed. If the user refuses to provide authorization data, the original URL without information about the user will be opened. The data added is the same as described in [Receiving authorization data](https://core.telegram.org/widgets/login#receiving-authorization-data).\n\n**NOTE:** You **must** always check the hash of the received data to verify the authentication and the integrity of the data as described in [Checking authorization](https://core.telegram.org/widgets/login#checking-authorization).',
       },
       required: true,
       jsonSerialized: false,
@@ -13666,7 +13666,7 @@ const InlineQueryResultsButton = t({
         type: 'str',
       },
       description: {
-        markdown: '[Deep-linking](https://core.telegram.org/bots/features#deep-linking) parameter for the /start message sent to the bot when a user presses the button. 1-64 characters, only `A-Z`, `a-z`, `0-9`, `_` and `-` are allowed.  \n  \n_Example:_ An inline bot that sends YouTube videos can ask the user to connect the bot to their YouTube account to adapt search results accordingly. To do this, it displays a \'Connect your YouTube account\' button above the results, or even before showing any. The user presses the button, switches to a private chat with the bot and, in doing so, passes a start parameter that instructs the bot to return an OAuth link. Once done, the bot can offer a [_switch\\_inline_](https://core.telegram.org/bots/api#inlinekeyboardmarkup) button so that the user can easily return to the chat where they wanted to use the bot\'s inline capabilities.',
+        markdown: '[Deep-linking](https://core.telegram.org/bots/features#deep-linking) parameter for the /start message sent to the bot when a user presses the button. 1-64 characters, only `A-Z`, `a-z`, `0-9`, `_` and `-` are allowed.\n\n_Example:_ An inline bot that sends YouTube videos can ask the user to connect the bot to their YouTube account to adapt search results accordingly. To do this, it displays a \'Connect your YouTube account\' button above the results, or even before showing any. The user presses the button, switches to a private chat with the bot and, in doing so, passes a start parameter that instructs the bot to return an OAuth link. Once done, the bot can offer a [_switch\\_inline_](https://core.telegram.org/bots/api#inlinekeyboardmarkup) button so that the user can easily return to the chat where they wanted to use the bot\'s inline capabilities.',
       },
       required: false,
       jsonSerialized: false,

@@ -9,7 +9,7 @@ import type { ApiMethod } from '../types.ts'
 const getUpdates: ApiMethod = {
   name: 'getUpdates',
   description: {
-    markdown: 'Use this method to receive incoming updates using long polling ([wiki](https://en.wikipedia.org/wiki/Push_technology#Long_polling)). Returns an Array of [Update](https://core.telegram.org/bots/api#update) objects.\n\n> **Notes**  \n> **1.** This method will not work if an outgoing webhook is set up.  \n> **2.** In order to avoid getting duplicate updates, recalculate _offset_ after each server response.',
+    markdown: 'Use this method to receive incoming updates using long polling ([wiki](https://en.wikipedia.org/wiki/Push_technology#Long_polling)). Returns an Array of [Update](https://core.telegram.org/bots/api#update) objects.\n\n> **Notes**\n> \n> **1.** This method will not work if an outgoing webhook is set up.\n> \n> **2.** In order to avoid getting duplicate updates, recalculate _offset_ after each server response.',
   },
   parameters: [
     {
@@ -54,7 +54,7 @@ const getUpdates: ApiMethod = {
         },
       },
       description: {
-        markdown: 'An array of the update types you want your bot to receive. For example, specify `["message", "edited_channel_post", "callback_query"]` to only receive updates of these types. See [Update](https://core.telegram.org/bots/api#update) for a complete list of available update types. Specify an empty list to receive all update types except _chat\\_member_, _message\\_reaction_, and _message\\_reaction\\_count_ (default). If not specified, the previous setting will be used.  \n  \nPlease note that this parameter doesn\'t affect updates created before the call to getUpdates, so unwanted updates may be received for a short period of time.',
+        markdown: 'An array of the update types you want your bot to receive. For example, specify `["message", "edited_channel_post", "callback_query"]` to only receive updates of these types. See [Update](https://core.telegram.org/bots/api#update) for a complete list of available update types. Specify an empty list to receive all update types except _chat\\_member_, _message\\_reaction_, and _message\\_reaction\\_count_ (default). If not specified, the previous setting will be used.\n\nPlease note that this parameter doesn\'t affect updates created before the call to getUpdates, so unwanted updates may be received for a short period of time.',
       },
       required: false,
       jsonSerialized: true,
@@ -72,7 +72,7 @@ const getUpdates: ApiMethod = {
 const setWebhook: ApiMethod = {
   name: 'setWebhook',
   description: {
-    markdown: 'Use this method to specify a URL and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an HTTPS POST request to the specified URL, containing a JSON-serialized [Update](https://core.telegram.org/bots/api#update). In case of an unsuccessful request (a request with response [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) different from `2XY`), we will repeat the request and give up after a reasonable amount of attempts. Returns _True_ on success.\n\nIf you\'d like to make sure that the webhook was set by you, you can specify secret data in the parameter _secret\\_token_. If specified, the request will contain a header “X-Telegram-Bot-Api-Secret-Token” with the secret token as content.\n\n> **Notes**  \n> **1.** You will not be able to receive updates using [getUpdates](https://core.telegram.org/bots/api#getupdates) for as long as an outgoing webhook is set up.  \n> **2.** To use a self-signed certificate, you need to upload your [public key certificate](https://core.telegram.org/bots/self-signed) using _certificate_ parameter. Please upload as InputFile, sending a String will not work.  \n> **3.** Ports currently supported _for webhooks_: **443, 80, 88, 8443**.\n> \n> If you\'re having any trouble setting up webhooks, please check out this [amazing guide to webhooks](https://core.telegram.org/bots/webhooks).',
+    markdown: 'Use this method to specify a URL and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an HTTPS POST request to the specified URL, containing a JSON-serialized [Update](https://core.telegram.org/bots/api#update). In case of an unsuccessful request (a request with response [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) different from `2XY`), we will repeat the request and give up after a reasonable amount of attempts. Returns _True_ on success.\n\nIf you\'d like to make sure that the webhook was set by you, you can specify secret data in the parameter _secret\\_token_. If specified, the request will contain a header “X-Telegram-Bot-Api-Secret-Token” with the secret token as content.\n\n> **Notes**\n> \n> **1.** You will not be able to receive updates using [getUpdates](https://core.telegram.org/bots/api#getupdates) for as long as an outgoing webhook is set up.\n> \n> **2.** To use a self-signed certificate, you need to upload your [public key certificate](https://core.telegram.org/bots/self-signed) using _certificate_ parameter. Please upload as InputFile, sending a String will not work.\n> \n> **3.** Ports currently supported _for webhooks_: **443, 80, 88, 8443**.\n> \n> If you\'re having any trouble setting up webhooks, please check out this [amazing guide to webhooks](https://core.telegram.org/bots/webhooks).',
   },
   parameters: [
     {
@@ -128,7 +128,7 @@ const setWebhook: ApiMethod = {
         },
       },
       description: {
-        markdown: 'An array of the update types you want your bot to receive. For example, specify `["message", "edited_channel_post", "callback_query"]` to only receive updates of these types. See [Update](https://core.telegram.org/bots/api#update) for a complete list of available update types. Specify an empty list to receive all update types except _chat\\_member_, _message\\_reaction_, and _message\\_reaction\\_count_ (default). If not specified, the previous setting will be used.  \nPlease note that this parameter doesn\'t affect updates created before the call to the setWebhook, so unwanted updates may be received for a short period of time.',
+        markdown: 'An array of the update types you want your bot to receive. For example, specify `["message", "edited_channel_post", "callback_query"]` to only receive updates of these types. See [Update](https://core.telegram.org/bots/api#update) for a complete list of available update types. Specify an empty list to receive all update types except _chat\\_member_, _message\\_reaction_, and _message\\_reaction\\_count_ (default). If not specified, the previous setting will be used.\n\nPlease note that this parameter doesn\'t affect updates created before the call to the setWebhook, so unwanted updates may be received for a short period of time.',
       },
       required: false,
       jsonSerialized: true,
@@ -6957,7 +6957,7 @@ const answerCallbackQuery: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'URL that will be opened by the user\'s client. If you have created a [Game](https://core.telegram.org/bots/api#game) and accepted the conditions via [@BotFather](https://t.me/botfather), specify the URL that opens your game - note that this will only work if the query comes from a [_callback\\_game_](https://core.telegram.org/bots/api#inlinekeyboardbutton) button.  \n  \nOtherwise, you may use links like `t.me/your_bot?start=XXXX` that open your bot with a parameter.',
+        markdown: 'URL that will be opened by the user\'s client. If you have created a [Game](https://core.telegram.org/bots/api#game) and accepted the conditions via [@BotFather](https://t.me/botfather), specify the URL that opens your game - note that this will only work if the query comes from a [_callback\\_game_](https://core.telegram.org/bots/api#inlinekeyboardbutton) button.\n\nOtherwise, you may use links like `t.me/your_bot?start=XXXX` that open your bot with a parameter.',
       },
       required: false,
       jsonSerialized: false,
@@ -9623,7 +9623,7 @@ const declineSuggestedPost: ApiMethod = {
 const deleteMessage: ApiMethod = {
   name: 'deleteMessage',
   description: {
-    markdown: 'Use this method to delete a message, including service messages, with the following limitations:  \n\\- A message can only be deleted if it was sent less than 48 hours ago.  \n\\- Service messages about a supergroup, channel, or forum topic creation can\'t be deleted.  \n\\- A dice message in a private chat can only be deleted if it was sent more than 24 hours ago.  \n\\- Bots can delete outgoing messages in private chats, groups, and supergroups.  \n\\- Bots can delete incoming messages in private chats.  \n\\- Bots granted _can\\_post\\_messages_ permissions can delete outgoing messages in channels.  \n\\- If the bot is an administrator of a group, it can delete any message there.  \n\\- If the bot has _can\\_delete\\_messages_ administrator right in a supergroup or a channel, it can delete any message there.  \n\\- If the bot has _can\\_manage\\_direct\\_messages_ administrator right in a channel, it can delete any message in the corresponding direct messages chat.  \nReturns _True_ on success.',
+    markdown: 'Use this method to delete a message, including service messages, with the following limitations:\n\n\\- A message can only be deleted if it was sent less than 48 hours ago.\n\n\\- Service messages about a supergroup, channel, or forum topic creation can\'t be deleted.\n\n\\- A dice message in a private chat can only be deleted if it was sent more than 24 hours ago.\n\n\\- Bots can delete outgoing messages in private chats, groups, and supergroups.\n\n\\- Bots can delete incoming messages in private chats.\n\n\\- Bots granted _can\\_post\\_messages_ permissions can delete outgoing messages in channels.\n\n\\- If the bot is an administrator of a group, it can delete any message there.\n\n\\- If the bot has _can\\_delete\\_messages_ administrator right in a supergroup or a channel, it can delete any message there.\n\n\\- If the bot has _can\\_manage\\_direct\\_messages_ administrator right in a channel, it can delete any message in the corresponding direct messages chat.\n\nReturns _True_ on success.',
   },
   parameters: [
     {
@@ -10522,7 +10522,7 @@ const deleteStickerSet: ApiMethod = {
 const answerInlineQuery: ApiMethod = {
   name: 'answerInlineQuery',
   description: {
-    markdown: 'Use this method to send answers to an inline query. On success, _True_ is returned.  \nNo more than **50** results per query are allowed.',
+    markdown: 'Use this method to send answers to an inline query. On success, _True_ is returned.\n\nNo more than **50** results per query are allowed.',
   },
   parameters: [
     {

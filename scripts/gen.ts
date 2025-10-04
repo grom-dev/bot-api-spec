@@ -32,6 +32,7 @@ let $: CheerioAPI
 const turndown = new Turndown({
   headingStyle: 'atx',
   hr: '- - -',
+  br: '\n',
   bulletListMarker: '-',
   codeBlockStyle: 'fenced',
   fence: '```',
