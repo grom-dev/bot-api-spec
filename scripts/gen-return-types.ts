@@ -56,7 +56,7 @@ const ZValueType: z.ZodType<ValueType> = z.discriminatedUnion('type', [
     literal: z.number().optional(),
   }),
   z.object({
-    type: z.literal('int52'),
+    type: z.literal('int53'),
   }),
   z.object({
     type: z.literal('float'),

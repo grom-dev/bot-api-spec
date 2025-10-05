@@ -109,7 +109,7 @@ export type ValueType
   = | ValueTypeString
     | ValueTypeBoolean
     | ValueTypeInteger32
-    | ValueTypeInteger52
+    | ValueTypeInteger53
     | ValueTypeFloat
     | ValueTypeInputFile
     | ValueTypeApiType
@@ -145,8 +145,8 @@ export interface ValueTypeInteger32 {
  * at most 52 significant bits, so a 64-bit integer or double-precision float
  * type are safe for storing values of this type.
  */
-export interface ValueTypeInteger52 {
-  type: 'int52'
+export interface ValueTypeInteger53 {
+  type: 'int53'
 }
 
 /**

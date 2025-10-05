@@ -426,7 +426,7 @@ const User = t({
     {
       name: 'id',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'Unique identifier for this user or bot.',
@@ -580,7 +580,7 @@ const Chat = t({
     {
       name: 'id',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'Unique identifier for this chat.',
@@ -679,7 +679,7 @@ const ChatFullInfo = t({
     {
       name: 'id',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'Unique identifier for this chat.',
@@ -1203,7 +1203,7 @@ const ChatFullInfo = t({
     {
       name: 'linked_chat_id',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'Unique identifier for the linked chat, i.e. the discussion group identifier for a channel and vice versa; for supergroups and channel chats.',
@@ -1968,7 +1968,7 @@ const Message = t({
     {
       name: 'migrate_to_chat_id',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'The group has been migrated to a supergroup with the specified identifier.',
@@ -1979,7 +1979,7 @@ const Message = t({
     {
       name: 'migrate_from_chat_id',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'The supergroup has been migrated from a group with the specified identifier.',
@@ -3493,7 +3493,7 @@ const Animation = t({
     {
       name: 'file_size',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'File size in bytes.',
@@ -3590,7 +3590,7 @@ const Audio = t({
     {
       name: 'file_size',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'File size in bytes.',
@@ -3678,7 +3678,7 @@ const Document = t({
     {
       name: 'file_size',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'File size in bytes.',
@@ -3845,7 +3845,7 @@ const Video = t({
     {
       name: 'file_size',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'File size in bytes.',
@@ -3985,7 +3985,7 @@ const Voice = t({
     {
       name: 'file_size',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'File size in bytes.',
@@ -4214,7 +4214,7 @@ const Contact = t({
     {
       name: 'user_id',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'Contact\'s user identifier in Telegram.',
@@ -5756,7 +5756,7 @@ const SharedUser = t({
     {
       name: 'user_id',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'Identifier of the shared user.  The bot may not have access to the user and could be unable to use this identifier, unless the user is already known to the bot by some other means.',
@@ -5870,7 +5870,7 @@ const ChatShared = t({
     {
       name: 'chat_id',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'Identifier of the shared chat.  The bot may not have access to the chat and could be unable to use this identifier, unless the chat is already known to the bot by some other means.',
@@ -6798,7 +6798,7 @@ const DirectMessagesTopic = t({
     {
       name: 'topic_id',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'Unique identifier of the topic.',
@@ -6890,7 +6890,7 @@ const File = t({
     {
       name: 'file_size',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'File size in bytes.',
@@ -8951,7 +8951,7 @@ const ChatJoinRequest = t({
     {
       name: 'user_chat_id',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'Identifier of a private chat with the user who sent the join request.  The bot can use this identifier for 5 minutes to send messages until the join request is processed, assuming no other administrator contacted the user.',
@@ -12081,7 +12081,7 @@ const BusinessConnection = t({
     {
       name: 'user_chat_id',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'Identifier of a private chat with the user who created the business connection.',
@@ -12181,7 +12181,7 @@ const ResponseParameters = t({
     {
       name: 'migrate_to_chat_id',
       type: {
-        type: 'int52',
+        type: 'int53',
       },
       description: {
         markdown: 'The group has been migrated to a supergroup with the specified identifier.',

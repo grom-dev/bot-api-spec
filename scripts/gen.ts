@@ -12,7 +12,7 @@ import type {
   ValueTypeFloat,
   ValueTypeInputFile,
   ValueTypeInteger32,
-  ValueTypeInteger52,
+  ValueTypeInteger53,
   ValueTypeString,
   ValueTypeUnion,
 } from '../src'
@@ -226,11 +226,11 @@ function fieldFromTableRow(
     description,
     isOptional,
     isJsonSerialized,
-    isInt52,
+    isInt53,
   } = paramOrFieldDescriptionFromTd($description, name, type)
-  if (isInt52) {
+  if (isInt53) {
     assert(type.type === 'int32')
-    type = T_int52()
+    type = T_int53()
   }
   return {
     name,
@@ -263,12 +263,12 @@ function paramFromTableRow(
     description,
     isOptional,
     isJsonSerialized,
-    isInt52,
+    isInt53,
   } = paramOrFieldDescriptionFromTd($description, name, type)
   assert(!isOptional) // params have separate "Required" column and should not have "_Optional._" prefix
-  if (isInt52) {
+  if (isInt53) {
     assert(type.type === 'int32')
-    type = T_int52()
+    type = T_int53()
   }
   return {
     name,
@@ -352,13 +352,13 @@ function paramOrFieldDescriptionFromTd($td: Cheerio<Element>, name: string, type
   description: Description
   isOptional: boolean
   isJsonSerialized: boolean
-  isInt52: boolean
+  isInt53: boolean
 } {
   assert(one($td).tagName === 'td')
   let markdown = toMarkdown($td)
   let isOptional = false
   let isJsonSerialized = false
-  let isInt52 = false
+  let isInt53 = false
 
   if (markdown.startsWith('_Optional_.')) {
     isOptional = true
@@ -417,7 +417,7 @@ function paramOrFieldDescriptionFromTd($td: Cheerio<Element>, name: string, type
     ]) {
       if (markdown.includes(variant)) {
         markdown = markdown.replace(variant, '').trim()
-        isInt52 = true
+        isInt53 = true
         break
       }
     }
@@ -429,7 +429,7 @@ function paramOrFieldDescriptionFromTd($td: Cheerio<Element>, name: string, type
     description: { markdown },
     isOptional,
     isJsonSerialized,
-    isInt52,
+    isInt53,
   }
 }
 
@@ -445,8 +445,8 @@ function T_int32(): ValueTypeInteger32 {
   return { type: 'int32' }
 }
 
-function T_int52(): ValueTypeInteger52 {
-  return { type: 'int52' }
+function T_int53(): ValueTypeInteger53 {
+  return { type: 'int53' }
 }
 
 function T_float(): ValueTypeFloat {
