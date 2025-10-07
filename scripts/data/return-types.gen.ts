@@ -725,6 +725,7 @@ export const returnTypes: {
         },
         {
           type: 'bool',
+          literal: true,
         },
       ],
     },
@@ -739,6 +740,7 @@ export const returnTypes: {
         },
         {
           type: 'bool',
+          literal: true,
         },
       ],
     },
@@ -753,6 +755,7 @@ export const returnTypes: {
         },
         {
           type: 'bool',
+          literal: true,
         },
       ],
     },
@@ -767,6 +770,7 @@ export const returnTypes: {
         },
         {
           type: 'bool',
+          literal: true,
         },
       ],
     },

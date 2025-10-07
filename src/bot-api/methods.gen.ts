@@ -8834,6 +8834,7 @@ const editMessageText: ApiMethod = {
       },
       {
         type: 'bool',
+        literal: true,
       },
     ],
   },
@@ -8967,6 +8968,7 @@ const editMessageCaption: ApiMethod = {
       },
       {
         type: 'bool',
+        literal: true,
       },
     ],
   },
@@ -9064,6 +9066,7 @@ const editMessageMedia: ApiMethod = {
       },
       {
         type: 'bool',
+        literal: true,
       },
     ],
   },
@@ -9215,6 +9218,7 @@ const editMessageLiveLocation: ApiMethod = {
       },
       {
         type: 'bool',
+        literal: true,
       },
     ],
   },
