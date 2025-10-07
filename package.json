@@ -1,7 +1,7 @@
 {
   "name": "@grom.js/bot-api-spec",
   "type": "module",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Telegram Bot API specification as a collection of JavaScript objects in a custom format.",
   "license": "MIT",
   "repository": {
