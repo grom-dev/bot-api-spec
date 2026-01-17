@@ -430,6 +430,12 @@ export const returnTypes: {
       literal: true,
     },
   },
+  deleteForumTopic: {
+    'Use this method to delete a forum topic along with all its messages in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the _can\\_delete\\_messages_ administrator rights. Returns _True_ on success.': {
+      type: 'bool',
+      literal: true,
+    },
+  },
   unpinAllForumTopicMessages: {
     'Use this method to clear the list of pinned messages in a forum topic in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the _can\\_pin\\_messages_ administrator right in the supergroup. Returns _True_ on success.': {
       type: 'bool',
@@ -1057,12 +1063,6 @@ export const returnTypes: {
         type: 'api-type',
         name: 'GameHighScore',
       },
-    },
-  },
-  deleteForumTopic: {
-    'Use this method to delete a forum topic along with all its messages in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the _can\\_delete\\_messages_ administrator rights. Returns _True_ on success.': {
-      type: 'bool',
-      literal: true,
     },
   },
 }
