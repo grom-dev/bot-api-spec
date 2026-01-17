@@ -1,4 +1,4 @@
-import type { types } from './bot-api/types.gen.ts'
+import type { types } from './types.gen.ts'
 
 /**
  * Type defined in the API. It can either be an {@link ApiTypeObject object}

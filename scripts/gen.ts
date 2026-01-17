@@ -50,8 +50,8 @@ async function main() {
   const { types, methods } = await parseBotApi('https://core.telegram.org/bots/api')
   const typesModule = genTypesModule(types)
   const methodsModule = genMethodsModule(methods)
-  await fs.writeFile(path.join(__dirname, '../src/bot-api/types.gen.ts'), typesModule, 'utf-8')
-  await fs.writeFile(path.join(__dirname, '../src/bot-api/methods.gen.ts'), methodsModule, 'utf-8')
+  await fs.writeFile(path.join(__dirname, '../src/types.gen.ts'), typesModule, 'utf-8')
+  await fs.writeFile(path.join(__dirname, '../src/methods.gen.ts'), methodsModule, 'utf-8')
 }
 
 async function parseBotApi(url: string): Promise<{
@@ -482,7 +482,7 @@ function genTypesModule(types: Array<ApiType>): string {
     ' * @module',
     ' */',
     '',
-    'import type { ApiType } from "../types.ts"',
+    'import type { ApiType } from "./format.ts"',
     '',
     '// No-op identity function to fix "circular dependency" type error.',
     '// See: https://github.com/grom-dev/bot-api-spec/pull/7',
@@ -508,7 +508,7 @@ function genMethodsModule(methods: Array<ApiMethod>): string {
     ' * @module',
     ' */',
     '',
-    'import type { ApiMethod } from "../types.ts"',
+    'import type { ApiMethod } from "./format.ts"',
     '',
     ...methods.map(method => `const ${method.name}: ApiMethod = ${JSON.stringify(method, null, 2)}\n`),
     '',

@@ -4,7 +4,7 @@
  * @module
  */
 
-import type { ApiType } from '../format.ts'
+import type { ApiType } from './format.ts'
 
 // No-op identity function to fix "circular dependency" type error.
 // See: https://github.com/grom-dev/bot-api-spec/pull/7

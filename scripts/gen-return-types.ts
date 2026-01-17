@@ -4,7 +4,7 @@ import * as path from 'node:path'
 import * as process from 'node:process'
 import * as url from 'node:url'
 import { z } from 'zod'
-import { methods } from '../src/bot-api/index.ts'
+import { methods } from '../src/index.ts'
 import { UNKOWN_VALUE_TYPE } from './gen.ts'
 
 const __filename = url.fileURLToPath(import.meta.url)
@@ -32,8 +32,8 @@ async function main() {
     }
   }
   const code = [
-    'import type { ValueType } from "../../src"',
-    'import type { methods } from "../../src/bot-api"',
+    'import type { ValueType } from "../../src/format.ts"',
+    'import type { methods } from "../../src/index.ts"',
     '',
     'export const returnTypes: {',
     '  [TMethodName in keyof typeof methods]: {',

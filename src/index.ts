@@ -1,1 +1,2 @@
-export { methods, types } from './bot-api/index.ts'
+export { methods } from './methods.gen.ts'
+export { types } from './types.gen.ts'
