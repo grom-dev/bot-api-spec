@@ -1059,52 +1059,10 @@ export const returnTypes: {
       },
     },
   },
-  sendMessageDraft: {
-    'Use this method to stream a partial message to a user while the message is being generated; supported only for bots with forum topic mode enabled. Returns _True_ on success.': {
-      type: 'bool',
-      literal: true,
-    },
-  },
-  editForumTopic: {
-    'Use this method to edit name and icon of a topic in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the _can\\_manage\\_topics_ administrator rights, unless it is the creator of the topic. Returns _True_ on success.': {
-      type: 'bool',
-      literal: true,
-    },
-  },
-  closeForumTopic: {
-    'Use this method to close an open topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the _can\\_manage\\_topics_ administrator rights, unless it is the creator of the topic. Returns _True_ on success.': {
-      type: 'bool',
-      literal: true,
-    },
-  },
   deleteForumTopic: {
     'Use this method to delete a forum topic along with all its messages in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the _can\\_delete\\_messages_ administrator rights. Returns _True_ on success.': {
       type: 'bool',
       literal: true,
-    },
-  },
-  unpinAllForumTopicMessages: {
-    'Use this method to clear the list of pinned messages in a forum topic in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the _can\\_pin\\_messages_ administrator right in the supergroup. Returns _True_ on success.': {
-      type: 'bool',
-      literal: true,
-    },
-  },
-  getUserGifts: {
-    'Returns the gifts owned and hosted by a user. Returns [OwnedGifts](https://core.telegram.org/bots/api#ownedgifts) on success.': {
-      type: 'api-type',
-      name: 'OwnedGifts',
-    },
-  },
-  getChatGifts: {
-    'Returns the gifts owned by a chat. Returns [OwnedGifts](https://core.telegram.org/bots/api#ownedgifts) on success.': {
-      type: 'api-type',
-      name: 'OwnedGifts',
-    },
-  },
-  repostStory: {
-    'Reposts a story on behalf of a business account from another business account. Both business accounts must be managed by the same bot, and the story on the source account must have been posted (or reposted) by the bot. Requires the _can\\_manage\\_stories_ business bot right for both business accounts. Returns [Story](https://core.telegram.org/bots/api#story) on success.': {
-      type: 'api-type',
-      name: 'Story',
     },
   },
 }
