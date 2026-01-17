@@ -180,6 +180,12 @@ export const returnTypes: {
       name: 'Message',
     },
   },
+  sendMessageDraft: {
+    'Use this method to stream a partial message to a user while the message is being generated; supported only for bots with forum topic mode enabled. Returns _True_ on success.': {
+      type: 'bool',
+      literal: true,
+    },
+  },
   sendChatAction: {
     'Use this method when you need to tell the user that something is happening on the bot\'s side. The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). Returns _True_ on success.\n\n> Example: The [ImageBot](https://t.me/imagebot) needs some time to process a request and upload the image. Instead of sending a text message along the lines of “Retrieving image, please wait…”, the bot may use [sendChatAction](https://core.telegram.org/bots/api#sendchataction) with _action_ = _upload\\_photo_. The user will see a “sending photo” status for the bot.\n\nWe only recommend using this method when a response from the bot will take a **noticeable** amount of time to arrive.': {
       type: 'bool',
@@ -407,7 +413,7 @@ export const returnTypes: {
     },
   },
   editForumTopic: {
-    'Use this method to edit name and icon of a topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the _can\\_manage\\_topics_ administrator rights, unless it is the creator of the topic. Returns _True_ on success.': {
+    'Use this method to edit name and icon of a topic in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the _can\\_manage\\_topics_ administrator rights, unless it is the creator of the topic. Returns _True_ on success.': {
       type: 'bool',
       literal: true,
     },
@@ -424,14 +430,8 @@ export const returnTypes: {
       literal: true,
     },
   },
-  deleteForumTopic: {
-    'Use this method to delete a forum topic along with all its messages in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the _can\\_delete\\_messages_ administrator rights. Returns _True_ on success.': {
-      type: 'bool',
-      literal: true,
-    },
-  },
   unpinAllForumTopicMessages: {
-    'Use this method to clear the list of pinned messages in a forum topic. The bot must be an administrator in the chat for this to work and must have the _can\\_pin\\_messages_ administrator right in the supergroup. Returns _True_ on success.': {
+    'Use this method to clear the list of pinned messages in a forum topic in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the _can\\_pin\\_messages_ administrator right in the supergroup. Returns _True_ on success.': {
       type: 'bool',
       literal: true,
     },
@@ -679,6 +679,18 @@ export const returnTypes: {
       name: 'OwnedGifts',
     },
   },
+  getUserGifts: {
+    'Returns the gifts owned and hosted by a user. Returns [OwnedGifts](https://core.telegram.org/bots/api#ownedgifts) on success.': {
+      type: 'api-type',
+      name: 'OwnedGifts',
+    },
+  },
+  getChatGifts: {
+    'Returns the gifts owned by a chat. Returns [OwnedGifts](https://core.telegram.org/bots/api#ownedgifts) on success.': {
+      type: 'api-type',
+      name: 'OwnedGifts',
+    },
+  },
   convertGiftToStars: {
     'Converts a given regular gift to Telegram Stars. Requires the _can\\_convert\\_gifts\\_to\\_stars_ business bot right. Returns _True_ on success.': {
       type: 'bool',
@@ -699,6 +711,12 @@ export const returnTypes: {
   },
   postStory: {
     'Posts a story on behalf of a managed business account. Requires the _can\\_manage\\_stories_ business bot right. Returns [Story](https://core.telegram.org/bots/api#story) on success.': {
+      type: 'api-type',
+      name: 'Story',
+    },
+  },
+  repostStory: {
+    'Reposts a story on behalf of a business account from another business account. Both business accounts must be managed by the same bot, and the story on the source account must have been posted (or reposted) by the bot. Requires the _can\\_manage\\_stories_ business bot right for both business accounts. Returns [Story](https://core.telegram.org/bots/api#story) on success.': {
       type: 'api-type',
       name: 'Story',
     },
@@ -1039,6 +1057,54 @@ export const returnTypes: {
         type: 'api-type',
         name: 'GameHighScore',
       },
+    },
+  },
+  sendMessageDraft: {
+    'Use this method to stream a partial message to a user while the message is being generated; supported only for bots with forum topic mode enabled. Returns _True_ on success.': {
+      type: 'bool',
+      literal: true,
+    },
+  },
+  editForumTopic: {
+    'Use this method to edit name and icon of a topic in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the _can\\_manage\\_topics_ administrator rights, unless it is the creator of the topic. Returns _True_ on success.': {
+      type: 'bool',
+      literal: true,
+    },
+  },
+  closeForumTopic: {
+    'Use this method to close an open topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the _can\\_manage\\_topics_ administrator rights, unless it is the creator of the topic. Returns _True_ on success.': {
+      type: 'bool',
+      literal: true,
+    },
+  },
+  deleteForumTopic: {
+    'Use this method to delete a forum topic along with all its messages in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the _can\\_delete\\_messages_ administrator rights. Returns _True_ on success.': {
+      type: 'bool',
+      literal: true,
+    },
+  },
+  unpinAllForumTopicMessages: {
+    'Use this method to clear the list of pinned messages in a forum topic in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the _can\\_pin\\_messages_ administrator right in the supergroup. Returns _True_ on success.': {
+      type: 'bool',
+      literal: true,
+    },
+  },
+  getUserGifts: {
+    'Returns the gifts owned and hosted by a user. Returns [OwnedGifts](https://core.telegram.org/bots/api#ownedgifts) on success.': {
+      type: 'api-type',
+      name: 'OwnedGifts',
+    },
+  },
+  getChatGifts: {
+    'Returns the gifts owned by a chat. Returns [OwnedGifts](https://core.telegram.org/bots/api#ownedgifts) on success.': {
+      type: 'api-type',
+      name: 'OwnedGifts',
+    },
+  },
+  repostStory: {
+    'Reposts a story on behalf of a business account from another business account. Both business accounts must be managed by the same bot, and the story on the source account must have been posted (or reposted) by the bot. Requires the _can\\_manage\\_stories_ business bot right for both business accounts. Returns [Story](https://core.telegram.org/bots/api#story) on success.': {
+      type: 'api-type',
+      name: 'Story',
     },
   },
 }

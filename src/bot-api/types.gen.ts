@@ -568,6 +568,17 @@ const User = t({
       required: false,
       jsonSerialized: false,
     },
+    {
+      name: 'has_topics_enabled',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if the bot has forum topic mode enabled in private chats. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
   ],
 })
 
@@ -1223,6 +1234,41 @@ const ChatFullInfo = t({
       required: false,
       jsonSerialized: false,
     },
+    {
+      name: 'rating',
+      type: {
+        type: 'api-type',
+        name: 'UserRating',
+      },
+      description: {
+        markdown: 'For private chats, the rating of the user if any',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'unique_gift_colors',
+      type: {
+        type: 'api-type',
+        name: 'UniqueGiftColors',
+      },
+      description: {
+        markdown: 'The color scheme based on a unique gift that must be used for the chat\'s name, message replies and link previews',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'paid_message_star_count',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'The number of Telegram Stars a general user have to pay to send a message to the chat',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
   ],
 })
 
@@ -1249,7 +1295,7 @@ const Message = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier of a message thread to which the message belongs; for supergroups only',
+        markdown: 'Unique identifier of a message thread or forum topic to which the message belongs; for supergroups and private chats only',
       },
       required: false,
       jsonSerialized: false,
@@ -1366,7 +1412,7 @@ const Message = t({
         literal: true,
       },
       description: {
-        markdown: '_True_, if the message is sent to a forum topic',
+        markdown: '_True_, if the message is sent to a topic in a forum supergroup or a private chat with the bot',
       },
       required: false,
       jsonSerialized: false,
@@ -2079,6 +2125,18 @@ const Message = t({
       },
       description: {
         markdown: 'Service message: a unique gift was sent or received',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'gift_upgrade_sent',
+      type: {
+        type: 'api-type',
+        name: 'GiftInfo',
+      },
+      description: {
+        markdown: 'Service message: upgrade of a gift was purchased after the gift was sent',
       },
       required: false,
       jsonSerialized: false,
@@ -4642,7 +4700,19 @@ const ChecklistTask = t({
         name: 'User',
       },
       description: {
-        markdown: 'User that completed the task; omitted if the task wasn\'t completed',
+        markdown: 'User that completed the task; omitted if the task wasn\'t completed by a user',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'completed_by_chat',
+      type: {
+        type: 'api-type',
+        name: 'Chat',
+      },
+      description: {
+        markdown: 'Chat that completed the task; omitted if the task wasn\'t completed by a chat',
       },
       required: false,
       jsonSerialized: false,
@@ -5677,6 +5747,18 @@ const ForumTopicCreated = t({
       },
       description: {
         markdown: 'Unique identifier of the custom emoji shown as the topic icon',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'is_name_implicit',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the name of the topic wasn\'t specified explicitly by its creator and likely needs to be changed by the bot',
       },
       required: false,
       jsonSerialized: false,
@@ -9342,6 +9424,59 @@ const BusinessOpeningHours = t({
   ],
 })
 
+const UserRating = t({
+  name: 'UserRating',
+  description: {
+    markdown: 'This object describes the rating of a user based on their Telegram Star spendings.',
+  },
+  fields: [
+    {
+      name: 'level',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Current level of the user, indicating their reliability when purchasing digital goods and services. A higher level suggests a more trustworthy customer; a negative level is likely reason for concern.',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'rating',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Numerical value of the user\'s rating; the higher the rating, the better',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'current_level_rating',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'The rating value required to get the current level',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'next_level_rating',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'The rating value required to get to the next level; omitted if the maximum level was reached',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+  ],
+})
+
 const StoryAreaPosition = t({
   name: 'StoryAreaPosition',
   description: {
@@ -10127,6 +10262,60 @@ const ForumTopic = t({
       required: false,
       jsonSerialized: false,
     },
+    {
+      name: 'is_name_implicit',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the name of the topic wasn\'t specified explicitly by its creator and likely needs to be changed by the bot',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+  ],
+})
+
+const GiftBackground = t({
+  name: 'GiftBackground',
+  description: {
+    markdown: 'This object describes the background of a gift.',
+  },
+  fields: [
+    {
+      name: 'center_color',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Center color of the background in RGB format',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'edge_color',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Edge color of the background in RGB format',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'text_color',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Text color of the background in RGB format',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
   ],
 })
 
@@ -10182,12 +10371,36 @@ const Gift = t({
       jsonSerialized: false,
     },
     {
+      name: 'is_premium',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the gift can only be purchased by Telegram Premium subscribers',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'has_colors',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the gift can be used (after being upgraded) to customize a user\'s appearance',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
       name: 'total_count',
       type: {
         type: 'int32',
       },
       description: {
-        markdown: 'The total number of the gifts of this type that can be sent; for limited gifts only',
+        markdown: 'The total number of gifts of this type that can be sent by all users; for limited gifts only',
       },
       required: false,
       jsonSerialized: false,
@@ -10198,7 +10411,52 @@ const Gift = t({
         type: 'int32',
       },
       description: {
-        markdown: 'The number of remaining gifts of this type that can be sent; for limited gifts only',
+        markdown: 'The number of remaining gifts of this type that can be sent by all users; for limited gifts only',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'personal_total_count',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'The total number of gifts of this type that can be sent by the bot; for limited gifts only',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'personal_remaining_count',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'The number of remaining gifts of this type that can be sent by the bot; for limited gifts only',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'background',
+      type: {
+        type: 'api-type',
+        name: 'GiftBackground',
+      },
+      description: {
+        markdown: 'Background of the gift',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'unique_gift_variant_count',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'The total number of different unique gifts that can be obtained by upgrading the gift',
       },
       required: false,
       jsonSerialized: false,
@@ -10424,12 +10682,104 @@ const UniqueGiftBackdrop = t({
   ],
 })
 
+const UniqueGiftColors = t({
+  name: 'UniqueGiftColors',
+  description: {
+    markdown: 'This object contains information about the color scheme for a user\'s name, message replies and link previews based on a unique gift.',
+  },
+  fields: [
+    {
+      name: 'model_custom_emoji_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Custom emoji identifier of the unique gift\'s model',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'symbol_custom_emoji_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Custom emoji identifier of the unique gift\'s symbol',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'light_theme_main_color',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Main color used in light themes; RGB format',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'light_theme_other_colors',
+      type: {
+        type: 'array',
+        of: {
+          type: 'int32',
+        },
+      },
+      description: {
+        markdown: 'List of 1-3 additional colors used in light themes; RGB format',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'dark_theme_main_color',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Main color used in dark themes; RGB format',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'dark_theme_other_colors',
+      type: {
+        type: 'array',
+        of: {
+          type: 'int32',
+        },
+      },
+      description: {
+        markdown: 'List of 1-3 additional colors used in dark themes; RGB format',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+  ],
+})
+
 const UniqueGift = t({
   name: 'UniqueGift',
   description: {
     markdown: 'This object describes a unique gift that was upgraded from a regular gift.',
   },
   fields: [
+    {
+      name: 'gift_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Identifier of the regular gift from which the gift was upgraded',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
     {
       name: 'base_name',
       type: {
@@ -10500,6 +10850,42 @@ const UniqueGift = t({
       jsonSerialized: false,
     },
     {
+      name: 'is_premium',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the original regular gift was exclusively purchaseable by Telegram Premium subscribers',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'is_from_blockchain',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the gift is assigned from the TON blockchain and can\'t be resold or transferred in Telegram',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'colors',
+      type: {
+        type: 'api-type',
+        name: 'UniqueGiftColors',
+      },
+      description: {
+        markdown: 'The color scheme that can be used by the gift\'s owner for the chat\'s name, replies to messages and link previews; for business account gifts and gifts that are currently on sale only',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
       name: 'publisher_chat',
       type: {
         type: 'api-type',
@@ -10560,7 +10946,19 @@ const GiftInfo = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Number of Telegram Stars that were prepaid by the sender for the ability to upgrade the gift',
+        markdown: 'Number of Telegram Stars that were prepaid for the ability to upgrade the gift',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'is_upgrade_separate',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the gift\'s upgrade was purchased after the gift was sent',
       },
       required: false,
       jsonSerialized: false,
@@ -10615,6 +11013,17 @@ const GiftInfo = t({
       required: false,
       jsonSerialized: false,
     },
+    {
+      name: 'unique_gift_number',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique number reserved for this gift when upgraded. See the _number_ field in [UniqueGift](https://core.telegram.org/bots/api#uniquegift)',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
   ],
 })
 
@@ -10642,18 +11051,29 @@ const UniqueGiftInfo = t({
         type: 'str',
       },
       description: {
-        markdown: 'Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, or “resale” for gifts bought from other users',
+        markdown: 'Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, “resale” for gifts bought from other users, “gifted\\_upgrade” for upgrades purchased after the gift was sent, or “offer” for gifts bought or sold through gift purchase offers',
       },
       required: true,
       jsonSerialized: false,
     },
     {
-      name: 'last_resale_star_count',
+      name: 'last_resale_currency',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'For gifts bought from other users, the currency in which the payment for the gift was done. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins.',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'last_resale_amount',
       type: {
         type: 'int32',
       },
       description: {
-        markdown: 'For gifts bought from other users, the price paid for the gift',
+        markdown: 'For gifts bought from other users, the price paid for the gift in either Telegram Stars or nanotoncoins',
       },
       required: false,
       jsonSerialized: false,
@@ -10854,7 +11274,7 @@ const OwnedGiftRegular = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Number of Telegram Stars that can be claimed by the receiver instead of the gift; omitted if the gift cannot be converted to Telegram Stars',
+        markdown: 'Number of Telegram Stars that can be claimed by the receiver instead of the gift; omitted if the gift cannot be converted to Telegram Stars; for gifts received on behalf of business accounts only',
       },
       required: false,
       jsonSerialized: false,
@@ -10865,7 +11285,30 @@ const OwnedGiftRegular = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Number of Telegram Stars that were paid by the sender for the ability to upgrade the gift',
+        markdown: 'Number of Telegram Stars that were paid for the ability to upgrade the gift',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'is_upgrade_separate',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the gift\'s upgrade was purchased after the gift was sent; for gifts received on behalf of business accounts only',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'unique_gift_number',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique number reserved for this gift when upgraded. See the _number_ field in [UniqueGift](https://core.telegram.org/bots/api#uniquegift)',
       },
       required: false,
       jsonSerialized: false,
@@ -11077,6 +11520,17 @@ const AcceptedGiftTypes = t({
       },
       description: {
         markdown: '_True_, if a Telegram Premium subscription is accepted',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'gifts_from_channels',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if transfers of unique gifts from channels are accepted',
       },
       required: true,
       jsonSerialized: false,
@@ -19473,6 +19927,7 @@ export const types = {
   BusinessLocation,
   BusinessOpeningHoursInterval,
   BusinessOpeningHours,
+  UserRating,
   StoryAreaPosition,
   LocationAddress,
   StoryAreaType,
@@ -19491,12 +19946,14 @@ export const types = {
   MessageReactionUpdated,
   MessageReactionCountUpdated,
   ForumTopic,
+  GiftBackground,
   Gift,
   Gifts,
   UniqueGiftModel,
   UniqueGiftSymbol,
   UniqueGiftBackdropColors,
   UniqueGiftBackdrop,
+  UniqueGiftColors,
   UniqueGift,
   GiftInfo,
   UniqueGiftInfo,
