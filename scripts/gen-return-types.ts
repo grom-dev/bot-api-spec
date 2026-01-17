@@ -1,8 +1,14 @@
-import type { ValueType, ValueTypeApiType } from '../src/index.ts'
-import { join } from 'node:path'
+import type { ValueType, ValueTypeApiType } from '../src/format.ts'
+import * as fs from 'node:fs/promises'
+import * as path from 'node:path'
+import * as process from 'node:process'
+import * as url from 'node:url'
 import { z } from 'zod'
 import { methods } from '../src/bot-api/index.ts'
 import { UNKOWN_VALUE_TYPE } from './gen.ts'
+
+const __filename = url.fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 async function main() {
   const methodList = Object.values(methods)
@@ -35,7 +41,7 @@ async function main() {
     '  }',
     `} = ${JSON.stringify(returnTypes, null, 2)}`,
   ].join('\n')
-  await Bun.file(join(import.meta.dir, './data/return-types.gen.ts')).write(code)
+  await fs.writeFile(path.join(__dirname, './data/return-types.gen.ts'), code, 'utf-8')
 }
 
 function isUnknownValueType(value: ValueType) {
@@ -114,10 +120,16 @@ Like this: {"type":"str"}
 `.trim()
 
 class Llm {
+  apiKey: string
+  model: string
+
   constructor(
-    private apiKey: string,
-    private model: string,
-  ) {}
+    apiKey: string,
+    model: string,
+  ) {
+    this.apiKey = apiKey
+    this.model = model
+  }
 
   async askForType(description: string): Promise<ValueType> {
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
@@ -141,7 +153,7 @@ class Llm {
 }
 
 function env(name: string): string {
-  const val = Bun.env[name]
+  const val = process.env[name]
   if (!val) {
     throw new Error(`"${name}" env is not set`)
   }

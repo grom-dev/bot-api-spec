@@ -15,12 +15,17 @@ import type {
   ValueTypeInteger53,
   ValueTypeString,
   ValueTypeUnion,
-} from '../src'
-import assert from 'node:assert'
-import { join } from 'node:path'
+} from '../src/format.ts'
+import * as assert from 'node:assert'
+import * as fs from 'node:fs/promises'
+import * as path from 'node:path'
+import * as url from 'node:url'
 import { load } from 'cheerio'
 import Turndown from 'turndown'
 import { returnTypes } from './data/return-types.gen.ts'
+
+const __filename = url.fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const PASCAL_CASE_REGEX = /^[A-Z][a-zA-Z\d]+$/
 const CAMEL_CASE_REGEX = /^[a-z][a-zA-Z]+$/
@@ -45,8 +50,8 @@ async function main() {
   const { types, methods } = await parseBotApi('https://core.telegram.org/bots/api')
   const typesModule = genTypesModule(types)
   const methodsModule = genMethodsModule(methods)
-  await Bun.file(join(import.meta.dir, '../src/bot-api/types.gen.ts')).write(typesModule)
-  await Bun.file(join(import.meta.dir, '../src/bot-api/methods.gen.ts')).write(methodsModule)
+  await fs.writeFile(path.join(__dirname, '../src/bot-api/types.gen.ts'), typesModule, 'utf-8')
+  await fs.writeFile(path.join(__dirname, '../src/bot-api/methods.gen.ts'), methodsModule, 'utf-8')
 }
 
 async function parseBotApi(url: string): Promise<{
@@ -56,24 +61,24 @@ async function parseBotApi(url: string): Promise<{
   const docs = await fetch(url).then(resp => resp.text())
   $ = load(docs)
   $('a').attr('href', (_, val) => new URL(val, url).href)
-  assert($('h4 > a.anchor').length === $('h4').length, `(# of 'h4 > a.anchor') != (# of 'h4')`)
-  assert($('h4 > a.anchor').length > 10, `too few <h4>`)
+  assert.ok($('h4 > a.anchor').length === $('h4').length, `(# of 'h4 > a.anchor') != (# of 'h4')`)
+  assert.ok($('h4 > a.anchor').length > 10, `too few <h4>`)
   return $('h4 > a.anchor')
     .toArray()
     .map((anchor) => {
       const $heading = $(anchor).parent()
       const name = $heading.text()
       const nameAttr = anchor.attributes.find(({ name }) => name === 'name')?.value
-      assert(nameAttr, 'heading w/o name attribute')
+      assert.ok(nameAttr, 'heading w/o name attribute')
       return { $heading, name, nameAttr }
     })
     .reduce((prev, { $heading, name, nameAttr }) => {
       if (PASCAL_CASE_REGEX.test(name) && !IGNORED_API_TYPES.has(name)) {
-        assert(nameAttr === name.toLowerCase(), 'nameAttr != lower(name)')
+        assert.ok(nameAttr === name.toLowerCase(), 'nameAttr != lower(name)')
         prev.types.push(parseApiType(name, $heading))
       }
       else if (CAMEL_CASE_REGEX.test(name)) {
-        assert(nameAttr === name.toLowerCase(), 'nameAttr != lower(name)')
+        assert.ok(nameAttr === name.toLowerCase(), 'nameAttr != lower(name)')
         prev.methods.push(parseApiMethod(name, $heading))
       }
       else {
@@ -95,9 +100,9 @@ function parseApiType(name: string, $heading: Cheerio<Element>): ApiType {
   }
   if (isOneOfApiType(name, description)) {
     const $ul = $(rest).filter('ul')
-    assert($ul.length === 1)
+    assert.ok($ul.length === 1)
     const $li = $ul.find('li')
-    assert($li.length > 1)
+    assert.ok($li.length > 1)
     return {
       name,
       description,
@@ -105,7 +110,7 @@ function parseApiType(name: string, $heading: Cheerio<Element>): ApiType {
         .toArray()
         .map((el) => {
           const text = $(el).text().trim()
-          assert(PASCAL_CASE_REGEX.test(text), `expected one of type name to be in PascalCase, got ${text}`)
+          assert.ok(PASCAL_CASE_REGEX.test(text), `expected one of type name to be in PascalCase, got ${text}`)
           return T_apiType(text)
         }),
     }
@@ -148,7 +153,7 @@ function sectionElements($h4: Cheerio<Element>): {
   table: Element | null
   rest: Array<Element>
 } {
-  assert(one($h4).tagName === 'h4')
+  assert.ok(one($h4).tagName === 'h4')
   const rest: Array<Element> = []
   let table = null
   let end = false
@@ -156,7 +161,7 @@ function sectionElements($h4: Cheerio<Element>): {
     const el = one($el)
     switch (el.tagName) {
       case 'table':
-        assert(table == null)
+        assert.ok(table == null)
         table = el
         break
       case 'p':
@@ -180,36 +185,36 @@ function sectionElements($h4: Cheerio<Element>): {
 }
 
 function fieldsFromTable($table: Cheerio<Element>): Array<FieldOrParam> {
-  assert(one($table).tagName === 'table')
+  assert.ok(one($table).tagName === 'table')
   const $th = $table.find('thead > tr > th')
-  assert($th.length === 3, `expected 3 head cells, got ${$th.length}`)
-  assert($th.eq(0).text() === 'Field')
-  assert($th.eq(1).text() === 'Type')
-  assert($th.eq(2).text() === 'Description')
+  assert.ok($th.length === 3, `expected 3 head cells, got ${$th.length}`)
+  assert.ok($th.eq(0).text() === 'Field')
+  assert.ok($th.eq(1).text() === 'Type')
+  assert.ok($th.eq(2).text() === 'Description')
   return $table
     .find('tbody > tr')
     .toArray()
     .map((el) => {
       const $td = $(el).children('td')
-      assert($td.length === 3)
+      assert.ok($td.length === 3)
       return fieldFromTableRow($td.eq(0), $td.eq(1), $td.eq(2))
     })
 }
 
 function paramsFromTable($table: Cheerio<Element>): Array<FieldOrParam> {
-  assert(one($table).tagName === 'table')
+  assert.ok(one($table).tagName === 'table')
   const $th = $table.find('thead > tr > th')
-  assert($th.length === 4, `expected 4 head cells, got ${$th.length}`)
-  assert($th.eq(0).text() === 'Parameter')
-  assert($th.eq(1).text() === 'Type')
-  assert($th.eq(2).text() === 'Required')
-  assert($th.eq(3).text() === 'Description')
+  assert.ok($th.length === 4, `expected 4 head cells, got ${$th.length}`)
+  assert.ok($th.eq(0).text() === 'Parameter')
+  assert.ok($th.eq(1).text() === 'Type')
+  assert.ok($th.eq(2).text() === 'Required')
+  assert.ok($th.eq(3).text() === 'Description')
   return $table
     .find('tbody > tr')
     .toArray()
     .map((el) => {
       const $td = $(el).children('td')
-      assert($td.length === 4)
+      assert.ok($td.length === 4)
       return paramFromTableRow($td.eq(0), $td.eq(1), $td.eq(2), $td.eq(3))
     })
 }
@@ -220,7 +225,7 @@ function fieldFromTableRow(
   $description: Cheerio<Element>,
 ): FieldOrParam {
   const name = $field.text()
-  assert(SNAKE_CASE_REGEX.test(name), `expected field name to be in snake_case, got ${name}`)
+  assert.ok(SNAKE_CASE_REGEX.test(name), `expected field name to be in snake_case, got ${name}`)
   let type = parseValueType($type.text())
   const {
     description,
@@ -229,7 +234,7 @@ function fieldFromTableRow(
     isInt53,
   } = paramOrFieldDescriptionFromTd($description, name, type)
   if (isInt53) {
-    assert(type.type === 'int32')
+    assert.ok(type.type === 'int32')
     type = T_int53()
   }
   return {
@@ -248,7 +253,7 @@ function paramFromTableRow(
   $description: Cheerio<Element>,
 ): FieldOrParam {
   const name = $param.text()
-  assert(SNAKE_CASE_REGEX.test(name), `expected param name to be in snake_case, got ${name}`)
+  assert.ok(SNAKE_CASE_REGEX.test(name), `expected param name to be in snake_case, got ${name}`)
   let type = parseValueType($type.text())
   const required = (() => {
     switch ($required.text().trim()) {
@@ -265,9 +270,9 @@ function paramFromTableRow(
     isJsonSerialized,
     isInt53,
   } = paramOrFieldDescriptionFromTd($description, name, type)
-  assert(!isOptional) // params have separate "Required" column and should not have "_Optional._" prefix
+  assert.ok(!isOptional) // params have separate "Required" column and should not have "_Optional._" prefix
   if (isInt53) {
-    assert(type.type === 'int32')
+    assert.ok(type.type === 'int32')
     type = T_int53()
   }
   return {
@@ -317,7 +322,7 @@ function parseValueTypeParts(parts: string[]): ValueType {
       case 'Float': return T_float()
       case 'InputFile': return T_inputFile()
       default:
-        assert(PASCAL_CASE_REGEX.test(part))
+        assert.ok(PASCAL_CASE_REGEX.test(part))
         return T_apiType(part)
     }
   }
@@ -354,7 +359,7 @@ function paramOrFieldDescriptionFromTd($td: Cheerio<Element>, name: string, type
   isJsonSerialized: boolean
   isInt53: boolean
 } {
-  assert(one($td).tagName === 'td')
+  assert.ok(one($td).tagName === 'td')
   let markdown = toMarkdown($td)
   let isOptional = false
   let isJsonSerialized = false
@@ -373,41 +378,41 @@ function paramOrFieldDescriptionFromTd($td: Cheerio<Element>, name: string, type
       || markdown.includes('JSON-serialized data about the invoice')
     )
   ) {
-    assert(type.type === 'str')
+    assert.ok(type.type === 'str')
   }
   // EXCEPTION
   else if (
     name === 'data'
     && markdown.includes('Base64-encoded encrypted JSON-serialized data')
   ) {
-    assert(type.type === 'str')
+    assert.ok(type.type === 'str')
   }
   else if (/JSON-serialized/i.test(markdown)) {
     if (markdown.includes('A JSON-serialized list')) {
-      assert(type.type === 'array')
+      assert.ok(type.type === 'array')
       markdown = markdown.replace('A JSON-serialized list', 'An array')
       isJsonSerialized = true
     }
     else if (markdown.includes('Price breakdown, a JSON-serialized list')) {
-      assert(type.type === 'array')
+      assert.ok(type.type === 'array')
       markdown = markdown.replace('Price breakdown, a JSON-serialized list', 'Price breakdown, an array')
       isJsonSerialized = true
     }
     else if (markdown.includes('A JSON-serialized array')) {
-      assert(type.type === 'array')
+      assert.ok(type.type === 'array')
       markdown = markdown.replace('A JSON-serialized array', 'An array')
       isJsonSerialized = true
     }
     else if (markdown.includes('A JSON-serialized object')) {
-      assert(type.type === 'api-type' || type.type === 'union', `expected object type, got ${type.type}`)
+      assert.ok(type.type === 'api-type' || type.type === 'union', `expected object type, got ${type.type}`)
       markdown = markdown.replace('A JSON-serialized object', 'An object')
       isJsonSerialized = true
     }
-    assert(!(/JSON-serialized/i.test(markdown)), `JSON-serialized in description: ${markdown}`)
+    assert.ok(!(/JSON-serialized/i.test(markdown)), `JSON-serialized in description: ${markdown}`)
   }
 
   if (/some programming languages may have difficulty/i.test(markdown)) {
-    assert(type.type === 'int32')
+    assert.ok(type.type === 'int32')
     for (const variant of [
       'This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a 64-bit integer or double-precision float type are safe for storing this identifier.',
       'This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so 64-bit integers or double-precision float types are safe for storing these identifiers.',
@@ -422,8 +427,8 @@ function paramOrFieldDescriptionFromTd($td: Cheerio<Element>, name: string, type
       }
     }
   }
-  assert(!(/some programming languages may have difficulty/i.test(markdown)), `some programming languages may have difficulty in description: ${markdown}`)
-  assert(!(/64[- ]bit/i.test(markdown)), `64-bit in description: ${markdown}`)
+  assert.ok(!(/some programming languages may have difficulty/i.test(markdown)), `some programming languages may have difficulty in description: ${markdown}`)
+  assert.ok(!(/64[- ]bit/i.test(markdown)), `64-bit in description: ${markdown}`)
 
   return {
     description: { markdown },
@@ -523,7 +528,7 @@ function toMarkdown($match: Cheerio<Element>): string {
 
 function one<T>($el: Cheerio<T>): T {
   const els = $el.get()
-  assert(els.length === 1)
+  assert.ok(els.length === 1)
   return els[0]!
 }
 

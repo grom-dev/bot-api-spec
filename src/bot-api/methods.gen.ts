@@ -4,7 +4,7 @@
  * @module
  */
 
-import type { ApiMethod } from '../types.ts'
+import type { ApiMethod } from '../format.ts'
 
 const getUpdates: ApiMethod = {
   name: 'getUpdates',

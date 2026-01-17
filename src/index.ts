@@ -1,2 +1,1 @@
-export * from './bot-api'
-export type * from './types'
+export { methods, types } from './bot-api/index.ts'
