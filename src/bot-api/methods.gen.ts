@@ -276,7 +276,7 @@ const sendMessage: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -476,7 +476,7 @@ const forwardMessage: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -545,6 +545,17 @@ const forwardMessage: ApiMethod = {
       jsonSerialized: false,
     },
     {
+      name: 'message_effect_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the message effect to be added to the message; only available when forwarding to private chats',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
       name: 'suggested_post_parameters',
       type: {
         type: 'api-type',
@@ -605,7 +616,7 @@ const forwardMessages: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -717,7 +728,7 @@ const copyMessage: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -856,6 +867,17 @@ const copyMessage: ApiMethod = {
       jsonSerialized: false,
     },
     {
+      name: 'message_effect_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the message effect to be added to the message; only available when copying to private chats',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
       name: 'suggested_post_parameters',
       type: {
         type: 'api-type',
@@ -946,7 +968,7 @@ const copyMessages: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -1080,7 +1102,7 @@ const sendPhoto: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -1320,7 +1342,7 @@ const sendAudio: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -1590,7 +1612,7 @@ const sendDocument: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -1838,7 +1860,7 @@ const sendVideo: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -2171,7 +2193,7 @@ const sendAnimation: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -2463,7 +2485,7 @@ const sendVoice: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -2692,7 +2714,7 @@ const sendVideoNote: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -2914,7 +2936,7 @@ const sendPaidMedia: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -2936,7 +2958,7 @@ const sendPaidMedia: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'The number of Telegram Stars that must be paid to buy access to the media; 1-10000',
+        markdown: 'The number of Telegram Stars that must be paid to buy access to the media; 1-25000',
       },
       required: true,
       jsonSerialized: false,
@@ -3150,7 +3172,7 @@ const sendMediaGroup: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -3306,7 +3328,7 @@ const sendLocation: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -3534,7 +3556,7 @@ const sendVenue: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -3784,7 +3806,7 @@ const sendContact: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -3990,7 +4012,7 @@ const sendPoll: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -4399,7 +4421,7 @@ const sendDice: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -4530,6 +4552,89 @@ const sendDice: ApiMethod = {
   },
 }
 
+const sendMessageDraft: ApiMethod = {
+  name: 'sendMessageDraft',
+  description: {
+    markdown: 'Use this method to stream a partial message to a user while the message is being generated; supported only for bots with forum topic mode enabled. Returns _True_ on success.',
+  },
+  parameters: [
+    {
+      name: 'chat_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier for the target private chat',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'message_thread_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier for the target message thread',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'draft_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier of the message draft; must be non-zero. Changes of drafts with the same identifier are animated',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Text of the message to be sent, 1-4096 characters after entities parsing',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'parse_mode',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'entities',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'MessageEntity',
+        },
+      },
+      description: {
+        markdown: 'An array of special entities that appear in message text, which can be specified instead of _parse\\_mode_',
+      },
+      required: false,
+      jsonSerialized: true,
+    },
+  ],
+  returnType: {
+    type: 'bool',
+    literal: true,
+  },
+}
+
 const sendChatAction: ApiMethod = {
   name: 'sendChatAction',
   description: {
@@ -4572,7 +4677,7 @@ const sendChatAction: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread; for supergroups only',
+        markdown: 'Unique identifier for the target message thread or topic of a forum; for supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -5062,7 +5167,7 @@ const promoteChatMember: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ if the administrator can restrict, ban or unban chat members, or access supergroup statistics',
+        markdown: 'Pass _True_ if the administrator can restrict, ban or unban chat members, or access supergroup statistics. For backward compatibility, defaults to _True_ for promotions of channel administrators',
       },
       required: false,
       jsonSerialized: false,
@@ -6475,7 +6580,7 @@ const createForumTopic: ApiMethod = {
 const editForumTopic: ApiMethod = {
   name: 'editForumTopic',
   description: {
-    markdown: 'Use this method to edit name and icon of a topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the _can\\_manage\\_topics_ administrator rights, unless it is the creator of the topic. Returns _True_ on success.',
+    markdown: 'Use this method to edit name and icon of a topic in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the _can\\_manage\\_topics_ administrator rights, unless it is the creator of the topic. Returns _True_ on success.',
   },
   parameters: [
     {
@@ -6626,7 +6731,7 @@ const reopenForumTopic: ApiMethod = {
 const deleteForumTopic: ApiMethod = {
   name: 'deleteForumTopic',
   description: {
-    markdown: 'Use this method to delete a forum topic along with all its messages in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the _can\\_delete\\_messages_ administrator rights. Returns _True_ on success.',
+    markdown: 'Use this method to delete a forum topic along with all its messages in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the _can\\_delete\\_messages_ administrator rights. Returns _True_ on success.',
   },
   parameters: [
     {
@@ -6669,7 +6774,7 @@ const deleteForumTopic: ApiMethod = {
 const unpinAllForumTopicMessages: ApiMethod = {
   name: 'unpinAllForumTopicMessages',
   description: {
-    markdown: 'Use this method to clear the list of pinned messages in a forum topic. The bot must be an administrator in the chat for this to work and must have the _can\\_pin\\_messages_ administrator right in the supergroup. Returns _True_ on success.',
+    markdown: 'Use this method to clear the list of pinned messages in a forum topic in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the _can\\_pin\\_messages_ administrator right in the supergroup. Returns _True_ on success.',
   },
   parameters: [
     {
@@ -7524,7 +7629,7 @@ const sendGift: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'Identifier of the gift',
+        markdown: 'Identifier of the gift; limited gifts can\'t be sent to channel chats',
       },
       required: true,
       jsonSerialized: false,
@@ -8240,12 +8345,146 @@ const getBusinessAccountGifts: ApiMethod = {
       jsonSerialized: false,
     },
     {
-      name: 'exclude_limited',
+      name: 'exclude_limited_upgradable',
       type: {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to exclude gifts that can be purchased a limited number of times',
+        markdown: 'Pass _True_ to exclude gifts that can be purchased a limited number of times and can be upgraded to unique',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'exclude_limited_non_upgradable',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to exclude gifts that can be purchased a limited number of times and can\'t be upgraded to unique',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'exclude_unique',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to exclude unique gifts',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'exclude_from_blockchain',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to exclude gifts that were assigned from the TON blockchain and can\'t be resold or transferred in Telegram',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'sort_by_price',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to sort results by gift price instead of send date. Sorting is applied before pagination.',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'offset',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'limit',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'The maximum number of gifts to be returned; 1-100. Defaults to 100',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+  ],
+  returnType: {
+    type: 'api-type',
+    name: 'OwnedGifts',
+  },
+}
+
+const getUserGifts: ApiMethod = {
+  name: 'getUserGifts',
+  description: {
+    markdown: 'Returns the gifts owned and hosted by a user. Returns [OwnedGifts](https://core.telegram.org/bots/api#ownedgifts) on success.',
+  },
+  parameters: [
+    {
+      name: 'user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier of the user',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'exclude_unlimited',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to exclude gifts that can be purchased an unlimited number of times',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'exclude_limited_upgradable',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to exclude gifts that can be purchased a limited number of times and can be upgraded to unique',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'exclude_limited_non_upgradable',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to exclude gifts that can be purchased a limited number of times and can\'t be upgraded to unique',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'exclude_from_blockchain',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to exclude gifts that were assigned from the TON blockchain and can\'t be resold or transferred in Telegram',
       },
       required: false,
       jsonSerialized: false,
@@ -8278,7 +8517,149 @@ const getBusinessAccountGifts: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results',
+        markdown: 'Offset of the first entry to return as received from the previous request; use an empty string to get the first chunk of results',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'limit',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'The maximum number of gifts to be returned; 1-100. Defaults to 100',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+  ],
+  returnType: {
+    type: 'api-type',
+    name: 'OwnedGifts',
+  },
+}
+
+const getChatGifts: ApiMethod = {
+  name: 'getChatGifts',
+  description: {
+    markdown: 'Returns the gifts owned by a chat. Returns [OwnedGifts](https://core.telegram.org/bots/api#ownedgifts) on success.',
+  },
+  parameters: [
+    {
+      name: 'chat_id',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+          },
+          {
+            type: 'str',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'exclude_unsaved',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to exclude gifts that aren\'t saved to the chat\'s profile page. Always _True_, unless the bot has the _can\\_post\\_messages_ administrator right in the channel.',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'exclude_saved',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to exclude gifts that are saved to the chat\'s profile page. Always _False_, unless the bot has the _can\\_post\\_messages_ administrator right in the channel.',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'exclude_unlimited',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to exclude gifts that can be purchased an unlimited number of times',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'exclude_limited_upgradable',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to exclude gifts that can be purchased a limited number of times and can be upgraded to unique',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'exclude_limited_non_upgradable',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to exclude gifts that can be purchased a limited number of times and can\'t be upgraded to unique',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'exclude_from_blockchain',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to exclude gifts that were assigned from the TON blockchain and can\'t be resold or transferred in Telegram',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'exclude_unique',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to exclude unique gifts',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'sort_by_price',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to sort results by gift price instead of send date. Sorting is applied before pagination.',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'offset',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Offset of the first entry to return as received from the previous request; use an empty string to get the first chunk of results',
       },
       required: false,
       jsonSerialized: false,
@@ -8541,6 +8922,85 @@ const postStory: ApiMethod = {
       },
       required: false,
       jsonSerialized: true,
+    },
+    {
+      name: 'post_to_chat_page',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to keep the story accessible after it expires',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+    {
+      name: 'protect_content',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the content of the story must be protected from forwarding and screenshotting',
+      },
+      required: false,
+      jsonSerialized: false,
+    },
+  ],
+  returnType: {
+    type: 'api-type',
+    name: 'Story',
+  },
+}
+
+const repostStory: ApiMethod = {
+  name: 'repostStory',
+  description: {
+    markdown: 'Reposts a story on behalf of a business account from another business account. Both business accounts must be managed by the same bot, and the story on the source account must have been posted (or reposted) by the bot. Requires the _can\\_manage\\_stories_ business bot right for both business accounts. Returns [Story](https://core.telegram.org/bots/api#story) on success.',
+  },
+  parameters: [
+    {
+      name: 'business_connection_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the business connection',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'from_chat_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier of the chat which posted the story that should be reposted',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'from_story_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier of the story that should be reposted',
+      },
+      required: true,
+      jsonSerialized: false,
+    },
+    {
+      name: 'active_period',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Period after which the story is moved to the archive, in seconds; must be one of `6 * 3600`, `12 * 3600`, `86400`, or `2 * 86400`',
+      },
+      required: true,
+      jsonSerialized: false,
     },
     {
       name: 'post_to_chat_page',
@@ -9755,7 +10215,7 @@ const sendSticker: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -10754,7 +11214,7 @@ const sendInvoice: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -11664,7 +12124,7 @@ const sendGame: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target message thread (topic) of the forum; for forum supergroups only',
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
       jsonSerialized: false,
@@ -11946,6 +12406,7 @@ export const methods = {
   sendPoll,
   sendChecklist,
   sendDice,
+  sendMessageDraft,
   sendChatAction,
   setMessageReaction,
   getUserProfilePhotos,
@@ -12028,10 +12489,13 @@ export const methods = {
   getBusinessAccountStarBalance,
   transferBusinessAccountStars,
   getBusinessAccountGifts,
+  getUserGifts,
+  getChatGifts,
   convertGiftToStars,
   upgradeGift,
   transferGift,
   postStory,
+  repostStory,
   editStory,
   deleteStory,
   editMessageText,
