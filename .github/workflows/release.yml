@@ -29,6 +29,18 @@ jobs:
       - run: pnpm run build
       - run: pnpm publish --access=public --provenance --no-git-checks
 
+  publish-jsr:
+    name: Publish to JSR
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - run: npx jsr publish
+
   changelog:
     runs-on: ubuntu-latest
     permissions:
