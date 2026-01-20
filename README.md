@@ -20,10 +20,7 @@ deno add jsr:@grom/bot-api-spec
 
 ## Usage
 
-Root module exports two objects:
-
-1. `types` — definition of all Bot API types
-2. `methods` — definition of all Bot API methods
+Root module exports two objects: `types` and `methods`, containing definitions of all Bot API types and methods respectively.
 
 ```ts
 import { types, methods } from '@grom.js/bot-api-spec' // '@grom/bot-api-spec' for JSR
