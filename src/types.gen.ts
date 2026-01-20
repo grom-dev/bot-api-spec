@@ -19801,7 +19801,9 @@ const GameHighScore = t({
 
 /**
  * Definition of all Bot API types as an object.
- * Properties are created in the same order as they appear in the docs.
+ *
+ * Properties are defined in the same order as they appear in the
+ * {@link https://core.telegram.org/bots/api Telegram Bot API documentation}.
  */
 export const types = {
   Update,
