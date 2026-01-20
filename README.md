@@ -1,21 +1,93 @@
+[![bot-api](https://img.shields.io/badge/v9.3-000?style=flat&logo=telegram&logoColor=%2325A3E1&label=Bot%20API&labelColor=%23000&color=%2325A3E1)][bot-api]
+[![npm](https://img.shields.io/npm/v/%40grom.js%2Fbot-api-spec?style=flat&logo=npm&logoColor=%23BB443E&logoSize=auto&label=%C2%A0&labelColor=%23fff&color=%23BB443E)](https://www.npmjs.com/package/@grom.js/tgx)
+[![jsr](https://img.shields.io/jsr/v/%40grom/bot-api-spec?style=flat&logo=jsr&logoColor=%231B3646&logoSize=auto&label=%C2%A0&labelColor=%23F3E051&color=%231B3646)](https://jsr.io/@grom/tgx)
+
 [Telegram Bot API](https://core.telegram.org/bots/api) specification as a collection of JavaScript objects in a [custom format](#format).
 
 ## Motivation
 
 Automatically generate tools, libraries, MCP servers, custom documentations, etc.
 
+## Installation
+
+```sh
+# Using npm
+npm install @grom.js/bot-api-spec
+
+# Using JSR
+deno add jsr:@grom/bot-api-spec
+```
+
 ## Usage
 
-```ts
-import { types, methods } from '@grom.js/bot-api-spec'
+Root module exports two objects:
 
-console.log(types)   // { Update: <definition of Update>, ... }
-console.log(methods) // { getUpdates: <definition of getUpdates>, ... }
+1. `types` — definition of all Bot API types
+2. `methods` — definition of all Bot API methods
+
+```ts
+import { types, methods } from '@grom.js/bot-api-spec' // '@grom/bot-api-spec' for JSR
+
+console.log(types)
+// {
+//   Update: {
+//     name: 'Update',
+//     description: { markdown: '...' },
+//     fields: [
+//       {
+//         name: 'update_id',
+//         type: { type: 'int32' },
+//         description: { markdown: '...' },
+//         required: true,
+//       },
+//       ...
+//     ],
+//   },
+//   ...
+// }
+
+console.log(methods)
+// {
+//   getUpdates: {
+//     name: 'getUpdates',
+//     description: { markdown: '...' },
+//     parameters: [
+//       {
+//        name: 'offset',
+//        type: { type: 'int32' },
+//        description: { markdown: '...' },
+//        required: false,
+//      },
+//      ...
+//     ],
+//     returnType: {
+//       type: 'array',
+//       of: {
+//         type: 'api-type',
+//         name: 'Update',
+//       },
+//     },
+//   },
+//   ...
+// }
 ```
 
 ## Format
 
-See [./src/types.ts](./src/types.ts)
+Refer to the [./src/format.ts](./src/format.ts) module for reference.
+
+You can also import types in your code:
+
+```ts
+import type { ValueType } from '@grom.js/bot-api-spec/format' // '@grom/bot-api-spec/format' for JSR
+
+function generateCode(valueType: ValueType): string {
+  if (valueType.type === 'str') {
+    return 'string'
+  }
+  // ...
+}
+```
 
 ### Value Types
 
@@ -36,9 +108,13 @@ Below are the rules how we map type of a field/parameter to the `ValueType`:
 
 ### Descriptions
 
-Objects also include descriptions of the API types, methods, fields, and parameters, with the following remarks:
+All definitions of types, methods, fields, and parameters include their descriptions.
 
-- Description is an object with a single `markdown` property, a string containing the description in Markdown format with formatting (**bold**, _italic_, etc.) and links preserved.
-- "_Optional._" prefix in field descriptions is omitted; instead, the `required` property is set to `false` for such fields.
-- "JSON-serialized..." in field/parameter descriptions is omitted; instead, the `jsonSerialized` property is set to `true` for such fields/parameters.
-- "...may have more than 32 significant bits...but it has at most 52 significant bits..." in _Integer_ field/parameter descriptions is omitted; instead, `type` is set to `int53` for such fields/parameters (as per [TDLib](https://core.telegram.org/tdlib/docs/td__api_8h.html#a6f57ab89c6371535f0fb7fec2d770126)).
+Descriptions are copied verbatim from the official [Bot API documentation][bot-api], with the following modifications:
+
+- Description HTML is parsed and converted to Markdown.
+- The "_Optional._" prefix is omitted from field descriptions. Instead, the `required` property is set to `false` for such fields.
+- "JSON-serialized..." portions are omitted from field/parameter descriptions.
+- "...may have more than 32 significant bits...but it has at most 52 significant bits..." portions are omitted from _Integer_ field/parameter descriptions. Instead, the `type` is set to `int53` for such fields/parameters (as per [TDLib](https://core.telegram.org/tdlib/docs/td__api_8h.html#a6f57ab89c6371535f0fb7fec2d770126)).
+
+[bot-api]: https://core.telegram.org/bots/api
