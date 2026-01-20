@@ -1,3 +1,10 @@
+/**
+ * This module exports types for representing Bot API methods and types
+ * in a structured format.
+ *
+ * @module
+ */
+
 import type { types } from './types.gen.ts'
 
 /**
@@ -8,6 +15,9 @@ export type ApiType
   = | ApiTypeObject
     | ApiTypeOneOf
 
+/**
+ * Bot API type represented as an object with fields.
+ */
 export interface ApiTypeObject {
   /**
    * Name of the type.
@@ -27,6 +37,9 @@ export interface ApiTypeObject {
   oneOf?: never
 }
 
+/**
+ * Bot API type represented as a union of other types.
+ */
 export interface ApiTypeOneOf {
   /**
    * Name of the type.
@@ -46,6 +59,9 @@ export interface ApiTypeOneOf {
   fields?: never
 }
 
+/**
+ * Bot API method with parameters and return type.
+ */
 export interface ApiMethod {
   /**
    * Name of the method.
@@ -68,6 +84,9 @@ export interface ApiMethod {
   returnType: ValueType
 }
 
+/**
+ * Field of a type or parameter of a method.
+ */
 export interface FieldOrParam {
   /**
    * Name of the field/parameter.
