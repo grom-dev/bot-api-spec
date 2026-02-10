@@ -1,6 +1,6 @@
 [![bot-api](https://img.shields.io/badge/v9.4-000?style=flat&logo=telegram&logoColor=%2325A3E1&label=Bot%20API&labelColor=%23000&color=%2325A3E1)][bot-api]
-[![npm](https://img.shields.io/npm/v/%40grom.js%2Fbot-api-spec?style=flat&logo=npm&logoColor=%23BB443E&logoSize=auto&label=%C2%A0&labelColor=%23fff&color=%23BB443E)](https://www.npmjs.com/package/@grom.js/bot-api-spec)
-[![jsr](https://img.shields.io/jsr/v/%40grom/bot-api-spec?style=flat&logo=jsr&logoColor=%231B3646&logoSize=auto&label=%C2%A0&labelColor=%23F3E051&color=%231B3646)](https://jsr.io/@grom/bot-api-spec)
+[![npm](https://img.shields.io/npm/v/%40grom.js%2Fbot-api-spec?style=flat&logo=npm&logoColor=%23BB443E&logoSize=auto&label=Latest&labelColor=%23fff&color=%23BB443E)](https://www.npmjs.com/package/@grom.js/bot-api-spec)
+[![jsr](https://img.shields.io/jsr/v/%40grom/bot-api-spec?style=flat&logo=jsr&logoColor=%231B3646&logoSize=auto&label=Latest&labelColor=%23F3E051&color=%231B3646)](https://jsr.io/@grom/bot-api-spec)
 
 [Telegram Bot API][bot-api] specification as a collection of JavaScript objects in a [custom format](#format).
 
