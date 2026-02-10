@@ -21,7 +21,6 @@ const getUpdates: ApiMethod = {
         markdown: 'Identifier of the first update to be returned. Must be greater by one than the highest among the identifiers of previously received updates. By default, updates starting with the earliest unconfirmed update are returned. An update is considered confirmed as soon as [getUpdates](https://core.telegram.org/bots/api#getupdates) is called with an _offset_ higher than its _update\\_id_. The negative offset can be specified to retrieve updates starting from _\\-offset_ update from the end of the updates queue. All previous updates will be forgotten.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'limit',
@@ -32,7 +31,6 @@ const getUpdates: ApiMethod = {
         markdown: 'Limits the number of updates to be retrieved. Values between 1-100 are accepted. Defaults to 100.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'timeout',
@@ -43,7 +41,6 @@ const getUpdates: ApiMethod = {
         markdown: 'Timeout in seconds for long polling. Defaults to 0, i.e. usual short polling. Should be positive, short polling should be used for testing purposes only.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allowed_updates',
@@ -57,7 +54,6 @@ const getUpdates: ApiMethod = {
         markdown: 'An array of the update types you want your bot to receive. For example, specify `["message", "edited_channel_post", "callback_query"]` to only receive updates of these types. See [Update](https://core.telegram.org/bots/api#update) for a complete list of available update types. Specify an empty list to receive all update types except _chat\\_member_, _message\\_reaction_, and _message\\_reaction\\_count_ (default). If not specified, the previous setting will be used.\n\nPlease note that this parameter doesn\'t affect updates created before the call to getUpdates, so unwanted updates may be received for a short period of time.',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -84,7 +80,6 @@ const setWebhook: ApiMethod = {
         markdown: 'HTTPS URL to send updates to. Use an empty string to remove webhook integration',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'certificate',
@@ -95,7 +90,6 @@ const setWebhook: ApiMethod = {
         markdown: 'Upload your public key certificate so that the root certificate in use can be checked. See our [self-signed guide](https://core.telegram.org/bots/self-signed) for details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'ip_address',
@@ -106,7 +100,6 @@ const setWebhook: ApiMethod = {
         markdown: 'The fixed IP address which will be used to send webhook requests instead of the IP address resolved through DNS',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'max_connections',
@@ -117,7 +110,6 @@ const setWebhook: ApiMethod = {
         markdown: 'The maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery, 1-100. Defaults to _40_. Use lower values to limit the load on your bot\'s server, and higher values to increase your bot\'s throughput.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allowed_updates',
@@ -131,7 +123,6 @@ const setWebhook: ApiMethod = {
         markdown: 'An array of the update types you want your bot to receive. For example, specify `["message", "edited_channel_post", "callback_query"]` to only receive updates of these types. See [Update](https://core.telegram.org/bots/api#update) for a complete list of available update types. Specify an empty list to receive all update types except _chat\\_member_, _message\\_reaction_, and _message\\_reaction\\_count_ (default). If not specified, the previous setting will be used.\n\nPlease note that this parameter doesn\'t affect updates created before the call to the setWebhook, so unwanted updates may be received for a short period of time.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'drop_pending_updates',
@@ -142,7 +133,6 @@ const setWebhook: ApiMethod = {
         markdown: 'Pass _True_ to drop all pending updates',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'secret_token',
@@ -153,7 +143,6 @@ const setWebhook: ApiMethod = {
         markdown: 'A secret token to be sent in a header “X-Telegram-Bot-Api-Secret-Token” in every webhook request, 1-256 characters. Only characters `A-Z`, `a-z`, `0-9`, `_` and `-` are allowed. The header is useful to ensure that the request comes from a webhook set by you.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -177,7 +166,6 @@ const deleteWebhook: ApiMethod = {
         markdown: 'Pass _True_ to drop all pending updates',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -249,7 +237,6 @@ const sendMessage: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -268,7 +255,6 @@ const sendMessage: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -279,7 +265,6 @@ const sendMessage: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -290,7 +275,6 @@ const sendMessage: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'text',
@@ -301,7 +285,6 @@ const sendMessage: ApiMethod = {
         markdown: 'Text of the message to be sent, 1-4096 characters after entities parsing',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -312,7 +295,6 @@ const sendMessage: ApiMethod = {
         markdown: 'Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'entities',
@@ -327,7 +309,6 @@ const sendMessage: ApiMethod = {
         markdown: 'An array of special entities that appear in message text, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'link_preview_options',
@@ -339,7 +320,6 @@ const sendMessage: ApiMethod = {
         markdown: 'Link preview generation options for the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -350,7 +330,6 @@ const sendMessage: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -361,7 +340,6 @@ const sendMessage: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -372,7 +350,6 @@ const sendMessage: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -383,7 +360,6 @@ const sendMessage: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -395,7 +371,6 @@ const sendMessage: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_parameters',
@@ -407,7 +382,6 @@ const sendMessage: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -436,7 +410,6 @@ const sendMessage: ApiMethod = {
         markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -468,7 +441,6 @@ const forwardMessage: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -479,7 +451,6 @@ const forwardMessage: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -490,7 +461,6 @@ const forwardMessage: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be forwarded; required if the message is forwarded to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'from_chat_id',
@@ -509,7 +479,6 @@ const forwardMessage: ApiMethod = {
         markdown: 'Unique identifier for the chat where the original message was sent (or channel username in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'video_start_timestamp',
@@ -520,7 +489,6 @@ const forwardMessage: ApiMethod = {
         markdown: 'New start timestamp for the forwarded video in the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -531,7 +499,6 @@ const forwardMessage: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -542,7 +509,6 @@ const forwardMessage: ApiMethod = {
         markdown: 'Protects the contents of the forwarded message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -553,7 +519,6 @@ const forwardMessage: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; only available when forwarding to private chats',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -565,7 +530,6 @@ const forwardMessage: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'message_id',
@@ -576,7 +540,6 @@ const forwardMessage: ApiMethod = {
         markdown: 'Message identifier in the chat specified in _from\\_chat\\_id_',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -608,7 +571,6 @@ const forwardMessages: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -619,7 +581,6 @@ const forwardMessages: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -630,7 +591,6 @@ const forwardMessages: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the messages will be forwarded; required if the messages are forwarded to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'from_chat_id',
@@ -649,7 +609,6 @@ const forwardMessages: ApiMethod = {
         markdown: 'Unique identifier for the chat where the original messages were sent (or channel username in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_ids',
@@ -663,7 +622,6 @@ const forwardMessages: ApiMethod = {
         markdown: 'An array of 1-100 identifiers of messages in the chat _from\\_chat\\_id_ to forward. The identifiers must be specified in a strictly increasing order.',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'disable_notification',
@@ -674,7 +632,6 @@ const forwardMessages: ApiMethod = {
         markdown: 'Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -685,7 +642,6 @@ const forwardMessages: ApiMethod = {
         markdown: 'Protects the contents of the forwarded messages from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -720,7 +676,6 @@ const copyMessage: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -731,7 +686,6 @@ const copyMessage: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -742,7 +696,6 @@ const copyMessage: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'from_chat_id',
@@ -761,7 +714,6 @@ const copyMessage: ApiMethod = {
         markdown: 'Unique identifier for the chat where the original message was sent (or channel username in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -772,7 +724,6 @@ const copyMessage: ApiMethod = {
         markdown: 'Message identifier in the chat specified in _from\\_chat\\_id_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'video_start_timestamp',
@@ -783,7 +734,6 @@ const copyMessage: ApiMethod = {
         markdown: 'New start timestamp for the copied video in the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -794,7 +744,6 @@ const copyMessage: ApiMethod = {
         markdown: 'New caption for media, 0-1024 characters after entities parsing. If not specified, the original caption is kept',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -805,7 +754,6 @@ const copyMessage: ApiMethod = {
         markdown: 'Mode for parsing entities in the new caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -820,7 +768,6 @@ const copyMessage: ApiMethod = {
         markdown: 'An array of special entities that appear in the new caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'show_caption_above_media',
@@ -831,7 +778,6 @@ const copyMessage: ApiMethod = {
         markdown: 'Pass _True_, if the caption must be shown above the message media. Ignored if a new caption isn\'t specified.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -842,7 +788,6 @@ const copyMessage: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -853,7 +798,6 @@ const copyMessage: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -864,7 +808,6 @@ const copyMessage: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -875,7 +818,6 @@ const copyMessage: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; only available when copying to private chats',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -887,7 +829,6 @@ const copyMessage: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_parameters',
@@ -899,7 +840,6 @@ const copyMessage: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -928,7 +868,6 @@ const copyMessage: ApiMethod = {
         markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -960,7 +899,6 @@ const copyMessages: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -971,7 +909,6 @@ const copyMessages: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -982,7 +919,6 @@ const copyMessages: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'from_chat_id',
@@ -1001,7 +937,6 @@ const copyMessages: ApiMethod = {
         markdown: 'Unique identifier for the chat where the original messages were sent (or channel username in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_ids',
@@ -1015,7 +950,6 @@ const copyMessages: ApiMethod = {
         markdown: 'An array of 1-100 identifiers of messages in the chat _from\\_chat\\_id_ to copy. The identifiers must be specified in a strictly increasing order.',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'disable_notification',
@@ -1026,7 +960,6 @@ const copyMessages: ApiMethod = {
         markdown: 'Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -1037,7 +970,6 @@ const copyMessages: ApiMethod = {
         markdown: 'Protects the contents of the sent messages from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'remove_caption',
@@ -1048,7 +980,6 @@ const copyMessages: ApiMethod = {
         markdown: 'Pass _True_ to copy the messages without their captions',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -1075,7 +1006,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -1094,7 +1024,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -1105,7 +1034,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -1116,7 +1044,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo',
@@ -1135,7 +1062,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'Photo to send. Pass a file\\_id as String to send a photo that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a photo from the Internet, or upload a new photo using multipart/form-data. The photo must be at most 10 MB in size. The photo\'s width and height must not exceed 10000 in total. Width and height ratio must be at most 20. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -1146,7 +1072,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'Photo caption (may also be used when resending photos by _file\\_id_), 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -1157,7 +1082,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -1172,7 +1096,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'show_caption_above_media',
@@ -1183,7 +1106,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_spoiler',
@@ -1194,7 +1116,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'Pass _True_ if the photo needs to be covered with a spoiler animation',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -1205,7 +1126,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -1216,7 +1136,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -1227,7 +1146,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -1238,7 +1156,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -1250,7 +1167,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_parameters',
@@ -1262,7 +1178,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -1291,7 +1206,6 @@ const sendPhoto: ApiMethod = {
         markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -1315,7 +1229,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -1334,7 +1247,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -1345,7 +1257,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -1356,7 +1267,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'audio',
@@ -1375,7 +1285,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Audio file to send. Pass a file\\_id as String to send an audio file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get an audio file from the Internet, or upload a new one using multipart/form-data. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -1386,7 +1295,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Audio caption, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -1397,7 +1305,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Mode for parsing entities in the audio caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -1412,7 +1319,6 @@ const sendAudio: ApiMethod = {
         markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'duration',
@@ -1423,7 +1329,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Duration of the audio in seconds',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'performer',
@@ -1434,7 +1339,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Performer',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -1445,7 +1349,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Track name',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -1464,7 +1367,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -1475,7 +1377,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -1486,7 +1387,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -1497,7 +1397,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -1508,7 +1407,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -1520,7 +1418,6 @@ const sendAudio: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_parameters',
@@ -1532,7 +1429,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -1561,7 +1457,6 @@ const sendAudio: ApiMethod = {
         markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -1585,7 +1480,6 @@ const sendDocument: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -1604,7 +1498,6 @@ const sendDocument: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -1615,7 +1508,6 @@ const sendDocument: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -1626,7 +1518,6 @@ const sendDocument: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'document',
@@ -1645,7 +1536,6 @@ const sendDocument: ApiMethod = {
         markdown: 'File to send. Pass a file\\_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -1664,7 +1554,6 @@ const sendDocument: ApiMethod = {
         markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -1675,7 +1564,6 @@ const sendDocument: ApiMethod = {
         markdown: 'Document caption (may also be used when resending documents by _file\\_id_), 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -1686,7 +1574,6 @@ const sendDocument: ApiMethod = {
         markdown: 'Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -1701,7 +1588,6 @@ const sendDocument: ApiMethod = {
         markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'disable_content_type_detection',
@@ -1712,7 +1598,6 @@ const sendDocument: ApiMethod = {
         markdown: 'Disables automatic server-side content type detection for files uploaded using multipart/form-data',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -1723,7 +1608,6 @@ const sendDocument: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -1734,7 +1618,6 @@ const sendDocument: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -1745,7 +1628,6 @@ const sendDocument: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -1756,7 +1638,6 @@ const sendDocument: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -1768,7 +1649,6 @@ const sendDocument: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_parameters',
@@ -1780,7 +1660,6 @@ const sendDocument: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -1809,7 +1688,6 @@ const sendDocument: ApiMethod = {
         markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -1833,7 +1711,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -1852,7 +1729,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -1863,7 +1739,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -1874,7 +1749,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'video',
@@ -1893,7 +1767,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Video to send. Pass a file\\_id as String to send a video that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a video from the Internet, or upload a new video using multipart/form-data. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'duration',
@@ -1904,7 +1777,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Duration of sent video in seconds',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'width',
@@ -1915,7 +1787,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Video width',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'height',
@@ -1926,7 +1797,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Video height',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -1945,7 +1815,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'cover',
@@ -1964,7 +1833,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Cover for the video in the message. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'start_timestamp',
@@ -1975,7 +1843,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Start timestamp for the video in the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -1986,7 +1853,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Video caption (may also be used when resending videos by _file\\_id_), 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -1997,7 +1863,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -2012,7 +1877,6 @@ const sendVideo: ApiMethod = {
         markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'show_caption_above_media',
@@ -2023,7 +1887,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_spoiler',
@@ -2034,7 +1897,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Pass _True_ if the video needs to be covered with a spoiler animation',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'supports_streaming',
@@ -2045,7 +1907,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Pass _True_ if the uploaded video is suitable for streaming',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -2056,7 +1917,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -2067,7 +1927,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -2078,7 +1937,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -2089,7 +1947,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -2101,7 +1958,6 @@ const sendVideo: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_parameters',
@@ -2113,7 +1969,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -2142,7 +1997,6 @@ const sendVideo: ApiMethod = {
         markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -2166,7 +2020,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -2185,7 +2038,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -2196,7 +2048,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -2207,7 +2058,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'animation',
@@ -2226,7 +2076,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Animation to send. Pass a file\\_id as String to send an animation that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get an animation from the Internet, or upload a new animation using multipart/form-data. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'duration',
@@ -2237,7 +2086,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Duration of sent animation in seconds',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'width',
@@ -2248,7 +2096,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Animation width',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'height',
@@ -2259,7 +2106,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Animation height',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -2278,7 +2124,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -2289,7 +2134,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Animation caption (may also be used when resending animation by _file\\_id_), 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -2300,7 +2144,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Mode for parsing entities in the animation caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -2315,7 +2158,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'show_caption_above_media',
@@ -2326,7 +2168,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_spoiler',
@@ -2337,7 +2178,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Pass _True_ if the animation needs to be covered with a spoiler animation',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -2348,7 +2188,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -2359,7 +2198,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -2370,7 +2208,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -2381,7 +2218,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -2393,7 +2229,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_parameters',
@@ -2405,7 +2240,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -2434,7 +2268,6 @@ const sendAnimation: ApiMethod = {
         markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -2458,7 +2291,6 @@ const sendVoice: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -2477,7 +2309,6 @@ const sendVoice: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -2488,7 +2319,6 @@ const sendVoice: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -2499,7 +2329,6 @@ const sendVoice: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'voice',
@@ -2518,7 +2347,6 @@ const sendVoice: ApiMethod = {
         markdown: 'Audio file to send. Pass a file\\_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -2529,7 +2357,6 @@ const sendVoice: ApiMethod = {
         markdown: 'Voice message caption, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -2540,7 +2367,6 @@ const sendVoice: ApiMethod = {
         markdown: 'Mode for parsing entities in the voice message caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -2555,7 +2381,6 @@ const sendVoice: ApiMethod = {
         markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'duration',
@@ -2566,7 +2391,6 @@ const sendVoice: ApiMethod = {
         markdown: 'Duration of the voice message in seconds',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -2577,7 +2401,6 @@ const sendVoice: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -2588,7 +2411,6 @@ const sendVoice: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -2599,7 +2421,6 @@ const sendVoice: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -2610,7 +2431,6 @@ const sendVoice: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -2622,7 +2442,6 @@ const sendVoice: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_parameters',
@@ -2634,7 +2453,6 @@ const sendVoice: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -2663,7 +2481,6 @@ const sendVoice: ApiMethod = {
         markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -2687,7 +2504,6 @@ const sendVideoNote: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -2706,7 +2522,6 @@ const sendVideoNote: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -2717,7 +2532,6 @@ const sendVideoNote: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -2728,7 +2542,6 @@ const sendVideoNote: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'video_note',
@@ -2747,7 +2560,6 @@ const sendVideoNote: ApiMethod = {
         markdown: 'Video note to send. Pass a file\\_id as String to send a video note that exists on the Telegram servers (recommended) or upload a new video using multipart/form-data. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files). Sending video notes by a URL is currently unsupported',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'duration',
@@ -2758,7 +2570,6 @@ const sendVideoNote: ApiMethod = {
         markdown: 'Duration of sent video in seconds',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'length',
@@ -2769,7 +2580,6 @@ const sendVideoNote: ApiMethod = {
         markdown: 'Video width and height, i.e. diameter of the video message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -2788,7 +2598,6 @@ const sendVideoNote: ApiMethod = {
         markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -2799,7 +2608,6 @@ const sendVideoNote: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -2810,7 +2618,6 @@ const sendVideoNote: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -2821,7 +2628,6 @@ const sendVideoNote: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -2832,7 +2638,6 @@ const sendVideoNote: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -2844,7 +2649,6 @@ const sendVideoNote: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_parameters',
@@ -2856,7 +2660,6 @@ const sendVideoNote: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -2885,7 +2688,6 @@ const sendVideoNote: ApiMethod = {
         markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -2909,7 +2711,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -2928,7 +2729,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`). If the chat is a channel, all Telegram Star proceeds from this media will be credited to the chat\'s balance. Otherwise, they will be credited to the bot\'s balance.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -2939,7 +2739,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -2950,7 +2749,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'star_count',
@@ -2961,7 +2759,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'The number of Telegram Stars that must be paid to buy access to the media; 1-25000',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'media',
@@ -2976,7 +2773,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'An array describing the media to be sent; up to 10 items',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'payload',
@@ -2987,7 +2783,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'Bot-defined paid media payload, 0-128 bytes. This will not be displayed to the user, use it for your internal processes.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -2998,7 +2793,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'Media caption, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -3009,7 +2803,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'Mode for parsing entities in the media caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -3024,7 +2817,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'show_caption_above_media',
@@ -3035,7 +2827,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'Pass _True_, if the caption must be shown above the message media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -3046,7 +2837,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -3057,7 +2847,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -3068,7 +2857,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -3080,7 +2868,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_parameters',
@@ -3092,7 +2879,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -3121,7 +2907,6 @@ const sendPaidMedia: ApiMethod = {
         markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -3145,7 +2930,6 @@ const sendMediaGroup: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -3164,7 +2948,6 @@ const sendMediaGroup: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -3175,7 +2958,6 @@ const sendMediaGroup: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -3186,7 +2968,6 @@ const sendMediaGroup: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'media',
@@ -3218,7 +2999,6 @@ const sendMediaGroup: ApiMethod = {
         markdown: 'An array describing messages to be sent, must include 2-10 items',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'disable_notification',
@@ -3229,7 +3009,6 @@ const sendMediaGroup: ApiMethod = {
         markdown: 'Sends messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -3240,7 +3019,6 @@ const sendMediaGroup: ApiMethod = {
         markdown: 'Protects the contents of the sent messages from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -3251,7 +3029,6 @@ const sendMediaGroup: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -3262,7 +3039,6 @@ const sendMediaGroup: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_parameters',
@@ -3274,7 +3050,6 @@ const sendMediaGroup: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -3301,7 +3076,6 @@ const sendLocation: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -3320,7 +3094,6 @@ const sendLocation: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -3331,7 +3104,6 @@ const sendLocation: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -3342,7 +3114,6 @@ const sendLocation: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'latitude',
@@ -3353,7 +3124,6 @@ const sendLocation: ApiMethod = {
         markdown: 'Latitude of the location',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'longitude',
@@ -3364,7 +3134,6 @@ const sendLocation: ApiMethod = {
         markdown: 'Longitude of the location',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'horizontal_accuracy',
@@ -3375,7 +3144,6 @@ const sendLocation: ApiMethod = {
         markdown: 'The radius of uncertainty for the location, measured in meters; 0-1500',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'live_period',
@@ -3386,7 +3154,6 @@ const sendLocation: ApiMethod = {
         markdown: 'Period in seconds during which the location will be updated (see [Live Locations](https://telegram.org/blog/live-locations), should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'heading',
@@ -3397,7 +3164,6 @@ const sendLocation: ApiMethod = {
         markdown: 'For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'proximity_alert_radius',
@@ -3408,7 +3174,6 @@ const sendLocation: ApiMethod = {
         markdown: 'For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -3419,7 +3184,6 @@ const sendLocation: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -3430,7 +3194,6 @@ const sendLocation: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -3441,7 +3204,6 @@ const sendLocation: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -3452,7 +3214,6 @@ const sendLocation: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -3464,7 +3225,6 @@ const sendLocation: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_parameters',
@@ -3476,7 +3236,6 @@ const sendLocation: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -3505,7 +3264,6 @@ const sendLocation: ApiMethod = {
         markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -3529,7 +3287,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -3548,7 +3305,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -3559,7 +3315,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -3570,7 +3325,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'latitude',
@@ -3581,7 +3335,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Latitude of the venue',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'longitude',
@@ -3592,7 +3345,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Longitude of the venue',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -3603,7 +3355,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Name of the venue',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'address',
@@ -3614,7 +3365,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Address of the venue',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'foursquare_id',
@@ -3625,7 +3375,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Foursquare identifier of the venue',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'foursquare_type',
@@ -3636,7 +3385,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Foursquare type of the venue, if known. (For example, “arts\\_entertainment/default”, “arts\\_entertainment/aquarium” or “food/icecream”.)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'google_place_id',
@@ -3647,7 +3395,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Google Places identifier of the venue',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'google_place_type',
@@ -3658,7 +3405,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -3669,7 +3415,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -3680,7 +3425,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -3691,7 +3435,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -3702,7 +3445,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -3714,7 +3456,6 @@ const sendVenue: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_parameters',
@@ -3726,7 +3467,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -3755,7 +3495,6 @@ const sendVenue: ApiMethod = {
         markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -3779,7 +3518,6 @@ const sendContact: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -3798,7 +3536,6 @@ const sendContact: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -3809,7 +3546,6 @@ const sendContact: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -3820,7 +3556,6 @@ const sendContact: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'phone_number',
@@ -3831,7 +3566,6 @@ const sendContact: ApiMethod = {
         markdown: 'Contact\'s phone number',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'first_name',
@@ -3842,7 +3576,6 @@ const sendContact: ApiMethod = {
         markdown: 'Contact\'s first name',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'last_name',
@@ -3853,7 +3586,6 @@ const sendContact: ApiMethod = {
         markdown: 'Contact\'s last name',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'vcard',
@@ -3864,7 +3596,6 @@ const sendContact: ApiMethod = {
         markdown: 'Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -3875,7 +3606,6 @@ const sendContact: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -3886,7 +3616,6 @@ const sendContact: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -3897,7 +3626,6 @@ const sendContact: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -3908,7 +3636,6 @@ const sendContact: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -3920,7 +3647,6 @@ const sendContact: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_parameters',
@@ -3932,7 +3658,6 @@ const sendContact: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -3961,7 +3686,6 @@ const sendContact: ApiMethod = {
         markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -3985,7 +3709,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -4004,7 +3727,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`). Polls can\'t be sent to channel direct messages chats.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -4015,7 +3737,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'question',
@@ -4026,7 +3747,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Poll question, 1-300 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'question_parse_mode',
@@ -4037,7 +3757,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Mode for parsing entities in the question. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Currently, only custom emoji entities are allowed',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'question_entities',
@@ -4052,7 +3771,6 @@ const sendPoll: ApiMethod = {
         markdown: 'An array of special entities that appear in the poll question. It can be specified instead of _question\\_parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'options',
@@ -4067,7 +3785,6 @@ const sendPoll: ApiMethod = {
         markdown: 'An array of 2-12 answer options',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'is_anonymous',
@@ -4078,7 +3795,6 @@ const sendPoll: ApiMethod = {
         markdown: '_True_, if the poll needs to be anonymous, defaults to _True_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'type',
@@ -4089,7 +3805,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Poll type, “quiz” or “regular”, defaults to “regular”',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allows_multiple_answers',
@@ -4100,7 +3815,6 @@ const sendPoll: ApiMethod = {
         markdown: '_True_, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to _False_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'correct_option_id',
@@ -4111,7 +3825,6 @@ const sendPoll: ApiMethod = {
         markdown: '0-based identifier of the correct answer option, required for polls in quiz mode',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'explanation',
@@ -4122,7 +3835,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll, 0-200 characters with at most 2 line feeds after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'explanation_parse_mode',
@@ -4133,7 +3845,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Mode for parsing entities in the explanation. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'explanation_entities',
@@ -4148,7 +3859,6 @@ const sendPoll: ApiMethod = {
         markdown: 'An array of special entities that appear in the poll explanation. It can be specified instead of _explanation\\_parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'open_period',
@@ -4159,7 +3869,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Amount of time in seconds the poll will be active after creation, 5-600. Can\'t be used together with _close\\_date_.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'close_date',
@@ -4170,7 +3879,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Point in time (Unix timestamp) when the poll will be automatically closed. Must be at least 5 and no more than 600 seconds in the future. Can\'t be used together with _open\\_period_.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_closed',
@@ -4181,7 +3889,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Pass _True_ if the poll needs to be immediately closed. This can be useful for poll preview.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -4192,7 +3899,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -4203,7 +3909,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -4214,7 +3919,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -4225,7 +3929,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_parameters',
@@ -4237,7 +3940,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -4266,7 +3968,6 @@ const sendPoll: ApiMethod = {
         markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -4290,7 +3991,6 @@ const sendChecklist: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -4301,7 +4001,6 @@ const sendChecklist: ApiMethod = {
         markdown: 'Unique identifier for the target chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'checklist',
@@ -4313,7 +4012,6 @@ const sendChecklist: ApiMethod = {
         markdown: 'An object for the checklist to send',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'disable_notification',
@@ -4324,7 +4022,6 @@ const sendChecklist: ApiMethod = {
         markdown: 'Sends the message silently. Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -4335,7 +4032,6 @@ const sendChecklist: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -4346,7 +4042,6 @@ const sendChecklist: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_parameters',
@@ -4358,7 +4053,6 @@ const sendChecklist: ApiMethod = {
         markdown: 'An object for description of the message to reply to',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_markup',
@@ -4370,7 +4064,6 @@ const sendChecklist: ApiMethod = {
         markdown: 'An object for an inline keyboard',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -4394,7 +4087,6 @@ const sendDice: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -4413,7 +4105,6 @@ const sendDice: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -4424,7 +4115,6 @@ const sendDice: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -4435,7 +4125,6 @@ const sendDice: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'emoji',
@@ -4446,7 +4135,6 @@ const sendDice: ApiMethod = {
         markdown: 'Emoji on which the dice throw animation is based. Currently, must be one of “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”, “![🎯](//telegram.org/img/emoji/40/F09F8EAF.png)”, “![🏀](//telegram.org/img/emoji/40/F09F8F80.png)”, “![⚽](//telegram.org/img/emoji/40/E29ABD.png)”, “![🎳](//telegram.org/img/emoji/40/F09F8EB3.png)”, or “![🎰](//telegram.org/img/emoji/40/F09F8EB0.png)”. Dice can have values 1-6 for “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”, “![🎯](//telegram.org/img/emoji/40/F09F8EAF.png)” and “![🎳](//telegram.org/img/emoji/40/F09F8EB3.png)”, values 1-5 for “![🏀](//telegram.org/img/emoji/40/F09F8F80.png)” and “![⚽](//telegram.org/img/emoji/40/E29ABD.png)”, and values 1-64 for “![🎰](//telegram.org/img/emoji/40/F09F8EB0.png)”. Defaults to “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -4457,7 +4145,6 @@ const sendDice: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -4468,7 +4155,6 @@ const sendDice: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -4479,7 +4165,6 @@ const sendDice: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -4490,7 +4175,6 @@ const sendDice: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -4502,7 +4186,6 @@ const sendDice: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_parameters',
@@ -4514,7 +4197,6 @@ const sendDice: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -4543,7 +4225,6 @@ const sendDice: ApiMethod = {
         markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -4567,7 +4248,6 @@ const sendMessageDraft: ApiMethod = {
         markdown: 'Unique identifier for the target private chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -4578,7 +4258,6 @@ const sendMessageDraft: ApiMethod = {
         markdown: 'Unique identifier for the target message thread',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'draft_id',
@@ -4589,7 +4268,6 @@ const sendMessageDraft: ApiMethod = {
         markdown: 'Unique identifier of the message draft; must be non-zero. Changes of drafts with the same identifier are animated',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'text',
@@ -4600,7 +4278,6 @@ const sendMessageDraft: ApiMethod = {
         markdown: 'Text of the message to be sent, 1-4096 characters after entities parsing',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -4611,7 +4288,6 @@ const sendMessageDraft: ApiMethod = {
         markdown: 'Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'entities',
@@ -4626,7 +4302,6 @@ const sendMessageDraft: ApiMethod = {
         markdown: 'An array of special entities that appear in message text, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -4650,7 +4325,6 @@ const sendChatAction: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the action will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -4669,7 +4343,6 @@ const sendChatAction: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`). Channel chats and channel direct messages chats aren\'t supported.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -4680,7 +4353,6 @@ const sendChatAction: ApiMethod = {
         markdown: 'Unique identifier for the target message thread or topic of a forum; for supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'action',
@@ -4691,7 +4363,6 @@ const sendChatAction: ApiMethod = {
         markdown: 'Type of action to broadcast. Choose one, depending on what the user is about to receive: _typing_ for [text messages](https://core.telegram.org/bots/api#sendmessage), _upload\\_photo_ for [photos](https://core.telegram.org/bots/api#sendphoto), _record\\_video_ or _upload\\_video_ for [videos](https://core.telegram.org/bots/api#sendvideo), _record\\_voice_ or _upload\\_voice_ for [voice notes](https://core.telegram.org/bots/api#sendvoice), _upload\\_document_ for [general files](https://core.telegram.org/bots/api#senddocument), _choose\\_sticker_ for [stickers](https://core.telegram.org/bots/api#sendsticker), _find\\_location_ for [location data](https://core.telegram.org/bots/api#sendlocation), _record\\_video\\_note_ or _upload\\_video\\_note_ for [video notes](https://core.telegram.org/bots/api#sendvideonote).',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -4723,7 +4394,6 @@ const setMessageReaction: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -4734,7 +4404,6 @@ const setMessageReaction: ApiMethod = {
         markdown: 'Identifier of the target message. If the message belongs to a media group, the reaction is set to the first non-deleted message in the group instead.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'reaction',
@@ -4749,7 +4418,6 @@ const setMessageReaction: ApiMethod = {
         markdown: 'An array of reaction types to set on the message. Currently, as non-premium users, bots can set up to one reaction per message. A custom emoji reaction can be used if it is either already present on the message or explicitly allowed by chat administrators. Paid reactions can\'t be used by bots.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'is_big',
@@ -4760,7 +4428,6 @@ const setMessageReaction: ApiMethod = {
         markdown: 'Pass _True_ to set the reaction with a big animation',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -4784,7 +4451,6 @@ const getUserProfilePhotos: ApiMethod = {
         markdown: 'Unique identifier of the target user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'offset',
@@ -4795,7 +4461,6 @@ const getUserProfilePhotos: ApiMethod = {
         markdown: 'Sequential number of the first photo to be returned. By default, all photos are returned.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'limit',
@@ -4806,12 +4471,54 @@ const getUserProfilePhotos: ApiMethod = {
         markdown: 'Limits the number of photos to be retrieved. Values between 1-100 are accepted. Defaults to 100.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
     type: 'api-type',
     name: 'UserProfilePhotos',
+  },
+}
+
+const getUserProfileAudios: ApiMethod = {
+  name: 'getUserProfileAudios',
+  description: {
+    markdown: 'Use this method to get a list of profile audios for a user. Returns a [UserProfileAudios](https://core.telegram.org/bots/api#userprofileaudios) object.',
+  },
+  parameters: [
+    {
+      name: 'user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier of the target user',
+      },
+      required: true,
+    },
+    {
+      name: 'offset',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Sequential number of the first audio to be returned. By default, all audios are returned.',
+      },
+      required: false,
+    },
+    {
+      name: 'limit',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Limits the number of audios to be retrieved. Values between 1-100 are accepted. Defaults to 100.',
+      },
+      required: false,
+    },
+  ],
+  returnType: {
+    type: 'api-type',
+    name: 'UserProfileAudios',
   },
 }
 
@@ -4830,7 +4537,6 @@ const setUserEmojiStatus: ApiMethod = {
         markdown: 'Unique identifier of the target user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'emoji_status_custom_emoji_id',
@@ -4841,7 +4547,6 @@ const setUserEmojiStatus: ApiMethod = {
         markdown: 'Custom emoji identifier of the emoji status to set. Pass an empty string to remove the status.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'emoji_status_expiration_date',
@@ -4852,7 +4557,6 @@ const setUserEmojiStatus: ApiMethod = {
         markdown: 'Expiration date of the emoji status, if any',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -4876,7 +4580,6 @@ const getFile: ApiMethod = {
         markdown: 'File identifier to get information about',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -4908,7 +4611,6 @@ const banChatMember: ApiMethod = {
         markdown: 'Unique identifier for the target group or username of the target supergroup or channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user_id',
@@ -4919,7 +4621,6 @@ const banChatMember: ApiMethod = {
         markdown: 'Unique identifier of the target user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'until_date',
@@ -4930,7 +4631,6 @@ const banChatMember: ApiMethod = {
         markdown: 'Date when the user will be unbanned; Unix time. If user is banned for more than 366 days or less than 30 seconds from the current time they are considered to be banned forever. Applied for supergroups and channels only.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'revoke_messages',
@@ -4941,7 +4641,6 @@ const banChatMember: ApiMethod = {
         markdown: 'Pass _True_ to delete all messages from the chat for the user that is being removed. If _False_, the user will be able to see messages in the group that were sent before the user was removed. Always _True_ for supergroups and channels.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -4973,7 +4672,6 @@ const unbanChatMember: ApiMethod = {
         markdown: 'Unique identifier for the target group or username of the target supergroup or channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user_id',
@@ -4984,7 +4682,6 @@ const unbanChatMember: ApiMethod = {
         markdown: 'Unique identifier of the target user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'only_if_banned',
@@ -4995,7 +4692,6 @@ const unbanChatMember: ApiMethod = {
         markdown: 'Do nothing if the user is not banned',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -5027,7 +4723,6 @@ const restrictChatMember: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user_id',
@@ -5038,7 +4733,6 @@ const restrictChatMember: ApiMethod = {
         markdown: 'Unique identifier of the target user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'permissions',
@@ -5050,7 +4744,6 @@ const restrictChatMember: ApiMethod = {
         markdown: 'An object for new user permissions',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'use_independent_chat_permissions',
@@ -5061,7 +4754,6 @@ const restrictChatMember: ApiMethod = {
         markdown: 'Pass _True_ if chat permissions are set independently. Otherwise, the _can\\_send\\_other\\_messages_ and _can\\_add\\_web\\_page\\_previews_ permissions will imply the _can\\_send\\_messages_, _can\\_send\\_audios_, _can\\_send\\_documents_, _can\\_send\\_photos_, _can\\_send\\_videos_, _can\\_send\\_video\\_notes_, and _can\\_send\\_voice\\_notes_ permissions; the _can\\_send\\_polls_ permission will imply the _can\\_send\\_messages_ permission.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'until_date',
@@ -5072,7 +4764,6 @@ const restrictChatMember: ApiMethod = {
         markdown: 'Date when restrictions will be lifted for the user; Unix time. If user is restricted for more than 366 days or less than 30 seconds from the current time, they are considered to be restricted forever',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -5104,7 +4795,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user_id',
@@ -5115,7 +4805,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Unique identifier of the target user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_anonymous',
@@ -5126,7 +4815,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Pass _True_ if the administrator\'s presence in the chat is hidden',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_manage_chat',
@@ -5137,7 +4825,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Pass _True_ if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages, ignore slow mode, and send messages to the chat without paying Telegram Stars. Implied by any other administrator privilege.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_delete_messages',
@@ -5148,7 +4835,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Pass _True_ if the administrator can delete messages of other users',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_manage_video_chats',
@@ -5159,7 +4845,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Pass _True_ if the administrator can manage video chats',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_restrict_members',
@@ -5170,7 +4855,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Pass _True_ if the administrator can restrict, ban or unban chat members, or access supergroup statistics. For backward compatibility, defaults to _True_ for promotions of channel administrators',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_promote_members',
@@ -5181,7 +4865,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Pass _True_ if the administrator can add new administrators with a subset of their own privileges or demote administrators that they have promoted, directly or indirectly (promoted by administrators that were appointed by him)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_change_info',
@@ -5192,7 +4875,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Pass _True_ if the administrator can change chat title, photo and other settings',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_invite_users',
@@ -5203,7 +4885,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Pass _True_ if the administrator can invite new users to the chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_post_stories',
@@ -5214,7 +4895,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Pass _True_ if the administrator can post stories to the chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_edit_stories',
@@ -5225,7 +4905,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Pass _True_ if the administrator can edit stories posted by other users, post stories to the chat page, pin chat stories, and access the chat\'s story archive',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_delete_stories',
@@ -5236,7 +4915,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Pass _True_ if the administrator can delete stories posted by other users',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_post_messages',
@@ -5247,7 +4925,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Pass _True_ if the administrator can post messages in the channel, approve suggested posts, or access channel statistics; for channels only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_edit_messages',
@@ -5258,7 +4935,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Pass _True_ if the administrator can edit messages of other users and can pin messages; for channels only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_pin_messages',
@@ -5269,7 +4945,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Pass _True_ if the administrator can pin messages; for supergroups only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_manage_topics',
@@ -5280,7 +4955,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Pass _True_ if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_manage_direct_messages',
@@ -5291,7 +4965,6 @@ const promoteChatMember: ApiMethod = {
         markdown: 'Pass _True_ if the administrator can manage direct messages within the channel and decline suggested posts; for channels only',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -5323,7 +4996,6 @@ const setChatAdministratorCustomTitle: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user_id',
@@ -5334,7 +5006,6 @@ const setChatAdministratorCustomTitle: ApiMethod = {
         markdown: 'Unique identifier of the target user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'custom_title',
@@ -5345,7 +5016,6 @@ const setChatAdministratorCustomTitle: ApiMethod = {
         markdown: 'New custom title for the administrator; 0-16 characters, emoji are not allowed',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -5377,7 +5047,6 @@ const banChatSenderChat: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'sender_chat_id',
@@ -5388,7 +5057,6 @@ const banChatSenderChat: ApiMethod = {
         markdown: 'Unique identifier of the target sender chat',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -5420,7 +5088,6 @@ const unbanChatSenderChat: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'sender_chat_id',
@@ -5431,7 +5098,6 @@ const unbanChatSenderChat: ApiMethod = {
         markdown: 'Unique identifier of the target sender chat',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -5463,7 +5129,6 @@ const setChatPermissions: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'permissions',
@@ -5475,7 +5140,6 @@ const setChatPermissions: ApiMethod = {
         markdown: 'An object for new default chat permissions',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'use_independent_chat_permissions',
@@ -5486,7 +5150,6 @@ const setChatPermissions: ApiMethod = {
         markdown: 'Pass _True_ if chat permissions are set independently. Otherwise, the _can\\_send\\_other\\_messages_ and _can\\_add\\_web\\_page\\_previews_ permissions will imply the _can\\_send\\_messages_, _can\\_send\\_audios_, _can\\_send\\_documents_, _can\\_send\\_photos_, _can\\_send\\_videos_, _can\\_send\\_video\\_notes_, and _can\\_send\\_voice\\_notes_ permissions; the _can\\_send\\_polls_ permission will imply the _can\\_send\\_messages_ permission.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -5518,7 +5181,6 @@ const exportChatInviteLink: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -5549,7 +5211,6 @@ const createChatInviteLink: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'name',
@@ -5560,7 +5221,6 @@ const createChatInviteLink: ApiMethod = {
         markdown: 'Invite link name; 0-32 characters',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'expire_date',
@@ -5571,7 +5231,6 @@ const createChatInviteLink: ApiMethod = {
         markdown: 'Point in time (Unix timestamp) when the link will expire',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'member_limit',
@@ -5582,7 +5241,6 @@ const createChatInviteLink: ApiMethod = {
         markdown: 'The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'creates_join_request',
@@ -5593,7 +5251,6 @@ const createChatInviteLink: ApiMethod = {
         markdown: '_True_, if users joining the chat via the link need to be approved by chat administrators. If _True_, _member\\_limit_ can\'t be specified',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -5625,7 +5282,6 @@ const editChatInviteLink: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'invite_link',
@@ -5636,7 +5292,6 @@ const editChatInviteLink: ApiMethod = {
         markdown: 'The invite link to edit',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'name',
@@ -5647,7 +5302,6 @@ const editChatInviteLink: ApiMethod = {
         markdown: 'Invite link name; 0-32 characters',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'expire_date',
@@ -5658,7 +5312,6 @@ const editChatInviteLink: ApiMethod = {
         markdown: 'Point in time (Unix timestamp) when the link will expire',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'member_limit',
@@ -5669,7 +5322,6 @@ const editChatInviteLink: ApiMethod = {
         markdown: 'The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'creates_join_request',
@@ -5680,7 +5332,6 @@ const editChatInviteLink: ApiMethod = {
         markdown: '_True_, if users joining the chat via the link need to be approved by chat administrators. If _True_, _member\\_limit_ can\'t be specified',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -5712,7 +5363,6 @@ const createChatSubscriptionInviteLink: ApiMethod = {
         markdown: 'Unique identifier for the target channel chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'name',
@@ -5723,7 +5373,6 @@ const createChatSubscriptionInviteLink: ApiMethod = {
         markdown: 'Invite link name; 0-32 characters',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'subscription_period',
@@ -5734,7 +5383,6 @@ const createChatSubscriptionInviteLink: ApiMethod = {
         markdown: 'The number of seconds the subscription will be active for before the next payment. Currently, it must always be 2592000 (30 days).',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'subscription_price',
@@ -5745,7 +5393,6 @@ const createChatSubscriptionInviteLink: ApiMethod = {
         markdown: 'The amount of Telegram Stars a user must pay initially and after each subsequent subscription period to be a member of the chat; 1-10000',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -5777,7 +5424,6 @@ const editChatSubscriptionInviteLink: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'invite_link',
@@ -5788,7 +5434,6 @@ const editChatSubscriptionInviteLink: ApiMethod = {
         markdown: 'The invite link to edit',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'name',
@@ -5799,7 +5444,6 @@ const editChatSubscriptionInviteLink: ApiMethod = {
         markdown: 'Invite link name; 0-32 characters',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -5831,7 +5475,6 @@ const revokeChatInviteLink: ApiMethod = {
         markdown: 'Unique identifier of the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'invite_link',
@@ -5842,7 +5485,6 @@ const revokeChatInviteLink: ApiMethod = {
         markdown: 'The invite link to revoke',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -5874,7 +5516,6 @@ const approveChatJoinRequest: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user_id',
@@ -5885,7 +5526,6 @@ const approveChatJoinRequest: ApiMethod = {
         markdown: 'Unique identifier of the target user',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -5917,7 +5557,6 @@ const declineChatJoinRequest: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user_id',
@@ -5928,7 +5567,6 @@ const declineChatJoinRequest: ApiMethod = {
         markdown: 'Unique identifier of the target user',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -5960,7 +5598,6 @@ const setChatPhoto: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'photo',
@@ -5971,7 +5608,6 @@ const setChatPhoto: ApiMethod = {
         markdown: 'New chat photo, uploaded using multipart/form-data',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6003,7 +5639,6 @@ const deleteChatPhoto: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6035,7 +5670,6 @@ const setChatTitle: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -6046,7 +5680,6 @@ const setChatTitle: ApiMethod = {
         markdown: 'New chat title, 1-128 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6078,7 +5711,6 @@ const setChatDescription: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'description',
@@ -6089,7 +5721,6 @@ const setChatDescription: ApiMethod = {
         markdown: 'New chat description, 0-255 characters',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6113,7 +5744,6 @@ const pinChatMessage: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be pinned',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -6132,7 +5762,6 @@ const pinChatMessage: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -6143,7 +5772,6 @@ const pinChatMessage: ApiMethod = {
         markdown: 'Identifier of a message to pin',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -6154,7 +5782,6 @@ const pinChatMessage: ApiMethod = {
         markdown: 'Pass _True_ if it is not necessary to send a notification to all chat members about the new pinned message. Notifications are always disabled in channels and private chats.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6178,7 +5805,6 @@ const unpinChatMessage: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be unpinned',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -6197,7 +5823,6 @@ const unpinChatMessage: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -6208,7 +5833,6 @@ const unpinChatMessage: ApiMethod = {
         markdown: 'Identifier of the message to unpin. Required if _business\\_connection\\_id_ is specified. If not specified, the most recent pinned message (by sending date) will be unpinned.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6240,7 +5864,6 @@ const unpinAllChatMessages: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6272,7 +5895,6 @@ const leaveChat: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`). Channel direct messages chats aren\'t supported; leave the corresponding channel instead.',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6304,7 +5926,6 @@ const getChat: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6336,7 +5957,6 @@ const getChatAdministrators: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6371,7 +5991,6 @@ const getChatMemberCount: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6402,7 +6021,6 @@ const getChatMember: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user_id',
@@ -6413,7 +6031,6 @@ const getChatMember: ApiMethod = {
         markdown: 'Unique identifier of the target user',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6445,7 +6062,6 @@ const setChatStickerSet: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'sticker_set_name',
@@ -6456,7 +6072,6 @@ const setChatStickerSet: ApiMethod = {
         markdown: 'Name of the sticker set to be set as the group sticker set',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6488,7 +6103,6 @@ const deleteChatStickerSet: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6515,7 +6129,7 @@ const getForumTopicIconStickers: ApiMethod = {
 const createForumTopic: ApiMethod = {
   name: 'createForumTopic',
   description: {
-    markdown: 'Use this method to create a topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the _can\\_manage\\_topics_ administrator rights. Returns information about the created topic as a [ForumTopic](https://core.telegram.org/bots/api#forumtopic) object.',
+    markdown: 'Use this method to create a topic in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the _can\\_manage\\_topics_ administrator right. Returns information about the created topic as a [ForumTopic](https://core.telegram.org/bots/api#forumtopic) object.',
   },
   parameters: [
     {
@@ -6535,7 +6149,6 @@ const createForumTopic: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'name',
@@ -6546,7 +6159,6 @@ const createForumTopic: ApiMethod = {
         markdown: 'Topic name, 1-128 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'icon_color',
@@ -6557,7 +6169,6 @@ const createForumTopic: ApiMethod = {
         markdown: 'Color of the topic icon in RGB format. Currently, must be one of 7322096 (0x6FB9F0), 16766590 (0xFFD67E), 13338331 (0xCB86DB), 9367192 (0x8EEE98), 16749490 (0xFF93B2), or 16478047 (0xFB6F5F)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'icon_custom_emoji_id',
@@ -6568,7 +6179,6 @@ const createForumTopic: ApiMethod = {
         markdown: 'Unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api#getforumtopiciconstickers) to get all allowed custom emoji identifiers.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6600,7 +6210,6 @@ const editForumTopic: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -6611,7 +6220,6 @@ const editForumTopic: ApiMethod = {
         markdown: 'Unique identifier for the target message thread of the forum topic',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'name',
@@ -6622,7 +6230,6 @@ const editForumTopic: ApiMethod = {
         markdown: 'New topic name, 0-128 characters. If not specified or empty, the current name of the topic will be kept',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'icon_custom_emoji_id',
@@ -6633,7 +6240,6 @@ const editForumTopic: ApiMethod = {
         markdown: 'New unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api#getforumtopiciconstickers) to get all allowed custom emoji identifiers. Pass an empty string to remove the icon. If not specified, the current icon will be kept',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6665,7 +6271,6 @@ const closeForumTopic: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -6676,7 +6281,6 @@ const closeForumTopic: ApiMethod = {
         markdown: 'Unique identifier for the target message thread of the forum topic',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6708,7 +6312,6 @@ const reopenForumTopic: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -6719,7 +6322,6 @@ const reopenForumTopic: ApiMethod = {
         markdown: 'Unique identifier for the target message thread of the forum topic',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6751,7 +6353,6 @@ const deleteForumTopic: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -6762,7 +6363,6 @@ const deleteForumTopic: ApiMethod = {
         markdown: 'Unique identifier for the target message thread of the forum topic',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6794,7 +6394,6 @@ const unpinAllForumTopicMessages: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -6805,7 +6404,6 @@ const unpinAllForumTopicMessages: ApiMethod = {
         markdown: 'Unique identifier for the target message thread of the forum topic',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6837,7 +6435,6 @@ const editGeneralForumTopic: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'name',
@@ -6848,7 +6445,6 @@ const editGeneralForumTopic: ApiMethod = {
         markdown: 'New topic name, 1-128 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6880,7 +6476,6 @@ const closeGeneralForumTopic: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6912,7 +6507,6 @@ const reopenGeneralForumTopic: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6944,7 +6538,6 @@ const hideGeneralForumTopic: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -6976,7 +6569,6 @@ const unhideGeneralForumTopic: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7008,7 +6600,6 @@ const unpinAllGeneralForumTopicMessages: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7032,7 +6623,6 @@ const answerCallbackQuery: ApiMethod = {
         markdown: 'Unique identifier for the query to be answered',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'text',
@@ -7043,7 +6633,6 @@ const answerCallbackQuery: ApiMethod = {
         markdown: 'Text of the notification. If not specified, nothing will be shown to the user, 0-200 characters',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'show_alert',
@@ -7054,7 +6643,6 @@ const answerCallbackQuery: ApiMethod = {
         markdown: 'If _True_, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to _false_.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'url',
@@ -7065,7 +6653,6 @@ const answerCallbackQuery: ApiMethod = {
         markdown: 'URL that will be opened by the user\'s client. If you have created a [Game](https://core.telegram.org/bots/api#game) and accepted the conditions via [@BotFather](https://t.me/botfather), specify the URL that opens your game - note that this will only work if the query comes from a [_callback\\_game_](https://core.telegram.org/bots/api#inlinekeyboardbutton) button.\n\nOtherwise, you may use links like `t.me/your_bot?start=XXXX` that open your bot with a parameter.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'cache_time',
@@ -7076,7 +6663,6 @@ const answerCallbackQuery: ApiMethod = {
         markdown: 'The maximum amount of time in seconds that the result of the callback query may be cached client-side. Telegram apps will support caching starting in version 3.14. Defaults to 0.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7108,7 +6694,6 @@ const getUserChatBoosts: ApiMethod = {
         markdown: 'Unique identifier for the chat or username of the channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user_id',
@@ -7119,7 +6704,6 @@ const getUserChatBoosts: ApiMethod = {
         markdown: 'Unique identifier of the target user',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7143,7 +6727,6 @@ const getBusinessConnection: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7171,7 +6754,6 @@ const setMyCommands: ApiMethod = {
         markdown: 'An array of bot commands to be set as the list of the bot\'s commands. At most 100 commands can be specified.',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'scope',
@@ -7183,7 +6765,6 @@ const setMyCommands: ApiMethod = {
         markdown: 'An object, describing scope of users for which the commands are relevant. Defaults to [BotCommandScopeDefault](https://core.telegram.org/bots/api#botcommandscopedefault).',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'language_code',
@@ -7194,7 +6775,6 @@ const setMyCommands: ApiMethod = {
         markdown: 'A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7219,7 +6799,6 @@ const deleteMyCommands: ApiMethod = {
         markdown: 'An object, describing scope of users for which the commands are relevant. Defaults to [BotCommandScopeDefault](https://core.telegram.org/bots/api#botcommandscopedefault).',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'language_code',
@@ -7230,7 +6809,6 @@ const deleteMyCommands: ApiMethod = {
         markdown: 'A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7255,7 +6833,6 @@ const getMyCommands: ApiMethod = {
         markdown: 'An object, describing scope of users. Defaults to [BotCommandScopeDefault](https://core.telegram.org/bots/api#botcommandscopedefault).',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'language_code',
@@ -7266,7 +6843,6 @@ const getMyCommands: ApiMethod = {
         markdown: 'A two-letter ISO 639-1 language code or an empty string',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7293,7 +6869,6 @@ const setMyName: ApiMethod = {
         markdown: 'New bot name; 0-64 characters. Pass an empty string to remove the dedicated name for the given language.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'language_code',
@@ -7304,7 +6879,6 @@ const setMyName: ApiMethod = {
         markdown: 'A two-letter ISO 639-1 language code. If empty, the name will be shown to all users for whose language there is no dedicated name.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7328,7 +6902,6 @@ const getMyName: ApiMethod = {
         markdown: 'A two-letter ISO 639-1 language code or an empty string',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7352,7 +6925,6 @@ const setMyDescription: ApiMethod = {
         markdown: 'New bot description; 0-512 characters. Pass an empty string to remove the dedicated description for the given language.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'language_code',
@@ -7363,7 +6935,6 @@ const setMyDescription: ApiMethod = {
         markdown: 'A two-letter ISO 639-1 language code. If empty, the description will be applied to all users for whose language there is no dedicated description.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7387,7 +6958,6 @@ const getMyDescription: ApiMethod = {
         markdown: 'A two-letter ISO 639-1 language code or an empty string',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7411,7 +6981,6 @@ const setMyShortDescription: ApiMethod = {
         markdown: 'New short description for the bot; 0-120 characters. Pass an empty string to remove the dedicated short description for the given language.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'language_code',
@@ -7422,7 +6991,6 @@ const setMyShortDescription: ApiMethod = {
         markdown: 'A two-letter ISO 639-1 language code. If empty, the short description will be applied to all users for whose language there is no dedicated short description.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7446,12 +7014,47 @@ const getMyShortDescription: ApiMethod = {
         markdown: 'A two-letter ISO 639-1 language code or an empty string',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
     type: 'api-type',
     name: 'BotShortDescription',
+  },
+}
+
+const setMyProfilePhoto: ApiMethod = {
+  name: 'setMyProfilePhoto',
+  description: {
+    markdown: 'Changes the profile photo of the bot. Returns _True_ on success.',
+  },
+  parameters: [
+    {
+      name: 'photo',
+      type: {
+        type: 'api-type',
+        name: 'InputProfilePhoto',
+      },
+      description: {
+        markdown: 'The new profile photo to set',
+      },
+      required: true,
+    },
+  ],
+  returnType: {
+    type: 'bool',
+    literal: true,
+  },
+}
+
+const removeMyProfilePhoto: ApiMethod = {
+  name: 'removeMyProfilePhoto',
+  description: {
+    markdown: 'Removes the profile photo of the bot. Requires no parameters. Returns _True_ on success.',
+  },
+  parameters: [],
+  returnType: {
+    type: 'bool',
+    literal: true,
   },
 }
 
@@ -7470,7 +7073,6 @@ const setChatMenuButton: ApiMethod = {
         markdown: 'Unique identifier for the target private chat. If not specified, default bot\'s menu button will be changed',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'menu_button',
@@ -7482,7 +7084,6 @@ const setChatMenuButton: ApiMethod = {
         markdown: 'An object for the bot\'s new menu button. Defaults to [MenuButtonDefault](https://core.telegram.org/bots/api#menubuttondefault)',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -7506,7 +7107,6 @@ const getChatMenuButton: ApiMethod = {
         markdown: 'Unique identifier for the target private chat. If not specified, default bot\'s menu button will be returned',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7531,7 +7131,6 @@ const setMyDefaultAdministratorRights: ApiMethod = {
         markdown: 'An object describing new default administrator rights. If not specified, the default administrator rights will be cleared.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'for_channels',
@@ -7542,7 +7141,6 @@ const setMyDefaultAdministratorRights: ApiMethod = {
         markdown: 'Pass _True_ to change the default administrator rights of the bot in channels. Otherwise, the default administrator rights of the bot for groups and supergroups will be changed.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7566,7 +7164,6 @@ const getMyDefaultAdministratorRights: ApiMethod = {
         markdown: 'Pass _True_ to get default administrator rights of the bot in channels. Otherwise, default administrator rights of the bot for groups and supergroups will be returned.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7602,7 +7199,6 @@ const sendGift: ApiMethod = {
         markdown: 'Required if _chat\\_id_ is not specified. Unique identifier of the target user who will receive the gift.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -7621,7 +7217,6 @@ const sendGift: ApiMethod = {
         markdown: 'Required if _user\\_id_ is not specified. Unique identifier for the chat or username of the channel (in the format `@channelusername`) that will receive the gift.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'gift_id',
@@ -7632,7 +7227,6 @@ const sendGift: ApiMethod = {
         markdown: 'Identifier of the gift; limited gifts can\'t be sent to channel chats',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'pay_for_upgrade',
@@ -7643,7 +7237,6 @@ const sendGift: ApiMethod = {
         markdown: 'Pass _True_ to pay for the gift upgrade from the bot\'s balance, thereby making the upgrade free for the receiver',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'text',
@@ -7654,7 +7247,6 @@ const sendGift: ApiMethod = {
         markdown: 'Text that will be shown along with the gift; 0-128 characters',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'text_parse_mode',
@@ -7665,7 +7257,6 @@ const sendGift: ApiMethod = {
         markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'text_entities',
@@ -7680,7 +7271,6 @@ const sendGift: ApiMethod = {
         markdown: 'An array of special entities that appear in the gift text. It can be specified instead of _text\\_parse\\_mode_. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -7704,7 +7294,6 @@ const giftPremiumSubscription: ApiMethod = {
         markdown: 'Unique identifier of the target user who will receive a Telegram Premium subscription',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'month_count',
@@ -7715,7 +7304,6 @@ const giftPremiumSubscription: ApiMethod = {
         markdown: 'Number of months the Telegram Premium subscription will be active for the user; must be one of 3, 6, or 12',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'star_count',
@@ -7726,7 +7314,6 @@ const giftPremiumSubscription: ApiMethod = {
         markdown: 'Number of Telegram Stars to pay for the Telegram Premium subscription; must be 1000 for 3 months, 1500 for 6 months, and 2500 for 12 months',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'text',
@@ -7737,7 +7324,6 @@ const giftPremiumSubscription: ApiMethod = {
         markdown: 'Text that will be shown along with the service message about the subscription; 0-128 characters',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'text_parse_mode',
@@ -7748,7 +7334,6 @@ const giftPremiumSubscription: ApiMethod = {
         markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'text_entities',
@@ -7763,7 +7348,6 @@ const giftPremiumSubscription: ApiMethod = {
         markdown: 'An array of special entities that appear in the gift text. It can be specified instead of _text\\_parse\\_mode_. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -7787,7 +7371,6 @@ const verifyUser: ApiMethod = {
         markdown: 'Unique identifier of the target user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'custom_description',
@@ -7798,7 +7381,6 @@ const verifyUser: ApiMethod = {
         markdown: 'Custom description for the verification; 0-70 characters. Must be empty if the organization isn\'t allowed to provide a custom verification description.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7830,7 +7412,6 @@ const verifyChat: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`). Channel direct messages chats can\'t be verified.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'custom_description',
@@ -7841,7 +7422,6 @@ const verifyChat: ApiMethod = {
         markdown: 'Custom description for the verification; 0-70 characters. Must be empty if the organization isn\'t allowed to provide a custom verification description.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7865,7 +7445,6 @@ const removeUserVerification: ApiMethod = {
         markdown: 'Unique identifier of the target user',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7897,7 +7476,6 @@ const removeChatVerification: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7921,7 +7499,6 @@ const readBusinessMessage: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which to read the message',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -7932,7 +7509,6 @@ const readBusinessMessage: ApiMethod = {
         markdown: 'Unique identifier of the chat in which the message was received. The chat must have been active in the last 24 hours.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -7943,7 +7519,6 @@ const readBusinessMessage: ApiMethod = {
         markdown: 'Unique identifier of the message to mark as read',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -7967,7 +7542,6 @@ const deleteBusinessMessages: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which to delete the messages',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_ids',
@@ -7981,7 +7555,6 @@ const deleteBusinessMessages: ApiMethod = {
         markdown: 'An array of 1-100 identifiers of messages to delete. All messages must be from the same chat. See [deleteMessage](https://core.telegram.org/bots/api#deletemessage) for limitations on which messages can be deleted',
       },
       required: true,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -8005,7 +7578,6 @@ const setBusinessAccountName: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'first_name',
@@ -8016,7 +7588,6 @@ const setBusinessAccountName: ApiMethod = {
         markdown: 'The new value of the first name for the business account; 1-64 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'last_name',
@@ -8027,7 +7598,6 @@ const setBusinessAccountName: ApiMethod = {
         markdown: 'The new value of the last name for the business account; 0-64 characters',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -8051,7 +7621,6 @@ const setBusinessAccountUsername: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'username',
@@ -8062,7 +7631,6 @@ const setBusinessAccountUsername: ApiMethod = {
         markdown: 'The new value of the username for the business account; 0-32 characters',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -8086,7 +7654,6 @@ const setBusinessAccountBio: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'bio',
@@ -8097,7 +7664,6 @@ const setBusinessAccountBio: ApiMethod = {
         markdown: 'The new value of the bio for the business account; 0-140 characters',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -8121,7 +7687,6 @@ const setBusinessAccountProfilePhoto: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'photo',
@@ -8133,7 +7698,6 @@ const setBusinessAccountProfilePhoto: ApiMethod = {
         markdown: 'The new profile photo to set',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_public',
@@ -8144,7 +7708,6 @@ const setBusinessAccountProfilePhoto: ApiMethod = {
         markdown: 'Pass _True_ to set the public photo, which will be visible even if the main photo is hidden by the business account\'s privacy settings. An account can have only one public photo.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -8168,7 +7731,6 @@ const removeBusinessAccountProfilePhoto: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_public',
@@ -8179,7 +7741,6 @@ const removeBusinessAccountProfilePhoto: ApiMethod = {
         markdown: 'Pass _True_ to remove the public photo, which is visible even if the main photo is hidden by the business account\'s privacy settings. After the main photo is removed, the previous profile photo (if present) becomes the main photo.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -8203,7 +7764,6 @@ const setBusinessAccountGiftSettings: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'show_gift_button',
@@ -8214,7 +7774,6 @@ const setBusinessAccountGiftSettings: ApiMethod = {
         markdown: 'Pass _True_, if a button for sending a gift to the user or by the business account must always be shown in the input field',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'accepted_gift_types',
@@ -8226,7 +7785,6 @@ const setBusinessAccountGiftSettings: ApiMethod = {
         markdown: 'Types of gifts accepted by the business account',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -8250,7 +7808,6 @@ const getBusinessAccountStarBalance: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -8274,7 +7831,6 @@ const transferBusinessAccountStars: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'star_count',
@@ -8285,7 +7841,6 @@ const transferBusinessAccountStars: ApiMethod = {
         markdown: 'Number of Telegram Stars to transfer; 1-10000',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -8309,7 +7864,6 @@ const getBusinessAccountGifts: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_unsaved',
@@ -8320,7 +7874,6 @@ const getBusinessAccountGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude gifts that aren\'t saved to the account\'s profile page',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_saved',
@@ -8331,7 +7884,6 @@ const getBusinessAccountGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude gifts that are saved to the account\'s profile page',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_unlimited',
@@ -8342,7 +7894,6 @@ const getBusinessAccountGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude gifts that can be purchased an unlimited number of times',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_limited_upgradable',
@@ -8353,7 +7904,6 @@ const getBusinessAccountGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude gifts that can be purchased a limited number of times and can be upgraded to unique',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_limited_non_upgradable',
@@ -8364,7 +7914,6 @@ const getBusinessAccountGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude gifts that can be purchased a limited number of times and can\'t be upgraded to unique',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_unique',
@@ -8375,7 +7924,6 @@ const getBusinessAccountGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude unique gifts',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_from_blockchain',
@@ -8386,7 +7934,6 @@ const getBusinessAccountGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude gifts that were assigned from the TON blockchain and can\'t be resold or transferred in Telegram',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'sort_by_price',
@@ -8397,7 +7944,6 @@ const getBusinessAccountGifts: ApiMethod = {
         markdown: 'Pass _True_ to sort results by gift price instead of send date. Sorting is applied before pagination.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'offset',
@@ -8408,7 +7954,6 @@ const getBusinessAccountGifts: ApiMethod = {
         markdown: 'Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'limit',
@@ -8419,7 +7964,6 @@ const getBusinessAccountGifts: ApiMethod = {
         markdown: 'The maximum number of gifts to be returned; 1-100. Defaults to 100',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -8443,7 +7987,6 @@ const getUserGifts: ApiMethod = {
         markdown: 'Unique identifier of the user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_unlimited',
@@ -8454,7 +7997,6 @@ const getUserGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude gifts that can be purchased an unlimited number of times',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_limited_upgradable',
@@ -8465,7 +8007,6 @@ const getUserGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude gifts that can be purchased a limited number of times and can be upgraded to unique',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_limited_non_upgradable',
@@ -8476,7 +8017,6 @@ const getUserGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude gifts that can be purchased a limited number of times and can\'t be upgraded to unique',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_from_blockchain',
@@ -8487,7 +8027,6 @@ const getUserGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude gifts that were assigned from the TON blockchain and can\'t be resold or transferred in Telegram',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_unique',
@@ -8498,7 +8037,6 @@ const getUserGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude unique gifts',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'sort_by_price',
@@ -8509,7 +8047,6 @@ const getUserGifts: ApiMethod = {
         markdown: 'Pass _True_ to sort results by gift price instead of send date. Sorting is applied before pagination.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'offset',
@@ -8520,7 +8057,6 @@ const getUserGifts: ApiMethod = {
         markdown: 'Offset of the first entry to return as received from the previous request; use an empty string to get the first chunk of results',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'limit',
@@ -8531,7 +8067,6 @@ const getUserGifts: ApiMethod = {
         markdown: 'The maximum number of gifts to be returned; 1-100. Defaults to 100',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -8563,7 +8098,6 @@ const getChatGifts: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_unsaved',
@@ -8574,7 +8108,6 @@ const getChatGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude gifts that aren\'t saved to the chat\'s profile page. Always _True_, unless the bot has the _can\\_post\\_messages_ administrator right in the channel.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_saved',
@@ -8585,7 +8118,6 @@ const getChatGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude gifts that are saved to the chat\'s profile page. Always _False_, unless the bot has the _can\\_post\\_messages_ administrator right in the channel.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_unlimited',
@@ -8596,7 +8128,6 @@ const getChatGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude gifts that can be purchased an unlimited number of times',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_limited_upgradable',
@@ -8607,7 +8138,6 @@ const getChatGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude gifts that can be purchased a limited number of times and can be upgraded to unique',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_limited_non_upgradable',
@@ -8618,7 +8148,6 @@ const getChatGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude gifts that can be purchased a limited number of times and can\'t be upgraded to unique',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_from_blockchain',
@@ -8629,7 +8158,6 @@ const getChatGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude gifts that were assigned from the TON blockchain and can\'t be resold or transferred in Telegram',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'exclude_unique',
@@ -8640,7 +8168,6 @@ const getChatGifts: ApiMethod = {
         markdown: 'Pass _True_ to exclude unique gifts',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'sort_by_price',
@@ -8651,7 +8178,6 @@ const getChatGifts: ApiMethod = {
         markdown: 'Pass _True_ to sort results by gift price instead of send date. Sorting is applied before pagination.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'offset',
@@ -8662,7 +8188,6 @@ const getChatGifts: ApiMethod = {
         markdown: 'Offset of the first entry to return as received from the previous request; use an empty string to get the first chunk of results',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'limit',
@@ -8673,7 +8198,6 @@ const getChatGifts: ApiMethod = {
         markdown: 'The maximum number of gifts to be returned; 1-100. Defaults to 100',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -8697,7 +8221,6 @@ const convertGiftToStars: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'owned_gift_id',
@@ -8708,7 +8231,6 @@ const convertGiftToStars: ApiMethod = {
         markdown: 'Unique identifier of the regular gift that should be converted to Telegram Stars',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -8732,7 +8254,6 @@ const upgradeGift: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'owned_gift_id',
@@ -8743,7 +8264,6 @@ const upgradeGift: ApiMethod = {
         markdown: 'Unique identifier of the regular gift that should be upgraded to a unique one',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'keep_original_details',
@@ -8754,7 +8274,6 @@ const upgradeGift: ApiMethod = {
         markdown: 'Pass _True_ to keep the original gift text, sender and receiver in the upgraded gift',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'star_count',
@@ -8765,7 +8284,6 @@ const upgradeGift: ApiMethod = {
         markdown: 'The amount of Telegram Stars that will be paid for the upgrade from the business account balance. If `gift.prepaid_upgrade_star_count > 0`, then pass 0, otherwise, the _can\\_transfer\\_stars_ business bot right is required and `gift.upgrade_star_count` must be passed.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -8789,7 +8307,6 @@ const transferGift: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'owned_gift_id',
@@ -8800,7 +8317,6 @@ const transferGift: ApiMethod = {
         markdown: 'Unique identifier of the regular gift that should be transferred',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'new_owner_chat_id',
@@ -8811,7 +8327,6 @@ const transferGift: ApiMethod = {
         markdown: 'Unique identifier of the chat which will own the gift. The chat must be active in the last 24 hours.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'star_count',
@@ -8822,7 +8337,6 @@ const transferGift: ApiMethod = {
         markdown: 'The amount of Telegram Stars that will be paid for the transfer from the business account balance. If positive, then the _can\\_transfer\\_stars_ business bot right is required.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -8846,7 +8360,6 @@ const postStory: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'content',
@@ -8858,7 +8371,6 @@ const postStory: ApiMethod = {
         markdown: 'Content of the story',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'active_period',
@@ -8869,7 +8381,6 @@ const postStory: ApiMethod = {
         markdown: 'Period after which the story is moved to the archive, in seconds; must be one of `6 * 3600`, `12 * 3600`, `86400`, or `2 * 86400`',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -8880,7 +8391,6 @@ const postStory: ApiMethod = {
         markdown: 'Caption of the story, 0-2048 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -8891,7 +8401,6 @@ const postStory: ApiMethod = {
         markdown: 'Mode for parsing entities in the story caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -8906,7 +8415,6 @@ const postStory: ApiMethod = {
         markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'areas',
@@ -8921,7 +8429,6 @@ const postStory: ApiMethod = {
         markdown: 'An array of clickable areas to be shown on the story',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'post_to_chat_page',
@@ -8932,7 +8439,6 @@ const postStory: ApiMethod = {
         markdown: 'Pass _True_ to keep the story accessible after it expires',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -8943,7 +8449,6 @@ const postStory: ApiMethod = {
         markdown: 'Pass _True_ if the content of the story must be protected from forwarding and screenshotting',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -8967,7 +8472,6 @@ const repostStory: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'from_chat_id',
@@ -8978,7 +8482,6 @@ const repostStory: ApiMethod = {
         markdown: 'Unique identifier of the chat which posted the story that should be reposted',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'from_story_id',
@@ -8989,7 +8492,6 @@ const repostStory: ApiMethod = {
         markdown: 'Unique identifier of the story that should be reposted',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'active_period',
@@ -9000,7 +8502,6 @@ const repostStory: ApiMethod = {
         markdown: 'Period after which the story is moved to the archive, in seconds; must be one of `6 * 3600`, `12 * 3600`, `86400`, or `2 * 86400`',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'post_to_chat_page',
@@ -9011,7 +8512,6 @@ const repostStory: ApiMethod = {
         markdown: 'Pass _True_ to keep the story accessible after it expires',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -9022,7 +8522,6 @@ const repostStory: ApiMethod = {
         markdown: 'Pass _True_ if the content of the story must be protected from forwarding and screenshotting',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -9046,7 +8545,6 @@ const editStory: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'story_id',
@@ -9057,7 +8555,6 @@ const editStory: ApiMethod = {
         markdown: 'Unique identifier of the story to edit',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'content',
@@ -9069,7 +8566,6 @@ const editStory: ApiMethod = {
         markdown: 'Content of the story',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -9080,7 +8576,6 @@ const editStory: ApiMethod = {
         markdown: 'Caption of the story, 0-2048 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -9091,7 +8586,6 @@ const editStory: ApiMethod = {
         markdown: 'Mode for parsing entities in the story caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -9106,7 +8600,6 @@ const editStory: ApiMethod = {
         markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'areas',
@@ -9121,7 +8614,6 @@ const editStory: ApiMethod = {
         markdown: 'An array of clickable areas to be shown on the story',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -9145,7 +8637,6 @@ const deleteStory: ApiMethod = {
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'story_id',
@@ -9156,7 +8647,6 @@ const deleteStory: ApiMethod = {
         markdown: 'Unique identifier of the story to delete',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -9180,7 +8670,6 @@ const editMessageText: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message to be edited was sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -9199,7 +8688,6 @@ const editMessageText: ApiMethod = {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -9210,7 +8698,6 @@ const editMessageText: ApiMethod = {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'inline_message_id',
@@ -9221,7 +8708,6 @@ const editMessageText: ApiMethod = {
         markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'text',
@@ -9232,7 +8718,6 @@ const editMessageText: ApiMethod = {
         markdown: 'New text of the message, 1-4096 characters after entities parsing',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -9243,7 +8728,6 @@ const editMessageText: ApiMethod = {
         markdown: 'Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'entities',
@@ -9258,7 +8742,6 @@ const editMessageText: ApiMethod = {
         markdown: 'An array of special entities that appear in message text, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'link_preview_options',
@@ -9270,7 +8753,6 @@ const editMessageText: ApiMethod = {
         markdown: 'Link preview generation options for the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -9282,7 +8764,6 @@ const editMessageText: ApiMethod = {
         markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -9315,7 +8796,6 @@ const editMessageCaption: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message to be edited was sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -9334,7 +8814,6 @@ const editMessageCaption: ApiMethod = {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -9345,7 +8824,6 @@ const editMessageCaption: ApiMethod = {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'inline_message_id',
@@ -9356,7 +8834,6 @@ const editMessageCaption: ApiMethod = {
         markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -9367,7 +8844,6 @@ const editMessageCaption: ApiMethod = {
         markdown: 'New caption of the message, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -9378,7 +8854,6 @@ const editMessageCaption: ApiMethod = {
         markdown: 'Mode for parsing entities in the message caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -9393,7 +8868,6 @@ const editMessageCaption: ApiMethod = {
         markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'show_caption_above_media',
@@ -9404,7 +8878,6 @@ const editMessageCaption: ApiMethod = {
         markdown: 'Pass _True_, if the caption must be shown above the message media. Supported only for animation, photo and video messages.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -9416,7 +8889,6 @@ const editMessageCaption: ApiMethod = {
         markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -9449,7 +8921,6 @@ const editMessageMedia: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message to be edited was sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -9468,7 +8939,6 @@ const editMessageMedia: ApiMethod = {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -9479,7 +8949,6 @@ const editMessageMedia: ApiMethod = {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'inline_message_id',
@@ -9490,7 +8959,6 @@ const editMessageMedia: ApiMethod = {
         markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'media',
@@ -9502,7 +8970,6 @@ const editMessageMedia: ApiMethod = {
         markdown: 'An object for a new media content of the message',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'reply_markup',
@@ -9514,7 +8981,6 @@ const editMessageMedia: ApiMethod = {
         markdown: 'An object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -9547,7 +9013,6 @@ const editMessageLiveLocation: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message to be edited was sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -9566,7 +9031,6 @@ const editMessageLiveLocation: ApiMethod = {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -9577,7 +9041,6 @@ const editMessageLiveLocation: ApiMethod = {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'inline_message_id',
@@ -9588,7 +9051,6 @@ const editMessageLiveLocation: ApiMethod = {
         markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'latitude',
@@ -9599,7 +9061,6 @@ const editMessageLiveLocation: ApiMethod = {
         markdown: 'Latitude of new location',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'longitude',
@@ -9610,7 +9071,6 @@ const editMessageLiveLocation: ApiMethod = {
         markdown: 'Longitude of new location',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'live_period',
@@ -9621,7 +9081,6 @@ const editMessageLiveLocation: ApiMethod = {
         markdown: 'New period in seconds during which the location can be updated, starting from the message send date. If 0x7FFFFFFF is specified, then the location can be updated forever. Otherwise, the new value must not exceed the current _live\\_period_ by more than a day, and the live location expiration date must remain within the next 90 days. If not specified, then _live\\_period_ remains unchanged',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'horizontal_accuracy',
@@ -9632,7 +9091,6 @@ const editMessageLiveLocation: ApiMethod = {
         markdown: 'The radius of uncertainty for the location, measured in meters; 0-1500',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'heading',
@@ -9643,7 +9101,6 @@ const editMessageLiveLocation: ApiMethod = {
         markdown: 'Direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'proximity_alert_radius',
@@ -9654,7 +9111,6 @@ const editMessageLiveLocation: ApiMethod = {
         markdown: 'The maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -9666,7 +9122,6 @@ const editMessageLiveLocation: ApiMethod = {
         markdown: 'An object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -9699,7 +9154,6 @@ const stopMessageLiveLocation: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message to be edited was sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -9718,7 +9172,6 @@ const stopMessageLiveLocation: ApiMethod = {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -9729,7 +9182,6 @@ const stopMessageLiveLocation: ApiMethod = {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message with live location to stop',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'inline_message_id',
@@ -9740,7 +9192,6 @@ const stopMessageLiveLocation: ApiMethod = {
         markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -9752,7 +9203,6 @@ const stopMessageLiveLocation: ApiMethod = {
         markdown: 'An object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -9785,7 +9235,6 @@ const editMessageChecklist: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -9796,7 +9245,6 @@ const editMessageChecklist: ApiMethod = {
         markdown: 'Unique identifier for the target chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -9807,7 +9255,6 @@ const editMessageChecklist: ApiMethod = {
         markdown: 'Unique identifier for the target message',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'checklist',
@@ -9819,7 +9266,6 @@ const editMessageChecklist: ApiMethod = {
         markdown: 'An object for the new checklist',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'reply_markup',
@@ -9831,7 +9277,6 @@ const editMessageChecklist: ApiMethod = {
         markdown: 'An object for the new inline keyboard for the message',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -9855,7 +9300,6 @@ const editMessageReplyMarkup: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message to be edited was sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -9874,7 +9318,6 @@ const editMessageReplyMarkup: ApiMethod = {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -9885,7 +9328,6 @@ const editMessageReplyMarkup: ApiMethod = {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'inline_message_id',
@@ -9896,7 +9338,6 @@ const editMessageReplyMarkup: ApiMethod = {
         markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -9908,7 +9349,6 @@ const editMessageReplyMarkup: ApiMethod = {
         markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -9941,7 +9381,6 @@ const stopPoll: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message to be edited was sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -9960,7 +9399,6 @@ const stopPoll: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -9971,7 +9409,6 @@ const stopPoll: ApiMethod = {
         markdown: 'Identifier of the original message with the poll',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -9983,7 +9420,6 @@ const stopPoll: ApiMethod = {
         markdown: 'An object for a new message [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -10007,7 +9443,6 @@ const approveSuggestedPost: ApiMethod = {
         markdown: 'Unique identifier for the target direct messages chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -10018,7 +9453,6 @@ const approveSuggestedPost: ApiMethod = {
         markdown: 'Identifier of a suggested post message to approve',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'send_date',
@@ -10029,7 +9463,6 @@ const approveSuggestedPost: ApiMethod = {
         markdown: 'Point in time (Unix timestamp) when the post is expected to be published; omit if the date has already been specified when the suggested post was created. If specified, then the date must be not more than 2678400 seconds (30 days) in the future',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -10053,7 +9486,6 @@ const declineSuggestedPost: ApiMethod = {
         markdown: 'Unique identifier for the target direct messages chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -10064,7 +9496,6 @@ const declineSuggestedPost: ApiMethod = {
         markdown: 'Identifier of a suggested post message to decline',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'comment',
@@ -10075,7 +9506,6 @@ const declineSuggestedPost: ApiMethod = {
         markdown: 'Comment for the creator of the suggested post; 0-128 characters',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -10107,7 +9537,6 @@ const deleteMessage: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -10118,7 +9547,6 @@ const deleteMessage: ApiMethod = {
         markdown: 'Identifier of the message to delete',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -10150,7 +9578,6 @@ const deleteMessages: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_ids',
@@ -10164,7 +9591,6 @@ const deleteMessages: ApiMethod = {
         markdown: 'An array of 1-100 identifiers of messages to delete. See [deleteMessage](https://core.telegram.org/bots/api#deletemessage) for limitations on which messages can be deleted',
       },
       required: true,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -10188,7 +9614,6 @@ const sendSticker: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -10207,7 +9632,6 @@ const sendSticker: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -10218,7 +9642,6 @@ const sendSticker: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -10229,7 +9652,6 @@ const sendSticker: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'sticker',
@@ -10248,7 +9670,6 @@ const sendSticker: ApiMethod = {
         markdown: 'Sticker to send. Pass a file\\_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a .WEBP sticker from the Internet, or upload a new .WEBP, .TGS, or .WEBM sticker using multipart/form-data. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files). Video and animated stickers can\'t be sent via an HTTP URL.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'emoji',
@@ -10259,7 +9680,6 @@ const sendSticker: ApiMethod = {
         markdown: 'Emoji associated with the sticker; only for just uploaded stickers',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -10270,7 +9690,6 @@ const sendSticker: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -10281,7 +9700,6 @@ const sendSticker: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -10292,7 +9710,6 @@ const sendSticker: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -10303,7 +9720,6 @@ const sendSticker: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -10315,7 +9731,6 @@ const sendSticker: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_parameters',
@@ -10327,7 +9742,6 @@ const sendSticker: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -10356,7 +9770,6 @@ const sendSticker: ApiMethod = {
         markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -10380,7 +9793,6 @@ const getStickerSet: ApiMethod = {
         markdown: 'Name of the sticker set',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -10407,7 +9819,6 @@ const getCustomEmojiStickers: ApiMethod = {
         markdown: 'An array of custom emoji identifiers. At most 200 custom emoji identifiers can be specified.',
       },
       required: true,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -10434,7 +9845,6 @@ const uploadStickerFile: ApiMethod = {
         markdown: 'User identifier of sticker file owner',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'sticker',
@@ -10445,7 +9855,6 @@ const uploadStickerFile: ApiMethod = {
         markdown: 'A file with the sticker in .WEBP, .PNG, .TGS, or .WEBM format. See [](https://core.telegram.org/stickers)[https://core.telegram.org/stickers](https://core.telegram.org/stickers) for technical requirements. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'sticker_format',
@@ -10456,7 +9865,6 @@ const uploadStickerFile: ApiMethod = {
         markdown: 'Format of the sticker, must be one of “static”, “animated”, “video”',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -10480,7 +9888,6 @@ const createNewStickerSet: ApiMethod = {
         markdown: 'User identifier of created sticker set owner',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'name',
@@ -10491,7 +9898,6 @@ const createNewStickerSet: ApiMethod = {
         markdown: 'Short name of sticker set, to be used in `t.me/addstickers/` URLs (e.g., _animals_). Can contain only English letters, digits and underscores. Must begin with a letter, can\'t contain consecutive underscores and must end in `"_by_<bot_username>"`. `<bot_username>` is case insensitive. 1-64 characters.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -10502,7 +9908,6 @@ const createNewStickerSet: ApiMethod = {
         markdown: 'Sticker set title, 1-64 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'stickers',
@@ -10517,7 +9922,6 @@ const createNewStickerSet: ApiMethod = {
         markdown: 'An array of 1-50 initial stickers to be added to the sticker set',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'sticker_type',
@@ -10528,7 +9932,6 @@ const createNewStickerSet: ApiMethod = {
         markdown: 'Type of stickers in the set, pass “regular”, “mask”, or “custom\\_emoji”. By default, a regular sticker set is created.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'needs_repainting',
@@ -10539,7 +9942,6 @@ const createNewStickerSet: ApiMethod = {
         markdown: 'Pass _True_ if stickers in the sticker set must be repainted to the color of text when used in messages, the accent color if used as emoji status, white on chat photos, or another appropriate color based on context; for custom emoji sticker sets only',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -10563,7 +9965,6 @@ const addStickerToSet: ApiMethod = {
         markdown: 'User identifier of sticker set owner',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'name',
@@ -10574,7 +9975,6 @@ const addStickerToSet: ApiMethod = {
         markdown: 'Sticker set name',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'sticker',
@@ -10586,7 +9986,6 @@ const addStickerToSet: ApiMethod = {
         markdown: 'An object with information about the added sticker. If exactly the same sticker had already been added to the set, then the set isn\'t changed.',
       },
       required: true,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -10610,7 +10009,6 @@ const setStickerPositionInSet: ApiMethod = {
         markdown: 'File identifier of the sticker',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'position',
@@ -10621,7 +10019,6 @@ const setStickerPositionInSet: ApiMethod = {
         markdown: 'New sticker position in the set, zero-based',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -10645,7 +10042,6 @@ const deleteStickerFromSet: ApiMethod = {
         markdown: 'File identifier of the sticker',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -10669,7 +10065,6 @@ const replaceStickerInSet: ApiMethod = {
         markdown: 'User identifier of the sticker set owner',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'name',
@@ -10680,7 +10075,6 @@ const replaceStickerInSet: ApiMethod = {
         markdown: 'Sticker set name',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'old_sticker',
@@ -10691,7 +10085,6 @@ const replaceStickerInSet: ApiMethod = {
         markdown: 'File identifier of the replaced sticker',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'sticker',
@@ -10703,7 +10096,6 @@ const replaceStickerInSet: ApiMethod = {
         markdown: 'An object with information about the added sticker. If exactly the same sticker had already been added to the set, then the set remains unchanged.',
       },
       required: true,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -10727,7 +10119,6 @@ const setStickerEmojiList: ApiMethod = {
         markdown: 'File identifier of the sticker',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'emoji_list',
@@ -10741,7 +10132,6 @@ const setStickerEmojiList: ApiMethod = {
         markdown: 'An array of 1-20 emoji associated with the sticker',
       },
       required: true,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -10765,7 +10155,6 @@ const setStickerKeywords: ApiMethod = {
         markdown: 'File identifier of the sticker',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'keywords',
@@ -10779,7 +10168,6 @@ const setStickerKeywords: ApiMethod = {
         markdown: 'An array of 0-20 search keywords for the sticker with total length of up to 64 characters',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -10803,7 +10191,6 @@ const setStickerMaskPosition: ApiMethod = {
         markdown: 'File identifier of the sticker',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'mask_position',
@@ -10815,7 +10202,6 @@ const setStickerMaskPosition: ApiMethod = {
         markdown: 'An object with the position where the mask should be placed on faces. Omit the parameter to remove the mask position.',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -10839,7 +10225,6 @@ const setStickerSetTitle: ApiMethod = {
         markdown: 'Sticker set name',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -10850,7 +10235,6 @@ const setStickerSetTitle: ApiMethod = {
         markdown: 'Sticker set title, 1-64 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -10874,7 +10258,6 @@ const setStickerSetThumbnail: ApiMethod = {
         markdown: 'Sticker set name',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user_id',
@@ -10885,7 +10268,6 @@ const setStickerSetThumbnail: ApiMethod = {
         markdown: 'User identifier of the sticker set owner',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -10904,7 +10286,6 @@ const setStickerSetThumbnail: ApiMethod = {
         markdown: 'A **.WEBP** or **.PNG** image with the thumbnail, must be up to 128 kilobytes in size and have a width and height of exactly 100px, or a **.TGS** animation with a thumbnail up to 32 kilobytes in size (see [](https://core.telegram.org/stickers#animation-requirements)[https://core.telegram.org/stickers#animation-requirements](https://core.telegram.org/stickers#animation-requirements) for animated sticker technical requirements), or a **.WEBM** video with the thumbnail up to 32 kilobytes in size; see [](https://core.telegram.org/stickers#video-requirements)[https://core.telegram.org/stickers#video-requirements](https://core.telegram.org/stickers#video-requirements) for video sticker technical requirements. Pass a _file\\_id_ as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files). Animated and video sticker set thumbnails can\'t be uploaded via HTTP URL. If omitted, then the thumbnail is dropped and the first sticker is used as the thumbnail.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'format',
@@ -10915,7 +10296,6 @@ const setStickerSetThumbnail: ApiMethod = {
         markdown: 'Format of the thumbnail, must be one of “static” for a **.WEBP** or **.PNG** image, “animated” for a **.TGS** animation, or “video” for a **.WEBM** video',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -10939,7 +10319,6 @@ const setCustomEmojiStickerSetThumbnail: ApiMethod = {
         markdown: 'Sticker set name',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'custom_emoji_id',
@@ -10950,7 +10329,6 @@ const setCustomEmojiStickerSetThumbnail: ApiMethod = {
         markdown: 'Custom emoji identifier of a sticker from the sticker set; pass an empty string to drop the thumbnail and use the first sticker as the thumbnail.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -10974,7 +10352,6 @@ const deleteStickerSet: ApiMethod = {
         markdown: 'Sticker set name',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -10998,7 +10375,6 @@ const answerInlineQuery: ApiMethod = {
         markdown: 'Unique identifier for the answered query',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'results',
@@ -11013,7 +10389,6 @@ const answerInlineQuery: ApiMethod = {
         markdown: 'An array of results for the inline query',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'cache_time',
@@ -11024,7 +10399,6 @@ const answerInlineQuery: ApiMethod = {
         markdown: 'The maximum amount of time in seconds that the result of the inline query may be cached on the server. Defaults to 300.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_personal',
@@ -11035,7 +10409,6 @@ const answerInlineQuery: ApiMethod = {
         markdown: 'Pass _True_ if results may be cached on the server side only for the user that sent the query. By default, results may be returned to any user who sends the same query.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'next_offset',
@@ -11046,7 +10419,6 @@ const answerInlineQuery: ApiMethod = {
         markdown: 'Pass the offset that a client should send in the next query with the same text to receive more results. Pass an empty string if there are no more results or if you don\'t support pagination. Offset length can\'t exceed 64 bytes.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'button',
@@ -11058,7 +10430,6 @@ const answerInlineQuery: ApiMethod = {
         markdown: 'An object describing a button to be shown above inline query results',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -11082,7 +10453,6 @@ const answerWebAppQuery: ApiMethod = {
         markdown: 'Unique identifier for the query to be answered',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'result',
@@ -11094,7 +10464,6 @@ const answerWebAppQuery: ApiMethod = {
         markdown: 'An object describing the message to be sent',
       },
       required: true,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -11118,7 +10487,6 @@ const savePreparedInlineMessage: ApiMethod = {
         markdown: 'Unique identifier of the target user that can use the prepared message',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'result',
@@ -11130,7 +10498,6 @@ const savePreparedInlineMessage: ApiMethod = {
         markdown: 'An object describing the message to be sent',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'allow_user_chats',
@@ -11141,7 +10508,6 @@ const savePreparedInlineMessage: ApiMethod = {
         markdown: 'Pass _True_ if the message can be sent to private chats with users',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_bot_chats',
@@ -11152,7 +10518,6 @@ const savePreparedInlineMessage: ApiMethod = {
         markdown: 'Pass _True_ if the message can be sent to private chats with bots',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_group_chats',
@@ -11163,7 +10528,6 @@ const savePreparedInlineMessage: ApiMethod = {
         markdown: 'Pass _True_ if the message can be sent to group and supergroup chats',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_channel_chats',
@@ -11174,7 +10538,6 @@ const savePreparedInlineMessage: ApiMethod = {
         markdown: 'Pass _True_ if the message can be sent to channel chats',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -11206,7 +10569,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -11217,7 +10579,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic_id',
@@ -11228,7 +10589,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -11239,7 +10599,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Product name, 1-32 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'description',
@@ -11250,7 +10609,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Product description, 1-255 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'payload',
@@ -11261,7 +10619,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'provider_token',
@@ -11272,7 +10629,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Payment provider token, obtained via [@BotFather](https://t.me/botfather). Pass an empty string for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'currency',
@@ -11283,7 +10639,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/bots/payments#supported-currencies). Pass “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'prices',
@@ -11298,7 +10653,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Price breakdown, an array of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'max_tip_amount',
@@ -11309,7 +10663,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'The maximum accepted amount for tips in the _smallest units_ of the currency (integer, **not** float/double). For example, for a maximum tip of `US$ 1.45` pass `max_tip_amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_tip_amounts',
@@ -11323,7 +10676,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'An array of suggested amounts of tips in the _smallest units_ of the currency (integer, **not** float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed _max\\_tip\\_amount_.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'start_parameter',
@@ -11334,7 +10686,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Unique deep-linking parameter. If left empty, **forwarded copies** of the sent message will have a _Pay_ button, allowing multiple users to pay directly from the forwarded message, using the same invoice. If non-empty, forwarded copies of the sent message will have a _URL_ button with a deep link to the bot (instead of a _Pay_ button), with the value used as the start parameter',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'provider_data',
@@ -11345,7 +10696,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'JSON-serialized data about the invoice, which will be shared with the payment provider. A detailed description of required fields should be provided by the payment provider.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo_url',
@@ -11356,7 +10706,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service. People like it better when they see what they are paying for.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo_size',
@@ -11367,7 +10716,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Photo size in bytes',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo_width',
@@ -11378,7 +10726,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Photo width',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo_height',
@@ -11389,7 +10736,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Photo height',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'need_name',
@@ -11400,7 +10746,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Pass _True_ if you require the user\'s full name to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'need_phone_number',
@@ -11411,7 +10756,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Pass _True_ if you require the user\'s phone number to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'need_email',
@@ -11422,7 +10766,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Pass _True_ if you require the user\'s email address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'need_shipping_address',
@@ -11433,7 +10776,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Pass _True_ if you require the user\'s shipping address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'send_phone_number_to_provider',
@@ -11444,7 +10786,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Pass _True_ if the user\'s phone number should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'send_email_to_provider',
@@ -11455,7 +10796,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Pass _True_ if the user\'s email address should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_flexible',
@@ -11466,7 +10806,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Pass _True_ if the final price depends on the shipping method. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -11477,7 +10816,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -11488,7 +10826,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -11499,7 +10836,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -11510,7 +10846,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_parameters',
@@ -11522,7 +10857,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'reply_parameters',
@@ -11534,7 +10868,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -11546,7 +10879,6 @@ const sendInvoice: ApiMethod = {
         markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards). If empty, one \'Pay `total price`\' button will be shown. If not empty, the first button must be a Pay button.',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -11570,7 +10902,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the link will be created. For payments in [Telegram Stars](https://t.me/BotNews/90) only.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -11581,7 +10912,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Product name, 1-32 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'description',
@@ -11592,7 +10922,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Product description, 1-255 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'payload',
@@ -11603,7 +10932,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'provider_token',
@@ -11614,7 +10942,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Payment provider token, obtained via [@BotFather](https://t.me/botfather). Pass an empty string for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'currency',
@@ -11625,7 +10952,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/bots/payments#supported-currencies). Pass “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'prices',
@@ -11640,7 +10966,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Price breakdown, an array of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'subscription_period',
@@ -11651,7 +10976,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'The number of seconds the subscription will be active for before the next payment. The currency must be set to “XTR” (Telegram Stars) if the parameter is used. Currently, it must always be 2592000 (30 days) if specified. Any number of subscriptions can be active for a given bot at the same time, including multiple concurrent subscriptions from the same user. Subscription price must no exceed 10000 Telegram Stars.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'max_tip_amount',
@@ -11662,7 +10986,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'The maximum accepted amount for tips in the _smallest units_ of the currency (integer, **not** float/double). For example, for a maximum tip of `US$ 1.45` pass `max_tip_amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_tip_amounts',
@@ -11676,7 +10999,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'An array of suggested amounts of tips in the _smallest units_ of the currency (integer, **not** float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed _max\\_tip\\_amount_.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'provider_data',
@@ -11687,7 +11009,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'JSON-serialized data about the invoice, which will be shared with the payment provider. A detailed description of required fields should be provided by the payment provider.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo_url',
@@ -11698,7 +11019,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo_size',
@@ -11709,7 +11029,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Photo size in bytes',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo_width',
@@ -11720,7 +11039,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Photo width',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo_height',
@@ -11731,7 +11049,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Photo height',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'need_name',
@@ -11742,7 +11059,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Pass _True_ if you require the user\'s full name to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'need_phone_number',
@@ -11753,7 +11069,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Pass _True_ if you require the user\'s phone number to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'need_email',
@@ -11764,7 +11079,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Pass _True_ if you require the user\'s email address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'need_shipping_address',
@@ -11775,7 +11089,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Pass _True_ if you require the user\'s shipping address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'send_phone_number_to_provider',
@@ -11786,7 +11099,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Pass _True_ if the user\'s phone number should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'send_email_to_provider',
@@ -11797,7 +11109,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Pass _True_ if the user\'s email address should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_flexible',
@@ -11808,7 +11119,6 @@ const createInvoiceLink: ApiMethod = {
         markdown: 'Pass _True_ if the final price depends on the shipping method. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -11831,7 +11141,6 @@ const answerShippingQuery: ApiMethod = {
         markdown: 'Unique identifier for the query to be answered',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'ok',
@@ -11842,7 +11151,6 @@ const answerShippingQuery: ApiMethod = {
         markdown: 'Pass _True_ if delivery to the specified address is possible and _False_ if there are any problems (for example, if delivery to the specified address is not possible)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'shipping_options',
@@ -11857,7 +11165,6 @@ const answerShippingQuery: ApiMethod = {
         markdown: 'Required if _ok_ is _True_. An array of available shipping options.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'error_message',
@@ -11868,7 +11175,6 @@ const answerShippingQuery: ApiMethod = {
         markdown: 'Required if _ok_ is _False_. Error message in human readable form that explains why it is impossible to complete the order (e.g. “Sorry, delivery to your desired address is unavailable”). Telegram will display this message to the user.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -11892,7 +11198,6 @@ const answerPreCheckoutQuery: ApiMethod = {
         markdown: 'Unique identifier for the query to be answered',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'ok',
@@ -11903,7 +11208,6 @@ const answerPreCheckoutQuery: ApiMethod = {
         markdown: 'Specify _True_ if everything is alright (goods are available, etc.) and the bot is ready to proceed with the order. Use _False_ if there are any problems.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'error_message',
@@ -11914,7 +11218,6 @@ const answerPreCheckoutQuery: ApiMethod = {
         markdown: 'Required if _ok_ is _False_. Error message in human readable form that explains the reason for failure to proceed with the checkout (e.g. "Sorry, somebody just bought the last of our amazing black T-shirts while you were busy filling out your payment details. Please choose a different color or garment!"). Telegram will display this message to the user.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -11950,7 +11253,6 @@ const getStarTransactions: ApiMethod = {
         markdown: 'Number of transactions to skip in the response',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'limit',
@@ -11961,7 +11263,6 @@ const getStarTransactions: ApiMethod = {
         markdown: 'The maximum number of transactions to be retrieved. Values between 1-100 are accepted. Defaults to 100.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -11985,7 +11286,6 @@ const refundStarPayment: ApiMethod = {
         markdown: 'Identifier of the user whose payment will be refunded',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'telegram_payment_charge_id',
@@ -11996,7 +11296,6 @@ const refundStarPayment: ApiMethod = {
         markdown: 'Telegram payment identifier',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -12020,7 +11319,6 @@ const editUserStarSubscription: ApiMethod = {
         markdown: 'Identifier of the user whose subscription will be edited',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'telegram_payment_charge_id',
@@ -12031,7 +11329,6 @@ const editUserStarSubscription: ApiMethod = {
         markdown: 'Telegram payment identifier for the subscription',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_canceled',
@@ -12042,7 +11339,6 @@ const editUserStarSubscription: ApiMethod = {
         markdown: 'Pass _True_ to cancel extension of the user subscription; the subscription must be active up to the end of the current subscription period. Pass _False_ to allow the user to re-enable a subscription that was previously canceled by the bot.',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -12066,7 +11362,6 @@ const setPassportDataErrors: ApiMethod = {
         markdown: 'User identifier',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'errors',
@@ -12081,7 +11376,6 @@ const setPassportDataErrors: ApiMethod = {
         markdown: 'An array describing the errors',
       },
       required: true,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -12105,7 +11399,6 @@ const sendGame: ApiMethod = {
         markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -12116,7 +11409,6 @@ const sendGame: ApiMethod = {
         markdown: 'Unique identifier for the target chat. Games can\'t be sent to channel direct messages chats and channel chats.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -12127,7 +11419,6 @@ const sendGame: ApiMethod = {
         markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'game_short_name',
@@ -12138,7 +11429,6 @@ const sendGame: ApiMethod = {
         markdown: 'Short name of the game, serves as the unique identifier for the game. Set up your games via [@BotFather](https://t.me/botfather).',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'disable_notification',
@@ -12149,7 +11439,6 @@ const sendGame: ApiMethod = {
         markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'protect_content',
@@ -12160,7 +11449,6 @@ const sendGame: ApiMethod = {
         markdown: 'Protects the contents of the sent message from forwarding and saving',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_paid_broadcast',
@@ -12171,7 +11459,6 @@ const sendGame: ApiMethod = {
         markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_effect_id',
@@ -12182,7 +11469,6 @@ const sendGame: ApiMethod = {
         markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_parameters',
@@ -12194,7 +11480,6 @@ const sendGame: ApiMethod = {
         markdown: 'Description of the message to reply to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -12206,7 +11491,6 @@ const sendGame: ApiMethod = {
         markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards). If empty, one \'Play game\\_title\' button will be shown. If not empty, the first button must launch the game.',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
   returnType: {
@@ -12230,7 +11514,6 @@ const setGameScore: ApiMethod = {
         markdown: 'User identifier',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'score',
@@ -12241,7 +11524,6 @@ const setGameScore: ApiMethod = {
         markdown: 'New score, must be non-negative',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'force',
@@ -12252,7 +11534,6 @@ const setGameScore: ApiMethod = {
         markdown: 'Pass _True_ if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_edit_message',
@@ -12263,7 +11544,6 @@ const setGameScore: ApiMethod = {
         markdown: 'Pass _True_ if the game message should not be automatically edited to include the current scoreboard',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -12274,7 +11554,6 @@ const setGameScore: ApiMethod = {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -12285,7 +11564,6 @@ const setGameScore: ApiMethod = {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the sent message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'inline_message_id',
@@ -12296,7 +11574,6 @@ const setGameScore: ApiMethod = {
         markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -12329,7 +11606,6 @@ const getGameHighScores: ApiMethod = {
         markdown: 'Target user id',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -12340,7 +11616,6 @@ const getGameHighScores: ApiMethod = {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -12351,7 +11626,6 @@ const getGameHighScores: ApiMethod = {
         markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the sent message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'inline_message_id',
@@ -12362,7 +11636,6 @@ const getGameHighScores: ApiMethod = {
         markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
   returnType: {
@@ -12412,6 +11685,7 @@ export const methods = {
   sendChatAction,
   setMessageReaction,
   getUserProfilePhotos,
+  getUserProfileAudios,
   setUserEmojiStatus,
   getFile,
   banChatMember,
@@ -12469,6 +11743,8 @@ export const methods = {
   getMyDescription,
   setMyShortDescription,
   getMyShortDescription,
+  setMyProfilePhoto,
+  removeMyProfilePhoto,
   setChatMenuButton,
   getChatMenuButton,
   setMyDefaultAdministratorRights,

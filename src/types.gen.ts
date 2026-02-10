@@ -25,7 +25,6 @@ const Update = t({
         markdown: 'The update\'s unique identifier. Update identifiers start from a certain positive number and increase sequentially. This identifier becomes especially handy if you\'re using [webhooks](https://core.telegram.org/bots/api#setwebhook), since it allows you to ignore repeated updates or to restore the correct update sequence, should they get out of order. If there are no new updates for at least a week, then identifier of the next update will be chosen randomly instead of sequentially.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message',
@@ -37,7 +36,6 @@ const Update = t({
         markdown: 'New incoming message of any kind - text, photo, sticker, etc.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'edited_message',
@@ -49,7 +47,6 @@ const Update = t({
         markdown: 'New version of a message that is known to the bot and was edited. This update may at times be triggered by changes to message fields that are either unavailable or not actively used by your bot.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'channel_post',
@@ -61,7 +58,6 @@ const Update = t({
         markdown: 'New incoming channel post of any kind - text, photo, sticker, etc.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'edited_channel_post',
@@ -73,7 +69,6 @@ const Update = t({
         markdown: 'New version of a channel post that is known to the bot and was edited. This update may at times be triggered by changes to message fields that are either unavailable or not actively used by your bot.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'business_connection',
@@ -85,7 +80,6 @@ const Update = t({
         markdown: 'The bot was connected to or disconnected from a business account, or a user edited an existing connection with the bot',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'business_message',
@@ -97,7 +91,6 @@ const Update = t({
         markdown: 'New message from a connected business account',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'edited_business_message',
@@ -109,7 +102,6 @@ const Update = t({
         markdown: 'New version of a message from a connected business account',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'deleted_business_messages',
@@ -121,7 +113,6 @@ const Update = t({
         markdown: 'Messages were deleted from a connected business account',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_reaction',
@@ -133,7 +124,6 @@ const Update = t({
         markdown: 'A reaction to a message was changed by a user. The bot must be an administrator in the chat and must explicitly specify `"message_reaction"` in the list of _allowed\\_updates_ to receive these updates. The update isn\'t received for reactions set by bots.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_reaction_count',
@@ -145,7 +135,6 @@ const Update = t({
         markdown: 'Reactions to a message with anonymous reactions were changed. The bot must be an administrator in the chat and must explicitly specify `"message_reaction_count"` in the list of _allowed\\_updates_ to receive these updates. The updates are grouped and can be sent with delay up to a few minutes.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'inline_query',
@@ -157,7 +146,6 @@ const Update = t({
         markdown: 'New incoming [inline](https://core.telegram.org/bots/api#inline-mode) query',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chosen_inline_result',
@@ -169,7 +157,6 @@ const Update = t({
         markdown: 'The result of an [inline](https://core.telegram.org/bots/api#inline-mode) query that was chosen by a user and sent to their chat partner. Please see our documentation on the [feedback collecting](https://core.telegram.org/bots/inline#collecting-feedback) for details on how to enable these updates for your bot.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'callback_query',
@@ -181,7 +168,6 @@ const Update = t({
         markdown: 'New incoming callback query',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'shipping_query',
@@ -193,7 +179,6 @@ const Update = t({
         markdown: 'New incoming shipping query. Only for invoices with flexible price',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'pre_checkout_query',
@@ -205,7 +190,6 @@ const Update = t({
         markdown: 'New incoming pre-checkout query. Contains full information about checkout',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'purchased_paid_media',
@@ -217,7 +201,6 @@ const Update = t({
         markdown: 'A user purchased paid media with a non-empty payload sent by the bot in a non-channel chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'poll',
@@ -229,7 +212,6 @@ const Update = t({
         markdown: 'New poll state. Bots receive only updates about manually stopped polls and polls, which are sent by the bot',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'poll_answer',
@@ -241,7 +223,6 @@ const Update = t({
         markdown: 'A user changed their answer in a non-anonymous poll. Bots receive new votes only in polls that were sent by the bot itself.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'my_chat_member',
@@ -253,7 +234,6 @@ const Update = t({
         markdown: 'The bot\'s chat member status was updated in a chat. For private chats, this update is received only when the bot is blocked or unblocked by the user.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_member',
@@ -265,7 +245,6 @@ const Update = t({
         markdown: 'A chat member\'s status was updated in a chat. The bot must be an administrator in the chat and must explicitly specify `"chat_member"` in the list of _allowed\\_updates_ to receive these updates.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_join_request',
@@ -277,7 +256,6 @@ const Update = t({
         markdown: 'A request to join the chat has been sent. The bot must have the _can\\_invite\\_users_ administrator right in the chat to receive these updates.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_boost',
@@ -289,7 +267,6 @@ const Update = t({
         markdown: 'A chat boost was added or changed. The bot must be an administrator in the chat to receive these updates.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'removed_chat_boost',
@@ -301,7 +278,6 @@ const Update = t({
         markdown: 'A boost was removed from a chat. The bot must be an administrator in the chat to receive these updates.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -321,7 +297,6 @@ const WebhookInfo = t({
         markdown: 'Webhook URL, may be empty if webhook is not set up',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'has_custom_certificate',
@@ -332,7 +307,6 @@ const WebhookInfo = t({
         markdown: '_True_, if a custom certificate was provided for webhook certificate checks',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'pending_update_count',
@@ -343,7 +317,6 @@ const WebhookInfo = t({
         markdown: 'Number of updates awaiting delivery',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'ip_address',
@@ -354,7 +327,6 @@ const WebhookInfo = t({
         markdown: 'Currently used webhook IP address',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'last_error_date',
@@ -365,7 +337,6 @@ const WebhookInfo = t({
         markdown: 'Unix time for the most recent error that happened when trying to deliver an update via webhook',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'last_error_message',
@@ -376,7 +347,6 @@ const WebhookInfo = t({
         markdown: 'Error message in human-readable format for the most recent error that happened when trying to deliver an update via webhook',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'last_synchronization_error_date',
@@ -387,7 +357,6 @@ const WebhookInfo = t({
         markdown: 'Unix time of the most recent error that happened when trying to synchronize available updates with Telegram datacenters',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'max_connections',
@@ -398,7 +367,6 @@ const WebhookInfo = t({
         markdown: 'The maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allowed_updates',
@@ -412,7 +380,6 @@ const WebhookInfo = t({
         markdown: 'A list of update types the bot is subscribed to. Defaults to all update types except _chat\\_member_',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -432,7 +399,6 @@ const User = t({
         markdown: 'Unique identifier for this user or bot.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_bot',
@@ -443,7 +409,6 @@ const User = t({
         markdown: '_True_, if this user is a bot',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'first_name',
@@ -454,7 +419,6 @@ const User = t({
         markdown: 'User\'s or bot\'s first name',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'last_name',
@@ -465,7 +429,6 @@ const User = t({
         markdown: 'User\'s or bot\'s last name',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'username',
@@ -476,7 +439,6 @@ const User = t({
         markdown: 'User\'s or bot\'s username',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'language_code',
@@ -487,7 +449,6 @@ const User = t({
         markdown: '[IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) of the user\'s language',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_premium',
@@ -499,7 +460,6 @@ const User = t({
         markdown: '_True_, if this user is a Telegram Premium user',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'added_to_attachment_menu',
@@ -511,7 +471,6 @@ const User = t({
         markdown: '_True_, if this user added the bot to the attachment menu',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_join_groups',
@@ -522,7 +481,6 @@ const User = t({
         markdown: '_True_, if the bot can be invited to groups. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_read_all_group_messages',
@@ -533,7 +491,6 @@ const User = t({
         markdown: '_True_, if [privacy mode](https://core.telegram.org/bots/features#privacy-mode) is disabled for the bot. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'supports_inline_queries',
@@ -544,7 +501,6 @@ const User = t({
         markdown: '_True_, if the bot supports inline queries. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_connect_to_business',
@@ -555,7 +511,6 @@ const User = t({
         markdown: '_True_, if the bot can be connected to a Telegram Business account to receive its messages. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_main_web_app',
@@ -566,7 +521,6 @@ const User = t({
         markdown: '_True_, if the bot has a main Web App. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_topics_enabled',
@@ -577,7 +531,16 @@ const User = t({
         markdown: '_True_, if the bot has forum topic mode enabled in private chats. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
       },
       required: false,
-      jsonSerialized: false,
+    },
+    {
+      name: 'allows_users_to_create_topics',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if the bot allows users to create and delete topics in private chats. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
+      },
+      required: false,
     },
   ],
 })
@@ -597,7 +560,6 @@ const Chat = t({
         markdown: 'Unique identifier for this chat.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'type',
@@ -608,7 +570,6 @@ const Chat = t({
         markdown: 'Type of the chat, can be either “private”, “group”, “supergroup” or “channel”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -619,7 +580,6 @@ const Chat = t({
         markdown: 'Title, for supergroups, channels and group chats',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'username',
@@ -630,7 +590,6 @@ const Chat = t({
         markdown: 'Username, for private chats, supergroups and channels if available',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'first_name',
@@ -641,7 +600,6 @@ const Chat = t({
         markdown: 'First name of the other party in a private chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'last_name',
@@ -652,7 +610,6 @@ const Chat = t({
         markdown: 'Last name of the other party in a private chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_forum',
@@ -664,7 +621,6 @@ const Chat = t({
         markdown: '_True_, if the supergroup chat is a forum (has [topics](https://telegram.org/blog/topics-in-groups-collectible-usernames#topics-in-groups) enabled)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_direct_messages',
@@ -676,7 +632,6 @@ const Chat = t({
         markdown: '_True_, if the chat is the direct messages chat of a channel',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -696,7 +651,6 @@ const ChatFullInfo = t({
         markdown: 'Unique identifier for this chat.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'type',
@@ -707,7 +661,6 @@ const ChatFullInfo = t({
         markdown: 'Type of the chat, can be either “private”, “group”, “supergroup” or “channel”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -718,7 +671,6 @@ const ChatFullInfo = t({
         markdown: 'Title, for supergroups, channels and group chats',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'username',
@@ -729,7 +681,6 @@ const ChatFullInfo = t({
         markdown: 'Username, for private chats, supergroups and channels if available',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'first_name',
@@ -740,7 +691,6 @@ const ChatFullInfo = t({
         markdown: 'First name of the other party in a private chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'last_name',
@@ -751,7 +701,6 @@ const ChatFullInfo = t({
         markdown: 'Last name of the other party in a private chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_forum',
@@ -763,7 +712,6 @@ const ChatFullInfo = t({
         markdown: '_True_, if the supergroup chat is a forum (has [topics](https://telegram.org/blog/topics-in-groups-collectible-usernames#topics-in-groups) enabled)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_direct_messages',
@@ -775,7 +723,6 @@ const ChatFullInfo = t({
         markdown: '_True_, if the chat is the direct messages chat of a channel',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'accent_color_id',
@@ -786,7 +733,6 @@ const ChatFullInfo = t({
         markdown: 'Identifier of the accent color for the chat name and backgrounds of the chat photo, reply header, and link preview. See [accent colors](https://core.telegram.org/bots/api#accent-colors) for more details.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'max_reaction_count',
@@ -797,7 +743,6 @@ const ChatFullInfo = t({
         markdown: 'The maximum number of reactions that can be set on a message in the chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'photo',
@@ -809,7 +754,6 @@ const ChatFullInfo = t({
         markdown: 'Chat photo',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'active_usernames',
@@ -823,7 +767,6 @@ const ChatFullInfo = t({
         markdown: 'If non-empty, the list of all [active chat usernames](https://telegram.org/blog/topics-in-groups-collectible-usernames#collectible-usernames); for private chats, supergroups and channels',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'birthdate',
@@ -835,7 +778,6 @@ const ChatFullInfo = t({
         markdown: 'For private chats, the date of birth of the user',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'business_intro',
@@ -847,7 +789,6 @@ const ChatFullInfo = t({
         markdown: 'For private chats with business accounts, the intro of the business',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'business_location',
@@ -859,7 +800,6 @@ const ChatFullInfo = t({
         markdown: 'For private chats with business accounts, the location of the business',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'business_opening_hours',
@@ -871,7 +811,6 @@ const ChatFullInfo = t({
         markdown: 'For private chats with business accounts, the opening hours of the business',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'personal_chat',
@@ -883,7 +822,6 @@ const ChatFullInfo = t({
         markdown: 'For private chats, the personal channel of the user',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parent_chat',
@@ -895,7 +833,6 @@ const ChatFullInfo = t({
         markdown: 'Information about the corresponding channel chat; for direct messages chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'available_reactions',
@@ -910,7 +847,6 @@ const ChatFullInfo = t({
         markdown: 'List of available reactions allowed in the chat. If omitted, then all [emoji reactions](https://core.telegram.org/bots/api#reactiontypeemoji) are allowed.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'background_custom_emoji_id',
@@ -921,7 +857,6 @@ const ChatFullInfo = t({
         markdown: 'Custom emoji identifier of the emoji chosen by the chat for the reply header and link preview background',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'profile_accent_color_id',
@@ -932,7 +867,6 @@ const ChatFullInfo = t({
         markdown: 'Identifier of the accent color for the chat\'s profile background. See [profile accent colors](https://core.telegram.org/bots/api#profile-accent-colors) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'profile_background_custom_emoji_id',
@@ -943,7 +877,6 @@ const ChatFullInfo = t({
         markdown: 'Custom emoji identifier of the emoji chosen by the chat for its profile background',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'emoji_status_custom_emoji_id',
@@ -954,7 +887,6 @@ const ChatFullInfo = t({
         markdown: 'Custom emoji identifier of the emoji status of the chat or the other party in a private chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'emoji_status_expiration_date',
@@ -965,7 +897,6 @@ const ChatFullInfo = t({
         markdown: 'Expiration date of the emoji status of the chat or the other party in a private chat, in Unix time, if any',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'bio',
@@ -976,7 +907,6 @@ const ChatFullInfo = t({
         markdown: 'Bio of the other party in a private chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_private_forwards',
@@ -988,7 +918,6 @@ const ChatFullInfo = t({
         markdown: '_True_, if privacy settings of the other party in the private chat allows to use `tg://user?id=<user_id>` links only in chats with the user',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_restricted_voice_and_video_messages',
@@ -1000,7 +929,6 @@ const ChatFullInfo = t({
         markdown: '_True_, if the privacy settings of the other party restrict sending voice and video note messages in the private chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'join_to_send_messages',
@@ -1012,7 +940,6 @@ const ChatFullInfo = t({
         markdown: '_True_, if users need to join the supergroup before they can send messages',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'join_by_request',
@@ -1024,7 +951,6 @@ const ChatFullInfo = t({
         markdown: '_True_, if all users directly joining the supergroup without using an invite link need to be approved by supergroup administrators',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'description',
@@ -1035,7 +961,6 @@ const ChatFullInfo = t({
         markdown: 'Description, for groups, supergroups and channel chats',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'invite_link',
@@ -1046,7 +971,6 @@ const ChatFullInfo = t({
         markdown: 'Primary invite link, for groups, supergroups and channel chats',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'pinned_message',
@@ -1058,7 +982,6 @@ const ChatFullInfo = t({
         markdown: 'The most recent pinned message (by sending date)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'permissions',
@@ -1070,7 +993,6 @@ const ChatFullInfo = t({
         markdown: 'Default chat member permissions, for groups and supergroups',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'accepted_gift_types',
@@ -1082,7 +1004,6 @@ const ChatFullInfo = t({
         markdown: 'Information about types of gifts that are accepted by the chat or by the corresponding user for private chats',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_paid_media',
@@ -1094,7 +1015,6 @@ const ChatFullInfo = t({
         markdown: '_True_, if paid media messages can be sent or forwarded to the channel chat. The field is available only for channel chats.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'slow_mode_delay',
@@ -1105,7 +1025,6 @@ const ChatFullInfo = t({
         markdown: 'For supergroups, the minimum allowed delay between consecutive messages sent by each unprivileged user; in seconds',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'unrestrict_boost_count',
@@ -1116,7 +1035,6 @@ const ChatFullInfo = t({
         markdown: 'For supergroups, the minimum number of boosts that a non-administrator user needs to add in order to ignore slow mode and chat permissions',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_auto_delete_time',
@@ -1127,7 +1045,6 @@ const ChatFullInfo = t({
         markdown: 'The time after which all messages sent to the chat will be automatically deleted; in seconds',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_aggressive_anti_spam_enabled',
@@ -1139,7 +1056,6 @@ const ChatFullInfo = t({
         markdown: '_True_, if aggressive anti-spam checks are enabled in the supergroup. The field is only available to chat administrators.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_hidden_members',
@@ -1151,7 +1067,6 @@ const ChatFullInfo = t({
         markdown: '_True_, if non-administrators can only get the list of bots and administrators in the chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_protected_content',
@@ -1163,7 +1078,6 @@ const ChatFullInfo = t({
         markdown: '_True_, if messages from the chat can\'t be forwarded to other chats',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_visible_history',
@@ -1175,7 +1089,6 @@ const ChatFullInfo = t({
         markdown: '_True_, if new chat members will have access to old messages; available only to chat administrators',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'sticker_set_name',
@@ -1186,7 +1099,6 @@ const ChatFullInfo = t({
         markdown: 'For supergroups, name of the group sticker set',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_set_sticker_set',
@@ -1198,7 +1110,6 @@ const ChatFullInfo = t({
         markdown: '_True_, if the bot can change the group sticker set',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'custom_emoji_sticker_set_name',
@@ -1209,7 +1120,6 @@ const ChatFullInfo = t({
         markdown: 'For supergroups, the name of the group\'s custom emoji sticker set. Custom emoji from this set can be used by all users and bots in the group.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'linked_chat_id',
@@ -1220,7 +1130,6 @@ const ChatFullInfo = t({
         markdown: 'Unique identifier for the linked chat, i.e. the discussion group identifier for a channel and vice versa; for supergroups and channel chats.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'location',
@@ -1232,7 +1141,6 @@ const ChatFullInfo = t({
         markdown: 'For supergroups, the location to which the supergroup is connected',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'rating',
@@ -1244,7 +1152,17 @@ const ChatFullInfo = t({
         markdown: 'For private chats, the rating of the user if any',
       },
       required: false,
-      jsonSerialized: false,
+    },
+    {
+      name: 'first_profile_audio',
+      type: {
+        type: 'api-type',
+        name: 'Audio',
+      },
+      description: {
+        markdown: 'For private chats, the first audio added to the profile of the user',
+      },
+      required: false,
     },
     {
       name: 'unique_gift_colors',
@@ -1256,7 +1174,6 @@ const ChatFullInfo = t({
         markdown: 'The color scheme based on a unique gift that must be used for the chat\'s name, message replies and link previews',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'paid_message_star_count',
@@ -1267,7 +1184,6 @@ const ChatFullInfo = t({
         markdown: 'The number of Telegram Stars a general user have to pay to send a message to the chat',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -1287,7 +1203,6 @@ const Message = t({
         markdown: 'Unique message identifier inside this chat. In specific instances (e.g., message containing a video sent to a big chat), the server might automatically schedule a message instead of sending it immediately. In such cases, this field will be 0 and the relevant message will be unusable until it is actually sent',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_thread_id',
@@ -1298,7 +1213,6 @@ const Message = t({
         markdown: 'Unique identifier of a message thread or forum topic to which the message belongs; for supergroups and private chats only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_messages_topic',
@@ -1310,7 +1224,6 @@ const Message = t({
         markdown: 'Information about the direct messages chat topic that contains the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'from',
@@ -1322,7 +1235,6 @@ const Message = t({
         markdown: 'Sender of the message; may be empty for messages sent to channels. For backward compatibility, if the message was sent on behalf of a chat, the field contains a fake sender user in non-channel chats',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'sender_chat',
@@ -1334,7 +1246,6 @@ const Message = t({
         markdown: 'Sender of the message when sent on behalf of a chat. For example, the supergroup itself for messages sent by its anonymous administrators or a linked channel for messages automatically forwarded to the channel\'s discussion group. For backward compatibility, if the message was sent on behalf of a chat, the field _from_ contains a fake sender user in non-channel chats.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'sender_boost_count',
@@ -1345,7 +1256,6 @@ const Message = t({
         markdown: 'If the sender of the message boosted the chat, the number of boosts added by the user',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'sender_business_bot',
@@ -1357,7 +1267,6 @@ const Message = t({
         markdown: 'The bot that actually sent the message on behalf of the business account. Available only for outgoing messages sent on behalf of the connected business account.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'date',
@@ -1368,7 +1277,6 @@ const Message = t({
         markdown: 'Date the message was sent in Unix time. It is always a positive number, representing a valid date.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'business_connection_id',
@@ -1379,7 +1287,6 @@ const Message = t({
         markdown: 'Unique identifier of the business connection from which the message was received. If non-empty, the message belongs to a chat of the corresponding business account that is independent from any potential bot chat which might share the same identifier.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat',
@@ -1391,7 +1298,6 @@ const Message = t({
         markdown: 'Chat the message belongs to',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'forward_origin',
@@ -1403,7 +1309,6 @@ const Message = t({
         markdown: 'Information about the original message for forwarded messages',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_topic_message',
@@ -1415,7 +1320,6 @@ const Message = t({
         markdown: '_True_, if the message is sent to a topic in a forum supergroup or a private chat with the bot',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_automatic_forward',
@@ -1427,7 +1331,6 @@ const Message = t({
         markdown: '_True_, if the message is a channel post that was automatically forwarded to the connected discussion group',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_to_message',
@@ -1439,7 +1342,6 @@ const Message = t({
         markdown: 'For replies in the same chat and message thread, the original message. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain further _reply\\_to\\_message_ fields even if it itself is a reply.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'external_reply',
@@ -1451,7 +1353,6 @@ const Message = t({
         markdown: 'Information about the message that is being replied to, which may come from another chat or forum topic',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'quote',
@@ -1463,7 +1364,6 @@ const Message = t({
         markdown: 'For replies that quote part of the original message, the quoted part of the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_to_story',
@@ -1475,7 +1375,6 @@ const Message = t({
         markdown: 'For replies to a story, the original story',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_to_checklist_task_id',
@@ -1486,7 +1385,6 @@ const Message = t({
         markdown: 'Identifier of the specific checklist task that is being replied to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'via_bot',
@@ -1498,7 +1396,6 @@ const Message = t({
         markdown: 'Bot through which the message was sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'edit_date',
@@ -1509,7 +1406,6 @@ const Message = t({
         markdown: 'Date the message was last edited in Unix time',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_protected_content',
@@ -1521,7 +1417,6 @@ const Message = t({
         markdown: '_True_, if the message can\'t be forwarded',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_from_offline',
@@ -1533,7 +1428,6 @@ const Message = t({
         markdown: '_True_, if the message was sent by an implicit action, for example, as an away or a greeting business message, or as a scheduled message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_paid_post',
@@ -1545,7 +1439,6 @@ const Message = t({
         markdown: '_True_, if the message is a paid post. Note that such posts must not be deleted for 24 hours to receive the payment and can\'t be edited.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'media_group_id',
@@ -1556,7 +1449,6 @@ const Message = t({
         markdown: 'The unique identifier of a media message group this message belongs to',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'author_signature',
@@ -1567,7 +1459,6 @@ const Message = t({
         markdown: 'Signature of the post author for messages in channels, or the custom title of an anonymous group administrator',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'paid_star_count',
@@ -1578,7 +1469,6 @@ const Message = t({
         markdown: 'The number of Telegram Stars that were paid by the sender of the message to send it',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'text',
@@ -1589,7 +1479,6 @@ const Message = t({
         markdown: 'For text messages, the actual UTF-8 text of the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'entities',
@@ -1604,7 +1493,6 @@ const Message = t({
         markdown: 'For text messages, special entities like usernames, URLs, bot commands, etc. that appear in the text',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'link_preview_options',
@@ -1616,7 +1504,6 @@ const Message = t({
         markdown: 'Options used for link preview generation for the message, if it is a text message and link preview options were changed',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_info',
@@ -1628,7 +1515,6 @@ const Message = t({
         markdown: 'Information about suggested post parameters if the message is a suggested post in a channel direct messages chat. If the message is an approved or declined suggested post, then it can\'t be edited.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'effect_id',
@@ -1639,7 +1525,6 @@ const Message = t({
         markdown: 'Unique identifier of the message effect added to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'animation',
@@ -1651,7 +1536,6 @@ const Message = t({
         markdown: 'Message is an animation, information about the animation. For backward compatibility, when this field is set, the _document_ field will also be set',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'audio',
@@ -1663,7 +1547,6 @@ const Message = t({
         markdown: 'Message is an audio file, information about the file',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'document',
@@ -1675,7 +1558,6 @@ const Message = t({
         markdown: 'Message is a general file, information about the file',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'paid_media',
@@ -1687,7 +1569,6 @@ const Message = t({
         markdown: 'Message contains paid media; information about the paid media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo',
@@ -1702,7 +1583,6 @@ const Message = t({
         markdown: 'Message is a photo, available sizes of the photo',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'sticker',
@@ -1714,7 +1594,6 @@ const Message = t({
         markdown: 'Message is a sticker, information about the sticker',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'story',
@@ -1726,7 +1605,6 @@ const Message = t({
         markdown: 'Message is a forwarded story',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'video',
@@ -1738,7 +1616,6 @@ const Message = t({
         markdown: 'Message is a video, information about the video',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'video_note',
@@ -1750,7 +1627,6 @@ const Message = t({
         markdown: 'Message is a [video note](https://telegram.org/blog/video-messages-and-telescope), information about the video message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'voice',
@@ -1762,7 +1638,6 @@ const Message = t({
         markdown: 'Message is a voice message, information about the file',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -1773,7 +1648,6 @@ const Message = t({
         markdown: 'Caption for the animation, audio, document, paid media, photo, video or voice',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -1788,7 +1662,6 @@ const Message = t({
         markdown: 'For messages with a caption, special entities like usernames, URLs, bot commands, etc. that appear in the caption',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'show_caption_above_media',
@@ -1800,7 +1673,6 @@ const Message = t({
         markdown: '_True_, if the caption must be shown above the message media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_media_spoiler',
@@ -1812,7 +1684,6 @@ const Message = t({
         markdown: '_True_, if the message media is covered by a spoiler animation',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'checklist',
@@ -1824,7 +1695,6 @@ const Message = t({
         markdown: 'Message is a checklist',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'contact',
@@ -1836,7 +1706,6 @@ const Message = t({
         markdown: 'Message is a shared contact, information about the contact',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'dice',
@@ -1848,7 +1717,6 @@ const Message = t({
         markdown: 'Message is a dice with random value',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'game',
@@ -1860,7 +1728,6 @@ const Message = t({
         markdown: 'Message is a game, information about the game. [More about games »](https://core.telegram.org/bots/api#games)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'poll',
@@ -1872,7 +1739,6 @@ const Message = t({
         markdown: 'Message is a native poll, information about the poll',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'venue',
@@ -1884,7 +1750,6 @@ const Message = t({
         markdown: 'Message is a venue, information about the venue. For backward compatibility, when this field is set, the _location_ field will also be set',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'location',
@@ -1896,7 +1761,6 @@ const Message = t({
         markdown: 'Message is a shared location, information about the location',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'new_chat_members',
@@ -1911,7 +1775,6 @@ const Message = t({
         markdown: 'New members that were added to the group or supergroup and information about them (the bot itself may be one of these members)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'left_chat_member',
@@ -1923,7 +1786,28 @@ const Message = t({
         markdown: 'A member was removed from the group, information about them (this member may be the bot itself)',
       },
       required: false,
-      jsonSerialized: false,
+    },
+    {
+      name: 'chat_owner_left',
+      type: {
+        type: 'api-type',
+        name: 'ChatOwnerLeft',
+      },
+      description: {
+        markdown: 'Service message: chat owner has left',
+      },
+      required: false,
+    },
+    {
+      name: 'chat_owner_changed',
+      type: {
+        type: 'api-type',
+        name: 'ChatOwnerChanged',
+      },
+      description: {
+        markdown: 'Service message: chat owner has changed',
+      },
+      required: false,
     },
     {
       name: 'new_chat_title',
@@ -1934,7 +1818,6 @@ const Message = t({
         markdown: 'A chat title was changed to this value',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'new_chat_photo',
@@ -1949,7 +1832,6 @@ const Message = t({
         markdown: 'A chat photo was change to this value',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'delete_chat_photo',
@@ -1961,7 +1843,6 @@ const Message = t({
         markdown: 'Service message: the chat photo was deleted',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'group_chat_created',
@@ -1973,7 +1854,6 @@ const Message = t({
         markdown: 'Service message: the group has been created',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'supergroup_chat_created',
@@ -1985,7 +1865,6 @@ const Message = t({
         markdown: 'Service message: the supergroup has been created. This field can\'t be received in a message coming through updates, because bot can\'t be a member of a supergroup when it is created. It can only be found in reply\\_to\\_message if someone replies to a very first message in a directly created supergroup.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'channel_chat_created',
@@ -1997,7 +1876,6 @@ const Message = t({
         markdown: 'Service message: the channel has been created. This field can\'t be received in a message coming through updates, because bot can\'t be a member of a channel when it is created. It can only be found in reply\\_to\\_message if someone replies to a very first message in a channel.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_auto_delete_timer_changed',
@@ -2009,7 +1887,6 @@ const Message = t({
         markdown: 'Service message: auto-delete timer settings changed in the chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'migrate_to_chat_id',
@@ -2020,7 +1897,6 @@ const Message = t({
         markdown: 'The group has been migrated to a supergroup with the specified identifier.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'migrate_from_chat_id',
@@ -2031,7 +1907,6 @@ const Message = t({
         markdown: 'The supergroup has been migrated from a group with the specified identifier.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'pinned_message',
@@ -2043,7 +1918,6 @@ const Message = t({
         markdown: 'Specified message was pinned. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain further _reply\\_to\\_message_ fields even if it itself is a reply.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'invoice',
@@ -2055,7 +1929,6 @@ const Message = t({
         markdown: 'Message is an invoice for a [payment](https://core.telegram.org/bots/api#payments), information about the invoice. [More about payments »](https://core.telegram.org/bots/api#payments)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'successful_payment',
@@ -2067,7 +1940,6 @@ const Message = t({
         markdown: 'Message is a service message about a successful payment, information about the payment. [More about payments »](https://core.telegram.org/bots/api#payments)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'refunded_payment',
@@ -2079,7 +1951,6 @@ const Message = t({
         markdown: 'Message is a service message about a refunded payment, information about the payment. [More about payments »](https://core.telegram.org/bots/api#payments)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'users_shared',
@@ -2091,7 +1962,6 @@ const Message = t({
         markdown: 'Service message: users were shared with the bot',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_shared',
@@ -2103,7 +1973,6 @@ const Message = t({
         markdown: 'Service message: a chat was shared with the bot',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'gift',
@@ -2115,7 +1984,6 @@ const Message = t({
         markdown: 'Service message: a regular gift was sent or received',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'unique_gift',
@@ -2127,7 +1995,6 @@ const Message = t({
         markdown: 'Service message: a unique gift was sent or received',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'gift_upgrade_sent',
@@ -2139,7 +2006,6 @@ const Message = t({
         markdown: 'Service message: upgrade of a gift was purchased after the gift was sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'connected_website',
@@ -2150,7 +2016,6 @@ const Message = t({
         markdown: 'The domain name of the website on which the user has logged in. [More about Telegram Login »](https://core.telegram.org/widgets/login)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'write_access_allowed',
@@ -2162,7 +2027,6 @@ const Message = t({
         markdown: 'Service message: the user allowed the bot to write messages after adding it to the attachment or side menu, launching a Web App from a link, or accepting an explicit request from a Web App sent by the method [requestWriteAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'passport_data',
@@ -2174,7 +2038,6 @@ const Message = t({
         markdown: 'Telegram Passport data',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'proximity_alert_triggered',
@@ -2186,7 +2049,6 @@ const Message = t({
         markdown: 'Service message. A user in the chat triggered another user\'s proximity alert while sharing Live Location.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'boost_added',
@@ -2198,7 +2060,6 @@ const Message = t({
         markdown: 'Service message: user boosted the chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_background_set',
@@ -2210,7 +2071,6 @@ const Message = t({
         markdown: 'Service message: chat background set',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'checklist_tasks_done',
@@ -2222,7 +2082,6 @@ const Message = t({
         markdown: 'Service message: some tasks in a checklist were marked as done or not done',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'checklist_tasks_added',
@@ -2234,7 +2093,6 @@ const Message = t({
         markdown: 'Service message: tasks were added to a checklist',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'direct_message_price_changed',
@@ -2246,7 +2104,6 @@ const Message = t({
         markdown: 'Service message: the price for paid messages in the corresponding direct messages chat of a channel has changed',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'forum_topic_created',
@@ -2258,7 +2115,6 @@ const Message = t({
         markdown: 'Service message: forum topic created',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'forum_topic_edited',
@@ -2270,7 +2126,6 @@ const Message = t({
         markdown: 'Service message: forum topic edited',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'forum_topic_closed',
@@ -2282,7 +2137,6 @@ const Message = t({
         markdown: 'Service message: forum topic closed',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'forum_topic_reopened',
@@ -2294,7 +2148,6 @@ const Message = t({
         markdown: 'Service message: forum topic reopened',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'general_forum_topic_hidden',
@@ -2306,7 +2159,6 @@ const Message = t({
         markdown: 'Service message: the \'General\' forum topic hidden',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'general_forum_topic_unhidden',
@@ -2318,7 +2170,6 @@ const Message = t({
         markdown: 'Service message: the \'General\' forum topic unhidden',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'giveaway_created',
@@ -2330,7 +2181,6 @@ const Message = t({
         markdown: 'Service message: a scheduled giveaway was created',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'giveaway',
@@ -2342,7 +2192,6 @@ const Message = t({
         markdown: 'The message is a scheduled giveaway message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'giveaway_winners',
@@ -2354,7 +2203,6 @@ const Message = t({
         markdown: 'A giveaway with public winners was completed',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'giveaway_completed',
@@ -2366,7 +2214,6 @@ const Message = t({
         markdown: 'Service message: a giveaway without public winners was completed',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'paid_message_price_changed',
@@ -2378,7 +2225,6 @@ const Message = t({
         markdown: 'Service message: the price for paid messages has changed in the chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_approved',
@@ -2390,7 +2236,6 @@ const Message = t({
         markdown: 'Service message: a suggested post was approved',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_approval_failed',
@@ -2402,7 +2247,6 @@ const Message = t({
         markdown: 'Service message: approval of a suggested post has failed',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_declined',
@@ -2414,7 +2258,6 @@ const Message = t({
         markdown: 'Service message: a suggested post was declined',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_paid',
@@ -2426,7 +2269,6 @@ const Message = t({
         markdown: 'Service message: payment for a suggested post was received',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_post_refunded',
@@ -2438,7 +2280,6 @@ const Message = t({
         markdown: 'Service message: payment for a suggested post was refunded',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'video_chat_scheduled',
@@ -2450,7 +2291,6 @@ const Message = t({
         markdown: 'Service message: video chat scheduled',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'video_chat_started',
@@ -2462,7 +2302,6 @@ const Message = t({
         markdown: 'Service message: video chat started',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'video_chat_ended',
@@ -2474,7 +2313,6 @@ const Message = t({
         markdown: 'Service message: video chat ended',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'video_chat_participants_invited',
@@ -2486,7 +2324,6 @@ const Message = t({
         markdown: 'Service message: new participants invited to a video chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'web_app_data',
@@ -2498,7 +2335,6 @@ const Message = t({
         markdown: 'Service message: data sent by a Web App',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -2510,7 +2346,6 @@ const Message = t({
         markdown: 'Inline keyboard attached to the message. `login_url` buttons are represented as ordinary `url` buttons.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -2530,7 +2365,6 @@ const MessageId = t({
         markdown: 'Unique message identifier. In specific instances (e.g., message containing a video sent to a big chat), the server might automatically schedule a message instead of sending it immediately. In such cases, this field will be 0 and the relevant message will be unusable until it is actually sent',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -2551,7 +2385,6 @@ const InaccessibleMessage = t({
         markdown: 'Chat the message belonged to',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -2562,7 +2395,6 @@ const InaccessibleMessage = t({
         markdown: 'Unique message identifier inside the chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'date',
@@ -2573,7 +2405,6 @@ const InaccessibleMessage = t({
         markdown: 'Always 0. The field can be used to differentiate regular and inaccessible messages.',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -2610,7 +2441,6 @@ const MessageEntity = t({
         markdown: 'Type of the entity. Currently, can be “mention” (`@username`), “hashtag” (`#hashtag` or `#hashtag@chatusername`), “cashtag” (`$USD` or `$USD@chatusername`), “bot\\_command” (`/start@jobs_bot`), “url” (`https://telegram.org`), “email” (`do-not-reply@telegram.org`), “phone\\_number” (`+1-212-555-0123`), “bold” (**bold text**), “italic” (_italic text_), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “blockquote” (block quotation), “expandable\\_blockquote” (collapsed-by-default block quotation), “code” (monowidth string), “pre” (monowidth block), “text\\_link” (for clickable text URLs), “text\\_mention” (for users [without usernames](https://telegram.org/blog/edit#new-mentions)), “custom\\_emoji” (for inline custom emoji stickers)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'offset',
@@ -2621,7 +2451,6 @@ const MessageEntity = t({
         markdown: 'Offset in [UTF-16 code units](https://core.telegram.org/api/entities#entity-length) to the start of the entity',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'length',
@@ -2632,7 +2461,6 @@ const MessageEntity = t({
         markdown: 'Length of the entity in [UTF-16 code units](https://core.telegram.org/api/entities#entity-length)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'url',
@@ -2643,7 +2471,6 @@ const MessageEntity = t({
         markdown: 'For “text\\_link” only, URL that will be opened after user taps on the text',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'user',
@@ -2655,7 +2482,6 @@ const MessageEntity = t({
         markdown: 'For “text\\_mention” only, the mentioned user',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'language',
@@ -2666,7 +2492,6 @@ const MessageEntity = t({
         markdown: 'For “pre” only, the programming language of the entity text',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'custom_emoji_id',
@@ -2677,7 +2502,6 @@ const MessageEntity = t({
         markdown: 'For “custom\\_emoji” only, unique identifier of the custom emoji. Use [getCustomEmojiStickers](https://core.telegram.org/bots/api#getcustomemojistickers) to get full information about the sticker',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -2697,7 +2521,6 @@ const TextQuote = t({
         markdown: 'Text of the quoted part of a message that is replied to by the given message',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'entities',
@@ -2712,7 +2535,6 @@ const TextQuote = t({
         markdown: 'Special entities that appear in the quote. Currently, only _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, and _custom\\_emoji_ entities are kept in quotes.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'position',
@@ -2723,7 +2545,6 @@ const TextQuote = t({
         markdown: 'Approximate quote position in the original message in UTF-16 code units as specified by the sender',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_manual',
@@ -2735,7 +2556,6 @@ const TextQuote = t({
         markdown: '_True_, if the quote was chosen manually by the message sender. Otherwise, the quote was added automatically by the server.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -2756,7 +2576,6 @@ const ExternalReplyInfo = t({
         markdown: 'Origin of the message replied to by the given message',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'chat',
@@ -2768,7 +2587,6 @@ const ExternalReplyInfo = t({
         markdown: 'Chat the original message belongs to. Available only if the chat is a supergroup or a channel.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -2779,7 +2597,6 @@ const ExternalReplyInfo = t({
         markdown: 'Unique message identifier inside the original chat. Available only if the original chat is a supergroup or a channel.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'link_preview_options',
@@ -2791,7 +2608,6 @@ const ExternalReplyInfo = t({
         markdown: 'Options used for link preview generation for the original message, if it is a text message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'animation',
@@ -2803,7 +2619,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is an animation, information about the animation',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'audio',
@@ -2815,7 +2630,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is an audio file, information about the file',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'document',
@@ -2827,7 +2641,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is a general file, information about the file',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'paid_media',
@@ -2839,7 +2652,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message contains paid media; information about the paid media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo',
@@ -2854,7 +2666,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is a photo, available sizes of the photo',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'sticker',
@@ -2866,7 +2677,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is a sticker, information about the sticker',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'story',
@@ -2878,7 +2688,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is a forwarded story',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'video',
@@ -2890,7 +2699,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is a video, information about the video',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'video_note',
@@ -2902,7 +2710,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is a [video note](https://telegram.org/blog/video-messages-and-telescope), information about the video message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'voice',
@@ -2914,7 +2721,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is a voice message, information about the file',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_media_spoiler',
@@ -2926,7 +2732,6 @@ const ExternalReplyInfo = t({
         markdown: '_True_, if the message media is covered by a spoiler animation',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'checklist',
@@ -2938,7 +2743,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is a checklist',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'contact',
@@ -2950,7 +2754,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is a shared contact, information about the contact',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'dice',
@@ -2962,7 +2765,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is a dice with random value',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'game',
@@ -2974,7 +2776,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is a game, information about the game. [More about games »](https://core.telegram.org/bots/api#games)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'giveaway',
@@ -2986,7 +2787,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is a scheduled giveaway, information about the giveaway',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'giveaway_winners',
@@ -2998,7 +2798,6 @@ const ExternalReplyInfo = t({
         markdown: 'A giveaway with public winners was completed',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'invoice',
@@ -3010,7 +2809,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is an invoice for a [payment](https://core.telegram.org/bots/api#payments), information about the invoice. [More about payments »](https://core.telegram.org/bots/api#payments)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'location',
@@ -3022,7 +2820,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is a shared location, information about the location',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'poll',
@@ -3034,7 +2831,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is a native poll, information about the poll',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'venue',
@@ -3046,7 +2842,6 @@ const ExternalReplyInfo = t({
         markdown: 'Message is a venue, information about the venue',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -3066,7 +2861,6 @@ const ReplyParameters = t({
         markdown: 'Identifier of the message that will be replied to in the current chat, or in the chat _chat\\_id_ if it is specified',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -3085,7 +2879,6 @@ const ReplyParameters = t({
         markdown: 'If the message to be replied to is from a different chat, unique identifier for the chat or username of the channel (in the format `@channelusername`). Not supported for messages sent on behalf of a business account and messages from channel direct messages chats.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_sending_without_reply',
@@ -3096,7 +2889,6 @@ const ReplyParameters = t({
         markdown: 'Pass _True_ if the message should be sent even if the specified message to be replied to is not found. Always _False_ for replies in another chat or forum topic. Always _True_ for messages sent on behalf of a business account.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'quote',
@@ -3107,7 +2899,6 @@ const ReplyParameters = t({
         markdown: 'Quoted part of the message to be replied to; 0-1024 characters after entities parsing. The quote must be an exact substring of the message to be replied to, including _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, and _custom\\_emoji_ entities. The message will fail to send if the quote isn\'t found in the original message.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'quote_parse_mode',
@@ -3118,7 +2909,6 @@ const ReplyParameters = t({
         markdown: 'Mode for parsing entities in the quote. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'quote_entities',
@@ -3133,7 +2923,6 @@ const ReplyParameters = t({
         markdown: 'An array of special entities that appear in the quote. It can be specified instead of _quote\\_parse\\_mode_.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'quote_position',
@@ -3144,7 +2933,6 @@ const ReplyParameters = t({
         markdown: 'Position of the quote in the original message in UTF-16 code units',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'checklist_task_id',
@@ -3155,7 +2943,6 @@ const ReplyParameters = t({
         markdown: 'Identifier of the specific checklist task to be replied to',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -3200,7 +2987,6 @@ const MessageOriginUser = t({
         markdown: 'Type of the message origin, always “user”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'date',
@@ -3211,7 +2997,6 @@ const MessageOriginUser = t({
         markdown: 'Date the message was sent originally in Unix time',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'sender_user',
@@ -3223,7 +3008,6 @@ const MessageOriginUser = t({
         markdown: 'User that sent the message originally',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -3243,7 +3027,6 @@ const MessageOriginHiddenUser = t({
         markdown: 'Type of the message origin, always “hidden\\_user”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'date',
@@ -3254,7 +3037,6 @@ const MessageOriginHiddenUser = t({
         markdown: 'Date the message was sent originally in Unix time',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'sender_user_name',
@@ -3265,7 +3047,6 @@ const MessageOriginHiddenUser = t({
         markdown: 'Name of the user that sent the message originally',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -3285,7 +3066,6 @@ const MessageOriginChat = t({
         markdown: 'Type of the message origin, always “chat”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'date',
@@ -3296,7 +3076,6 @@ const MessageOriginChat = t({
         markdown: 'Date the message was sent originally in Unix time',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'sender_chat',
@@ -3308,7 +3087,6 @@ const MessageOriginChat = t({
         markdown: 'Chat that sent the message originally',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'author_signature',
@@ -3319,7 +3097,6 @@ const MessageOriginChat = t({
         markdown: 'For messages originally sent by an anonymous chat administrator, original message author signature',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -3339,7 +3116,6 @@ const MessageOriginChannel = t({
         markdown: 'Type of the message origin, always “channel”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'date',
@@ -3350,7 +3126,6 @@ const MessageOriginChannel = t({
         markdown: 'Date the message was sent originally in Unix time',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'chat',
@@ -3362,7 +3137,6 @@ const MessageOriginChannel = t({
         markdown: 'Channel chat to which the message was originally sent',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -3373,7 +3147,6 @@ const MessageOriginChannel = t({
         markdown: 'Unique message identifier inside the chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'author_signature',
@@ -3384,7 +3157,6 @@ const MessageOriginChannel = t({
         markdown: 'Signature of the original post author',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -3404,7 +3176,6 @@ const PhotoSize = t({
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_unique_id',
@@ -3415,7 +3186,6 @@ const PhotoSize = t({
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'width',
@@ -3426,7 +3196,6 @@ const PhotoSize = t({
         markdown: 'Photo width',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'height',
@@ -3437,7 +3206,6 @@ const PhotoSize = t({
         markdown: 'Photo height',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_size',
@@ -3448,7 +3216,6 @@ const PhotoSize = t({
         markdown: 'File size in bytes',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -3468,7 +3235,6 @@ const Animation = t({
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_unique_id',
@@ -3479,7 +3245,6 @@ const Animation = t({
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'width',
@@ -3490,7 +3255,6 @@ const Animation = t({
         markdown: 'Video width as defined by the sender',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'height',
@@ -3501,7 +3265,6 @@ const Animation = t({
         markdown: 'Video height as defined by the sender',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'duration',
@@ -3512,7 +3275,6 @@ const Animation = t({
         markdown: 'Duration of the video in seconds as defined by the sender',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -3524,7 +3286,6 @@ const Animation = t({
         markdown: 'Animation thumbnail as defined by the sender',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'file_name',
@@ -3535,7 +3296,6 @@ const Animation = t({
         markdown: 'Original animation filename as defined by the sender',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'mime_type',
@@ -3546,7 +3306,6 @@ const Animation = t({
         markdown: 'MIME type of the file as defined by the sender',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'file_size',
@@ -3557,7 +3316,6 @@ const Animation = t({
         markdown: 'File size in bytes.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -3577,7 +3335,6 @@ const Audio = t({
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_unique_id',
@@ -3588,7 +3345,6 @@ const Audio = t({
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'duration',
@@ -3599,7 +3355,6 @@ const Audio = t({
         markdown: 'Duration of the audio in seconds as defined by the sender',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'performer',
@@ -3610,7 +3365,6 @@ const Audio = t({
         markdown: 'Performer of the audio as defined by the sender or by audio tags',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -3621,7 +3375,6 @@ const Audio = t({
         markdown: 'Title of the audio as defined by the sender or by audio tags',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'file_name',
@@ -3632,7 +3385,6 @@ const Audio = t({
         markdown: 'Original filename as defined by the sender',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'mime_type',
@@ -3643,7 +3395,6 @@ const Audio = t({
         markdown: 'MIME type of the file as defined by the sender',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'file_size',
@@ -3654,7 +3405,6 @@ const Audio = t({
         markdown: 'File size in bytes.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -3666,7 +3416,6 @@ const Audio = t({
         markdown: 'Thumbnail of the album cover to which the music file belongs',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -3686,7 +3435,6 @@ const Document = t({
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_unique_id',
@@ -3697,7 +3445,6 @@ const Document = t({
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -3709,7 +3456,6 @@ const Document = t({
         markdown: 'Document thumbnail as defined by the sender',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'file_name',
@@ -3720,7 +3466,6 @@ const Document = t({
         markdown: 'Original filename as defined by the sender',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'mime_type',
@@ -3731,7 +3476,6 @@ const Document = t({
         markdown: 'MIME type of the file as defined by the sender',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'file_size',
@@ -3742,7 +3486,6 @@ const Document = t({
         markdown: 'File size in bytes.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -3763,7 +3506,6 @@ const Story = t({
         markdown: 'Chat that posted the story',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -3774,7 +3516,75 @@ const Story = t({
         markdown: 'Unique identifier for the story in the chat',
       },
       required: true,
-      jsonSerialized: false,
+    },
+  ],
+})
+
+const VideoQuality = t({
+  name: 'VideoQuality',
+  description: {
+    markdown: 'This object represents a video file of a specific quality.',
+  },
+  fields: [
+    {
+      name: 'file_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Identifier for this file, which can be used to download or reuse the file',
+      },
+      required: true,
+    },
+    {
+      name: 'file_unique_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
+      },
+      required: true,
+    },
+    {
+      name: 'width',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Video width',
+      },
+      required: true,
+    },
+    {
+      name: 'height',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Video height',
+      },
+      required: true,
+    },
+    {
+      name: 'codec',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Codec that was used to encode the video, for example, “h264”, “h265”, or “av01”',
+      },
+      required: true,
+    },
+    {
+      name: 'file_size',
+      type: {
+        type: 'int53',
+      },
+      description: {
+        markdown: 'File size in bytes.',
+      },
+      required: false,
     },
   ],
 })
@@ -3794,7 +3604,6 @@ const Video = t({
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_unique_id',
@@ -3805,7 +3614,6 @@ const Video = t({
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'width',
@@ -3816,7 +3624,6 @@ const Video = t({
         markdown: 'Video width as defined by the sender',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'height',
@@ -3827,7 +3634,6 @@ const Video = t({
         markdown: 'Video height as defined by the sender',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'duration',
@@ -3838,7 +3644,6 @@ const Video = t({
         markdown: 'Duration of the video in seconds as defined by the sender',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -3850,7 +3655,6 @@ const Video = t({
         markdown: 'Video thumbnail',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'cover',
@@ -3865,7 +3669,6 @@ const Video = t({
         markdown: 'Available sizes of the cover of the video in the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'start_timestamp',
@@ -3876,7 +3679,20 @@ const Video = t({
         markdown: 'Timestamp in seconds from which the video will play in the message',
       },
       required: false,
-      jsonSerialized: false,
+    },
+    {
+      name: 'qualities',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'VideoQuality',
+        },
+      },
+      description: {
+        markdown: 'List of available qualities of the video',
+      },
+      required: false,
     },
     {
       name: 'file_name',
@@ -3887,7 +3703,6 @@ const Video = t({
         markdown: 'Original filename as defined by the sender',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'mime_type',
@@ -3898,7 +3713,6 @@ const Video = t({
         markdown: 'MIME type of the file as defined by the sender',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'file_size',
@@ -3909,7 +3723,6 @@ const Video = t({
         markdown: 'File size in bytes.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -3929,7 +3742,6 @@ const VideoNote = t({
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_unique_id',
@@ -3940,7 +3752,6 @@ const VideoNote = t({
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'length',
@@ -3951,7 +3762,6 @@ const VideoNote = t({
         markdown: 'Video width and height (diameter of the video message) as defined by the sender',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'duration',
@@ -3962,7 +3772,6 @@ const VideoNote = t({
         markdown: 'Duration of the video in seconds as defined by the sender',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -3974,7 +3783,6 @@ const VideoNote = t({
         markdown: 'Video thumbnail',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'file_size',
@@ -3985,7 +3793,6 @@ const VideoNote = t({
         markdown: 'File size in bytes',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -4005,7 +3812,6 @@ const Voice = t({
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_unique_id',
@@ -4016,7 +3822,6 @@ const Voice = t({
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'duration',
@@ -4027,7 +3832,6 @@ const Voice = t({
         markdown: 'Duration of the audio in seconds as defined by the sender',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'mime_type',
@@ -4038,7 +3842,6 @@ const Voice = t({
         markdown: 'MIME type of the file as defined by the sender',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'file_size',
@@ -4049,7 +3852,6 @@ const Voice = t({
         markdown: 'File size in bytes.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -4069,7 +3871,6 @@ const PaidMediaInfo = t({
         markdown: 'The number of Telegram Stars that must be paid to buy access to the media',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'paid_media',
@@ -4084,7 +3885,6 @@ const PaidMediaInfo = t({
         markdown: 'Information about the paid media',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -4125,7 +3925,6 @@ const PaidMediaPreview = t({
         markdown: 'Type of the paid media, always “preview”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'width',
@@ -4136,7 +3935,6 @@ const PaidMediaPreview = t({
         markdown: 'Media width as defined by the sender',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'height',
@@ -4147,7 +3945,6 @@ const PaidMediaPreview = t({
         markdown: 'Media height as defined by the sender',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'duration',
@@ -4158,7 +3955,6 @@ const PaidMediaPreview = t({
         markdown: 'Duration of the media in seconds as defined by the sender',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -4178,7 +3974,6 @@ const PaidMediaPhoto = t({
         markdown: 'Type of the paid media, always “photo”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'photo',
@@ -4193,7 +3988,6 @@ const PaidMediaPhoto = t({
         markdown: 'The photo',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -4213,7 +4007,6 @@ const PaidMediaVideo = t({
         markdown: 'Type of the paid media, always “video”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'video',
@@ -4225,7 +4018,6 @@ const PaidMediaVideo = t({
         markdown: 'The video',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -4245,7 +4037,6 @@ const Contact = t({
         markdown: 'Contact\'s phone number',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'first_name',
@@ -4256,7 +4047,6 @@ const Contact = t({
         markdown: 'Contact\'s first name',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'last_name',
@@ -4267,7 +4057,6 @@ const Contact = t({
         markdown: 'Contact\'s last name',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'user_id',
@@ -4278,7 +4067,6 @@ const Contact = t({
         markdown: 'Contact\'s user identifier in Telegram.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'vcard',
@@ -4289,7 +4077,6 @@ const Contact = t({
         markdown: 'Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard)',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -4309,7 +4096,6 @@ const Dice = t({
         markdown: 'Emoji on which the dice throw animation is based',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'value',
@@ -4320,7 +4106,6 @@ const Dice = t({
         markdown: 'Value of the dice, 1-6 for “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”, “![🎯](//telegram.org/img/emoji/40/F09F8EAF.png)” and “![🎳](//telegram.org/img/emoji/40/F09F8EB3.png)” base emoji, 1-5 for “![🏀](//telegram.org/img/emoji/40/F09F8F80.png)” and “![⚽](//telegram.org/img/emoji/40/E29ABD.png)” base emoji, 1-64 for “![🎰](//telegram.org/img/emoji/40/F09F8EB0.png)” base emoji',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -4340,7 +4125,6 @@ const PollOption = t({
         markdown: 'Option text, 1-100 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'text_entities',
@@ -4355,7 +4139,6 @@ const PollOption = t({
         markdown: 'Special entities that appear in the option _text_. Currently, only custom emoji entities are allowed in poll option texts',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'voter_count',
@@ -4366,7 +4149,6 @@ const PollOption = t({
         markdown: 'Number of users that voted for this option',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -4386,7 +4168,6 @@ const InputPollOption = t({
         markdown: 'Option text, 1-100 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'text_parse_mode',
@@ -4397,7 +4178,6 @@ const InputPollOption = t({
         markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Currently, only custom emoji entities are allowed',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'text_entities',
@@ -4412,7 +4192,6 @@ const InputPollOption = t({
         markdown: 'An array of special entities that appear in the poll option text. It can be specified instead of _text\\_parse\\_mode_',
       },
       required: false,
-      jsonSerialized: true,
     },
   ],
 })
@@ -4432,7 +4211,6 @@ const PollAnswer = t({
         markdown: 'Unique poll identifier',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'voter_chat',
@@ -4444,7 +4222,6 @@ const PollAnswer = t({
         markdown: 'The chat that changed the answer to the poll, if the voter is anonymous',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'user',
@@ -4456,7 +4233,6 @@ const PollAnswer = t({
         markdown: 'The user that changed the answer to the poll, if the voter isn\'t anonymous',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'option_ids',
@@ -4470,7 +4246,6 @@ const PollAnswer = t({
         markdown: '0-based identifiers of chosen answer options. May be empty if the vote was retracted.',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -4490,7 +4265,6 @@ const Poll = t({
         markdown: 'Unique poll identifier',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'question',
@@ -4501,7 +4275,6 @@ const Poll = t({
         markdown: 'Poll question, 1-300 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'question_entities',
@@ -4516,7 +4289,6 @@ const Poll = t({
         markdown: 'Special entities that appear in the _question_. Currently, only custom emoji entities are allowed in poll questions',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'options',
@@ -4531,7 +4303,6 @@ const Poll = t({
         markdown: 'List of poll options',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'total_voter_count',
@@ -4542,7 +4313,6 @@ const Poll = t({
         markdown: 'Total number of users that voted in the poll',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_closed',
@@ -4553,7 +4323,6 @@ const Poll = t({
         markdown: '_True_, if the poll is closed',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_anonymous',
@@ -4564,7 +4333,6 @@ const Poll = t({
         markdown: '_True_, if the poll is anonymous',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'type',
@@ -4575,7 +4343,6 @@ const Poll = t({
         markdown: 'Poll type, currently can be “regular” or “quiz”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'allows_multiple_answers',
@@ -4586,7 +4353,6 @@ const Poll = t({
         markdown: '_True_, if the poll allows multiple answers',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'correct_option_id',
@@ -4597,7 +4363,6 @@ const Poll = t({
         markdown: '0-based identifier of the correct answer option. Available only for polls in the quiz mode, which are closed, or was sent (not forwarded) by the bot or to the private chat with the bot.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'explanation',
@@ -4608,7 +4373,6 @@ const Poll = t({
         markdown: 'Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll, 0-200 characters',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'explanation_entities',
@@ -4623,7 +4387,6 @@ const Poll = t({
         markdown: 'Special entities like usernames, URLs, bot commands, etc. that appear in the _explanation_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'open_period',
@@ -4634,7 +4397,6 @@ const Poll = t({
         markdown: 'Amount of time in seconds the poll will be active after creation',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'close_date',
@@ -4645,7 +4407,6 @@ const Poll = t({
         markdown: 'Point in time (Unix timestamp) when the poll will be automatically closed',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -4665,7 +4426,6 @@ const ChecklistTask = t({
         markdown: 'Unique identifier of the task',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'text',
@@ -4676,7 +4436,6 @@ const ChecklistTask = t({
         markdown: 'Text of the task',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'text_entities',
@@ -4691,7 +4450,6 @@ const ChecklistTask = t({
         markdown: 'Special entities that appear in the task text',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'completed_by_user',
@@ -4703,7 +4461,6 @@ const ChecklistTask = t({
         markdown: 'User that completed the task; omitted if the task wasn\'t completed by a user',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'completed_by_chat',
@@ -4715,7 +4472,6 @@ const ChecklistTask = t({
         markdown: 'Chat that completed the task; omitted if the task wasn\'t completed by a chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'completion_date',
@@ -4726,7 +4482,6 @@ const ChecklistTask = t({
         markdown: 'Point in time (Unix timestamp) when the task was completed; 0 if the task wasn\'t completed',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -4746,7 +4501,6 @@ const Checklist = t({
         markdown: 'Title of the checklist',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title_entities',
@@ -4761,7 +4515,6 @@ const Checklist = t({
         markdown: 'Special entities that appear in the checklist title',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'tasks',
@@ -4776,7 +4529,6 @@ const Checklist = t({
         markdown: 'List of tasks in the checklist',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'others_can_add_tasks',
@@ -4788,7 +4540,6 @@ const Checklist = t({
         markdown: '_True_, if users other than the creator of the list can add tasks to the list',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'others_can_mark_tasks_as_done',
@@ -4800,7 +4551,6 @@ const Checklist = t({
         markdown: '_True_, if users other than the creator of the list can mark tasks as done or not done',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -4820,7 +4570,6 @@ const InputChecklistTask = t({
         markdown: 'Unique identifier of the task; must be positive and unique among all task identifiers currently present in the checklist',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'text',
@@ -4831,7 +4580,6 @@ const InputChecklistTask = t({
         markdown: 'Text of the task; 1-100 characters after entities parsing',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -4842,7 +4590,6 @@ const InputChecklistTask = t({
         markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'text_entities',
@@ -4857,7 +4604,6 @@ const InputChecklistTask = t({
         markdown: 'List of special entities that appear in the text, which can be specified instead of parse\\_mode. Currently, only _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, and _custom\\_emoji_ entities are allowed.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -4877,7 +4623,6 @@ const InputChecklist = t({
         markdown: 'Title of the checklist; 1-255 characters after entities parsing',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -4888,7 +4633,6 @@ const InputChecklist = t({
         markdown: 'Mode for parsing entities in the title. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'title_entities',
@@ -4903,7 +4647,6 @@ const InputChecklist = t({
         markdown: 'List of special entities that appear in the title, which can be specified instead of parse\\_mode. Currently, only _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, and _custom\\_emoji_ entities are allowed.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'tasks',
@@ -4918,7 +4661,6 @@ const InputChecklist = t({
         markdown: 'List of 1-30 tasks in the checklist',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'others_can_add_tasks',
@@ -4929,7 +4671,6 @@ const InputChecklist = t({
         markdown: 'Pass _True_ if other users can add tasks to the checklist',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'others_can_mark_tasks_as_done',
@@ -4940,7 +4681,6 @@ const InputChecklist = t({
         markdown: 'Pass _True_ if other users can mark tasks as done or not done in the checklist',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -4961,7 +4701,6 @@ const ChecklistTasksDone = t({
         markdown: 'Message containing the checklist whose tasks were marked as done or not done. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'marked_as_done_task_ids',
@@ -4975,7 +4714,6 @@ const ChecklistTasksDone = t({
         markdown: 'Identifiers of the tasks that were marked as done',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'marked_as_not_done_task_ids',
@@ -4989,7 +4727,6 @@ const ChecklistTasksDone = t({
         markdown: 'Identifiers of the tasks that were marked as not done',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5010,7 +4747,6 @@ const ChecklistTasksAdded = t({
         markdown: 'Message containing the checklist to which the tasks were added. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'tasks',
@@ -5025,7 +4761,6 @@ const ChecklistTasksAdded = t({
         markdown: 'List of tasks added to the checklist',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5045,7 +4780,6 @@ const Location = t({
         markdown: 'Latitude as defined by the sender',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'longitude',
@@ -5056,7 +4790,6 @@ const Location = t({
         markdown: 'Longitude as defined by the sender',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'horizontal_accuracy',
@@ -5067,7 +4800,6 @@ const Location = t({
         markdown: 'The radius of uncertainty for the location, measured in meters; 0-1500',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'live_period',
@@ -5078,7 +4810,6 @@ const Location = t({
         markdown: 'Time relative to the message sending date, during which the location can be updated; in seconds. For active live locations only.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'heading',
@@ -5089,7 +4820,6 @@ const Location = t({
         markdown: 'The direction in which user is moving, in degrees; 1-360. For active live locations only.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'proximity_alert_radius',
@@ -5100,7 +4830,6 @@ const Location = t({
         markdown: 'The maximum distance for proximity alerts about approaching another chat member, in meters. For sent live locations only.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5121,7 +4850,6 @@ const Venue = t({
         markdown: 'Venue location. Can\'t be a live location',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -5132,7 +4860,6 @@ const Venue = t({
         markdown: 'Name of the venue',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'address',
@@ -5143,7 +4870,6 @@ const Venue = t({
         markdown: 'Address of the venue',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'foursquare_id',
@@ -5154,7 +4880,6 @@ const Venue = t({
         markdown: 'Foursquare identifier of the venue',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'foursquare_type',
@@ -5165,7 +4890,6 @@ const Venue = t({
         markdown: 'Foursquare type of the venue. (For example, “arts\\_entertainment/default”, “arts\\_entertainment/aquarium” or “food/icecream”.)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'google_place_id',
@@ -5176,7 +4900,6 @@ const Venue = t({
         markdown: 'Google Places identifier of the venue',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'google_place_type',
@@ -5187,7 +4910,6 @@ const Venue = t({
         markdown: 'Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5207,7 +4929,6 @@ const WebAppData = t({
         markdown: 'The data. Be aware that a bad client can send arbitrary data in this field.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'button_text',
@@ -5218,7 +4939,6 @@ const WebAppData = t({
         markdown: 'Text of the _web\\_app_ keyboard button from which the Web App was opened. Be aware that a bad client can send arbitrary data in this field.',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5239,7 +4959,6 @@ const ProximityAlertTriggered = t({
         markdown: 'User that triggered the alert',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'watcher',
@@ -5251,7 +4970,6 @@ const ProximityAlertTriggered = t({
         markdown: 'User that set the alert',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'distance',
@@ -5262,7 +4980,6 @@ const ProximityAlertTriggered = t({
         markdown: 'The distance between the users',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5282,7 +4999,6 @@ const MessageAutoDeleteTimerChanged = t({
         markdown: 'New auto-delete time for messages in the chat; in seconds',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5302,7 +5018,6 @@ const ChatBoostAdded = t({
         markdown: 'Number of boosts added by the user',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5343,7 +5058,6 @@ const BackgroundFillSolid = t({
         markdown: 'Type of the background fill, always “solid”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'color',
@@ -5354,7 +5068,6 @@ const BackgroundFillSolid = t({
         markdown: 'The color of the background fill in the RGB24 format',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5374,7 +5087,6 @@ const BackgroundFillGradient = t({
         markdown: 'Type of the background fill, always “gradient”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'top_color',
@@ -5385,7 +5097,6 @@ const BackgroundFillGradient = t({
         markdown: 'Top color of the gradient in the RGB24 format',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'bottom_color',
@@ -5396,7 +5107,6 @@ const BackgroundFillGradient = t({
         markdown: 'Bottom color of the gradient in the RGB24 format',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'rotation_angle',
@@ -5407,7 +5117,6 @@ const BackgroundFillGradient = t({
         markdown: 'Clockwise rotation angle of the background fill in degrees; 0-359',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5427,7 +5136,6 @@ const BackgroundFillFreeformGradient = t({
         markdown: 'Type of the background fill, always “freeform\\_gradient”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'colors',
@@ -5441,7 +5149,6 @@ const BackgroundFillFreeformGradient = t({
         markdown: 'A list of the 3 or 4 base colors that are used to generate the freeform gradient in the RGB24 format',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5486,7 +5193,6 @@ const BackgroundTypeFill = t({
         markdown: 'Type of the background, always “fill”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'fill',
@@ -5498,7 +5204,6 @@ const BackgroundTypeFill = t({
         markdown: 'The background fill',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'dark_theme_dimming',
@@ -5509,7 +5214,6 @@ const BackgroundTypeFill = t({
         markdown: 'Dimming of the background in dark themes, as a percentage; 0-100',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5529,7 +5233,6 @@ const BackgroundTypeWallpaper = t({
         markdown: 'Type of the background, always “wallpaper”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'document',
@@ -5541,7 +5244,6 @@ const BackgroundTypeWallpaper = t({
         markdown: 'Document with the wallpaper',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'dark_theme_dimming',
@@ -5552,7 +5254,6 @@ const BackgroundTypeWallpaper = t({
         markdown: 'Dimming of the background in dark themes, as a percentage; 0-100',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_blurred',
@@ -5564,7 +5265,6 @@ const BackgroundTypeWallpaper = t({
         markdown: '_True_, if the wallpaper is downscaled to fit in a 450x450 square and then box-blurred with radius 12',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_moving',
@@ -5576,7 +5276,6 @@ const BackgroundTypeWallpaper = t({
         markdown: '_True_, if the background moves slightly when the device is tilted',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5596,7 +5295,6 @@ const BackgroundTypePattern = t({
         markdown: 'Type of the background, always “pattern”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'document',
@@ -5608,7 +5306,6 @@ const BackgroundTypePattern = t({
         markdown: 'Document with the pattern',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'fill',
@@ -5620,7 +5317,6 @@ const BackgroundTypePattern = t({
         markdown: 'The background fill that is combined with the pattern',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'intensity',
@@ -5631,7 +5327,6 @@ const BackgroundTypePattern = t({
         markdown: 'Intensity of the pattern when it is shown above the filled background; 0-100',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_inverted',
@@ -5643,7 +5338,6 @@ const BackgroundTypePattern = t({
         markdown: '_True_, if the background fill must be applied only to the pattern itself. All other pixels are black in this case. For dark themes only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_moving',
@@ -5655,7 +5349,6 @@ const BackgroundTypePattern = t({
         markdown: '_True_, if the background moves slightly when the device is tilted',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5675,7 +5368,6 @@ const BackgroundTypeChatTheme = t({
         markdown: 'Type of the background, always “chat\\_theme”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'theme_name',
@@ -5686,7 +5378,6 @@ const BackgroundTypeChatTheme = t({
         markdown: 'Name of the chat theme, which is usually an emoji',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5707,7 +5398,6 @@ const ChatBackground = t({
         markdown: 'Type of the background',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5727,7 +5417,6 @@ const ForumTopicCreated = t({
         markdown: 'Name of the topic',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'icon_color',
@@ -5738,7 +5427,6 @@ const ForumTopicCreated = t({
         markdown: 'Color of the topic icon in RGB format',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'icon_custom_emoji_id',
@@ -5749,7 +5437,6 @@ const ForumTopicCreated = t({
         markdown: 'Unique identifier of the custom emoji shown as the topic icon',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_name_implicit',
@@ -5761,7 +5448,6 @@ const ForumTopicCreated = t({
         markdown: '_True_, if the name of the topic wasn\'t specified explicitly by its creator and likely needs to be changed by the bot',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5789,7 +5475,6 @@ const ForumTopicEdited = t({
         markdown: 'New name of the topic, if it was edited',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'icon_custom_emoji_id',
@@ -5800,7 +5485,6 @@ const ForumTopicEdited = t({
         markdown: 'New identifier of the custom emoji shown as the topic icon, if it was edited; an empty string if the icon was removed',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5844,7 +5528,6 @@ const SharedUser = t({
         markdown: 'Identifier of the shared user.  The bot may not have access to the user and could be unable to use this identifier, unless the user is already known to the bot by some other means.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'first_name',
@@ -5855,7 +5538,6 @@ const SharedUser = t({
         markdown: 'First name of the user, if the name was requested by the bot',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'last_name',
@@ -5866,7 +5548,6 @@ const SharedUser = t({
         markdown: 'Last name of the user, if the name was requested by the bot',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'username',
@@ -5877,7 +5558,6 @@ const SharedUser = t({
         markdown: 'Username of the user, if the username was requested by the bot',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo',
@@ -5892,7 +5572,6 @@ const SharedUser = t({
         markdown: 'Available sizes of the chat photo, if the photo was requested by the bot',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5912,7 +5591,6 @@ const UsersShared = t({
         markdown: 'Identifier of the request',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'users',
@@ -5927,7 +5605,6 @@ const UsersShared = t({
         markdown: 'Information about users shared with the bot.',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -5947,7 +5624,6 @@ const ChatShared = t({
         markdown: 'Identifier of the request',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -5958,7 +5634,6 @@ const ChatShared = t({
         markdown: 'Identifier of the shared chat.  The bot may not have access to the chat and could be unable to use this identifier, unless the chat is already known to the bot by some other means.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -5969,7 +5644,6 @@ const ChatShared = t({
         markdown: 'Title of the chat, if the title was requested by the bot.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'username',
@@ -5980,7 +5654,6 @@ const ChatShared = t({
         markdown: 'Username of the chat, if the username was requested by the bot and available.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo',
@@ -5995,7 +5668,6 @@ const ChatShared = t({
         markdown: 'Available sizes of the chat photo, if the photo was requested by the bot',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6015,7 +5687,6 @@ const WriteAccessAllowed = t({
         markdown: '_True_, if the access was granted after the user accepted an explicit request from a Web App sent by the method [requestWriteAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'web_app_name',
@@ -6026,7 +5697,6 @@ const WriteAccessAllowed = t({
         markdown: 'Name of the Web App, if the access was granted when the Web App was launched from a link',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'from_attachment_menu',
@@ -6037,7 +5707,6 @@ const WriteAccessAllowed = t({
         markdown: '_True_, if the access was granted when the bot was added to the attachment or side menu',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6057,7 +5726,6 @@ const VideoChatScheduled = t({
         markdown: 'Point in time (Unix timestamp) when the video chat is supposed to be started by a chat administrator',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6085,7 +5753,6 @@ const VideoChatEnded = t({
         markdown: 'Video chat duration in seconds',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6109,7 +5776,6 @@ const VideoChatParticipantsInvited = t({
         markdown: 'New members that were invited to the video chat',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6129,7 +5795,6 @@ const PaidMessagePriceChanged = t({
         markdown: 'The new number of Telegram Stars that must be paid by non-administrator users of the supergroup chat for each sent message',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6149,7 +5814,6 @@ const DirectMessagePriceChanged = t({
         markdown: '_True_, if direct messages are enabled for the channel chat; false otherwise',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'direct_message_star_count',
@@ -6160,7 +5824,6 @@ const DirectMessagePriceChanged = t({
         markdown: 'The new number of Telegram Stars that must be paid by users for each direct message sent to the channel. Does not apply to users who have been exempted by administrators. Defaults to 0.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6181,7 +5844,6 @@ const SuggestedPostApproved = t({
         markdown: 'Message containing the suggested post. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'price',
@@ -6193,7 +5855,6 @@ const SuggestedPostApproved = t({
         markdown: 'Amount paid for the post',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'send_date',
@@ -6204,7 +5865,6 @@ const SuggestedPostApproved = t({
         markdown: 'Date when the post will be published',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6225,7 +5885,6 @@ const SuggestedPostApprovalFailed = t({
         markdown: 'Message containing the suggested post whose approval has failed. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'price',
@@ -6237,7 +5896,6 @@ const SuggestedPostApprovalFailed = t({
         markdown: 'Expected price of the post',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6258,7 +5916,6 @@ const SuggestedPostDeclined = t({
         markdown: 'Message containing the suggested post. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'comment',
@@ -6269,7 +5926,6 @@ const SuggestedPostDeclined = t({
         markdown: 'Comment with which the post was declined',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6290,7 +5946,6 @@ const SuggestedPostPaid = t({
         markdown: 'Message containing the suggested post. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'currency',
@@ -6301,7 +5956,6 @@ const SuggestedPostPaid = t({
         markdown: 'Currency in which the payment was made. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'amount',
@@ -6312,7 +5966,6 @@ const SuggestedPostPaid = t({
         markdown: 'The amount of the currency that was received by the channel in nanotoncoins; for payments in toncoins only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'star_amount',
@@ -6324,7 +5977,6 @@ const SuggestedPostPaid = t({
         markdown: 'The amount of Telegram Stars that was received by the channel; for payments in Telegram Stars only',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6345,7 +5997,6 @@ const SuggestedPostRefunded = t({
         markdown: 'Message containing the suggested post. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reason',
@@ -6356,7 +6007,6 @@ const SuggestedPostRefunded = t({
         markdown: 'Reason for the refund. Currently, one of “post\\_deleted” if the post was deleted within 24 hours of being posted or removed from scheduled messages without being posted, or “payment\\_refunded” if the payer refunded their payment.',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6376,7 +6026,6 @@ const GiveawayCreated = t({
         markdown: 'The number of Telegram Stars to be split between giveaway winners; for Telegram Star giveaways only',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6400,7 +6049,6 @@ const Giveaway = t({
         markdown: 'The list of chats which the user must join to participate in the giveaway',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'winners_selection_date',
@@ -6411,7 +6059,6 @@ const Giveaway = t({
         markdown: 'Point in time (Unix timestamp) when winners of the giveaway will be selected',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'winner_count',
@@ -6422,7 +6069,6 @@ const Giveaway = t({
         markdown: 'The number of users which are supposed to be selected as winners of the giveaway',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'only_new_members',
@@ -6434,7 +6080,6 @@ const Giveaway = t({
         markdown: '_True_, if only users who join the chats after the giveaway started should be eligible to win',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_public_winners',
@@ -6446,7 +6091,6 @@ const Giveaway = t({
         markdown: '_True_, if the list of giveaway winners will be visible to everyone',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'prize_description',
@@ -6457,7 +6101,6 @@ const Giveaway = t({
         markdown: 'Description of additional giveaway prize',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'country_codes',
@@ -6471,7 +6114,6 @@ const Giveaway = t({
         markdown: 'A list of two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes indicating the countries from which eligible users for the giveaway must come. If empty, then all users can participate in the giveaway. Users with a phone number that was bought on Fragment can always participate in giveaways.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'prize_star_count',
@@ -6482,7 +6124,6 @@ const Giveaway = t({
         markdown: 'The number of Telegram Stars to be split between giveaway winners; for Telegram Star giveaways only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'premium_subscription_month_count',
@@ -6493,7 +6134,6 @@ const Giveaway = t({
         markdown: 'The number of months the Telegram Premium subscription won from the giveaway will be active for; for Telegram Premium giveaways only',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6514,7 +6154,6 @@ const GiveawayWinners = t({
         markdown: 'The chat that created the giveaway',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'giveaway_message_id',
@@ -6525,7 +6164,6 @@ const GiveawayWinners = t({
         markdown: 'Identifier of the message with the giveaway in the chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'winners_selection_date',
@@ -6536,7 +6174,6 @@ const GiveawayWinners = t({
         markdown: 'Point in time (Unix timestamp) when winners of the giveaway were selected',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'winner_count',
@@ -6547,7 +6184,6 @@ const GiveawayWinners = t({
         markdown: 'Total number of winners in the giveaway',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'winners',
@@ -6562,7 +6198,6 @@ const GiveawayWinners = t({
         markdown: 'List of up to 100 winners of the giveaway',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'additional_chat_count',
@@ -6573,7 +6208,6 @@ const GiveawayWinners = t({
         markdown: 'The number of other chats the user had to join in order to be eligible for the giveaway',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'prize_star_count',
@@ -6584,7 +6218,6 @@ const GiveawayWinners = t({
         markdown: 'The number of Telegram Stars that were split between giveaway winners; for Telegram Star giveaways only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'premium_subscription_month_count',
@@ -6595,7 +6228,6 @@ const GiveawayWinners = t({
         markdown: 'The number of months the Telegram Premium subscription won from the giveaway will be active for; for Telegram Premium giveaways only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'unclaimed_prize_count',
@@ -6606,7 +6238,6 @@ const GiveawayWinners = t({
         markdown: 'Number of undistributed prizes',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'only_new_members',
@@ -6618,7 +6249,6 @@ const GiveawayWinners = t({
         markdown: '_True_, if only users who had joined the chats after the giveaway started were eligible to win',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'was_refunded',
@@ -6630,7 +6260,6 @@ const GiveawayWinners = t({
         markdown: '_True_, if the giveaway was canceled because the payment for it was refunded',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'prize_description',
@@ -6641,7 +6270,6 @@ const GiveawayWinners = t({
         markdown: 'Description of additional giveaway prize',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6661,7 +6289,6 @@ const GiveawayCompleted = t({
         markdown: 'Number of winners in the giveaway',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'unclaimed_prize_count',
@@ -6672,7 +6299,6 @@ const GiveawayCompleted = t({
         markdown: 'Number of undistributed prizes',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'giveaway_message',
@@ -6684,7 +6310,6 @@ const GiveawayCompleted = t({
         markdown: 'Message with the giveaway that was completed, if it wasn\'t deleted',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_star_giveaway',
@@ -6696,7 +6321,6 @@ const GiveawayCompleted = t({
         markdown: '_True_, if the giveaway is a Telegram Star giveaway. Otherwise, currently, the giveaway is a Telegram Premium giveaway.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6716,7 +6340,6 @@ const LinkPreviewOptions = t({
         markdown: '_True_, if the link preview is disabled',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'url',
@@ -6727,7 +6350,6 @@ const LinkPreviewOptions = t({
         markdown: 'URL to use for the link preview. If empty, then the first URL found in the message text will be used',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'prefer_small_media',
@@ -6738,7 +6360,6 @@ const LinkPreviewOptions = t({
         markdown: '_True_, if the media in the link preview is supposed to be shrunk; ignored if the URL isn\'t explicitly specified or media size change isn\'t supported for the preview',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'prefer_large_media',
@@ -6749,7 +6370,6 @@ const LinkPreviewOptions = t({
         markdown: '_True_, if the media in the link preview is supposed to be enlarged; ignored if the URL isn\'t explicitly specified or media size change isn\'t supported for the preview',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'show_above_text',
@@ -6760,7 +6380,6 @@ const LinkPreviewOptions = t({
         markdown: '_True_, if the link preview must be shown above the message text; otherwise, the link preview will be shown below the message text',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6780,7 +6399,6 @@ const SuggestedPostPrice = t({
         markdown: 'Currency in which the post will be paid. Currently, must be one of “XTR” for Telegram Stars or “TON” for toncoins',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'amount',
@@ -6791,7 +6409,6 @@ const SuggestedPostPrice = t({
         markdown: 'The amount of the currency that will be paid for the post in the _smallest units_ of the currency, i.e. Telegram Stars or nanotoncoins. Currently, price in Telegram Stars must be between 5 and 100000, and price in nanotoncoins must be between 10000000 and 10000000000000.',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6811,7 +6428,6 @@ const SuggestedPostInfo = t({
         markdown: 'State of the suggested post. Currently, it can be one of “pending”, “approved”, “declined”.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'price',
@@ -6823,7 +6439,6 @@ const SuggestedPostInfo = t({
         markdown: 'Proposed price of the post. If the field is omitted, then the post is unpaid.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'send_date',
@@ -6834,7 +6449,6 @@ const SuggestedPostInfo = t({
         markdown: 'Proposed send date of the post. If the field is omitted, then the post can be published at any time within 30 days at the sole discretion of the user or administrator who approves it.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6855,7 +6469,6 @@ const SuggestedPostParameters = t({
         markdown: 'Proposed price for the post. If the field is omitted, then the post is unpaid.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'send_date',
@@ -6866,7 +6479,6 @@ const SuggestedPostParameters = t({
         markdown: 'Proposed send date of the post. If specified, then the date must be between 300 second and 2678400 seconds (30 days) in the future. If the field is omitted, then the post can be published at any time within 30 days at the sole discretion of the user who approves it.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6886,7 +6498,6 @@ const DirectMessagesTopic = t({
         markdown: 'Unique identifier of the topic.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user',
@@ -6898,7 +6509,6 @@ const DirectMessagesTopic = t({
         markdown: 'Information about the user that created the topic. Currently, it is always present',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -6918,7 +6528,6 @@ const UserProfilePhotos = t({
         markdown: 'Total number of profile pictures the target user has',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'photos',
@@ -6936,7 +6545,39 @@ const UserProfilePhotos = t({
         markdown: 'Requested profile pictures (in up to 4 sizes each)',
       },
       required: true,
-      jsonSerialized: false,
+    },
+  ],
+})
+
+const UserProfileAudios = t({
+  name: 'UserProfileAudios',
+  description: {
+    markdown: 'This object represents the audios displayed on a user\'s profile.',
+  },
+  fields: [
+    {
+      name: 'total_count',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Total number of profile audios for the target user',
+      },
+      required: true,
+    },
+    {
+      name: 'audios',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'Audio',
+        },
+      },
+      description: {
+        markdown: 'Requested profile audios',
+      },
+      required: true,
     },
   ],
 })
@@ -6956,7 +6597,6 @@ const File = t({
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_unique_id',
@@ -6967,7 +6607,6 @@ const File = t({
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_size',
@@ -6978,7 +6617,6 @@ const File = t({
         markdown: 'File size in bytes.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'file_path',
@@ -6989,7 +6627,6 @@ const File = t({
         markdown: 'File path. Use `https://api.telegram.org/file/bot<token>/<file_path>` to get the file.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -7009,7 +6646,6 @@ const WebAppInfo = t({
         markdown: 'An HTTPS URL of a Web App to be opened with additional data as specified in [Initializing Web Apps](https://core.telegram.org/bots/webapps#initializing-mini-apps)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -7036,7 +6672,6 @@ const ReplyKeyboardMarkup = t({
         markdown: 'Array of button rows, each represented by an Array of [KeyboardButton](https://core.telegram.org/bots/api#keyboardbutton) objects',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_persistent',
@@ -7047,7 +6682,6 @@ const ReplyKeyboardMarkup = t({
         markdown: 'Requests clients to always show the keyboard when the regular keyboard is hidden. Defaults to _false_, in which case the custom keyboard can be hidden and opened with a keyboard icon.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'resize_keyboard',
@@ -7058,7 +6692,6 @@ const ReplyKeyboardMarkup = t({
         markdown: 'Requests clients to resize the keyboard vertically for optimal fit (e.g., make the keyboard smaller if there are just two rows of buttons). Defaults to _false_, in which case the custom keyboard is always of the same height as the app\'s standard keyboard.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'one_time_keyboard',
@@ -7069,7 +6702,6 @@ const ReplyKeyboardMarkup = t({
         markdown: 'Requests clients to hide the keyboard as soon as it\'s been used. The keyboard will still be available, but clients will automatically display the usual letter-keyboard in the chat - the user can press a special button in the input field to see the custom keyboard again. Defaults to _false_.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_field_placeholder',
@@ -7080,7 +6712,6 @@ const ReplyKeyboardMarkup = t({
         markdown: 'The placeholder to be shown in the input field when the keyboard is active; 1-64 characters',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'selective',
@@ -7091,7 +6722,6 @@ const ReplyKeyboardMarkup = t({
         markdown: 'Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the _text_ of the [Message](https://core.telegram.org/bots/api#message) object; 2) if the bot\'s message is a reply to a message in the same chat and forum topic, sender of the original message.\n\n_Example:_ A user requests to change the bot\'s language, bot replies to the request with a keyboard to select the new language. Other users in the group don\'t see the keyboard.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -7099,7 +6729,7 @@ const ReplyKeyboardMarkup = t({
 const KeyboardButton = t({
   name: 'KeyboardButton',
   description: {
-    markdown: 'This object represents one button of the reply keyboard. At most one of the optional fields must be used to specify type of the button. For simple text buttons, _String_ can be used instead of this object to specify the button text.\n\n**Note:** _request\\_users_ and _request\\_chat_ options will only work in Telegram versions released after 3 February, 2023. Older clients will display _unsupported message_.',
+    markdown: 'This object represents one button of the reply keyboard. At most one of the fields other than _text_, _icon\\_custom\\_emoji\\_id_, and _style_ must be used to specify the type of the button. For simple text buttons, _String_ can be used instead of this object to specify the button text.',
   },
   fields: [
     {
@@ -7108,10 +6738,29 @@ const KeyboardButton = t({
         type: 'str',
       },
       description: {
-        markdown: 'Text of the button. If none of the optional fields are used, it will be sent as a message when the button is pressed',
+        markdown: 'Text of the button. If none of the fields other than _text_, _icon\\_custom\\_emoji\\_id_, and _style_ are used, it will be sent as a message when the button is pressed',
       },
       required: true,
-      jsonSerialized: false,
+    },
+    {
+      name: 'icon_custom_emoji_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the custom emoji shown before the text of the button. Can only be used by bots that purchased additional usernames on [Fragment](https://fragment.com/) or in the messages directly sent by the bot to private, group and supergroup chats if the owner of the bot has a Telegram Premium subscription.',
+      },
+      required: false,
+    },
+    {
+      name: 'style',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Style of the button. Must be one of “danger” (red), “success” (green) or “primary” (blue). If omitted, then an app-specific style is used.',
+      },
+      required: false,
     },
     {
       name: 'request_users',
@@ -7123,7 +6772,6 @@ const KeyboardButton = t({
         markdown: 'If specified, pressing the button will open a list of suitable users. Identifiers of selected users will be sent to the bot in a “users\\_shared” service message. Available in private chats only.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'request_chat',
@@ -7135,7 +6783,6 @@ const KeyboardButton = t({
         markdown: 'If specified, pressing the button will open a list of suitable chats. Tapping on a chat will send its identifier to the bot in a “chat\\_shared” service message. Available in private chats only.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'request_contact',
@@ -7146,7 +6793,6 @@ const KeyboardButton = t({
         markdown: 'If _True_, the user\'s phone number will be sent as a contact when the button is pressed. Available in private chats only.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'request_location',
@@ -7157,7 +6803,6 @@ const KeyboardButton = t({
         markdown: 'If _True_, the user\'s current location will be sent when the button is pressed. Available in private chats only.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'request_poll',
@@ -7169,7 +6814,6 @@ const KeyboardButton = t({
         markdown: 'If specified, the user will be asked to create a poll and send it to the bot when the button is pressed. Available in private chats only.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'web_app',
@@ -7181,7 +6825,6 @@ const KeyboardButton = t({
         markdown: 'If specified, the described [Web App](https://core.telegram.org/bots/webapps) will be launched when the button is pressed. The Web App will be able to send a “web\\_app\\_data” service message. Available in private chats only.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -7201,7 +6844,6 @@ const KeyboardButtonRequestUsers = t({
         markdown: 'Signed 32-bit identifier of the request that will be received back in the [UsersShared](https://core.telegram.org/bots/api#usersshared) object. Must be unique within the message',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user_is_bot',
@@ -7212,7 +6854,6 @@ const KeyboardButtonRequestUsers = t({
         markdown: 'Pass _True_ to request bots, pass _False_ to request regular users. If not specified, no additional restrictions are applied.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'user_is_premium',
@@ -7223,7 +6864,6 @@ const KeyboardButtonRequestUsers = t({
         markdown: 'Pass _True_ to request premium users, pass _False_ to request non-premium users. If not specified, no additional restrictions are applied.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'max_quantity',
@@ -7234,7 +6874,6 @@ const KeyboardButtonRequestUsers = t({
         markdown: 'The maximum number of users to be selected; 1-10. Defaults to 1.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'request_name',
@@ -7245,7 +6884,6 @@ const KeyboardButtonRequestUsers = t({
         markdown: 'Pass _True_ to request the users\' first and last names',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'request_username',
@@ -7256,7 +6894,6 @@ const KeyboardButtonRequestUsers = t({
         markdown: 'Pass _True_ to request the users\' usernames',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'request_photo',
@@ -7267,7 +6904,6 @@ const KeyboardButtonRequestUsers = t({
         markdown: 'Pass _True_ to request the users\' photos',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -7287,7 +6923,6 @@ const KeyboardButtonRequestChat = t({
         markdown: 'Signed 32-bit identifier of the request, which will be received back in the [ChatShared](https://core.telegram.org/bots/api#chatshared) object. Must be unique within the message',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'chat_is_channel',
@@ -7298,7 +6933,6 @@ const KeyboardButtonRequestChat = t({
         markdown: 'Pass _True_ to request a channel chat, pass _False_ to request a group or a supergroup chat.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'chat_is_forum',
@@ -7309,7 +6943,6 @@ const KeyboardButtonRequestChat = t({
         markdown: 'Pass _True_ to request a forum supergroup, pass _False_ to request a non-forum chat. If not specified, no additional restrictions are applied.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_has_username',
@@ -7320,7 +6953,6 @@ const KeyboardButtonRequestChat = t({
         markdown: 'Pass _True_ to request a supergroup or a channel with a username, pass _False_ to request a chat without a username. If not specified, no additional restrictions are applied.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_is_created',
@@ -7331,7 +6963,6 @@ const KeyboardButtonRequestChat = t({
         markdown: 'Pass _True_ to request a chat owned by the user. Otherwise, no additional restrictions are applied.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'user_administrator_rights',
@@ -7343,7 +6974,6 @@ const KeyboardButtonRequestChat = t({
         markdown: 'An object listing the required administrator rights of the user in the chat. The rights must be a superset of _bot\\_administrator\\_rights_. If not specified, no additional restrictions are applied.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'bot_administrator_rights',
@@ -7355,7 +6985,6 @@ const KeyboardButtonRequestChat = t({
         markdown: 'An object listing the required administrator rights of the bot in the chat. The rights must be a subset of _user\\_administrator\\_rights_. If not specified, no additional restrictions are applied.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'bot_is_member',
@@ -7366,7 +6995,6 @@ const KeyboardButtonRequestChat = t({
         markdown: 'Pass _True_ to request a chat with the bot as a member. Otherwise, no additional restrictions are applied.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'request_title',
@@ -7377,7 +7005,6 @@ const KeyboardButtonRequestChat = t({
         markdown: 'Pass _True_ to request the chat\'s title',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'request_username',
@@ -7388,7 +7015,6 @@ const KeyboardButtonRequestChat = t({
         markdown: 'Pass _True_ to request the chat\'s username',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'request_photo',
@@ -7399,7 +7025,6 @@ const KeyboardButtonRequestChat = t({
         markdown: 'Pass _True_ to request the chat\'s photo',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -7419,7 +7044,6 @@ const KeyboardButtonPollType = t({
         markdown: 'If _quiz_ is passed, the user will be allowed to create only polls in the quiz mode. If _regular_ is passed, only regular polls will be allowed. Otherwise, the user will be allowed to create a poll of any type.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -7440,7 +7064,6 @@ const ReplyKeyboardRemove = t({
         markdown: 'Requests clients to remove the custom keyboard (user will not be able to summon this keyboard; if you want to hide the keyboard from sight but keep it accessible, use _one\\_time\\_keyboard_ in [ReplyKeyboardMarkup](https://core.telegram.org/bots/api#replykeyboardmarkup))',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'selective',
@@ -7451,7 +7074,6 @@ const ReplyKeyboardRemove = t({
         markdown: 'Use this parameter if you want to remove the keyboard for specific users only. Targets: 1) users that are @mentioned in the _text_ of the [Message](https://core.telegram.org/bots/api#message) object; 2) if the bot\'s message is a reply to a message in the same chat and forum topic, sender of the original message.\n\n_Example:_ A user votes in a poll, bot returns confirmation message in reply to the vote and removes the keyboard for that user, while still showing the keyboard with poll options to users who haven\'t voted yet.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -7478,7 +7100,6 @@ const InlineKeyboardMarkup = t({
         markdown: 'Array of button rows, each represented by an Array of [InlineKeyboardButton](https://core.telegram.org/bots/api#inlinekeyboardbutton) objects',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -7486,7 +7107,7 @@ const InlineKeyboardMarkup = t({
 const InlineKeyboardButton = t({
   name: 'InlineKeyboardButton',
   description: {
-    markdown: 'This object represents one button of an inline keyboard. Exactly one of the optional fields must be used to specify type of the button.',
+    markdown: 'This object represents one button of an inline keyboard. Exactly one of the fields other than _text_, _icon\\_custom\\_emoji\\_id_, and _style_ must be used to specify the type of the button.',
   },
   fields: [
     {
@@ -7498,7 +7119,26 @@ const InlineKeyboardButton = t({
         markdown: 'Label text on the button',
       },
       required: true,
-      jsonSerialized: false,
+    },
+    {
+      name: 'icon_custom_emoji_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the custom emoji shown before the text of the button. Can only be used by bots that purchased additional usernames on [Fragment](https://fragment.com/) or in the messages directly sent by the bot to private, group and supergroup chats if the owner of the bot has a Telegram Premium subscription.',
+      },
+      required: false,
+    },
+    {
+      name: 'style',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Style of the button. Must be one of “danger” (red), “success” (green) or “primary” (blue). If omitted, then an app-specific style is used.',
+      },
+      required: false,
     },
     {
       name: 'url',
@@ -7509,7 +7149,6 @@ const InlineKeyboardButton = t({
         markdown: 'HTTP or tg:// URL to be opened when the button is pressed. Links `tg://user?id=<user_id>` can be used to mention a user by their identifier without using a username, if this is allowed by their privacy settings.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'callback_data',
@@ -7520,7 +7159,6 @@ const InlineKeyboardButton = t({
         markdown: 'Data to be sent in a [callback query](https://core.telegram.org/bots/api#callbackquery) to the bot when the button is pressed, 1-64 bytes',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'web_app',
@@ -7532,7 +7170,6 @@ const InlineKeyboardButton = t({
         markdown: 'Description of the [Web App](https://core.telegram.org/bots/webapps) that will be launched when the user presses the button. The Web App will be able to send an arbitrary message on behalf of the user using the method [answerWebAppQuery](https://core.telegram.org/bots/api#answerwebappquery). Available only in private chats between a user and the bot. Not supported for messages sent on behalf of a Telegram Business account.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'login_url',
@@ -7544,7 +7181,6 @@ const InlineKeyboardButton = t({
         markdown: 'An HTTPS URL used to automatically authorize the user. Can be used as a replacement for the [Telegram Login Widget](https://core.telegram.org/widgets/login).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'switch_inline_query',
@@ -7555,7 +7191,6 @@ const InlineKeyboardButton = t({
         markdown: 'If set, pressing the button will prompt the user to select one of their chats, open that chat and insert the bot\'s username and the specified inline query in the input field. May be empty, in which case just the bot\'s username will be inserted. Not supported for messages sent in channel direct messages chats and on behalf of a Telegram Business account.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'switch_inline_query_current_chat',
@@ -7566,7 +7201,6 @@ const InlineKeyboardButton = t({
         markdown: 'If set, pressing the button will insert the bot\'s username and the specified inline query in the current chat\'s input field. May be empty, in which case only the bot\'s username will be inserted.\n\nThis offers a quick way for the user to open your bot in inline mode in the same chat - good for selecting something from multiple options. Not supported in channels and for messages sent in channel direct messages chats and on behalf of a Telegram Business account.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'switch_inline_query_chosen_chat',
@@ -7578,7 +7212,6 @@ const InlineKeyboardButton = t({
         markdown: 'If set, pressing the button will prompt the user to select one of their chats of the specified type, open that chat and insert the bot\'s username and the specified inline query in the input field. Not supported for messages sent in channel direct messages chats and on behalf of a Telegram Business account.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'copy_text',
@@ -7590,7 +7223,6 @@ const InlineKeyboardButton = t({
         markdown: 'Description of the button that copies the specified text to the clipboard.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'callback_game',
@@ -7602,7 +7234,6 @@ const InlineKeyboardButton = t({
         markdown: 'Description of the game that will be launched when the user presses the button.\n\n**NOTE:** This type of button **must** always be the first button in the first row.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'pay',
@@ -7613,7 +7244,6 @@ const InlineKeyboardButton = t({
         markdown: 'Specify _True_, to send a [Pay button](https://core.telegram.org/bots/api#payments). Substrings “![⭐](//telegram.org/img/emoji/40/E2AD90.png)” and “XTR” in the buttons\'s text will be replaced with a Telegram Star icon.\n\n**NOTE:** This type of button **must** always be the first button in the first row and can only be used in invoice messages.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -7633,7 +7263,6 @@ const LoginUrl = t({
         markdown: 'An HTTPS URL to be opened with user authorization data added to the query string when the button is pressed. If the user refuses to provide authorization data, the original URL without information about the user will be opened. The data added is the same as described in [Receiving authorization data](https://core.telegram.org/widgets/login#receiving-authorization-data).\n\n**NOTE:** You **must** always check the hash of the received data to verify the authentication and the integrity of the data as described in [Checking authorization](https://core.telegram.org/widgets/login#checking-authorization).',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'forward_text',
@@ -7644,7 +7273,6 @@ const LoginUrl = t({
         markdown: 'New text of the button in forwarded messages.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'bot_username',
@@ -7655,7 +7283,6 @@ const LoginUrl = t({
         markdown: 'Username of a bot, which will be used for user authorization. See [Setting up a bot](https://core.telegram.org/widgets/login#setting-up-a-bot) for more details. If not specified, the current bot\'s username will be assumed. The _url_\'s domain must be the same as the domain linked with the bot. See [Linking your domain to the bot](https://core.telegram.org/widgets/login#linking-your-domain-to-the-bot) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'request_write_access',
@@ -7666,7 +7293,6 @@ const LoginUrl = t({
         markdown: 'Pass _True_ to request the permission for your bot to send messages to the user.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -7686,7 +7312,6 @@ const SwitchInlineQueryChosenChat = t({
         markdown: 'The default inline query to be inserted in the input field. If left empty, only the bot\'s username will be inserted',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_user_chats',
@@ -7697,7 +7322,6 @@ const SwitchInlineQueryChosenChat = t({
         markdown: '_True_, if private chats with users can be chosen',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_bot_chats',
@@ -7708,7 +7332,6 @@ const SwitchInlineQueryChosenChat = t({
         markdown: '_True_, if private chats with bots can be chosen',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_group_chats',
@@ -7719,7 +7342,6 @@ const SwitchInlineQueryChosenChat = t({
         markdown: '_True_, if group and supergroup chats can be chosen',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'allow_channel_chats',
@@ -7730,7 +7352,6 @@ const SwitchInlineQueryChosenChat = t({
         markdown: '_True_, if channel chats can be chosen',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -7750,7 +7371,6 @@ const CopyTextButton = t({
         markdown: 'The text to be copied to the clipboard; 1-256 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -7770,7 +7390,6 @@ const CallbackQuery = t({
         markdown: 'Unique identifier for this query',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'from',
@@ -7782,7 +7401,6 @@ const CallbackQuery = t({
         markdown: 'Sender',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message',
@@ -7794,7 +7412,6 @@ const CallbackQuery = t({
         markdown: 'Message sent by the bot with the callback button that originated the query',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'inline_message_id',
@@ -7805,7 +7422,6 @@ const CallbackQuery = t({
         markdown: 'Identifier of the message sent via the bot in inline mode, that originated the query.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'chat_instance',
@@ -7816,7 +7432,6 @@ const CallbackQuery = t({
         markdown: 'Global identifier, uniquely corresponding to the chat to which the message with the callback button was sent. Useful for high scores in [games](https://core.telegram.org/bots/api#games).',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'data',
@@ -7827,7 +7442,6 @@ const CallbackQuery = t({
         markdown: 'Data associated with the callback button. Be aware that the message originated the query can contain no callback buttons with this data.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'game_short_name',
@@ -7838,7 +7452,6 @@ const CallbackQuery = t({
         markdown: 'Short name of a [Game](https://core.telegram.org/bots/api#games) to be returned, serves as the unique identifier for the game',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -7859,7 +7472,6 @@ const ForceReply = t({
         markdown: 'Shows reply interface to the user, as if they manually selected the bot\'s message and tapped \'Reply\'',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'input_field_placeholder',
@@ -7870,7 +7482,6 @@ const ForceReply = t({
         markdown: 'The placeholder to be shown in the input field when the reply is active; 1-64 characters',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'selective',
@@ -7881,7 +7492,6 @@ const ForceReply = t({
         markdown: 'Use this parameter if you want to force reply from specific users only. Targets: 1) users that are @mentioned in the _text_ of the [Message](https://core.telegram.org/bots/api#message) object; 2) if the bot\'s message is a reply to a message in the same chat and forum topic, sender of the original message.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -7901,7 +7511,6 @@ const ChatPhoto = t({
         markdown: 'File identifier of small (160x160) chat photo. This file\\_id can be used only for photo download and only for as long as the photo is not changed.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'small_file_unique_id',
@@ -7912,7 +7521,6 @@ const ChatPhoto = t({
         markdown: 'Unique file identifier of small (160x160) chat photo, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'big_file_id',
@@ -7923,7 +7531,6 @@ const ChatPhoto = t({
         markdown: 'File identifier of big (640x640) chat photo. This file\\_id can be used only for photo download and only for as long as the photo is not changed.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'big_file_unique_id',
@@ -7934,7 +7541,6 @@ const ChatPhoto = t({
         markdown: 'Unique file identifier of big (640x640) chat photo, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -7954,7 +7560,6 @@ const ChatInviteLink = t({
         markdown: 'The invite link. If the link was created by another chat administrator, then the second part of the link will be replaced with “…”.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'creator',
@@ -7966,7 +7571,6 @@ const ChatInviteLink = t({
         markdown: 'Creator of the link',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'creates_join_request',
@@ -7977,7 +7581,6 @@ const ChatInviteLink = t({
         markdown: '_True_, if users joining the chat via the link need to be approved by chat administrators',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_primary',
@@ -7988,7 +7591,6 @@ const ChatInviteLink = t({
         markdown: '_True_, if the link is primary',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_revoked',
@@ -7999,7 +7601,6 @@ const ChatInviteLink = t({
         markdown: '_True_, if the link is revoked',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'name',
@@ -8010,7 +7611,6 @@ const ChatInviteLink = t({
         markdown: 'Invite link name',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'expire_date',
@@ -8021,7 +7621,6 @@ const ChatInviteLink = t({
         markdown: 'Point in time (Unix timestamp) when the link will expire or has been expired',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'member_limit',
@@ -8032,7 +7631,6 @@ const ChatInviteLink = t({
         markdown: 'The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'pending_join_request_count',
@@ -8043,7 +7641,6 @@ const ChatInviteLink = t({
         markdown: 'Number of pending join requests created using this link',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'subscription_period',
@@ -8054,7 +7651,6 @@ const ChatInviteLink = t({
         markdown: 'The number of seconds the subscription will be active for before the next payment',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'subscription_price',
@@ -8065,7 +7661,6 @@ const ChatInviteLink = t({
         markdown: 'The amount of Telegram Stars a user must pay initially and after each subsequent subscription period to be a member of the chat using the link',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -8085,7 +7680,6 @@ const ChatAdministratorRights = t({
         markdown: '_True_, if the user\'s presence in the chat is hidden',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_manage_chat',
@@ -8096,7 +7690,6 @@ const ChatAdministratorRights = t({
         markdown: '_True_, if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages, ignore slow mode, and send messages to the chat without paying Telegram Stars. Implied by any other administrator privilege.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_delete_messages',
@@ -8107,7 +7700,6 @@ const ChatAdministratorRights = t({
         markdown: '_True_, if the administrator can delete messages of other users',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_manage_video_chats',
@@ -8118,7 +7710,6 @@ const ChatAdministratorRights = t({
         markdown: '_True_, if the administrator can manage video chats',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_restrict_members',
@@ -8129,7 +7720,6 @@ const ChatAdministratorRights = t({
         markdown: '_True_, if the administrator can restrict, ban or unban chat members, or access supergroup statistics',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_promote_members',
@@ -8140,7 +7730,6 @@ const ChatAdministratorRights = t({
         markdown: '_True_, if the administrator can add new administrators with a subset of their own privileges or demote administrators that they have promoted, directly or indirectly (promoted by administrators that were appointed by the user)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_change_info',
@@ -8151,7 +7740,6 @@ const ChatAdministratorRights = t({
         markdown: '_True_, if the user is allowed to change the chat title, photo and other settings',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_invite_users',
@@ -8162,7 +7750,6 @@ const ChatAdministratorRights = t({
         markdown: '_True_, if the user is allowed to invite new users to the chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_post_stories',
@@ -8173,7 +7760,6 @@ const ChatAdministratorRights = t({
         markdown: '_True_, if the administrator can post stories to the chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_edit_stories',
@@ -8184,7 +7770,6 @@ const ChatAdministratorRights = t({
         markdown: '_True_, if the administrator can edit stories posted by other users, post stories to the chat page, pin chat stories, and access the chat\'s story archive',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_delete_stories',
@@ -8195,7 +7780,6 @@ const ChatAdministratorRights = t({
         markdown: '_True_, if the administrator can delete stories posted by other users',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_post_messages',
@@ -8206,7 +7790,6 @@ const ChatAdministratorRights = t({
         markdown: '_True_, if the administrator can post messages in the channel, approve suggested posts, or access channel statistics; for channels only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_edit_messages',
@@ -8217,7 +7800,6 @@ const ChatAdministratorRights = t({
         markdown: '_True_, if the administrator can edit messages of other users and can pin messages; for channels only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_pin_messages',
@@ -8228,7 +7810,6 @@ const ChatAdministratorRights = t({
         markdown: '_True_, if the user is allowed to pin messages; for groups and supergroups only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_manage_topics',
@@ -8239,7 +7820,6 @@ const ChatAdministratorRights = t({
         markdown: '_True_, if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_manage_direct_messages',
@@ -8250,7 +7830,6 @@ const ChatAdministratorRights = t({
         markdown: '_True_, if the administrator can manage direct messages of the channel and decline suggested posts; for channels only',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -8271,7 +7850,6 @@ const ChatMemberUpdated = t({
         markdown: 'Chat the user belongs to',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'from',
@@ -8283,7 +7861,6 @@ const ChatMemberUpdated = t({
         markdown: 'Performer of the action, which resulted in the change',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'date',
@@ -8294,7 +7871,6 @@ const ChatMemberUpdated = t({
         markdown: 'Date the change was done in Unix time',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'old_chat_member',
@@ -8306,7 +7882,6 @@ const ChatMemberUpdated = t({
         markdown: 'Previous information about the chat member',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'new_chat_member',
@@ -8318,7 +7893,6 @@ const ChatMemberUpdated = t({
         markdown: 'New information about the chat member',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'invite_link',
@@ -8330,7 +7904,6 @@ const ChatMemberUpdated = t({
         markdown: 'Chat invite link, which was used by the user to join the chat; for joining by invite link events only.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'via_join_request',
@@ -8341,7 +7914,6 @@ const ChatMemberUpdated = t({
         markdown: '_True_, if the user joined the chat after sending a direct join request without using an invite link and being approved by an administrator',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'via_chat_folder_invite_link',
@@ -8352,7 +7924,6 @@ const ChatMemberUpdated = t({
         markdown: '_True_, if the user joined the chat via a chat folder invite link',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -8405,7 +7976,6 @@ const ChatMemberOwner = t({
         markdown: 'The member\'s status in the chat, always “creator”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user',
@@ -8417,7 +7987,6 @@ const ChatMemberOwner = t({
         markdown: 'Information about the user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_anonymous',
@@ -8428,7 +7997,6 @@ const ChatMemberOwner = t({
         markdown: '_True_, if the user\'s presence in the chat is hidden',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'custom_title',
@@ -8439,7 +8007,6 @@ const ChatMemberOwner = t({
         markdown: 'Custom title for this user',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -8459,7 +8026,6 @@ const ChatMemberAdministrator = t({
         markdown: 'The member\'s status in the chat, always “administrator”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user',
@@ -8471,7 +8037,6 @@ const ChatMemberAdministrator = t({
         markdown: 'Information about the user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_be_edited',
@@ -8482,7 +8047,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the bot is allowed to edit administrator privileges of that user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_anonymous',
@@ -8493,7 +8057,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the user\'s presence in the chat is hidden',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_manage_chat',
@@ -8504,7 +8067,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the administrator can access the chat event log, get boost list, see hidden supergroup and channel members, report spam messages, ignore slow mode, and send messages to the chat without paying Telegram Stars. Implied by any other administrator privilege.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_delete_messages',
@@ -8515,7 +8077,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the administrator can delete messages of other users',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_manage_video_chats',
@@ -8526,7 +8087,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the administrator can manage video chats',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_restrict_members',
@@ -8537,7 +8097,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the administrator can restrict, ban or unban chat members, or access supergroup statistics',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_promote_members',
@@ -8548,7 +8107,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the administrator can add new administrators with a subset of their own privileges or demote administrators that they have promoted, directly or indirectly (promoted by administrators that were appointed by the user)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_change_info',
@@ -8559,7 +8117,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the user is allowed to change the chat title, photo and other settings',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_invite_users',
@@ -8570,7 +8127,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the user is allowed to invite new users to the chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_post_stories',
@@ -8581,7 +8137,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the administrator can post stories to the chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_edit_stories',
@@ -8592,7 +8147,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the administrator can edit stories posted by other users, post stories to the chat page, pin chat stories, and access the chat\'s story archive',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_delete_stories',
@@ -8603,7 +8157,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the administrator can delete stories posted by other users',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_post_messages',
@@ -8614,7 +8167,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the administrator can post messages in the channel, approve suggested posts, or access channel statistics; for channels only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_edit_messages',
@@ -8625,7 +8177,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the administrator can edit messages of other users and can pin messages; for channels only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_pin_messages',
@@ -8636,7 +8187,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the user is allowed to pin messages; for groups and supergroups only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_manage_topics',
@@ -8647,7 +8197,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the user is allowed to create, rename, close, and reopen forum topics; for supergroups only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_manage_direct_messages',
@@ -8658,7 +8207,6 @@ const ChatMemberAdministrator = t({
         markdown: '_True_, if the administrator can manage direct messages of the channel and decline suggested posts; for channels only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'custom_title',
@@ -8669,7 +8217,6 @@ const ChatMemberAdministrator = t({
         markdown: 'Custom title for this user',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -8689,7 +8236,6 @@ const ChatMemberMember = t({
         markdown: 'The member\'s status in the chat, always “member”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user',
@@ -8701,7 +8247,6 @@ const ChatMemberMember = t({
         markdown: 'Information about the user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'until_date',
@@ -8712,7 +8257,6 @@ const ChatMemberMember = t({
         markdown: 'Date when the user\'s subscription will expire; Unix time',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -8732,7 +8276,6 @@ const ChatMemberRestricted = t({
         markdown: 'The member\'s status in the chat, always “restricted”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user',
@@ -8744,7 +8287,6 @@ const ChatMemberRestricted = t({
         markdown: 'Information about the user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_member',
@@ -8755,7 +8297,6 @@ const ChatMemberRestricted = t({
         markdown: '_True_, if the user is a member of the chat at the moment of the request',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_messages',
@@ -8766,7 +8307,6 @@ const ChatMemberRestricted = t({
         markdown: '_True_, if the user is allowed to send text messages, contacts, giveaways, giveaway winners, invoices, locations and venues',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_audios',
@@ -8777,7 +8317,6 @@ const ChatMemberRestricted = t({
         markdown: '_True_, if the user is allowed to send audios',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_documents',
@@ -8788,7 +8327,6 @@ const ChatMemberRestricted = t({
         markdown: '_True_, if the user is allowed to send documents',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_photos',
@@ -8799,7 +8337,6 @@ const ChatMemberRestricted = t({
         markdown: '_True_, if the user is allowed to send photos',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_videos',
@@ -8810,7 +8347,6 @@ const ChatMemberRestricted = t({
         markdown: '_True_, if the user is allowed to send videos',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_video_notes',
@@ -8821,7 +8357,6 @@ const ChatMemberRestricted = t({
         markdown: '_True_, if the user is allowed to send video notes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_voice_notes',
@@ -8832,7 +8367,6 @@ const ChatMemberRestricted = t({
         markdown: '_True_, if the user is allowed to send voice notes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_polls',
@@ -8843,7 +8377,6 @@ const ChatMemberRestricted = t({
         markdown: '_True_, if the user is allowed to send polls and checklists',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_other_messages',
@@ -8854,7 +8387,6 @@ const ChatMemberRestricted = t({
         markdown: '_True_, if the user is allowed to send animations, games, stickers and use inline bots',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_add_web_page_previews',
@@ -8865,7 +8397,6 @@ const ChatMemberRestricted = t({
         markdown: '_True_, if the user is allowed to add web page previews to their messages',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_change_info',
@@ -8876,7 +8407,6 @@ const ChatMemberRestricted = t({
         markdown: '_True_, if the user is allowed to change the chat title, photo and other settings',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_invite_users',
@@ -8887,7 +8417,6 @@ const ChatMemberRestricted = t({
         markdown: '_True_, if the user is allowed to invite new users to the chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_pin_messages',
@@ -8898,7 +8427,6 @@ const ChatMemberRestricted = t({
         markdown: '_True_, if the user is allowed to pin messages',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'can_manage_topics',
@@ -8909,7 +8437,6 @@ const ChatMemberRestricted = t({
         markdown: '_True_, if the user is allowed to create forum topics',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'until_date',
@@ -8920,7 +8447,6 @@ const ChatMemberRestricted = t({
         markdown: 'Date when restrictions will be lifted for this user; Unix time. If 0, then the user is restricted forever',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -8940,7 +8466,6 @@ const ChatMemberLeft = t({
         markdown: 'The member\'s status in the chat, always “left”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user',
@@ -8952,7 +8477,6 @@ const ChatMemberLeft = t({
         markdown: 'Information about the user',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -8972,7 +8496,6 @@ const ChatMemberBanned = t({
         markdown: 'The member\'s status in the chat, always “kicked”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user',
@@ -8984,7 +8507,6 @@ const ChatMemberBanned = t({
         markdown: 'Information about the user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'until_date',
@@ -8995,7 +8517,6 @@ const ChatMemberBanned = t({
         markdown: 'Date when restrictions will be lifted for this user; Unix time. If 0, then the user is banned forever',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9016,7 +8537,6 @@ const ChatJoinRequest = t({
         markdown: 'Chat to which the request was sent',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'from',
@@ -9028,7 +8548,6 @@ const ChatJoinRequest = t({
         markdown: 'User that sent the join request',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user_chat_id',
@@ -9039,7 +8558,6 @@ const ChatJoinRequest = t({
         markdown: 'Identifier of a private chat with the user who sent the join request.  The bot can use this identifier for 5 minutes to send messages until the join request is processed, assuming no other administrator contacted the user.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'date',
@@ -9050,7 +8568,6 @@ const ChatJoinRequest = t({
         markdown: 'Date the request was sent in Unix time',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'bio',
@@ -9061,7 +8578,6 @@ const ChatJoinRequest = t({
         markdown: 'Bio of the user.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'invite_link',
@@ -9073,7 +8589,6 @@ const ChatJoinRequest = t({
         markdown: 'Chat invite link that was used by the user to send the join request',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9093,7 +8608,6 @@ const ChatPermissions = t({
         markdown: '_True_, if the user is allowed to send text messages, contacts, giveaways, giveaway winners, invoices, locations and venues',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_audios',
@@ -9104,7 +8618,6 @@ const ChatPermissions = t({
         markdown: '_True_, if the user is allowed to send audios',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_documents',
@@ -9115,7 +8628,6 @@ const ChatPermissions = t({
         markdown: '_True_, if the user is allowed to send documents',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_photos',
@@ -9126,7 +8638,6 @@ const ChatPermissions = t({
         markdown: '_True_, if the user is allowed to send photos',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_videos',
@@ -9137,7 +8648,6 @@ const ChatPermissions = t({
         markdown: '_True_, if the user is allowed to send videos',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_video_notes',
@@ -9148,7 +8658,6 @@ const ChatPermissions = t({
         markdown: '_True_, if the user is allowed to send video notes',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_voice_notes',
@@ -9159,7 +8668,6 @@ const ChatPermissions = t({
         markdown: '_True_, if the user is allowed to send voice notes',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_polls',
@@ -9170,7 +8678,6 @@ const ChatPermissions = t({
         markdown: '_True_, if the user is allowed to send polls and checklists',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_send_other_messages',
@@ -9181,7 +8688,6 @@ const ChatPermissions = t({
         markdown: '_True_, if the user is allowed to send animations, games, stickers and use inline bots',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_add_web_page_previews',
@@ -9192,7 +8698,6 @@ const ChatPermissions = t({
         markdown: '_True_, if the user is allowed to add web page previews to their messages',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_change_info',
@@ -9203,7 +8708,6 @@ const ChatPermissions = t({
         markdown: '_True_, if the user is allowed to change the chat title, photo and other settings. Ignored in public supergroups',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_invite_users',
@@ -9214,7 +8718,6 @@ const ChatPermissions = t({
         markdown: '_True_, if the user is allowed to invite new users to the chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_pin_messages',
@@ -9225,7 +8728,6 @@ const ChatPermissions = t({
         markdown: '_True_, if the user is allowed to pin messages. Ignored in public supergroups',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_manage_topics',
@@ -9236,7 +8738,6 @@ const ChatPermissions = t({
         markdown: '_True_, if the user is allowed to create forum topics. If omitted defaults to the value of can\\_pin\\_messages',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9256,7 +8757,6 @@ const Birthdate = t({
         markdown: 'Day of the user\'s birth; 1-31',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'month',
@@ -9267,7 +8767,6 @@ const Birthdate = t({
         markdown: 'Month of the user\'s birth; 1-12',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'year',
@@ -9278,7 +8777,6 @@ const Birthdate = t({
         markdown: 'Year of the user\'s birth',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9298,7 +8796,6 @@ const BusinessIntro = t({
         markdown: 'Title text of the business intro',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'message',
@@ -9309,7 +8806,6 @@ const BusinessIntro = t({
         markdown: 'Message text of the business intro',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'sticker',
@@ -9321,7 +8817,6 @@ const BusinessIntro = t({
         markdown: 'Sticker of the business intro',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9341,7 +8836,6 @@ const BusinessLocation = t({
         markdown: 'Address of the business',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'location',
@@ -9353,7 +8847,6 @@ const BusinessLocation = t({
         markdown: 'Location of the business',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9373,7 +8866,6 @@ const BusinessOpeningHoursInterval = t({
         markdown: 'The minute\'s sequence number in a week, starting on Monday, marking the start of the time interval during which the business is open; 0 - 7 \\* 24 \\* 60',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'closing_minute',
@@ -9384,7 +8876,6 @@ const BusinessOpeningHoursInterval = t({
         markdown: 'The minute\'s sequence number in a week, starting on Monday, marking the end of the time interval during which the business is open; 0 - 8 \\* 24 \\* 60',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9404,7 +8895,6 @@ const BusinessOpeningHours = t({
         markdown: 'Unique name of the time zone for which the opening hours are defined',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'opening_hours',
@@ -9419,7 +8909,6 @@ const BusinessOpeningHours = t({
         markdown: 'List of time intervals describing business opening hours',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9439,7 +8928,6 @@ const UserRating = t({
         markdown: 'Current level of the user, indicating their reliability when purchasing digital goods and services. A higher level suggests a more trustworthy customer; a negative level is likely reason for concern.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'rating',
@@ -9450,7 +8938,6 @@ const UserRating = t({
         markdown: 'Numerical value of the user\'s rating; the higher the rating, the better',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'current_level_rating',
@@ -9461,7 +8948,6 @@ const UserRating = t({
         markdown: 'The rating value required to get the current level',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'next_level_rating',
@@ -9472,7 +8958,6 @@ const UserRating = t({
         markdown: 'The rating value required to get to the next level; omitted if the maximum level was reached',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9492,7 +8977,6 @@ const StoryAreaPosition = t({
         markdown: 'The abscissa of the area\'s center, as a percentage of the media width',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'y_percentage',
@@ -9503,7 +8987,6 @@ const StoryAreaPosition = t({
         markdown: 'The ordinate of the area\'s center, as a percentage of the media height',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'width_percentage',
@@ -9514,7 +8997,6 @@ const StoryAreaPosition = t({
         markdown: 'The width of the area\'s rectangle, as a percentage of the media width',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'height_percentage',
@@ -9525,7 +9007,6 @@ const StoryAreaPosition = t({
         markdown: 'The height of the area\'s rectangle, as a percentage of the media height',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'rotation_angle',
@@ -9536,7 +9017,6 @@ const StoryAreaPosition = t({
         markdown: 'The clockwise rotation angle of the rectangle, in degrees; 0-360',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'corner_radius_percentage',
@@ -9547,7 +9027,6 @@ const StoryAreaPosition = t({
         markdown: 'The radius of the rectangle corner rounding, as a percentage of the media width',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9567,7 +9046,6 @@ const LocationAddress = t({
         markdown: 'The two-letter ISO 3166-1 alpha-2 country code of the country where the location is located',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'state',
@@ -9578,7 +9056,6 @@ const LocationAddress = t({
         markdown: 'State of the location',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'city',
@@ -9589,7 +9066,6 @@ const LocationAddress = t({
         markdown: 'City of the location',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'street',
@@ -9600,7 +9076,6 @@ const LocationAddress = t({
         markdown: 'Street address of the location',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9649,7 +9124,6 @@ const StoryAreaTypeLocation = t({
         markdown: 'Type of the area, always “location”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'latitude',
@@ -9660,7 +9134,6 @@ const StoryAreaTypeLocation = t({
         markdown: 'Location latitude in degrees',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'longitude',
@@ -9671,7 +9144,6 @@ const StoryAreaTypeLocation = t({
         markdown: 'Location longitude in degrees',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'address',
@@ -9683,7 +9155,6 @@ const StoryAreaTypeLocation = t({
         markdown: 'Address of the location',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9703,7 +9174,6 @@ const StoryAreaTypeSuggestedReaction = t({
         markdown: 'Type of the area, always “suggested\\_reaction”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'reaction_type',
@@ -9715,7 +9185,6 @@ const StoryAreaTypeSuggestedReaction = t({
         markdown: 'Type of the reaction',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_dark',
@@ -9726,7 +9195,6 @@ const StoryAreaTypeSuggestedReaction = t({
         markdown: 'Pass _True_ if the reaction area has a dark background',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_flipped',
@@ -9737,7 +9205,6 @@ const StoryAreaTypeSuggestedReaction = t({
         markdown: 'Pass _True_ if reaction area corner is flipped',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9757,7 +9224,6 @@ const StoryAreaTypeLink = t({
         markdown: 'Type of the area, always “link”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'url',
@@ -9768,7 +9234,6 @@ const StoryAreaTypeLink = t({
         markdown: 'HTTP or tg:// URL to be opened when the area is clicked',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9788,7 +9253,6 @@ const StoryAreaTypeWeather = t({
         markdown: 'Type of the area, always “weather”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'temperature',
@@ -9799,7 +9263,6 @@ const StoryAreaTypeWeather = t({
         markdown: 'Temperature, in degree Celsius',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'emoji',
@@ -9810,7 +9273,6 @@ const StoryAreaTypeWeather = t({
         markdown: 'Emoji representing the weather',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'background_color',
@@ -9821,7 +9283,6 @@ const StoryAreaTypeWeather = t({
         markdown: 'A color of the area background in the ARGB format',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9841,7 +9302,6 @@ const StoryAreaTypeUniqueGift = t({
         markdown: 'Type of the area, always “unique\\_gift”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'name',
@@ -9852,7 +9312,6 @@ const StoryAreaTypeUniqueGift = t({
         markdown: 'Unique name of the gift',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9873,7 +9332,6 @@ const StoryArea = t({
         markdown: 'Position of the area',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'type',
@@ -9885,7 +9343,6 @@ const StoryArea = t({
         markdown: 'Type of the area',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9906,7 +9363,6 @@ const ChatLocation = t({
         markdown: 'The location to which the supergroup is connected. Can\'t be a live location.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'address',
@@ -9917,7 +9373,6 @@ const ChatLocation = t({
         markdown: 'Location address; 1-64 characters, as defined by the chat owner',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9958,7 +9413,6 @@ const ReactionTypeEmoji = t({
         markdown: 'Type of the reaction, always “emoji”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'emoji',
@@ -9969,7 +9423,6 @@ const ReactionTypeEmoji = t({
         markdown: 'Reaction emoji. Currently, it can be one of "![❤](//telegram.org/img/emoji/40/E29DA4.png)", "![👍](//telegram.org/img/emoji/40/F09F918D.png)", "![👎](//telegram.org/img/emoji/40/F09F918E.png)", "![🔥](//telegram.org/img/emoji/40/F09F94A5.png)", "![🥰](//telegram.org/img/emoji/40/F09FA5B0.png)", "![👏](//telegram.org/img/emoji/40/F09F918F.png)", "![😁](//telegram.org/img/emoji/40/F09F9881.png)", "![🤔](//telegram.org/img/emoji/40/F09FA494.png)", "![🤯](//telegram.org/img/emoji/40/F09FA4AF.png)", "![😱](//telegram.org/img/emoji/40/F09F98B1.png)", "![🤬](//telegram.org/img/emoji/40/F09FA4AC.png)", "![😢](//telegram.org/img/emoji/40/F09F98A2.png)", "![🎉](//telegram.org/img/emoji/40/F09F8E89.png)", "![🤩](//telegram.org/img/emoji/40/F09FA4A9.png)", "![🤮](//telegram.org/img/emoji/40/F09FA4AE.png)", "![💩](//telegram.org/img/emoji/40/F09F92A9.png)", "![🙏](//telegram.org/img/emoji/40/F09F998F.png)", "![👌](//telegram.org/img/emoji/40/F09F918C.png)", "![🕊](//telegram.org/img/emoji/40/F09F958A.png)", "![🤡](//telegram.org/img/emoji/40/F09FA4A1.png)", "![🥱](//telegram.org/img/emoji/40/F09FA5B1.png)", "![🥴](//telegram.org/img/emoji/40/F09FA5B4.png)", "![😍](//telegram.org/img/emoji/40/F09F988D.png)", "![🐳](//telegram.org/img/emoji/40/F09F90B3.png)", "![❤‍🔥](//telegram.org/img/emoji/40/E29DA4E2808DF09F94A5.png)", "![🌚](//telegram.org/img/emoji/40/F09F8C9A.png)", "![🌭](//telegram.org/img/emoji/40/F09F8CAD.png)", "![💯](//telegram.org/img/emoji/40/F09F92AF.png)", "![🤣](//telegram.org/img/emoji/40/F09FA4A3.png)", "![⚡](//telegram.org/img/emoji/40/E29AA1.png)", "![🍌](//telegram.org/img/emoji/40/F09F8D8C.png)", "![🏆](//telegram.org/img/emoji/40/F09F8F86.png)", "![💔](//telegram.org/img/emoji/40/F09F9294.png)", "![🤨](//telegram.org/img/emoji/40/F09FA4A8.png)", "![😐](//telegram.org/img/emoji/40/F09F9890.png)", "![🍓](//telegram.org/img/emoji/40/F09F8D93.png)", "![🍾](//telegram.org/img/emoji/40/F09F8DBE.png)", "![💋](//telegram.org/img/emoji/40/F09F928B.png)", "![🖕](//telegram.org/img/emoji/40/F09F9695.png)", "![😈](//telegram.org/img/emoji/40/F09F9888.png)", "![😴](//telegram.org/img/emoji/40/F09F98B4.png)", "![😭](//telegram.org/img/emoji/40/F09F98AD.png)", "![🤓](//telegram.org/img/emoji/40/F09FA493.png)", "![👻](//telegram.org/img/emoji/40/F09F91BB.png)", "![👨‍💻](//telegram.org/img/emoji/40/F09F91A8E2808DF09F92BB.png)", "![👀](//telegram.org/img/emoji/40/F09F9180.png)", "![🎃](//telegram.org/img/emoji/40/F09F8E83.png)", "![🙈](//telegram.org/img/emoji/40/F09F9988.png)", "![😇](//telegram.org/img/emoji/40/F09F9887.png)", "![😨](//telegram.org/img/emoji/40/F09F98A8.png)", "![🤝](//telegram.org/img/emoji/40/F09FA49D.png)", "![✍](//telegram.org/img/emoji/40/E29C8D.png)", "![🤗](//telegram.org/img/emoji/40/F09FA497.png)", "![🫡](//telegram.org/img/emoji/40/F09FABA1.png)", "![🎅](//telegram.org/img/emoji/40/F09F8E85.png)", "![🎄](//telegram.org/img/emoji/40/F09F8E84.png)", "![☃](//telegram.org/img/emoji/40/E29883.png)", "![💅](//telegram.org/img/emoji/40/F09F9285.png)", "![🤪](//telegram.org/img/emoji/40/F09FA4AA.png)", "![🗿](//telegram.org/img/emoji/40/F09F97BF.png)", "![🆒](//telegram.org/img/emoji/40/F09F8692.png)", "![💘](//telegram.org/img/emoji/40/F09F9298.png)", "![🙉](//telegram.org/img/emoji/40/F09F9989.png)", "![🦄](//telegram.org/img/emoji/40/F09FA684.png)", "![😘](//telegram.org/img/emoji/40/F09F9898.png)", "![💊](//telegram.org/img/emoji/40/F09F928A.png)", "![🙊](//telegram.org/img/emoji/40/F09F998A.png)", "![😎](//telegram.org/img/emoji/40/F09F988E.png)", "![👾](//telegram.org/img/emoji/40/F09F91BE.png)", "![🤷‍♂](//telegram.org/img/emoji/40/F09FA4B7E2808DE29982.png)", "![🤷](//telegram.org/img/emoji/40/F09FA4B7.png)", "![🤷‍♀](//telegram.org/img/emoji/40/F09FA4B7E2808DE29980.png)", "![😡](//telegram.org/img/emoji/40/F09F98A1.png)"',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -9989,7 +9442,6 @@ const ReactionTypeCustomEmoji = t({
         markdown: 'Type of the reaction, always “custom\\_emoji”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'custom_emoji_id',
@@ -10000,7 +9452,6 @@ const ReactionTypeCustomEmoji = t({
         markdown: 'Custom emoji identifier',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -10020,7 +9471,6 @@ const ReactionTypePaid = t({
         markdown: 'Type of the reaction, always “paid”',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -10041,7 +9491,6 @@ const ReactionCount = t({
         markdown: 'Type of the reaction',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'total_count',
@@ -10052,7 +9501,6 @@ const ReactionCount = t({
         markdown: 'Number of times the reaction was added',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -10073,7 +9521,6 @@ const MessageReactionUpdated = t({
         markdown: 'The chat containing the message the user reacted to',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -10084,7 +9531,6 @@ const MessageReactionUpdated = t({
         markdown: 'Unique identifier of the message inside the chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user',
@@ -10096,7 +9542,6 @@ const MessageReactionUpdated = t({
         markdown: 'The user that changed the reaction, if the user isn\'t anonymous',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'actor_chat',
@@ -10108,7 +9553,6 @@ const MessageReactionUpdated = t({
         markdown: 'The chat on behalf of which the reaction was changed, if the user is anonymous',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'date',
@@ -10119,7 +9563,6 @@ const MessageReactionUpdated = t({
         markdown: 'Date of the change in Unix time',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'old_reaction',
@@ -10134,7 +9577,6 @@ const MessageReactionUpdated = t({
         markdown: 'Previous list of reaction types that were set by the user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'new_reaction',
@@ -10149,7 +9591,6 @@ const MessageReactionUpdated = t({
         markdown: 'New list of reaction types that have been set by the user',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -10170,7 +9611,6 @@ const MessageReactionCountUpdated = t({
         markdown: 'The chat containing the message',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_id',
@@ -10181,7 +9621,6 @@ const MessageReactionCountUpdated = t({
         markdown: 'Unique message identifier inside the chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'date',
@@ -10192,7 +9631,6 @@ const MessageReactionCountUpdated = t({
         markdown: 'Date of the change in Unix time',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'reactions',
@@ -10207,7 +9645,6 @@ const MessageReactionCountUpdated = t({
         markdown: 'List of reactions that are present on the message',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -10227,7 +9664,6 @@ const ForumTopic = t({
         markdown: 'Unique identifier of the forum topic',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'name',
@@ -10238,7 +9674,6 @@ const ForumTopic = t({
         markdown: 'Name of the topic',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'icon_color',
@@ -10249,7 +9684,6 @@ const ForumTopic = t({
         markdown: 'Color of the topic icon in RGB format',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'icon_custom_emoji_id',
@@ -10260,7 +9694,6 @@ const ForumTopic = t({
         markdown: 'Unique identifier of the custom emoji shown as the topic icon',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_name_implicit',
@@ -10272,7 +9705,6 @@ const ForumTopic = t({
         markdown: '_True_, if the name of the topic wasn\'t specified explicitly by its creator and likely needs to be changed by the bot',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -10292,7 +9724,6 @@ const GiftBackground = t({
         markdown: 'Center color of the background in RGB format',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'edge_color',
@@ -10303,7 +9734,6 @@ const GiftBackground = t({
         markdown: 'Edge color of the background in RGB format',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'text_color',
@@ -10314,7 +9744,6 @@ const GiftBackground = t({
         markdown: 'Text color of the background in RGB format',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -10334,7 +9763,6 @@ const Gift = t({
         markdown: 'Unique identifier of the gift',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'sticker',
@@ -10346,7 +9774,6 @@ const Gift = t({
         markdown: 'The sticker that represents the gift',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'star_count',
@@ -10357,7 +9784,6 @@ const Gift = t({
         markdown: 'The number of Telegram Stars that must be paid to send the sticker',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'upgrade_star_count',
@@ -10368,7 +9794,6 @@ const Gift = t({
         markdown: 'The number of Telegram Stars that must be paid to upgrade the gift to a unique one',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_premium',
@@ -10380,7 +9805,6 @@ const Gift = t({
         markdown: '_True_, if the gift can only be purchased by Telegram Premium subscribers',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_colors',
@@ -10392,7 +9816,6 @@ const Gift = t({
         markdown: '_True_, if the gift can be used (after being upgraded) to customize a user\'s appearance',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'total_count',
@@ -10403,7 +9826,6 @@ const Gift = t({
         markdown: 'The total number of gifts of this type that can be sent by all users; for limited gifts only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'remaining_count',
@@ -10414,7 +9836,6 @@ const Gift = t({
         markdown: 'The number of remaining gifts of this type that can be sent by all users; for limited gifts only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'personal_total_count',
@@ -10425,7 +9846,6 @@ const Gift = t({
         markdown: 'The total number of gifts of this type that can be sent by the bot; for limited gifts only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'personal_remaining_count',
@@ -10436,7 +9856,6 @@ const Gift = t({
         markdown: 'The number of remaining gifts of this type that can be sent by the bot; for limited gifts only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'background',
@@ -10448,7 +9867,6 @@ const Gift = t({
         markdown: 'Background of the gift',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'unique_gift_variant_count',
@@ -10459,7 +9877,6 @@ const Gift = t({
         markdown: 'The total number of different unique gifts that can be obtained by upgrading the gift',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'publisher_chat',
@@ -10471,7 +9888,6 @@ const Gift = t({
         markdown: 'Information about the chat that published the gift',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -10495,7 +9911,6 @@ const Gifts = t({
         markdown: 'The list of gifts',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -10515,7 +9930,6 @@ const UniqueGiftModel = t({
         markdown: 'Name of the model',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'sticker',
@@ -10527,7 +9941,6 @@ const UniqueGiftModel = t({
         markdown: 'The sticker that represents the unique gift',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'rarity_per_mille',
@@ -10535,10 +9948,19 @@ const UniqueGiftModel = t({
         type: 'int32',
       },
       description: {
-        markdown: 'The number of unique gifts that receive this model for every 1000 gifts upgraded',
+        markdown: 'The number of unique gifts that receive this model for every 1000 gift upgrades. Always 0 for crafted gifts.',
       },
       required: true,
-      jsonSerialized: false,
+    },
+    {
+      name: 'rarity',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Rarity of the model if it is a crafted model. Currently, can be “uncommon”, “rare”, “epic”, or “legendary”.',
+      },
+      required: false,
     },
   ],
 })
@@ -10558,7 +9980,6 @@ const UniqueGiftSymbol = t({
         markdown: 'Name of the symbol',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'sticker',
@@ -10570,7 +9991,6 @@ const UniqueGiftSymbol = t({
         markdown: 'The sticker that represents the unique gift',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'rarity_per_mille',
@@ -10581,7 +10001,6 @@ const UniqueGiftSymbol = t({
         markdown: 'The number of unique gifts that receive this model for every 1000 gifts upgraded',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -10601,7 +10020,6 @@ const UniqueGiftBackdropColors = t({
         markdown: 'The color in the center of the backdrop in RGB format',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'edge_color',
@@ -10612,7 +10030,6 @@ const UniqueGiftBackdropColors = t({
         markdown: 'The color on the edges of the backdrop in RGB format',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'symbol_color',
@@ -10623,7 +10040,6 @@ const UniqueGiftBackdropColors = t({
         markdown: 'The color to be applied to the symbol in RGB format',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'text_color',
@@ -10634,7 +10050,6 @@ const UniqueGiftBackdropColors = t({
         markdown: 'The color for the text on the backdrop in RGB format',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -10654,7 +10069,6 @@ const UniqueGiftBackdrop = t({
         markdown: 'Name of the backdrop',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'colors',
@@ -10666,7 +10080,6 @@ const UniqueGiftBackdrop = t({
         markdown: 'Colors of the backdrop',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'rarity_per_mille',
@@ -10677,7 +10090,6 @@ const UniqueGiftBackdrop = t({
         markdown: 'The number of unique gifts that receive this backdrop for every 1000 gifts upgraded',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -10697,7 +10109,6 @@ const UniqueGiftColors = t({
         markdown: 'Custom emoji identifier of the unique gift\'s model',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'symbol_custom_emoji_id',
@@ -10708,7 +10119,6 @@ const UniqueGiftColors = t({
         markdown: 'Custom emoji identifier of the unique gift\'s symbol',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'light_theme_main_color',
@@ -10719,7 +10129,6 @@ const UniqueGiftColors = t({
         markdown: 'Main color used in light themes; RGB format',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'light_theme_other_colors',
@@ -10733,7 +10142,6 @@ const UniqueGiftColors = t({
         markdown: 'List of 1-3 additional colors used in light themes; RGB format',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'dark_theme_main_color',
@@ -10744,7 +10152,6 @@ const UniqueGiftColors = t({
         markdown: 'Main color used in dark themes; RGB format',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'dark_theme_other_colors',
@@ -10758,7 +10165,6 @@ const UniqueGiftColors = t({
         markdown: 'List of 1-3 additional colors used in dark themes; RGB format',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -10778,7 +10184,6 @@ const UniqueGift = t({
         markdown: 'Identifier of the regular gift from which the gift was upgraded',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'base_name',
@@ -10789,7 +10194,6 @@ const UniqueGift = t({
         markdown: 'Human-readable name of the regular gift from which this unique gift was upgraded',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'name',
@@ -10800,7 +10204,6 @@ const UniqueGift = t({
         markdown: 'Unique name of the gift. This name can be used in `https://t.me/nft/...` links and story areas',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'number',
@@ -10811,7 +10214,6 @@ const UniqueGift = t({
         markdown: 'Unique number of the upgraded gift among gifts upgraded from the same regular gift',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'model',
@@ -10823,7 +10225,6 @@ const UniqueGift = t({
         markdown: 'Model of the gift',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'symbol',
@@ -10835,7 +10236,6 @@ const UniqueGift = t({
         markdown: 'Symbol of the gift',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'backdrop',
@@ -10847,7 +10247,6 @@ const UniqueGift = t({
         markdown: 'Backdrop of the gift',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_premium',
@@ -10859,7 +10258,17 @@ const UniqueGift = t({
         markdown: '_True_, if the original regular gift was exclusively purchaseable by Telegram Premium subscribers',
       },
       required: false,
-      jsonSerialized: false,
+    },
+    {
+      name: 'is_burned',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the gift was used to craft another gift and isn\'t available anymore',
+      },
+      required: false,
     },
     {
       name: 'is_from_blockchain',
@@ -10871,7 +10280,6 @@ const UniqueGift = t({
         markdown: '_True_, if the gift is assigned from the TON blockchain and can\'t be resold or transferred in Telegram',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'colors',
@@ -10883,7 +10291,6 @@ const UniqueGift = t({
         markdown: 'The color scheme that can be used by the gift\'s owner for the chat\'s name, replies to messages and link previews; for business account gifts and gifts that are currently on sale only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'publisher_chat',
@@ -10895,7 +10302,6 @@ const UniqueGift = t({
         markdown: 'Information about the chat that published the gift',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -10916,7 +10322,6 @@ const GiftInfo = t({
         markdown: 'Information about the gift',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'owned_gift_id',
@@ -10927,7 +10332,6 @@ const GiftInfo = t({
         markdown: 'Unique identifier of the received gift for the bot; only present for gifts received on behalf of business accounts',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'convert_star_count',
@@ -10938,7 +10342,6 @@ const GiftInfo = t({
         markdown: 'Number of Telegram Stars that can be claimed by the receiver by converting the gift; omitted if conversion to Telegram Stars is impossible',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'prepaid_upgrade_star_count',
@@ -10949,7 +10352,6 @@ const GiftInfo = t({
         markdown: 'Number of Telegram Stars that were prepaid for the ability to upgrade the gift',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_upgrade_separate',
@@ -10961,7 +10363,6 @@ const GiftInfo = t({
         markdown: '_True_, if the gift\'s upgrade was purchased after the gift was sent',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_be_upgraded',
@@ -10973,7 +10374,6 @@ const GiftInfo = t({
         markdown: '_True_, if the gift can be upgraded to a unique gift',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'text',
@@ -10984,7 +10384,6 @@ const GiftInfo = t({
         markdown: 'Text of the message that was added to the gift',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'entities',
@@ -10999,7 +10398,6 @@ const GiftInfo = t({
         markdown: 'Special entities that appear in the text',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_private',
@@ -11011,7 +10409,6 @@ const GiftInfo = t({
         markdown: '_True_, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'unique_gift_number',
@@ -11022,7 +10419,6 @@ const GiftInfo = t({
         markdown: 'Unique number reserved for this gift when upgraded. See the _number_ field in [UniqueGift](https://core.telegram.org/bots/api#uniquegift)',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11043,7 +10439,6 @@ const UniqueGiftInfo = t({
         markdown: 'Information about the gift',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'origin',
@@ -11054,7 +10449,6 @@ const UniqueGiftInfo = t({
         markdown: 'Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, “resale” for gifts bought from other users, “gifted\\_upgrade” for upgrades purchased after the gift was sent, or “offer” for gifts bought or sold through gift purchase offers',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'last_resale_currency',
@@ -11065,7 +10459,6 @@ const UniqueGiftInfo = t({
         markdown: 'For gifts bought from other users, the currency in which the payment for the gift was done. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'last_resale_amount',
@@ -11076,7 +10469,6 @@ const UniqueGiftInfo = t({
         markdown: 'For gifts bought from other users, the price paid for the gift in either Telegram Stars or nanotoncoins',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'owned_gift_id',
@@ -11087,7 +10479,6 @@ const UniqueGiftInfo = t({
         markdown: 'Unique identifier of the received gift for the bot; only present for gifts received on behalf of business accounts',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'transfer_star_count',
@@ -11098,7 +10489,6 @@ const UniqueGiftInfo = t({
         markdown: 'Number of Telegram Stars that must be paid to transfer the gift; omitted if the bot cannot transfer the gift',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'next_transfer_date',
@@ -11109,7 +10499,6 @@ const UniqueGiftInfo = t({
         markdown: 'Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11146,7 +10535,6 @@ const OwnedGiftRegular = t({
         markdown: 'Type of the gift, always “regular”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'gift',
@@ -11158,7 +10546,6 @@ const OwnedGiftRegular = t({
         markdown: 'Information about the regular gift',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'owned_gift_id',
@@ -11169,7 +10556,6 @@ const OwnedGiftRegular = t({
         markdown: 'Unique identifier of the gift for the bot; for gifts received on behalf of business accounts only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'sender_user',
@@ -11181,7 +10567,6 @@ const OwnedGiftRegular = t({
         markdown: 'Sender of the gift if it is a known user',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'send_date',
@@ -11192,7 +10577,6 @@ const OwnedGiftRegular = t({
         markdown: 'Date the gift was sent in Unix time',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'text',
@@ -11203,7 +10587,6 @@ const OwnedGiftRegular = t({
         markdown: 'Text of the message that was added to the gift',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'entities',
@@ -11218,7 +10601,6 @@ const OwnedGiftRegular = t({
         markdown: 'Special entities that appear in the text',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_private',
@@ -11230,7 +10612,6 @@ const OwnedGiftRegular = t({
         markdown: '_True_, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_saved',
@@ -11242,7 +10623,6 @@ const OwnedGiftRegular = t({
         markdown: '_True_, if the gift is displayed on the account\'s profile page; for gifts received on behalf of business accounts only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_be_upgraded',
@@ -11254,7 +10634,6 @@ const OwnedGiftRegular = t({
         markdown: '_True_, if the gift can be upgraded to a unique gift; for gifts received on behalf of business accounts only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'was_refunded',
@@ -11266,7 +10645,6 @@ const OwnedGiftRegular = t({
         markdown: '_True_, if the gift was refunded and isn\'t available anymore',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'convert_star_count',
@@ -11277,7 +10655,6 @@ const OwnedGiftRegular = t({
         markdown: 'Number of Telegram Stars that can be claimed by the receiver instead of the gift; omitted if the gift cannot be converted to Telegram Stars; for gifts received on behalf of business accounts only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'prepaid_upgrade_star_count',
@@ -11288,7 +10665,6 @@ const OwnedGiftRegular = t({
         markdown: 'Number of Telegram Stars that were paid for the ability to upgrade the gift',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_upgrade_separate',
@@ -11300,7 +10676,6 @@ const OwnedGiftRegular = t({
         markdown: '_True_, if the gift\'s upgrade was purchased after the gift was sent; for gifts received on behalf of business accounts only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'unique_gift_number',
@@ -11311,7 +10686,6 @@ const OwnedGiftRegular = t({
         markdown: 'Unique number reserved for this gift when upgraded. See the _number_ field in [UniqueGift](https://core.telegram.org/bots/api#uniquegift)',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11331,7 +10705,6 @@ const OwnedGiftUnique = t({
         markdown: 'Type of the gift, always “unique”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'gift',
@@ -11343,7 +10716,6 @@ const OwnedGiftUnique = t({
         markdown: 'Information about the unique gift',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'owned_gift_id',
@@ -11354,7 +10726,6 @@ const OwnedGiftUnique = t({
         markdown: 'Unique identifier of the received gift for the bot; for gifts received on behalf of business accounts only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'sender_user',
@@ -11366,7 +10737,6 @@ const OwnedGiftUnique = t({
         markdown: 'Sender of the gift if it is a known user',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'send_date',
@@ -11377,7 +10747,6 @@ const OwnedGiftUnique = t({
         markdown: 'Date the gift was sent in Unix time',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_saved',
@@ -11389,7 +10758,6 @@ const OwnedGiftUnique = t({
         markdown: '_True_, if the gift is displayed on the account\'s profile page; for gifts received on behalf of business accounts only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_be_transferred',
@@ -11401,7 +10769,6 @@ const OwnedGiftUnique = t({
         markdown: '_True_, if the gift can be transferred to another owner; for gifts received on behalf of business accounts only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'transfer_star_count',
@@ -11412,7 +10779,6 @@ const OwnedGiftUnique = t({
         markdown: 'Number of Telegram Stars that must be paid to transfer the gift; omitted if the bot cannot transfer the gift',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'next_transfer_date',
@@ -11423,7 +10789,6 @@ const OwnedGiftUnique = t({
         markdown: 'Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11443,7 +10808,6 @@ const OwnedGifts = t({
         markdown: 'The total number of gifts owned by the user or the chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'gifts',
@@ -11458,7 +10822,6 @@ const OwnedGifts = t({
         markdown: 'The list of gifts',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'next_offset',
@@ -11469,7 +10832,6 @@ const OwnedGifts = t({
         markdown: 'Offset for the next request. If empty, then there are no more results',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11489,7 +10851,6 @@ const AcceptedGiftTypes = t({
         markdown: '_True_, if unlimited regular gifts are accepted',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'limited_gifts',
@@ -11500,7 +10861,6 @@ const AcceptedGiftTypes = t({
         markdown: '_True_, if limited regular gifts are accepted',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'unique_gifts',
@@ -11511,7 +10871,6 @@ const AcceptedGiftTypes = t({
         markdown: '_True_, if unique gifts or gifts that can be upgraded to unique for free are accepted',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'premium_subscription',
@@ -11522,7 +10881,6 @@ const AcceptedGiftTypes = t({
         markdown: '_True_, if a Telegram Premium subscription is accepted',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'gifts_from_channels',
@@ -11533,7 +10891,6 @@ const AcceptedGiftTypes = t({
         markdown: '_True_, if transfers of unique gifts from channels are accepted',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11553,7 +10910,6 @@ const StarAmount = t({
         markdown: 'Integer amount of Telegram Stars, rounded to 0; can be negative',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'nanostar_amount',
@@ -11564,7 +10920,6 @@ const StarAmount = t({
         markdown: 'The number of 1/1000000000 shares of Telegram Stars; from -999999999 to 999999999; can be negative if and only if _amount_ is non-positive',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11584,7 +10939,6 @@ const BotCommand = t({
         markdown: 'Text of the command; 1-32 characters. Can contain only lowercase English letters, digits and underscores.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'description',
@@ -11595,7 +10949,6 @@ const BotCommand = t({
         markdown: 'Description of the command; 1-256 characters.',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11652,7 +11005,6 @@ const BotCommandScopeDefault = t({
         markdown: 'Scope type, must be _default_',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11672,7 +11024,6 @@ const BotCommandScopeAllPrivateChats = t({
         markdown: 'Scope type, must be _all\\_private\\_chats_',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11692,7 +11043,6 @@ const BotCommandScopeAllGroupChats = t({
         markdown: 'Scope type, must be _all\\_group\\_chats_',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11712,7 +11062,6 @@ const BotCommandScopeAllChatAdministrators = t({
         markdown: 'Scope type, must be _all\\_chat\\_administrators_',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11732,7 +11081,6 @@ const BotCommandScopeChat = t({
         markdown: 'Scope type, must be _chat_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -11751,7 +11099,6 @@ const BotCommandScopeChat = t({
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`). Channel direct messages chats and channel chats aren\'t supported.',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11771,7 +11118,6 @@ const BotCommandScopeChatAdministrators = t({
         markdown: 'Scope type, must be _chat\\_administrators_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -11790,7 +11136,6 @@ const BotCommandScopeChatAdministrators = t({
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`). Channel direct messages chats and channel chats aren\'t supported.',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11810,7 +11155,6 @@ const BotCommandScopeChatMember = t({
         markdown: 'Scope type, must be _chat\\_member_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'chat_id',
@@ -11829,7 +11173,6 @@ const BotCommandScopeChatMember = t({
         markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`). Channel direct messages chats and channel chats aren\'t supported.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user_id',
@@ -11840,7 +11183,6 @@ const BotCommandScopeChatMember = t({
         markdown: 'Unique identifier of the target user',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11860,7 +11202,6 @@ const BotName = t({
         markdown: 'The bot\'s name',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11880,7 +11221,6 @@ const BotDescription = t({
         markdown: 'The bot\'s description',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11900,7 +11240,6 @@ const BotShortDescription = t({
         markdown: 'The bot\'s short description',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11941,7 +11280,6 @@ const MenuButtonCommands = t({
         markdown: 'Type of the button, must be _commands_',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -11961,7 +11299,6 @@ const MenuButtonWebApp = t({
         markdown: 'Type of the button, must be _web\\_app_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'text',
@@ -11972,7 +11309,6 @@ const MenuButtonWebApp = t({
         markdown: 'Text on the button',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'web_app',
@@ -11984,7 +11320,6 @@ const MenuButtonWebApp = t({
         markdown: 'Description of the Web App that will be launched when the user presses the button. The Web App will be able to send an arbitrary message on behalf of the user using the method [answerWebAppQuery](https://core.telegram.org/bots/api#answerwebappquery). Alternatively, a `t.me` link to a Web App of the bot can be specified in the object instead of the Web App\'s URL, in which case the Web App will be opened as if the user pressed the link.',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -12004,7 +11339,6 @@ const MenuButtonDefault = t({
         markdown: 'Type of the button, must be _default_',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -12045,7 +11379,6 @@ const ChatBoostSourcePremium = t({
         markdown: 'Source of the boost, always “premium”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user',
@@ -12057,7 +11390,6 @@ const ChatBoostSourcePremium = t({
         markdown: 'User that boosted the chat',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -12077,7 +11409,6 @@ const ChatBoostSourceGiftCode = t({
         markdown: 'Source of the boost, always “gift\\_code”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user',
@@ -12089,7 +11420,6 @@ const ChatBoostSourceGiftCode = t({
         markdown: 'User for which the gift code was created',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -12109,7 +11439,6 @@ const ChatBoostSourceGiveaway = t({
         markdown: 'Source of the boost, always “giveaway”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'giveaway_message_id',
@@ -12120,7 +11449,6 @@ const ChatBoostSourceGiveaway = t({
         markdown: 'Identifier of a message in the chat with the giveaway; the message could have been deleted already. May be 0 if the message isn\'t sent yet.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user',
@@ -12132,7 +11460,6 @@ const ChatBoostSourceGiveaway = t({
         markdown: 'User that won the prize in the giveaway if any; for Telegram Premium giveaways only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'prize_star_count',
@@ -12143,7 +11470,6 @@ const ChatBoostSourceGiveaway = t({
         markdown: 'The number of Telegram Stars to be split between giveaway winners; for Telegram Star giveaways only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_unclaimed',
@@ -12155,7 +11481,6 @@ const ChatBoostSourceGiveaway = t({
         markdown: '_True_, if the giveaway was completed, but there was no user to win the prize',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -12175,7 +11500,6 @@ const ChatBoost = t({
         markdown: 'Unique identifier of the boost',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'add_date',
@@ -12186,7 +11510,6 @@ const ChatBoost = t({
         markdown: 'Point in time (Unix timestamp) when the chat was boosted',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'expiration_date',
@@ -12197,7 +11520,6 @@ const ChatBoost = t({
         markdown: 'Point in time (Unix timestamp) when the boost will automatically expire, unless the booster\'s Telegram Premium subscription is prolonged',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'source',
@@ -12209,7 +11531,6 @@ const ChatBoost = t({
         markdown: 'Source of the added boost',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -12230,7 +11551,6 @@ const ChatBoostUpdated = t({
         markdown: 'Chat which was boosted',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'boost',
@@ -12242,7 +11562,6 @@ const ChatBoostUpdated = t({
         markdown: 'Information about the chat boost',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -12263,7 +11582,6 @@ const ChatBoostRemoved = t({
         markdown: 'Chat which was boosted',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'boost_id',
@@ -12274,7 +11592,6 @@ const ChatBoostRemoved = t({
         markdown: 'Unique identifier of the boost',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'remove_date',
@@ -12285,7 +11602,6 @@ const ChatBoostRemoved = t({
         markdown: 'Point in time (Unix timestamp) when the boost was removed',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'source',
@@ -12297,7 +11613,46 @@ const ChatBoostRemoved = t({
         markdown: 'Source of the removed boost',
       },
       required: true,
-      jsonSerialized: false,
+    },
+  ],
+})
+
+const ChatOwnerLeft = t({
+  name: 'ChatOwnerLeft',
+  description: {
+    markdown: 'Describes a service message about the chat owner leaving the chat.',
+  },
+  fields: [
+    {
+      name: 'new_owner',
+      type: {
+        type: 'api-type',
+        name: 'User',
+      },
+      description: {
+        markdown: 'The user which will be the new owner of the chat if the previous owner does not return to the chat',
+      },
+      required: false,
+    },
+  ],
+})
+
+const ChatOwnerChanged = t({
+  name: 'ChatOwnerChanged',
+  description: {
+    markdown: 'Describes a service message about an ownership change in the chat.',
+  },
+  fields: [
+    {
+      name: 'new_owner',
+      type: {
+        type: 'api-type',
+        name: 'User',
+      },
+      description: {
+        markdown: 'The new owner of the chat',
+      },
+      required: true,
     },
   ],
 })
@@ -12321,7 +11676,6 @@ const UserChatBoosts = t({
         markdown: 'The list of boosts added to the chat by the user',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -12342,7 +11696,6 @@ const BusinessBotRights = t({
         markdown: '_True_, if the bot can send and edit messages in the private chats that had incoming messages in the last 24 hours',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_read_messages',
@@ -12354,7 +11707,6 @@ const BusinessBotRights = t({
         markdown: '_True_, if the bot can mark incoming private messages as read',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_delete_sent_messages',
@@ -12366,7 +11718,6 @@ const BusinessBotRights = t({
         markdown: '_True_, if the bot can delete messages sent by the bot',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_delete_all_messages',
@@ -12378,7 +11729,6 @@ const BusinessBotRights = t({
         markdown: '_True_, if the bot can delete all private messages in managed chats',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_edit_name',
@@ -12390,7 +11740,6 @@ const BusinessBotRights = t({
         markdown: '_True_, if the bot can edit the first and last name of the business account',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_edit_bio',
@@ -12402,7 +11751,6 @@ const BusinessBotRights = t({
         markdown: '_True_, if the bot can edit the bio of the business account',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_edit_profile_photo',
@@ -12414,7 +11762,6 @@ const BusinessBotRights = t({
         markdown: '_True_, if the bot can edit the profile photo of the business account',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_edit_username',
@@ -12426,7 +11773,6 @@ const BusinessBotRights = t({
         markdown: '_True_, if the bot can edit the username of the business account',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_change_gift_settings',
@@ -12438,7 +11784,6 @@ const BusinessBotRights = t({
         markdown: '_True_, if the bot can change the privacy settings pertaining to gifts for the business account',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_view_gifts_and_stars',
@@ -12450,7 +11795,6 @@ const BusinessBotRights = t({
         markdown: '_True_, if the bot can view gifts and the amount of Telegram Stars owned by the business account',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_convert_gifts_to_stars',
@@ -12462,7 +11806,6 @@ const BusinessBotRights = t({
         markdown: '_True_, if the bot can convert regular gifts owned by the business account to Telegram Stars',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_transfer_and_upgrade_gifts',
@@ -12474,7 +11817,6 @@ const BusinessBotRights = t({
         markdown: '_True_, if the bot can transfer and upgrade gifts owned by the business account',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_transfer_stars',
@@ -12486,7 +11828,6 @@ const BusinessBotRights = t({
         markdown: '_True_, if the bot can transfer Telegram Stars received by the business account to its own account, or use them to upgrade and transfer gifts',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'can_manage_stories',
@@ -12498,7 +11839,6 @@ const BusinessBotRights = t({
         markdown: '_True_, if the bot can post, edit and delete stories on behalf of the business account',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -12518,7 +11858,6 @@ const BusinessConnection = t({
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user',
@@ -12530,7 +11869,6 @@ const BusinessConnection = t({
         markdown: 'Business account user that created the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user_chat_id',
@@ -12541,7 +11879,6 @@ const BusinessConnection = t({
         markdown: 'Identifier of a private chat with the user who created the business connection.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'date',
@@ -12552,7 +11889,6 @@ const BusinessConnection = t({
         markdown: 'Date the connection was established in Unix time',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'rights',
@@ -12564,7 +11900,6 @@ const BusinessConnection = t({
         markdown: 'Rights of the business bot',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_enabled',
@@ -12575,7 +11910,6 @@ const BusinessConnection = t({
         markdown: '_True_, if the connection is active',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -12595,7 +11929,6 @@ const BusinessMessagesDeleted = t({
         markdown: 'Unique identifier of the business connection',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'chat',
@@ -12607,7 +11940,6 @@ const BusinessMessagesDeleted = t({
         markdown: 'Information about a chat in the business account. The bot may not have access to the chat or the corresponding user.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message_ids',
@@ -12621,7 +11953,6 @@ const BusinessMessagesDeleted = t({
         markdown: 'The list of identifiers of deleted messages in the chat of the business account',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -12641,7 +11972,6 @@ const ResponseParameters = t({
         markdown: 'The group has been migrated to a supergroup with the specified identifier.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'retry_after',
@@ -12652,7 +11982,6 @@ const ResponseParameters = t({
         markdown: 'In case of exceeding flood control, the number of seconds left to wait before the request can be repeated',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -12701,7 +12030,6 @@ const InputMediaPhoto = t({
         markdown: 'Type of the result, must be _photo_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'media',
@@ -12712,7 +12040,6 @@ const InputMediaPhoto = t({
         markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -12723,7 +12050,6 @@ const InputMediaPhoto = t({
         markdown: 'Caption of the photo to be sent, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -12734,7 +12060,6 @@ const InputMediaPhoto = t({
         markdown: 'Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -12749,7 +12074,6 @@ const InputMediaPhoto = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'show_caption_above_media',
@@ -12760,7 +12084,6 @@ const InputMediaPhoto = t({
         markdown: 'Pass _True_, if the caption must be shown above the message media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_spoiler',
@@ -12771,7 +12094,6 @@ const InputMediaPhoto = t({
         markdown: 'Pass _True_ if the photo needs to be covered with a spoiler animation',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -12791,7 +12113,6 @@ const InputMediaVideo = t({
         markdown: 'Type of the result, must be _video_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'media',
@@ -12802,7 +12123,6 @@ const InputMediaVideo = t({
         markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -12813,7 +12133,6 @@ const InputMediaVideo = t({
         markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'cover',
@@ -12824,7 +12143,6 @@ const InputMediaVideo = t({
         markdown: 'Cover for the video in the message. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'start_timestamp',
@@ -12835,7 +12153,6 @@ const InputMediaVideo = t({
         markdown: 'Start timestamp for the video in the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -12846,7 +12163,6 @@ const InputMediaVideo = t({
         markdown: 'Caption of the video to be sent, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -12857,7 +12173,6 @@ const InputMediaVideo = t({
         markdown: 'Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -12872,7 +12187,6 @@ const InputMediaVideo = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'show_caption_above_media',
@@ -12883,7 +12197,6 @@ const InputMediaVideo = t({
         markdown: 'Pass _True_, if the caption must be shown above the message media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'width',
@@ -12894,7 +12207,6 @@ const InputMediaVideo = t({
         markdown: 'Video width',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'height',
@@ -12905,7 +12217,6 @@ const InputMediaVideo = t({
         markdown: 'Video height',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'duration',
@@ -12916,7 +12227,6 @@ const InputMediaVideo = t({
         markdown: 'Video duration in seconds',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'supports_streaming',
@@ -12927,7 +12237,6 @@ const InputMediaVideo = t({
         markdown: 'Pass _True_ if the uploaded video is suitable for streaming',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_spoiler',
@@ -12938,7 +12247,6 @@ const InputMediaVideo = t({
         markdown: 'Pass _True_ if the video needs to be covered with a spoiler animation',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -12958,7 +12266,6 @@ const InputMediaAnimation = t({
         markdown: 'Type of the result, must be _animation_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'media',
@@ -12969,7 +12276,6 @@ const InputMediaAnimation = t({
         markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -12980,7 +12286,6 @@ const InputMediaAnimation = t({
         markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -12991,7 +12296,6 @@ const InputMediaAnimation = t({
         markdown: 'Caption of the animation to be sent, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -13002,7 +12306,6 @@ const InputMediaAnimation = t({
         markdown: 'Mode for parsing entities in the animation caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -13017,7 +12320,6 @@ const InputMediaAnimation = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'show_caption_above_media',
@@ -13028,7 +12330,6 @@ const InputMediaAnimation = t({
         markdown: 'Pass _True_, if the caption must be shown above the message media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'width',
@@ -13039,7 +12340,6 @@ const InputMediaAnimation = t({
         markdown: 'Animation width',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'height',
@@ -13050,7 +12350,6 @@ const InputMediaAnimation = t({
         markdown: 'Animation height',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'duration',
@@ -13061,7 +12360,6 @@ const InputMediaAnimation = t({
         markdown: 'Animation duration in seconds',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'has_spoiler',
@@ -13072,7 +12370,6 @@ const InputMediaAnimation = t({
         markdown: 'Pass _True_ if the animation needs to be covered with a spoiler animation',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -13092,7 +12389,6 @@ const InputMediaAudio = t({
         markdown: 'Type of the result, must be _audio_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'media',
@@ -13103,7 +12399,6 @@ const InputMediaAudio = t({
         markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -13114,7 +12409,6 @@ const InputMediaAudio = t({
         markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -13125,7 +12419,6 @@ const InputMediaAudio = t({
         markdown: 'Caption of the audio to be sent, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -13136,7 +12429,6 @@ const InputMediaAudio = t({
         markdown: 'Mode for parsing entities in the audio caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -13151,7 +12443,6 @@ const InputMediaAudio = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'duration',
@@ -13162,7 +12453,6 @@ const InputMediaAudio = t({
         markdown: 'Duration of the audio in seconds',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'performer',
@@ -13173,7 +12463,6 @@ const InputMediaAudio = t({
         markdown: 'Performer of the audio',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -13184,7 +12473,6 @@ const InputMediaAudio = t({
         markdown: 'Title of the audio',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -13204,7 +12492,6 @@ const InputMediaDocument = t({
         markdown: 'Type of the result, must be _document_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'media',
@@ -13215,7 +12502,6 @@ const InputMediaDocument = t({
         markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -13226,7 +12512,6 @@ const InputMediaDocument = t({
         markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -13237,7 +12522,6 @@ const InputMediaDocument = t({
         markdown: 'Caption of the document to be sent, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -13248,7 +12532,6 @@ const InputMediaDocument = t({
         markdown: 'Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -13263,7 +12546,6 @@ const InputMediaDocument = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'disable_content_type_detection',
@@ -13274,7 +12556,6 @@ const InputMediaDocument = t({
         markdown: 'Disables automatic server-side content type detection for files uploaded using multipart/form-data. Always _True_, if the document is sent as part of an album.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -13311,7 +12592,6 @@ const InputPaidMediaPhoto = t({
         markdown: 'Type of the media, must be _photo_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'media',
@@ -13322,7 +12602,6 @@ const InputPaidMediaPhoto = t({
         markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -13342,7 +12621,6 @@ const InputPaidMediaVideo = t({
         markdown: 'Type of the media, must be _video_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'media',
@@ -13353,7 +12631,6 @@ const InputPaidMediaVideo = t({
         markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -13364,7 +12641,6 @@ const InputPaidMediaVideo = t({
         markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'cover',
@@ -13375,7 +12651,6 @@ const InputPaidMediaVideo = t({
         markdown: 'Cover for the video in the message. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'start_timestamp',
@@ -13386,7 +12661,6 @@ const InputPaidMediaVideo = t({
         markdown: 'Start timestamp for the video in the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'width',
@@ -13397,7 +12671,6 @@ const InputPaidMediaVideo = t({
         markdown: 'Video width',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'height',
@@ -13408,7 +12681,6 @@ const InputPaidMediaVideo = t({
         markdown: 'Video height',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'duration',
@@ -13419,7 +12691,6 @@ const InputPaidMediaVideo = t({
         markdown: 'Video duration in seconds',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'supports_streaming',
@@ -13430,7 +12701,6 @@ const InputPaidMediaVideo = t({
         markdown: 'Pass _True_ if the uploaded video is suitable for streaming',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -13467,7 +12737,6 @@ const InputProfilePhotoStatic = t({
         markdown: 'Type of the profile photo, must be _static_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'photo',
@@ -13478,7 +12747,6 @@ const InputProfilePhotoStatic = t({
         markdown: 'The static profile photo. Profile photos can\'t be reused and can only be uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the photo was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -13498,7 +12766,6 @@ const InputProfilePhotoAnimated = t({
         markdown: 'Type of the profile photo, must be _animated_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'animation',
@@ -13509,7 +12776,6 @@ const InputProfilePhotoAnimated = t({
         markdown: 'The animated profile photo. Profile photos can\'t be reused and can only be uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the photo was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'main_frame_timestamp',
@@ -13520,7 +12786,6 @@ const InputProfilePhotoAnimated = t({
         markdown: 'Timestamp in seconds of the frame that will be used as the static profile photo. Defaults to 0.0.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -13557,7 +12822,6 @@ const InputStoryContentPhoto = t({
         markdown: 'Type of the content, must be _photo_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'photo',
@@ -13568,7 +12832,6 @@ const InputStoryContentPhoto = t({
         markdown: 'The photo to post as a story. The photo must be of the size 1080x1920 and must not exceed 10 MB. The photo can\'t be reused and can only be uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the photo was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -13588,7 +12851,6 @@ const InputStoryContentVideo = t({
         markdown: 'Type of the content, must be _video_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'video',
@@ -13599,7 +12861,6 @@ const InputStoryContentVideo = t({
         markdown: 'The video to post as a story. The video must be of the size 720x1280, streamable, encoded with H.265 codec, with key frames added each second in the MPEG4 format, and must not exceed 30 MB. The video can\'t be reused and can only be uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the video was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'duration',
@@ -13610,7 +12871,6 @@ const InputStoryContentVideo = t({
         markdown: 'Precise duration of the video in seconds; 0-60',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'cover_frame_timestamp',
@@ -13621,7 +12881,6 @@ const InputStoryContentVideo = t({
         markdown: 'Timestamp in seconds of the frame that will be used as the static cover for the story. Defaults to 0.0.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_animation',
@@ -13632,7 +12891,6 @@ const InputStoryContentVideo = t({
         markdown: 'Pass _True_ if the video has no sound',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -13652,7 +12910,6 @@ const Sticker = t({
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_unique_id',
@@ -13663,7 +12920,6 @@ const Sticker = t({
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'type',
@@ -13674,7 +12930,6 @@ const Sticker = t({
         markdown: 'Type of the sticker, currently one of “regular”, “mask”, “custom\\_emoji”. The type of the sticker is independent from its format, which is determined by the fields _is\\_animated_ and _is\\_video_.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'width',
@@ -13685,7 +12940,6 @@ const Sticker = t({
         markdown: 'Sticker width',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'height',
@@ -13696,7 +12950,6 @@ const Sticker = t({
         markdown: 'Sticker height',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_animated',
@@ -13707,7 +12960,6 @@ const Sticker = t({
         markdown: '_True_, if the sticker is [animated](https://telegram.org/blog/animated-stickers)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'is_video',
@@ -13718,7 +12970,6 @@ const Sticker = t({
         markdown: '_True_, if the sticker is a [video sticker](https://telegram.org/blog/video-stickers-better-reactions)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -13730,7 +12981,6 @@ const Sticker = t({
         markdown: 'Sticker thumbnail in the .WEBP or .JPG format',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'emoji',
@@ -13741,7 +12991,6 @@ const Sticker = t({
         markdown: 'Emoji associated with the sticker',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'set_name',
@@ -13752,7 +13001,6 @@ const Sticker = t({
         markdown: 'Name of the sticker set to which the sticker belongs',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'premium_animation',
@@ -13764,7 +13012,6 @@ const Sticker = t({
         markdown: 'For premium regular stickers, premium animation for the sticker',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'mask_position',
@@ -13776,7 +13023,6 @@ const Sticker = t({
         markdown: 'For mask stickers, the position where the mask should be placed',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'custom_emoji_id',
@@ -13787,7 +13033,6 @@ const Sticker = t({
         markdown: 'For custom emoji stickers, unique identifier of the custom emoji',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'needs_repainting',
@@ -13799,7 +13044,6 @@ const Sticker = t({
         markdown: '_True_, if the sticker must be repainted to a text color in messages, the color of the Telegram Premium badge in emoji status, white color on chat photos, or another appropriate color in other places',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'file_size',
@@ -13810,7 +13054,6 @@ const Sticker = t({
         markdown: 'File size in bytes',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -13830,7 +13073,6 @@ const StickerSet = t({
         markdown: 'Sticker set name',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -13841,7 +13083,6 @@ const StickerSet = t({
         markdown: 'Sticker set title',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'sticker_type',
@@ -13852,7 +13093,6 @@ const StickerSet = t({
         markdown: 'Type of stickers in the set, currently one of “regular”, “mask”, “custom\\_emoji”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'stickers',
@@ -13867,7 +13107,6 @@ const StickerSet = t({
         markdown: 'List of all set stickers',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail',
@@ -13879,7 +13118,6 @@ const StickerSet = t({
         markdown: 'Sticker set thumbnail in the .WEBP, .TGS, or .WEBM format',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -13899,7 +13137,6 @@ const MaskPosition = t({
         markdown: 'The part of the face relative to which the mask should be placed. One of “forehead”, “eyes”, “mouth”, or “chin”.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'x_shift',
@@ -13910,7 +13147,6 @@ const MaskPosition = t({
         markdown: 'Shift by X-axis measured in widths of the mask scaled to the face size, from left to right. For example, choosing -1.0 will place mask just to the left of the default mask position.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'y_shift',
@@ -13921,7 +13157,6 @@ const MaskPosition = t({
         markdown: 'Shift by Y-axis measured in heights of the mask scaled to the face size, from top to bottom. For example, 1.0 will place the mask just below the default mask position.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'scale',
@@ -13932,7 +13167,6 @@ const MaskPosition = t({
         markdown: 'Mask scaling coefficient. For example, 2.0 means double size.',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -13952,7 +13186,6 @@ const InputSticker = t({
         markdown: 'The added sticker. Pass a _file\\_id_ as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new file using multipart/form-data under <file\\_attach\\_name> name. Animated and video stickers can\'t be uploaded via HTTP URL. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'format',
@@ -13963,7 +13196,6 @@ const InputSticker = t({
         markdown: 'Format of the added sticker, must be one of “static” for a **.WEBP** or **.PNG** image, “animated” for a **.TGS** animation, “video” for a **.WEBM** video',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'emoji_list',
@@ -13977,7 +13209,6 @@ const InputSticker = t({
         markdown: 'List of 1-20 emoji associated with the sticker',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'mask_position',
@@ -13989,7 +13220,6 @@ const InputSticker = t({
         markdown: 'Position where the mask should be placed on faces. For “mask” stickers only.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'keywords',
@@ -14003,7 +13233,6 @@ const InputSticker = t({
         markdown: 'List of 0-20 search keywords for the sticker with total length of up to 64 characters. For “regular” and “custom\\_emoji” stickers only.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -14023,7 +13252,6 @@ const InlineQuery = t({
         markdown: 'Unique identifier for this query',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'from',
@@ -14035,7 +13263,6 @@ const InlineQuery = t({
         markdown: 'Sender',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'query',
@@ -14046,7 +13273,6 @@ const InlineQuery = t({
         markdown: 'Text of the query (up to 256 characters)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'offset',
@@ -14057,7 +13283,6 @@ const InlineQuery = t({
         markdown: 'Offset of the results to be returned, can be controlled by the bot',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'chat_type',
@@ -14068,7 +13293,6 @@ const InlineQuery = t({
         markdown: 'Type of the chat from which the inline query was sent. Can be either “sender” for a private chat with the inline query sender, “private”, “group”, “supergroup”, or “channel”. The chat type should be always known for requests sent from official clients and most third-party clients, unless the request was sent from a secret chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'location',
@@ -14080,7 +13304,6 @@ const InlineQuery = t({
         markdown: 'Sender location, only for bots that request user location',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -14100,7 +13323,6 @@ const InlineQueryResultsButton = t({
         markdown: 'Label text on the button',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'web_app',
@@ -14112,7 +13334,6 @@ const InlineQueryResultsButton = t({
         markdown: 'Description of the [Web App](https://core.telegram.org/bots/webapps) that will be launched when the user presses the button. The Web App will be able to switch back to the inline mode using the method [switchInlineQuery](https://core.telegram.org/bots/webapps#initializing-mini-apps) inside the Web App.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'start_parameter',
@@ -14123,7 +13344,6 @@ const InlineQueryResultsButton = t({
         markdown: '[Deep-linking](https://core.telegram.org/bots/features#deep-linking) parameter for the /start message sent to the bot when a user presses the button. 1-64 characters, only `A-Z`, `a-z`, `0-9`, `_` and `-` are allowed.\n\n_Example:_ An inline bot that sends YouTube videos can ask the user to connect the bot to their YouTube account to adapt search results accordingly. To do this, it displays a \'Connect your YouTube account\' button above the results, or even before showing any. The user presses the button, switches to a private chat with the bot and, in doing so, passes a start parameter that instructs the bot to return an OAuth link. Once done, the bot can offer a [_switch\\_inline_](https://core.telegram.org/bots/api#inlinekeyboardmarkup) button so that the user can easily return to the chat where they wanted to use the bot\'s inline capabilities.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -14232,7 +13452,6 @@ const InlineQueryResultArticle = t({
         markdown: 'Type of the result, must be _article_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -14243,7 +13462,6 @@ const InlineQueryResultArticle = t({
         markdown: 'Unique identifier for this result, 1-64 Bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -14254,7 +13472,6 @@ const InlineQueryResultArticle = t({
         markdown: 'Title of the result',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -14266,7 +13483,6 @@ const InlineQueryResultArticle = t({
         markdown: 'Content of the message to be sent',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -14278,7 +13494,6 @@ const InlineQueryResultArticle = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'url',
@@ -14289,7 +13504,6 @@ const InlineQueryResultArticle = t({
         markdown: 'URL of the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'description',
@@ -14300,7 +13514,6 @@ const InlineQueryResultArticle = t({
         markdown: 'Short description of the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_url',
@@ -14311,7 +13524,6 @@ const InlineQueryResultArticle = t({
         markdown: 'Url of the thumbnail for the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_width',
@@ -14322,7 +13534,6 @@ const InlineQueryResultArticle = t({
         markdown: 'Thumbnail width',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_height',
@@ -14333,7 +13544,6 @@ const InlineQueryResultArticle = t({
         markdown: 'Thumbnail height',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -14353,7 +13563,6 @@ const InlineQueryResultPhoto = t({
         markdown: 'Type of the result, must be _photo_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -14364,7 +13573,6 @@ const InlineQueryResultPhoto = t({
         markdown: 'Unique identifier for this result, 1-64 bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'photo_url',
@@ -14375,7 +13583,6 @@ const InlineQueryResultPhoto = t({
         markdown: 'A valid URL of the photo. Photo must be in **JPEG** format. Photo size must not exceed 5MB',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_url',
@@ -14386,7 +13593,6 @@ const InlineQueryResultPhoto = t({
         markdown: 'URL of the thumbnail for the photo',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'photo_width',
@@ -14397,7 +13603,6 @@ const InlineQueryResultPhoto = t({
         markdown: 'Width of the photo',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo_height',
@@ -14408,7 +13613,6 @@ const InlineQueryResultPhoto = t({
         markdown: 'Height of the photo',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -14419,7 +13623,6 @@ const InlineQueryResultPhoto = t({
         markdown: 'Title for the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'description',
@@ -14430,7 +13633,6 @@ const InlineQueryResultPhoto = t({
         markdown: 'Short description of the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -14441,7 +13643,6 @@ const InlineQueryResultPhoto = t({
         markdown: 'Caption of the photo to be sent, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -14452,7 +13653,6 @@ const InlineQueryResultPhoto = t({
         markdown: 'Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -14467,7 +13667,6 @@ const InlineQueryResultPhoto = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'show_caption_above_media',
@@ -14478,7 +13677,6 @@ const InlineQueryResultPhoto = t({
         markdown: 'Pass _True_, if the caption must be shown above the message media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -14490,7 +13688,6 @@ const InlineQueryResultPhoto = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -14502,7 +13699,6 @@ const InlineQueryResultPhoto = t({
         markdown: 'Content of the message to be sent instead of the photo',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -14522,7 +13718,6 @@ const InlineQueryResultGif = t({
         markdown: 'Type of the result, must be _gif_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -14533,7 +13728,6 @@ const InlineQueryResultGif = t({
         markdown: 'Unique identifier for this result, 1-64 bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'gif_url',
@@ -14544,7 +13738,6 @@ const InlineQueryResultGif = t({
         markdown: 'A valid URL for the GIF file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'gif_width',
@@ -14555,7 +13748,6 @@ const InlineQueryResultGif = t({
         markdown: 'Width of the GIF',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'gif_height',
@@ -14566,7 +13758,6 @@ const InlineQueryResultGif = t({
         markdown: 'Height of the GIF',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'gif_duration',
@@ -14577,7 +13768,6 @@ const InlineQueryResultGif = t({
         markdown: 'Duration of the GIF in seconds',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_url',
@@ -14588,7 +13778,6 @@ const InlineQueryResultGif = t({
         markdown: 'URL of the static (JPEG or GIF) or animated (MPEG4) thumbnail for the result',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_mime_type',
@@ -14599,7 +13788,6 @@ const InlineQueryResultGif = t({
         markdown: 'MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -14610,7 +13798,6 @@ const InlineQueryResultGif = t({
         markdown: 'Title for the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -14621,7 +13808,6 @@ const InlineQueryResultGif = t({
         markdown: 'Caption of the GIF file to be sent, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -14632,7 +13818,6 @@ const InlineQueryResultGif = t({
         markdown: 'Mode for parsing entities in the caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -14647,7 +13832,6 @@ const InlineQueryResultGif = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'show_caption_above_media',
@@ -14658,7 +13842,6 @@ const InlineQueryResultGif = t({
         markdown: 'Pass _True_, if the caption must be shown above the message media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -14670,7 +13853,6 @@ const InlineQueryResultGif = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -14682,7 +13864,6 @@ const InlineQueryResultGif = t({
         markdown: 'Content of the message to be sent instead of the GIF animation',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -14702,7 +13883,6 @@ const InlineQueryResultMpeg4Gif = t({
         markdown: 'Type of the result, must be _mpeg4\\_gif_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -14713,7 +13893,6 @@ const InlineQueryResultMpeg4Gif = t({
         markdown: 'Unique identifier for this result, 1-64 bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'mpeg4_url',
@@ -14724,7 +13903,6 @@ const InlineQueryResultMpeg4Gif = t({
         markdown: 'A valid URL for the MPEG4 file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'mpeg4_width',
@@ -14735,7 +13913,6 @@ const InlineQueryResultMpeg4Gif = t({
         markdown: 'Video width',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'mpeg4_height',
@@ -14746,7 +13923,6 @@ const InlineQueryResultMpeg4Gif = t({
         markdown: 'Video height',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'mpeg4_duration',
@@ -14757,7 +13933,6 @@ const InlineQueryResultMpeg4Gif = t({
         markdown: 'Video duration in seconds',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_url',
@@ -14768,7 +13943,6 @@ const InlineQueryResultMpeg4Gif = t({
         markdown: 'URL of the static (JPEG or GIF) or animated (MPEG4) thumbnail for the result',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_mime_type',
@@ -14779,7 +13953,6 @@ const InlineQueryResultMpeg4Gif = t({
         markdown: 'MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -14790,7 +13963,6 @@ const InlineQueryResultMpeg4Gif = t({
         markdown: 'Title for the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -14801,7 +13973,6 @@ const InlineQueryResultMpeg4Gif = t({
         markdown: 'Caption of the MPEG-4 file to be sent, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -14812,7 +13983,6 @@ const InlineQueryResultMpeg4Gif = t({
         markdown: 'Mode for parsing entities in the caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -14827,7 +13997,6 @@ const InlineQueryResultMpeg4Gif = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'show_caption_above_media',
@@ -14838,7 +14007,6 @@ const InlineQueryResultMpeg4Gif = t({
         markdown: 'Pass _True_, if the caption must be shown above the message media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -14850,7 +14018,6 @@ const InlineQueryResultMpeg4Gif = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -14862,7 +14029,6 @@ const InlineQueryResultMpeg4Gif = t({
         markdown: 'Content of the message to be sent instead of the video animation',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -14882,7 +14048,6 @@ const InlineQueryResultVideo = t({
         markdown: 'Type of the result, must be _video_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -14893,7 +14058,6 @@ const InlineQueryResultVideo = t({
         markdown: 'Unique identifier for this result, 1-64 bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'video_url',
@@ -14904,7 +14068,6 @@ const InlineQueryResultVideo = t({
         markdown: 'A valid URL for the embedded video player or video file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'mime_type',
@@ -14915,7 +14078,6 @@ const InlineQueryResultVideo = t({
         markdown: 'MIME type of the content of the video URL, “text/html” or “video/mp4”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_url',
@@ -14926,7 +14088,6 @@ const InlineQueryResultVideo = t({
         markdown: 'URL of the thumbnail (JPEG only) for the video',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -14937,7 +14098,6 @@ const InlineQueryResultVideo = t({
         markdown: 'Title for the result',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -14948,7 +14108,6 @@ const InlineQueryResultVideo = t({
         markdown: 'Caption of the video to be sent, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -14959,7 +14118,6 @@ const InlineQueryResultVideo = t({
         markdown: 'Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -14974,7 +14132,6 @@ const InlineQueryResultVideo = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'show_caption_above_media',
@@ -14985,7 +14142,6 @@ const InlineQueryResultVideo = t({
         markdown: 'Pass _True_, if the caption must be shown above the message media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'video_width',
@@ -14996,7 +14152,6 @@ const InlineQueryResultVideo = t({
         markdown: 'Video width',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'video_height',
@@ -15007,7 +14162,6 @@ const InlineQueryResultVideo = t({
         markdown: 'Video height',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'video_duration',
@@ -15018,7 +14172,6 @@ const InlineQueryResultVideo = t({
         markdown: 'Video duration in seconds',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'description',
@@ -15029,7 +14182,6 @@ const InlineQueryResultVideo = t({
         markdown: 'Short description of the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -15041,7 +14193,6 @@ const InlineQueryResultVideo = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -15053,7 +14204,6 @@ const InlineQueryResultVideo = t({
         markdown: 'Content of the message to be sent instead of the video. This field is **required** if InlineQueryResultVideo is used to send an HTML-page as a result (e.g., a YouTube video).',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -15073,7 +14223,6 @@ const InlineQueryResultAudio = t({
         markdown: 'Type of the result, must be _audio_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -15084,7 +14233,6 @@ const InlineQueryResultAudio = t({
         markdown: 'Unique identifier for this result, 1-64 bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'audio_url',
@@ -15095,7 +14243,6 @@ const InlineQueryResultAudio = t({
         markdown: 'A valid URL for the audio file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -15106,7 +14253,6 @@ const InlineQueryResultAudio = t({
         markdown: 'Title',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -15117,7 +14263,6 @@ const InlineQueryResultAudio = t({
         markdown: 'Caption, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -15128,7 +14273,6 @@ const InlineQueryResultAudio = t({
         markdown: 'Mode for parsing entities in the audio caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -15143,7 +14287,6 @@ const InlineQueryResultAudio = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'performer',
@@ -15154,7 +14297,6 @@ const InlineQueryResultAudio = t({
         markdown: 'Performer',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'audio_duration',
@@ -15165,7 +14307,6 @@ const InlineQueryResultAudio = t({
         markdown: 'Audio duration in seconds',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -15177,7 +14318,6 @@ const InlineQueryResultAudio = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -15189,7 +14329,6 @@ const InlineQueryResultAudio = t({
         markdown: 'Content of the message to be sent instead of the audio',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -15209,7 +14348,6 @@ const InlineQueryResultVoice = t({
         markdown: 'Type of the result, must be _voice_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -15220,7 +14358,6 @@ const InlineQueryResultVoice = t({
         markdown: 'Unique identifier for this result, 1-64 bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'voice_url',
@@ -15231,7 +14368,6 @@ const InlineQueryResultVoice = t({
         markdown: 'A valid URL for the voice recording',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -15242,7 +14378,6 @@ const InlineQueryResultVoice = t({
         markdown: 'Recording title',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -15253,7 +14388,6 @@ const InlineQueryResultVoice = t({
         markdown: 'Caption, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -15264,7 +14398,6 @@ const InlineQueryResultVoice = t({
         markdown: 'Mode for parsing entities in the voice message caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -15279,7 +14412,6 @@ const InlineQueryResultVoice = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'voice_duration',
@@ -15290,7 +14422,6 @@ const InlineQueryResultVoice = t({
         markdown: 'Recording duration in seconds',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -15302,7 +14433,6 @@ const InlineQueryResultVoice = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -15314,7 +14444,6 @@ const InlineQueryResultVoice = t({
         markdown: 'Content of the message to be sent instead of the voice recording',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -15334,7 +14463,6 @@ const InlineQueryResultDocument = t({
         markdown: 'Type of the result, must be _document_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -15345,7 +14473,6 @@ const InlineQueryResultDocument = t({
         markdown: 'Unique identifier for this result, 1-64 bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -15356,7 +14483,6 @@ const InlineQueryResultDocument = t({
         markdown: 'Title for the result',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -15367,7 +14493,6 @@ const InlineQueryResultDocument = t({
         markdown: 'Caption of the document to be sent, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -15378,7 +14503,6 @@ const InlineQueryResultDocument = t({
         markdown: 'Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -15393,7 +14517,6 @@ const InlineQueryResultDocument = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'document_url',
@@ -15404,7 +14527,6 @@ const InlineQueryResultDocument = t({
         markdown: 'A valid URL for the file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'mime_type',
@@ -15415,7 +14537,6 @@ const InlineQueryResultDocument = t({
         markdown: 'MIME type of the content of the file, either “application/pdf” or “application/zip”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'description',
@@ -15426,7 +14547,6 @@ const InlineQueryResultDocument = t({
         markdown: 'Short description of the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -15438,7 +14558,6 @@ const InlineQueryResultDocument = t({
         markdown: 'Inline keyboard attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -15450,7 +14569,6 @@ const InlineQueryResultDocument = t({
         markdown: 'Content of the message to be sent instead of the file',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_url',
@@ -15461,7 +14579,6 @@ const InlineQueryResultDocument = t({
         markdown: 'URL of the thumbnail (JPEG only) for the file',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_width',
@@ -15472,7 +14589,6 @@ const InlineQueryResultDocument = t({
         markdown: 'Thumbnail width',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_height',
@@ -15483,7 +14599,6 @@ const InlineQueryResultDocument = t({
         markdown: 'Thumbnail height',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -15503,7 +14618,6 @@ const InlineQueryResultLocation = t({
         markdown: 'Type of the result, must be _location_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -15514,7 +14628,6 @@ const InlineQueryResultLocation = t({
         markdown: 'Unique identifier for this result, 1-64 Bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'latitude',
@@ -15525,7 +14638,6 @@ const InlineQueryResultLocation = t({
         markdown: 'Location latitude in degrees',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'longitude',
@@ -15536,7 +14648,6 @@ const InlineQueryResultLocation = t({
         markdown: 'Location longitude in degrees',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -15547,7 +14658,6 @@ const InlineQueryResultLocation = t({
         markdown: 'Location title',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'horizontal_accuracy',
@@ -15558,7 +14668,6 @@ const InlineQueryResultLocation = t({
         markdown: 'The radius of uncertainty for the location, measured in meters; 0-1500',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'live_period',
@@ -15569,7 +14678,6 @@ const InlineQueryResultLocation = t({
         markdown: 'Period in seconds during which the location can be updated, should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'heading',
@@ -15580,7 +14688,6 @@ const InlineQueryResultLocation = t({
         markdown: 'For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'proximity_alert_radius',
@@ -15591,7 +14698,6 @@ const InlineQueryResultLocation = t({
         markdown: 'For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -15603,7 +14709,6 @@ const InlineQueryResultLocation = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -15615,7 +14720,6 @@ const InlineQueryResultLocation = t({
         markdown: 'Content of the message to be sent instead of the location',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_url',
@@ -15626,7 +14730,6 @@ const InlineQueryResultLocation = t({
         markdown: 'Url of the thumbnail for the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_width',
@@ -15637,7 +14740,6 @@ const InlineQueryResultLocation = t({
         markdown: 'Thumbnail width',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_height',
@@ -15648,7 +14750,6 @@ const InlineQueryResultLocation = t({
         markdown: 'Thumbnail height',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -15668,7 +14769,6 @@ const InlineQueryResultVenue = t({
         markdown: 'Type of the result, must be _venue_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -15679,7 +14779,6 @@ const InlineQueryResultVenue = t({
         markdown: 'Unique identifier for this result, 1-64 Bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'latitude',
@@ -15690,7 +14789,6 @@ const InlineQueryResultVenue = t({
         markdown: 'Latitude of the venue location in degrees',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'longitude',
@@ -15701,7 +14799,6 @@ const InlineQueryResultVenue = t({
         markdown: 'Longitude of the venue location in degrees',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -15712,7 +14809,6 @@ const InlineQueryResultVenue = t({
         markdown: 'Title of the venue',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'address',
@@ -15723,7 +14819,6 @@ const InlineQueryResultVenue = t({
         markdown: 'Address of the venue',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'foursquare_id',
@@ -15734,7 +14829,6 @@ const InlineQueryResultVenue = t({
         markdown: 'Foursquare identifier of the venue if known',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'foursquare_type',
@@ -15745,7 +14839,6 @@ const InlineQueryResultVenue = t({
         markdown: 'Foursquare type of the venue, if known. (For example, “arts\\_entertainment/default”, “arts\\_entertainment/aquarium” or “food/icecream”.)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'google_place_id',
@@ -15756,7 +14849,6 @@ const InlineQueryResultVenue = t({
         markdown: 'Google Places identifier of the venue',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'google_place_type',
@@ -15767,7 +14859,6 @@ const InlineQueryResultVenue = t({
         markdown: 'Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -15779,7 +14870,6 @@ const InlineQueryResultVenue = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -15791,7 +14881,6 @@ const InlineQueryResultVenue = t({
         markdown: 'Content of the message to be sent instead of the venue',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_url',
@@ -15802,7 +14891,6 @@ const InlineQueryResultVenue = t({
         markdown: 'Url of the thumbnail for the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_width',
@@ -15813,7 +14901,6 @@ const InlineQueryResultVenue = t({
         markdown: 'Thumbnail width',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_height',
@@ -15824,7 +14911,6 @@ const InlineQueryResultVenue = t({
         markdown: 'Thumbnail height',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -15844,7 +14930,6 @@ const InlineQueryResultContact = t({
         markdown: 'Type of the result, must be _contact_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -15855,7 +14940,6 @@ const InlineQueryResultContact = t({
         markdown: 'Unique identifier for this result, 1-64 Bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'phone_number',
@@ -15866,7 +14950,6 @@ const InlineQueryResultContact = t({
         markdown: 'Contact\'s phone number',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'first_name',
@@ -15877,7 +14960,6 @@ const InlineQueryResultContact = t({
         markdown: 'Contact\'s first name',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'last_name',
@@ -15888,7 +14970,6 @@ const InlineQueryResultContact = t({
         markdown: 'Contact\'s last name',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'vcard',
@@ -15899,7 +14980,6 @@ const InlineQueryResultContact = t({
         markdown: 'Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -15911,7 +14991,6 @@ const InlineQueryResultContact = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -15923,7 +15002,6 @@ const InlineQueryResultContact = t({
         markdown: 'Content of the message to be sent instead of the contact',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_url',
@@ -15934,7 +15012,6 @@ const InlineQueryResultContact = t({
         markdown: 'Url of the thumbnail for the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_width',
@@ -15945,7 +15022,6 @@ const InlineQueryResultContact = t({
         markdown: 'Thumbnail width',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'thumbnail_height',
@@ -15956,7 +15032,6 @@ const InlineQueryResultContact = t({
         markdown: 'Thumbnail height',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -15976,7 +15051,6 @@ const InlineQueryResultGame = t({
         markdown: 'Type of the result, must be _game_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -15987,7 +15061,6 @@ const InlineQueryResultGame = t({
         markdown: 'Unique identifier for this result, 1-64 bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'game_short_name',
@@ -15998,7 +15071,6 @@ const InlineQueryResultGame = t({
         markdown: 'Short name of the game',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -16010,7 +15082,6 @@ const InlineQueryResultGame = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -16030,7 +15101,6 @@ const InlineQueryResultCachedPhoto = t({
         markdown: 'Type of the result, must be _photo_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -16041,7 +15111,6 @@ const InlineQueryResultCachedPhoto = t({
         markdown: 'Unique identifier for this result, 1-64 bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'photo_file_id',
@@ -16052,7 +15121,6 @@ const InlineQueryResultCachedPhoto = t({
         markdown: 'A valid file identifier of the photo',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -16063,7 +15131,6 @@ const InlineQueryResultCachedPhoto = t({
         markdown: 'Title for the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'description',
@@ -16074,7 +15141,6 @@ const InlineQueryResultCachedPhoto = t({
         markdown: 'Short description of the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -16085,7 +15151,6 @@ const InlineQueryResultCachedPhoto = t({
         markdown: 'Caption of the photo to be sent, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -16096,7 +15161,6 @@ const InlineQueryResultCachedPhoto = t({
         markdown: 'Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -16111,7 +15175,6 @@ const InlineQueryResultCachedPhoto = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'show_caption_above_media',
@@ -16122,7 +15185,6 @@ const InlineQueryResultCachedPhoto = t({
         markdown: 'Pass _True_, if the caption must be shown above the message media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -16134,7 +15196,6 @@ const InlineQueryResultCachedPhoto = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -16146,7 +15207,6 @@ const InlineQueryResultCachedPhoto = t({
         markdown: 'Content of the message to be sent instead of the photo',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -16166,7 +15226,6 @@ const InlineQueryResultCachedGif = t({
         markdown: 'Type of the result, must be _gif_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -16177,7 +15236,6 @@ const InlineQueryResultCachedGif = t({
         markdown: 'Unique identifier for this result, 1-64 bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'gif_file_id',
@@ -16188,7 +15246,6 @@ const InlineQueryResultCachedGif = t({
         markdown: 'A valid file identifier for the GIF file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -16199,7 +15256,6 @@ const InlineQueryResultCachedGif = t({
         markdown: 'Title for the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -16210,7 +15266,6 @@ const InlineQueryResultCachedGif = t({
         markdown: 'Caption of the GIF file to be sent, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -16221,7 +15276,6 @@ const InlineQueryResultCachedGif = t({
         markdown: 'Mode for parsing entities in the caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -16236,7 +15290,6 @@ const InlineQueryResultCachedGif = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'show_caption_above_media',
@@ -16247,7 +15300,6 @@ const InlineQueryResultCachedGif = t({
         markdown: 'Pass _True_, if the caption must be shown above the message media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -16259,7 +15311,6 @@ const InlineQueryResultCachedGif = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -16271,7 +15322,6 @@ const InlineQueryResultCachedGif = t({
         markdown: 'Content of the message to be sent instead of the GIF animation',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -16291,7 +15341,6 @@ const InlineQueryResultCachedMpeg4Gif = t({
         markdown: 'Type of the result, must be _mpeg4\\_gif_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -16302,7 +15351,6 @@ const InlineQueryResultCachedMpeg4Gif = t({
         markdown: 'Unique identifier for this result, 1-64 bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'mpeg4_file_id',
@@ -16313,7 +15361,6 @@ const InlineQueryResultCachedMpeg4Gif = t({
         markdown: 'A valid file identifier for the MPEG4 file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -16324,7 +15371,6 @@ const InlineQueryResultCachedMpeg4Gif = t({
         markdown: 'Title for the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -16335,7 +15381,6 @@ const InlineQueryResultCachedMpeg4Gif = t({
         markdown: 'Caption of the MPEG-4 file to be sent, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -16346,7 +15391,6 @@ const InlineQueryResultCachedMpeg4Gif = t({
         markdown: 'Mode for parsing entities in the caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -16361,7 +15405,6 @@ const InlineQueryResultCachedMpeg4Gif = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'show_caption_above_media',
@@ -16372,7 +15415,6 @@ const InlineQueryResultCachedMpeg4Gif = t({
         markdown: 'Pass _True_, if the caption must be shown above the message media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -16384,7 +15426,6 @@ const InlineQueryResultCachedMpeg4Gif = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -16396,7 +15437,6 @@ const InlineQueryResultCachedMpeg4Gif = t({
         markdown: 'Content of the message to be sent instead of the video animation',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -16416,7 +15456,6 @@ const InlineQueryResultCachedSticker = t({
         markdown: 'Type of the result, must be _sticker_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -16427,7 +15466,6 @@ const InlineQueryResultCachedSticker = t({
         markdown: 'Unique identifier for this result, 1-64 bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'sticker_file_id',
@@ -16438,7 +15476,6 @@ const InlineQueryResultCachedSticker = t({
         markdown: 'A valid file identifier of the sticker',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -16450,7 +15487,6 @@ const InlineQueryResultCachedSticker = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -16462,7 +15498,6 @@ const InlineQueryResultCachedSticker = t({
         markdown: 'Content of the message to be sent instead of the sticker',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -16482,7 +15517,6 @@ const InlineQueryResultCachedDocument = t({
         markdown: 'Type of the result, must be _document_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -16493,7 +15527,6 @@ const InlineQueryResultCachedDocument = t({
         markdown: 'Unique identifier for this result, 1-64 bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -16504,7 +15537,6 @@ const InlineQueryResultCachedDocument = t({
         markdown: 'Title for the result',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'document_file_id',
@@ -16515,7 +15547,6 @@ const InlineQueryResultCachedDocument = t({
         markdown: 'A valid file identifier for the file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'description',
@@ -16526,7 +15557,6 @@ const InlineQueryResultCachedDocument = t({
         markdown: 'Short description of the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -16537,7 +15567,6 @@ const InlineQueryResultCachedDocument = t({
         markdown: 'Caption of the document to be sent, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -16548,7 +15577,6 @@ const InlineQueryResultCachedDocument = t({
         markdown: 'Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -16563,7 +15591,6 @@ const InlineQueryResultCachedDocument = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -16575,7 +15602,6 @@ const InlineQueryResultCachedDocument = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -16587,7 +15613,6 @@ const InlineQueryResultCachedDocument = t({
         markdown: 'Content of the message to be sent instead of the file',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -16607,7 +15632,6 @@ const InlineQueryResultCachedVideo = t({
         markdown: 'Type of the result, must be _video_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -16618,7 +15642,6 @@ const InlineQueryResultCachedVideo = t({
         markdown: 'Unique identifier for this result, 1-64 bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'video_file_id',
@@ -16629,7 +15652,6 @@ const InlineQueryResultCachedVideo = t({
         markdown: 'A valid file identifier for the video file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -16640,7 +15662,6 @@ const InlineQueryResultCachedVideo = t({
         markdown: 'Title for the result',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'description',
@@ -16651,7 +15672,6 @@ const InlineQueryResultCachedVideo = t({
         markdown: 'Short description of the result',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -16662,7 +15682,6 @@ const InlineQueryResultCachedVideo = t({
         markdown: 'Caption of the video to be sent, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -16673,7 +15692,6 @@ const InlineQueryResultCachedVideo = t({
         markdown: 'Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -16688,7 +15706,6 @@ const InlineQueryResultCachedVideo = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'show_caption_above_media',
@@ -16699,7 +15716,6 @@ const InlineQueryResultCachedVideo = t({
         markdown: 'Pass _True_, if the caption must be shown above the message media',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -16711,7 +15727,6 @@ const InlineQueryResultCachedVideo = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -16723,7 +15738,6 @@ const InlineQueryResultCachedVideo = t({
         markdown: 'Content of the message to be sent instead of the video',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -16743,7 +15757,6 @@ const InlineQueryResultCachedVoice = t({
         markdown: 'Type of the result, must be _voice_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -16754,7 +15767,6 @@ const InlineQueryResultCachedVoice = t({
         markdown: 'Unique identifier for this result, 1-64 bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'voice_file_id',
@@ -16765,7 +15777,6 @@ const InlineQueryResultCachedVoice = t({
         markdown: 'A valid file identifier for the voice message',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -16776,7 +15787,6 @@ const InlineQueryResultCachedVoice = t({
         markdown: 'Voice message title',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -16787,7 +15797,6 @@ const InlineQueryResultCachedVoice = t({
         markdown: 'Caption, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -16798,7 +15807,6 @@ const InlineQueryResultCachedVoice = t({
         markdown: 'Mode for parsing entities in the voice message caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -16813,7 +15821,6 @@ const InlineQueryResultCachedVoice = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -16825,7 +15832,6 @@ const InlineQueryResultCachedVoice = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -16837,7 +15843,6 @@ const InlineQueryResultCachedVoice = t({
         markdown: 'Content of the message to be sent instead of the voice message',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -16857,7 +15862,6 @@ const InlineQueryResultCachedAudio = t({
         markdown: 'Type of the result, must be _audio_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'id',
@@ -16868,7 +15872,6 @@ const InlineQueryResultCachedAudio = t({
         markdown: 'Unique identifier for this result, 1-64 bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'audio_file_id',
@@ -16879,7 +15882,6 @@ const InlineQueryResultCachedAudio = t({
         markdown: 'A valid file identifier for the audio file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'caption',
@@ -16890,7 +15892,6 @@ const InlineQueryResultCachedAudio = t({
         markdown: 'Caption, 0-1024 characters after entities parsing',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -16901,7 +15902,6 @@ const InlineQueryResultCachedAudio = t({
         markdown: 'Mode for parsing entities in the audio caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'caption_entities',
@@ -16916,7 +15916,6 @@ const InlineQueryResultCachedAudio = t({
         markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reply_markup',
@@ -16928,7 +15927,6 @@ const InlineQueryResultCachedAudio = t({
         markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'input_message_content',
@@ -16940,7 +15938,6 @@ const InlineQueryResultCachedAudio = t({
         markdown: 'Content of the message to be sent instead of the audio',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -16989,7 +15986,6 @@ const InputTextMessageContent = t({
         markdown: 'Text of the message to be sent, 1-4096 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'parse_mode',
@@ -17000,7 +15996,6 @@ const InputTextMessageContent = t({
         markdown: 'Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'entities',
@@ -17015,7 +16010,6 @@ const InputTextMessageContent = t({
         markdown: 'List of special entities that appear in message text, which can be specified instead of _parse\\_mode_',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'link_preview_options',
@@ -17027,7 +16021,6 @@ const InputTextMessageContent = t({
         markdown: 'Link preview generation options for the message',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -17047,7 +16040,6 @@ const InputLocationMessageContent = t({
         markdown: 'Latitude of the location in degrees',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'longitude',
@@ -17058,7 +16050,6 @@ const InputLocationMessageContent = t({
         markdown: 'Longitude of the location in degrees',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'horizontal_accuracy',
@@ -17069,7 +16060,6 @@ const InputLocationMessageContent = t({
         markdown: 'The radius of uncertainty for the location, measured in meters; 0-1500',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'live_period',
@@ -17080,7 +16070,6 @@ const InputLocationMessageContent = t({
         markdown: 'Period in seconds during which the location can be updated, should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'heading',
@@ -17091,7 +16080,6 @@ const InputLocationMessageContent = t({
         markdown: 'For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'proximity_alert_radius',
@@ -17102,7 +16090,6 @@ const InputLocationMessageContent = t({
         markdown: 'For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -17122,7 +16109,6 @@ const InputVenueMessageContent = t({
         markdown: 'Latitude of the venue in degrees',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'longitude',
@@ -17133,7 +16119,6 @@ const InputVenueMessageContent = t({
         markdown: 'Longitude of the venue in degrees',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -17144,7 +16129,6 @@ const InputVenueMessageContent = t({
         markdown: 'Name of the venue',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'address',
@@ -17155,7 +16139,6 @@ const InputVenueMessageContent = t({
         markdown: 'Address of the venue',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'foursquare_id',
@@ -17166,7 +16149,6 @@ const InputVenueMessageContent = t({
         markdown: 'Foursquare identifier of the venue, if known',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'foursquare_type',
@@ -17177,7 +16159,6 @@ const InputVenueMessageContent = t({
         markdown: 'Foursquare type of the venue, if known. (For example, “arts\\_entertainment/default”, “arts\\_entertainment/aquarium” or “food/icecream”.)',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'google_place_id',
@@ -17188,7 +16169,6 @@ const InputVenueMessageContent = t({
         markdown: 'Google Places identifier of the venue',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'google_place_type',
@@ -17199,7 +16179,6 @@ const InputVenueMessageContent = t({
         markdown: 'Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -17219,7 +16198,6 @@ const InputContactMessageContent = t({
         markdown: 'Contact\'s phone number',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'first_name',
@@ -17230,7 +16208,6 @@ const InputContactMessageContent = t({
         markdown: 'Contact\'s first name',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'last_name',
@@ -17241,7 +16218,6 @@ const InputContactMessageContent = t({
         markdown: 'Contact\'s last name',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'vcard',
@@ -17252,7 +16228,6 @@ const InputContactMessageContent = t({
         markdown: 'Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -17272,7 +16247,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'Product name, 1-32 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'description',
@@ -17283,7 +16257,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'Product description, 1-255 characters',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'payload',
@@ -17294,7 +16267,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'provider_token',
@@ -17305,7 +16277,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'Payment provider token, obtained via [@BotFather](https://t.me/botfather). Pass an empty string for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'currency',
@@ -17316,7 +16287,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/bots/payments#supported-currencies). Pass “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'prices',
@@ -17331,7 +16301,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'Price breakdown, an array of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: true,
-      jsonSerialized: true,
     },
     {
       name: 'max_tip_amount',
@@ -17342,7 +16311,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'The maximum accepted amount for tips in the _smallest units_ of the currency (integer, **not** float/double). For example, for a maximum tip of `US$ 1.45` pass `max_tip_amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'suggested_tip_amounts',
@@ -17356,7 +16324,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'An array of suggested amounts of tip in the _smallest units_ of the currency (integer, **not** float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed _max\\_tip\\_amount_.',
       },
       required: false,
-      jsonSerialized: true,
     },
     {
       name: 'provider_data',
@@ -17367,7 +16334,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'A JSON-serialized object for data about the invoice, which will be shared with the payment provider. A detailed description of the required fields should be provided by the payment provider.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo_url',
@@ -17378,7 +16344,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo_size',
@@ -17389,7 +16354,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'Photo size in bytes',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo_width',
@@ -17400,7 +16364,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'Photo width',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'photo_height',
@@ -17411,7 +16374,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'Photo height',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'need_name',
@@ -17422,7 +16384,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'Pass _True_ if you require the user\'s full name to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'need_phone_number',
@@ -17433,7 +16394,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'Pass _True_ if you require the user\'s phone number to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'need_email',
@@ -17444,7 +16404,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'Pass _True_ if you require the user\'s email address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'need_shipping_address',
@@ -17455,7 +16414,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'Pass _True_ if you require the user\'s shipping address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'send_phone_number_to_provider',
@@ -17466,7 +16424,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'Pass _True_ if the user\'s phone number should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'send_email_to_provider',
@@ -17477,7 +16434,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'Pass _True_ if the user\'s email address should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_flexible',
@@ -17488,7 +16444,6 @@ const InputInvoiceMessageContent = t({
         markdown: 'Pass _True_ if the final price depends on the shipping method. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -17508,7 +16463,6 @@ const ChosenInlineResult = t({
         markdown: 'The unique identifier for the result that was chosen',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'from',
@@ -17520,7 +16474,6 @@ const ChosenInlineResult = t({
         markdown: 'The user that chose the result',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'location',
@@ -17532,7 +16485,6 @@ const ChosenInlineResult = t({
         markdown: 'Sender location, only for bots that require user location',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'inline_message_id',
@@ -17543,7 +16495,6 @@ const ChosenInlineResult = t({
         markdown: 'Identifier of the sent inline message. Available only if there is an [inline keyboard](https://core.telegram.org/bots/api#inlinekeyboardmarkup) attached to the message. Will be also received in [callback queries](https://core.telegram.org/bots/api#callbackquery) and can be used to [edit](https://core.telegram.org/bots/api#updating-messages) the message.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'query',
@@ -17554,7 +16505,6 @@ const ChosenInlineResult = t({
         markdown: 'The query that was used to obtain the result',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -17574,7 +16524,6 @@ const SentWebAppMessage = t({
         markdown: 'Identifier of the sent inline message. Available only if there is an [inline keyboard](https://core.telegram.org/bots/api#inlinekeyboardmarkup) attached to the message.',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -17594,7 +16543,6 @@ const PreparedInlineMessage = t({
         markdown: 'Unique identifier of the prepared message',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'expiration_date',
@@ -17605,7 +16553,6 @@ const PreparedInlineMessage = t({
         markdown: 'Expiration date of the prepared message, in Unix time. Expired prepared messages can no longer be used',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -17625,7 +16572,6 @@ const LabeledPrice = t({
         markdown: 'Portion label',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'amount',
@@ -17636,7 +16582,6 @@ const LabeledPrice = t({
         markdown: 'Price of the product in the _smallest units_ of the [currency](https://core.telegram.org/bots/payments#supported-currencies) (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -17656,7 +16601,6 @@ const Invoice = t({
         markdown: 'Product name',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'description',
@@ -17667,7 +16611,6 @@ const Invoice = t({
         markdown: 'Product description',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'start_parameter',
@@ -17678,7 +16621,6 @@ const Invoice = t({
         markdown: 'Unique bot deep-linking parameter that can be used to generate this invoice',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'currency',
@@ -17689,7 +16631,6 @@ const Invoice = t({
         markdown: 'Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'total_amount',
@@ -17700,7 +16641,6 @@ const Invoice = t({
         markdown: 'Total price in the _smallest units_ of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -17720,7 +16660,6 @@ const ShippingAddress = t({
         markdown: 'Two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'state',
@@ -17731,7 +16670,6 @@ const ShippingAddress = t({
         markdown: 'State, if applicable',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'city',
@@ -17742,7 +16680,6 @@ const ShippingAddress = t({
         markdown: 'City',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'street_line1',
@@ -17753,7 +16690,6 @@ const ShippingAddress = t({
         markdown: 'First line for the address',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'street_line2',
@@ -17764,7 +16700,6 @@ const ShippingAddress = t({
         markdown: 'Second line for the address',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'post_code',
@@ -17775,7 +16710,6 @@ const ShippingAddress = t({
         markdown: 'Address post code',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -17795,7 +16729,6 @@ const OrderInfo = t({
         markdown: 'User name',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'phone_number',
@@ -17806,7 +16739,6 @@ const OrderInfo = t({
         markdown: 'User\'s phone number',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'email',
@@ -17817,7 +16749,6 @@ const OrderInfo = t({
         markdown: 'User email',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'shipping_address',
@@ -17829,7 +16760,6 @@ const OrderInfo = t({
         markdown: 'User shipping address',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -17849,7 +16779,6 @@ const ShippingOption = t({
         markdown: 'Shipping option identifier',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'title',
@@ -17860,7 +16789,6 @@ const ShippingOption = t({
         markdown: 'Option title',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'prices',
@@ -17875,7 +16803,6 @@ const ShippingOption = t({
         markdown: 'List of price portions',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -17895,7 +16822,6 @@ const SuccessfulPayment = t({
         markdown: 'Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'total_amount',
@@ -17906,7 +16832,6 @@ const SuccessfulPayment = t({
         markdown: 'Total price in the _smallest units_ of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'invoice_payload',
@@ -17917,7 +16842,6 @@ const SuccessfulPayment = t({
         markdown: 'Bot-specified invoice payload',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'subscription_expiration_date',
@@ -17928,7 +16852,6 @@ const SuccessfulPayment = t({
         markdown: 'Expiration date of the subscription, in Unix time; for recurring payments only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_recurring',
@@ -17940,7 +16863,6 @@ const SuccessfulPayment = t({
         markdown: '_True_, if the payment is a recurring payment for a subscription',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'is_first_recurring',
@@ -17952,7 +16874,6 @@ const SuccessfulPayment = t({
         markdown: '_True_, if the payment is the first payment for a subscription',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'shipping_option_id',
@@ -17963,7 +16884,6 @@ const SuccessfulPayment = t({
         markdown: 'Identifier of the shipping option chosen by the user',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'order_info',
@@ -17975,7 +16895,6 @@ const SuccessfulPayment = t({
         markdown: 'Order information provided by the user',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'telegram_payment_charge_id',
@@ -17986,7 +16905,6 @@ const SuccessfulPayment = t({
         markdown: 'Telegram payment identifier',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'provider_payment_charge_id',
@@ -17997,7 +16915,6 @@ const SuccessfulPayment = t({
         markdown: 'Provider payment identifier',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18017,7 +16934,6 @@ const RefundedPayment = t({
         markdown: 'Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90). Currently, always “XTR”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'total_amount',
@@ -18028,7 +16944,6 @@ const RefundedPayment = t({
         markdown: 'Total refunded price in the _smallest units_ of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45`, `total_amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'invoice_payload',
@@ -18039,7 +16954,6 @@ const RefundedPayment = t({
         markdown: 'Bot-specified invoice payload',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'telegram_payment_charge_id',
@@ -18050,7 +16964,6 @@ const RefundedPayment = t({
         markdown: 'Telegram payment identifier',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'provider_payment_charge_id',
@@ -18061,7 +16974,6 @@ const RefundedPayment = t({
         markdown: 'Provider payment identifier',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18081,7 +16993,6 @@ const ShippingQuery = t({
         markdown: 'Unique query identifier',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'from',
@@ -18093,7 +17004,6 @@ const ShippingQuery = t({
         markdown: 'User who sent the query',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'invoice_payload',
@@ -18104,7 +17014,6 @@ const ShippingQuery = t({
         markdown: 'Bot-specified invoice payload',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'shipping_address',
@@ -18116,7 +17025,6 @@ const ShippingQuery = t({
         markdown: 'User specified shipping address',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18136,7 +17044,6 @@ const PreCheckoutQuery = t({
         markdown: 'Unique query identifier',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'from',
@@ -18148,7 +17055,6 @@ const PreCheckoutQuery = t({
         markdown: 'User who sent the query',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'currency',
@@ -18159,7 +17065,6 @@ const PreCheckoutQuery = t({
         markdown: 'Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90)',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'total_amount',
@@ -18170,7 +17075,6 @@ const PreCheckoutQuery = t({
         markdown: 'Total price in the _smallest units_ of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'invoice_payload',
@@ -18181,7 +17085,6 @@ const PreCheckoutQuery = t({
         markdown: 'Bot-specified invoice payload',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'shipping_option_id',
@@ -18192,7 +17095,6 @@ const PreCheckoutQuery = t({
         markdown: 'Identifier of the shipping option chosen by the user',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'order_info',
@@ -18204,7 +17106,6 @@ const PreCheckoutQuery = t({
         markdown: 'Order information provided by the user',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18225,7 +17126,6 @@ const PaidMediaPurchased = t({
         markdown: 'User who purchased the media',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'paid_media_payload',
@@ -18236,7 +17136,6 @@ const PaidMediaPurchased = t({
         markdown: 'Bot-specified paid media payload',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18277,7 +17176,6 @@ const RevenueWithdrawalStatePending = t({
         markdown: 'Type of the state, always “pending”',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18297,7 +17195,6 @@ const RevenueWithdrawalStateSucceeded = t({
         markdown: 'Type of the state, always “succeeded”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'date',
@@ -18308,7 +17205,6 @@ const RevenueWithdrawalStateSucceeded = t({
         markdown: 'Date the withdrawal was completed in Unix time',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'url',
@@ -18319,7 +17215,6 @@ const RevenueWithdrawalStateSucceeded = t({
         markdown: 'An HTTPS URL that can be used to see transaction details',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18339,7 +17234,6 @@ const RevenueWithdrawalStateFailed = t({
         markdown: 'Type of the state, always “failed”',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18360,7 +17254,6 @@ const AffiliateInfo = t({
         markdown: 'The bot or the user that received an affiliate commission if it was received by a bot or a user',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'affiliate_chat',
@@ -18372,7 +17265,6 @@ const AffiliateInfo = t({
         markdown: 'The chat that received an affiliate commission if it was received by a chat',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'commission_per_mille',
@@ -18383,7 +17275,6 @@ const AffiliateInfo = t({
         markdown: 'The number of Telegram Stars received by the affiliate for each 1000 Telegram Stars received by the bot from referred users',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'amount',
@@ -18394,7 +17285,6 @@ const AffiliateInfo = t({
         markdown: 'Integer amount of Telegram Stars received by the affiliate from the transaction, rounded to 0; can be negative for refunds',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'nanostar_amount',
@@ -18405,7 +17295,6 @@ const AffiliateInfo = t({
         markdown: 'The number of 1/1000000000 shares of Telegram Stars received by the affiliate; from -999999999 to 999999999; can be negative for refunds',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18462,7 +17351,6 @@ const TransactionPartnerUser = t({
         markdown: 'Type of the transaction partner, always “user”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'transaction_type',
@@ -18473,7 +17361,6 @@ const TransactionPartnerUser = t({
         markdown: 'Type of the transaction, currently one of “invoice\\_payment” for payments via invoices, “paid\\_media\\_payment” for payments for paid media, “gift\\_purchase” for gifts sent by the bot, “premium\\_purchase” for Telegram Premium subscriptions gifted by the bot, “business\\_account\\_transfer” for direct transfers from managed business accounts',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user',
@@ -18485,7 +17372,6 @@ const TransactionPartnerUser = t({
         markdown: 'Information about the user',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'affiliate',
@@ -18497,7 +17383,6 @@ const TransactionPartnerUser = t({
         markdown: 'Information about the affiliate that received a commission via this transaction. Can be available only for “invoice\\_payment” and “paid\\_media\\_payment” transactions.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'invoice_payload',
@@ -18508,7 +17393,6 @@ const TransactionPartnerUser = t({
         markdown: 'Bot-specified invoice payload. Can be available only for “invoice\\_payment” transactions.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'subscription_period',
@@ -18519,7 +17403,6 @@ const TransactionPartnerUser = t({
         markdown: 'The duration of the paid subscription. Can be available only for “invoice\\_payment” transactions.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'paid_media',
@@ -18534,7 +17417,6 @@ const TransactionPartnerUser = t({
         markdown: 'Information about the paid media bought by the user; for “paid\\_media\\_payment” transactions only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'paid_media_payload',
@@ -18545,7 +17427,6 @@ const TransactionPartnerUser = t({
         markdown: 'Bot-specified paid media payload. Can be available only for “paid\\_media\\_payment” transactions.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'gift',
@@ -18557,7 +17438,6 @@ const TransactionPartnerUser = t({
         markdown: 'The gift sent to the user by the bot; for “gift\\_purchase” transactions only',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'premium_subscription_duration',
@@ -18568,7 +17448,6 @@ const TransactionPartnerUser = t({
         markdown: 'Number of months the gifted Telegram Premium subscription will be active for; for “premium\\_purchase” transactions only',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18588,7 +17467,6 @@ const TransactionPartnerChat = t({
         markdown: 'Type of the transaction partner, always “chat”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'chat',
@@ -18600,7 +17478,6 @@ const TransactionPartnerChat = t({
         markdown: 'Information about the chat',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'gift',
@@ -18612,7 +17489,6 @@ const TransactionPartnerChat = t({
         markdown: 'The gift sent to the chat by the bot',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18632,7 +17508,6 @@ const TransactionPartnerAffiliateProgram = t({
         markdown: 'Type of the transaction partner, always “affiliate\\_program”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'sponsor_user',
@@ -18644,7 +17519,6 @@ const TransactionPartnerAffiliateProgram = t({
         markdown: 'Information about the bot that sponsored the affiliate program',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'commission_per_mille',
@@ -18655,7 +17529,6 @@ const TransactionPartnerAffiliateProgram = t({
         markdown: 'The number of Telegram Stars received by the bot for each 1000 Telegram Stars received by the affiliate program sponsor from referred users',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18675,7 +17548,6 @@ const TransactionPartnerFragment = t({
         markdown: 'Type of the transaction partner, always “fragment”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'withdrawal_state',
@@ -18687,7 +17559,6 @@ const TransactionPartnerFragment = t({
         markdown: 'State of the transaction if the transaction is outgoing',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18707,7 +17578,6 @@ const TransactionPartnerTelegramAds = t({
         markdown: 'Type of the transaction partner, always “telegram\\_ads”',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18727,7 +17597,6 @@ const TransactionPartnerTelegramApi = t({
         markdown: 'Type of the transaction partner, always “telegram\\_api”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'request_count',
@@ -18738,7 +17607,6 @@ const TransactionPartnerTelegramApi = t({
         markdown: 'The number of successful requests that exceeded regular limits and were therefore billed',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18758,7 +17626,6 @@ const TransactionPartnerOther = t({
         markdown: 'Type of the transaction partner, always “other”',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18778,7 +17645,6 @@ const StarTransaction = t({
         markdown: 'Unique identifier of the transaction. Coincides with the identifier of the original transaction for refund transactions. Coincides with _SuccessfulPayment.telegram\\_payment\\_charge\\_id_ for successful incoming payments from users.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'amount',
@@ -18789,7 +17655,6 @@ const StarTransaction = t({
         markdown: 'Integer amount of Telegram Stars transferred by the transaction',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'nanostar_amount',
@@ -18800,7 +17665,6 @@ const StarTransaction = t({
         markdown: 'The number of 1/1000000000 shares of Telegram Stars transferred by the transaction; from 0 to 999999999',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'date',
@@ -18811,7 +17675,6 @@ const StarTransaction = t({
         markdown: 'Date the transaction was created in Unix time',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'source',
@@ -18823,7 +17686,6 @@ const StarTransaction = t({
         markdown: 'Source of an incoming transaction (e.g., a user purchasing goods or services, Fragment refunding a failed withdrawal). Only for incoming transactions',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'receiver',
@@ -18835,7 +17697,6 @@ const StarTransaction = t({
         markdown: 'Receiver of an outgoing transaction (e.g., a user for a purchase refund, Fragment for a withdrawal). Only for outgoing transactions',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18859,7 +17720,6 @@ const StarTransactions = t({
         markdown: 'The list of transactions',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18883,7 +17743,6 @@ const PassportData = t({
         markdown: 'Array with information about documents and other Telegram Passport elements that was shared with the bot',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'credentials',
@@ -18895,7 +17754,6 @@ const PassportData = t({
         markdown: 'Encrypted credentials required to decrypt the data',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18915,7 +17773,6 @@ const PassportFile = t({
         markdown: 'Identifier for this file, which can be used to download or reuse the file',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_unique_id',
@@ -18926,7 +17783,6 @@ const PassportFile = t({
         markdown: 'Unique identifier for this file, which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_size',
@@ -18937,7 +17793,6 @@ const PassportFile = t({
         markdown: 'File size in bytes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_date',
@@ -18948,7 +17803,6 @@ const PassportFile = t({
         markdown: 'Unix time when the file was uploaded',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -18968,7 +17822,6 @@ const EncryptedPassportElement = t({
         markdown: 'Element type. One of “personal\\_details”, “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”, “address”, “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration”, “temporary\\_registration”, “phone\\_number”, “email”.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'data',
@@ -18979,7 +17832,6 @@ const EncryptedPassportElement = t({
         markdown: 'Base64-encoded encrypted Telegram Passport element data provided by the user; available only for “personal\\_details”, “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport” and “address” types. Can be decrypted and verified using the accompanying [EncryptedCredentials](https://core.telegram.org/bots/api#encryptedcredentials).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'phone_number',
@@ -18990,7 +17842,6 @@ const EncryptedPassportElement = t({
         markdown: 'User\'s verified phone number; available only for “phone\\_number” type',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'email',
@@ -19001,7 +17852,6 @@ const EncryptedPassportElement = t({
         markdown: 'User\'s verified email address; available only for “email” type',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'files',
@@ -19016,7 +17866,6 @@ const EncryptedPassportElement = t({
         markdown: 'Array of encrypted files with documents provided by the user; available only for “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration” and “temporary\\_registration” types. Files can be decrypted and verified using the accompanying [EncryptedCredentials](https://core.telegram.org/bots/api#encryptedcredentials).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'front_side',
@@ -19028,7 +17877,6 @@ const EncryptedPassportElement = t({
         markdown: 'Encrypted file with the front side of the document, provided by the user; available only for “passport”, “driver\\_license”, “identity\\_card” and “internal\\_passport”. The file can be decrypted and verified using the accompanying [EncryptedCredentials](https://core.telegram.org/bots/api#encryptedcredentials).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'reverse_side',
@@ -19040,7 +17888,6 @@ const EncryptedPassportElement = t({
         markdown: 'Encrypted file with the reverse side of the document, provided by the user; available only for “driver\\_license” and “identity\\_card”. The file can be decrypted and verified using the accompanying [EncryptedCredentials](https://core.telegram.org/bots/api#encryptedcredentials).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'selfie',
@@ -19052,7 +17899,6 @@ const EncryptedPassportElement = t({
         markdown: 'Encrypted file with the selfie of the user holding a document, provided by the user; available if requested for “passport”, “driver\\_license”, “identity\\_card” and “internal\\_passport”. The file can be decrypted and verified using the accompanying [EncryptedCredentials](https://core.telegram.org/bots/api#encryptedcredentials).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'translation',
@@ -19067,7 +17913,6 @@ const EncryptedPassportElement = t({
         markdown: 'Array of encrypted files with translated versions of documents provided by the user; available if requested for “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”, “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration” and “temporary\\_registration” types. Files can be decrypted and verified using the accompanying [EncryptedCredentials](https://core.telegram.org/bots/api#encryptedcredentials).',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'hash',
@@ -19078,7 +17923,6 @@ const EncryptedPassportElement = t({
         markdown: 'Base64-encoded element hash for using in [PassportElementErrorUnspecified](https://core.telegram.org/bots/api#passportelementerrorunspecified)',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -19098,7 +17942,6 @@ const EncryptedCredentials = t({
         markdown: 'Base64-encoded encrypted JSON-serialized data with unique user\'s payload, data hashes and secrets required for [EncryptedPassportElement](https://core.telegram.org/bots/api#encryptedpassportelement) decryption and authentication',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'hash',
@@ -19109,7 +17952,6 @@ const EncryptedCredentials = t({
         markdown: 'Base64-encoded data hash for data authentication',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'secret',
@@ -19120,7 +17962,6 @@ const EncryptedCredentials = t({
         markdown: 'Base64-encoded secret, encrypted with the bot\'s public RSA key, required for data decryption',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -19185,7 +18026,6 @@ const PassportElementErrorDataField = t({
         markdown: 'Error source, must be _data_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'type',
@@ -19196,7 +18036,6 @@ const PassportElementErrorDataField = t({
         markdown: 'The section of the user\'s Telegram Passport which has the error, one of “personal\\_details”, “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”, “address”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'field_name',
@@ -19207,7 +18046,6 @@ const PassportElementErrorDataField = t({
         markdown: 'Name of the data field which has the error',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'data_hash',
@@ -19218,7 +18056,6 @@ const PassportElementErrorDataField = t({
         markdown: 'Base64-encoded data hash',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message',
@@ -19229,7 +18066,6 @@ const PassportElementErrorDataField = t({
         markdown: 'Error message',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -19249,7 +18085,6 @@ const PassportElementErrorFrontSide = t({
         markdown: 'Error source, must be _front\\_side_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'type',
@@ -19260,7 +18095,6 @@ const PassportElementErrorFrontSide = t({
         markdown: 'The section of the user\'s Telegram Passport which has the issue, one of “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_hash',
@@ -19271,7 +18105,6 @@ const PassportElementErrorFrontSide = t({
         markdown: 'Base64-encoded hash of the file with the front side of the document',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message',
@@ -19282,7 +18115,6 @@ const PassportElementErrorFrontSide = t({
         markdown: 'Error message',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -19302,7 +18134,6 @@ const PassportElementErrorReverseSide = t({
         markdown: 'Error source, must be _reverse\\_side_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'type',
@@ -19313,7 +18144,6 @@ const PassportElementErrorReverseSide = t({
         markdown: 'The section of the user\'s Telegram Passport which has the issue, one of “driver\\_license”, “identity\\_card”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_hash',
@@ -19324,7 +18154,6 @@ const PassportElementErrorReverseSide = t({
         markdown: 'Base64-encoded hash of the file with the reverse side of the document',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message',
@@ -19335,7 +18164,6 @@ const PassportElementErrorReverseSide = t({
         markdown: 'Error message',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -19355,7 +18183,6 @@ const PassportElementErrorSelfie = t({
         markdown: 'Error source, must be _selfie_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'type',
@@ -19366,7 +18193,6 @@ const PassportElementErrorSelfie = t({
         markdown: 'The section of the user\'s Telegram Passport which has the issue, one of “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_hash',
@@ -19377,7 +18203,6 @@ const PassportElementErrorSelfie = t({
         markdown: 'Base64-encoded hash of the file with the selfie',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message',
@@ -19388,7 +18213,6 @@ const PassportElementErrorSelfie = t({
         markdown: 'Error message',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -19408,7 +18232,6 @@ const PassportElementErrorFile = t({
         markdown: 'Error source, must be _file_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'type',
@@ -19419,7 +18242,6 @@ const PassportElementErrorFile = t({
         markdown: 'The section of the user\'s Telegram Passport which has the issue, one of “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration”, “temporary\\_registration”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_hash',
@@ -19430,7 +18252,6 @@ const PassportElementErrorFile = t({
         markdown: 'Base64-encoded file hash',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message',
@@ -19441,7 +18262,6 @@ const PassportElementErrorFile = t({
         markdown: 'Error message',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -19461,7 +18281,6 @@ const PassportElementErrorFiles = t({
         markdown: 'Error source, must be _files_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'type',
@@ -19472,7 +18291,6 @@ const PassportElementErrorFiles = t({
         markdown: 'The section of the user\'s Telegram Passport which has the issue, one of “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration”, “temporary\\_registration”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_hashes',
@@ -19486,7 +18304,6 @@ const PassportElementErrorFiles = t({
         markdown: 'List of base64-encoded file hashes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message',
@@ -19497,7 +18314,6 @@ const PassportElementErrorFiles = t({
         markdown: 'Error message',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -19517,7 +18333,6 @@ const PassportElementErrorTranslationFile = t({
         markdown: 'Error source, must be _translation\\_file_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'type',
@@ -19528,7 +18343,6 @@ const PassportElementErrorTranslationFile = t({
         markdown: 'Type of element of the user\'s Telegram Passport which has the issue, one of “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”, “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration”, “temporary\\_registration”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_hash',
@@ -19539,7 +18353,6 @@ const PassportElementErrorTranslationFile = t({
         markdown: 'Base64-encoded file hash',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message',
@@ -19550,7 +18363,6 @@ const PassportElementErrorTranslationFile = t({
         markdown: 'Error message',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -19570,7 +18382,6 @@ const PassportElementErrorTranslationFiles = t({
         markdown: 'Error source, must be _translation\\_files_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'type',
@@ -19581,7 +18392,6 @@ const PassportElementErrorTranslationFiles = t({
         markdown: 'Type of element of the user\'s Telegram Passport which has the issue, one of “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”, “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration”, “temporary\\_registration”',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'file_hashes',
@@ -19595,7 +18405,6 @@ const PassportElementErrorTranslationFiles = t({
         markdown: 'List of base64-encoded file hashes',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message',
@@ -19606,7 +18415,6 @@ const PassportElementErrorTranslationFiles = t({
         markdown: 'Error message',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -19626,7 +18434,6 @@ const PassportElementErrorUnspecified = t({
         markdown: 'Error source, must be _unspecified_',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'type',
@@ -19637,7 +18444,6 @@ const PassportElementErrorUnspecified = t({
         markdown: 'Type of element of the user\'s Telegram Passport which has the issue',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'element_hash',
@@ -19648,7 +18454,6 @@ const PassportElementErrorUnspecified = t({
         markdown: 'Base64-encoded element hash',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'message',
@@ -19659,7 +18464,6 @@ const PassportElementErrorUnspecified = t({
         markdown: 'Error message',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -19679,7 +18483,6 @@ const Game = t({
         markdown: 'Title of the game',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'description',
@@ -19690,7 +18493,6 @@ const Game = t({
         markdown: 'Description of the game',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'photo',
@@ -19705,7 +18507,6 @@ const Game = t({
         markdown: 'Photo that will be displayed in the game message in chats.',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'text',
@@ -19716,7 +18517,6 @@ const Game = t({
         markdown: 'Brief description of the game or high scores included in the game message. Can be automatically edited to include current high scores for the game when the bot calls [setGameScore](https://core.telegram.org/bots/api#setgamescore), or manually edited using [editMessageText](https://core.telegram.org/bots/api#editmessagetext). 0-4096 characters.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'text_entities',
@@ -19731,7 +18531,6 @@ const Game = t({
         markdown: 'Special entities that appear in _text_, such as usernames, URLs, bot commands, etc.',
       },
       required: false,
-      jsonSerialized: false,
     },
     {
       name: 'animation',
@@ -19743,7 +18542,6 @@ const Game = t({
         markdown: 'Animation that will be displayed in the game message in chats. Upload via [BotFather](https://t.me/botfather)',
       },
       required: false,
-      jsonSerialized: false,
     },
   ],
 })
@@ -19771,7 +18569,6 @@ const GameHighScore = t({
         markdown: 'Position in high score table for the game',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'user',
@@ -19783,7 +18580,6 @@ const GameHighScore = t({
         markdown: 'User',
       },
       required: true,
-      jsonSerialized: false,
     },
     {
       name: 'score',
@@ -19794,7 +18590,6 @@ const GameHighScore = t({
         markdown: 'Score',
       },
       required: true,
-      jsonSerialized: false,
     },
   ],
 })
@@ -19829,6 +18624,7 @@ export const types = {
   Audio,
   Document,
   Story,
+  VideoQuality,
   Video,
   VideoNote,
   Voice,
@@ -19896,6 +18692,7 @@ export const types = {
   SuggestedPostParameters,
   DirectMessagesTopic,
   UserProfilePhotos,
+  UserProfileAudios,
   File,
   WebAppInfo,
   ReplyKeyboardMarkup,
@@ -19988,6 +18785,8 @@ export const types = {
   ChatBoost,
   ChatBoostUpdated,
   ChatBoostRemoved,
+  ChatOwnerLeft,
+  ChatOwnerChanged,
   UserChatBoosts,
   BusinessBotRights,
   BusinessConnection,
