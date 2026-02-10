@@ -6663,8 +6663,16 @@ const ReplyKeyboardMarkup = t({
         of: {
           type: 'array',
           of: {
-            type: 'api-type',
-            name: 'KeyboardButton',
+            type: 'union',
+            types: [
+              {
+                type: 'str',
+              },
+              {
+                type: 'api-type',
+                name: 'KeyboardButton',
+              },
+            ],
           },
         },
       },

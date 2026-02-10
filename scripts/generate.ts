@@ -1744,6 +1744,22 @@ const OVERRIDES: OverridesConfig = {
         },
       },
     },
+    ReplyKeyboardMarkup: {
+      hash: '',
+      fields: {
+        keyboard: {
+          hash: '7e6f80e1',
+          type: T_arrayOf(
+            T_arrayOf(
+              T_unionOf([
+                T_str(),
+                T_apiType('KeyboardButton'),
+              ]),
+            ),
+          ),
+        },
+      },
+    },
     KeyboardButtonRequestChat: {
       hash: '0f5a2f91',
       fields: {
