@@ -92,8 +92,8 @@ function T_bool(literal?: boolean): ValueTypeBoolean {
   return { type: 'bool', literal }
 }
 
-function T_int32(): ValueTypeInteger32 {
-  return { type: 'int32' }
+function T_int32(literal?: number): ValueTypeInteger32 {
+  return { type: 'int32', literal }
 }
 
 function T_int53(): ValueTypeInteger53 {
@@ -118,6 +118,18 @@ function T_arrayOf(of: ValueType): ValueTypeArray {
 
 function T_unionOf(types: Array<ValueType>): ValueTypeUnion {
   return { type: 'union', types }
+}
+
+function T_strUnion(...literals: string[]): ValueTypeUnion {
+  return T_unionOf(literals.map(literal => T_str(literal)))
+}
+
+function T_int32Union(...literals: number[]): ValueTypeUnion {
+  return T_unionOf(literals.map(literal => T_int32(literal)))
+}
+
+function T_parseMode(): ValueTypeUnion {
+  return T_strUnion('HTML', 'MarkdownV2', 'Markdown')
 }
 
 // =============================================================================
@@ -155,7 +167,7 @@ interface OverridesConfig {
   types: Record<string, TypeOverrides>
 }
 
-const OVERRIDES: OverridesConfig = {
+export const OVERRIDES: OverridesConfig = {
   methods: {
     getUpdates: {
       hash: '86d14b94',
@@ -201,6 +213,10 @@ const OVERRIDES: OverridesConfig = {
       hash: '7a8c8acc',
       returnType: T_apiType('Message'),
       parameters: {
+        parse_mode: {
+          hash: '91a6e03f',
+          type: T_parseMode(),
+        },
         entities: {
           hash: 'ea0ec752',
           description: { markdown: 'An array of special entities that appear in message text, which can be specified instead of _parse\\_mode_' },
@@ -239,6 +255,10 @@ const OVERRIDES: OverridesConfig = {
       hash: 'dd057489',
       returnType: T_apiType('MessageId'),
       parameters: {
+        parse_mode: {
+          hash: '6ab097d8',
+          type: T_parseMode(),
+        },
         caption_entities: {
           hash: 'c4fbbc13',
           description: { markdown: 'An array of special entities that appear in the new caption, which can be specified instead of _parse\\_mode_' },
@@ -267,6 +287,10 @@ const OVERRIDES: OverridesConfig = {
       hash: '8f8b7b9c',
       returnType: T_apiType('Message'),
       parameters: {
+        parse_mode: {
+          hash: '26ac7b71',
+          type: T_parseMode(),
+        },
         caption_entities: {
           hash: '9b64af4f',
           description: { markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_' },
@@ -285,6 +309,10 @@ const OVERRIDES: OverridesConfig = {
       hash: '6a8f2a96',
       returnType: T_apiType('Message'),
       parameters: {
+        parse_mode: {
+          hash: 'ae8e638c',
+          type: T_parseMode(),
+        },
         caption_entities: {
           hash: '9b64af4f',
           description: { markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_' },
@@ -303,6 +331,10 @@ const OVERRIDES: OverridesConfig = {
       hash: 'e0c76b6b',
       returnType: T_apiType('Message'),
       parameters: {
+        parse_mode: {
+          hash: '8c3f7282',
+          type: T_parseMode(),
+        },
         caption_entities: {
           hash: '9b64af4f',
           description: { markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_' },
@@ -321,6 +353,10 @@ const OVERRIDES: OverridesConfig = {
       hash: '46aa5d07',
       returnType: T_apiType('Message'),
       parameters: {
+        parse_mode: {
+          hash: 'ce4a5c59',
+          type: T_parseMode(),
+        },
         caption_entities: {
           hash: '9b64af4f',
           description: { markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_' },
@@ -339,6 +375,10 @@ const OVERRIDES: OverridesConfig = {
       hash: 'af3b9916',
       returnType: T_apiType('Message'),
       parameters: {
+        parse_mode: {
+          hash: '3f4e85b2',
+          type: T_parseMode(),
+        },
         caption_entities: {
           hash: '9b64af4f',
           description: { markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_' },
@@ -357,6 +397,10 @@ const OVERRIDES: OverridesConfig = {
       hash: 'a629dbe4',
       returnType: T_apiType('Message'),
       parameters: {
+        parse_mode: {
+          hash: '6b17bc28',
+          type: T_parseMode(),
+        },
         caption_entities: {
           hash: '9b64af4f',
           description: { markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_' },
@@ -389,6 +433,10 @@ const OVERRIDES: OverridesConfig = {
       hash: '231540cd',
       returnType: T_apiType('Message'),
       parameters: {
+        parse_mode: {
+          hash: 'fd708ad9',
+          type: T_parseMode(),
+        },
         media: {
           hash: '0f4232b8',
           description: { markdown: 'An array describing the media to be sent; up to 10 items' },
@@ -471,6 +519,18 @@ const OVERRIDES: OverridesConfig = {
       hash: '73ae14fc',
       returnType: T_apiType('Message'),
       parameters: {
+        question_parse_mode: {
+          hash: '6f0ef5a0',
+          type: T_parseMode(),
+        },
+        type: {
+          hash: '892c512f',
+          type: T_strUnion('quiz', 'regular'),
+        },
+        explanation_parse_mode: {
+          hash: '0ac37471',
+          type: T_parseMode(),
+        },
         question_entities: {
           hash: 'e70fcd3d',
           description: { markdown: 'An array of special entities that appear in the poll question. It can be specified instead of _question\\_parse\\_mode_' },
@@ -511,6 +571,10 @@ const OVERRIDES: OverridesConfig = {
       hash: '89146b88',
       returnType: T_apiType('Message'),
       parameters: {
+        emoji: {
+          hash: '12183539',
+          type: T_strUnion('🎲', '🎯', '🏀', '⚽', '🎳', '🎰'),
+        },
         suggested_post_parameters: {
           hash: 'b99d9f3c',
           description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
@@ -525,6 +589,10 @@ const OVERRIDES: OverridesConfig = {
       hash: '6c498693',
       returnType: T_bool(true),
       parameters: {
+        parse_mode: {
+          hash: '91a6e03f',
+          type: T_parseMode(),
+        },
         entities: {
           hash: 'ea0ec752',
           description: { markdown: 'An array of special entities that appear in message text, which can be specified instead of _parse\\_mode_' },
@@ -534,6 +602,24 @@ const OVERRIDES: OverridesConfig = {
     sendChatAction: {
       hash: 'cc246789',
       returnType: T_bool(true),
+      parameters: {
+        action: {
+          hash: '2c043d2f',
+          type: T_strUnion(
+            'typing',
+            'upload_photo',
+            'record_video',
+            'upload_video',
+            'record_voice',
+            'upload_voice',
+            'upload_document',
+            'choose_sticker',
+            'find_location',
+            'record_video_note',
+            'upload_video_note',
+          ),
+        },
+      },
     },
     setMessageReaction: {
       hash: '855ec48d',
@@ -620,6 +706,12 @@ const OVERRIDES: OverridesConfig = {
     createChatSubscriptionInviteLink: {
       hash: 'da83809d',
       returnType: T_apiType('ChatInviteLink'),
+      parameters: {
+        subscription_period: {
+          hash: 'd80d725f',
+          type: T_int32(2592000),
+        },
+      },
     },
     editChatSubscriptionInviteLink: {
       hash: 'e872365d',
@@ -700,6 +792,12 @@ const OVERRIDES: OverridesConfig = {
     createForumTopic: {
       hash: '7cdc466c',
       returnType: T_apiType('ForumTopic'),
+      parameters: {
+        icon_color: {
+          hash: '8ca3e691',
+          type: T_int32Union(7322096, 16766590, 13338331, 9367192, 16749490, 16478047),
+        },
+      },
     },
     editForumTopic: {
       hash: '9bec2c3f',
@@ -859,6 +957,10 @@ const OVERRIDES: OverridesConfig = {
       hash: '8cbca0bd',
       returnType: T_bool(true),
       parameters: {
+        text_parse_mode: {
+          hash: '426b8a25',
+          type: T_parseMode(),
+        },
         text_entities: {
           hash: 'b14ecbfe',
           description: { markdown: 'An array of special entities that appear in the gift text. It can be specified instead of _text\\_parse\\_mode_. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.' },
@@ -869,6 +971,18 @@ const OVERRIDES: OverridesConfig = {
       hash: '9fd0fa4d',
       returnType: T_bool(true),
       parameters: {
+        month_count: {
+          hash: '4e1e8db5',
+          type: T_int32Union(3, 6, 12),
+        },
+        star_count: {
+          hash: '641f21d9',
+          type: T_int32Union(1000, 1500, 2500),
+        },
+        text_parse_mode: {
+          hash: '426b8a25',
+          type: T_parseMode(),
+        },
         text_entities: {
           hash: 'b14ecbfe',
           description: { markdown: 'An array of special entities that appear in the gift text. It can be specified instead of _text\\_parse\\_mode_. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.' },
@@ -965,6 +1079,14 @@ const OVERRIDES: OverridesConfig = {
       hash: '4b66d0b7',
       returnType: T_apiType('Story'),
       parameters: {
+        active_period: {
+          hash: '8d680b06',
+          type: T_int32Union(21600, 43200, 86400, 172800),
+        },
+        parse_mode: {
+          hash: '236df383',
+          type: T_parseMode(),
+        },
         caption_entities: {
           hash: '9b64af4f',
           description: { markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_' },
@@ -978,11 +1100,21 @@ const OVERRIDES: OverridesConfig = {
     repostStory: {
       hash: '6b29acde',
       returnType: T_apiType('Story'),
+      parameters: {
+        active_period: {
+          hash: '8d680b06',
+          type: T_int32Union(21600, 43200, 86400, 172800),
+        },
+      },
     },
     editStory: {
       hash: '52e53f42',
       returnType: T_apiType('Story'),
       parameters: {
+        parse_mode: {
+          hash: '236df383',
+          type: T_parseMode(),
+        },
         caption_entities: {
           hash: '9b64af4f',
           description: { markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_' },
@@ -1001,6 +1133,10 @@ const OVERRIDES: OverridesConfig = {
       hash: 'c4d7c1f3',
       returnType: T_unionOf([T_apiType('Message'), T_bool(true)]),
       parameters: {
+        parse_mode: {
+          hash: '91a6e03f',
+          type: T_parseMode(),
+        },
         entities: {
           hash: 'ea0ec752',
           description: { markdown: 'An array of special entities that appear in message text, which can be specified instead of _parse\\_mode_' },
@@ -1015,6 +1151,10 @@ const OVERRIDES: OverridesConfig = {
       hash: 'af19e298',
       returnType: T_unionOf([T_apiType('Message'), T_bool(true)]),
       parameters: {
+        parse_mode: {
+          hash: '0603c4a9',
+          type: T_parseMode(),
+        },
         caption_entities: {
           hash: '9b64af4f',
           description: { markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_' },
@@ -1146,11 +1286,21 @@ const OVERRIDES: OverridesConfig = {
     uploadStickerFile: {
       hash: '48222657',
       returnType: T_apiType('File'),
+      parameters: {
+        sticker_format: {
+          hash: '8857697c',
+          type: T_strUnion('static', 'animated', 'video'),
+        },
+      },
     },
     createNewStickerSet: {
       hash: '2d45b10f',
       returnType: T_bool(true),
       parameters: {
+        sticker_type: {
+          hash: '34e8912e',
+          type: T_strUnion('regular', 'mask', 'custom_emoji'),
+        },
         stickers: {
           hash: '252cbf19',
           description: { markdown: 'An array of 1-50 initial stickers to be added to the sticker set' },
@@ -1222,6 +1372,12 @@ const OVERRIDES: OverridesConfig = {
     setStickerSetThumbnail: {
       hash: '0fac1747',
       returnType: T_bool(true),
+      parameters: {
+        format: {
+          hash: '2114a31e',
+          type: T_strUnion('static', 'animated', 'video'),
+        },
+      },
     },
     setCustomEmojiStickerSetThumbnail: {
       hash: '05b1dc15',
@@ -1291,6 +1447,10 @@ const OVERRIDES: OverridesConfig = {
       hash: 'bf6aa9a2',
       returnType: T_str(),
       parameters: {
+        subscription_period: {
+          hash: '69f59e7e',
+          type: T_int32(2592000),
+        },
         prices: {
           hash: 'c8f3d569',
           description: { markdown: 'Price breakdown, an array of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in [Telegram Stars](https://t.me/BotNews/90).' },
@@ -1579,6 +1739,10 @@ const OVERRIDES: OverridesConfig = {
     Chat: {
       hash: '45f2e5e9',
       fields: {
+        type: {
+          hash: 'd99f97c5',
+          type: T_strUnion('private', 'group', 'supergroup', 'channel'),
+        },
         id: {
           hash: 'b31c26c8',
           type: T_int53(),
@@ -1589,6 +1753,10 @@ const OVERRIDES: OverridesConfig = {
     ChatFullInfo: {
       hash: '3e1f1e5a',
       fields: {
+        type: {
+          hash: 'd99f97c5',
+          type: T_strUnion('private', 'group', 'supergroup', 'channel'),
+        },
         id: {
           hash: 'b31c26c8',
           type: T_int53(),
@@ -1619,6 +1787,10 @@ const OVERRIDES: OverridesConfig = {
     ReplyParameters: {
       hash: '8e61f920',
       fields: {
+        quote_parse_mode: {
+          hash: 'da230a50',
+          type: T_parseMode(),
+        },
         quote_entities: {
           hash: 'b333aaa9',
           description: { markdown: 'An array of special entities that appear in the quote. It can be specified instead of _quote\\_parse\\_mode_.' },
@@ -1658,6 +1830,10 @@ const OVERRIDES: OverridesConfig = {
     VideoQuality: {
       hash: 'b033116e',
       fields: {
+        codec: {
+          hash: '0987fb63',
+          type: T_strUnion('h264', 'h265', 'av01'),
+        },
         file_size: {
           hash: '4ae400fe',
           type: T_int53(),
@@ -1698,6 +1874,10 @@ const OVERRIDES: OverridesConfig = {
     InputPollOption: {
       hash: '03faac22',
       fields: {
+        text_parse_mode: {
+          hash: '00c78ab0',
+          type: T_parseMode(),
+        },
         text_entities: {
           hash: '40bd087f',
           description: { markdown: 'An array of special entities that appear in the poll option text. It can be specified instead of _text\\_parse\\_mode_' },
@@ -1741,6 +1921,1215 @@ const OVERRIDES: OverridesConfig = {
           hash: '4ae400fe',
           type: T_int53(),
           description: { markdown: 'File size in bytes.' },
+        },
+      },
+    },
+    InaccessibleMessage: {
+      hash: '',
+      fields: {
+        date: {
+          hash: 'dc8d6346',
+          type: T_int32(0),
+        },
+      },
+    },
+    MessageEntity: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'd0f5832e',
+          type: T_strUnion(
+            'mention',
+            'hashtag',
+            'cashtag',
+            'bot_command',
+            'url',
+            'email',
+            'phone_number',
+            'bold',
+            'italic',
+            'underline',
+            'strikethrough',
+            'spoiler',
+            'blockquote',
+            'expandable_blockquote',
+            'code',
+            'pre',
+            'text_link',
+            'text_mention',
+            'custom_emoji',
+          ),
+        },
+      },
+    },
+    MessageOriginUser: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '5a88dd1f',
+          type: T_str('user'),
+        },
+      },
+    },
+    MessageOriginHiddenUser: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '84beeb33',
+          type: T_str('hidden_user'),
+        },
+      },
+    },
+    MessageOriginChat: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'fe0ab846',
+          type: T_str('chat'),
+        },
+      },
+    },
+    MessageOriginChannel: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '634d4f18',
+          type: T_str('channel'),
+        },
+      },
+    },
+    PaidMediaPreview: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'd1f4cd97',
+          type: T_str('preview'),
+        },
+      },
+    },
+    PaidMediaPhoto: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'ea6f22ac',
+          type: T_str('photo'),
+        },
+      },
+    },
+    PaidMediaVideo: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '543e9579',
+          type: T_str('video'),
+        },
+      },
+    },
+    Dice: {
+      hash: '',
+      fields: {
+        emoji: {
+          hash: '63601354',
+          type: T_strUnion('🎲', '🎯', '🎳', '🏀', '⚽', '🎰'),
+        },
+      },
+    },
+    Poll: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '7b1a5491',
+          type: T_strUnion('regular', 'quiz'),
+        },
+      },
+    },
+    InputChecklistTask: {
+      hash: '',
+      fields: {
+        parse_mode: {
+          hash: '75c2a5fd',
+          type: T_parseMode(),
+        },
+      },
+    },
+    InputChecklist: {
+      hash: '',
+      fields: {
+        parse_mode: {
+          hash: 'd0746821',
+          type: T_parseMode(),
+        },
+      },
+    },
+    BackgroundFillSolid: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '75ad9746',
+          type: T_str('solid'),
+        },
+      },
+    },
+    BackgroundFillGradient: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'f63d41c8',
+          type: T_str('gradient'),
+        },
+      },
+    },
+    BackgroundFillFreeformGradient: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'c7cc3f01',
+          type: T_str('freeform_gradient'),
+        },
+      },
+    },
+    BackgroundTypeFill: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'b8f61162',
+          type: T_str('fill'),
+        },
+      },
+    },
+    BackgroundTypeWallpaper: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '2ba88db8',
+          type: T_str('wallpaper'),
+        },
+      },
+    },
+    BackgroundTypePattern: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '256f4698',
+          type: T_str('pattern'),
+        },
+      },
+    },
+    BackgroundTypeChatTheme: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '86175901',
+          type: T_str('chat_theme'),
+        },
+      },
+    },
+    SuggestedPostPaid: {
+      hash: '',
+      fields: {
+        currency: {
+          hash: '996ec42a',
+          type: T_strUnion('XTR', 'TON'),
+        },
+      },
+    },
+    SuggestedPostRefunded: {
+      hash: '',
+      fields: {
+        reason: {
+          hash: 'afba5400',
+          type: T_strUnion('post_deleted', 'payment_refunded'),
+        },
+      },
+    },
+    SuggestedPostPrice: {
+      hash: '',
+      fields: {
+        currency: {
+          hash: '8fede40b',
+          type: T_strUnion('XTR', 'TON'),
+        },
+      },
+    },
+    SuggestedPostInfo: {
+      hash: '',
+      fields: {
+        state: {
+          hash: '7b7bcccc',
+          type: T_strUnion('pending', 'approved', 'declined'),
+        },
+      },
+    },
+    KeyboardButton: {
+      hash: '',
+      fields: {
+        style: {
+          hash: 'a755cee8',
+          type: T_strUnion('danger', 'success', 'primary'),
+        },
+      },
+    },
+    KeyboardButtonPollType: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '0bbc5897',
+          type: T_strUnion('quiz', 'regular'),
+        },
+      },
+    },
+    InlineKeyboardButton: {
+      hash: '',
+      fields: {
+        style: {
+          hash: 'a755cee8',
+          type: T_strUnion('danger', 'success', 'primary'),
+        },
+      },
+    },
+    ChatMemberOwner: {
+      hash: '',
+      fields: {
+        status: {
+          hash: '202649f2',
+          type: T_str('creator'),
+        },
+      },
+    },
+    ChatMemberAdministrator: {
+      hash: '',
+      fields: {
+        status: {
+          hash: '56656eff',
+          type: T_str('administrator'),
+        },
+      },
+    },
+    ChatMemberMember: {
+      hash: '',
+      fields: {
+        status: {
+          hash: '8486b71b',
+          type: T_str('member'),
+        },
+      },
+    },
+    ChatMemberRestricted: {
+      hash: '',
+      fields: {
+        status: {
+          hash: '9828d233',
+          type: T_str('restricted'),
+        },
+      },
+    },
+    ChatMemberLeft: {
+      hash: '',
+      fields: {
+        status: {
+          hash: '986005e6',
+          type: T_str('left'),
+        },
+      },
+    },
+    ChatMemberBanned: {
+      hash: '',
+      fields: {
+        status: {
+          hash: 'ddb797a6',
+          type: T_str('kicked'),
+        },
+      },
+    },
+    StoryAreaTypeLocation: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'f903b51e',
+          type: T_str('location'),
+        },
+      },
+    },
+    StoryAreaTypeSuggestedReaction: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'ecd2b440',
+          type: T_str('suggested_reaction'),
+        },
+      },
+    },
+    StoryAreaTypeLink: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'db57501b',
+          type: T_str('link'),
+        },
+      },
+    },
+    StoryAreaTypeWeather: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '37b9a823',
+          type: T_str('weather'),
+        },
+      },
+    },
+    StoryAreaTypeUniqueGift: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'ffab307f',
+          type: T_str('unique_gift'),
+        },
+      },
+    },
+    ReactionTypeEmoji: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '68d505fc',
+          type: T_str('emoji'),
+        },
+      },
+    },
+    ReactionTypeCustomEmoji: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'f9cf428f',
+          type: T_str('custom_emoji'),
+        },
+      },
+    },
+    ReactionTypePaid: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'f3ded0fa',
+          type: T_str('paid'),
+        },
+      },
+    },
+    UniqueGiftModel: {
+      hash: '',
+      fields: {
+        rarity: {
+          hash: 'a8b5c273',
+          type: T_strUnion('uncommon', 'rare', 'epic', 'legendary'),
+        },
+      },
+    },
+    UniqueGiftInfo: {
+      hash: '',
+      fields: {
+        origin: {
+          hash: '506fae70',
+          type: T_strUnion('upgrade', 'transfer', 'resale', 'gifted_upgrade', 'offer'),
+        },
+        last_resale_currency: {
+          hash: '45f70c02',
+          type: T_strUnion('XTR', 'TON'),
+        },
+      },
+    },
+    OwnedGiftRegular: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '82baa8d2',
+          type: T_str('regular'),
+        },
+      },
+    },
+    OwnedGiftUnique: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'a4d83531',
+          type: T_str('unique'),
+        },
+      },
+    },
+    BotCommandScopeDefault: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'a1ede123',
+          type: T_str('default'),
+        },
+      },
+    },
+    BotCommandScopeAllPrivateChats: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'afe8db9f',
+          type: T_str('all_private_chats'),
+        },
+      },
+    },
+    BotCommandScopeAllGroupChats: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '32e39393',
+          type: T_str('all_group_chats'),
+        },
+      },
+    },
+    BotCommandScopeAllChatAdministrators: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'b1ab80a0',
+          type: T_str('all_chat_administrators'),
+        },
+      },
+    },
+    BotCommandScopeChat: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '8b3db6b8',
+          type: T_str('chat'),
+        },
+      },
+    },
+    BotCommandScopeChatAdministrators: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '68aac82d',
+          type: T_str('chat_administrators'),
+        },
+      },
+    },
+    BotCommandScopeChatMember: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '7300e4a6',
+          type: T_str('chat_member'),
+        },
+      },
+    },
+    MenuButtonCommands: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '2d80e768',
+          type: T_str('commands'),
+        },
+      },
+    },
+    MenuButtonWebApp: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'edb46e35',
+          type: T_str('web_app'),
+        },
+      },
+    },
+    MenuButtonDefault: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'b4aca138',
+          type: T_str('default'),
+        },
+      },
+    },
+    ChatBoostSourcePremium: {
+      hash: '',
+      fields: {
+        source: {
+          hash: 'cebac2ef',
+          type: T_str('premium'),
+        },
+      },
+    },
+    ChatBoostSourceGiftCode: {
+      hash: '',
+      fields: {
+        source: {
+          hash: '43a35570',
+          type: T_str('gift_code'),
+        },
+      },
+    },
+    ChatBoostSourceGiveaway: {
+      hash: '',
+      fields: {
+        source: {
+          hash: '5190845a',
+          type: T_str('giveaway'),
+        },
+      },
+    },
+    InputMediaPhoto: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'ee1139a7',
+          type: T_str('photo'),
+        },
+        parse_mode: {
+          hash: '26ac7b71',
+          type: T_parseMode(),
+        },
+      },
+    },
+    InputMediaVideo: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'a20617eb',
+          type: T_str('video'),
+        },
+        parse_mode: {
+          hash: 'ce4a5c59',
+          type: T_parseMode(),
+        },
+      },
+    },
+    InputMediaAnimation: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '3ad7a992',
+          type: T_str('animation'),
+        },
+        parse_mode: {
+          hash: '3f4e85b2',
+          type: T_parseMode(),
+        },
+      },
+    },
+    InputMediaAudio: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '7ff6bc34',
+          type: T_str('audio'),
+        },
+        parse_mode: {
+          hash: 'ae8e638c',
+          type: T_parseMode(),
+        },
+      },
+    },
+    InputMediaDocument: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'd2168c45',
+          type: T_str('document'),
+        },
+        parse_mode: {
+          hash: '8c3f7282',
+          type: T_parseMode(),
+        },
+      },
+    },
+    InputPaidMediaPhoto: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'a80fa570',
+          type: T_str('photo'),
+        },
+      },
+    },
+    InputPaidMediaVideo: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'a8b61270',
+          type: T_str('video'),
+        },
+      },
+    },
+    InputProfilePhotoStatic: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'a649b79f',
+          type: T_str('static'),
+        },
+      },
+    },
+    InputProfilePhotoAnimated: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '8f1a981c',
+          type: T_str('animated'),
+        },
+      },
+    },
+    InputStoryContentPhoto: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '745751b0',
+          type: T_str('photo'),
+        },
+      },
+    },
+    InputStoryContentVideo: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '1a0d9687',
+          type: T_str('video'),
+        },
+      },
+    },
+    Sticker: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'c17fe883',
+          type: T_strUnion('regular', 'mask', 'custom_emoji'),
+        },
+      },
+    },
+    StickerSet: {
+      hash: '',
+      fields: {
+        sticker_type: {
+          hash: 'b3a311ef',
+          type: T_strUnion('regular', 'mask', 'custom_emoji'),
+        },
+      },
+    },
+    MaskPosition: {
+      hash: '',
+      fields: {
+        point: {
+          hash: 'e3fc5fc8',
+          type: T_strUnion('forehead', 'eyes', 'mouth', 'chin'),
+        },
+      },
+    },
+    InputSticker: {
+      hash: '',
+      fields: {
+        format: {
+          hash: '36e80472',
+          type: T_strUnion('static', 'animated', 'video'),
+        },
+      },
+    },
+    InlineQuery: {
+      hash: '',
+      fields: {
+        chat_type: {
+          hash: '7dbb94e3',
+          type: T_strUnion('sender', 'private', 'group', 'supergroup', 'channel'),
+        },
+      },
+    },
+    InlineQueryResultArticle: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '70e558e6',
+          type: T_str('article'),
+        },
+      },
+    },
+    InlineQueryResultPhoto: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'ee1139a7',
+          type: T_str('photo'),
+        },
+        parse_mode: {
+          hash: '26ac7b71',
+          type: T_parseMode(),
+        },
+      },
+    },
+    InlineQueryResultGif: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '6d8d2b18',
+          type: T_str('gif'),
+        },
+        thumbnail_mime_type: {
+          hash: '770fdf11',
+          type: T_strUnion('image/jpeg', 'image/gif', 'video/mp4'),
+        },
+        parse_mode: {
+          hash: 'fe2cf7da',
+          type: T_parseMode(),
+        },
+      },
+    },
+    InlineQueryResultMpeg4Gif: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'b1906338',
+          type: T_str('mpeg4_gif'),
+        },
+        thumbnail_mime_type: {
+          hash: '770fdf11',
+          type: T_strUnion('image/jpeg', 'image/gif', 'video/mp4'),
+        },
+        parse_mode: {
+          hash: 'fe2cf7da',
+          type: T_parseMode(),
+        },
+      },
+    },
+    InlineQueryResultVideo: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'a20617eb',
+          type: T_str('video'),
+        },
+        mime_type: {
+          hash: 'ae00fe0d',
+          type: T_strUnion('text/html', 'video/mp4'),
+        },
+        parse_mode: {
+          hash: 'ce4a5c59',
+          type: T_parseMode(),
+        },
+      },
+    },
+    InlineQueryResultAudio: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '7ff6bc34',
+          type: T_str('audio'),
+        },
+        parse_mode: {
+          hash: 'ae8e638c',
+          type: T_parseMode(),
+        },
+      },
+    },
+    InlineQueryResultVoice: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '4ef371e9',
+          type: T_str('voice'),
+        },
+        parse_mode: {
+          hash: '6b17bc28',
+          type: T_parseMode(),
+        },
+      },
+    },
+    InlineQueryResultDocument: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'd2168c45',
+          type: T_str('document'),
+        },
+        parse_mode: {
+          hash: '8c3f7282',
+          type: T_parseMode(),
+        },
+        mime_type: {
+          hash: 'bbda464c',
+          type: T_strUnion('application/pdf', 'application/zip'),
+        },
+      },
+    },
+    InlineQueryResultLocation: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '8a147e84',
+          type: T_str('location'),
+        },
+      },
+    },
+    InlineQueryResultVenue: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '22290551',
+          type: T_str('venue'),
+        },
+      },
+    },
+    InlineQueryResultContact: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '4ebeac7a',
+          type: T_str('contact'),
+        },
+      },
+    },
+    InlineQueryResultGame: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '8fd418c5',
+          type: T_str('game'),
+        },
+      },
+    },
+    InlineQueryResultCachedPhoto: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'ee1139a7',
+          type: T_str('photo'),
+        },
+        parse_mode: {
+          hash: '26ac7b71',
+          type: T_parseMode(),
+        },
+      },
+    },
+    InlineQueryResultCachedGif: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '6d8d2b18',
+          type: T_str('gif'),
+        },
+        parse_mode: {
+          hash: 'fe2cf7da',
+          type: T_parseMode(),
+        },
+      },
+    },
+    InlineQueryResultCachedMpeg4Gif: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'b1906338',
+          type: T_str('mpeg4_gif'),
+        },
+        parse_mode: {
+          hash: 'fe2cf7da',
+          type: T_parseMode(),
+        },
+      },
+    },
+    InlineQueryResultCachedSticker: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '6916d816',
+          type: T_str('sticker'),
+        },
+      },
+    },
+    InlineQueryResultCachedDocument: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'd2168c45',
+          type: T_str('document'),
+        },
+        parse_mode: {
+          hash: '8c3f7282',
+          type: T_parseMode(),
+        },
+      },
+    },
+    InlineQueryResultCachedVideo: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'a20617eb',
+          type: T_str('video'),
+        },
+      },
+    },
+    InlineQueryResultCachedVoice: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '4ef371e9',
+          type: T_str('voice'),
+        },
+      },
+    },
+    InlineQueryResultCachedAudio: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '7ff6bc34',
+          type: T_str('audio'),
+        },
+      },
+    },
+    RefundedPayment: {
+      hash: '',
+      fields: {
+        currency: {
+          hash: 'f03de202',
+          type: T_str('XTR'),
+        },
+      },
+    },
+    RevenueWithdrawalStatePending: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '44bb304d',
+          type: T_str('pending'),
+        },
+      },
+    },
+    RevenueWithdrawalStateSucceeded: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '7b410f3c',
+          type: T_str('succeeded'),
+        },
+      },
+    },
+    RevenueWithdrawalStateFailed: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '6d9c97f9',
+          type: T_str('failed'),
+        },
+      },
+    },
+    TransactionPartnerUser: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '453384d0',
+          type: T_str('user'),
+        },
+        transaction_type: {
+          hash: '196e4393',
+          type: T_strUnion('invoice_payment', 'paid_media_payment', 'gift_purchase', 'premium_purchase', 'business_account_transfer'),
+        },
+      },
+    },
+    TransactionPartnerChat: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'bc61015f',
+          type: T_str('chat'),
+        },
+      },
+    },
+    TransactionPartnerAffiliateProgram: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '419dacc4',
+          type: T_str('affiliate_program'),
+        },
+      },
+    },
+    TransactionPartnerFragment: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '836718cb',
+          type: T_str('fragment'),
+        },
+      },
+    },
+    TransactionPartnerTelegramAds: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '621ba9dc',
+          type: T_str('telegram_ads'),
+        },
+      },
+    },
+    TransactionPartnerTelegramApi: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '43ed5e8e',
+          type: T_str('telegram_api'),
+        },
+      },
+    },
+    TransactionPartnerOther: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '99a38300',
+          type: T_str('other'),
+        },
+      },
+    },
+    EncryptedPassportElement: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '06f24535',
+          type: T_strUnion(
+            'personal_details',
+            'passport',
+            'driver_license',
+            'identity_card',
+            'internal_passport',
+            'address',
+            'utility_bill',
+            'bank_statement',
+            'rental_agreement',
+            'passport_registration',
+            'temporary_registration',
+            'phone_number',
+            'email',
+          ),
+        },
+      },
+    },
+    PassportElementErrorDataField: {
+      hash: '',
+      fields: {
+        source: {
+          hash: '25602364',
+          type: T_str('data'),
+        },
+        type: {
+          hash: 'd08100f6',
+          type: T_strUnion('personal_details', 'passport', 'driver_license', 'identity_card', 'internal_passport', 'address'),
+        },
+      },
+    },
+    PassportElementErrorFrontSide: {
+      hash: '',
+      fields: {
+        source: {
+          hash: 'cbe73d64',
+          type: T_str('front_side'),
+        },
+        type: {
+          hash: '12e467af',
+          type: T_strUnion('passport', 'driver_license', 'identity_card', 'internal_passport'),
+        },
+      },
+    },
+    PassportElementErrorReverseSide: {
+      hash: '',
+      fields: {
+        source: {
+          hash: '769c69f9',
+          type: T_str('reverse_side'),
+        },
+        type: {
+          hash: '875100aa',
+          type: T_strUnion('driver_license', 'identity_card'),
+        },
+      },
+    },
+    PassportElementErrorSelfie: {
+      hash: '',
+      fields: {
+        source: {
+          hash: 'b88a2fb0',
+          type: T_str('selfie'),
+        },
+        type: {
+          hash: '12e467af',
+          type: T_strUnion('passport', 'driver_license', 'identity_card', 'internal_passport'),
+        },
+      },
+    },
+    PassportElementErrorFile: {
+      hash: '',
+      fields: {
+        source: {
+          hash: 'e522ae22',
+          type: T_str('file'),
+        },
+        type: {
+          hash: 'e431f041',
+          type: T_strUnion('utility_bill', 'bank_statement', 'rental_agreement', 'passport_registration', 'temporary_registration'),
+        },
+      },
+    },
+    PassportElementErrorFiles: {
+      hash: '',
+      fields: {
+        source: {
+          hash: 'd0b7092c',
+          type: T_str('files'),
+        },
+        type: {
+          hash: 'e431f041',
+          type: T_strUnion('utility_bill', 'bank_statement', 'rental_agreement', 'passport_registration', 'temporary_registration'),
+        },
+      },
+    },
+    PassportElementErrorTranslationFile: {
+      hash: '',
+      fields: {
+        source: {
+          hash: '85277dce',
+          type: T_str('translation_file'),
+        },
+        type: {
+          hash: '320aad37',
+          type: T_strUnion(
+            'passport',
+            'driver_license',
+            'identity_card',
+            'internal_passport',
+            'utility_bill',
+            'bank_statement',
+            'rental_agreement',
+            'passport_registration',
+            'temporary_registration',
+          ),
+        },
+      },
+    },
+    PassportElementErrorTranslationFiles: {
+      hash: '',
+      fields: {
+        source: {
+          hash: '0c34f5a1',
+          type: T_str('translation_files'),
+        },
+        type: {
+          hash: '320aad37',
+          type: T_strUnion(
+            'passport',
+            'driver_license',
+            'identity_card',
+            'internal_passport',
+            'utility_bill',
+            'bank_statement',
+            'rental_agreement',
+            'passport_registration',
+            'temporary_registration',
+          ),
+        },
+      },
+    },
+    PassportElementErrorUnspecified: {
+      hash: '',
+      fields: {
+        source: {
+          hash: '0a050279',
+          type: T_str('unspecified'),
         },
       },
     },

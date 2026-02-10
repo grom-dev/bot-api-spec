@@ -289,7 +289,21 @@ const sendMessage: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -748,7 +762,21 @@ const copyMessage: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the new caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -1076,7 +1104,21 @@ const sendPhoto: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -1299,7 +1341,21 @@ const sendAudio: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the audio caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -1568,7 +1624,21 @@ const sendDocument: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -1857,7 +1927,21 @@ const sendVideo: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -2138,7 +2222,21 @@ const sendAnimation: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the animation caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -2361,7 +2459,21 @@ const sendVoice: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the voice message caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -2797,7 +2909,21 @@ const sendPaidMedia: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the media caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -3751,7 +3877,21 @@ const sendPoll: ApiMethod = {
     {
       name: 'question_parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the question. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Currently, only custom emoji entities are allowed',
@@ -3799,7 +3939,17 @@ const sendPoll: ApiMethod = {
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'quiz',
+          },
+          {
+            type: 'str',
+            literal: 'regular',
+          },
+        ],
       },
       description: {
         markdown: 'Poll type, “quiz” or “regular”, defaults to “regular”',
@@ -3839,7 +3989,21 @@ const sendPoll: ApiMethod = {
     {
       name: 'explanation_parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the explanation. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -4129,7 +4293,33 @@ const sendDice: ApiMethod = {
     {
       name: 'emoji',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: '🎲',
+          },
+          {
+            type: 'str',
+            literal: '🎯',
+          },
+          {
+            type: 'str',
+            literal: '🏀',
+          },
+          {
+            type: 'str',
+            literal: '⚽',
+          },
+          {
+            type: 'str',
+            literal: '🎳',
+          },
+          {
+            type: 'str',
+            literal: '🎰',
+          },
+        ],
       },
       description: {
         markdown: 'Emoji on which the dice throw animation is based. Currently, must be one of “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”, “![🎯](//telegram.org/img/emoji/40/F09F8EAF.png)”, “![🏀](//telegram.org/img/emoji/40/F09F8F80.png)”, “![⚽](//telegram.org/img/emoji/40/E29ABD.png)”, “![🎳](//telegram.org/img/emoji/40/F09F8EB3.png)”, or “![🎰](//telegram.org/img/emoji/40/F09F8EB0.png)”. Dice can have values 1-6 for “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”, “![🎯](//telegram.org/img/emoji/40/F09F8EAF.png)” and “![🎳](//telegram.org/img/emoji/40/F09F8EB3.png)”, values 1-5 for “![🏀](//telegram.org/img/emoji/40/F09F8F80.png)” and “![⚽](//telegram.org/img/emoji/40/E29ABD.png)”, and values 1-64 for “![🎰](//telegram.org/img/emoji/40/F09F8EB0.png)”. Defaults to “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”',
@@ -4282,7 +4472,21 @@ const sendMessageDraft: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -4357,7 +4561,53 @@ const sendChatAction: ApiMethod = {
     {
       name: 'action',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'typing',
+          },
+          {
+            type: 'str',
+            literal: 'upload_photo',
+          },
+          {
+            type: 'str',
+            literal: 'record_video',
+          },
+          {
+            type: 'str',
+            literal: 'upload_video',
+          },
+          {
+            type: 'str',
+            literal: 'record_voice',
+          },
+          {
+            type: 'str',
+            literal: 'upload_voice',
+          },
+          {
+            type: 'str',
+            literal: 'upload_document',
+          },
+          {
+            type: 'str',
+            literal: 'choose_sticker',
+          },
+          {
+            type: 'str',
+            literal: 'find_location',
+          },
+          {
+            type: 'str',
+            literal: 'record_video_note',
+          },
+          {
+            type: 'str',
+            literal: 'upload_video_note',
+          },
+        ],
       },
       description: {
         markdown: 'Type of action to broadcast. Choose one, depending on what the user is about to receive: _typing_ for [text messages](https://core.telegram.org/bots/api#sendmessage), _upload\\_photo_ for [photos](https://core.telegram.org/bots/api#sendphoto), _record\\_video_ or _upload\\_video_ for [videos](https://core.telegram.org/bots/api#sendvideo), _record\\_voice_ or _upload\\_voice_ for [voice notes](https://core.telegram.org/bots/api#sendvoice), _upload\\_document_ for [general files](https://core.telegram.org/bots/api#senddocument), _choose\\_sticker_ for [stickers](https://core.telegram.org/bots/api#sendsticker), _find\\_location_ for [location data](https://core.telegram.org/bots/api#sendlocation), _record\\_video\\_note_ or _upload\\_video\\_note_ for [video notes](https://core.telegram.org/bots/api#sendvideonote).',
@@ -5378,6 +5628,7 @@ const createChatSubscriptionInviteLink: ApiMethod = {
       name: 'subscription_period',
       type: {
         type: 'int32',
+        literal: 2592000,
       },
       description: {
         markdown: 'The number of seconds the subscription will be active for before the next payment. Currently, it must always be 2592000 (30 days).',
@@ -6163,7 +6414,33 @@ const createForumTopic: ApiMethod = {
     {
       name: 'icon_color',
       type: {
-        type: 'int32',
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+            literal: 7322096,
+          },
+          {
+            type: 'int32',
+            literal: 16766590,
+          },
+          {
+            type: 'int32',
+            literal: 13338331,
+          },
+          {
+            type: 'int32',
+            literal: 9367192,
+          },
+          {
+            type: 'int32',
+            literal: 16749490,
+          },
+          {
+            type: 'int32',
+            literal: 16478047,
+          },
+        ],
       },
       description: {
         markdown: 'Color of the topic icon in RGB format. Currently, must be one of 7322096 (0x6FB9F0), 16766590 (0xFFD67E), 13338331 (0xCB86DB), 9367192 (0x8EEE98), 16749490 (0xFF93B2), or 16478047 (0xFB6F5F)',
@@ -7251,7 +7528,21 @@ const sendGift: ApiMethod = {
     {
       name: 'text_parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.',
@@ -7298,7 +7589,21 @@ const giftPremiumSubscription: ApiMethod = {
     {
       name: 'month_count',
       type: {
-        type: 'int32',
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+            literal: 3,
+          },
+          {
+            type: 'int32',
+            literal: 6,
+          },
+          {
+            type: 'int32',
+            literal: 12,
+          },
+        ],
       },
       description: {
         markdown: 'Number of months the Telegram Premium subscription will be active for the user; must be one of 3, 6, or 12',
@@ -7308,7 +7613,21 @@ const giftPremiumSubscription: ApiMethod = {
     {
       name: 'star_count',
       type: {
-        type: 'int32',
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+            literal: 1000,
+          },
+          {
+            type: 'int32',
+            literal: 1500,
+          },
+          {
+            type: 'int32',
+            literal: 2500,
+          },
+        ],
       },
       description: {
         markdown: 'Number of Telegram Stars to pay for the Telegram Premium subscription; must be 1000 for 3 months, 1500 for 6 months, and 2500 for 12 months',
@@ -7328,7 +7647,21 @@ const giftPremiumSubscription: ApiMethod = {
     {
       name: 'text_parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.',
@@ -8375,7 +8708,25 @@ const postStory: ApiMethod = {
     {
       name: 'active_period',
       type: {
-        type: 'int32',
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+            literal: 21600,
+          },
+          {
+            type: 'int32',
+            literal: 43200,
+          },
+          {
+            type: 'int32',
+            literal: 86400,
+          },
+          {
+            type: 'int32',
+            literal: 172800,
+          },
+        ],
       },
       description: {
         markdown: 'Period after which the story is moved to the archive, in seconds; must be one of `6 * 3600`, `12 * 3600`, `86400`, or `2 * 86400`',
@@ -8395,7 +8746,21 @@ const postStory: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the story caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -8496,7 +8861,25 @@ const repostStory: ApiMethod = {
     {
       name: 'active_period',
       type: {
-        type: 'int32',
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+            literal: 21600,
+          },
+          {
+            type: 'int32',
+            literal: 43200,
+          },
+          {
+            type: 'int32',
+            literal: 86400,
+          },
+          {
+            type: 'int32',
+            literal: 172800,
+          },
+        ],
       },
       description: {
         markdown: 'Period after which the story is moved to the archive, in seconds; must be one of `6 * 3600`, `12 * 3600`, `86400`, or `2 * 86400`',
@@ -8580,7 +8963,21 @@ const editStory: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the story caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -8722,7 +9119,21 @@ const editMessageText: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -8848,7 +9259,21 @@ const editMessageCaption: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the message caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -9859,7 +10284,21 @@ const uploadStickerFile: ApiMethod = {
     {
       name: 'sticker_format',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'static',
+          },
+          {
+            type: 'str',
+            literal: 'animated',
+          },
+          {
+            type: 'str',
+            literal: 'video',
+          },
+        ],
       },
       description: {
         markdown: 'Format of the sticker, must be one of “static”, “animated”, “video”',
@@ -9926,7 +10365,21 @@ const createNewStickerSet: ApiMethod = {
     {
       name: 'sticker_type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'regular',
+          },
+          {
+            type: 'str',
+            literal: 'mask',
+          },
+          {
+            type: 'str',
+            literal: 'custom_emoji',
+          },
+        ],
       },
       description: {
         markdown: 'Type of stickers in the set, pass “regular”, “mask”, or “custom\\_emoji”. By default, a regular sticker set is created.',
@@ -10290,7 +10743,21 @@ const setStickerSetThumbnail: ApiMethod = {
     {
       name: 'format',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'static',
+          },
+          {
+            type: 'str',
+            literal: 'animated',
+          },
+          {
+            type: 'str',
+            literal: 'video',
+          },
+        ],
       },
       description: {
         markdown: 'Format of the thumbnail, must be one of “static” for a **.WEBP** or **.PNG** image, “animated” for a **.TGS** animation, or “video” for a **.WEBM** video',
@@ -10971,6 +11438,7 @@ const createInvoiceLink: ApiMethod = {
       name: 'subscription_period',
       type: {
         type: 'int32',
+        literal: 2592000,
       },
       description: {
         markdown: 'The number of seconds the subscription will be active for before the next payment. The currency must be set to “XTR” (Telegram Stars) if the parameter is used. Currently, it must always be 2592000 (30 days) if specified. Any number of subscriptions can be active for a given bot at the same time, including multiple concurrent subscriptions from the same user. Subscription price must no exceed 10000 Telegram Stars.',

@@ -564,7 +564,25 @@ const Chat = t({
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'private',
+          },
+          {
+            type: 'str',
+            literal: 'group',
+          },
+          {
+            type: 'str',
+            literal: 'supergroup',
+          },
+          {
+            type: 'str',
+            literal: 'channel',
+          },
+        ],
       },
       description: {
         markdown: 'Type of the chat, can be either “private”, “group”, “supergroup” or “channel”',
@@ -655,7 +673,25 @@ const ChatFullInfo = t({
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'private',
+          },
+          {
+            type: 'str',
+            literal: 'group',
+          },
+          {
+            type: 'str',
+            literal: 'supergroup',
+          },
+          {
+            type: 'str',
+            literal: 'channel',
+          },
+        ],
       },
       description: {
         markdown: 'Type of the chat, can be either “private”, “group”, “supergroup” or “channel”',
@@ -2400,6 +2436,7 @@ const InaccessibleMessage = t({
       name: 'date',
       type: {
         type: 'int32',
+        literal: 0,
       },
       description: {
         markdown: 'Always 0. The field can be used to differentiate regular and inaccessible messages.',
@@ -2435,7 +2472,85 @@ const MessageEntity = t({
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'mention',
+          },
+          {
+            type: 'str',
+            literal: 'hashtag',
+          },
+          {
+            type: 'str',
+            literal: 'cashtag',
+          },
+          {
+            type: 'str',
+            literal: 'bot_command',
+          },
+          {
+            type: 'str',
+            literal: 'url',
+          },
+          {
+            type: 'str',
+            literal: 'email',
+          },
+          {
+            type: 'str',
+            literal: 'phone_number',
+          },
+          {
+            type: 'str',
+            literal: 'bold',
+          },
+          {
+            type: 'str',
+            literal: 'italic',
+          },
+          {
+            type: 'str',
+            literal: 'underline',
+          },
+          {
+            type: 'str',
+            literal: 'strikethrough',
+          },
+          {
+            type: 'str',
+            literal: 'spoiler',
+          },
+          {
+            type: 'str',
+            literal: 'blockquote',
+          },
+          {
+            type: 'str',
+            literal: 'expandable_blockquote',
+          },
+          {
+            type: 'str',
+            literal: 'code',
+          },
+          {
+            type: 'str',
+            literal: 'pre',
+          },
+          {
+            type: 'str',
+            literal: 'text_link',
+          },
+          {
+            type: 'str',
+            literal: 'text_mention',
+          },
+          {
+            type: 'str',
+            literal: 'custom_emoji',
+          },
+        ],
       },
       description: {
         markdown: 'Type of the entity. Currently, can be “mention” (`@username`), “hashtag” (`#hashtag` or `#hashtag@chatusername`), “cashtag” (`$USD` or `$USD@chatusername`), “bot\\_command” (`/start@jobs_bot`), “url” (`https://telegram.org`), “email” (`do-not-reply@telegram.org`), “phone\\_number” (`+1-212-555-0123`), “bold” (**bold text**), “italic” (_italic text_), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “blockquote” (block quotation), “expandable\\_blockquote” (collapsed-by-default block quotation), “code” (monowidth string), “pre” (monowidth block), “text\\_link” (for clickable text URLs), “text\\_mention” (for users [without usernames](https://telegram.org/blog/edit#new-mentions)), “custom\\_emoji” (for inline custom emoji stickers)',
@@ -2903,7 +3018,21 @@ const ReplyParameters = t({
     {
       name: 'quote_parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the quote. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -2982,6 +3111,7 @@ const MessageOriginUser = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'user',
       },
       description: {
         markdown: 'Type of the message origin, always “user”',
@@ -3022,6 +3152,7 @@ const MessageOriginHiddenUser = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'hidden_user',
       },
       description: {
         markdown: 'Type of the message origin, always “hidden\\_user”',
@@ -3061,6 +3192,7 @@ const MessageOriginChat = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'chat',
       },
       description: {
         markdown: 'Type of the message origin, always “chat”',
@@ -3111,6 +3243,7 @@ const MessageOriginChannel = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'channel',
       },
       description: {
         markdown: 'Type of the message origin, always “channel”',
@@ -3569,7 +3702,21 @@ const VideoQuality = t({
     {
       name: 'codec',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'h264',
+          },
+          {
+            type: 'str',
+            literal: 'h265',
+          },
+          {
+            type: 'str',
+            literal: 'av01',
+          },
+        ],
       },
       description: {
         markdown: 'Codec that was used to encode the video, for example, “h264”, “h265”, or “av01”',
@@ -3920,6 +4067,7 @@ const PaidMediaPreview = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'preview',
       },
       description: {
         markdown: 'Type of the paid media, always “preview”',
@@ -3969,6 +4117,7 @@ const PaidMediaPhoto = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'photo',
       },
       description: {
         markdown: 'Type of the paid media, always “photo”',
@@ -4002,6 +4151,7 @@ const PaidMediaVideo = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'video',
       },
       description: {
         markdown: 'Type of the paid media, always “video”',
@@ -4090,7 +4240,33 @@ const Dice = t({
     {
       name: 'emoji',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: '🎲',
+          },
+          {
+            type: 'str',
+            literal: '🎯',
+          },
+          {
+            type: 'str',
+            literal: '🎳',
+          },
+          {
+            type: 'str',
+            literal: '🏀',
+          },
+          {
+            type: 'str',
+            literal: '⚽',
+          },
+          {
+            type: 'str',
+            literal: '🎰',
+          },
+        ],
       },
       description: {
         markdown: 'Emoji on which the dice throw animation is based',
@@ -4172,7 +4348,21 @@ const InputPollOption = t({
     {
       name: 'text_parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Currently, only custom emoji entities are allowed',
@@ -4337,7 +4527,17 @@ const Poll = t({
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'regular',
+          },
+          {
+            type: 'str',
+            literal: 'quiz',
+          },
+        ],
       },
       description: {
         markdown: 'Poll type, currently can be “regular” or “quiz”',
@@ -4584,7 +4784,21 @@ const InputChecklistTask = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -4627,7 +4841,21 @@ const InputChecklist = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the title. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -5053,6 +5281,7 @@ const BackgroundFillSolid = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'solid',
       },
       description: {
         markdown: 'Type of the background fill, always “solid”',
@@ -5082,6 +5311,7 @@ const BackgroundFillGradient = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'gradient',
       },
       description: {
         markdown: 'Type of the background fill, always “gradient”',
@@ -5131,6 +5361,7 @@ const BackgroundFillFreeformGradient = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'freeform_gradient',
       },
       description: {
         markdown: 'Type of the background fill, always “freeform\\_gradient”',
@@ -5188,6 +5419,7 @@ const BackgroundTypeFill = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'fill',
       },
       description: {
         markdown: 'Type of the background, always “fill”',
@@ -5228,6 +5460,7 @@ const BackgroundTypeWallpaper = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'wallpaper',
       },
       description: {
         markdown: 'Type of the background, always “wallpaper”',
@@ -5290,6 +5523,7 @@ const BackgroundTypePattern = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'pattern',
       },
       description: {
         markdown: 'Type of the background, always “pattern”',
@@ -5363,6 +5597,7 @@ const BackgroundTypeChatTheme = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'chat_theme',
       },
       description: {
         markdown: 'Type of the background, always “chat\\_theme”',
@@ -5950,7 +6185,17 @@ const SuggestedPostPaid = t({
     {
       name: 'currency',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'XTR',
+          },
+          {
+            type: 'str',
+            literal: 'TON',
+          },
+        ],
       },
       description: {
         markdown: 'Currency in which the payment was made. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins',
@@ -6001,7 +6246,17 @@ const SuggestedPostRefunded = t({
     {
       name: 'reason',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'post_deleted',
+          },
+          {
+            type: 'str',
+            literal: 'payment_refunded',
+          },
+        ],
       },
       description: {
         markdown: 'Reason for the refund. Currently, one of “post\\_deleted” if the post was deleted within 24 hours of being posted or removed from scheduled messages without being posted, or “payment\\_refunded” if the payer refunded their payment.',
@@ -6393,7 +6648,17 @@ const SuggestedPostPrice = t({
     {
       name: 'currency',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'XTR',
+          },
+          {
+            type: 'str',
+            literal: 'TON',
+          },
+        ],
       },
       description: {
         markdown: 'Currency in which the post will be paid. Currently, must be one of “XTR” for Telegram Stars or “TON” for toncoins',
@@ -6422,7 +6687,21 @@ const SuggestedPostInfo = t({
     {
       name: 'state',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'pending',
+          },
+          {
+            type: 'str',
+            literal: 'approved',
+          },
+          {
+            type: 'str',
+            literal: 'declined',
+          },
+        ],
       },
       description: {
         markdown: 'State of the suggested post. Currently, it can be one of “pending”, “approved”, “declined”.',
@@ -6763,7 +7042,21 @@ const KeyboardButton = t({
     {
       name: 'style',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'danger',
+          },
+          {
+            type: 'str',
+            literal: 'success',
+          },
+          {
+            type: 'str',
+            literal: 'primary',
+          },
+        ],
       },
       description: {
         markdown: 'Style of the button. Must be one of “danger” (red), “success” (green) or “primary” (blue). If omitted, then an app-specific style is used.',
@@ -7046,7 +7339,17 @@ const KeyboardButtonPollType = t({
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'quiz',
+          },
+          {
+            type: 'str',
+            literal: 'regular',
+          },
+        ],
       },
       description: {
         markdown: 'If _quiz_ is passed, the user will be allowed to create only polls in the quiz mode. If _regular_ is passed, only regular polls will be allowed. Otherwise, the user will be allowed to create a poll of any type.',
@@ -7141,7 +7444,21 @@ const InlineKeyboardButton = t({
     {
       name: 'style',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'danger',
+          },
+          {
+            type: 'str',
+            literal: 'success',
+          },
+          {
+            type: 'str',
+            literal: 'primary',
+          },
+        ],
       },
       description: {
         markdown: 'Style of the button. Must be one of “danger” (red), “success” (green) or “primary” (blue). If omitted, then an app-specific style is used.',
@@ -7979,6 +8296,7 @@ const ChatMemberOwner = t({
       name: 'status',
       type: {
         type: 'str',
+        literal: 'creator',
       },
       description: {
         markdown: 'The member\'s status in the chat, always “creator”',
@@ -8029,6 +8347,7 @@ const ChatMemberAdministrator = t({
       name: 'status',
       type: {
         type: 'str',
+        literal: 'administrator',
       },
       description: {
         markdown: 'The member\'s status in the chat, always “administrator”',
@@ -8239,6 +8558,7 @@ const ChatMemberMember = t({
       name: 'status',
       type: {
         type: 'str',
+        literal: 'member',
       },
       description: {
         markdown: 'The member\'s status in the chat, always “member”',
@@ -8279,6 +8599,7 @@ const ChatMemberRestricted = t({
       name: 'status',
       type: {
         type: 'str',
+        literal: 'restricted',
       },
       description: {
         markdown: 'The member\'s status in the chat, always “restricted”',
@@ -8469,6 +8790,7 @@ const ChatMemberLeft = t({
       name: 'status',
       type: {
         type: 'str',
+        literal: 'left',
       },
       description: {
         markdown: 'The member\'s status in the chat, always “left”',
@@ -8499,6 +8821,7 @@ const ChatMemberBanned = t({
       name: 'status',
       type: {
         type: 'str',
+        literal: 'kicked',
       },
       description: {
         markdown: 'The member\'s status in the chat, always “kicked”',
@@ -9127,6 +9450,7 @@ const StoryAreaTypeLocation = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'location',
       },
       description: {
         markdown: 'Type of the area, always “location”',
@@ -9177,6 +9501,7 @@ const StoryAreaTypeSuggestedReaction = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'suggested_reaction',
       },
       description: {
         markdown: 'Type of the area, always “suggested\\_reaction”',
@@ -9227,6 +9552,7 @@ const StoryAreaTypeLink = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'link',
       },
       description: {
         markdown: 'Type of the area, always “link”',
@@ -9256,6 +9582,7 @@ const StoryAreaTypeWeather = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'weather',
       },
       description: {
         markdown: 'Type of the area, always “weather”',
@@ -9305,6 +9632,7 @@ const StoryAreaTypeUniqueGift = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'unique_gift',
       },
       description: {
         markdown: 'Type of the area, always “unique\\_gift”',
@@ -9416,6 +9744,7 @@ const ReactionTypeEmoji = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'emoji',
       },
       description: {
         markdown: 'Type of the reaction, always “emoji”',
@@ -9445,6 +9774,7 @@ const ReactionTypeCustomEmoji = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'custom_emoji',
       },
       description: {
         markdown: 'Type of the reaction, always “custom\\_emoji”',
@@ -9474,6 +9804,7 @@ const ReactionTypePaid = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'paid',
       },
       description: {
         markdown: 'Type of the reaction, always “paid”',
@@ -9963,7 +10294,25 @@ const UniqueGiftModel = t({
     {
       name: 'rarity',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'uncommon',
+          },
+          {
+            type: 'str',
+            literal: 'rare',
+          },
+          {
+            type: 'str',
+            literal: 'epic',
+          },
+          {
+            type: 'str',
+            literal: 'legendary',
+          },
+        ],
       },
       description: {
         markdown: 'Rarity of the model if it is a crafted model. Currently, can be “uncommon”, “rare”, “epic”, or “legendary”.',
@@ -10451,7 +10800,29 @@ const UniqueGiftInfo = t({
     {
       name: 'origin',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'upgrade',
+          },
+          {
+            type: 'str',
+            literal: 'transfer',
+          },
+          {
+            type: 'str',
+            literal: 'resale',
+          },
+          {
+            type: 'str',
+            literal: 'gifted_upgrade',
+          },
+          {
+            type: 'str',
+            literal: 'offer',
+          },
+        ],
       },
       description: {
         markdown: 'Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, “resale” for gifts bought from other users, “gifted\\_upgrade” for upgrades purchased after the gift was sent, or “offer” for gifts bought or sold through gift purchase offers',
@@ -10461,7 +10832,17 @@ const UniqueGiftInfo = t({
     {
       name: 'last_resale_currency',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'XTR',
+          },
+          {
+            type: 'str',
+            literal: 'TON',
+          },
+        ],
       },
       description: {
         markdown: 'For gifts bought from other users, the currency in which the payment for the gift was done. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins.',
@@ -10538,6 +10919,7 @@ const OwnedGiftRegular = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'regular',
       },
       description: {
         markdown: 'Type of the gift, always “regular”',
@@ -10708,6 +11090,7 @@ const OwnedGiftUnique = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'unique',
       },
       description: {
         markdown: 'Type of the gift, always “unique”',
@@ -11008,6 +11391,7 @@ const BotCommandScopeDefault = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'default',
       },
       description: {
         markdown: 'Scope type, must be _default_',
@@ -11027,6 +11411,7 @@ const BotCommandScopeAllPrivateChats = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'all_private_chats',
       },
       description: {
         markdown: 'Scope type, must be _all\\_private\\_chats_',
@@ -11046,6 +11431,7 @@ const BotCommandScopeAllGroupChats = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'all_group_chats',
       },
       description: {
         markdown: 'Scope type, must be _all\\_group\\_chats_',
@@ -11065,6 +11451,7 @@ const BotCommandScopeAllChatAdministrators = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'all_chat_administrators',
       },
       description: {
         markdown: 'Scope type, must be _all\\_chat\\_administrators_',
@@ -11084,6 +11471,7 @@ const BotCommandScopeChat = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'chat',
       },
       description: {
         markdown: 'Scope type, must be _chat_',
@@ -11121,6 +11509,7 @@ const BotCommandScopeChatAdministrators = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'chat_administrators',
       },
       description: {
         markdown: 'Scope type, must be _chat\\_administrators_',
@@ -11158,6 +11547,7 @@ const BotCommandScopeChatMember = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'chat_member',
       },
       description: {
         markdown: 'Scope type, must be _chat\\_member_',
@@ -11283,6 +11673,7 @@ const MenuButtonCommands = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'commands',
       },
       description: {
         markdown: 'Type of the button, must be _commands_',
@@ -11302,6 +11693,7 @@ const MenuButtonWebApp = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'web_app',
       },
       description: {
         markdown: 'Type of the button, must be _web\\_app_',
@@ -11342,6 +11734,7 @@ const MenuButtonDefault = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'default',
       },
       description: {
         markdown: 'Type of the button, must be _default_',
@@ -11382,6 +11775,7 @@ const ChatBoostSourcePremium = t({
       name: 'source',
       type: {
         type: 'str',
+        literal: 'premium',
       },
       description: {
         markdown: 'Source of the boost, always “premium”',
@@ -11412,6 +11806,7 @@ const ChatBoostSourceGiftCode = t({
       name: 'source',
       type: {
         type: 'str',
+        literal: 'gift_code',
       },
       description: {
         markdown: 'Source of the boost, always “gift\\_code”',
@@ -11442,6 +11837,7 @@ const ChatBoostSourceGiveaway = t({
       name: 'source',
       type: {
         type: 'str',
+        literal: 'giveaway',
       },
       description: {
         markdown: 'Source of the boost, always “giveaway”',
@@ -12033,6 +12429,7 @@ const InputMediaPhoto = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'photo',
       },
       description: {
         markdown: 'Type of the result, must be _photo_',
@@ -12062,7 +12459,21 @@ const InputMediaPhoto = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -12116,6 +12527,7 @@ const InputMediaVideo = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'video',
       },
       description: {
         markdown: 'Type of the result, must be _video_',
@@ -12175,7 +12587,21 @@ const InputMediaVideo = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -12269,6 +12695,7 @@ const InputMediaAnimation = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'animation',
       },
       description: {
         markdown: 'Type of the result, must be _animation_',
@@ -12308,7 +12735,21 @@ const InputMediaAnimation = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the animation caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -12392,6 +12833,7 @@ const InputMediaAudio = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'audio',
       },
       description: {
         markdown: 'Type of the result, must be _audio_',
@@ -12431,7 +12873,21 @@ const InputMediaAudio = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the audio caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -12495,6 +12951,7 @@ const InputMediaDocument = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'document',
       },
       description: {
         markdown: 'Type of the result, must be _document_',
@@ -12534,7 +12991,21 @@ const InputMediaDocument = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -12595,6 +13066,7 @@ const InputPaidMediaPhoto = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'photo',
       },
       description: {
         markdown: 'Type of the media, must be _photo_',
@@ -12624,6 +13096,7 @@ const InputPaidMediaVideo = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'video',
       },
       description: {
         markdown: 'Type of the media, must be _video_',
@@ -12740,6 +13213,7 @@ const InputProfilePhotoStatic = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'static',
       },
       description: {
         markdown: 'Type of the profile photo, must be _static_',
@@ -12769,6 +13243,7 @@ const InputProfilePhotoAnimated = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'animated',
       },
       description: {
         markdown: 'Type of the profile photo, must be _animated_',
@@ -12825,6 +13300,7 @@ const InputStoryContentPhoto = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'photo',
       },
       description: {
         markdown: 'Type of the content, must be _photo_',
@@ -12854,6 +13330,7 @@ const InputStoryContentVideo = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'video',
       },
       description: {
         markdown: 'Type of the content, must be _video_',
@@ -12932,7 +13409,21 @@ const Sticker = t({
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'regular',
+          },
+          {
+            type: 'str',
+            literal: 'mask',
+          },
+          {
+            type: 'str',
+            literal: 'custom_emoji',
+          },
+        ],
       },
       description: {
         markdown: 'Type of the sticker, currently one of “regular”, “mask”, “custom\\_emoji”. The type of the sticker is independent from its format, which is determined by the fields _is\\_animated_ and _is\\_video_.',
@@ -13095,7 +13586,21 @@ const StickerSet = t({
     {
       name: 'sticker_type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'regular',
+          },
+          {
+            type: 'str',
+            literal: 'mask',
+          },
+          {
+            type: 'str',
+            literal: 'custom_emoji',
+          },
+        ],
       },
       description: {
         markdown: 'Type of stickers in the set, currently one of “regular”, “mask”, “custom\\_emoji”',
@@ -13139,7 +13644,25 @@ const MaskPosition = t({
     {
       name: 'point',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'forehead',
+          },
+          {
+            type: 'str',
+            literal: 'eyes',
+          },
+          {
+            type: 'str',
+            literal: 'mouth',
+          },
+          {
+            type: 'str',
+            literal: 'chin',
+          },
+        ],
       },
       description: {
         markdown: 'The part of the face relative to which the mask should be placed. One of “forehead”, “eyes”, “mouth”, or “chin”.',
@@ -13198,7 +13721,21 @@ const InputSticker = t({
     {
       name: 'format',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'static',
+          },
+          {
+            type: 'str',
+            literal: 'animated',
+          },
+          {
+            type: 'str',
+            literal: 'video',
+          },
+        ],
       },
       description: {
         markdown: 'Format of the added sticker, must be one of “static” for a **.WEBP** or **.PNG** image, “animated” for a **.TGS** animation, “video” for a **.WEBM** video',
@@ -13295,7 +13832,29 @@ const InlineQuery = t({
     {
       name: 'chat_type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'sender',
+          },
+          {
+            type: 'str',
+            literal: 'private',
+          },
+          {
+            type: 'str',
+            literal: 'group',
+          },
+          {
+            type: 'str',
+            literal: 'supergroup',
+          },
+          {
+            type: 'str',
+            literal: 'channel',
+          },
+        ],
       },
       description: {
         markdown: 'Type of the chat from which the inline query was sent. Can be either “sender” for a private chat with the inline query sender, “private”, “group”, “supergroup”, or “channel”. The chat type should be always known for requests sent from official clients and most third-party clients, unless the request was sent from a secret chat',
@@ -13455,6 +14014,7 @@ const InlineQueryResultArticle = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'article',
       },
       description: {
         markdown: 'Type of the result, must be _article_',
@@ -13566,6 +14126,7 @@ const InlineQueryResultPhoto = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'photo',
       },
       description: {
         markdown: 'Type of the result, must be _photo_',
@@ -13655,7 +14216,21 @@ const InlineQueryResultPhoto = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -13721,6 +14296,7 @@ const InlineQueryResultGif = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'gif',
       },
       description: {
         markdown: 'Type of the result, must be _gif_',
@@ -13790,7 +14366,21 @@ const InlineQueryResultGif = t({
     {
       name: 'thumbnail_mime_type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'image/jpeg',
+          },
+          {
+            type: 'str',
+            literal: 'image/gif',
+          },
+          {
+            type: 'str',
+            literal: 'video/mp4',
+          },
+        ],
       },
       description: {
         markdown: 'MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”',
@@ -13820,7 +14410,21 @@ const InlineQueryResultGif = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -13886,6 +14490,7 @@ const InlineQueryResultMpeg4Gif = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'mpeg4_gif',
       },
       description: {
         markdown: 'Type of the result, must be _mpeg4\\_gif_',
@@ -13955,7 +14560,21 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'thumbnail_mime_type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'image/jpeg',
+          },
+          {
+            type: 'str',
+            literal: 'image/gif',
+          },
+          {
+            type: 'str',
+            literal: 'video/mp4',
+          },
+        ],
       },
       description: {
         markdown: 'MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”',
@@ -13985,7 +14604,21 @@ const InlineQueryResultMpeg4Gif = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -14051,6 +14684,7 @@ const InlineQueryResultVideo = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'video',
       },
       description: {
         markdown: 'Type of the result, must be _video_',
@@ -14080,7 +14714,17 @@ const InlineQueryResultVideo = t({
     {
       name: 'mime_type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'text/html',
+          },
+          {
+            type: 'str',
+            literal: 'video/mp4',
+          },
+        ],
       },
       description: {
         markdown: 'MIME type of the content of the video URL, “text/html” or “video/mp4”',
@@ -14120,7 +14764,21 @@ const InlineQueryResultVideo = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -14226,6 +14884,7 @@ const InlineQueryResultAudio = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'audio',
       },
       description: {
         markdown: 'Type of the result, must be _audio_',
@@ -14275,7 +14934,21 @@ const InlineQueryResultAudio = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the audio caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -14351,6 +15024,7 @@ const InlineQueryResultVoice = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'voice',
       },
       description: {
         markdown: 'Type of the result, must be _voice_',
@@ -14400,7 +15074,21 @@ const InlineQueryResultVoice = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the voice message caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -14466,6 +15154,7 @@ const InlineQueryResultDocument = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'document',
       },
       description: {
         markdown: 'Type of the result, must be _document_',
@@ -14505,7 +15194,21 @@ const InlineQueryResultDocument = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -14539,7 +15242,17 @@ const InlineQueryResultDocument = t({
     {
       name: 'mime_type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'application/pdf',
+          },
+          {
+            type: 'str',
+            literal: 'application/zip',
+          },
+        ],
       },
       description: {
         markdown: 'MIME type of the content of the file, either “application/pdf” or “application/zip”',
@@ -14621,6 +15334,7 @@ const InlineQueryResultLocation = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'location',
       },
       description: {
         markdown: 'Type of the result, must be _location_',
@@ -14772,6 +15486,7 @@ const InlineQueryResultVenue = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'venue',
       },
       description: {
         markdown: 'Type of the result, must be _venue_',
@@ -14933,6 +15648,7 @@ const InlineQueryResultContact = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'contact',
       },
       description: {
         markdown: 'Type of the result, must be _contact_',
@@ -15054,6 +15770,7 @@ const InlineQueryResultGame = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'game',
       },
       description: {
         markdown: 'Type of the result, must be _game_',
@@ -15104,6 +15821,7 @@ const InlineQueryResultCachedPhoto = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'photo',
       },
       description: {
         markdown: 'Type of the result, must be _photo_',
@@ -15163,7 +15881,21 @@ const InlineQueryResultCachedPhoto = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -15229,6 +15961,7 @@ const InlineQueryResultCachedGif = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'gif',
       },
       description: {
         markdown: 'Type of the result, must be _gif_',
@@ -15278,7 +16011,21 @@ const InlineQueryResultCachedGif = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -15344,6 +16091,7 @@ const InlineQueryResultCachedMpeg4Gif = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'mpeg4_gif',
       },
       description: {
         markdown: 'Type of the result, must be _mpeg4\\_gif_',
@@ -15393,7 +16141,21 @@ const InlineQueryResultCachedMpeg4Gif = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -15459,6 +16221,7 @@ const InlineQueryResultCachedSticker = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'sticker',
       },
       description: {
         markdown: 'Type of the result, must be _sticker_',
@@ -15520,6 +16283,7 @@ const InlineQueryResultCachedDocument = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'document',
       },
       description: {
         markdown: 'Type of the result, must be _document_',
@@ -15579,7 +16343,21 @@ const InlineQueryResultCachedDocument = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -15635,6 +16413,7 @@ const InlineQueryResultCachedVideo = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'video',
       },
       description: {
         markdown: 'Type of the result, must be _video_',
@@ -15760,6 +16539,7 @@ const InlineQueryResultCachedVoice = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'voice',
       },
       description: {
         markdown: 'Type of the result, must be _voice_',
@@ -15865,6 +16645,7 @@ const InlineQueryResultCachedAudio = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'audio',
       },
       description: {
         markdown: 'Type of the result, must be _audio_',
@@ -16937,6 +17718,7 @@ const RefundedPayment = t({
       name: 'currency',
       type: {
         type: 'str',
+        literal: 'XTR',
       },
       description: {
         markdown: 'Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90). Currently, always “XTR”',
@@ -17179,6 +17961,7 @@ const RevenueWithdrawalStatePending = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'pending',
       },
       description: {
         markdown: 'Type of the state, always “pending”',
@@ -17198,6 +17981,7 @@ const RevenueWithdrawalStateSucceeded = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'succeeded',
       },
       description: {
         markdown: 'Type of the state, always “succeeded”',
@@ -17237,6 +18021,7 @@ const RevenueWithdrawalStateFailed = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'failed',
       },
       description: {
         markdown: 'Type of the state, always “failed”',
@@ -17354,6 +18139,7 @@ const TransactionPartnerUser = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'user',
       },
       description: {
         markdown: 'Type of the transaction partner, always “user”',
@@ -17363,7 +18149,29 @@ const TransactionPartnerUser = t({
     {
       name: 'transaction_type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'invoice_payment',
+          },
+          {
+            type: 'str',
+            literal: 'paid_media_payment',
+          },
+          {
+            type: 'str',
+            literal: 'gift_purchase',
+          },
+          {
+            type: 'str',
+            literal: 'premium_purchase',
+          },
+          {
+            type: 'str',
+            literal: 'business_account_transfer',
+          },
+        ],
       },
       description: {
         markdown: 'Type of the transaction, currently one of “invoice\\_payment” for payments via invoices, “paid\\_media\\_payment” for payments for paid media, “gift\\_purchase” for gifts sent by the bot, “premium\\_purchase” for Telegram Premium subscriptions gifted by the bot, “business\\_account\\_transfer” for direct transfers from managed business accounts',
@@ -17470,6 +18278,7 @@ const TransactionPartnerChat = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'chat',
       },
       description: {
         markdown: 'Type of the transaction partner, always “chat”',
@@ -17511,6 +18320,7 @@ const TransactionPartnerAffiliateProgram = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'affiliate_program',
       },
       description: {
         markdown: 'Type of the transaction partner, always “affiliate\\_program”',
@@ -17551,6 +18361,7 @@ const TransactionPartnerFragment = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'fragment',
       },
       description: {
         markdown: 'Type of the transaction partner, always “fragment”',
@@ -17581,6 +18392,7 @@ const TransactionPartnerTelegramAds = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'telegram_ads',
       },
       description: {
         markdown: 'Type of the transaction partner, always “telegram\\_ads”',
@@ -17600,6 +18412,7 @@ const TransactionPartnerTelegramApi = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'telegram_api',
       },
       description: {
         markdown: 'Type of the transaction partner, always “telegram\\_api”',
@@ -17629,6 +18442,7 @@ const TransactionPartnerOther = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'other',
       },
       description: {
         markdown: 'Type of the transaction partner, always “other”',
@@ -17824,7 +18638,61 @@ const EncryptedPassportElement = t({
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'personal_details',
+          },
+          {
+            type: 'str',
+            literal: 'passport',
+          },
+          {
+            type: 'str',
+            literal: 'driver_license',
+          },
+          {
+            type: 'str',
+            literal: 'identity_card',
+          },
+          {
+            type: 'str',
+            literal: 'internal_passport',
+          },
+          {
+            type: 'str',
+            literal: 'address',
+          },
+          {
+            type: 'str',
+            literal: 'utility_bill',
+          },
+          {
+            type: 'str',
+            literal: 'bank_statement',
+          },
+          {
+            type: 'str',
+            literal: 'rental_agreement',
+          },
+          {
+            type: 'str',
+            literal: 'passport_registration',
+          },
+          {
+            type: 'str',
+            literal: 'temporary_registration',
+          },
+          {
+            type: 'str',
+            literal: 'phone_number',
+          },
+          {
+            type: 'str',
+            literal: 'email',
+          },
+        ],
       },
       description: {
         markdown: 'Element type. One of “personal\\_details”, “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”, “address”, “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration”, “temporary\\_registration”, “phone\\_number”, “email”.',
@@ -18029,6 +18897,7 @@ const PassportElementErrorDataField = t({
       name: 'source',
       type: {
         type: 'str',
+        literal: 'data',
       },
       description: {
         markdown: 'Error source, must be _data_',
@@ -18038,7 +18907,33 @@ const PassportElementErrorDataField = t({
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'personal_details',
+          },
+          {
+            type: 'str',
+            literal: 'passport',
+          },
+          {
+            type: 'str',
+            literal: 'driver_license',
+          },
+          {
+            type: 'str',
+            literal: 'identity_card',
+          },
+          {
+            type: 'str',
+            literal: 'internal_passport',
+          },
+          {
+            type: 'str',
+            literal: 'address',
+          },
+        ],
       },
       description: {
         markdown: 'The section of the user\'s Telegram Passport which has the error, one of “personal\\_details”, “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”, “address”',
@@ -18088,6 +18983,7 @@ const PassportElementErrorFrontSide = t({
       name: 'source',
       type: {
         type: 'str',
+        literal: 'front_side',
       },
       description: {
         markdown: 'Error source, must be _front\\_side_',
@@ -18097,7 +18993,25 @@ const PassportElementErrorFrontSide = t({
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'passport',
+          },
+          {
+            type: 'str',
+            literal: 'driver_license',
+          },
+          {
+            type: 'str',
+            literal: 'identity_card',
+          },
+          {
+            type: 'str',
+            literal: 'internal_passport',
+          },
+        ],
       },
       description: {
         markdown: 'The section of the user\'s Telegram Passport which has the issue, one of “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”',
@@ -18137,6 +19051,7 @@ const PassportElementErrorReverseSide = t({
       name: 'source',
       type: {
         type: 'str',
+        literal: 'reverse_side',
       },
       description: {
         markdown: 'Error source, must be _reverse\\_side_',
@@ -18146,7 +19061,17 @@ const PassportElementErrorReverseSide = t({
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'driver_license',
+          },
+          {
+            type: 'str',
+            literal: 'identity_card',
+          },
+        ],
       },
       description: {
         markdown: 'The section of the user\'s Telegram Passport which has the issue, one of “driver\\_license”, “identity\\_card”',
@@ -18186,6 +19111,7 @@ const PassportElementErrorSelfie = t({
       name: 'source',
       type: {
         type: 'str',
+        literal: 'selfie',
       },
       description: {
         markdown: 'Error source, must be _selfie_',
@@ -18195,7 +19121,25 @@ const PassportElementErrorSelfie = t({
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'passport',
+          },
+          {
+            type: 'str',
+            literal: 'driver_license',
+          },
+          {
+            type: 'str',
+            literal: 'identity_card',
+          },
+          {
+            type: 'str',
+            literal: 'internal_passport',
+          },
+        ],
       },
       description: {
         markdown: 'The section of the user\'s Telegram Passport which has the issue, one of “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”',
@@ -18235,6 +19179,7 @@ const PassportElementErrorFile = t({
       name: 'source',
       type: {
         type: 'str',
+        literal: 'file',
       },
       description: {
         markdown: 'Error source, must be _file_',
@@ -18244,7 +19189,29 @@ const PassportElementErrorFile = t({
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'utility_bill',
+          },
+          {
+            type: 'str',
+            literal: 'bank_statement',
+          },
+          {
+            type: 'str',
+            literal: 'rental_agreement',
+          },
+          {
+            type: 'str',
+            literal: 'passport_registration',
+          },
+          {
+            type: 'str',
+            literal: 'temporary_registration',
+          },
+        ],
       },
       description: {
         markdown: 'The section of the user\'s Telegram Passport which has the issue, one of “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration”, “temporary\\_registration”',
@@ -18284,6 +19251,7 @@ const PassportElementErrorFiles = t({
       name: 'source',
       type: {
         type: 'str',
+        literal: 'files',
       },
       description: {
         markdown: 'Error source, must be _files_',
@@ -18293,7 +19261,29 @@ const PassportElementErrorFiles = t({
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'utility_bill',
+          },
+          {
+            type: 'str',
+            literal: 'bank_statement',
+          },
+          {
+            type: 'str',
+            literal: 'rental_agreement',
+          },
+          {
+            type: 'str',
+            literal: 'passport_registration',
+          },
+          {
+            type: 'str',
+            literal: 'temporary_registration',
+          },
+        ],
       },
       description: {
         markdown: 'The section of the user\'s Telegram Passport which has the issue, one of “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration”, “temporary\\_registration”',
@@ -18336,6 +19326,7 @@ const PassportElementErrorTranslationFile = t({
       name: 'source',
       type: {
         type: 'str',
+        literal: 'translation_file',
       },
       description: {
         markdown: 'Error source, must be _translation\\_file_',
@@ -18345,7 +19336,45 @@ const PassportElementErrorTranslationFile = t({
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'passport',
+          },
+          {
+            type: 'str',
+            literal: 'driver_license',
+          },
+          {
+            type: 'str',
+            literal: 'identity_card',
+          },
+          {
+            type: 'str',
+            literal: 'internal_passport',
+          },
+          {
+            type: 'str',
+            literal: 'utility_bill',
+          },
+          {
+            type: 'str',
+            literal: 'bank_statement',
+          },
+          {
+            type: 'str',
+            literal: 'rental_agreement',
+          },
+          {
+            type: 'str',
+            literal: 'passport_registration',
+          },
+          {
+            type: 'str',
+            literal: 'temporary_registration',
+          },
+        ],
       },
       description: {
         markdown: 'Type of element of the user\'s Telegram Passport which has the issue, one of “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”, “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration”, “temporary\\_registration”',
@@ -18385,6 +19414,7 @@ const PassportElementErrorTranslationFiles = t({
       name: 'source',
       type: {
         type: 'str',
+        literal: 'translation_files',
       },
       description: {
         markdown: 'Error source, must be _translation\\_files_',
@@ -18394,7 +19424,45 @@ const PassportElementErrorTranslationFiles = t({
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'passport',
+          },
+          {
+            type: 'str',
+            literal: 'driver_license',
+          },
+          {
+            type: 'str',
+            literal: 'identity_card',
+          },
+          {
+            type: 'str',
+            literal: 'internal_passport',
+          },
+          {
+            type: 'str',
+            literal: 'utility_bill',
+          },
+          {
+            type: 'str',
+            literal: 'bank_statement',
+          },
+          {
+            type: 'str',
+            literal: 'rental_agreement',
+          },
+          {
+            type: 'str',
+            literal: 'passport_registration',
+          },
+          {
+            type: 'str',
+            literal: 'temporary_registration',
+          },
+        ],
       },
       description: {
         markdown: 'Type of element of the user\'s Telegram Passport which has the issue, one of “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”, “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration”, “temporary\\_registration”',
@@ -18437,6 +19505,7 @@ const PassportElementErrorUnspecified = t({
       name: 'source',
       type: {
         type: 'str',
+        literal: 'unspecified',
       },
       description: {
         markdown: 'Error source, must be _unspecified_',
