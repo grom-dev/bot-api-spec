@@ -31,8 +31,7 @@
     "build": "tsc --build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "gen:spec": "node ./scripts/gen.ts",
-    "gen:return-types": "node --env-file=./.env ./scripts/gen-return-types.ts",
+    "gen": "node ./scripts/generate.ts",
     "deps": "taze --write --interactive --include-locked minor",
     "release": "bumpp"
   },

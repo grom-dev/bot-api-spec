@@ -107,11 +107,6 @@ export interface FieldOrParam {
    * Description of the field/parameter.
    */
   description: Description
-
-  /**
-   * Whether this field/parameter should be JSON-serialized.
-   */
-  jsonSerialized: boolean
 }
 
 /**
