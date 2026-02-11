@@ -16473,7 +16473,21 @@ const InlineQueryResultCachedVideo = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -16589,7 +16603,21 @@ const InlineQueryResultCachedVoice = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the voice message caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -16685,7 +16713,21 @@ const InlineQueryResultCachedAudio = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the audio caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -16779,7 +16821,21 @@ const InputTextMessageContent = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',

@@ -2854,6 +2854,10 @@ export const OVERRIDES: OverridesConfig = {
           hash: 'a20617eb',
           type: T_str('video'),
         },
+        parse_mode: {
+          hash: 'ce4a5c59',
+          type: T_parseMode(),
+        },
       },
     },
     InlineQueryResultCachedVoice: {
@@ -2863,6 +2867,10 @@ export const OVERRIDES: OverridesConfig = {
           hash: '4ef371e9',
           type: T_str('voice'),
         },
+        parse_mode: {
+          hash: '6b17bc28',
+          type: T_parseMode(),
+        },
       },
     },
     InlineQueryResultCachedAudio: {
@@ -2871,6 +2879,10 @@ export const OVERRIDES: OverridesConfig = {
         type: {
           hash: '7ff6bc34',
           type: T_str('audio'),
+        },
+        parse_mode: {
+          hash: 'ae8e638c',
+          type: T_parseMode(),
         },
       },
     },
@@ -3189,6 +3201,15 @@ export const OVERRIDES: OverridesConfig = {
           hash: '5597aacb',
           type: T_int53(),
           description: { markdown: 'The group has been migrated to a supergroup with the specified identifier.' },
+        },
+      },
+    },
+    InputTextMessageContent: {
+      hash: '',
+      fields: {
+        parse_mode: {
+          hash: '91a6e03f',
+          type: T_parseMode(),
         },
       },
     },
