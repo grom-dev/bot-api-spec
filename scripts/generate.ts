@@ -562,8 +562,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object for description of the message to reply to' },
         },
         reply_markup: {
-          hash: '4c4ef597',
-          description: { markdown: 'An object for an inline keyboard' },
+          hash: '8e7e33f9',
+          description: { markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)' },
         },
       },
     },
@@ -586,7 +586,7 @@ export const OVERRIDES: OverridesConfig = {
       },
     },
     sendMessageDraft: {
-      hash: '6c498693',
+      hash: 'ad63e96c',
       returnType: T_bool(true),
       parameters: {
         parse_mode: {
@@ -671,6 +671,10 @@ export const OVERRIDES: OverridesConfig = {
     },
     setChatAdministratorCustomTitle: {
       hash: '9cfe82c8',
+      returnType: T_bool(true),
+    },
+    setChatMemberTag: {
+      hash: 'e6c47c61',
       returnType: T_bool(true),
     },
     banChatSenderChat: {
@@ -1208,8 +1212,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object for the new checklist' },
         },
         reply_markup: {
-          hash: '267f4d12',
-          description: { markdown: 'An object for the new inline keyboard for the message' },
+          hash: '3a38effd',
+          description: { markdown: 'An object for the new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) for the message' },
         },
       },
     },
@@ -1937,7 +1941,7 @@ export const OVERRIDES: OverridesConfig = {
       hash: '',
       fields: {
         type: {
-          hash: 'd0f5832e',
+          hash: '717c0bdd',
           type: T_strUnion(
             'mention',
             'hashtag',
@@ -1958,6 +1962,7 @@ export const OVERRIDES: OverridesConfig = {
             'text_link',
             'text_mention',
             'custom_emoji',
+            'date_time',
           ),
         },
       },

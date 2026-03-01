@@ -1305,6 +1305,16 @@ const Message = t({
       required: false,
     },
     {
+      name: 'sender_tag',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Tag or custom title of the sender of the message; for supergroups only',
+      },
+      required: false,
+    },
+    {
       name: 'date',
       type: {
         type: 'int32',
@@ -1482,7 +1492,7 @@ const Message = t({
         type: 'str',
       },
       description: {
-        markdown: 'The unique identifier of a media message group this message belongs to',
+        markdown: 'The unique identifier inside this chat of a media message group this message belongs to',
       },
       required: false,
     },
@@ -2379,7 +2389,7 @@ const Message = t({
         name: 'InlineKeyboardMarkup',
       },
       description: {
-        markdown: 'Inline keyboard attached to the message. `login_url` buttons are represented as ordinary `url` buttons.',
+        markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message. `login_url` buttons are represented as ordinary `url` buttons.',
       },
       required: false,
     },
@@ -2550,10 +2560,14 @@ const MessageEntity = t({
             type: 'str',
             literal: 'custom_emoji',
           },
+          {
+            type: 'str',
+            literal: 'date_time',
+          },
         ],
       },
       description: {
-        markdown: 'Type of the entity. Currently, can be “mention” (`@username`), “hashtag” (`#hashtag` or `#hashtag@chatusername`), “cashtag” (`$USD` or `$USD@chatusername`), “bot\\_command” (`/start@jobs_bot`), “url” (`https://telegram.org`), “email” (`do-not-reply@telegram.org`), “phone\\_number” (`+1-212-555-0123`), “bold” (**bold text**), “italic” (_italic text_), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “blockquote” (block quotation), “expandable\\_blockquote” (collapsed-by-default block quotation), “code” (monowidth string), “pre” (monowidth block), “text\\_link” (for clickable text URLs), “text\\_mention” (for users [without usernames](https://telegram.org/blog/edit#new-mentions)), “custom\\_emoji” (for inline custom emoji stickers)',
+        markdown: 'Type of the entity. Currently, can be “mention” (`@username`), “hashtag” (`#hashtag` or `#hashtag@chatusername`), “cashtag” (`$USD` or `$USD@chatusername`), “bot\\_command” (`/start@jobs_bot`), “url” (`https://telegram.org`), “email” (`do-not-reply@telegram.org`), “phone\\_number” (`+1-212-555-0123`), “bold” (**bold text**), “italic” (_italic text_), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “blockquote” (block quotation), “expandable\\_blockquote” (collapsed-by-default block quotation), “code” (monowidth string), “pre” (monowidth block), “text\\_link” (for clickable text URLs), “text\\_mention” (for users [without usernames](https://telegram.org/blog/edit#new-mentions)), “custom\\_emoji” (for inline custom emoji stickers), or “date\\_time” (for formatted date and time)',
       },
       required: true,
     },
@@ -2615,6 +2629,26 @@ const MessageEntity = t({
       },
       description: {
         markdown: 'For “custom\\_emoji” only, unique identifier of the custom emoji. Use [getCustomEmojiStickers](https://core.telegram.org/bots/api#getcustomemojistickers) to get full information about the sticker',
+      },
+      required: false,
+    },
+    {
+      name: 'unix_time',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'For “date\\_time” only, the Unix time associated with the entity',
+      },
+      required: false,
+    },
+    {
+      name: 'date_time_format',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'For “date\\_time” only, the string that defines the formatting of the date and time. See [date-time entity formatting](https://core.telegram.org/bots/api#date-time-entity-formatting) for more details.',
       },
       required: false,
     },
@@ -8156,6 +8190,16 @@ const ChatAdministratorRights = t({
       },
       required: false,
     },
+    {
+      name: 'can_manage_tags',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if the administrator can edit the tags of regular members; for groups and supergroups only. If omitted defaults to the value of can\\_pin\\_messages.',
+      },
+      required: false,
+    },
   ],
 })
 
@@ -8536,6 +8580,16 @@ const ChatMemberAdministrator = t({
       required: false,
     },
     {
+      name: 'can_manage_tags',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if the administrator can edit the tags of regular members; for groups and supergroups only. If omitted defaults to the value of can\\_pin\\_messages.',
+      },
+      required: false,
+    },
+    {
       name: 'custom_title',
       type: {
         type: 'str',
@@ -8564,6 +8618,16 @@ const ChatMemberMember = t({
         markdown: 'The member\'s status in the chat, always “member”',
       },
       required: true,
+    },
+    {
+      name: 'tag',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Tag of the member',
+      },
+      required: false,
     },
     {
       name: 'user',
@@ -8605,6 +8669,16 @@ const ChatMemberRestricted = t({
         markdown: 'The member\'s status in the chat, always “restricted”',
       },
       required: true,
+    },
+    {
+      name: 'tag',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Tag of the member',
+      },
+      required: false,
     },
     {
       name: 'user',
@@ -8724,6 +8798,16 @@ const ChatMemberRestricted = t({
       },
       description: {
         markdown: '_True_, if the user is allowed to add web page previews to their messages',
+      },
+      required: true,
+    },
+    {
+      name: 'can_edit_tag',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if the user is allowed to edit their own tag',
       },
       required: true,
     },
@@ -9027,6 +9111,16 @@ const ChatPermissions = t({
       },
       description: {
         markdown: '_True_, if the user is allowed to add web page previews to their messages',
+      },
+      required: false,
+    },
+    {
+      name: 'can_edit_tag',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if the user is allowed to edit their own tag',
       },
       required: false,
     },
@@ -15276,7 +15370,7 @@ const InlineQueryResultDocument = t({
         name: 'InlineKeyboardMarkup',
       },
       description: {
-        markdown: 'Inline keyboard attached to the message',
+        markdown: '[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message',
       },
       required: false,
     },

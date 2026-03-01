@@ -4225,7 +4225,7 @@ const sendChecklist: ApiMethod = {
         name: 'InlineKeyboardMarkup',
       },
       description: {
-        markdown: 'An object for an inline keyboard',
+        markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)',
       },
       required: false,
     },
@@ -4426,7 +4426,7 @@ const sendDice: ApiMethod = {
 const sendMessageDraft: ApiMethod = {
   name: 'sendMessageDraft',
   description: {
-    markdown: 'Use this method to stream a partial message to a user while the message is being generated; supported only for bots with forum topic mode enabled. Returns _True_ on success.',
+    markdown: 'Use this method to stream a partial message to a user while the message is being generated. Returns _True_ on success.',
   },
   parameters: [
     {
@@ -5216,6 +5216,16 @@ const promoteChatMember: ApiMethod = {
       },
       required: false,
     },
+    {
+      name: 'can_manage_tags',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the administrator can edit the tags of regular members; for groups and supergroups only',
+      },
+      required: false,
+    },
   ],
   returnType: {
     type: 'bool',
@@ -5266,6 +5276,57 @@ const setChatAdministratorCustomTitle: ApiMethod = {
         markdown: 'New custom title for the administrator; 0-16 characters, emoji are not allowed',
       },
       required: true,
+    },
+  ],
+  returnType: {
+    type: 'bool',
+    literal: true,
+  },
+}
+
+const setChatMemberTag: ApiMethod = {
+  name: 'setChatMemberTag',
+  description: {
+    markdown: 'Use this method to set a tag for a regular member in a group or a supergroup. The bot must be an administrator in the chat for this to work and must have the _can\\_manage\\_tags_ administrator right. Returns _True_ on success.',
+  },
+  parameters: [
+    {
+      name: 'chat_id',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+          },
+          {
+            type: 'str',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+      },
+      required: true,
+    },
+    {
+      name: 'user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier of the target user',
+      },
+      required: true,
+    },
+    {
+      name: 'tag',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'New tag for the member; 0-16 characters, emoji are not allowed',
+      },
+      required: false,
     },
   ],
   returnType: {
@@ -9699,7 +9760,7 @@ const editMessageChecklist: ApiMethod = {
         name: 'InlineKeyboardMarkup',
       },
       description: {
-        markdown: 'An object for the new inline keyboard for the message',
+        markdown: 'An object for the new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) for the message',
       },
       required: false,
     },
@@ -12161,6 +12222,7 @@ export const methods = {
   restrictChatMember,
   promoteChatMember,
   setChatAdministratorCustomTitle,
+  setChatMemberTag,
   banChatSenderChat,
   unbanChatSenderChat,
   setChatPermissions,
