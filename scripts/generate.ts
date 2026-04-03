@@ -1,3 +1,5 @@
+/* eslint-disable e18e/prefer-static-regex */
+
 import type { Cheerio, CheerioAPI } from 'cheerio'
 import type { Element } from 'domhandler'
 import type {
