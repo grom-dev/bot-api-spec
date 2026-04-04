@@ -549,6 +549,14 @@ export const OVERRIDES: OverridesConfig = {
           hash: 'c5f0f787',
           description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
         },
+        correct_option_ids: {
+          hash: 'bb7b2dc2',
+          description: { markdown: 'An array of monotonically increasing 0-based identifiers of the correct answer options, required for polls in quiz mode' },
+        },
+        description_entities: {
+          hash: '0e32756f',
+          description: { markdown: 'An array of special entities that appear in the poll description, which can be specified instead of _description\\_parse\\_mode_' },
+        },
       },
     },
     sendChecklist: {
@@ -861,6 +869,14 @@ export const OVERRIDES: OverridesConfig = {
       hash: '29acf5f0',
       returnType: T_apiType('BusinessConnection'),
     },
+    getManagedBotToken: {
+      hash: 'b3181f76',
+      returnType: T_str(),
+    },
+    replaceManagedBotToken: {
+      hash: '0d2c997f',
+      returnType: T_str(),
+    },
     setMyCommands: {
       hash: '62c2a7f0',
       returnType: T_bool(true),
@@ -964,11 +980,11 @@ export const OVERRIDES: OverridesConfig = {
       returnType: T_bool(true),
       parameters: {
         text_parse_mode: {
-          hash: '426b8a25',
+          hash: '8c186b33',
           type: T_parseMode(),
         },
         text_entities: {
-          hash: 'b14ecbfe',
+          hash: '322e1ab2',
           description: { markdown: 'An array of special entities that appear in the gift text. It can be specified instead of _text\\_parse\\_mode_. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.' },
         },
       },
@@ -986,11 +1002,11 @@ export const OVERRIDES: OverridesConfig = {
           type: T_int32Union(1000, 1500, 2500),
         },
         text_parse_mode: {
-          hash: '426b8a25',
+          hash: '8c186b33',
           type: T_parseMode(),
         },
         text_entities: {
-          hash: 'b14ecbfe',
+          hash: '322e1ab2',
           description: { markdown: 'An array of special entities that appear in the gift text. It can be specified instead of _text\\_parse\\_mode_. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.' },
         },
       },
@@ -1424,6 +1440,16 @@ export const OVERRIDES: OverridesConfig = {
         result: {
           hash: 'e90936bb',
           description: { markdown: 'An object describing the message to be sent' },
+        },
+      },
+    },
+    savePreparedKeyboardButton: {
+      hash: '8b81fc02',
+      returnType: T_apiType('PreparedKeyboardButton'),
+      parameters: {
+        button: {
+          hash: '603d6fd3',
+          description: { markdown: 'An object describing the button to be saved. The button must be of the type _request\\_users_, _request\\_chat_, or _request\\_managed\\_bot_' },
         },
       },
     },

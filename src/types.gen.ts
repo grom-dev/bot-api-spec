@@ -279,6 +279,17 @@ const Update = t({
       },
       required: false,
     },
+    {
+      name: 'managed_bot',
+      type: {
+        type: 'api-type',
+        name: 'ManagedBotUpdated',
+      },
+      description: {
+        markdown: 'A new bot was created to be managed by the bot or token of a bot was changed',
+      },
+      required: false,
+    },
   ],
 })
 
@@ -539,6 +550,16 @@ const User = t({
       },
       description: {
         markdown: '_True_, if the bot allows users to create and delete topics in private chats. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
+      },
+      required: false,
+    },
+    {
+      name: 'can_manage_bots',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if other bots can be created to be controlled by the bot. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
       },
       required: false,
     },
@@ -1433,6 +1454,16 @@ const Message = t({
       required: false,
     },
     {
+      name: 'reply_to_poll_option_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Persistent identifier of the specific poll option that is being replied to',
+      },
+      required: false,
+    },
+    {
       name: 'via_bot',
       type: {
         type: 'api-type',
@@ -2262,6 +2293,17 @@ const Message = t({
       required: false,
     },
     {
+      name: 'managed_bot_created',
+      type: {
+        type: 'api-type',
+        name: 'ManagedBotCreated',
+      },
+      description: {
+        markdown: 'Service message: user created a bot that will be managed by the current bot',
+      },
+      required: false,
+    },
+    {
       name: 'paid_message_price_changed',
       type: {
         type: 'api-type',
@@ -2269,6 +2311,28 @@ const Message = t({
       },
       description: {
         markdown: 'Service message: the price for paid messages has changed in the chat',
+      },
+      required: false,
+    },
+    {
+      name: 'poll_option_added',
+      type: {
+        type: 'api-type',
+        name: 'PollOptionAdded',
+      },
+      description: {
+        markdown: 'Service message: answer option was added to a poll',
+      },
+      required: false,
+    },
+    {
+      name: 'poll_option_deleted',
+      type: {
+        type: 'api-type',
+        name: 'PollOptionDeleted',
+      },
+      description: {
+        markdown: 'Service message: answer option was deleted from a poll',
       },
       required: false,
     },
@@ -2681,7 +2745,7 @@ const TextQuote = t({
         },
       },
       description: {
-        markdown: 'Special entities that appear in the quote. Currently, only _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, and _custom\\_emoji_ entities are kept in quotes.',
+        markdown: 'Special entities that appear in the quote. Currently, only _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, _custom\\_emoji_, and _date\\_time_ entities are kept in quotes.',
       },
       required: false,
     },
@@ -3045,7 +3109,7 @@ const ReplyParameters = t({
         type: 'str',
       },
       description: {
-        markdown: 'Quoted part of the message to be replied to; 0-1024 characters after entities parsing. The quote must be an exact substring of the message to be replied to, including _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, and _custom\\_emoji_ entities. The message will fail to send if the quote isn\'t found in the original message.',
+        markdown: 'Quoted part of the message to be replied to; 0-1024 characters after entities parsing. The quote must be an exact substring of the message to be replied to, including _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, _custom\\_emoji_, and _date\\_time_ entities. The message will fail to send if the quote isn\'t found in the original message.',
       },
       required: false,
     },
@@ -3104,6 +3168,16 @@ const ReplyParameters = t({
       },
       description: {
         markdown: 'Identifier of the specific checklist task to be replied to',
+      },
+      required: false,
+    },
+    {
+      name: 'poll_option_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Persistent identifier of the specific poll option to be replied to',
       },
       required: false,
     },
@@ -4327,6 +4401,16 @@ const PollOption = t({
   },
   fields: [
     {
+      name: 'persistent_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the option, persistent on option addition and deletion',
+      },
+      required: true,
+    },
+    {
       name: 'text',
       type: {
         type: 'str',
@@ -4356,9 +4440,41 @@ const PollOption = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Number of users that voted for this option',
+        markdown: 'Number of users who voted for this option; may be 0 if unknown',
       },
       required: true,
+    },
+    {
+      name: 'added_by_user',
+      type: {
+        type: 'api-type',
+        name: 'User',
+      },
+      description: {
+        markdown: 'User who added the option; omitted if the option wasn\'t added by a user after poll creation',
+      },
+      required: false,
+    },
+    {
+      name: 'added_by_chat',
+      type: {
+        type: 'api-type',
+        name: 'Chat',
+      },
+      description: {
+        markdown: 'Chat that added the option; omitted if the option wasn\'t added by a chat after poll creation',
+      },
+      required: false,
+    },
+    {
+      name: 'addition_date',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Point in time (Unix timestamp) when the option was added; omitted if the option existed in the original poll',
+      },
+      required: false,
     },
   ],
 })
@@ -4468,6 +4584,19 @@ const PollAnswer = t({
       },
       description: {
         markdown: '0-based identifiers of chosen answer options. May be empty if the vote was retracted.',
+      },
+      required: true,
+    },
+    {
+      name: 'option_persistent_ids',
+      type: {
+        type: 'array',
+        of: {
+          type: 'str',
+        },
+      },
+      description: {
+        markdown: 'Persistent identifiers of the chosen answer options. May be empty if the vote was retracted.',
       },
       required: true,
     },
@@ -4589,12 +4718,25 @@ const Poll = t({
       required: true,
     },
     {
-      name: 'correct_option_id',
+      name: 'allows_revoting',
       type: {
-        type: 'int32',
+        type: 'bool',
       },
       description: {
-        markdown: '0-based identifier of the correct answer option. Available only for polls in the quiz mode, which are closed, or was sent (not forwarded) by the bot or to the private chat with the bot.',
+        markdown: '_True_, if the poll allows to change the chosen answer options',
+      },
+      required: true,
+    },
+    {
+      name: 'correct_option_ids',
+      type: {
+        type: 'array',
+        of: {
+          type: 'int32',
+        },
+      },
+      description: {
+        markdown: 'Array of 0-based identifiers of the correct answer options. Available only for polls in quiz mode which are closed or were sent (not forwarded) by the bot or to the private chat with the bot.',
       },
       required: false,
     },
@@ -4639,6 +4781,30 @@ const Poll = t({
       },
       description: {
         markdown: 'Point in time (Unix timestamp) when the poll will be automatically closed',
+      },
+      required: false,
+    },
+    {
+      name: 'description',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Description of the poll; for polls inside the [Message](https://core.telegram.org/bots/api#message) object only',
+      },
+      required: false,
+    },
+    {
+      name: 'description_entities',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'MessageEntity',
+        },
+      },
+      description: {
+        markdown: 'Special entities like usernames, URLs, bot commands, etc. that appear in the description',
       },
       required: false,
     },
@@ -4849,7 +5015,7 @@ const InputChecklistTask = t({
         },
       },
       description: {
-        markdown: 'List of special entities that appear in the text, which can be specified instead of parse\\_mode. Currently, only _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, and _custom\\_emoji_ entities are allowed.',
+        markdown: 'List of special entities that appear in the text, which can be specified instead of parse\\_mode. Currently, only _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, _custom\\_emoji_, and _date\\_time_ entities are allowed.',
       },
       required: false,
     },
@@ -4906,7 +5072,7 @@ const InputChecklist = t({
         },
       },
       description: {
-        markdown: 'List of special entities that appear in the title, which can be specified instead of parse\\_mode. Currently, only _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, and _custom\\_emoji_ entities are allowed.',
+        markdown: 'List of special entities that appear in the title, which can be specified instead of parse\\_mode. Currently, only _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, _custom\\_emoji_, and _date\\_time_ entities are allowed.',
       },
       required: false,
     },
@@ -5261,6 +5427,165 @@ const MessageAutoDeleteTimerChanged = t({
         markdown: 'New auto-delete time for messages in the chat; in seconds',
       },
       required: true,
+    },
+  ],
+})
+
+const ManagedBotCreated = t({
+  name: 'ManagedBotCreated',
+  description: {
+    markdown: 'This object contains information about the bot that was created to be managed by the current bot.',
+  },
+  fields: [
+    {
+      name: 'bot',
+      type: {
+        type: 'api-type',
+        name: 'User',
+      },
+      description: {
+        markdown: 'Information about the bot. The bot\'s token can be fetched using the method [getManagedBotToken](https://core.telegram.org/bots/api#getmanagedbottoken).',
+      },
+      required: true,
+    },
+  ],
+})
+
+const ManagedBotUpdated = t({
+  name: 'ManagedBotUpdated',
+  description: {
+    markdown: 'This object contains information about the creation or token update of a bot that is managed by the current bot.',
+  },
+  fields: [
+    {
+      name: 'user',
+      type: {
+        type: 'api-type',
+        name: 'User',
+      },
+      description: {
+        markdown: 'User that created the bot',
+      },
+      required: true,
+    },
+    {
+      name: 'bot',
+      type: {
+        type: 'api-type',
+        name: 'User',
+      },
+      description: {
+        markdown: 'Information about the bot. Token of the bot can be fetched using the method [getManagedBotToken](https://core.telegram.org/bots/api#getmanagedbottoken).',
+      },
+      required: true,
+    },
+  ],
+})
+
+const PollOptionAdded = t({
+  name: 'PollOptionAdded',
+  description: {
+    markdown: 'Describes a service message about an option added to a poll.',
+  },
+  fields: [
+    {
+      name: 'poll_message',
+      type: {
+        type: 'api-type',
+        name: 'MaybeInaccessibleMessage',
+      },
+      description: {
+        markdown: 'Message containing the poll to which the option was added, if known. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply.',
+      },
+      required: false,
+    },
+    {
+      name: 'option_persistent_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the added option',
+      },
+      required: true,
+    },
+    {
+      name: 'option_text',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Option text',
+      },
+      required: true,
+    },
+    {
+      name: 'option_text_entities',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'MessageEntity',
+        },
+      },
+      description: {
+        markdown: 'Special entities that appear in the _option\\_text_',
+      },
+      required: false,
+    },
+  ],
+})
+
+const PollOptionDeleted = t({
+  name: 'PollOptionDeleted',
+  description: {
+    markdown: 'Describes a service message about an option deleted from a poll.',
+  },
+  fields: [
+    {
+      name: 'poll_message',
+      type: {
+        type: 'api-type',
+        name: 'MaybeInaccessibleMessage',
+      },
+      description: {
+        markdown: 'Message containing the poll from which the option was deleted, if known. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply.',
+      },
+      required: false,
+    },
+    {
+      name: 'option_persistent_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the deleted option',
+      },
+      required: true,
+    },
+    {
+      name: 'option_text',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Option text',
+      },
+      required: true,
+    },
+    {
+      name: 'option_text_entities',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'MessageEntity',
+        },
+      },
+      description: {
+        markdown: 'Special entities that appear in the _option\\_text_',
+      },
+      required: false,
     },
   ],
 })
@@ -7120,6 +7445,17 @@ const KeyboardButton = t({
       required: false,
     },
     {
+      name: 'request_managed_bot',
+      type: {
+        type: 'api-type',
+        name: 'KeyboardButtonRequestManagedBot',
+      },
+      description: {
+        markdown: 'If specified, pressing the button will ask the user to create and share a bot that will be managed by the current bot. Available for bots that enabled management of other bots in the [@BotFather](https://t.me/BotFather) Mini App. Available in private chats only.',
+      },
+      required: false,
+    },
+    {
       name: 'request_contact',
       type: {
         type: 'bool',
@@ -7358,6 +7694,45 @@ const KeyboardButtonRequestChat = t({
       },
       description: {
         markdown: 'Pass _True_ to request the chat\'s photo',
+      },
+      required: false,
+    },
+  ],
+})
+
+const KeyboardButtonRequestManagedBot = t({
+  name: 'KeyboardButtonRequestManagedBot',
+  description: {
+    markdown: 'This object defines the parameters for the creation of a managed bot. Information about the created bot will be shared with the bot using the update _managed\\_bot_ and a [Message](https://core.telegram.org/bots/api#message) with the field _managed\\_bot\\_created_.',
+  },
+  fields: [
+    {
+      name: 'request_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Signed 32-bit identifier of the request. Must be unique within the message',
+      },
+      required: true,
+    },
+    {
+      name: 'suggested_name',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Suggested name for the bot',
+      },
+      required: false,
+    },
+    {
+      name: 'suggested_username',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Suggested username for the bot',
       },
       required: false,
     },
@@ -12455,6 +12830,73 @@ const BusinessMessagesDeleted = t({
   ],
 })
 
+const SentWebAppMessage = t({
+  name: 'SentWebAppMessage',
+  description: {
+    markdown: 'Describes an inline message sent by a [Web App](https://core.telegram.org/bots/webapps) on behalf of a user.',
+  },
+  fields: [
+    {
+      name: 'inline_message_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Identifier of the sent inline message. Available only if there is an [inline keyboard](https://core.telegram.org/bots/api#inlinekeyboardmarkup) attached to the message.',
+      },
+      required: false,
+    },
+  ],
+})
+
+const PreparedInlineMessage = t({
+  name: 'PreparedInlineMessage',
+  description: {
+    markdown: 'Describes an inline message to be sent by a user of a Mini App.',
+  },
+  fields: [
+    {
+      name: 'id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the prepared message',
+      },
+      required: true,
+    },
+    {
+      name: 'expiration_date',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Expiration date of the prepared message, in Unix time. Expired prepared messages can no longer be used',
+      },
+      required: true,
+    },
+  ],
+})
+
+const PreparedKeyboardButton = t({
+  name: 'PreparedKeyboardButton',
+  description: {
+    markdown: 'Describes a keyboard button to be used by a user of a Mini App.',
+  },
+  fields: [
+    {
+      name: 'id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the keyboard button',
+      },
+      required: true,
+    },
+  ],
+})
+
 const ResponseParameters = t({
   name: 'ResponseParameters',
   description: {
@@ -17448,54 +17890,6 @@ const ChosenInlineResult = t({
   ],
 })
 
-const SentWebAppMessage = t({
-  name: 'SentWebAppMessage',
-  description: {
-    markdown: 'Describes an inline message sent by a [Web App](https://core.telegram.org/bots/webapps) on behalf of a user.',
-  },
-  fields: [
-    {
-      name: 'inline_message_id',
-      type: {
-        type: 'str',
-      },
-      description: {
-        markdown: 'Identifier of the sent inline message. Available only if there is an [inline keyboard](https://core.telegram.org/bots/api#inlinekeyboardmarkup) attached to the message.',
-      },
-      required: false,
-    },
-  ],
-})
-
-const PreparedInlineMessage = t({
-  name: 'PreparedInlineMessage',
-  description: {
-    markdown: 'Describes an inline message to be sent by a user of a Mini App.',
-  },
-  fields: [
-    {
-      name: 'id',
-      type: {
-        type: 'str',
-      },
-      description: {
-        markdown: 'Unique identifier of the prepared message',
-      },
-      required: true,
-    },
-    {
-      name: 'expiration_date',
-      type: {
-        type: 'int32',
-      },
-      description: {
-        markdown: 'Expiration date of the prepared message, in Unix time. Expired prepared messages can no longer be used',
-      },
-      required: true,
-    },
-  ],
-})
-
 const LabeledPrice = t({
   name: 'LabeledPrice',
   description: {
@@ -19877,6 +20271,10 @@ export const types = {
   WebAppData,
   ProximityAlertTriggered,
   MessageAutoDeleteTimerChanged,
+  ManagedBotCreated,
+  ManagedBotUpdated,
+  PollOptionAdded,
+  PollOptionDeleted,
   ChatBoostAdded,
   BackgroundFill,
   BackgroundFillSolid,
@@ -19926,6 +20324,7 @@ export const types = {
   KeyboardButton,
   KeyboardButtonRequestUsers,
   KeyboardButtonRequestChat,
+  KeyboardButtonRequestManagedBot,
   KeyboardButtonPollType,
   ReplyKeyboardRemove,
   InlineKeyboardMarkup,
@@ -20018,6 +20417,9 @@ export const types = {
   BusinessBotRights,
   BusinessConnection,
   BusinessMessagesDeleted,
+  SentWebAppMessage,
+  PreparedInlineMessage,
+  PreparedKeyboardButton,
   ResponseParameters,
   InputMedia,
   InputMediaPhoto,
@@ -20068,8 +20470,6 @@ export const types = {
   InputContactMessageContent,
   InputInvoiceMessageContent,
   ChosenInlineResult,
-  SentWebAppMessage,
-  PreparedInlineMessage,
   LabeledPrice,
   Invoice,
   ShippingAddress,

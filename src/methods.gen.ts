@@ -3962,17 +3962,60 @@ const sendPoll: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: '_True_, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to _False_',
+        markdown: 'Pass _True_, if the poll allows multiple answers, defaults to _False_',
       },
       required: false,
     },
     {
-      name: 'correct_option_id',
+      name: 'allows_revoting',
       type: {
-        type: 'int32',
+        type: 'bool',
       },
       description: {
-        markdown: '0-based identifier of the correct answer option, required for polls in quiz mode',
+        markdown: 'Pass _True_, if the poll allows to change chosen answer options, defaults to _False_ for quizzes and to _True_ for regular polls',
+      },
+      required: false,
+    },
+    {
+      name: 'shuffle_options',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_, if the poll options must be shown in random order',
+      },
+      required: false,
+    },
+    {
+      name: 'allow_adding_options',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_, if answer options can be added to the poll after creation; not supported for anonymous polls and quizzes',
+      },
+      required: false,
+    },
+    {
+      name: 'hide_results_until_closes',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_, if poll results must be shown only after the poll closes',
+      },
+      required: false,
+    },
+    {
+      name: 'correct_option_ids',
+      type: {
+        type: 'array',
+        of: {
+          type: 'int32',
+        },
+      },
+      description: {
+        markdown: 'An array of monotonically increasing 0-based identifiers of the correct answer options, required for polls in quiz mode',
       },
       required: false,
     },
@@ -4030,7 +4073,7 @@ const sendPoll: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Amount of time in seconds the poll will be active after creation, 5-600. Can\'t be used together with _close\\_date_.',
+        markdown: 'Amount of time in seconds the poll will be active after creation, 5-2628000. Can\'t be used together with _close\\_date_.',
       },
       required: false,
     },
@@ -4040,7 +4083,7 @@ const sendPoll: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Point in time (Unix timestamp) when the poll will be automatically closed. Must be at least 5 and no more than 600 seconds in the future. Can\'t be used together with _open\\_period_.',
+        markdown: 'Point in time (Unix timestamp) when the poll will be automatically closed. Must be at least 5 and no more than 2628000 seconds in the future. Can\'t be used together with _open\\_period_.',
       },
       required: false,
     },
@@ -4051,6 +4094,40 @@ const sendPoll: ApiMethod = {
       },
       description: {
         markdown: 'Pass _True_ if the poll needs to be immediately closed. This can be useful for poll preview.',
+      },
+      required: false,
+    },
+    {
+      name: 'description',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Description of the poll to be sent, 0-1024 characters after entities parsing',
+      },
+      required: false,
+    },
+    {
+      name: 'description_parse_mode',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Mode for parsing entities in the poll description. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
+      },
+      required: false,
+    },
+    {
+      name: 'description_entities',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'MessageEntity',
+        },
+      },
+      description: {
+        markdown: 'An array of special entities that appear in the poll description, which can be specified instead of _description\\_parse\\_mode_',
       },
       required: false,
     },
@@ -7073,6 +7150,50 @@ const getBusinessConnection: ApiMethod = {
   },
 }
 
+const getManagedBotToken: ApiMethod = {
+  name: 'getManagedBotToken',
+  description: {
+    markdown: 'Use this method to get the token of a managed bot. Returns the token as _String_ on success.',
+  },
+  parameters: [
+    {
+      name: 'user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'User identifier of the managed bot whose token will be returned',
+      },
+      required: true,
+    },
+  ],
+  returnType: {
+    type: 'str',
+  },
+}
+
+const replaceManagedBotToken: ApiMethod = {
+  name: 'replaceManagedBotToken',
+  description: {
+    markdown: 'Use this method to revoke the current token of a managed bot and generate a new one. Returns the new token as _String_ on success.',
+  },
+  parameters: [
+    {
+      name: 'user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'User identifier of the managed bot whose token will be replaced',
+      },
+      required: true,
+    },
+  ],
+  returnType: {
+    type: 'str',
+  },
+}
+
 const setMyCommands: ApiMethod = {
   name: 'setMyCommands',
   description: {
@@ -7606,7 +7727,7 @@ const sendGift: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.',
+        markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, “custom\\_emoji”, and “date\\_time” are ignored.',
       },
       required: false,
     },
@@ -7725,7 +7846,7 @@ const giftPremiumSubscription: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.',
+        markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, “custom\\_emoji”, and “date\\_time” are ignored.',
       },
       required: false,
     },
@@ -9110,6 +9231,148 @@ const deleteStory: ApiMethod = {
   returnType: {
     type: 'bool',
     literal: true,
+  },
+}
+
+const answerWebAppQuery: ApiMethod = {
+  name: 'answerWebAppQuery',
+  description: {
+    markdown: 'Use this method to set the result of an interaction with a [Web App](https://core.telegram.org/bots/webapps) and send a corresponding message on behalf of the user to the chat from which the query originated. On success, a [SentWebAppMessage](https://core.telegram.org/bots/api#sentwebappmessage) object is returned.',
+  },
+  parameters: [
+    {
+      name: 'web_app_query_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier for the query to be answered',
+      },
+      required: true,
+    },
+    {
+      name: 'result',
+      type: {
+        type: 'api-type',
+        name: 'InlineQueryResult',
+      },
+      description: {
+        markdown: 'An object describing the message to be sent',
+      },
+      required: true,
+    },
+  ],
+  returnType: {
+    type: 'api-type',
+    name: 'SentWebAppMessage',
+  },
+}
+
+const savePreparedInlineMessage: ApiMethod = {
+  name: 'savePreparedInlineMessage',
+  description: {
+    markdown: 'Stores a message that can be sent by a user of a Mini App. Returns a [PreparedInlineMessage](https://core.telegram.org/bots/api#preparedinlinemessage) object.',
+  },
+  parameters: [
+    {
+      name: 'user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier of the target user that can use the prepared message',
+      },
+      required: true,
+    },
+    {
+      name: 'result',
+      type: {
+        type: 'api-type',
+        name: 'InlineQueryResult',
+      },
+      description: {
+        markdown: 'An object describing the message to be sent',
+      },
+      required: true,
+    },
+    {
+      name: 'allow_user_chats',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the message can be sent to private chats with users',
+      },
+      required: false,
+    },
+    {
+      name: 'allow_bot_chats',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the message can be sent to private chats with bots',
+      },
+      required: false,
+    },
+    {
+      name: 'allow_group_chats',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the message can be sent to group and supergroup chats',
+      },
+      required: false,
+    },
+    {
+      name: 'allow_channel_chats',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the message can be sent to channel chats',
+      },
+      required: false,
+    },
+  ],
+  returnType: {
+    type: 'api-type',
+    name: 'PreparedInlineMessage',
+  },
+}
+
+const savePreparedKeyboardButton: ApiMethod = {
+  name: 'savePreparedKeyboardButton',
+  description: {
+    markdown: 'Stores a keyboard button that can be used by a user within a Mini App. Returns a [PreparedKeyboardButton](https://core.telegram.org/bots/api#preparedkeyboardbutton) object.',
+  },
+  parameters: [
+    {
+      name: 'user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier of the target user that can use the button',
+      },
+      required: true,
+    },
+    {
+      name: 'button',
+      type: {
+        type: 'api-type',
+        name: 'KeyboardButton',
+      },
+      description: {
+        markdown: 'An object describing the button to be saved. The button must be of the type _request\\_users_, _request\\_chat_, or _request\\_managed\\_bot_',
+      },
+      required: true,
+    },
+  ],
+  returnType: {
+    type: 'api-type',
+    name: 'PreparedKeyboardButton',
   },
 }
 
@@ -10966,114 +11229,6 @@ const answerInlineQuery: ApiMethod = {
   },
 }
 
-const answerWebAppQuery: ApiMethod = {
-  name: 'answerWebAppQuery',
-  description: {
-    markdown: 'Use this method to set the result of an interaction with a [Web App](https://core.telegram.org/bots/webapps) and send a corresponding message on behalf of the user to the chat from which the query originated. On success, a [SentWebAppMessage](https://core.telegram.org/bots/api#sentwebappmessage) object is returned.',
-  },
-  parameters: [
-    {
-      name: 'web_app_query_id',
-      type: {
-        type: 'str',
-      },
-      description: {
-        markdown: 'Unique identifier for the query to be answered',
-      },
-      required: true,
-    },
-    {
-      name: 'result',
-      type: {
-        type: 'api-type',
-        name: 'InlineQueryResult',
-      },
-      description: {
-        markdown: 'An object describing the message to be sent',
-      },
-      required: true,
-    },
-  ],
-  returnType: {
-    type: 'api-type',
-    name: 'SentWebAppMessage',
-  },
-}
-
-const savePreparedInlineMessage: ApiMethod = {
-  name: 'savePreparedInlineMessage',
-  description: {
-    markdown: 'Stores a message that can be sent by a user of a Mini App. Returns a [PreparedInlineMessage](https://core.telegram.org/bots/api#preparedinlinemessage) object.',
-  },
-  parameters: [
-    {
-      name: 'user_id',
-      type: {
-        type: 'int32',
-      },
-      description: {
-        markdown: 'Unique identifier of the target user that can use the prepared message',
-      },
-      required: true,
-    },
-    {
-      name: 'result',
-      type: {
-        type: 'api-type',
-        name: 'InlineQueryResult',
-      },
-      description: {
-        markdown: 'An object describing the message to be sent',
-      },
-      required: true,
-    },
-    {
-      name: 'allow_user_chats',
-      type: {
-        type: 'bool',
-      },
-      description: {
-        markdown: 'Pass _True_ if the message can be sent to private chats with users',
-      },
-      required: false,
-    },
-    {
-      name: 'allow_bot_chats',
-      type: {
-        type: 'bool',
-      },
-      description: {
-        markdown: 'Pass _True_ if the message can be sent to private chats with bots',
-      },
-      required: false,
-    },
-    {
-      name: 'allow_group_chats',
-      type: {
-        type: 'bool',
-      },
-      description: {
-        markdown: 'Pass _True_ if the message can be sent to group and supergroup chats',
-      },
-      required: false,
-    },
-    {
-      name: 'allow_channel_chats',
-      type: {
-        type: 'bool',
-      },
-      description: {
-        markdown: 'Pass _True_ if the message can be sent to channel chats',
-      },
-      required: false,
-    },
-  ],
-  returnType: {
-    type: 'api-type',
-    name: 'PreparedInlineMessage',
-  },
-}
-
 const sendInvoice: ApiMethod = {
   name: 'sendInvoice',
   description: {
@@ -12264,6 +12419,8 @@ export const methods = {
   answerCallbackQuery,
   getUserChatBoosts,
   getBusinessConnection,
+  getManagedBotToken,
+  replaceManagedBotToken,
   setMyCommands,
   deleteMyCommands,
   getMyCommands,
@@ -12306,6 +12463,9 @@ export const methods = {
   repostStory,
   editStory,
   deleteStory,
+  answerWebAppQuery,
+  savePreparedInlineMessage,
+  savePreparedKeyboardButton,
   editMessageText,
   editMessageCaption,
   editMessageMedia,
@@ -12335,8 +12495,6 @@ export const methods = {
   setCustomEmojiStickerSetThumbnail,
   deleteStickerSet,
   answerInlineQuery,
-  answerWebAppQuery,
-  savePreparedInlineMessage,
   sendInvoice,
   createInvoiceLink,
   answerShippingQuery,
