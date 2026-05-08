@@ -37,9 +37,9 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "7.7.3",
-    "@types/node": "22.19.17",
+    "@types/node": "22.19.18",
     "@types/turndown": "5.0.6",
-    "bumpp": "11.0.1",
+    "bumpp": "11.1.0",
     "cheerio": "1.2.0",
     "domhandler": "6.0.1",
     "eslint": "9.39.4",
@@ -47,6 +47,6 @@
     "taze": "19.11.0",
     "turndown": "7.2.4",
     "typescript": "5.9.3",
-    "zod": "4.3.6"
+    "zod": "4.4.3"
   }
 }
