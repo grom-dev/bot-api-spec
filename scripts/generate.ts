@@ -2139,6 +2139,31 @@ export const OVERRIDES: OverridesConfig = {
         },
       },
     },
+    InputPollMedia: {
+      hash: '6b53e34f',
+      oneOf: [
+        T_apiType('InputMediaAnimation'),
+        T_apiType('InputMediaAudio'),
+        T_apiType('InputMediaDocument'),
+        T_apiType('InputMediaLivePhoto'),
+        T_apiType('InputMediaLocation'),
+        T_apiType('InputMediaPhoto'),
+        T_apiType('InputMediaVenue'),
+        T_apiType('InputMediaVideo'),
+      ],
+    },
+    InputPollOptionMedia: {
+      hash: 'f948fbb9',
+      oneOf: [
+        T_apiType('InputMediaAnimation'),
+        T_apiType('InputMediaLivePhoto'),
+        T_apiType('InputMediaLocation'),
+        T_apiType('InputMediaPhoto'),
+        T_apiType('InputMediaSticker'),
+        T_apiType('InputMediaVenue'),
+        T_apiType('InputMediaVideo'),
+      ],
+    },
     Poll: {
       hash: '',
       fields: {

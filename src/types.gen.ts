@@ -4712,7 +4712,40 @@ const InputPollMedia = t({
   description: {
     markdown: 'This object represents the content of a poll description or a quiz explanation to be sent. It should be one of\n\n-   [InputMediaAnimation](https://core.telegram.org/bots/api#inputmediaanimation)\n-   [InputMediaAudio](https://core.telegram.org/bots/api#inputmediaaudio)\n-   [InputMediaDocument](https://core.telegram.org/bots/api#inputmediadocument)\n-   [InputMediaLivePhoto](https://core.telegram.org/bots/api#inputmedialivephoto)\n-   [InputMediaLocation](https://core.telegram.org/bots/api#inputmedialocation)\n-   [InputMediaPhoto](https://core.telegram.org/bots/api#inputmediaphoto)\n-   [InputMediaVenue](https://core.telegram.org/bots/api#inputmediavenue)\n-   [InputMediaVideo](https://core.telegram.org/bots/api#inputmediavideo)',
   },
-  fields: [],
+  oneOf: [
+    {
+      type: 'api-type',
+      name: 'InputMediaAnimation',
+    },
+    {
+      type: 'api-type',
+      name: 'InputMediaAudio',
+    },
+    {
+      type: 'api-type',
+      name: 'InputMediaDocument',
+    },
+    {
+      type: 'api-type',
+      name: 'InputMediaLivePhoto',
+    },
+    {
+      type: 'api-type',
+      name: 'InputMediaLocation',
+    },
+    {
+      type: 'api-type',
+      name: 'InputMediaPhoto',
+    },
+    {
+      type: 'api-type',
+      name: 'InputMediaVenue',
+    },
+    {
+      type: 'api-type',
+      name: 'InputMediaVideo',
+    },
+  ],
 })
 
 const InputPollOptionMedia = t({
@@ -4720,7 +4753,36 @@ const InputPollOptionMedia = t({
   description: {
     markdown: 'This object represents the content of a poll option to be sent. It should be one of\n\n-   [InputMediaAnimation](https://core.telegram.org/bots/api#inputmediaanimation)\n-   [InputMediaLivePhoto](https://core.telegram.org/bots/api#inputmedialivephoto)\n-   [InputMediaLocation](https://core.telegram.org/bots/api#inputmedialocation)\n-   [InputMediaPhoto](https://core.telegram.org/bots/api#inputmediaphoto)\n-   [InputMediaSticker](https://core.telegram.org/bots/api#inputmediasticker)\n-   [InputMediaVenue](https://core.telegram.org/bots/api#inputmediavenue)\n-   [InputMediaVideo](https://core.telegram.org/bots/api#inputmediavideo)',
   },
-  fields: [],
+  oneOf: [
+    {
+      type: 'api-type',
+      name: 'InputMediaAnimation',
+    },
+    {
+      type: 'api-type',
+      name: 'InputMediaLivePhoto',
+    },
+    {
+      type: 'api-type',
+      name: 'InputMediaLocation',
+    },
+    {
+      type: 'api-type',
+      name: 'InputMediaPhoto',
+    },
+    {
+      type: 'api-type',
+      name: 'InputMediaSticker',
+    },
+    {
+      type: 'api-type',
+      name: 'InputMediaVenue',
+    },
+    {
+      type: 'api-type',
+      name: 'InputMediaVideo',
+    },
+  ],
 })
 
 const PollOption = t({
