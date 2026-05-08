@@ -307,6 +307,24 @@ export const OVERRIDES: OverridesConfig = {
         },
       },
     },
+    sendLivePhoto: {
+      hash: '06914142',
+      returnType: T_apiType('Message'),
+      parameters: {
+        caption_entities: {
+          hash: '9b64af4f',
+          description: { markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_' },
+        },
+        suggested_post_parameters: {
+          hash: 'b99d9f3c',
+          description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
+        },
+        reply_markup: {
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
+        },
+      },
+    },
     sendAudio: {
       hash: '6a8f2a96',
       returnType: T_apiType('Message'),
@@ -458,15 +476,16 @@ export const OVERRIDES: OverridesConfig = {
       },
     },
     sendMediaGroup: {
-      hash: '7c32a1af',
+      hash: '3f75f5b5',
       returnType: T_arrayOf(T_apiType('Message')),
       parameters: {
         media: {
-          hash: '9e0fd41c',
+          hash: 'af3bbbd0',
           type: T_arrayOf(
             T_unionOf([
               T_apiType('InputMediaAudio'),
               T_apiType('InputMediaDocument'),
+              T_apiType('InputMediaLivePhoto'),
               T_apiType('InputMediaPhoto'),
               T_apiType('InputMediaVideo'),
             ]),
@@ -538,8 +557,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An array of special entities that appear in the poll question. It can be specified instead of _question\\_parse\\_mode_' },
         },
         options: {
-          hash: '4e190952',
-          description: { markdown: 'An array of 2-12 answer options' },
+          hash: '1652947a',
+          description: { markdown: 'An array of 1-12 answer options' },
         },
         explanation_entities: {
           hash: '8f63fa73',
@@ -556,6 +575,10 @@ export const OVERRIDES: OverridesConfig = {
         description_entities: {
           hash: '0e32756f',
           description: { markdown: 'An array of special entities that appear in the poll description, which can be specified instead of _description\\_parse\\_mode_' },
+        },
+        country_codes: {
+          hash: 'b25391e7',
+          description: { markdown: 'An array of 0-12 two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes indicating the countries from which users can vote in the poll; for channel chats only. If omitted or empty, then users from any country can participate in the poll.' },
         },
       },
     },
@@ -596,7 +619,7 @@ export const OVERRIDES: OverridesConfig = {
       },
     },
     sendMessageDraft: {
-      hash: 'ad63e96c',
+      hash: 'e77d080d',
       returnType: T_bool(true),
       parameters: {
         parse_mode: {
@@ -780,7 +803,7 @@ export const OVERRIDES: OverridesConfig = {
       returnType: T_apiType('ChatFullInfo'),
     },
     getChatAdministrators: {
-      hash: '21a60fcb',
+      hash: '5c097587',
       returnType: T_arrayOf(T_apiType('ChatMember')),
     },
     getChatMemberCount: {
@@ -790,6 +813,10 @@ export const OVERRIDES: OverridesConfig = {
     getChatMember: {
       hash: 'cfed9730',
       returnType: T_apiType('ChatMember'),
+    },
+    getUserPersonalChatMessages: {
+      hash: '51c84d54',
+      returnType: T_arrayOf(T_apiType('Message')),
     },
     setChatStickerSet: {
       hash: '1e27cfef',
@@ -861,6 +888,16 @@ export const OVERRIDES: OverridesConfig = {
       hash: 'af1981be',
       returnType: T_bool(true),
     },
+    answerGuestQuery: {
+      hash: 'a911dcba',
+      returnType: T_apiType('SentGuestMessage'),
+      parameters: {
+        result: {
+          hash: 'e90936bb',
+          description: { markdown: 'An object describing the message to be sent' },
+        },
+      },
+    },
     getUserChatBoosts: {
       hash: '5b18ae52',
       returnType: T_apiType('UserChatBoosts'),
@@ -876,6 +913,20 @@ export const OVERRIDES: OverridesConfig = {
     replaceManagedBotToken: {
       hash: '0d2c997f',
       returnType: T_str(),
+    },
+    getManagedBotAccessSettings: {
+      hash: '19514396',
+      returnType: T_apiType('BotAccessSettings'),
+    },
+    setManagedBotAccessSettings: {
+      hash: 'a7317566',
+      returnType: T_bool(true),
+      parameters: {
+        added_user_ids: {
+          hash: 'cadd1fc3',
+          description: { markdown: 'An array of up to 10 identifiers of users who will have access to the bot in addition to its owner. Ignored if _is\\_access\\_restricted_ is false.' },
+        },
+      },
     },
     setMyCommands: {
       hash: '62c2a7f0',
@@ -1188,7 +1239,7 @@ export const OVERRIDES: OverridesConfig = {
       },
     },
     editMessageMedia: {
-      hash: '4a77dd88',
+      hash: '3187220c',
       returnType: T_unionOf([T_apiType('Message'), T_bool(true)]),
       parameters: {
         media: {
@@ -1276,6 +1327,14 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An array of 1-100 identifiers of messages to delete. See [deleteMessage](https://core.telegram.org/bots/api#deletemessage) for limitations on which messages can be deleted' },
         },
       },
+    },
+    deleteMessageReaction: {
+      hash: '98c7a44c',
+      returnType: T_bool(true),
+    },
+    deleteAllMessageReactions: {
+      hash: 'de0fb1ca',
+      returnType: T_bool(true),
     },
     sendSticker: {
       hash: '50d36d0d',
@@ -1570,10 +1629,11 @@ export const OVERRIDES: OverridesConfig = {
       ],
     },
     PaidMedia: {
-      hash: 'd21845c7',
+      hash: 'bc70ee8e',
       oneOf: [
-        T_apiType('PaidMediaPreview'),
+        T_apiType('PaidMediaLivePhoto'),
         T_apiType('PaidMediaPhoto'),
+        T_apiType('PaidMediaPreview'),
         T_apiType('PaidMediaVideo'),
       ],
     },
@@ -1659,18 +1719,20 @@ export const OVERRIDES: OverridesConfig = {
       ],
     },
     InputMedia: {
-      hash: '1fa5533d',
+      hash: 'b755b654',
       oneOf: [
         T_apiType('InputMediaAnimation'),
-        T_apiType('InputMediaDocument'),
         T_apiType('InputMediaAudio'),
+        T_apiType('InputMediaDocument'),
+        T_apiType('InputMediaLivePhoto'),
         T_apiType('InputMediaPhoto'),
         T_apiType('InputMediaVideo'),
       ],
     },
     InputPaidMedia: {
-      hash: 'f5e33e74',
+      hash: 'b25ac347',
       oneOf: [
+        T_apiType('InputPaidMediaLivePhoto'),
         T_apiType('InputPaidMediaPhoto'),
         T_apiType('InputPaidMediaVideo'),
       ],

@@ -13,7 +13,7 @@ const t = (apiType: ApiType): ApiType => apiType
 const Update = t({
   name: 'Update',
   description: {
-    markdown: 'This [object](https://core.telegram.org/bots/api#available-types) represents an incoming update.\n\nAt most **one** of the optional parameters can be present in any given update.',
+    markdown: 'This [object](https://core.telegram.org/bots/api#available-types) represents an incoming update.\n\nAt most **one** of the optional fields can be present in any given update.',
   },
   fields: [
     {
@@ -111,6 +111,17 @@ const Update = t({
       },
       description: {
         markdown: 'Messages were deleted from a connected business account',
+      },
+      required: false,
+    },
+    {
+      name: 'guest_message',
+      type: {
+        type: 'api-type',
+        name: 'Message',
+      },
+      description: {
+        markdown: 'New guest message. The bot can use the field _Message.guest\\_query\\_id_ and the method [answerGuestQuery](https://core.telegram.org/bots/api#answerguestquery) to send a message in response.',
       },
       required: false,
     },
@@ -286,7 +297,7 @@ const Update = t({
         name: 'ManagedBotUpdated',
       },
       description: {
-        markdown: 'A new bot was created to be managed by the bot or token of a bot was changed',
+        markdown: 'A new bot was created to be managed by the bot, or token or owner of a managed bot was changed',
       },
       required: false,
     },
@@ -504,6 +515,16 @@ const User = t({
       required: false,
     },
     {
+      name: 'supports_guest_queries',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if the bot supports guest queries from chats it is not a member of. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
+      },
+      required: false,
+    },
+    {
       name: 'supports_inline_queries',
       type: {
         type: 'bool',
@@ -519,7 +540,7 @@ const User = t({
         type: 'bool',
       },
       description: {
-        markdown: '_True_, if the bot can be connected to a Telegram Business account to receive its messages. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
+        markdown: '_True_, if the bot can be connected to a user account to manage it. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
       },
       required: false,
     },
@@ -1346,6 +1367,16 @@ const Message = t({
       required: true,
     },
     {
+      name: 'guest_query_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The unique identifier for the guest query. Use this identifier with the method [answerGuestQuery](https://core.telegram.org/bots/api#answerguestquery) to send a response message. If non-empty, the message belongs to the chat where the guest bot was summoned, which may not coincide with other existing bot chats sharing the same identifier.',
+      },
+      required: false,
+    },
+    {
       name: 'business_connection_id',
       type: {
         type: 'str',
@@ -1471,6 +1502,28 @@ const Message = t({
       },
       description: {
         markdown: 'Bot through which the message was sent',
+      },
+      required: false,
+    },
+    {
+      name: 'guest_bot_caller_user',
+      type: {
+        type: 'api-type',
+        name: 'User',
+      },
+      description: {
+        markdown: 'For a message sent by a guest bot, this is the user whose original message triggered the bot\'s response',
+      },
+      required: false,
+    },
+    {
+      name: 'guest_bot_caller_chat',
+      type: {
+        type: 'api-type',
+        name: 'Chat',
+      },
+      description: {
+        markdown: 'For a message sent by a guest bot, this is the chat whose original message triggered the bot\'s response',
       },
       required: false,
     },
@@ -1633,6 +1686,17 @@ const Message = t({
       },
       description: {
         markdown: 'Message is a general file, information about the file',
+      },
+      required: false,
+    },
+    {
+      name: 'live_photo',
+      type: {
+        type: 'api-type',
+        name: 'LivePhoto',
+      },
+      description: {
+        markdown: 'Message is a live photo, information about the live photo. For backward compatibility, when this field is set, the _photo_ field will also be set',
       },
       required: false,
     },
@@ -2856,6 +2920,17 @@ const ExternalReplyInfo = t({
       required: false,
     },
     {
+      name: 'live_photo',
+      type: {
+        type: 'api-type',
+        name: 'LivePhoto',
+      },
+      description: {
+        markdown: 'Message is a live photo, information about the live photo',
+      },
+      required: false,
+    },
+    {
       name: 'paid_media',
       type: {
         type: 'api-type',
@@ -3089,7 +3164,7 @@ const ReplyParameters = t({
         ],
       },
       description: {
-        markdown: 'If the message to be replied to is from a different chat, unique identifier for the chat or username of the channel (in the format `@channelusername`). Not supported for messages sent on behalf of a business account and messages from channel direct messages chats.',
+        markdown: 'If the message to be replied to is from a different chat, unique identifier for the chat or username of the bot, supergroup or channel in the format `@username`. Not supported for messages sent on behalf of a business account and messages from channel direct messages chats.',
       },
       required: false,
     },
@@ -3731,6 +3806,99 @@ const Document = t({
   ],
 })
 
+const LivePhoto = t({
+  name: 'LivePhoto',
+  description: {
+    markdown: 'This object represents a live photo.',
+  },
+  fields: [
+    {
+      name: 'photo',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'PhotoSize',
+        },
+      },
+      description: {
+        markdown: 'Available sizes of the corresponding static photo',
+      },
+      required: false,
+    },
+    {
+      name: 'file_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Identifier for the video file which can be used to download or reuse the file',
+      },
+      required: true,
+    },
+    {
+      name: 'file_unique_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier for the video file which is supposed to be the same over time and for different bots. Can\'t be used to download or reuse the file.',
+      },
+      required: true,
+    },
+    {
+      name: 'width',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Video width as defined by the sender',
+      },
+      required: true,
+    },
+    {
+      name: 'height',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Video height as defined by the sender',
+      },
+      required: true,
+    },
+    {
+      name: 'duration',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Duration of the video in seconds as defined by the sender',
+      },
+      required: true,
+    },
+    {
+      name: 'mime_type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'MIME type of the file as defined by the sender',
+      },
+      required: false,
+    },
+    {
+      name: 'file_size',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'File size in bytes. It can be bigger than 2^31 and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a signed 64-bit integer or double-precision float type are safe for storing this value.',
+      },
+      required: false,
+    },
+  ],
+})
+
 const Story = t({
   name: 'Story',
   description: {
@@ -4147,12 +4315,12 @@ const PaidMediaInfo = t({
 const PaidMedia = t({
   name: 'PaidMedia',
   description: {
-    markdown: 'This object describes paid media. Currently, it can be one of\n\n-   [PaidMediaPreview](https://core.telegram.org/bots/api#paidmediapreview)\n-   [PaidMediaPhoto](https://core.telegram.org/bots/api#paidmediaphoto)\n-   [PaidMediaVideo](https://core.telegram.org/bots/api#paidmediavideo)',
+    markdown: 'This object describes paid media. Currently, it can be one of\n\n-   [PaidMediaLivePhoto](https://core.telegram.org/bots/api#paidmedialivephoto)\n-   [PaidMediaPhoto](https://core.telegram.org/bots/api#paidmediaphoto)\n-   [PaidMediaPreview](https://core.telegram.org/bots/api#paidmediapreview)\n-   [PaidMediaVideo](https://core.telegram.org/bots/api#paidmediavideo)',
   },
   oneOf: [
     {
       type: 'api-type',
-      name: 'PaidMediaPreview',
+      name: 'PaidMediaLivePhoto',
     },
     {
       type: 'api-type',
@@ -4160,7 +4328,75 @@ const PaidMedia = t({
     },
     {
       type: 'api-type',
+      name: 'PaidMediaPreview',
+    },
+    {
+      type: 'api-type',
       name: 'PaidMediaVideo',
+    },
+  ],
+})
+
+const PaidMediaLivePhoto = t({
+  name: 'PaidMediaLivePhoto',
+  description: {
+    markdown: '',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the paid media, always “live\\_photo”',
+      },
+      required: true,
+    },
+    {
+      name: 'live_photo',
+      type: {
+        type: 'api-type',
+        name: 'LivePhoto',
+      },
+      description: {
+        markdown: 'The photo',
+      },
+      required: true,
+    },
+  ],
+})
+
+const PaidMediaPhoto = t({
+  name: 'PaidMediaPhoto',
+  description: {
+    markdown: 'The paid media is a photo.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'photo',
+      },
+      description: {
+        markdown: 'Type of the paid media, always “photo”',
+      },
+      required: true,
+    },
+    {
+      name: 'photo',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'PhotoSize',
+        },
+      },
+      description: {
+        markdown: 'The photo',
+      },
+      required: true,
     },
   ],
 })
@@ -4211,40 +4447,6 @@ const PaidMediaPreview = t({
         markdown: 'Duration of the media in seconds as defined by the sender',
       },
       required: false,
-    },
-  ],
-})
-
-const PaidMediaPhoto = t({
-  name: 'PaidMediaPhoto',
-  description: {
-    markdown: 'The paid media is a photo.',
-  },
-  fields: [
-    {
-      name: 'type',
-      type: {
-        type: 'str',
-        literal: 'photo',
-      },
-      description: {
-        markdown: 'Type of the paid media, always “photo”',
-      },
-      required: true,
-    },
-    {
-      name: 'photo',
-      type: {
-        type: 'array',
-        of: {
-          type: 'api-type',
-          name: 'PhotoSize',
-        },
-      },
-      description: {
-        markdown: 'The photo',
-      },
-      required: true,
     },
   ],
 })
@@ -4394,6 +4596,133 @@ const Dice = t({
   ],
 })
 
+const PollMedia = t({
+  name: 'PollMedia',
+  description: {
+    markdown: 'At most **one** of the optional fields can be present in any given object.',
+  },
+  fields: [
+    {
+      name: 'animation',
+      type: {
+        type: 'api-type',
+        name: 'Animation',
+      },
+      description: {
+        markdown: 'Media is an animation, information about the animation',
+      },
+      required: false,
+    },
+    {
+      name: 'audio',
+      type: {
+        type: 'api-type',
+        name: 'Audio',
+      },
+      description: {
+        markdown: 'Media is an audio file, information about the file; currently, can\'t be received in a poll option',
+      },
+      required: false,
+    },
+    {
+      name: 'document',
+      type: {
+        type: 'api-type',
+        name: 'Document',
+      },
+      description: {
+        markdown: 'Media is a general file, information about the file; currently, can\'t be received in a poll option',
+      },
+      required: false,
+    },
+    {
+      name: 'live_photo',
+      type: {
+        type: 'api-type',
+        name: 'LivePhoto',
+      },
+      description: {
+        markdown: 'Media is a live photo, information about the live photo',
+      },
+      required: false,
+    },
+    {
+      name: 'location',
+      type: {
+        type: 'api-type',
+        name: 'Location',
+      },
+      description: {
+        markdown: 'Media is a shared location, information about the location',
+      },
+      required: false,
+    },
+    {
+      name: 'photo',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'PhotoSize',
+        },
+      },
+      description: {
+        markdown: 'Media is a photo, available sizes of the photo',
+      },
+      required: false,
+    },
+    {
+      name: 'sticker',
+      type: {
+        type: 'api-type',
+        name: 'Sticker',
+      },
+      description: {
+        markdown: 'Media is a sticker, information about the sticker; currently, for poll options only',
+      },
+      required: false,
+    },
+    {
+      name: 'venue',
+      type: {
+        type: 'api-type',
+        name: 'Venue',
+      },
+      description: {
+        markdown: 'Media is a venue, information about the venue',
+      },
+      required: false,
+    },
+    {
+      name: 'video',
+      type: {
+        type: 'api-type',
+        name: 'Video',
+      },
+      description: {
+        markdown: 'Media is a video, information about the video',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputPollMedia = t({
+  name: 'InputPollMedia',
+  description: {
+    markdown: 'This object represents the content of a poll description or a quiz explanation to be sent. It should be one of\n\n-   [InputMediaAnimation](https://core.telegram.org/bots/api#inputmediaanimation)\n-   [InputMediaAudio](https://core.telegram.org/bots/api#inputmediaaudio)\n-   [InputMediaDocument](https://core.telegram.org/bots/api#inputmediadocument)\n-   [InputMediaLivePhoto](https://core.telegram.org/bots/api#inputmedialivephoto)\n-   [InputMediaLocation](https://core.telegram.org/bots/api#inputmedialocation)\n-   [InputMediaPhoto](https://core.telegram.org/bots/api#inputmediaphoto)\n-   [InputMediaVenue](https://core.telegram.org/bots/api#inputmediavenue)\n-   [InputMediaVideo](https://core.telegram.org/bots/api#inputmediavideo)',
+  },
+  fields: [],
+})
+
+const InputPollOptionMedia = t({
+  name: 'InputPollOptionMedia',
+  description: {
+    markdown: 'This object represents the content of a poll option to be sent. It should be one of\n\n-   [InputMediaAnimation](https://core.telegram.org/bots/api#inputmediaanimation)\n-   [InputMediaLivePhoto](https://core.telegram.org/bots/api#inputmedialivephoto)\n-   [InputMediaLocation](https://core.telegram.org/bots/api#inputmedialocation)\n-   [InputMediaPhoto](https://core.telegram.org/bots/api#inputmediaphoto)\n-   [InputMediaSticker](https://core.telegram.org/bots/api#inputmediasticker)\n-   [InputMediaVenue](https://core.telegram.org/bots/api#inputmediavenue)\n-   [InputMediaVideo](https://core.telegram.org/bots/api#inputmediavideo)',
+  },
+  fields: [],
+})
+
 const PollOption = t({
   name: 'PollOption',
   description: {
@@ -4431,6 +4760,17 @@ const PollOption = t({
       },
       description: {
         markdown: 'Special entities that appear in the option _text_. Currently, only custom emoji entities are allowed in poll option texts',
+      },
+      required: false,
+    },
+    {
+      name: 'media',
+      type: {
+        type: 'api-type',
+        name: 'PollMedia',
+      },
+      description: {
+        markdown: 'Media added to the poll option',
       },
       required: false,
     },
@@ -4530,6 +4870,17 @@ const InputPollOption = t({
       },
       description: {
         markdown: 'An array of special entities that appear in the poll option text. It can be specified instead of _text\\_parse\\_mode_',
+      },
+      required: false,
+    },
+    {
+      name: 'media',
+      type: {
+        type: 'api-type',
+        name: 'InputPollOptionMedia',
+      },
+      description: {
+        markdown: 'Media added to the poll option',
       },
       required: false,
     },
@@ -4728,6 +5079,29 @@ const Poll = t({
       required: true,
     },
     {
+      name: 'members_only',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_ if voting is limited to users who have been members of the chat where the poll was originally sent for more than 24 hours',
+      },
+      required: true,
+    },
+    {
+      name: 'country_codes',
+      type: {
+        type: 'array',
+        of: {
+          type: 'str',
+        },
+      },
+      description: {
+        markdown: 'A list of two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes indicating the countries from which users can vote in the poll. If omitted, then users from any country can participate in the poll.',
+      },
+      required: false,
+    },
+    {
       name: 'correct_option_ids',
       type: {
         type: 'array',
@@ -4761,6 +5135,17 @@ const Poll = t({
       },
       description: {
         markdown: 'Special entities like usernames, URLs, bot commands, etc. that appear in the _explanation_',
+      },
+      required: false,
+    },
+    {
+      name: 'explanation_media',
+      type: {
+        type: 'api-type',
+        name: 'PollMedia',
+      },
+      description: {
+        markdown: 'Media added to the quiz explanation',
       },
       required: false,
     },
@@ -4805,6 +5190,17 @@ const Poll = t({
       },
       description: {
         markdown: 'Special entities like usernames, URLs, bot commands, etc. that appear in the description',
+      },
+      required: false,
+    },
+    {
+      name: 'media',
+      type: {
+        type: 'api-type',
+        name: 'PollMedia',
+      },
+      description: {
+        markdown: 'Media added to the poll description; for polls inside the [Message](https://core.telegram.org/bots/api#message) object only',
       },
       required: false,
     },
@@ -5454,7 +5850,7 @@ const ManagedBotCreated = t({
 const ManagedBotUpdated = t({
   name: 'ManagedBotUpdated',
   description: {
-    markdown: 'This object contains information about the creation or token update of a bot that is managed by the current bot.',
+    markdown: 'This object contains information about the creation, token update, or owner update of a bot that is managed by the current bot.',
   },
   fields: [
     {
@@ -7291,7 +7687,7 @@ const WebAppInfo = t({
 const ReplyKeyboardMarkup = t({
   name: 'ReplyKeyboardMarkup',
   description: {
-    markdown: 'This object represents a [custom keyboard](https://core.telegram.org/bots/features#keyboards) with reply options (see [Introduction to bots](https://core.telegram.org/bots/features#keyboards) for details and examples). Not supported in channels and for messages sent on behalf of a Telegram Business account.',
+    markdown: 'This object represents a [custom keyboard](https://core.telegram.org/bots/features#keyboards) with reply options (see [Introduction to bots](https://core.telegram.org/bots/features#keyboards) for details and examples). Not supported in channels and for messages sent on behalf of a business account.',
   },
   fields: [
     {
@@ -7771,7 +8167,7 @@ const KeyboardButtonPollType = t({
 const ReplyKeyboardRemove = t({
   name: 'ReplyKeyboardRemove',
   description: {
-    markdown: 'Upon receiving a message with this object, Telegram clients will remove the current custom keyboard and display the default letter-keyboard. By default, custom keyboards are displayed until a new keyboard is sent by a bot. An exception is made for one-time keyboards that are hidden immediately after the user presses a button (see [ReplyKeyboardMarkup](https://core.telegram.org/bots/api#replykeyboardmarkup)). Not supported in channels and for messages sent on behalf of a Telegram Business account.',
+    markdown: 'Upon receiving a message with this object, Telegram clients will remove the current custom keyboard and display the default letter-keyboard. By default, custom keyboards are displayed until a new keyboard is sent by a bot. An exception is made for one-time keyboards that are hidden immediately after the user presses a button (see [ReplyKeyboardMarkup](https://core.telegram.org/bots/api#replykeyboardmarkup)). Not supported in channels and for messages sent on behalf of a business account.',
   },
   fields: [
     {
@@ -7901,7 +8297,7 @@ const InlineKeyboardButton = t({
         name: 'WebAppInfo',
       },
       description: {
-        markdown: 'Description of the [Web App](https://core.telegram.org/bots/webapps) that will be launched when the user presses the button. The Web App will be able to send an arbitrary message on behalf of the user using the method [answerWebAppQuery](https://core.telegram.org/bots/api#answerwebappquery). Available only in private chats between a user and the bot. Not supported for messages sent on behalf of a Telegram Business account.',
+        markdown: 'Description of the [Web App](https://core.telegram.org/bots/webapps) that will be launched when the user presses the button. The Web App will be able to send an arbitrary message on behalf of the user using the method [answerWebAppQuery](https://core.telegram.org/bots/api#answerwebappquery). Available only in private chats between a user and the bot. Not supported for messages sent on behalf of a business account.',
       },
       required: false,
     },
@@ -7922,7 +8318,7 @@ const InlineKeyboardButton = t({
         type: 'str',
       },
       description: {
-        markdown: 'If set, pressing the button will prompt the user to select one of their chats, open that chat and insert the bot\'s username and the specified inline query in the input field. May be empty, in which case just the bot\'s username will be inserted. Not supported for messages sent in channel direct messages chats and on behalf of a Telegram Business account.',
+        markdown: 'If set, pressing the button will prompt the user to select one of their chats, open that chat and insert the bot\'s username and the specified inline query in the input field. May be empty, in which case just the bot\'s username will be inserted. Not supported for messages sent in channel direct messages chats and on behalf of a business account.',
       },
       required: false,
     },
@@ -7932,7 +8328,7 @@ const InlineKeyboardButton = t({
         type: 'str',
       },
       description: {
-        markdown: 'If set, pressing the button will insert the bot\'s username and the specified inline query in the current chat\'s input field. May be empty, in which case only the bot\'s username will be inserted.\n\nThis offers a quick way for the user to open your bot in inline mode in the same chat - good for selecting something from multiple options. Not supported in channels and for messages sent in channel direct messages chats and on behalf of a Telegram Business account.',
+        markdown: 'If set, pressing the button will insert the bot\'s username and the specified inline query in the current chat\'s input field. May be empty, in which case only the bot\'s username will be inserted.\n\nThis offers a quick way for the user to open your bot in inline mode in the same chat - good for selecting something from multiple options. Not supported in channels and for messages sent in channel direct messages chats and on behalf of a business account.',
       },
       required: false,
     },
@@ -7943,7 +8339,7 @@ const InlineKeyboardButton = t({
         name: 'SwitchInlineQueryChosenChat',
       },
       description: {
-        markdown: 'If set, pressing the button will prompt the user to select one of their chats of the specified type, open that chat and insert the bot\'s username and the specified inline query in the input field. Not supported for messages sent in channel direct messages chats and on behalf of a Telegram Business account.',
+        markdown: 'If set, pressing the button will prompt the user to select one of their chats of the specified type, open that chat and insert the bot\'s username and the specified inline query in the input field. Not supported for messages sent in channel direct messages chats and on behalf of a business account.',
       },
       required: false,
     },
@@ -8193,7 +8589,7 @@ const CallbackQuery = t({
 const ForceReply = t({
   name: 'ForceReply',
   description: {
-    markdown: 'Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot\'s message and tapped \'Reply\'). This can be extremely useful if you want to create user-friendly step-by-step interfaces without having to sacrifice [privacy mode](https://core.telegram.org/bots/features#privacy-mode). Not supported in channels and for messages sent on behalf of a Telegram Business account.\n\n> **Example:** A [poll bot](https://t.me/PollBot) for groups runs in privacy mode (only receives commands, replies to its messages and mentions). There could be two ways to create a new poll:\n> \n> -   Explain the user how to send a command with parameters (e.g. /newpoll question answer1 answer2). May be appealing for hardcore users but lacks modern day polish.\n> -   Guide the user through a step-by-step process. \'Please send me your question\', \'Cool, now let\'s add the first answer option\', \'Great. Keep adding answer options, then send /done when you\'re ready\'.\n> \n> The last option is definitely more attractive. And if you use [ForceReply](https://core.telegram.org/bots/api#forcereply) in your bot\'s questions, it will receive the user\'s answers even if it only receives replies, commands and mentions - without any extra work for the user.',
+    markdown: 'Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot\'s message and tapped \'Reply\'). This can be extremely useful if you want to create user-friendly step-by-step interfaces without having to sacrifice [privacy mode](https://core.telegram.org/bots/features#privacy-mode). Not supported in channels and for messages sent on behalf of a user account.\n\n> **Example:** A [poll bot](https://t.me/PollBot) for groups runs in privacy mode (only receives commands, replies to its messages and mentions). There could be two ways to create a new poll:\n> \n> -   Explain the user how to send a command with parameters (e.g. /newpoll question answer1 answer2). May be appealing for hardcore users but lacks modern day polish.\n> -   Guide the user through a step-by-step process. \'Please send me your question\', \'Cool, now let\'s add the first answer option\', \'Great. Keep adding answer options, then send /done when you\'re ready\'.\n> \n> The last option is definitely more attractive. And if you use [ForceReply](https://core.telegram.org/bots/api#forcereply) in your bot\'s questions, it will receive the user\'s answers even if it only receives replies, commands and mentions - without any extra work for the user.',
   },
   fields: [
     {
@@ -9177,6 +9573,16 @@ const ChatMemberRestricted = t({
       required: true,
     },
     {
+      name: 'can_react_to_messages',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if the user is allowed to react to messages',
+      },
+      required: true,
+    },
+    {
       name: 'can_edit_tag',
       type: {
         type: 'bool',
@@ -9490,12 +9896,22 @@ const ChatPermissions = t({
       required: false,
     },
     {
+      name: 'can_react_to_messages',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if the user is allowed to react to messages. If omitted, defaults to the value of _can\\_send\\_messages_.',
+      },
+      required: false,
+    },
+    {
       name: 'can_edit_tag',
       type: {
         type: 'bool',
       },
       description: {
-        markdown: '_True_, if the user is allowed to edit their own tag',
+        markdown: '_True_, if the user is allowed to edit their own tag. If omitted, defaults to the value of _can\\_pin\\_messages_.',
       },
       required: false,
     },
@@ -11696,6 +12112,39 @@ const OwnedGifts = t({
   ],
 })
 
+const BotAccessSettings = t({
+  name: 'BotAccessSettings',
+  description: {
+    markdown: 'This object describes the access settings of a bot.',
+  },
+  fields: [
+    {
+      name: 'is_access_restricted',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if only selected users can access the bot. The bot\'s owner can always access it.',
+      },
+      required: true,
+    },
+    {
+      name: 'added_users',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'User',
+        },
+      },
+      description: {
+        markdown: 'The list of other users who have access to the bot if the access is restricted',
+      },
+      required: false,
+    },
+  ],
+})
+
 const AcceptedGiftTypes = t({
   name: 'AcceptedGiftTypes',
   description: {
@@ -11961,7 +12410,7 @@ const BotCommandScopeChat = t({
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`). Channel direct messages chats and channel chats aren\'t supported.',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`. Channel direct messages chats and channel chats aren\'t supported.',
       },
       required: true,
     },
@@ -11999,7 +12448,7 @@ const BotCommandScopeChatAdministrators = t({
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`). Channel direct messages chats and channel chats aren\'t supported.',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`. Channel direct messages chats and channel chats aren\'t supported.',
       },
       required: true,
     },
@@ -12037,7 +12486,7 @@ const BotCommandScopeChatMember = t({
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`). Channel direct messages chats and channel chats aren\'t supported.',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`. Channel direct messages chats and channel chats aren\'t supported.',
       },
       required: true,
     },
@@ -12503,7 +12952,7 @@ const ChatOwnerLeft = t({
         name: 'User',
       },
       description: {
-        markdown: 'The user which will be the new owner of the chat if the previous owner does not return to the chat',
+        markdown: 'The user who will become the new owner of the chat if the previous owner does not return to the chat',
       },
       required: false,
     },
@@ -12849,6 +13298,25 @@ const SentWebAppMessage = t({
   ],
 })
 
+const SentGuestMessage = t({
+  name: 'SentGuestMessage',
+  description: {
+    markdown: 'Describes an inline message sent by a guest bot.',
+  },
+  fields: [
+    {
+      name: 'inline_message_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Identifier of the sent inline message',
+      },
+      required: true,
+    },
+  ],
+})
+
 const PreparedInlineMessage = t({
   name: 'PreparedInlineMessage',
   description: {
@@ -12929,7 +13397,7 @@ const ResponseParameters = t({
 const InputMedia = t({
   name: 'InputMedia',
   description: {
-    markdown: 'This object represents the content of a media message to be sent. It should be one of\n\n-   [InputMediaAnimation](https://core.telegram.org/bots/api#inputmediaanimation)\n-   [InputMediaDocument](https://core.telegram.org/bots/api#inputmediadocument)\n-   [InputMediaAudio](https://core.telegram.org/bots/api#inputmediaaudio)\n-   [InputMediaPhoto](https://core.telegram.org/bots/api#inputmediaphoto)\n-   [InputMediaVideo](https://core.telegram.org/bots/api#inputmediavideo)',
+    markdown: 'This object represents the content of a media message to be sent. It should be one of\n\n-   [InputMediaAnimation](https://core.telegram.org/bots/api#inputmediaanimation)\n-   [InputMediaAudio](https://core.telegram.org/bots/api#inputmediaaudio)\n-   [InputMediaDocument](https://core.telegram.org/bots/api#inputmediadocument)\n-   [InputMediaLivePhoto](https://core.telegram.org/bots/api#inputmedialivephoto)\n-   [InputMediaPhoto](https://core.telegram.org/bots/api#inputmediaphoto)\n-   [InputMediaVideo](https://core.telegram.org/bots/api#inputmediavideo)',
   },
   oneOf: [
     {
@@ -12938,11 +13406,15 @@ const InputMedia = t({
     },
     {
       type: 'api-type',
+      name: 'InputMediaAudio',
+    },
+    {
+      type: 'api-type',
       name: 'InputMediaDocument',
     },
     {
       type: 'api-type',
-      name: 'InputMediaAudio',
+      name: 'InputMediaLivePhoto',
     },
     {
       type: 'api-type',
@@ -12951,272 +13423,6 @@ const InputMedia = t({
     {
       type: 'api-type',
       name: 'InputMediaVideo',
-    },
-  ],
-})
-
-const InputMediaPhoto = t({
-  name: 'InputMediaPhoto',
-  description: {
-    markdown: 'Represents a photo to be sent.',
-  },
-  fields: [
-    {
-      name: 'type',
-      type: {
-        type: 'str',
-        literal: 'photo',
-      },
-      description: {
-        markdown: 'Type of the result, must be _photo_',
-      },
-      required: true,
-    },
-    {
-      name: 'media',
-      type: {
-        type: 'str',
-      },
-      description: {
-        markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
-      },
-      required: true,
-    },
-    {
-      name: 'caption',
-      type: {
-        type: 'str',
-      },
-      description: {
-        markdown: 'Caption of the photo to be sent, 0-1024 characters after entities parsing',
-      },
-      required: false,
-    },
-    {
-      name: 'parse_mode',
-      type: {
-        type: 'union',
-        types: [
-          {
-            type: 'str',
-            literal: 'HTML',
-          },
-          {
-            type: 'str',
-            literal: 'MarkdownV2',
-          },
-          {
-            type: 'str',
-            literal: 'Markdown',
-          },
-        ],
-      },
-      description: {
-        markdown: 'Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
-      },
-      required: false,
-    },
-    {
-      name: 'caption_entities',
-      type: {
-        type: 'array',
-        of: {
-          type: 'api-type',
-          name: 'MessageEntity',
-        },
-      },
-      description: {
-        markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
-      },
-      required: false,
-    },
-    {
-      name: 'show_caption_above_media',
-      type: {
-        type: 'bool',
-      },
-      description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
-      },
-      required: false,
-    },
-    {
-      name: 'has_spoiler',
-      type: {
-        type: 'bool',
-      },
-      description: {
-        markdown: 'Pass _True_ if the photo needs to be covered with a spoiler animation',
-      },
-      required: false,
-    },
-  ],
-})
-
-const InputMediaVideo = t({
-  name: 'InputMediaVideo',
-  description: {
-    markdown: 'Represents a video to be sent.',
-  },
-  fields: [
-    {
-      name: 'type',
-      type: {
-        type: 'str',
-        literal: 'video',
-      },
-      description: {
-        markdown: 'Type of the result, must be _video_',
-      },
-      required: true,
-    },
-    {
-      name: 'media',
-      type: {
-        type: 'str',
-      },
-      description: {
-        markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
-      },
-      required: true,
-    },
-    {
-      name: 'thumbnail',
-      type: {
-        type: 'str',
-      },
-      description: {
-        markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
-      },
-      required: false,
-    },
-    {
-      name: 'cover',
-      type: {
-        type: 'str',
-      },
-      description: {
-        markdown: 'Cover for the video in the message. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
-      },
-      required: false,
-    },
-    {
-      name: 'start_timestamp',
-      type: {
-        type: 'int32',
-      },
-      description: {
-        markdown: 'Start timestamp for the video in the message',
-      },
-      required: false,
-    },
-    {
-      name: 'caption',
-      type: {
-        type: 'str',
-      },
-      description: {
-        markdown: 'Caption of the video to be sent, 0-1024 characters after entities parsing',
-      },
-      required: false,
-    },
-    {
-      name: 'parse_mode',
-      type: {
-        type: 'union',
-        types: [
-          {
-            type: 'str',
-            literal: 'HTML',
-          },
-          {
-            type: 'str',
-            literal: 'MarkdownV2',
-          },
-          {
-            type: 'str',
-            literal: 'Markdown',
-          },
-        ],
-      },
-      description: {
-        markdown: 'Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
-      },
-      required: false,
-    },
-    {
-      name: 'caption_entities',
-      type: {
-        type: 'array',
-        of: {
-          type: 'api-type',
-          name: 'MessageEntity',
-        },
-      },
-      description: {
-        markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
-      },
-      required: false,
-    },
-    {
-      name: 'show_caption_above_media',
-      type: {
-        type: 'bool',
-      },
-      description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
-      },
-      required: false,
-    },
-    {
-      name: 'width',
-      type: {
-        type: 'int32',
-      },
-      description: {
-        markdown: 'Video width',
-      },
-      required: false,
-    },
-    {
-      name: 'height',
-      type: {
-        type: 'int32',
-      },
-      description: {
-        markdown: 'Video height',
-      },
-      required: false,
-    },
-    {
-      name: 'duration',
-      type: {
-        type: 'int32',
-      },
-      description: {
-        markdown: 'Video duration in seconds',
-      },
-      required: false,
-    },
-    {
-      name: 'supports_streaming',
-      type: {
-        type: 'bool',
-      },
-      description: {
-        markdown: 'Pass _True_ if the uploaded video is suitable for streaming',
-      },
-      required: false,
-    },
-    {
-      name: 'has_spoiler',
-      type: {
-        type: 'bool',
-      },
-      description: {
-        markdown: 'Pass _True_ if the video needs to be covered with a spoiler animation',
-      },
-      required: false,
     },
   ],
 })
@@ -13575,12 +13781,562 @@ const InputMediaDocument = t({
   ],
 })
 
+const InputMediaLivePhoto = t({
+  name: 'InputMediaLivePhoto',
+  description: {
+    markdown: 'Represents a live photo to be sent.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the result, must be _live\\_photo_',
+      },
+      required: true,
+    },
+    {
+      name: 'media',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Video of the live photo to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended) or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files). Sending live photos by a URL is currently unsupported.',
+      },
+      required: true,
+    },
+    {
+      name: 'photo',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The static photo to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended) or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files). Sending live photos by a URL is currently unsupported.',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Caption of the live photo to be sent, 0-1024 characters after entities parsing',
+      },
+      required: false,
+    },
+    {
+      name: 'parse_mode',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Mode for parsing entities in the live photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
+      },
+      required: false,
+    },
+    {
+      name: 'caption_entities',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'MessageEntity',
+        },
+      },
+      description: {
+        markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
+      },
+      required: false,
+    },
+    {
+      name: 'show_caption_above_media',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_, if the caption must be shown above the message media',
+      },
+      required: false,
+    },
+    {
+      name: 'has_spoiler',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the live photo needs to be covered with a spoiler animation',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputMediaLocation = t({
+  name: 'InputMediaLocation',
+  description: {
+    markdown: 'Represents a location to be sent.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the result, must be _location_',
+      },
+      required: true,
+    },
+    {
+      name: 'latitude',
+      type: {
+        type: 'float',
+      },
+      description: {
+        markdown: 'Latitude of the location',
+      },
+      required: true,
+    },
+    {
+      name: 'longitude',
+      type: {
+        type: 'float',
+      },
+      description: {
+        markdown: 'Longitude of the location',
+      },
+      required: true,
+    },
+    {
+      name: 'horizontal_accuracy',
+      type: {
+        type: 'float',
+      },
+      description: {
+        markdown: 'The radius of uncertainty for the location, measured in meters; 0-1500',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputMediaPhoto = t({
+  name: 'InputMediaPhoto',
+  description: {
+    markdown: 'Represents a photo to be sent.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'photo',
+      },
+      description: {
+        markdown: 'Type of the result, must be _photo_',
+      },
+      required: true,
+    },
+    {
+      name: 'media',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Caption of the photo to be sent, 0-1024 characters after entities parsing',
+      },
+      required: false,
+    },
+    {
+      name: 'parse_mode',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Mode for parsing entities in the photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
+      },
+      required: false,
+    },
+    {
+      name: 'caption_entities',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'MessageEntity',
+        },
+      },
+      description: {
+        markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
+      },
+      required: false,
+    },
+    {
+      name: 'show_caption_above_media',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_, if the caption must be shown above the message media',
+      },
+      required: false,
+    },
+    {
+      name: 'has_spoiler',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the photo needs to be covered with a spoiler animation',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputMediaSticker = t({
+  name: 'InputMediaSticker',
+  description: {
+    markdown: 'Represents a sticker file to be sent.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the result, must be _sticker_',
+      },
+      required: true,
+    },
+    {
+      name: 'media',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a .WEBP sticker from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new .WEBP, .TGS, or .WEBM sticker using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
+      },
+      required: true,
+    },
+    {
+      name: 'emoji',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Emoji associated with the sticker; only for just uploaded stickers',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputMediaVenue = t({
+  name: 'InputMediaVenue',
+  description: {
+    markdown: 'Represents a venue to be sent.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the result, must be _venue_',
+      },
+      required: true,
+    },
+    {
+      name: 'latitude',
+      type: {
+        type: 'float',
+      },
+      description: {
+        markdown: 'Latitude of the location',
+      },
+      required: true,
+    },
+    {
+      name: 'longitude',
+      type: {
+        type: 'float',
+      },
+      description: {
+        markdown: 'Longitude of the location',
+      },
+      required: true,
+    },
+    {
+      name: 'title',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Name of the venue',
+      },
+      required: true,
+    },
+    {
+      name: 'address',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Address of the venue',
+      },
+      required: true,
+    },
+    {
+      name: 'foursquare_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Foursquare identifier of the venue',
+      },
+      required: false,
+    },
+    {
+      name: 'foursquare_type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Foursquare type of the venue, if known. (For example, “arts\\_entertainment/default”, “arts\\_entertainment/aquarium” or “food/icecream”.)',
+      },
+      required: false,
+    },
+    {
+      name: 'google_place_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Google Places identifier of the venue',
+      },
+      required: false,
+    },
+    {
+      name: 'google_place_type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputMediaVideo = t({
+  name: 'InputMediaVideo',
+  description: {
+    markdown: 'Represents a video to be sent.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'video',
+      },
+      description: {
+        markdown: 'Type of the result, must be _video_',
+      },
+      required: true,
+    },
+    {
+      name: 'media',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
+      },
+      required: true,
+    },
+    {
+      name: 'thumbnail',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail\'s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can\'t be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
+      },
+      required: false,
+    },
+    {
+      name: 'cover',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Cover for the video in the message. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
+      },
+      required: false,
+    },
+    {
+      name: 'start_timestamp',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Start timestamp for the video in the message',
+      },
+      required: false,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Caption of the video to be sent, 0-1024 characters after entities parsing',
+      },
+      required: false,
+    },
+    {
+      name: 'parse_mode',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
+      },
+      required: false,
+    },
+    {
+      name: 'caption_entities',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'MessageEntity',
+        },
+      },
+      description: {
+        markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
+      },
+      required: false,
+    },
+    {
+      name: 'show_caption_above_media',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_, if the caption must be shown above the message media',
+      },
+      required: false,
+    },
+    {
+      name: 'width',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Video width',
+      },
+      required: false,
+    },
+    {
+      name: 'height',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Video height',
+      },
+      required: false,
+    },
+    {
+      name: 'duration',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Video duration in seconds',
+      },
+      required: false,
+    },
+    {
+      name: 'supports_streaming',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the uploaded video is suitable for streaming',
+      },
+      required: false,
+    },
+    {
+      name: 'has_spoiler',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the video needs to be covered with a spoiler animation',
+      },
+      required: false,
+    },
+  ],
+})
+
 const InputPaidMedia = t({
   name: 'InputPaidMedia',
   description: {
-    markdown: 'This object describes the paid media to be sent. Currently, it can be one of\n\n-   [InputPaidMediaPhoto](https://core.telegram.org/bots/api#inputpaidmediaphoto)\n-   [InputPaidMediaVideo](https://core.telegram.org/bots/api#inputpaidmediavideo)',
+    markdown: 'This object describes the paid media to be sent. Currently, it can be one of\n\n-   [InputPaidMediaLivePhoto](https://core.telegram.org/bots/api#inputpaidmedialivephoto)\n-   [InputPaidMediaPhoto](https://core.telegram.org/bots/api#inputpaidmediaphoto)\n-   [InputPaidMediaVideo](https://core.telegram.org/bots/api#inputpaidmediavideo)',
   },
   oneOf: [
+    {
+      type: 'api-type',
+      name: 'InputPaidMediaLivePhoto',
+    },
     {
       type: 'api-type',
       name: 'InputPaidMediaPhoto',
@@ -13588,6 +14344,45 @@ const InputPaidMedia = t({
     {
       type: 'api-type',
       name: 'InputPaidMediaVideo',
+    },
+  ],
+})
+
+const InputPaidMediaLivePhoto = t({
+  name: 'InputPaidMediaLivePhoto',
+  description: {
+    markdown: 'The paid media to send is a live photo.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the media, must be _live\\_photo_',
+      },
+      required: true,
+    },
+    {
+      name: 'media',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Video of the live photo to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended) or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files). Sending live photos by a URL is currently unsupported.',
+      },
+      required: true,
+    },
+    {
+      name: 'photo',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The static photo to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended) or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files). Sending live photos by a URL is currently unsupported.',
+      },
+      required: true,
     },
   ],
 })
@@ -20244,6 +21039,7 @@ export const types = {
   Animation,
   Audio,
   Document,
+  LivePhoto,
   Story,
   VideoQuality,
   Video,
@@ -20251,11 +21047,15 @@ export const types = {
   Voice,
   PaidMediaInfo,
   PaidMedia,
-  PaidMediaPreview,
+  PaidMediaLivePhoto,
   PaidMediaPhoto,
+  PaidMediaPreview,
   PaidMediaVideo,
   Contact,
   Dice,
+  PollMedia,
+  InputPollMedia,
+  InputPollOptionMedia,
   PollOption,
   InputPollOption,
   PollAnswer,
@@ -20386,6 +21186,7 @@ export const types = {
   OwnedGiftRegular,
   OwnedGiftUnique,
   OwnedGifts,
+  BotAccessSettings,
   AcceptedGiftTypes,
   StarAmount,
   BotCommand,
@@ -20418,16 +21219,22 @@ export const types = {
   BusinessConnection,
   BusinessMessagesDeleted,
   SentWebAppMessage,
+  SentGuestMessage,
   PreparedInlineMessage,
   PreparedKeyboardButton,
   ResponseParameters,
   InputMedia,
-  InputMediaPhoto,
-  InputMediaVideo,
   InputMediaAnimation,
   InputMediaAudio,
   InputMediaDocument,
+  InputMediaLivePhoto,
+  InputMediaLocation,
+  InputMediaPhoto,
+  InputMediaSticker,
+  InputMediaVenue,
+  InputMediaVideo,
   InputPaidMedia,
+  InputPaidMediaLivePhoto,
   InputPaidMediaPhoto,
   InputPaidMediaVideo,
   InputProfilePhoto,

@@ -252,7 +252,7 @@ const sendMessage: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -361,7 +361,7 @@ const sendMessage: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -452,7 +452,7 @@ const forwardMessage: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -490,7 +490,7 @@ const forwardMessage: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the chat where the original message was sent (or channel username in the format `@channelusername`)',
+        markdown: 'Unique identifier for the chat where the original message was sent (or username of the target bot, supergroup or channel in the format `@username`)',
       },
       required: true,
     },
@@ -582,7 +582,7 @@ const forwardMessages: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -620,7 +620,7 @@ const forwardMessages: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the chat where the original messages were sent (or channel username in the format `@channelusername`)',
+        markdown: 'Unique identifier for the chat where the original messages were sent (or username of the target bot, supergroup or channel in the format `@username`)',
       },
       required: true,
     },
@@ -687,7 +687,7 @@ const copyMessage: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -725,7 +725,7 @@ const copyMessage: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the chat where the original message was sent (or channel username in the format `@channelusername`)',
+        markdown: 'Unique identifier for the chat where the original message was sent (or username of the target bot, supergroup or channel in the format `@username`)',
       },
       required: true,
     },
@@ -833,7 +833,7 @@ const copyMessage: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -924,7 +924,7 @@ const copyMessages: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -962,7 +962,7 @@ const copyMessages: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the chat where the original messages were sent (or channel username in the format `@channelusername`)',
+        markdown: 'Unique identifier for the chat where the original messages were sent (or username of the target bot, supergroup or channel in the format `@username`)',
       },
       required: true,
     },
@@ -1049,7 +1049,7 @@ const sendPhoto: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -1185,7 +1185,7 @@ const sendPhoto: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -1256,6 +1256,247 @@ const sendPhoto: ApiMethod = {
   },
 }
 
+const sendLivePhoto: ApiMethod = {
+  name: 'sendLivePhoto',
+  description: {
+    markdown: 'Use this method to send live photos. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.',
+  },
+  parameters: [
+    {
+      name: 'business_connection_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
+      },
+      required: false,
+    },
+    {
+      name: 'chat_id',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+          },
+          {
+            type: 'str',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+      },
+      required: true,
+    },
+    {
+      name: 'message_thread_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
+      },
+      required: false,
+    },
+    {
+      name: 'direct_messages_topic_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
+      },
+      required: false,
+    },
+    {
+      name: 'live_photo',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'input-file',
+          },
+          {
+            type: 'str',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Live photo video to send. The video must be no longer than 10 seconds and must not exceed 10 MB in size. Pass a file\\_id as String to send a video that exists on the Telegram servers (recommended) or upload a new video using multipart/form-data. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files). Sending live photos by a URL is currently unsupported.',
+      },
+      required: true,
+    },
+    {
+      name: 'photo',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'input-file',
+          },
+          {
+            type: 'str',
+          },
+        ],
+      },
+      description: {
+        markdown: 'The static photo to send. Pass a file\\_id as String to send a photo that exists on the Telegram servers (recommended) or upload a new video using multipart/form-data. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files). Sending live photos by a URL is currently unsupported.',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Video caption (may also be used when resending videos by _file\\_id_), 0-1024 characters after entities parsing',
+      },
+      required: false,
+    },
+    {
+      name: 'parse_mode',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
+      },
+      required: false,
+    },
+    {
+      name: 'caption_entities',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'MessageEntity',
+        },
+      },
+      description: {
+        markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
+      },
+      required: false,
+    },
+    {
+      name: 'show_caption_above_media',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_, if the caption must be shown above the message media',
+      },
+      required: false,
+    },
+    {
+      name: 'has_spoiler',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the video needs to be covered with a spoiler animation',
+      },
+      required: false,
+    },
+    {
+      name: 'disable_notification',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
+      },
+      required: false,
+    },
+    {
+      name: 'protect_content',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Protects the contents of the sent message from forwarding and saving',
+      },
+      required: false,
+    },
+    {
+      name: 'allow_paid_broadcast',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
+      },
+      required: false,
+    },
+    {
+      name: 'message_effect_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
+      },
+      required: false,
+    },
+    {
+      name: 'suggested_post_parameters',
+      type: {
+        type: 'api-type',
+        name: 'SuggestedPostParameters',
+      },
+      description: {
+        markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
+      },
+      required: false,
+    },
+    {
+      name: 'reply_parameters',
+      type: {
+        type: 'api-type',
+        name: 'ReplyParameters',
+      },
+      description: {
+        markdown: 'Description of the message to reply to',
+      },
+      required: false,
+    },
+    {
+      name: 'reply_markup',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'api-type',
+            name: 'InlineKeyboardMarkup',
+          },
+          {
+            type: 'api-type',
+            name: 'ReplyKeyboardMarkup',
+          },
+          {
+            type: 'api-type',
+            name: 'ReplyKeyboardRemove',
+          },
+          {
+            type: 'api-type',
+            name: 'ForceReply',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
+      },
+      required: false,
+    },
+  ],
+  returnType: {
+    type: 'api-type',
+    name: 'Message',
+  },
+}
+
 const sendAudio: ApiMethod = {
   name: 'sendAudio',
   description: {
@@ -1286,7 +1527,7 @@ const sendAudio: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -1450,7 +1691,7 @@ const sendAudio: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -1551,7 +1792,7 @@ const sendDocument: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -1695,7 +1936,7 @@ const sendDocument: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -1796,7 +2037,7 @@ const sendVideo: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -2018,7 +2259,7 @@ const sendVideo: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -2119,7 +2360,7 @@ const sendAnimation: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -2303,7 +2544,7 @@ const sendAnimation: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -2404,7 +2645,7 @@ const sendVoice: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -2530,7 +2771,7 @@ const sendVoice: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -2631,7 +2872,7 @@ const sendVideoNote: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -2737,7 +2978,7 @@ const sendVideoNote: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -2838,7 +3079,7 @@ const sendPaidMedia: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`). If the chat is a channel, all Telegram Star proceeds from this media will be credited to the chat\'s balance. Otherwise, they will be credited to the bot\'s balance.',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`. If the chat is a channel, all Telegram Star proceeds from this media will be credited to the chat\'s balance. Otherwise, they will be credited to the bot\'s balance.',
       },
       required: true,
     },
@@ -2980,7 +3221,7 @@ const sendPaidMedia: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -3044,7 +3285,7 @@ const sendPaidMedia: ApiMethod = {
 const sendMediaGroup: ApiMethod = {
   name: 'sendMediaGroup',
   description: {
-    markdown: 'Use this method to send a group of photos, videos, documents or audios as an album. Documents and audio files can be only grouped in an album with messages of the same type. On success, an array of [Message](https://core.telegram.org/bots/api#message) objects that were sent is returned.',
+    markdown: 'Use this method to send a group of photos, live photos, videos, documents or audios as an album. Documents and audio files can be only grouped in an album with messages of the same type. On success, an array of [Message](https://core.telegram.org/bots/api#message) objects that were sent is returned.',
   },
   parameters: [
     {
@@ -3071,7 +3312,7 @@ const sendMediaGroup: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -3109,6 +3350,10 @@ const sendMediaGroup: ApiMethod = {
             {
               type: 'api-type',
               name: 'InputMediaDocument',
+            },
+            {
+              type: 'api-type',
+              name: 'InputMediaLivePhoto',
             },
             {
               type: 'api-type',
@@ -3152,7 +3397,7 @@ const sendMediaGroup: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -3217,7 +3462,7 @@ const sendLocation: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -3327,7 +3572,7 @@ const sendLocation: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -3428,7 +3673,7 @@ const sendVenue: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -3558,7 +3803,7 @@ const sendVenue: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -3659,7 +3904,7 @@ const sendContact: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -3749,7 +3994,7 @@ const sendContact: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -3850,7 +4095,7 @@ const sendPoll: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`). Polls can\'t be sent to channel direct messages chats.',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`. Polls can\'t be sent to channel direct messages chats.',
       },
       required: true,
     },
@@ -3922,7 +4167,7 @@ const sendPoll: ApiMethod = {
         },
       },
       description: {
-        markdown: 'An array of 2-12 answer options',
+        markdown: 'An array of 1-12 answer options',
       },
       required: true,
     },
@@ -4007,6 +4252,29 @@ const sendPoll: ApiMethod = {
       required: false,
     },
     {
+      name: 'members_only',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_, if voting is limited to users who have been members of the chat where the poll is being sent for more than 24 hours; for channel chats only',
+      },
+      required: false,
+    },
+    {
+      name: 'country_codes',
+      type: {
+        type: 'array',
+        of: {
+          type: 'str',
+        },
+      },
+      description: {
+        markdown: 'An array of 0-12 two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes indicating the countries from which users can vote in the poll; for channel chats only. If omitted or empty, then users from any country can participate in the poll.',
+      },
+      required: false,
+    },
+    {
       name: 'correct_option_ids',
       type: {
         type: 'array',
@@ -4064,6 +4332,17 @@ const sendPoll: ApiMethod = {
       },
       description: {
         markdown: 'An array of special entities that appear in the poll explanation. It can be specified instead of _explanation\\_parse\\_mode_',
+      },
+      required: false,
+    },
+    {
+      name: 'explanation_media',
+      type: {
+        type: 'api-type',
+        name: 'InputPollMedia',
+      },
+      description: {
+        markdown: 'Media added to the quiz explanation',
       },
       required: false,
     },
@@ -4132,6 +4411,17 @@ const sendPoll: ApiMethod = {
       required: false,
     },
     {
+      name: 'media',
+      type: {
+        type: 'api-type',
+        name: 'InputPollMedia',
+      },
+      description: {
+        markdown: 'Media added to the poll description',
+      },
+      required: false,
+    },
+    {
       name: 'disable_notification',
       type: {
         type: 'bool',
@@ -4157,7 +4447,7 @@ const sendPoll: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -4236,10 +4526,18 @@ const sendChecklist: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        type: 'int32',
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+          },
+          {
+            type: 'str',
+          },
+        ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat',
+        markdown: 'Unique identifier for the target chat or username of the target bot in the format `@username`',
       },
       required: true,
     },
@@ -4343,7 +4641,7 @@ const sendDice: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -4429,7 +4727,7 @@ const sendDice: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -4503,7 +4801,7 @@ const sendDice: ApiMethod = {
 const sendMessageDraft: ApiMethod = {
   name: 'sendMessageDraft',
   description: {
-    markdown: 'Use this method to stream a partial message to a user while the message is being generated. Returns _True_ on success.',
+    markdown: 'Use this method to stream a partial message to a user while the message is being generated. Note that the streamed draft is ephemeral and acts as a temporary 30-second preview - once the output is finalized, you **must** call [sendMessage](https://core.telegram.org/bots/api#sendmessage) with the complete message to persist it in the user\'s chat. Returns _True_ on success.',
   },
   parameters: [
     {
@@ -4532,7 +4830,7 @@ const sendMessageDraft: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier of the message draft; must be non-zero. Changes of drafts with the same identifier are animated',
+        markdown: 'Unique identifier of the message draft; must be non-zero. Changes of drafts with the same identifier are animated.',
       },
       required: true,
     },
@@ -4542,9 +4840,9 @@ const sendMessageDraft: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'Text of the message to be sent, 1-4096 characters after entities parsing',
+        markdown: 'Text of the message to be sent, 0-4096 characters after entities parsing. Pass an empty text to show a “Thinking…” placeholder.',
       },
-      required: true,
+      required: false,
     },
     {
       name: 'parse_mode',
@@ -4621,7 +4919,7 @@ const sendChatAction: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`). Channel chats and channel direct messages chats aren\'t supported.',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`. Channel chats and channel direct messages chats aren\'t supported.',
       },
       required: true,
     },
@@ -4718,7 +5016,7 @@ const setMessageReaction: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -4935,7 +5233,7 @@ const banChatMember: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target group or username of the target supergroup or channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target group or username of the target supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -4996,7 +5294,7 @@ const unbanChatMember: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target group or username of the target supergroup or channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target group or username of the target supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -5047,7 +5345,7 @@ const restrictChatMember: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -5119,7 +5417,7 @@ const promoteChatMember: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -5330,7 +5628,7 @@ const setChatAdministratorCustomTitle: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -5381,7 +5679,7 @@ const setChatMemberTag: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -5432,7 +5730,7 @@ const banChatSenderChat: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -5473,7 +5771,7 @@ const unbanChatSenderChat: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -5514,7 +5812,7 @@ const setChatPermissions: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -5566,7 +5864,7 @@ const exportChatInviteLink: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -5596,7 +5894,7 @@ const createChatInviteLink: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -5667,7 +5965,7 @@ const editChatInviteLink: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -5748,7 +6046,7 @@ const createChatSubscriptionInviteLink: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target channel chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target channel chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -5810,7 +6108,7 @@ const editChatSubscriptionInviteLink: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -5861,7 +6159,7 @@ const revokeChatInviteLink: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier of the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier of the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -5902,7 +6200,7 @@ const approveChatJoinRequest: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -5943,7 +6241,7 @@ const declineChatJoinRequest: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -5984,7 +6282,7 @@ const setChatPhoto: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -6025,7 +6323,7 @@ const deleteChatPhoto: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -6056,7 +6354,7 @@ const setChatTitle: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -6097,7 +6395,7 @@ const setChatDescription: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -6148,7 +6446,7 @@ const pinChatMessage: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -6209,7 +6507,7 @@ const unpinChatMessage: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -6250,7 +6548,7 @@ const unpinAllChatMessages: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -6281,7 +6579,7 @@ const leaveChat: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`). Channel direct messages chats aren\'t supported; leave the corresponding channel instead.',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup or channel in the format `@username`. Channel direct messages chats aren\'t supported; leave the corresponding channel instead.',
       },
       required: true,
     },
@@ -6312,7 +6610,7 @@ const getChat: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -6326,7 +6624,7 @@ const getChat: ApiMethod = {
 const getChatAdministrators: ApiMethod = {
   name: 'getChatAdministrators',
   description: {
-    markdown: 'Use this method to get a list of administrators in a chat, which aren\'t bots. Returns an Array of [ChatMember](https://core.telegram.org/bots/api#chatmember) objects.',
+    markdown: 'Use this method to get a list of administrators in a chat. Returns an Array of [ChatMember](https://core.telegram.org/bots/api#chatmember) objects.',
   },
   parameters: [
     {
@@ -6343,9 +6641,19 @@ const getChatAdministrators: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup or channel in the format `@username`',
       },
       required: true,
+    },
+    {
+      name: 'return_bots',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to additionally receive all bots that are administrators of the chat. By default, bots other than the current bot are omitted.',
+      },
+      required: false,
     },
   ],
   returnType: {
@@ -6377,7 +6685,7 @@ const getChatMemberCount: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -6407,7 +6715,7 @@ const getChatMember: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -6425,6 +6733,42 @@ const getChatMember: ApiMethod = {
   returnType: {
     type: 'api-type',
     name: 'ChatMember',
+  },
+}
+
+const getUserPersonalChatMessages: ApiMethod = {
+  name: 'getUserPersonalChatMessages',
+  description: {
+    markdown: 'Use this method to get the last messages from the personal chat (i.e., the chat currently added to their profile) of a given user. On success, an array of [Message](https://core.telegram.org/bots/api#message) objects is returned.',
+  },
+  parameters: [
+    {
+      name: 'user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier for the target user',
+      },
+      required: true,
+    },
+    {
+      name: 'limit',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'The maximum number of messages to return; 1-20',
+      },
+      required: true,
+    },
+  ],
+  returnType: {
+    type: 'array',
+    of: {
+      type: 'api-type',
+      name: 'Message',
+    },
   },
 }
 
@@ -6448,7 +6792,7 @@ const setChatStickerSet: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -6489,7 +6833,7 @@ const deleteChatStickerSet: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -6535,7 +6879,7 @@ const createForumTopic: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -6622,7 +6966,7 @@ const editForumTopic: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -6683,7 +7027,7 @@ const closeForumTopic: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -6724,7 +7068,7 @@ const reopenForumTopic: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -6765,7 +7109,7 @@ const deleteForumTopic: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -6806,7 +7150,7 @@ const unpinAllForumTopicMessages: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -6847,7 +7191,7 @@ const editGeneralForumTopic: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -6888,7 +7232,7 @@ const closeGeneralForumTopic: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -6919,7 +7263,7 @@ const reopenGeneralForumTopic: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -6950,7 +7294,7 @@ const hideGeneralForumTopic: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -6981,7 +7325,7 @@ const unhideGeneralForumTopic: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -7012,7 +7356,7 @@ const unpinAllGeneralForumTopicMessages: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -7086,6 +7430,40 @@ const answerCallbackQuery: ApiMethod = {
   },
 }
 
+const answerGuestQuery: ApiMethod = {
+  name: 'answerGuestQuery',
+  description: {
+    markdown: 'Use this method to reply to a received guest message. On success, a [SentGuestMessage](https://core.telegram.org/bots/api#sentguestmessage) object is returned.',
+  },
+  parameters: [
+    {
+      name: 'guest_query_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier for the query to be answered',
+      },
+      required: true,
+    },
+    {
+      name: 'result',
+      type: {
+        type: 'api-type',
+        name: 'InlineQueryResult',
+      },
+      description: {
+        markdown: 'An object describing the message to be sent',
+      },
+      required: true,
+    },
+  ],
+  returnType: {
+    type: 'api-type',
+    name: 'SentGuestMessage',
+  },
+}
+
 const getUserChatBoosts: ApiMethod = {
   name: 'getUserChatBoosts',
   description: {
@@ -7106,7 +7484,7 @@ const getUserChatBoosts: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the chat or username of the channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the chat or username of the channel in the format `@username`',
       },
       required: true,
     },
@@ -7191,6 +7569,75 @@ const replaceManagedBotToken: ApiMethod = {
   ],
   returnType: {
     type: 'str',
+  },
+}
+
+const getManagedBotAccessSettings: ApiMethod = {
+  name: 'getManagedBotAccessSettings',
+  description: {
+    markdown: 'Use this method to get the access settings of a managed bot. Returns a [BotAccessSettings](https://core.telegram.org/bots/api#botaccesssettings) object on success.',
+  },
+  parameters: [
+    {
+      name: 'user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'User identifier of the managed bot whose access settings will be returned',
+      },
+      required: true,
+    },
+  ],
+  returnType: {
+    type: 'api-type',
+    name: 'BotAccessSettings',
+  },
+}
+
+const setManagedBotAccessSettings: ApiMethod = {
+  name: 'setManagedBotAccessSettings',
+  description: {
+    markdown: 'Use this method to change the access settings of a managed bot. Returns _True_ on success.',
+  },
+  parameters: [
+    {
+      name: 'user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'User identifier of the managed bot whose access settings will be changed',
+      },
+      required: true,
+    },
+    {
+      name: 'is_access_restricted',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_, if only selected users can access the bot. The bot\'s owner can always access it.',
+      },
+      required: true,
+    },
+    {
+      name: 'added_user_ids',
+      type: {
+        type: 'array',
+        of: {
+          type: 'int32',
+        },
+      },
+      description: {
+        markdown: 'An array of up to 10 identifiers of users who will have access to the bot in addition to its owner. Ignored if _is\\_access\\_restricted_ is false.',
+      },
+      required: false,
+    },
+  ],
+  returnType: {
+    type: 'bool',
+    literal: true,
   },
 }
 
@@ -7673,7 +8120,7 @@ const sendGift: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Required if _user\\_id_ is not specified. Unique identifier for the chat or username of the channel (in the format `@channelusername`) that will receive the gift.',
+        markdown: 'Required if _user\\_id_ is not specified. Unique identifier for the chat or username of the channel (in the format `@username`) that will receive the gift.',
       },
       required: false,
     },
@@ -7924,7 +8371,7 @@ const verifyChat: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`). Channel direct messages chats can\'t be verified.',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`. Channel direct messages chats can\'t be verified.',
       },
       required: true,
     },
@@ -7988,7 +8435,7 @@ const removeChatVerification: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot or channel in the format `@username`',
       },
       required: true,
     },
@@ -8610,7 +9057,7 @@ const getChatGifts: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target channel in the format `@username`',
       },
       required: true,
     },
@@ -9406,7 +9853,7 @@ const editMessageText: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`.',
       },
       required: false,
     },
@@ -9546,7 +9993,7 @@ const editMessageCaption: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`.',
       },
       required: false,
     },
@@ -9658,7 +10105,7 @@ const editMessageCaption: ApiMethod = {
 const editMessageMedia: ApiMethod = {
   name: 'editMessageMedia',
   description: {
-    markdown: 'Use this method to edit animation, audio, document, photo, or video messages, or to add media to text messages. If a message is part of a message album, then it can be edited only to an audio for audio albums, only to a document for document albums and to a photo or a video otherwise. When an inline message is edited, a new file can\'t be uploaded; use a previously uploaded file via its file\\_id or specify a URL. On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api#message) is returned, otherwise _True_ is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within **48 hours** from the time they were sent.',
+    markdown: 'Use this method to edit animation, audio, document, live photo, photo, or video messages, or to add media to text messages. If a message is part of a message album, then it can be edited only to an audio for audio albums, only to a document for document albums and to a photo, a live photo, or a video otherwise. When an inline message is edited, a new file can\'t be uploaded; use a previously uploaded file via its file\\_id or specify a URL. On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api#message) is returned, otherwise _True_ is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within **48 hours** from the time they were sent.',
   },
   parameters: [
     {
@@ -9685,7 +10132,7 @@ const editMessageMedia: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`.',
       },
       required: false,
     },
@@ -9777,7 +10224,7 @@ const editMessageLiveLocation: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`.',
       },
       required: false,
     },
@@ -9918,7 +10365,7 @@ const stopMessageLiveLocation: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`.',
       },
       required: false,
     },
@@ -9988,10 +10435,18 @@ const editMessageChecklist: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        type: 'int32',
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+          },
+          {
+            type: 'str',
+          },
+        ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat',
+        markdown: 'Unique identifier for the target chat or username of the target bot in the format `@username`',
       },
       required: true,
     },
@@ -10064,7 +10519,7 @@ const editMessageReplyMarkup: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`.',
       },
       required: false,
     },
@@ -10145,7 +10600,7 @@ const stopPoll: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -10283,7 +10738,7 @@ const deleteMessage: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -10324,7 +10779,7 @@ const deleteMessages: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -10340,6 +10795,118 @@ const deleteMessages: ApiMethod = {
         markdown: 'An array of 1-100 identifiers of messages to delete. See [deleteMessage](https://core.telegram.org/bots/api#deletemessage) for limitations on which messages can be deleted',
       },
       required: true,
+    },
+  ],
+  returnType: {
+    type: 'bool',
+    literal: true,
+  },
+}
+
+const deleteMessageReaction: ApiMethod = {
+  name: 'deleteMessageReaction',
+  description: {
+    markdown: 'Use this method to remove a reaction from a message in a group or a supergroup chat. The bot must have the \'can\\_delete\\_messages\' administrator right in the chat. Returns _True_ on success.',
+  },
+  parameters: [
+    {
+      name: 'chat_id',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+          },
+          {
+            type: 'str',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@username`)',
+      },
+      required: true,
+    },
+    {
+      name: 'message_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the target message',
+      },
+      required: true,
+    },
+    {
+      name: 'user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the user whose reaction will be removed, if the reaction was added by a user',
+      },
+      required: false,
+    },
+    {
+      name: 'actor_chat_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the chat whose reaction will be removed, if the reaction was added by a chat',
+      },
+      required: false,
+    },
+  ],
+  returnType: {
+    type: 'bool',
+    literal: true,
+  },
+}
+
+const deleteAllMessageReactions: ApiMethod = {
+  name: 'deleteAllMessageReactions',
+  description: {
+    markdown: 'Use this method to remove up to 10000 recent reactions in a group or a supergroup chat added by a given user or chat. The bot must have the \'can\\_delete\\_messages\' administrator right in the chat. Returns _True_ on success.',
+  },
+  parameters: [
+    {
+      name: 'chat_id',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+          },
+          {
+            type: 'str',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@username`)',
+      },
+      required: true,
+    },
+    {
+      name: 'user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the user whose reactions will be removed, if the reactions were added by a user',
+      },
+      required: false,
+    },
+    {
+      name: 'actor_chat_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the chat whose reactions will be removed, if the reactions were added by a chat',
+      },
+      required: false,
     },
   ],
   returnType: {
@@ -10378,7 +10945,7 @@ const sendSticker: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -10456,7 +11023,7 @@ const sendSticker: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -11249,7 +11816,7 @@ const sendInvoice: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)',
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
       },
       required: true,
     },
@@ -11516,7 +12083,7 @@ const sendInvoice: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -12087,10 +12654,18 @@ const sendGame: ApiMethod = {
     {
       name: 'chat_id',
       type: {
-        type: 'int32',
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+          },
+          {
+            type: 'str',
+          },
+        ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat. Games can\'t be sent to channel direct messages chats and channel chats.',
+        markdown: 'Unique identifier for the target chat or username of the target bot in the format `@username`. Games can\'t be sent to channel direct messages chats and channel chats.',
       },
       required: true,
     },
@@ -12140,7 +12715,7 @@ const sendGame: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance',
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
       },
       required: false,
     },
@@ -12351,6 +12926,7 @@ export const methods = {
   copyMessage,
   copyMessages,
   sendPhoto,
+  sendLivePhoto,
   sendAudio,
   sendDocument,
   sendVideo,
@@ -12401,6 +12977,7 @@ export const methods = {
   getChatAdministrators,
   getChatMemberCount,
   getChatMember,
+  getUserPersonalChatMessages,
   setChatStickerSet,
   deleteChatStickerSet,
   getForumTopicIconStickers,
@@ -12417,10 +12994,13 @@ export const methods = {
   unhideGeneralForumTopic,
   unpinAllGeneralForumTopicMessages,
   answerCallbackQuery,
+  answerGuestQuery,
   getUserChatBoosts,
   getBusinessConnection,
   getManagedBotToken,
   replaceManagedBotToken,
+  getManagedBotAccessSettings,
+  setManagedBotAccessSettings,
   setMyCommands,
   deleteMyCommands,
   getMyCommands,
@@ -12478,6 +13058,8 @@ export const methods = {
   declineSuggestedPost,
   deleteMessage,
   deleteMessages,
+  deleteMessageReaction,
+  deleteAllMessageReactions,
   sendSticker,
   getStickerSet,
   getCustomEmojiStickers,
