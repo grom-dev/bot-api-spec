@@ -1921,6 +1921,16 @@ export const OVERRIDES: OverridesConfig = {
         },
       },
     },
+    LivePhoto: {
+      hash: 'c5e8bdcf',
+      fields: {
+        file_size: {
+          hash: '4ae400fe',
+          type: T_int53(),
+          description: { markdown: 'File size in bytes.' },
+        },
+      },
+    },
     VideoQuality: {
       hash: 'b033116e',
       fields: {
