@@ -159,7 +159,7 @@ interface MethodOverrides {
 
 interface TypeOverrides {
   hash: string
-  oneOf?: ValueTypeApiType[]
+  oneOf?: ValueType[]
   description?: { markdown: string }
   fields?: Record<string, FieldOverrides>
 }
@@ -2773,6 +2773,488 @@ export const OVERRIDES: OverridesConfig = {
         },
       },
     },
+    RichText: {
+      hash: '968841c0',
+      oneOf: [
+        T_str(),
+        T_arrayOf(T_apiType('RichText')),
+        T_apiType('RichTextBold'),
+        T_apiType('RichTextItalic'),
+        T_apiType('RichTextUnderline'),
+        T_apiType('RichTextStrikethrough'),
+        T_apiType('RichTextSpoiler'),
+        T_apiType('RichTextDateTime'),
+        T_apiType('RichTextTextMention'),
+        T_apiType('RichTextSubscript'),
+        T_apiType('RichTextSuperscript'),
+        T_apiType('RichTextMarked'),
+        T_apiType('RichTextCode'),
+        T_apiType('RichTextCustomEmoji'),
+        T_apiType('RichTextMathematicalExpression'),
+        T_apiType('RichTextUrl'),
+        T_apiType('RichTextEmailAddress'),
+        T_apiType('RichTextPhoneNumber'),
+        T_apiType('RichTextBankCardNumber'),
+        T_apiType('RichTextMention'),
+        T_apiType('RichTextHashtag'),
+        T_apiType('RichTextCashtag'),
+        T_apiType('RichTextBotCommand'),
+        T_apiType('RichTextAnchor'),
+        T_apiType('RichTextAnchorLink'),
+        T_apiType('RichTextReference'),
+        T_apiType('RichTextReferenceLink'),
+      ],
+    },
+
+    RichTextBold: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '2e43d062',
+          type: T_str('bold'),
+        },
+      },
+    },
+    RichTextItalic: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'db602c1d',
+          type: T_str('italic'),
+        },
+      },
+    },
+    RichTextUnderline: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '99083f6f',
+          type: T_str('underline'),
+        },
+      },
+    },
+    RichTextStrikethrough: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '871fd8ab',
+          type: T_str('strikethrough'),
+        },
+      },
+    },
+    RichTextSpoiler: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '157c170f',
+          type: T_str('spoiler'),
+        },
+      },
+    },
+    RichTextDateTime: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '517878a6',
+          type: T_str('date_time'),
+        },
+      },
+    },
+    RichTextTextMention: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'f1af611b',
+          type: T_str('text_mention'),
+        },
+      },
+    },
+    RichTextSubscript: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'dca57715',
+          type: T_str('subscript'),
+        },
+      },
+    },
+    RichTextSuperscript: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '5d1e1c7d',
+          type: T_str('superscript'),
+        },
+      },
+    },
+    RichTextMarked: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '600d6c79',
+          type: T_str('marked'),
+        },
+      },
+    },
+    RichTextCode: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '9f7d5b71',
+          type: T_str('code'),
+        },
+      },
+    },
+    RichTextCustomEmoji: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '637a1753',
+          type: T_str('custom_emoji'),
+        },
+      },
+    },
+    RichTextMathematicalExpression: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '32852614',
+          type: T_str('mathematical_expression'),
+        },
+      },
+    },
+    RichTextUrl: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'd152384f',
+          type: T_str('url'),
+        },
+      },
+    },
+    RichTextEmailAddress: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '1a932f64',
+          type: T_str('email_address'),
+        },
+      },
+    },
+    RichTextPhoneNumber: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'e1e2117f',
+          type: T_str('phone_number'),
+        },
+      },
+    },
+    RichTextBankCardNumber: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '152fa7ec',
+          type: T_str('bank_card_number'),
+        },
+      },
+    },
+    RichTextMention: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '9da1d61f',
+          type: T_str('mention'),
+        },
+      },
+    },
+    RichTextHashtag: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '9c8e5c14',
+          type: T_str('hashtag'),
+        },
+      },
+    },
+    RichTextCashtag: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '7e237dfd',
+          type: T_str('cashtag'),
+        },
+      },
+    },
+    RichTextBotCommand: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '76916cc6',
+          type: T_str('bot_command'),
+        },
+      },
+    },
+    RichTextAnchor: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '7afe113f',
+          type: T_str('anchor'),
+        },
+      },
+    },
+    RichTextAnchorLink: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '2965dd77',
+          type: T_str('anchor_link'),
+        },
+      },
+    },
+    RichTextReference: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '3a3cbc91',
+          type: T_str('reference'),
+        },
+      },
+    },
+    RichTextReferenceLink: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'ef1f3cf2',
+          type: T_str('reference_link'),
+        },
+      },
+    },
+    RichBlockListItem: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'b90223ce',
+          type: T_strUnion('a', 'A', 'i', 'I', '1'),
+        },
+      },
+    },
+    RichBlock: {
+      hash: '18d89d6b',
+      oneOf: [
+        T_apiType('RichBlockParagraph'),
+        T_apiType('RichBlockSectionHeading'),
+        T_apiType('RichBlockPreformatted'),
+        T_apiType('RichBlockFooter'),
+        T_apiType('RichBlockDivider'),
+        T_apiType('RichBlockMathematicalExpression'),
+        T_apiType('RichBlockAnchor'),
+        T_apiType('RichBlockList'),
+        T_apiType('RichBlockBlockQuotation'),
+        T_apiType('RichBlockPullQuotation'),
+        T_apiType('RichBlockCollage'),
+        T_apiType('RichBlockSlideshow'),
+        T_apiType('RichBlockTable'),
+        T_apiType('RichBlockDetails'),
+        T_apiType('RichBlockMap'),
+        T_apiType('RichBlockAnimation'),
+        T_apiType('RichBlockAudio'),
+        T_apiType('RichBlockPhoto'),
+        T_apiType('RichBlockVideo'),
+        T_apiType('RichBlockVoiceNote'),
+        T_apiType('RichBlockThinking'),
+      ],
+    },
+    RichBlockParagraph: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '24c2e283',
+          type: T_str('paragraph'),
+        },
+      },
+    },
+    RichBlockSectionHeading: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '2a09df64',
+          type: T_str('heading'),
+        },
+      },
+    },
+    RichBlockPreformatted: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '46753cbc',
+          type: T_str('pre'),
+        },
+      },
+    },
+    RichBlockFooter: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'c8ea86ee',
+          type: T_str('footer'),
+        },
+      },
+    },
+    RichBlockDivider: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '6d1c080a',
+          type: T_str('divider'),
+        },
+      },
+    },
+    RichBlockMathematicalExpression: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'af60c840',
+          type: T_str('mathematical_expression'),
+        },
+      },
+    },
+    RichBlockAnchor: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'f3b18f63',
+          type: T_str('anchor'),
+        },
+      },
+    },
+    RichBlockList: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'a6481717',
+          type: T_str('list'),
+        },
+      },
+    },
+    RichBlockBlockQuotation: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '6e729aa0',
+          type: T_str('blockquote'),
+        },
+      },
+    },
+    RichBlockPullQuotation: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '01d149c9',
+          type: T_str('pullquote'),
+        },
+      },
+    },
+    RichBlockCollage: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '4fc56949',
+          type: T_str('collage'),
+        },
+      },
+    },
+    RichBlockSlideshow: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '26338a8a',
+          type: T_str('slideshow'),
+        },
+      },
+    },
+    RichBlockTable: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '5641b921',
+          type: T_str('table'),
+        },
+      },
+    },
+    RichBlockDetails: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '570284b8',
+          type: T_str('details'),
+        },
+      },
+    },
+    RichBlockMap: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '0433d5bc',
+          type: T_str('map'),
+        },
+      },
+    },
+    RichBlockAnimation: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '59bf3b00',
+          type: T_str('animation'),
+        },
+      },
+    },
+    RichBlockAudio: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'c2a47437',
+          type: T_str('audio'),
+        },
+      },
+    },
+    RichBlockPhoto: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '0d5b47bc',
+          type: T_str('photo'),
+        },
+      },
+    },
+    RichBlockVideo: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '45ef13bd',
+          type: T_str('video'),
+        },
+      },
+    },
+    RichBlockVoiceNote: {
+      hash: '',
+      fields: {
+        type: {
+          hash: 'ae4cdec8',
+          type: T_str('voice_note'),
+        },
+      },
+    },
+    RichBlockThinking: {
+      hash: '',
+      fields: {
+        type: {
+          hash: '84846be5',
+          type: T_str('thinking'),
+        },
+      },
+    },
     InlineQuery: {
       hash: '',
       fields: {
@@ -3439,7 +3921,7 @@ class OverrideManager {
     return entry.description
   }
 
-  typeOneOf(type: string, original: { descriptionMd: string }): ValueTypeApiType[] | undefined {
+  typeOneOf(type: string, original: { descriptionMd: string }): ValueType[] | undefined {
     const entry = this.config.types[type]
     if (entry?.oneOf === undefined)
       return undefined

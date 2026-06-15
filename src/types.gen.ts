@@ -15367,7 +15367,118 @@ const RichText = t({
   description: {
     markdown: 'This object represents a rich formatted text. Currently, it can be either a String for plain text, an Array of [RichText](https://core.telegram.org/bots/api#richtext), or any of the following types:\n\n-   [RichTextBold](https://core.telegram.org/bots/api#richtextbold)\n-   [RichTextItalic](https://core.telegram.org/bots/api#richtextitalic)\n-   [RichTextUnderline](https://core.telegram.org/bots/api#richtextunderline)\n-   [RichTextStrikethrough](https://core.telegram.org/bots/api#richtextstrikethrough)\n-   [RichTextSpoiler](https://core.telegram.org/bots/api#richtextspoiler)\n-   [RichTextDateTime](https://core.telegram.org/bots/api#richtextdatetime)\n-   [RichTextTextMention](https://core.telegram.org/bots/api#richtexttextmention)\n-   [RichTextSubscript](https://core.telegram.org/bots/api#richtextsubscript)\n-   [RichTextSuperscript](https://core.telegram.org/bots/api#richtextsuperscript)\n-   [RichTextMarked](https://core.telegram.org/bots/api#richtextmarked)\n-   [RichTextCode](https://core.telegram.org/bots/api#richtextcode)\n-   [RichTextCustomEmoji](https://core.telegram.org/bots/api#richtextcustomemoji)\n-   [RichTextMathematicalExpression](https://core.telegram.org/bots/api#richtextmathematicalexpression)\n-   [RichTextUrl](https://core.telegram.org/bots/api#richtexturl)\n-   [RichTextEmailAddress](https://core.telegram.org/bots/api#richtextemailaddress)\n-   [RichTextPhoneNumber](https://core.telegram.org/bots/api#richtextphonenumber)\n-   [RichTextBankCardNumber](https://core.telegram.org/bots/api#richtextbankcardnumber)\n-   [RichTextMention](https://core.telegram.org/bots/api#richtextmention)\n-   [RichTextHashtag](https://core.telegram.org/bots/api#richtexthashtag)\n-   [RichTextCashtag](https://core.telegram.org/bots/api#richtextcashtag)\n-   [RichTextBotCommand](https://core.telegram.org/bots/api#richtextbotcommand)\n-   [RichTextAnchor](https://core.telegram.org/bots/api#richtextanchor)\n-   [RichTextAnchorLink](https://core.telegram.org/bots/api#richtextanchorlink)\n-   [RichTextReference](https://core.telegram.org/bots/api#richtextreference)\n-   [RichTextReferenceLink](https://core.telegram.org/bots/api#richtextreferencelink)',
   },
-  fields: [],
+  oneOf: [
+    {
+      type: 'str',
+    },
+    {
+      type: 'array',
+      of: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextBold',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextItalic',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextUnderline',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextStrikethrough',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextSpoiler',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextDateTime',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextTextMention',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextSubscript',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextSuperscript',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextMarked',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextCode',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextCustomEmoji',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextMathematicalExpression',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextUrl',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextEmailAddress',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextPhoneNumber',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextBankCardNumber',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextMention',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextHashtag',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextCashtag',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextBotCommand',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextAnchor',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextAnchorLink',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextReference',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextReferenceLink',
+    },
+  ],
 })
 
 const RichTextBold = t({
@@ -15380,6 +15491,7 @@ const RichTextBold = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'bold',
       },
       description: {
         markdown: 'Type of the rich text, always “bold”',
@@ -15410,6 +15522,7 @@ const RichTextItalic = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'italic',
       },
       description: {
         markdown: 'Type of the rich text, always “italic”',
@@ -15440,6 +15553,7 @@ const RichTextUnderline = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'underline',
       },
       description: {
         markdown: 'Type of the rich text, always “underline”',
@@ -15470,6 +15584,7 @@ const RichTextStrikethrough = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'strikethrough',
       },
       description: {
         markdown: 'Type of the rich text, always “strikethrough”',
@@ -15500,6 +15615,7 @@ const RichTextSpoiler = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'spoiler',
       },
       description: {
         markdown: 'Type of the rich text, always “spoiler”',
@@ -15530,6 +15646,7 @@ const RichTextDateTime = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'date_time',
       },
       description: {
         markdown: 'Type of the rich text, always “date\\_time”',
@@ -15580,6 +15697,7 @@ const RichTextTextMention = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'text_mention',
       },
       description: {
         markdown: 'Type of the rich text, always “text\\_mention”',
@@ -15621,6 +15739,7 @@ const RichTextSubscript = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'subscript',
       },
       description: {
         markdown: 'Type of the rich text, always “subscript”',
@@ -15651,6 +15770,7 @@ const RichTextSuperscript = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'superscript',
       },
       description: {
         markdown: 'Type of the rich text, always “superscript”',
@@ -15681,6 +15801,7 @@ const RichTextMarked = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'marked',
       },
       description: {
         markdown: 'Type of the rich text, always “marked”',
@@ -15711,6 +15832,7 @@ const RichTextCode = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'code',
       },
       description: {
         markdown: 'Type of the rich text, always “code”',
@@ -15741,6 +15863,7 @@ const RichTextCustomEmoji = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'custom_emoji',
       },
       description: {
         markdown: 'Type of the rich text, always “custom\\_emoji”',
@@ -15780,6 +15903,7 @@ const RichTextMathematicalExpression = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'mathematical_expression',
       },
       description: {
         markdown: 'Type of the rich text, always “mathematical\\_expression”',
@@ -15809,6 +15933,7 @@ const RichTextUrl = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'url',
       },
       description: {
         markdown: 'Type of the rich text, always “url”',
@@ -15849,6 +15974,7 @@ const RichTextEmailAddress = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'email_address',
       },
       description: {
         markdown: 'Type of the rich text, always “email\\_address”',
@@ -15889,6 +16015,7 @@ const RichTextPhoneNumber = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'phone_number',
       },
       description: {
         markdown: 'Type of the rich text, always “phone\\_number”',
@@ -15929,6 +16056,7 @@ const RichTextBankCardNumber = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'bank_card_number',
       },
       description: {
         markdown: 'Type of the rich text, always “bank\\_card\\_number”',
@@ -15969,6 +16097,7 @@ const RichTextMention = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'mention',
       },
       description: {
         markdown: 'Type of the rich text, always “mention”',
@@ -16009,6 +16138,7 @@ const RichTextHashtag = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'hashtag',
       },
       description: {
         markdown: 'Type of the rich text, always “hashtag”',
@@ -16049,6 +16179,7 @@ const RichTextCashtag = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'cashtag',
       },
       description: {
         markdown: 'Type of the rich text, always “cashtag”',
@@ -16089,6 +16220,7 @@ const RichTextBotCommand = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'bot_command',
       },
       description: {
         markdown: 'Type of the rich text, always “bot\\_command”',
@@ -16129,6 +16261,7 @@ const RichTextAnchor = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'anchor',
       },
       description: {
         markdown: 'Type of the rich text, always “anchor”',
@@ -16158,6 +16291,7 @@ const RichTextAnchorLink = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'anchor_link',
       },
       description: {
         markdown: 'Type of the rich text, always “anchor\\_link”',
@@ -16198,6 +16332,7 @@ const RichTextReference = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'reference',
       },
       description: {
         markdown: 'Type of the rich text, always “reference”',
@@ -16238,6 +16373,7 @@ const RichTextReferenceLink = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'reference_link',
       },
       description: {
         markdown: 'Type of the rich text, always “reference\\_link”',
@@ -16435,7 +16571,29 @@ const RichBlockListItem = t({
     {
       name: 'type',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'a',
+          },
+          {
+            type: 'str',
+            literal: 'A',
+          },
+          {
+            type: 'str',
+            literal: 'i',
+          },
+          {
+            type: 'str',
+            literal: 'I',
+          },
+          {
+            type: 'str',
+            literal: '1',
+          },
+        ],
       },
       description: {
         markdown: 'For ordered lists, the type of the item label; must be one of “a” for lowercase letters, “A” for uppercase letters, “i” for lowercase Roman numerals, “I” for uppercase Roman numerals, or “1” for decimal numbers',
@@ -16450,7 +16608,92 @@ const RichBlock = t({
   description: {
     markdown: 'This object represents a block in a rich formatted message. Currently, it can be any of the following types:\n\n-   [RichBlockParagraph](https://core.telegram.org/bots/api#richblockparagraph)\n-   [RichBlockSectionHeading](https://core.telegram.org/bots/api#richblocksectionheading)\n-   [RichBlockPreformatted](https://core.telegram.org/bots/api#richblockpreformatted)\n-   [RichBlockFooter](https://core.telegram.org/bots/api#richblockfooter)\n-   [RichBlockDivider](https://core.telegram.org/bots/api#richblockdivider)\n-   [RichBlockMathematicalExpression](https://core.telegram.org/bots/api#richblockmathematicalexpression)\n-   [RichBlockAnchor](https://core.telegram.org/bots/api#richblockanchor)\n-   [RichBlockList](https://core.telegram.org/bots/api#richblocklist)\n-   [RichBlockBlockQuotation](https://core.telegram.org/bots/api#richblockblockquotation)\n-   [RichBlockPullQuotation](https://core.telegram.org/bots/api#richblockpullquotation)\n-   [RichBlockCollage](https://core.telegram.org/bots/api#richblockcollage)\n-   [RichBlockSlideshow](https://core.telegram.org/bots/api#richblockslideshow)\n-   [RichBlockTable](https://core.telegram.org/bots/api#richblocktable)\n-   [RichBlockDetails](https://core.telegram.org/bots/api#richblockdetails)\n-   [RichBlockMap](https://core.telegram.org/bots/api#richblockmap)\n-   [RichBlockAnimation](https://core.telegram.org/bots/api#richblockanimation)\n-   [RichBlockAudio](https://core.telegram.org/bots/api#richblockaudio)\n-   [RichBlockPhoto](https://core.telegram.org/bots/api#richblockphoto)\n-   [RichBlockVideo](https://core.telegram.org/bots/api#richblockvideo)\n-   [RichBlockVoiceNote](https://core.telegram.org/bots/api#richblockvoicenote)\n-   [RichBlockThinking](https://core.telegram.org/bots/api#richblockthinking)',
   },
-  fields: [],
+  oneOf: [
+    {
+      type: 'api-type',
+      name: 'RichBlockParagraph',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockSectionHeading',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockPreformatted',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockFooter',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockDivider',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockMathematicalExpression',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockAnchor',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockList',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockBlockQuotation',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockPullQuotation',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockCollage',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockSlideshow',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockTable',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockDetails',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockMap',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockAnimation',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockAudio',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockPhoto',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockVideo',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockVoiceNote',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockThinking',
+    },
+  ],
 })
 
 const RichBlockParagraph = t({
@@ -16463,6 +16706,7 @@ const RichBlockParagraph = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'paragraph',
       },
       description: {
         markdown: 'Type of the block, always “paragraph”',
@@ -16493,6 +16737,7 @@ const RichBlockSectionHeading = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'heading',
       },
       description: {
         markdown: 'Type of the block, always “heading”',
@@ -16533,6 +16778,7 @@ const RichBlockPreformatted = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'pre',
       },
       description: {
         markdown: 'Type of the block, always “pre”',
@@ -16573,6 +16819,7 @@ const RichBlockFooter = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'footer',
       },
       description: {
         markdown: 'Type of the block, always “footer”',
@@ -16603,6 +16850,7 @@ const RichBlockDivider = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'divider',
       },
       description: {
         markdown: 'Type of the block, always “divider”',
@@ -16622,6 +16870,7 @@ const RichBlockMathematicalExpression = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'mathematical_expression',
       },
       description: {
         markdown: 'Type of the block, always “mathematical\\_expression”',
@@ -16651,6 +16900,7 @@ const RichBlockAnchor = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'anchor',
       },
       description: {
         markdown: 'Type of the block, always “anchor”',
@@ -16680,6 +16930,7 @@ const RichBlockList = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'list',
       },
       description: {
         markdown: 'Type of the block, always “list”',
@@ -16713,6 +16964,7 @@ const RichBlockBlockQuotation = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'blockquote',
       },
       description: {
         markdown: 'Type of the block, always “blockquote”',
@@ -16757,6 +17009,7 @@ const RichBlockPullQuotation = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'pullquote',
       },
       description: {
         markdown: 'Type of the block, always “pullquote”',
@@ -16798,6 +17051,7 @@ const RichBlockCollage = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'collage',
       },
       description: {
         markdown: 'Type of the block, always “collage”',
@@ -16842,6 +17096,7 @@ const RichBlockSlideshow = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'slideshow',
       },
       description: {
         markdown: 'Type of the block, always “slideshow”',
@@ -16886,6 +17141,7 @@ const RichBlockTable = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'table',
       },
       description: {
         markdown: 'Type of the block, always “table”',
@@ -16955,6 +17211,7 @@ const RichBlockDetails = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'details',
       },
       description: {
         markdown: 'Type of the block, always “details”',
@@ -17010,6 +17267,7 @@ const RichBlockMap = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'map',
       },
       description: {
         markdown: 'Type of the block, always “map”',
@@ -17081,6 +17339,7 @@ const RichBlockAnimation = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'animation',
       },
       description: {
         markdown: 'Type of the block, always “animation”',
@@ -17133,6 +17392,7 @@ const RichBlockAudio = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'audio',
       },
       description: {
         markdown: 'Type of the block, always “audio”',
@@ -17174,6 +17434,7 @@ const RichBlockPhoto = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'photo',
       },
       description: {
         markdown: 'Type of the block, always “photo”',
@@ -17229,6 +17490,7 @@ const RichBlockVideo = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'video',
       },
       description: {
         markdown: 'Type of the block, always “video”',
@@ -17281,6 +17543,7 @@ const RichBlockVoiceNote = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'voice_note',
       },
       description: {
         markdown: 'Type of the block, always “voice\\_note”',
@@ -17322,6 +17585,7 @@ const RichBlockThinking = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'thinking',
       },
       description: {
         markdown: 'Type of the block, always “thinking”',

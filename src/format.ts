@@ -54,7 +54,7 @@ export interface ApiTypeOneOf {
   /**
    * Array of possible types this type can be.
    */
-  oneOf: Array<ValueTypeApiType>
+  oneOf: Array<ValueType>
 
   fields?: never
 }
