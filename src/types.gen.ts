@@ -187,7 +187,7 @@ const Update = t({
         name: 'ShippingQuery',
       },
       description: {
-        markdown: 'New incoming shipping query. Only for invoices with flexible price',
+        markdown: 'New incoming shipping query. Only for invoices with flexible price.',
       },
       required: false,
     },
@@ -198,7 +198,7 @@ const Update = t({
         name: 'PreCheckoutQuery',
       },
       description: {
-        markdown: 'New incoming pre-checkout query. Contains full information about checkout',
+        markdown: 'New incoming pre-checkout query. Contains full information about checkout.',
       },
       required: false,
     },
@@ -220,7 +220,7 @@ const Update = t({
         name: 'Poll',
       },
       description: {
-        markdown: 'New poll state. Bots receive only updates about manually stopped polls and polls, which are sent by the bot',
+        markdown: 'New poll state. Bots receive only updates about manually stopped polls and polls, which are sent by the bot.',
       },
       required: false,
     },
@@ -399,7 +399,7 @@ const WebhookInfo = t({
         },
       },
       description: {
-        markdown: 'A list of update types the bot is subscribed to. Defaults to all update types except _chat\\_member_',
+        markdown: 'A list of update types the bot is subscribed to. Defaults to all update types except _chat\\_member_, _message\\_reaction_, and _message\\_reaction\\_count_.',
       },
       required: false,
     },
@@ -581,6 +581,16 @@ const User = t({
       },
       description: {
         markdown: '_True_, if other bots can be created to be controlled by the bot. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
+      },
+      required: false,
+    },
+    {
+      name: 'supports_join_request_queries',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if the bot supports join request queries and can be assigned to process them. Returned only in [getMe](https://core.telegram.org/bots/api#getme).',
       },
       required: false,
     },
@@ -1259,7 +1269,18 @@ const ChatFullInfo = t({
         type: 'int32',
       },
       description: {
-        markdown: 'The number of Telegram Stars a general user have to pay to send a message to the chat',
+        markdown: 'The number of Telegram Stars a general user has to pay to send a message to the chat',
+      },
+      required: false,
+    },
+    {
+      name: 'guard_bot',
+      type: {
+        type: 'api-type',
+        name: 'User',
+      },
+      description: {
+        markdown: 'The bot that processes join request queries in the chat. The field is only available to chat administrators.',
       },
       required: false,
     },
@@ -1278,7 +1299,7 @@ const Message = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Unique message identifier inside this chat. In specific instances (e.g., message containing a video sent to a big chat), the server might automatically schedule a message instead of sending it immediately. In such cases, this field will be 0 and the relevant message will be unusable until it is actually sent',
+        markdown: 'Unique message identifier inside this chat. In specific instances (e.g., message containing a video sent to a big chat), the server might automatically schedule a message instead of sending it immediately. In such cases, this field will be 0 and the relevant message will be unusable until it is actually sent.',
       },
       required: true,
     },
@@ -1310,7 +1331,7 @@ const Message = t({
         name: 'User',
       },
       description: {
-        markdown: 'Sender of the message; may be empty for messages sent to channels. For backward compatibility, if the message was sent on behalf of a chat, the field contains a fake sender user in non-channel chats',
+        markdown: 'Sender of the message; may be empty for messages sent to channels. For backward compatibility, if the message was sent on behalf of a chat, the field contains a fake sender user in non-channel chats.',
       },
       required: false,
     },
@@ -1657,13 +1678,24 @@ const Message = t({
       required: false,
     },
     {
+      name: 'rich_message',
+      type: {
+        type: 'api-type',
+        name: 'RichMessage',
+      },
+      description: {
+        markdown: 'Message is a rich formatted message',
+      },
+      required: false,
+    },
+    {
       name: 'animation',
       type: {
         type: 'api-type',
         name: 'Animation',
       },
       description: {
-        markdown: 'Message is an animation, information about the animation. For backward compatibility, when this field is set, the _document_ field will also be set',
+        markdown: 'Message is an animation, information about the animation. For backward compatibility, when this field is set, the _document_ field will also be set.',
       },
       required: false,
     },
@@ -1696,7 +1728,7 @@ const Message = t({
         name: 'LivePhoto',
       },
       description: {
-        markdown: 'Message is a live photo, information about the live photo. For backward compatibility, when this field is set, the _photo_ field will also be set',
+        markdown: 'Message is a live photo, information about the live photo. For backward compatibility, when this field is set, the _photo_ field will also be set.',
       },
       required: false,
     },
@@ -1888,7 +1920,7 @@ const Message = t({
         name: 'Venue',
       },
       description: {
-        markdown: 'Message is a venue, information about the venue. For backward compatibility, when this field is set, the _location_ field will also be set',
+        markdown: 'Message is a venue, information about the venue. For backward compatibility, when this field is set, the _location_ field will also be set.',
       },
       required: false,
     },
@@ -2536,7 +2568,7 @@ const MessageId = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Unique message identifier. In specific instances (e.g., message containing a video sent to a big chat), the server might automatically schedule a message instead of sending it immediately. In such cases, this field will be 0 and the relevant message will be unusable until it is actually sent',
+        markdown: 'Unique message identifier. In specific instances (e.g., message containing a video sent to a big chat), the server might automatically schedule a message instead of sending it immediately. In such cases, this field will be 0 and the relevant message will be unusable until it is actually sent.',
       },
       required: true,
     },
@@ -2695,7 +2727,7 @@ const MessageEntity = t({
         ],
       },
       description: {
-        markdown: 'Type of the entity. Currently, can be “mention” (`@username`), “hashtag” (`#hashtag` or `#hashtag@chatusername`), “cashtag” (`$USD` or `$USD@chatusername`), “bot\\_command” (`/start@jobs_bot`), “url” (`https://telegram.org`), “email” (`do-not-reply@telegram.org`), “phone\\_number” (`+1-212-555-0123`), “bold” (**bold text**), “italic” (_italic text_), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “blockquote” (block quotation), “expandable\\_blockquote” (collapsed-by-default block quotation), “code” (monowidth string), “pre” (monowidth block), “text\\_link” (for clickable text URLs), “text\\_mention” (for users [without usernames](https://telegram.org/blog/edit#new-mentions)), “custom\\_emoji” (for inline custom emoji stickers), or “date\\_time” (for formatted date and time)',
+        markdown: 'Type of the entity. Currently, can be “mention” (`@username`), “hashtag” (`#hashtag` or `#hashtag@chatusername`), “cashtag” (`$USD` or `$USD@chatusername`), “bot\\_command” (`/start@jobs_bot`), “url” (`https://telegram.org`), “email” (`do-not-reply@telegram.org`), “phone\\_number” (`+1-212-555-0123`), “bold” (**bold text**), “italic” (_italic text_), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “blockquote” (block quotation), “expandable\\_blockquote” (collapsed-by-default block quotation), “code” (monowidth string), “pre” (monowidth block), “text\\_link” (for clickable text URLs), “text\\_mention” (for users [without usernames](https://telegram.org/blog/edit#new-mentions)), “custom\\_emoji” (for inline custom emoji stickers), or “date\\_time” (for formatted date and time).',
       },
       required: true,
     },
@@ -2756,7 +2788,7 @@ const MessageEntity = t({
         type: 'str',
       },
       description: {
-        markdown: 'For “custom\\_emoji” only, unique identifier of the custom emoji. Use [getCustomEmojiStickers](https://core.telegram.org/bots/api#getcustomemojistickers) to get full information about the sticker',
+        markdown: 'For “custom\\_emoji” only, unique identifier of the custom emoji. Use [getCustomEmojiStickers](https://core.telegram.org/bots/api#getcustomemojistickers) to get full information about the sticker.',
       },
       required: false,
     },
@@ -4340,7 +4372,7 @@ const PaidMedia = t({
 const PaidMediaLivePhoto = t({
   name: 'PaidMediaLivePhoto',
   description: {
-    markdown: '',
+    markdown: 'The paid media is a [live photo](https://core.telegram.org/bots/api#livephoto).',
   },
   fields: [
     {
@@ -4596,6 +4628,25 @@ const Dice = t({
   ],
 })
 
+const Link = t({
+  name: 'Link',
+  description: {
+    markdown: 'Represents an HTTP link.',
+  },
+  fields: [
+    {
+      name: 'url',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'URL of the link',
+      },
+      required: true,
+    },
+  ],
+})
+
 const PollMedia = t({
   name: 'PollMedia',
   description: {
@@ -4632,6 +4683,17 @@ const PollMedia = t({
       },
       description: {
         markdown: 'Media is a general file, information about the file; currently, can\'t be received in a poll option',
+      },
+      required: false,
+    },
+    {
+      name: 'link',
+      type: {
+        type: 'api-type',
+        name: 'Link',
+      },
+      description: {
+        markdown: 'The HTTP link attached to the poll option',
       },
       required: false,
     },
@@ -4751,12 +4813,16 @@ const InputPollMedia = t({
 const InputPollOptionMedia = t({
   name: 'InputPollOptionMedia',
   description: {
-    markdown: 'This object represents the content of a poll option to be sent. It should be one of\n\n-   [InputMediaAnimation](https://core.telegram.org/bots/api#inputmediaanimation)\n-   [InputMediaLivePhoto](https://core.telegram.org/bots/api#inputmedialivephoto)\n-   [InputMediaLocation](https://core.telegram.org/bots/api#inputmedialocation)\n-   [InputMediaPhoto](https://core.telegram.org/bots/api#inputmediaphoto)\n-   [InputMediaSticker](https://core.telegram.org/bots/api#inputmediasticker)\n-   [InputMediaVenue](https://core.telegram.org/bots/api#inputmediavenue)\n-   [InputMediaVideo](https://core.telegram.org/bots/api#inputmediavideo)',
+    markdown: 'This object represents the content of a poll option to be sent. It should be one of\n\n-   [InputMediaAnimation](https://core.telegram.org/bots/api#inputmediaanimation)\n-   [InputMediaLink](https://core.telegram.org/bots/api#inputmedialink)\n-   [InputMediaLivePhoto](https://core.telegram.org/bots/api#inputmedialivephoto)\n-   [InputMediaLocation](https://core.telegram.org/bots/api#inputmedialocation)\n-   [InputMediaPhoto](https://core.telegram.org/bots/api#inputmediaphoto)\n-   [InputMediaSticker](https://core.telegram.org/bots/api#inputmediasticker)\n-   [InputMediaVenue](https://core.telegram.org/bots/api#inputmediavenue)\n-   [InputMediaVideo](https://core.telegram.org/bots/api#inputmediavideo)',
   },
   oneOf: [
     {
       type: 'api-type',
       name: 'InputMediaAnimation',
+    },
+    {
+      type: 'api-type',
+      name: 'InputMediaLink',
     },
     {
       type: 'api-type',
@@ -4917,7 +4983,7 @@ const InputPollOption = t({
         ],
       },
       description: {
-        markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Currently, only custom emoji entities are allowed',
+        markdown: 'Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Currently, only custom emoji entities are allowed.',
       },
       required: false,
     },
@@ -4931,7 +4997,7 @@ const InputPollOption = t({
         },
       },
       description: {
-        markdown: 'An array of special entities that appear in the poll option text. It can be specified instead of _text\\_parse\\_mode_',
+        markdown: 'An array of special entities that appear in the poll option text. It can be specified instead of _text\\_parse\\_mode_.',
       },
       required: false,
     },
@@ -5159,7 +5225,7 @@ const Poll = t({
         },
       },
       description: {
-        markdown: 'A list of two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes indicating the countries from which users can vote in the poll. If omitted, then users from any country can participate in the poll.',
+        markdown: 'A list of two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes indicating the countries from which users can vote in the poll. The country code “FT” is used for users with anonymous numbers. If omitted, then users from any country can participate in the poll.',
       },
       required: false,
     },
@@ -5733,7 +5799,7 @@ const Venue = t({
         name: 'Location',
       },
       description: {
-        markdown: 'Venue location. Can\'t be a live location',
+        markdown: 'Venue location. Can\'t be a live location.',
       },
       required: true,
     },
@@ -6386,7 +6452,7 @@ const BackgroundTypePattern = t({
         literal: true,
       },
       description: {
-        markdown: '_True_, if the background fill must be applied only to the pattern itself. All other pixels are black in this case. For dark themes only',
+        markdown: '_True_, if the background fill must be applied only to the pattern itself. All other pixels are black in this case. For dark themes only.',
       },
       required: false,
     },
@@ -6654,7 +6720,7 @@ const UsersShared = t({
         },
       },
       description: {
-        markdown: 'Information about users shared with the bot.',
+        markdown: 'Information about users shared with the bot',
       },
       required: true,
     },
@@ -6693,7 +6759,7 @@ const ChatShared = t({
         type: 'str',
       },
       description: {
-        markdown: 'Title of the chat, if the title was requested by the bot.',
+        markdown: 'Title of the chat, if the title was requested by the bot',
       },
       required: false,
     },
@@ -6703,7 +6769,7 @@ const ChatShared = t({
         type: 'str',
       },
       description: {
-        markdown: 'Username of the chat, if the username was requested by the bot and available.',
+        markdown: 'Username of the chat, if the username was requested by the bot and available',
       },
       required: false,
     },
@@ -7015,7 +7081,7 @@ const SuggestedPostPaid = t({
         ],
       },
       description: {
-        markdown: 'Currency in which the payment was made. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins',
+        markdown: 'Currency in which the payment was made. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins.',
       },
       required: true,
     },
@@ -7419,7 +7485,7 @@ const LinkPreviewOptions = t({
         type: 'str',
       },
       description: {
-        markdown: 'URL to use for the link preview. If empty, then the first URL found in the message text will be used',
+        markdown: 'URL to use for the link preview. If empty, then the first URL found in the message text will be used.',
       },
       required: false,
     },
@@ -7478,7 +7544,7 @@ const SuggestedPostPrice = t({
         ],
       },
       description: {
-        markdown: 'Currency in which the post will be paid. Currently, must be one of “XTR” for Telegram Stars or “TON” for toncoins',
+        markdown: 'Currency in which the post will be paid. Currently, must be one of “XTR” for Telegram Stars or “TON” for toncoins.',
       },
       required: true,
     },
@@ -7602,7 +7668,7 @@ const DirectMessagesTopic = t({
         name: 'User',
       },
       description: {
-        markdown: 'Information about the user that created the topic. Currently, it is always present',
+        markdown: 'Information about the user that created the topic. Currently, it is always present.',
       },
       required: false,
     },
@@ -7842,7 +7908,7 @@ const KeyboardButton = t({
         type: 'str',
       },
       description: {
-        markdown: 'Text of the button. If none of the fields other than _text_, _icon\\_custom\\_emoji\\_id_, and _style_ are used, it will be sent as a message when the button is pressed',
+        markdown: 'Text of the button. If none of the fields other than _text_, _icon\\_custom\\_emoji\\_id_, and _style_ are used, it will be sent as a message when the button is pressed.',
       },
       required: true,
     },
@@ -7970,7 +8036,7 @@ const KeyboardButtonRequestUsers = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Signed 32-bit identifier of the request that will be received back in the [UsersShared](https://core.telegram.org/bots/api#usersshared) object. Must be unique within the message',
+        markdown: 'Signed 32-bit identifier of the request that will be received back in the [UsersShared](https://core.telegram.org/bots/api#usersshared) object. Must be unique within the message.',
       },
       required: true,
     },
@@ -8049,7 +8115,7 @@ const KeyboardButtonRequestChat = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Signed 32-bit identifier of the request, which will be received back in the [ChatShared](https://core.telegram.org/bots/api#chatshared) object. Must be unique within the message',
+        markdown: 'Signed 32-bit identifier of the request, which will be received back in the [ChatShared](https://core.telegram.org/bots/api#chatshared) object. Must be unique within the message.',
       },
       required: true,
     },
@@ -8059,7 +8125,7 @@ const KeyboardButtonRequestChat = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to request a channel chat, pass _False_ to request a group or a supergroup chat.',
+        markdown: 'Pass _True_ to request a channel chat, pass _False_ to request a group or a supergroup chat',
       },
       required: true,
     },
@@ -8170,7 +8236,7 @@ const KeyboardButtonRequestManagedBot = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Signed 32-bit identifier of the request. Must be unique within the message',
+        markdown: 'Signed 32-bit identifier of the request. Must be unique within the message.',
       },
       required: true,
     },
@@ -8412,7 +8478,7 @@ const InlineKeyboardButton = t({
         name: 'CopyTextButton',
       },
       description: {
-        markdown: 'Description of the button that copies the specified text to the clipboard.',
+        markdown: 'Description of the button that copies the specified text to the clipboard',
       },
       required: false,
     },
@@ -8462,7 +8528,7 @@ const LoginUrl = t({
         type: 'str',
       },
       description: {
-        markdown: 'New text of the button in forwarded messages.',
+        markdown: 'New text of the button in forwarded messages',
       },
       required: false,
     },
@@ -8482,7 +8548,7 @@ const LoginUrl = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ to request the permission for your bot to send messages to the user.',
+        markdown: 'Pass _True_ to request the permission for your bot to send messages to the user',
       },
       required: false,
     },
@@ -8501,7 +8567,7 @@ const SwitchInlineQueryChosenChat = t({
         type: 'str',
       },
       description: {
-        markdown: 'The default inline query to be inserted in the input field. If left empty, only the bot\'s username will be inserted',
+        markdown: 'The default inline query to be inserted in the input field. If left empty, only the bot\'s username will be inserted.',
       },
       required: false,
     },
@@ -8611,7 +8677,7 @@ const CallbackQuery = t({
         type: 'str',
       },
       description: {
-        markdown: 'Identifier of the message sent via the bot in inline mode, that originated the query.',
+        markdown: 'Identifier of the message sent via the bot in inline mode, that originated the query',
       },
       required: false,
     },
@@ -9103,7 +9169,7 @@ const ChatMemberUpdated = t({
         name: 'ChatInviteLink',
       },
       description: {
-        markdown: 'Chat invite link, which was used by the user to join the chat; for joining by invite link events only.',
+        markdown: 'Chat invite link, which was used by the user to join the chat; for joining by invite link events only',
       },
       required: false,
     },
@@ -9540,7 +9606,7 @@ const ChatMemberRestricted = t({
         type: 'bool',
       },
       description: {
-        markdown: '_True_, if the user is allowed to send text messages, contacts, giveaways, giveaway winners, invoices, locations and venues',
+        markdown: '_True_, if the user is allowed to send text messages, rich messages, contacts, giveaways, giveaway winners, invoices, locations and venues',
       },
       required: true,
     },
@@ -9700,7 +9766,7 @@ const ChatMemberRestricted = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Date when restrictions will be lifted for this user; Unix time. If 0, then the user is restricted forever',
+        markdown: 'Date when restrictions will be lifted for this user; Unix time. If 0, then the user is restricted forever.',
       },
       required: true,
     },
@@ -9772,7 +9838,7 @@ const ChatMemberBanned = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Date when restrictions will be lifted for this user; Unix time. If 0, then the user is banned forever',
+        markdown: 'Date when restrictions will be lifted for this user; Unix time. If 0, then the user is banned forever.',
       },
       required: true,
     },
@@ -9833,7 +9899,7 @@ const ChatJoinRequest = t({
         type: 'str',
       },
       description: {
-        markdown: 'Bio of the user.',
+        markdown: 'Bio of the user',
       },
       required: false,
     },
@@ -9845,6 +9911,16 @@ const ChatJoinRequest = t({
       },
       description: {
         markdown: 'Chat invite link that was used by the user to send the join request',
+      },
+      required: false,
+    },
+    {
+      name: 'query_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Identifier of the join request query. If present, then the bot must call [sendChatJoinRequestWebApp](https://core.telegram.org/bots/api#sendchatjoinrequestwebapp) or directly call [answerChatJoinRequestQuery](https://core.telegram.org/bots/api#answerchatjoinrequestquery) within 10 seconds.',
       },
       required: false,
     },
@@ -9863,7 +9939,7 @@ const ChatPermissions = t({
         type: 'bool',
       },
       description: {
-        markdown: '_True_, if the user is allowed to send text messages, contacts, giveaways, giveaway winners, invoices, locations and venues',
+        markdown: '_True_, if the user is allowed to send text messages, rich messages, contacts, giveaways, giveaway winners, invoices, locations and venues',
       },
       required: false,
     },
@@ -9983,7 +10059,7 @@ const ChatPermissions = t({
         type: 'bool',
       },
       description: {
-        markdown: '_True_, if the user is allowed to change the chat title, photo and other settings. Ignored in public supergroups',
+        markdown: '_True_, if the user is allowed to change the chat title, photo and other settings. Ignored in public supergroups.',
       },
       required: false,
     },
@@ -10003,7 +10079,7 @@ const ChatPermissions = t({
         type: 'bool',
       },
       description: {
-        markdown: '_True_, if the user is allowed to pin messages. Ignored in public supergroups',
+        markdown: '_True_, if the user is allowed to pin messages. Ignored in public supergroups.',
       },
       required: false,
     },
@@ -10013,7 +10089,7 @@ const ChatPermissions = t({
         type: 'bool',
       },
       description: {
-        markdown: '_True_, if the user is allowed to create forum topics. If omitted defaults to the value of can\\_pin\\_messages',
+        markdown: '_True_, if the user is allowed to create forum topics. If omitted defaults to the value of can\\_pin\\_messages.',
       },
       required: false,
     },
@@ -10704,7 +10780,7 @@ const ReactionTypeEmoji = t({
         type: 'str',
       },
       description: {
-        markdown: 'Reaction emoji. Currently, it can be one of "![❤](//telegram.org/img/emoji/40/E29DA4.png)", "![👍](//telegram.org/img/emoji/40/F09F918D.png)", "![👎](//telegram.org/img/emoji/40/F09F918E.png)", "![🔥](//telegram.org/img/emoji/40/F09F94A5.png)", "![🥰](//telegram.org/img/emoji/40/F09FA5B0.png)", "![👏](//telegram.org/img/emoji/40/F09F918F.png)", "![😁](//telegram.org/img/emoji/40/F09F9881.png)", "![🤔](//telegram.org/img/emoji/40/F09FA494.png)", "![🤯](//telegram.org/img/emoji/40/F09FA4AF.png)", "![😱](//telegram.org/img/emoji/40/F09F98B1.png)", "![🤬](//telegram.org/img/emoji/40/F09FA4AC.png)", "![😢](//telegram.org/img/emoji/40/F09F98A2.png)", "![🎉](//telegram.org/img/emoji/40/F09F8E89.png)", "![🤩](//telegram.org/img/emoji/40/F09FA4A9.png)", "![🤮](//telegram.org/img/emoji/40/F09FA4AE.png)", "![💩](//telegram.org/img/emoji/40/F09F92A9.png)", "![🙏](//telegram.org/img/emoji/40/F09F998F.png)", "![👌](//telegram.org/img/emoji/40/F09F918C.png)", "![🕊](//telegram.org/img/emoji/40/F09F958A.png)", "![🤡](//telegram.org/img/emoji/40/F09FA4A1.png)", "![🥱](//telegram.org/img/emoji/40/F09FA5B1.png)", "![🥴](//telegram.org/img/emoji/40/F09FA5B4.png)", "![😍](//telegram.org/img/emoji/40/F09F988D.png)", "![🐳](//telegram.org/img/emoji/40/F09F90B3.png)", "![❤‍🔥](//telegram.org/img/emoji/40/E29DA4E2808DF09F94A5.png)", "![🌚](//telegram.org/img/emoji/40/F09F8C9A.png)", "![🌭](//telegram.org/img/emoji/40/F09F8CAD.png)", "![💯](//telegram.org/img/emoji/40/F09F92AF.png)", "![🤣](//telegram.org/img/emoji/40/F09FA4A3.png)", "![⚡](//telegram.org/img/emoji/40/E29AA1.png)", "![🍌](//telegram.org/img/emoji/40/F09F8D8C.png)", "![🏆](//telegram.org/img/emoji/40/F09F8F86.png)", "![💔](//telegram.org/img/emoji/40/F09F9294.png)", "![🤨](//telegram.org/img/emoji/40/F09FA4A8.png)", "![😐](//telegram.org/img/emoji/40/F09F9890.png)", "![🍓](//telegram.org/img/emoji/40/F09F8D93.png)", "![🍾](//telegram.org/img/emoji/40/F09F8DBE.png)", "![💋](//telegram.org/img/emoji/40/F09F928B.png)", "![🖕](//telegram.org/img/emoji/40/F09F9695.png)", "![😈](//telegram.org/img/emoji/40/F09F9888.png)", "![😴](//telegram.org/img/emoji/40/F09F98B4.png)", "![😭](//telegram.org/img/emoji/40/F09F98AD.png)", "![🤓](//telegram.org/img/emoji/40/F09FA493.png)", "![👻](//telegram.org/img/emoji/40/F09F91BB.png)", "![👨‍💻](//telegram.org/img/emoji/40/F09F91A8E2808DF09F92BB.png)", "![👀](//telegram.org/img/emoji/40/F09F9180.png)", "![🎃](//telegram.org/img/emoji/40/F09F8E83.png)", "![🙈](//telegram.org/img/emoji/40/F09F9988.png)", "![😇](//telegram.org/img/emoji/40/F09F9887.png)", "![😨](//telegram.org/img/emoji/40/F09F98A8.png)", "![🤝](//telegram.org/img/emoji/40/F09FA49D.png)", "![✍](//telegram.org/img/emoji/40/E29C8D.png)", "![🤗](//telegram.org/img/emoji/40/F09FA497.png)", "![🫡](//telegram.org/img/emoji/40/F09FABA1.png)", "![🎅](//telegram.org/img/emoji/40/F09F8E85.png)", "![🎄](//telegram.org/img/emoji/40/F09F8E84.png)", "![☃](//telegram.org/img/emoji/40/E29883.png)", "![💅](//telegram.org/img/emoji/40/F09F9285.png)", "![🤪](//telegram.org/img/emoji/40/F09FA4AA.png)", "![🗿](//telegram.org/img/emoji/40/F09F97BF.png)", "![🆒](//telegram.org/img/emoji/40/F09F8692.png)", "![💘](//telegram.org/img/emoji/40/F09F9298.png)", "![🙉](//telegram.org/img/emoji/40/F09F9989.png)", "![🦄](//telegram.org/img/emoji/40/F09FA684.png)", "![😘](//telegram.org/img/emoji/40/F09F9898.png)", "![💊](//telegram.org/img/emoji/40/F09F928A.png)", "![🙊](//telegram.org/img/emoji/40/F09F998A.png)", "![😎](//telegram.org/img/emoji/40/F09F988E.png)", "![👾](//telegram.org/img/emoji/40/F09F91BE.png)", "![🤷‍♂](//telegram.org/img/emoji/40/F09FA4B7E2808DE29982.png)", "![🤷](//telegram.org/img/emoji/40/F09FA4B7.png)", "![🤷‍♀](//telegram.org/img/emoji/40/F09FA4B7E2808DE29980.png)", "![😡](//telegram.org/img/emoji/40/F09F98A1.png)"',
+        markdown: 'Reaction emoji. Currently, it can be one of "![❤](//telegram.org/img/emoji/40/E29DA4.png)", "![👍](//telegram.org/img/emoji/40/F09F918D.png)", "![👎](//telegram.org/img/emoji/40/F09F918E.png)", "![🔥](//telegram.org/img/emoji/40/F09F94A5.png)", "![🥰](//telegram.org/img/emoji/40/F09FA5B0.png)", "![👏](//telegram.org/img/emoji/40/F09F918F.png)", "![😁](//telegram.org/img/emoji/40/F09F9881.png)", "![🤔](//telegram.org/img/emoji/40/F09FA494.png)", "![🤯](//telegram.org/img/emoji/40/F09FA4AF.png)", "![😱](//telegram.org/img/emoji/40/F09F98B1.png)", "![🤬](//telegram.org/img/emoji/40/F09FA4AC.png)", "![😢](//telegram.org/img/emoji/40/F09F98A2.png)", "![🎉](//telegram.org/img/emoji/40/F09F8E89.png)", "![🤩](//telegram.org/img/emoji/40/F09FA4A9.png)", "![🤮](//telegram.org/img/emoji/40/F09FA4AE.png)", "![💩](//telegram.org/img/emoji/40/F09F92A9.png)", "![🙏](//telegram.org/img/emoji/40/F09F998F.png)", "![👌](//telegram.org/img/emoji/40/F09F918C.png)", "![🕊](//telegram.org/img/emoji/40/F09F958A.png)", "![🤡](//telegram.org/img/emoji/40/F09FA4A1.png)", "![🥱](//telegram.org/img/emoji/40/F09FA5B1.png)", "![🥴](//telegram.org/img/emoji/40/F09FA5B4.png)", "![😍](//telegram.org/img/emoji/40/F09F988D.png)", "![🐳](//telegram.org/img/emoji/40/F09F90B3.png)", "![❤‍🔥](//telegram.org/img/emoji/40/E29DA4E2808DF09F94A5.png)", "![🌚](//telegram.org/img/emoji/40/F09F8C9A.png)", "![🌭](//telegram.org/img/emoji/40/F09F8CAD.png)", "![💯](//telegram.org/img/emoji/40/F09F92AF.png)", "![🤣](//telegram.org/img/emoji/40/F09FA4A3.png)", "![⚡](//telegram.org/img/emoji/40/E29AA1.png)", "![🍌](//telegram.org/img/emoji/40/F09F8D8C.png)", "![🏆](//telegram.org/img/emoji/40/F09F8F86.png)", "![💔](//telegram.org/img/emoji/40/F09F9294.png)", "![🤨](//telegram.org/img/emoji/40/F09FA4A8.png)", "![😐](//telegram.org/img/emoji/40/F09F9890.png)", "![🍓](//telegram.org/img/emoji/40/F09F8D93.png)", "![🍾](//telegram.org/img/emoji/40/F09F8DBE.png)", "![💋](//telegram.org/img/emoji/40/F09F928B.png)", "![🖕](//telegram.org/img/emoji/40/F09F9695.png)", "![😈](//telegram.org/img/emoji/40/F09F9888.png)", "![😴](//telegram.org/img/emoji/40/F09F98B4.png)", "![😭](//telegram.org/img/emoji/40/F09F98AD.png)", "![🤓](//telegram.org/img/emoji/40/F09FA493.png)", "![👻](//telegram.org/img/emoji/40/F09F91BB.png)", "![👨‍💻](//telegram.org/img/emoji/40/F09F91A8E2808DF09F92BB.png)", "![👀](//telegram.org/img/emoji/40/F09F9180.png)", "![🎃](//telegram.org/img/emoji/40/F09F8E83.png)", "![🙈](//telegram.org/img/emoji/40/F09F9988.png)", "![😇](//telegram.org/img/emoji/40/F09F9887.png)", "![😨](//telegram.org/img/emoji/40/F09F98A8.png)", "![🤝](//telegram.org/img/emoji/40/F09FA49D.png)", "![✍](//telegram.org/img/emoji/40/E29C8D.png)", "![🤗](//telegram.org/img/emoji/40/F09FA497.png)", "![🫡](//telegram.org/img/emoji/40/F09FABA1.png)", "![🎅](//telegram.org/img/emoji/40/F09F8E85.png)", "![🎄](//telegram.org/img/emoji/40/F09F8E84.png)", "![☃](//telegram.org/img/emoji/40/E29883.png)", "![💅](//telegram.org/img/emoji/40/F09F9285.png)", "![🤪](//telegram.org/img/emoji/40/F09FA4AA.png)", "![🗿](//telegram.org/img/emoji/40/F09F97BF.png)", "![🆒](//telegram.org/img/emoji/40/F09F8692.png)", "![💘](//telegram.org/img/emoji/40/F09F9298.png)", "![🙉](//telegram.org/img/emoji/40/F09F9989.png)", "![🦄](//telegram.org/img/emoji/40/F09FA684.png)", "![😘](//telegram.org/img/emoji/40/F09F9898.png)", "![💊](//telegram.org/img/emoji/40/F09F928A.png)", "![🙊](//telegram.org/img/emoji/40/F09F998A.png)", "![😎](//telegram.org/img/emoji/40/F09F988E.png)", "![👾](//telegram.org/img/emoji/40/F09F91BE.png)", "![🤷‍♂](//telegram.org/img/emoji/40/F09FA4B7E2808DE29982.png)", "![🤷](//telegram.org/img/emoji/40/F09FA4B7.png)", "![🤷‍♀](//telegram.org/img/emoji/40/F09FA4B7E2808DE29980.png)", "![😡](//telegram.org/img/emoji/40/F09F98A1.png)".',
       },
       required: true,
     },
@@ -11505,7 +11581,7 @@ const UniqueGift = t({
         type: 'str',
       },
       description: {
-        markdown: 'Unique name of the gift. This name can be used in `https://t.me/nft/...` links and story areas',
+        markdown: 'Unique name of the gift. This name can be used in `https://t.me/nft/...` links and story areas.',
       },
       required: true,
     },
@@ -11720,7 +11796,7 @@ const GiftInfo = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Unique number reserved for this gift when upgraded. See the _number_ field in [UniqueGift](https://core.telegram.org/bots/api#uniquegift)',
+        markdown: 'Unique number reserved for this gift when upgraded. See the _number_ field in [UniqueGift](https://core.telegram.org/bots/api#uniquegift).',
       },
       required: false,
     },
@@ -11772,7 +11848,7 @@ const UniqueGiftInfo = t({
         ],
       },
       description: {
-        markdown: 'Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, “resale” for gifts bought from other users, “gifted\\_upgrade” for upgrades purchased after the gift was sent, or “offer” for gifts bought or sold through gift purchase offers',
+        markdown: 'Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, “resale” for gifts bought from other users, “gifted\\_upgrade” for upgrades purchased after the gift was sent, or “offer” for gifts bought or sold through gift purchase offers.',
       },
       required: true,
     },
@@ -11832,7 +11908,7 @@ const UniqueGiftInfo = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now',
+        markdown: 'Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now.',
       },
       required: false,
     },
@@ -12020,7 +12096,7 @@ const OwnedGiftRegular = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Unique number reserved for this gift when upgraded. See the _number_ field in [UniqueGift](https://core.telegram.org/bots/api#uniquegift)',
+        markdown: 'Unique number reserved for this gift when upgraded. See the _number_ field in [UniqueGift](https://core.telegram.org/bots/api#uniquegift).',
       },
       required: false,
     },
@@ -12124,7 +12200,7 @@ const OwnedGiftUnique = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now',
+        markdown: 'Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now.',
       },
       required: false,
     },
@@ -12167,7 +12243,7 @@ const OwnedGifts = t({
         type: 'str',
       },
       description: {
-        markdown: 'Offset for the next request. If empty, then there are no more results',
+        markdown: 'Offset for the next request. If empty, then there are no more results.',
       },
       required: false,
     },
@@ -12317,7 +12393,7 @@ const BotCommand = t({
         type: 'str',
       },
       description: {
-        markdown: 'Description of the command; 1-256 characters.',
+        markdown: 'Description of the command; 1-256 characters',
       },
       required: true,
     },
@@ -13401,7 +13477,7 @@ const PreparedInlineMessage = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Expiration date of the prepared message, in Unix time. Expired prepared messages can no longer be used',
+        markdown: 'Expiration date of the prepared message, in Unix time. Expired prepared messages can no longer be used.',
       },
       required: true,
     },
@@ -13502,7 +13578,7 @@ const InputMediaAnimation = t({
         literal: 'animation',
       },
       description: {
-        markdown: 'Type of the result, must be _animation_',
+        markdown: 'Type of the media, must be _animation_',
       },
       required: true,
     },
@@ -13640,7 +13716,7 @@ const InputMediaAudio = t({
         literal: 'audio',
       },
       description: {
-        markdown: 'Type of the result, must be _audio_',
+        markdown: 'Type of the media, must be _audio_',
       },
       required: true,
     },
@@ -13758,7 +13834,7 @@ const InputMediaDocument = t({
         literal: 'document',
       },
       description: {
-        markdown: 'Type of the result, must be _document_',
+        markdown: 'Type of the media, must be _document_',
       },
       required: true,
     },
@@ -13843,6 +13919,35 @@ const InputMediaDocument = t({
   ],
 })
 
+const InputMediaLink = t({
+  name: 'InputMediaLink',
+  description: {
+    markdown: 'Represents an HTTP link to be sent.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the media, must be _link_',
+      },
+      required: true,
+    },
+    {
+      name: 'url',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'HTTP URL of the link',
+      },
+      required: true,
+    },
+  ],
+})
+
 const InputMediaLivePhoto = t({
   name: 'InputMediaLivePhoto',
   description: {
@@ -13855,7 +13960,7 @@ const InputMediaLivePhoto = t({
         type: 'str',
       },
       description: {
-        markdown: 'Type of the result, must be _live\\_photo_',
+        markdown: 'Type of the media, must be _live\\_photo_',
       },
       required: true,
     },
@@ -13948,7 +14053,7 @@ const InputMediaLocation = t({
         type: 'str',
       },
       description: {
-        markdown: 'Type of the result, must be _location_',
+        markdown: 'Type of the media, must be _location_',
       },
       required: true,
     },
@@ -13998,7 +14103,7 @@ const InputMediaPhoto = t({
         literal: 'photo',
       },
       description: {
-        markdown: 'Type of the result, must be _photo_',
+        markdown: 'Type of the media, must be _photo_',
       },
       required: true,
     },
@@ -14095,7 +14200,7 @@ const InputMediaSticker = t({
         type: 'str',
       },
       description: {
-        markdown: 'Type of the result, must be _sticker_',
+        markdown: 'Type of the media, must be _sticker_',
       },
       required: true,
     },
@@ -14134,7 +14239,7 @@ const InputMediaVenue = t({
         type: 'str',
       },
       description: {
-        markdown: 'Type of the result, must be _venue_',
+        markdown: 'Type of the media, must be _venue_',
       },
       required: true,
     },
@@ -14234,7 +14339,7 @@ const InputMediaVideo = t({
         literal: 'video',
       },
       description: {
-        markdown: 'Type of the result, must be _video_',
+        markdown: 'Type of the media, must be _video_',
       },
       required: true,
     },
@@ -15175,6 +15280,2068 @@ const InputSticker = t({
   ],
 })
 
+const RichMessage = t({
+  name: 'RichMessage',
+  description: {
+    markdown: 'Rich formatted message.',
+  },
+  fields: [
+    {
+      name: 'blocks',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'RichBlock',
+        },
+      },
+      description: {
+        markdown: 'Content of the message',
+      },
+      required: true,
+    },
+    {
+      name: 'is_rtl',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if the rich message must be shown right-to-left',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichMessage = t({
+  name: 'InputRichMessage',
+  description: {
+    markdown: 'Describes a rich message to be sent. Exactly **one** of the fields _html_ or _markdown_ must be used.',
+  },
+  fields: [
+    {
+      name: 'html',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Content of the rich message to send described using HTML formatting. See [rich message formatting options](https://core.telegram.org/bots/api#rich-message-formatting-options) for more details.',
+      },
+      required: false,
+    },
+    {
+      name: 'markdown',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Content of the rich message to send described using Markdown formatting. See [rich message formatting options](https://core.telegram.org/bots/api#rich-message-formatting-options) for more details.',
+      },
+      required: false,
+    },
+    {
+      name: 'is_rtl',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the rich message must be shown right-to-left',
+      },
+      required: false,
+    },
+    {
+      name: 'skip_entity_detection',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to skip automatic detection of entities (e.g., URLs, email addresses, username mentions, hashtags, cashtags, bot commands, or phone numbers) in the text',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichText = t({
+  name: 'RichText',
+  description: {
+    markdown: 'This object represents a rich formatted text. Currently, it can be either a String for plain text, an Array of [RichText](https://core.telegram.org/bots/api#richtext), or any of the following types:\n\n-   [RichTextBold](https://core.telegram.org/bots/api#richtextbold)\n-   [RichTextItalic](https://core.telegram.org/bots/api#richtextitalic)\n-   [RichTextUnderline](https://core.telegram.org/bots/api#richtextunderline)\n-   [RichTextStrikethrough](https://core.telegram.org/bots/api#richtextstrikethrough)\n-   [RichTextSpoiler](https://core.telegram.org/bots/api#richtextspoiler)\n-   [RichTextDateTime](https://core.telegram.org/bots/api#richtextdatetime)\n-   [RichTextTextMention](https://core.telegram.org/bots/api#richtexttextmention)\n-   [RichTextSubscript](https://core.telegram.org/bots/api#richtextsubscript)\n-   [RichTextSuperscript](https://core.telegram.org/bots/api#richtextsuperscript)\n-   [RichTextMarked](https://core.telegram.org/bots/api#richtextmarked)\n-   [RichTextCode](https://core.telegram.org/bots/api#richtextcode)\n-   [RichTextCustomEmoji](https://core.telegram.org/bots/api#richtextcustomemoji)\n-   [RichTextMathematicalExpression](https://core.telegram.org/bots/api#richtextmathematicalexpression)\n-   [RichTextUrl](https://core.telegram.org/bots/api#richtexturl)\n-   [RichTextEmailAddress](https://core.telegram.org/bots/api#richtextemailaddress)\n-   [RichTextPhoneNumber](https://core.telegram.org/bots/api#richtextphonenumber)\n-   [RichTextBankCardNumber](https://core.telegram.org/bots/api#richtextbankcardnumber)\n-   [RichTextMention](https://core.telegram.org/bots/api#richtextmention)\n-   [RichTextHashtag](https://core.telegram.org/bots/api#richtexthashtag)\n-   [RichTextCashtag](https://core.telegram.org/bots/api#richtextcashtag)\n-   [RichTextBotCommand](https://core.telegram.org/bots/api#richtextbotcommand)\n-   [RichTextAnchor](https://core.telegram.org/bots/api#richtextanchor)\n-   [RichTextAnchorLink](https://core.telegram.org/bots/api#richtextanchorlink)\n-   [RichTextReference](https://core.telegram.org/bots/api#richtextreference)\n-   [RichTextReferenceLink](https://core.telegram.org/bots/api#richtextreferencelink)',
+  },
+  fields: [],
+})
+
+const RichTextBold = t({
+  name: 'RichTextBold',
+  description: {
+    markdown: 'A bold text.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “bold”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextItalic = t({
+  name: 'RichTextItalic',
+  description: {
+    markdown: 'An italicized text.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “italic”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextUnderline = t({
+  name: 'RichTextUnderline',
+  description: {
+    markdown: 'An underlined text.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “underline”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextStrikethrough = t({
+  name: 'RichTextStrikethrough',
+  description: {
+    markdown: 'A strikethrough text.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “strikethrough”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextSpoiler = t({
+  name: 'RichTextSpoiler',
+  description: {
+    markdown: 'A text covered by a spoiler.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “spoiler”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextDateTime = t({
+  name: 'RichTextDateTime',
+  description: {
+    markdown: 'Formatted date and time.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “date\\_time”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+    {
+      name: 'unix_time',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'The Unix time associated with the entity',
+      },
+      required: true,
+    },
+    {
+      name: 'date_time_format',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The string that defines the formatting of the date and time. See [date-time entity formatting](https://core.telegram.org/bots/api#date-time-entity-formatting) for more details.',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextTextMention = t({
+  name: 'RichTextTextMention',
+  description: {
+    markdown: 'A mention of a Telegram user by their identifier.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “text\\_mention”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+    {
+      name: 'user',
+      type: {
+        type: 'api-type',
+        name: 'User',
+      },
+      description: {
+        markdown: 'The mentioned user',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextSubscript = t({
+  name: 'RichTextSubscript',
+  description: {
+    markdown: 'A subscript text.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “subscript”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextSuperscript = t({
+  name: 'RichTextSuperscript',
+  description: {
+    markdown: 'A superscript text.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “superscript”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextMarked = t({
+  name: 'RichTextMarked',
+  description: {
+    markdown: 'A marked text.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “marked”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextCode = t({
+  name: 'RichTextCode',
+  description: {
+    markdown: 'A monowidth text.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “code”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextCustomEmoji = t({
+  name: 'RichTextCustomEmoji',
+  description: {
+    markdown: 'A custom emoji.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “custom\\_emoji”',
+      },
+      required: true,
+    },
+    {
+      name: 'custom_emoji_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the custom emoji. Use [getCustomEmojiStickers](https://core.telegram.org/bots/api#getcustomemojistickers) to get full information about the sticker.',
+      },
+      required: true,
+    },
+    {
+      name: 'alternative_text',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Alternative emoji for the custom emoji',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextMathematicalExpression = t({
+  name: 'RichTextMathematicalExpression',
+  description: {
+    markdown: 'A mathematical expression.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “mathematical\\_expression”',
+      },
+      required: true,
+    },
+    {
+      name: 'expression',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The expression in LaTeX format',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextUrl = t({
+  name: 'RichTextUrl',
+  description: {
+    markdown: 'A text with a link.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “url”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+    {
+      name: 'url',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'URL of the link',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextEmailAddress = t({
+  name: 'RichTextEmailAddress',
+  description: {
+    markdown: 'A text with an email address.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “email\\_address”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+    {
+      name: 'email_address',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The email address',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextPhoneNumber = t({
+  name: 'RichTextPhoneNumber',
+  description: {
+    markdown: 'A text with a phone number.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “phone\\_number”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+    {
+      name: 'phone_number',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The phone number',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextBankCardNumber = t({
+  name: 'RichTextBankCardNumber',
+  description: {
+    markdown: 'A text with a bank card number.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “bank\\_card\\_number”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+    {
+      name: 'bank_card_number',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The bank card number',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextMention = t({
+  name: 'RichTextMention',
+  description: {
+    markdown: 'A mention by a username.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “mention”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+    {
+      name: 'username',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The username',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextHashtag = t({
+  name: 'RichTextHashtag',
+  description: {
+    markdown: 'A hashtag.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “hashtag”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+    {
+      name: 'hashtag',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The hashtag',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextCashtag = t({
+  name: 'RichTextCashtag',
+  description: {
+    markdown: 'A cashtag.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “cashtag”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+    {
+      name: 'cashtag',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The cashtag',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextBotCommand = t({
+  name: 'RichTextBotCommand',
+  description: {
+    markdown: 'A bot command.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “bot\\_command”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The text',
+      },
+      required: true,
+    },
+    {
+      name: 'bot_command',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The bot command',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextAnchor = t({
+  name: 'RichTextAnchor',
+  description: {
+    markdown: 'An anchor.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “anchor”',
+      },
+      required: true,
+    },
+    {
+      name: 'name',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The name of the anchor',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextAnchorLink = t({
+  name: 'RichTextAnchorLink',
+  description: {
+    markdown: 'A link to an anchor.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “anchor\\_link”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The link text',
+      },
+      required: true,
+    },
+    {
+      name: 'anchor_name',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The name of the anchor. If the name is empty, then the link brings back to the top of the message.',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextReference = t({
+  name: 'RichTextReference',
+  description: {
+    markdown: 'A reference.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “reference”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Text of the reference',
+      },
+      required: true,
+    },
+    {
+      name: 'name',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The name of the reference',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichTextReferenceLink = t({
+  name: 'RichTextReferenceLink',
+  description: {
+    markdown: 'A link to a reference.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “reference\\_link”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'The link text',
+      },
+      required: true,
+    },
+    {
+      name: 'reference_name',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The name of the reference',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichBlockCaption = t({
+  name: 'RichBlockCaption',
+  description: {
+    markdown: 'Caption of a rich formatted block.',
+  },
+  fields: [
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Block caption',
+      },
+      required: true,
+    },
+    {
+      name: 'credit',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Block credit which corresponds to the HTML tag <cite>',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichBlockTableCell = t({
+  name: 'RichBlockTableCell',
+  description: {
+    markdown: 'Cell in a table.',
+  },
+  fields: [
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Text in the cell. If omitted, then the cell is invisible.',
+      },
+      required: false,
+    },
+    {
+      name: 'is_header',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the cell is a header cell',
+      },
+      required: false,
+    },
+    {
+      name: 'colspan',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'The number of columns the cell spans if it is bigger than 1',
+      },
+      required: false,
+    },
+    {
+      name: 'rowspan',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'The number of rows the cell spans if it is bigger than 1',
+      },
+      required: false,
+    },
+    {
+      name: 'align',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Horizontal cell content alignment. Currently, must be one of “left”, “center”, or “right”.',
+      },
+      required: true,
+    },
+    {
+      name: 'valign',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Vertical cell content alignment. Currently, must be one of “top”, “middle”, or “bottom”.',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichBlockListItem = t({
+  name: 'RichBlockListItem',
+  description: {
+    markdown: 'An item of a list.',
+  },
+  fields: [
+    {
+      name: 'label',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Label of the item',
+      },
+      required: true,
+    },
+    {
+      name: 'blocks',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'RichBlock',
+        },
+      },
+      description: {
+        markdown: 'The content of the item',
+      },
+      required: true,
+    },
+    {
+      name: 'has_checkbox',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the item has a checkbox',
+      },
+      required: false,
+    },
+    {
+      name: 'is_checked',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the item has a checked checkbox',
+      },
+      required: false,
+    },
+    {
+      name: 'value',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'For ordered lists, the numeric value of the item label',
+      },
+      required: false,
+    },
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'For ordered lists, the type of the item label; must be one of “a” for lowercase letters, “A” for uppercase letters, “i” for lowercase Roman numerals, “I” for uppercase Roman numerals, or “1” for decimal numbers',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichBlock = t({
+  name: 'RichBlock',
+  description: {
+    markdown: 'This object represents a block in a rich formatted message. Currently, it can be any of the following types:\n\n-   [RichBlockParagraph](https://core.telegram.org/bots/api#richblockparagraph)\n-   [RichBlockSectionHeading](https://core.telegram.org/bots/api#richblocksectionheading)\n-   [RichBlockPreformatted](https://core.telegram.org/bots/api#richblockpreformatted)\n-   [RichBlockFooter](https://core.telegram.org/bots/api#richblockfooter)\n-   [RichBlockDivider](https://core.telegram.org/bots/api#richblockdivider)\n-   [RichBlockMathematicalExpression](https://core.telegram.org/bots/api#richblockmathematicalexpression)\n-   [RichBlockAnchor](https://core.telegram.org/bots/api#richblockanchor)\n-   [RichBlockList](https://core.telegram.org/bots/api#richblocklist)\n-   [RichBlockBlockQuotation](https://core.telegram.org/bots/api#richblockblockquotation)\n-   [RichBlockPullQuotation](https://core.telegram.org/bots/api#richblockpullquotation)\n-   [RichBlockCollage](https://core.telegram.org/bots/api#richblockcollage)\n-   [RichBlockSlideshow](https://core.telegram.org/bots/api#richblockslideshow)\n-   [RichBlockTable](https://core.telegram.org/bots/api#richblocktable)\n-   [RichBlockDetails](https://core.telegram.org/bots/api#richblockdetails)\n-   [RichBlockMap](https://core.telegram.org/bots/api#richblockmap)\n-   [RichBlockAnimation](https://core.telegram.org/bots/api#richblockanimation)\n-   [RichBlockAudio](https://core.telegram.org/bots/api#richblockaudio)\n-   [RichBlockPhoto](https://core.telegram.org/bots/api#richblockphoto)\n-   [RichBlockVideo](https://core.telegram.org/bots/api#richblockvideo)\n-   [RichBlockVoiceNote](https://core.telegram.org/bots/api#richblockvoicenote)\n-   [RichBlockThinking](https://core.telegram.org/bots/api#richblockthinking)',
+  },
+  fields: [],
+})
+
+const RichBlockParagraph = t({
+  name: 'RichBlockParagraph',
+  description: {
+    markdown: 'A text paragraph, corresponding to the HTML tag `<p>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “paragraph”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Text of the block',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichBlockSectionHeading = t({
+  name: 'RichBlockSectionHeading',
+  description: {
+    markdown: 'A section heading, corresponding to the HTML tags `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, or `<h6>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “heading”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Text of the block',
+      },
+      required: true,
+    },
+    {
+      name: 'size',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Relative size of the text font; 1-6, 1 is the largest, 6 is the smallest',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichBlockPreformatted = t({
+  name: 'RichBlockPreformatted',
+  description: {
+    markdown: 'A preformatted text block, corresponding to the nested HTML tags `<pre>` and `<code>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “pre”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Text of the block',
+      },
+      required: true,
+    },
+    {
+      name: 'language',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The programming language of the text',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichBlockFooter = t({
+  name: 'RichBlockFooter',
+  description: {
+    markdown: 'A footer, corresponding to the HTML tag `<footer>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “footer”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Text of the block',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichBlockDivider = t({
+  name: 'RichBlockDivider',
+  description: {
+    markdown: 'A divider, corresponding to the HTML tag `<hr/>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “divider”',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichBlockMathematicalExpression = t({
+  name: 'RichBlockMathematicalExpression',
+  description: {
+    markdown: 'A block with a mathematical expression in LaTeX format, corresponding to the custom HTML tag `<tg-math-block>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “mathematical\\_expression”',
+      },
+      required: true,
+    },
+    {
+      name: 'expression',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The mathematical expression in LaTeX format',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichBlockAnchor = t({
+  name: 'RichBlockAnchor',
+  description: {
+    markdown: 'A block with an anchor, corresponding to the HTML tag `<a>` with the attribute `name`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “anchor”',
+      },
+      required: true,
+    },
+    {
+      name: 'name',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The name of the anchor',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichBlockList = t({
+  name: 'RichBlockList',
+  description: {
+    markdown: 'A list of blocks, corresponding to the HTML tag `<ul>` or `<ol>` with multiple nested tags `<li>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “list”',
+      },
+      required: true,
+    },
+    {
+      name: 'items',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'RichBlockListItem',
+        },
+      },
+      description: {
+        markdown: 'Items of the list',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichBlockBlockQuotation = t({
+  name: 'RichBlockBlockQuotation',
+  description: {
+    markdown: 'A block quotation, corresponding to the HTML tag `<blockquote>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “blockquote”',
+      },
+      required: true,
+    },
+    {
+      name: 'blocks',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'RichBlock',
+        },
+      },
+      description: {
+        markdown: 'Content of the block',
+      },
+      required: true,
+    },
+    {
+      name: 'credit',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Credit of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichBlockPullQuotation = t({
+  name: 'RichBlockPullQuotation',
+  description: {
+    markdown: 'A quotation with centered text, loosely corresponding to the HTML tag `<aside>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “pullquote”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Text of the block',
+      },
+      required: true,
+    },
+    {
+      name: 'credit',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Credit of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichBlockCollage = t({
+  name: 'RichBlockCollage',
+  description: {
+    markdown: 'A collage, corresponding to the custom HTML tag `<tg-collage>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “collage”',
+      },
+      required: true,
+    },
+    {
+      name: 'blocks',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'RichBlock',
+        },
+      },
+      description: {
+        markdown: 'Elements of the collage',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichBlockSlideshow = t({
+  name: 'RichBlockSlideshow',
+  description: {
+    markdown: 'A slideshow, corresponding to the custom HTML tag `<tg-slideshow>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “slideshow”',
+      },
+      required: true,
+    },
+    {
+      name: 'blocks',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'RichBlock',
+        },
+      },
+      description: {
+        markdown: 'Elements of the slideshow',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichBlockTable = t({
+  name: 'RichBlockTable',
+  description: {
+    markdown: 'A table, corresponding to the HTML tag `<table>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “table”',
+      },
+      required: true,
+    },
+    {
+      name: 'cells',
+      type: {
+        type: 'array',
+        of: {
+          type: 'array',
+          of: {
+            type: 'api-type',
+            name: 'RichBlockTableCell',
+          },
+        },
+      },
+      description: {
+        markdown: 'Cells of the table',
+      },
+      required: true,
+    },
+    {
+      name: 'is_bordered',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the table has borders',
+      },
+      required: false,
+    },
+    {
+      name: 'is_striped',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the table is striped',
+      },
+      required: false,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Caption of the table',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichBlockDetails = t({
+  name: 'RichBlockDetails',
+  description: {
+    markdown: 'An expandable block for details disclosure, corresponding to the HTML tag `<details>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “details”',
+      },
+      required: true,
+    },
+    {
+      name: 'summary',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Always shown summary of the block',
+      },
+      required: true,
+    },
+    {
+      name: 'blocks',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'RichBlock',
+        },
+      },
+      description: {
+        markdown: 'Content of the block',
+      },
+      required: true,
+    },
+    {
+      name: 'is_open',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the content of the block is visible by default',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichBlockMap = t({
+  name: 'RichBlockMap',
+  description: {
+    markdown: 'A block with a map, corresponding to the custom HTML tag `<tg-map>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “map”',
+      },
+      required: true,
+    },
+    {
+      name: 'location',
+      type: {
+        type: 'api-type',
+        name: 'Location',
+      },
+      description: {
+        markdown: 'Location of the center of the map',
+      },
+      required: true,
+    },
+    {
+      name: 'zoom',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Map zoom level; 13-20',
+      },
+      required: true,
+    },
+    {
+      name: 'width',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Expected width of the map',
+      },
+      required: true,
+    },
+    {
+      name: 'height',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Expected height of the map',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichBlockAnimation = t({
+  name: 'RichBlockAnimation',
+  description: {
+    markdown: 'A block with an animation, corresponding to the HTML tag `<video>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “animation”',
+      },
+      required: true,
+    },
+    {
+      name: 'animation',
+      type: {
+        type: 'api-type',
+        name: 'Animation',
+      },
+      description: {
+        markdown: 'The animation',
+      },
+      required: true,
+    },
+    {
+      name: 'has_spoiler',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the media preview is covered by a spoiler animation',
+      },
+      required: false,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichBlockAudio = t({
+  name: 'RichBlockAudio',
+  description: {
+    markdown: 'A block with a music file, corresponding to the HTML tag `<audio>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “audio”',
+      },
+      required: true,
+    },
+    {
+      name: 'audio',
+      type: {
+        type: 'api-type',
+        name: 'Audio',
+      },
+      description: {
+        markdown: 'The audio',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichBlockPhoto = t({
+  name: 'RichBlockPhoto',
+  description: {
+    markdown: 'A block with a photo, corresponding to the HTML tag `<photo>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “photo”',
+      },
+      required: true,
+    },
+    {
+      name: 'photo',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'PhotoSize',
+        },
+      },
+      description: {
+        markdown: 'Available sizes of the photo',
+      },
+      required: true,
+    },
+    {
+      name: 'has_spoiler',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the media preview is covered by a spoiler animation',
+      },
+      required: false,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichBlockVideo = t({
+  name: 'RichBlockVideo',
+  description: {
+    markdown: 'A block with a video, corresponding to the HTML tag `<video>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “video”',
+      },
+      required: true,
+    },
+    {
+      name: 'video',
+      type: {
+        type: 'api-type',
+        name: 'Video',
+      },
+      description: {
+        markdown: 'The video',
+      },
+      required: true,
+    },
+    {
+      name: 'has_spoiler',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the media preview is covered by a spoiler animation',
+      },
+      required: false,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichBlockVoiceNote = t({
+  name: 'RichBlockVoiceNote',
+  description: {
+    markdown: 'A block with a voice note, corresponding to the HTML tag `<audio>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “voice\\_note”',
+      },
+      required: true,
+    },
+    {
+      name: 'voice_note',
+      type: {
+        type: 'api-type',
+        name: 'Voice',
+      },
+      description: {
+        markdown: 'The voice note',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichBlockThinking = t({
+  name: 'RichBlockThinking',
+  description: {
+    markdown: 'A block with a “Thinking…” placeholder, corresponding to the custom HTML tag `<tg-thinking>`. The block may be used only in [sendRichMessageDraft](https://core.telegram.org/bots/api#sendrichmessagedraft), therefore it can\'t be received in messages. See [](https://t.me/addemoji/AIActions)[https://t.me/addemoji/AIActions](https://t.me/addemoji/AIActions) for examples of custom emoji, which are recommended for usage in the block.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the block, always “thinking”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Text of the block. See [](https://t.me/addemoji/AIActions)[https://t.me/addemoji/AIActions](https://t.me/addemoji/AIActions) for examples of custom emoji, which are recommended for usage in the block.',
+      },
+      required: true,
+    },
+  ],
+})
+
 const InlineQuery = t({
   name: 'InlineQuery',
   description: {
@@ -15250,7 +17417,7 @@ const InlineQuery = t({
         ],
       },
       description: {
-        markdown: 'Type of the chat from which the inline query was sent. Can be either “sender” for a private chat with the inline query sender, “private”, “group”, “supergroup”, or “channel”. The chat type should be always known for requests sent from official clients and most third-party clients, unless the request was sent from a secret chat',
+        markdown: 'Type of the chat from which the inline query was sent. Can be either “sender” for a private chat with the inline query sender, “private”, “group”, “supergroup”, or “channel”. The chat type should be always known for requests sent from official clients and most third-party clients, unless the request was sent from a secret chat.',
       },
       required: false,
     },
@@ -15542,7 +17709,7 @@ const InlineQueryResultPhoto = t({
         type: 'str',
       },
       description: {
-        markdown: 'A valid URL of the photo. Photo must be in **JPEG** format. Photo size must not exceed 5MB',
+        markdown: 'A valid URL of the photo. Photo must be in **JPEG** format. Photo size must not exceed 5MB.',
       },
       required: true,
     },
@@ -15776,7 +17943,7 @@ const InlineQueryResultGif = t({
         ],
       },
       description: {
-        markdown: 'MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”',
+        markdown: 'MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”.',
       },
       required: false,
     },
@@ -15970,7 +18137,7 @@ const InlineQueryResultMpeg4Gif = t({
         ],
       },
       description: {
-        markdown: 'MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”',
+        markdown: 'MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”.',
       },
       required: false,
     },
@@ -16790,7 +18957,7 @@ const InlineQueryResultLocation = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Period in seconds during which the location can be updated, should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.',
+        markdown: 'Period in seconds during which the location can be updated, must be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely',
       },
       required: false,
     },
@@ -18169,12 +20336,16 @@ const InlineQueryResultCachedAudio = t({
 const InputMessageContent = t({
   name: 'InputMessageContent',
   description: {
-    markdown: 'This object represents the content of a message to be sent as a result of an inline query. Telegram clients currently support the following 5 types:\n\n-   [InputTextMessageContent](https://core.telegram.org/bots/api#inputtextmessagecontent)\n-   [InputLocationMessageContent](https://core.telegram.org/bots/api#inputlocationmessagecontent)\n-   [InputVenueMessageContent](https://core.telegram.org/bots/api#inputvenuemessagecontent)\n-   [InputContactMessageContent](https://core.telegram.org/bots/api#inputcontactmessagecontent)\n-   [InputInvoiceMessageContent](https://core.telegram.org/bots/api#inputinvoicemessagecontent)',
+    markdown: 'This object represents the content of a message to be sent as a result of an inline query. Telegram clients currently support the following types:\n\n-   [InputTextMessageContent](https://core.telegram.org/bots/api#inputtextmessagecontent)\n-   [InputRichMessageContent](https://core.telegram.org/bots/api#inputrichmessagecontent)\n-   [InputLocationMessageContent](https://core.telegram.org/bots/api#inputlocationmessagecontent)\n-   [InputVenueMessageContent](https://core.telegram.org/bots/api#inputvenuemessagecontent)\n-   [InputContactMessageContent](https://core.telegram.org/bots/api#inputcontactmessagecontent)\n-   [InputInvoiceMessageContent](https://core.telegram.org/bots/api#inputinvoicemessagecontent)',
   },
   oneOf: [
     {
       type: 'api-type',
       name: 'InputTextMessageContent',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichMessageContent',
     },
     {
       type: 'api-type',
@@ -18263,6 +20434,26 @@ const InputTextMessageContent = t({
   ],
 })
 
+const InputRichMessageContent = t({
+  name: 'InputRichMessageContent',
+  description: {
+    markdown: 'Represents the [content](https://core.telegram.org/bots/api#inputmessagecontent) of a rich message to be sent as the result of an inline query.',
+  },
+  fields: [
+    {
+      name: 'rich_message',
+      type: {
+        type: 'api-type',
+        name: 'InputRichMessage',
+      },
+      description: {
+        markdown: 'The message to be sent',
+      },
+      required: true,
+    },
+  ],
+})
+
 const InputLocationMessageContent = t({
   name: 'InputLocationMessageContent',
   description: {
@@ -18305,7 +20496,7 @@ const InputLocationMessageContent = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Period in seconds during which the location can be updated, should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.',
+        markdown: 'Period in seconds during which the location can be updated, must be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely',
       },
       required: false,
     },
@@ -19122,7 +21313,7 @@ const RefundedPayment = t({
         literal: 'XTR',
       },
       description: {
-        markdown: 'Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90). Currently, always “XTR”',
+        markdown: 'Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90). Currently, always “XTR”.',
       },
       required: true,
     },
@@ -19906,7 +22097,7 @@ const StarTransaction = t({
         name: 'TransactionPartner',
       },
       description: {
-        markdown: 'Source of an incoming transaction (e.g., a user purchasing goods or services, Fragment refunding a failed withdrawal). Only for incoming transactions',
+        markdown: 'Source of an incoming transaction (e.g., a user purchasing goods or services, Fragment refunding a failed withdrawal). Only for incoming transactions.',
       },
       required: false,
     },
@@ -19917,7 +22108,7 @@ const StarTransaction = t({
         name: 'TransactionPartner',
       },
       description: {
-        markdown: 'Receiver of an outgoing transaction (e.g., a user for a purchase refund, Fragment for a withdrawal). Only for outgoing transactions',
+        markdown: 'Receiver of an outgoing transaction (e.g., a user for a purchase refund, Fragment for a withdrawal). Only for outgoing transactions.',
       },
       required: false,
     },
@@ -20982,7 +23173,7 @@ const Game = t({
         },
       },
       description: {
-        markdown: 'Photo that will be displayed in the game message in chats.',
+        markdown: 'Photo that will be displayed in the game message in chats',
       },
       required: true,
     },
@@ -21017,7 +23208,7 @@ const Game = t({
         name: 'Animation',
       },
       description: {
-        markdown: 'Animation that will be displayed in the game message in chats. Upload via [BotFather](https://t.me/botfather)',
+        markdown: 'Animation that will be displayed in the game message in chats. Upload via [BotFather](https://t.me/botfather).',
       },
       required: false,
     },
@@ -21115,6 +23306,7 @@ export const types = {
   PaidMediaVideo,
   Contact,
   Dice,
+  Link,
   PollMedia,
   InputPollMedia,
   InputPollOptionMedia,
@@ -21289,6 +23481,7 @@ export const types = {
   InputMediaAnimation,
   InputMediaAudio,
   InputMediaDocument,
+  InputMediaLink,
   InputMediaLivePhoto,
   InputMediaLocation,
   InputMediaPhoto,
@@ -21309,6 +23502,59 @@ export const types = {
   StickerSet,
   MaskPosition,
   InputSticker,
+  RichMessage,
+  InputRichMessage,
+  RichText,
+  RichTextBold,
+  RichTextItalic,
+  RichTextUnderline,
+  RichTextStrikethrough,
+  RichTextSpoiler,
+  RichTextDateTime,
+  RichTextTextMention,
+  RichTextSubscript,
+  RichTextSuperscript,
+  RichTextMarked,
+  RichTextCode,
+  RichTextCustomEmoji,
+  RichTextMathematicalExpression,
+  RichTextUrl,
+  RichTextEmailAddress,
+  RichTextPhoneNumber,
+  RichTextBankCardNumber,
+  RichTextMention,
+  RichTextHashtag,
+  RichTextCashtag,
+  RichTextBotCommand,
+  RichTextAnchor,
+  RichTextAnchorLink,
+  RichTextReference,
+  RichTextReferenceLink,
+  RichBlockCaption,
+  RichBlockTableCell,
+  RichBlockListItem,
+  RichBlock,
+  RichBlockParagraph,
+  RichBlockSectionHeading,
+  RichBlockPreformatted,
+  RichBlockFooter,
+  RichBlockDivider,
+  RichBlockMathematicalExpression,
+  RichBlockAnchor,
+  RichBlockList,
+  RichBlockBlockQuotation,
+  RichBlockPullQuotation,
+  RichBlockCollage,
+  RichBlockSlideshow,
+  RichBlockTable,
+  RichBlockDetails,
+  RichBlockMap,
+  RichBlockAnimation,
+  RichBlockAudio,
+  RichBlockPhoto,
+  RichBlockVideo,
+  RichBlockVoiceNote,
+  RichBlockThinking,
   InlineQuery,
   InlineQueryResultsButton,
   InlineQueryResult,
@@ -21334,6 +23580,7 @@ export const types = {
   InlineQueryResultCachedAudio,
   InputMessageContent,
   InputTextMessageContent,
+  InputRichMessageContent,
   InputLocationMessageContent,
   InputVenueMessageContent,
   InputContactMessageContent,

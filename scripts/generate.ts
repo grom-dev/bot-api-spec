@@ -228,8 +228,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
         },
         reply_markup: {
-          hash: 'c5f0f787',
-          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
         },
       },
     },
@@ -270,8 +270,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
         },
         reply_markup: {
-          hash: 'c5f0f787',
-          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
         },
       },
     },
@@ -302,8 +302,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
         },
         reply_markup: {
-          hash: 'c5f0f787',
-          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
         },
       },
     },
@@ -342,8 +342,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
         },
         reply_markup: {
-          hash: 'c5f0f787',
-          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
         },
       },
     },
@@ -364,8 +364,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
         },
         reply_markup: {
-          hash: 'c5f0f787',
-          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
         },
       },
     },
@@ -386,8 +386,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
         },
         reply_markup: {
-          hash: 'c5f0f787',
-          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
         },
       },
     },
@@ -408,8 +408,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
         },
         reply_markup: {
-          hash: 'c5f0f787',
-          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
         },
       },
     },
@@ -430,8 +430,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
         },
         reply_markup: {
-          hash: 'c5f0f787',
-          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
         },
       },
     },
@@ -444,8 +444,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
         },
         reply_markup: {
-          hash: 'c5f0f787',
-          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
         },
       },
     },
@@ -470,8 +470,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
         },
         reply_markup: {
-          hash: 'c5f0f787',
-          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
         },
       },
     },
@@ -503,8 +503,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
         },
         reply_markup: {
-          hash: 'c5f0f787',
-          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
         },
       },
     },
@@ -517,8 +517,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
         },
         reply_markup: {
-          hash: 'c5f0f787',
-          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
         },
       },
     },
@@ -531,8 +531,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
         },
         reply_markup: {
-          hash: 'c5f0f787',
-          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
         },
       },
     },
@@ -541,7 +541,7 @@ export const OVERRIDES: OverridesConfig = {
       returnType: T_apiType('Message'),
       parameters: {
         question_parse_mode: {
-          hash: '6f0ef5a0',
+          hash: '31f347e0',
           type: T_parseMode(),
         },
         type: {
@@ -553,20 +553,20 @@ export const OVERRIDES: OverridesConfig = {
           type: T_parseMode(),
         },
         question_entities: {
-          hash: 'e70fcd3d',
-          description: { markdown: 'An array of special entities that appear in the poll question. It can be specified instead of _question\\_parse\\_mode_' },
+          hash: '7d35802b',
+          description: { markdown: 'An array of special entities that appear in the poll question. It can be specified instead of _question\\_parse\\_mode_.' },
         },
         options: {
           hash: '1652947a',
           description: { markdown: 'An array of 1-12 answer options' },
         },
         explanation_entities: {
-          hash: '8f63fa73',
-          description: { markdown: 'An array of special entities that appear in the poll explanation. It can be specified instead of _explanation\\_parse\\_mode_' },
+          hash: 'a12be1e6',
+          description: { markdown: 'An array of special entities that appear in the poll explanation. It can be specified instead of _explanation\\_parse\\_mode_.' },
         },
         reply_markup: {
-          hash: 'c5f0f787',
-          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
         },
         correct_option_ids: {
           hash: 'bb7b2dc2',
@@ -577,8 +577,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An array of special entities that appear in the poll description, which can be specified instead of _description\\_parse\\_mode_' },
         },
         country_codes: {
-          hash: 'b25391e7',
-          description: { markdown: 'An array of 0-12 two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes indicating the countries from which users can vote in the poll; for channel chats only. If omitted or empty, then users from any country can participate in the poll.' },
+          hash: '7235482b',
+          description: { markdown: 'An array of 0-12 two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes indicating the countries from which users can vote in the poll; for channel chats only. Use “FT” as a country code to allow users with anonymous numbers to vote. If omitted or empty, then users from any country can participate in the poll.' },
         },
       },
     },
@@ -605,7 +605,7 @@ export const OVERRIDES: OverridesConfig = {
       returnType: T_apiType('Message'),
       parameters: {
         emoji: {
-          hash: '12183539',
+          hash: '615714f5',
           type: T_strUnion('🎲', '🎯', '🏀', '⚽', '🎳', '🎰'),
         },
         suggested_post_parameters: {
@@ -613,8 +613,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
         },
         reply_markup: {
-          hash: 'c5f0f787',
-          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
         },
       },
     },
@@ -766,6 +766,14 @@ export const OVERRIDES: OverridesConfig = {
       hash: '67b731ed',
       returnType: T_bool(true),
     },
+    answerChatJoinRequestQuery: {
+      hash: 'abfd4dd4',
+      returnType: T_bool(true),
+    },
+    sendChatJoinRequestWebApp: {
+      hash: '8eade462',
+      returnType: T_bool(true),
+    },
     setChatPhoto: {
       hash: '88eb3fee',
       returnType: T_bool(true),
@@ -835,7 +843,7 @@ export const OVERRIDES: OverridesConfig = {
       returnType: T_apiType('ForumTopic'),
       parameters: {
         icon_color: {
-          hash: '8ca3e691',
+          hash: 'bf07b708',
           type: T_int32Union(7322096, 16766590, 13338331, 9367192, 16749490, 16478047),
         },
       },
@@ -999,8 +1007,8 @@ export const OVERRIDES: OverridesConfig = {
       returnType: T_bool(true),
       parameters: {
         menu_button: {
-          hash: '9ddb5441',
-          description: { markdown: 'An object for the bot\'s new menu button. Defaults to [MenuButtonDefault](https://core.telegram.org/bots/api#menubuttondefault)' },
+          hash: '7e840e02',
+          description: { markdown: 'An object for the bot\'s new menu button. Defaults to [MenuButtonDefault](https://core.telegram.org/bots/api#menubuttondefault).' },
         },
       },
     },
@@ -1087,8 +1095,8 @@ export const OVERRIDES: OverridesConfig = {
       returnType: T_bool(true),
       parameters: {
         message_ids: {
-          hash: 'afc00fa0',
-          description: { markdown: 'An array of 1-100 identifiers of messages to delete. All messages must be from the same chat. See [deleteMessage](https://core.telegram.org/bots/api#deletemessage) for limitations on which messages can be deleted' },
+          hash: '6320def1',
+          description: { markdown: 'An array of 1-100 identifiers of messages to delete. All messages must be from the same chat. See [deleteMessage](https://core.telegram.org/bots/api#deletemessage) for limitations on which messages can be deleted.' },
         },
       },
     },
@@ -1203,7 +1211,7 @@ export const OVERRIDES: OverridesConfig = {
       returnType: T_bool(true),
     },
     editMessageText: {
-      hash: 'c4d7c1f3',
+      hash: '7c00f2ae',
       returnType: T_unionOf([T_apiType('Message'), T_bool(true)]),
       parameters: {
         parse_mode: {
@@ -1215,8 +1223,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An array of special entities that appear in message text, which can be specified instead of _parse\\_mode_' },
         },
         reply_markup: {
-          hash: '81fd1e69',
-          description: { markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).' },
+          hash: '8e7e33f9',
+          description: { markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)' },
         },
       },
     },
@@ -1233,13 +1241,13 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_' },
         },
         reply_markup: {
-          hash: '81fd1e69',
-          description: { markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).' },
+          hash: '8e7e33f9',
+          description: { markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)' },
         },
       },
     },
     editMessageMedia: {
-      hash: '3187220c',
+      hash: 'e45970ac',
       returnType: T_unionOf([T_apiType('Message'), T_bool(true)]),
       parameters: {
         media: {
@@ -1247,8 +1255,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object for a new media content of the message' },
         },
         reply_markup: {
-          hash: '69619b96',
-          description: { markdown: 'An object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).' },
+          hash: '964e5825',
+          description: { markdown: 'An object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)' },
         },
       },
     },
@@ -1257,8 +1265,8 @@ export const OVERRIDES: OverridesConfig = {
       returnType: T_unionOf([T_apiType('Message'), T_bool(true)]),
       parameters: {
         reply_markup: {
-          hash: '69619b96',
-          description: { markdown: 'An object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).' },
+          hash: '964e5825',
+          description: { markdown: 'An object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)' },
         },
       },
     },
@@ -1267,8 +1275,8 @@ export const OVERRIDES: OverridesConfig = {
       returnType: T_unionOf([T_apiType('Message'), T_bool(true)]),
       parameters: {
         reply_markup: {
-          hash: '69619b96',
-          description: { markdown: 'An object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).' },
+          hash: '964e5825',
+          description: { markdown: 'An object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)' },
         },
       },
     },
@@ -1291,8 +1299,8 @@ export const OVERRIDES: OverridesConfig = {
       returnType: T_unionOf([T_apiType('Message'), T_bool(true)]),
       parameters: {
         reply_markup: {
-          hash: '81fd1e69',
-          description: { markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).' },
+          hash: '8e7e33f9',
+          description: { markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)' },
         },
       },
     },
@@ -1301,8 +1309,8 @@ export const OVERRIDES: OverridesConfig = {
       returnType: T_apiType('Poll'),
       parameters: {
         reply_markup: {
-          hash: 'd9be8bd4',
-          description: { markdown: 'An object for a new message [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).' },
+          hash: '056f4439',
+          description: { markdown: 'An object for a new message [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)' },
         },
       },
     },
@@ -1323,8 +1331,8 @@ export const OVERRIDES: OverridesConfig = {
       returnType: T_bool(true),
       parameters: {
         message_ids: {
-          hash: '0cd6d47a',
-          description: { markdown: 'An array of 1-100 identifiers of messages to delete. See [deleteMessage](https://core.telegram.org/bots/api#deletemessage) for limitations on which messages can be deleted' },
+          hash: '9ca695aa',
+          description: { markdown: 'An array of 1-100 identifiers of messages to delete. See [deleteMessage](https://core.telegram.org/bots/api#deletemessage) for limitations on which messages can be deleted.' },
         },
       },
     },
@@ -1345,8 +1353,8 @@ export const OVERRIDES: OverridesConfig = {
           description: { markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.' },
         },
         reply_markup: {
-          hash: 'c5f0f787',
-          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user' },
+          hash: '21af8025',
+          description: { markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.' },
         },
       },
     },
@@ -1468,6 +1476,14 @@ export const OVERRIDES: OverridesConfig = {
       hash: '3b160ae7',
       returnType: T_bool(true),
     },
+    sendRichMessage: {
+      hash: 'c6f3a884',
+      returnType: T_apiType('Message'),
+    },
+    sendRichMessageDraft: {
+      hash: 'f76486c6',
+      returnType: T_bool(true),
+    },
     answerInlineQuery: {
       hash: '7720383a',
       returnType: T_bool(true),
@@ -1507,8 +1523,8 @@ export const OVERRIDES: OverridesConfig = {
       returnType: T_apiType('PreparedKeyboardButton'),
       parameters: {
         button: {
-          hash: '603d6fd3',
-          description: { markdown: 'An object describing the button to be saved. The button must be of the type _request\\_users_, _request\\_chat_, or _request\\_managed\\_bot_' },
+          hash: 'c56ee05b',
+          description: { markdown: 'An object describing the button to be saved. The button must be of the type _request\\_users_, _request\\_chat_, or _request\\_managed\\_bot_.' },
         },
       },
     },
@@ -1777,9 +1793,10 @@ export const OVERRIDES: OverridesConfig = {
       ],
     },
     InputMessageContent: {
-      hash: '5b4ab747',
+      hash: '0dc313d1',
       oneOf: [
         T_apiType('InputTextMessageContent'),
+        T_apiType('InputRichMessageContent'),
         T_apiType('InputLocationMessageContent'),
         T_apiType('InputVenueMessageContent'),
         T_apiType('InputContactMessageContent'),
@@ -1979,12 +1996,12 @@ export const OVERRIDES: OverridesConfig = {
       hash: '03faac22',
       fields: {
         text_parse_mode: {
-          hash: '00c78ab0',
+          hash: '165ac1c6',
           type: T_parseMode(),
         },
         text_entities: {
-          hash: '40bd087f',
-          description: { markdown: 'An array of special entities that appear in the poll option text. It can be specified instead of _text\\_parse\\_mode_' },
+          hash: 'c5fff559',
+          description: { markdown: 'An array of special entities that appear in the poll option text. It can be specified instead of _text\\_parse\\_mode_.' },
         },
       },
     },
@@ -2041,7 +2058,7 @@ export const OVERRIDES: OverridesConfig = {
       hash: '',
       fields: {
         type: {
-          hash: '717c0bdd',
+          hash: 'b5d2753a',
           type: T_strUnion(
             'mention',
             'hashtag',
@@ -2153,9 +2170,10 @@ export const OVERRIDES: OverridesConfig = {
       ],
     },
     InputPollOptionMedia: {
-      hash: 'f948fbb9',
+      hash: '52cf6220',
       oneOf: [
         T_apiType('InputMediaAnimation'),
+        T_apiType('InputMediaLink'),
         T_apiType('InputMediaLivePhoto'),
         T_apiType('InputMediaLocation'),
         T_apiType('InputMediaPhoto'),
@@ -2258,7 +2276,7 @@ export const OVERRIDES: OverridesConfig = {
       hash: '',
       fields: {
         currency: {
-          hash: '996ec42a',
+          hash: '20d18856',
           type: T_strUnion('XTR', 'TON'),
         },
       },
@@ -2276,7 +2294,7 @@ export const OVERRIDES: OverridesConfig = {
       hash: '',
       fields: {
         currency: {
-          hash: '8fede40b',
+          hash: '7ba399c7',
           type: T_strUnion('XTR', 'TON'),
         },
       },
@@ -2456,7 +2474,7 @@ export const OVERRIDES: OverridesConfig = {
       hash: '',
       fields: {
         origin: {
-          hash: '506fae70',
+          hash: '0bc2d866',
           type: T_strUnion('upgrade', 'transfer', 'resale', 'gifted_upgrade', 'offer'),
         },
         last_resale_currency: {
@@ -2604,7 +2622,7 @@ export const OVERRIDES: OverridesConfig = {
       hash: '',
       fields: {
         type: {
-          hash: 'ee1139a7',
+          hash: 'a80fa570',
           type: T_str('photo'),
         },
         parse_mode: {
@@ -2617,7 +2635,7 @@ export const OVERRIDES: OverridesConfig = {
       hash: '',
       fields: {
         type: {
-          hash: 'a20617eb',
+          hash: 'a8b61270',
           type: T_str('video'),
         },
         parse_mode: {
@@ -2630,7 +2648,7 @@ export const OVERRIDES: OverridesConfig = {
       hash: '',
       fields: {
         type: {
-          hash: '3ad7a992',
+          hash: '4f5f6109',
           type: T_str('animation'),
         },
         parse_mode: {
@@ -2643,7 +2661,7 @@ export const OVERRIDES: OverridesConfig = {
       hash: '',
       fields: {
         type: {
-          hash: '7ff6bc34',
+          hash: '4fe77f02',
           type: T_str('audio'),
         },
         parse_mode: {
@@ -2656,7 +2674,7 @@ export const OVERRIDES: OverridesConfig = {
       hash: '',
       fields: {
         type: {
-          hash: 'd2168c45',
+          hash: 'aa8e9d4b',
           type: T_str('document'),
         },
         parse_mode: {
@@ -2759,7 +2777,7 @@ export const OVERRIDES: OverridesConfig = {
       hash: '',
       fields: {
         chat_type: {
-          hash: '7dbb94e3',
+          hash: 'cdb4a357',
           type: T_strUnion('sender', 'private', 'group', 'supergroup', 'channel'),
         },
       },
@@ -2794,7 +2812,7 @@ export const OVERRIDES: OverridesConfig = {
           type: T_str('gif'),
         },
         thumbnail_mime_type: {
-          hash: '770fdf11',
+          hash: '84e58354',
           type: T_strUnion('image/jpeg', 'image/gif', 'video/mp4'),
         },
         parse_mode: {
@@ -2811,7 +2829,7 @@ export const OVERRIDES: OverridesConfig = {
           type: T_str('mpeg4_gif'),
         },
         thumbnail_mime_type: {
-          hash: '770fdf11',
+          hash: '84e58354',
           type: T_strUnion('image/jpeg', 'image/gif', 'video/mp4'),
         },
         parse_mode: {
@@ -3020,7 +3038,7 @@ export const OVERRIDES: OverridesConfig = {
       hash: '',
       fields: {
         currency: {
-          hash: 'f03de202',
+          hash: '429b3e19',
           type: T_str('XTR'),
         },
       },

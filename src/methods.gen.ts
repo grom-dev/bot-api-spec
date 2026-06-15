@@ -77,7 +77,7 @@ const setWebhook: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'HTTPS URL to send updates to. Use an empty string to remove webhook integration',
+        markdown: 'HTTPS URL to send updates to. Use an empty string to remove webhook integration.',
       },
       required: true,
     },
@@ -421,7 +421,7 @@ const sendMessage: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },
@@ -755,7 +755,7 @@ const copyMessage: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'New caption for media, 0-1024 characters after entities parsing. If not specified, the original caption is kept',
+        markdown: 'New caption for media, 0-1024 characters after entities parsing. If not specified, the original caption is kept.',
       },
       required: false,
     },
@@ -893,7 +893,7 @@ const copyMessage: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },
@@ -1245,7 +1245,7 @@ const sendPhoto: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },
@@ -1751,7 +1751,7 @@ const sendAudio: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },
@@ -1996,7 +1996,7 @@ const sendDocument: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },
@@ -2319,7 +2319,7 @@ const sendVideo: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },
@@ -2604,7 +2604,7 @@ const sendAnimation: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },
@@ -2831,7 +2831,7 @@ const sendVoice: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },
@@ -2910,7 +2910,7 @@ const sendVideoNote: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Video note to send. Pass a file\\_id as String to send a video note that exists on the Telegram servers (recommended) or upload a new video using multipart/form-data. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files). Sending video notes by a URL is currently unsupported',
+        markdown: 'Video note to send. Pass a file\\_id as String to send a video note that exists on the Telegram servers (recommended) or upload a new video using multipart/form-data. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files). Sending video notes by a URL is currently unsupported.',
       },
       required: true,
     },
@@ -3038,7 +3038,7 @@ const sendVideoNote: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },
@@ -3271,7 +3271,7 @@ const sendPaidMedia: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },
@@ -3522,7 +3522,7 @@ const sendLocation: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Period in seconds during which the location will be updated (see [Live Locations](https://telegram.org/blog/live-locations), should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.',
+        markdown: 'Period in seconds during which the location will be updated (see [Live Locations](https://telegram.org/blog/live-locations), should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely',
       },
       required: false,
     },
@@ -3632,7 +3632,7 @@ const sendLocation: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },
@@ -3863,7 +3863,7 @@ const sendVenue: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },
@@ -4054,7 +4054,7 @@ const sendContact: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },
@@ -4139,7 +4139,7 @@ const sendPoll: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Mode for parsing entities in the question. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Currently, only custom emoji entities are allowed',
+        markdown: 'Mode for parsing entities in the question. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Currently, only custom emoji entities are allowed.',
       },
       required: false,
     },
@@ -4153,7 +4153,7 @@ const sendPoll: ApiMethod = {
         },
       },
       description: {
-        markdown: 'An array of special entities that appear in the poll question. It can be specified instead of _question\\_parse\\_mode_',
+        markdown: 'An array of special entities that appear in the poll question. It can be specified instead of _question\\_parse\\_mode_.',
       },
       required: false,
     },
@@ -4270,7 +4270,7 @@ const sendPoll: ApiMethod = {
         },
       },
       description: {
-        markdown: 'An array of 0-12 two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes indicating the countries from which users can vote in the poll; for channel chats only. If omitted or empty, then users from any country can participate in the poll.',
+        markdown: 'An array of 0-12 two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes indicating the countries from which users can vote in the poll; for channel chats only. Use “FT” as a country code to allow users with anonymous numbers to vote. If omitted or empty, then users from any country can participate in the poll.',
       },
       required: false,
     },
@@ -4331,7 +4331,7 @@ const sendPoll: ApiMethod = {
         },
       },
       description: {
-        markdown: 'An array of special entities that appear in the poll explanation. It can be specified instead of _explanation\\_parse\\_mode_',
+        markdown: 'An array of special entities that appear in the poll explanation. It can be specified instead of _explanation\\_parse\\_mode_.',
       },
       required: false,
     },
@@ -4496,7 +4496,7 @@ const sendPoll: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },
@@ -4697,7 +4697,7 @@ const sendDice: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Emoji on which the dice throw animation is based. Currently, must be one of “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”, “![🎯](//telegram.org/img/emoji/40/F09F8EAF.png)”, “![🏀](//telegram.org/img/emoji/40/F09F8F80.png)”, “![⚽](//telegram.org/img/emoji/40/E29ABD.png)”, “![🎳](//telegram.org/img/emoji/40/F09F8EB3.png)”, or “![🎰](//telegram.org/img/emoji/40/F09F8EB0.png)”. Dice can have values 1-6 for “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”, “![🎯](//telegram.org/img/emoji/40/F09F8EAF.png)” and “![🎳](//telegram.org/img/emoji/40/F09F8EB3.png)”, values 1-5 for “![🏀](//telegram.org/img/emoji/40/F09F8F80.png)” and “![⚽](//telegram.org/img/emoji/40/E29ABD.png)”, and values 1-64 for “![🎰](//telegram.org/img/emoji/40/F09F8EB0.png)”. Defaults to “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”',
+        markdown: 'Emoji on which the dice throw animation is based. Currently, must be one of “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”, “![🎯](//telegram.org/img/emoji/40/F09F8EAF.png)”, “![🏀](//telegram.org/img/emoji/40/F09F8F80.png)”, “![⚽](//telegram.org/img/emoji/40/E29ABD.png)”, “![🎳](//telegram.org/img/emoji/40/F09F8EB3.png)”, or “![🎰](//telegram.org/img/emoji/40/F09F8EB0.png)”. Dice can have values 1-6 for “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”, “![🎯](//telegram.org/img/emoji/40/F09F8EAF.png)” and “![🎳](//telegram.org/img/emoji/40/F09F8EB3.png)”, values 1-5 for “![🏀](//telegram.org/img/emoji/40/F09F8F80.png)” and “![⚽](//telegram.org/img/emoji/40/E29ABD.png)”, and values 1-64 for “![🎰](//telegram.org/img/emoji/40/F09F8EB0.png)”. Defaults to “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”.',
       },
       required: false,
     },
@@ -4787,7 +4787,7 @@ const sendDice: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },
@@ -4830,7 +4830,7 @@ const sendMessageDraft: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier of the message draft; must be non-zero. Changes of drafts with the same identifier are animated.',
+        markdown: 'Unique identifier of the message draft; must be non-zero. Changes to drafts with the same identifier are animated.',
       },
       required: true,
     },
@@ -4919,7 +4919,7 @@ const sendChatAction: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`. Channel chats and channel direct messages chats aren\'t supported.',
+        markdown: 'Unique identifier for the target chat or username of the target bot or supergroup in the format `@username`. Channel chats and channel direct messages chats aren\'t supported.',
       },
       required: true,
     },
@@ -5386,7 +5386,7 @@ const restrictChatMember: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Date when restrictions will be lifted for the user; Unix time. If user is restricted for more than 366 days or less than 30 seconds from the current time, they are considered to be restricted forever',
+        markdown: 'Date when restrictions will be lifted for the user; Unix time. If user is restricted for more than 366 days or less than 30 seconds from the current time, they are considered to be restricted forever.',
       },
       required: false,
     },
@@ -5477,7 +5477,7 @@ const promoteChatMember: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ if the administrator can restrict, ban or unban chat members, or access supergroup statistics. For backward compatibility, defaults to _True_ for promotions of channel administrators',
+        markdown: 'Pass _True_ if the administrator can restrict, ban or unban chat members, or access supergroup statistics. For backward compatibility, defaults to _True_ for promotions of channel administrators.',
       },
       required: false,
     },
@@ -5934,7 +5934,7 @@ const createChatInviteLink: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: '_True_, if users joining the chat via the link need to be approved by chat administrators. If _True_, _member\\_limit_ can\'t be specified',
+        markdown: '_True_, if users joining the chat via the link need to be approved by chat administrators. If _True_, _member\\_limit_ can\'t be specified.',
       },
       required: false,
     },
@@ -6015,7 +6015,7 @@ const editChatInviteLink: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: '_True_, if users joining the chat via the link need to be approved by chat administrators. If _True_, _member\\_limit_ can\'t be specified',
+        markdown: '_True_, if users joining the chat via the link need to be approved by chat administrators. If _True_, _member\\_limit_ can\'t be specified.',
       },
       required: false,
     },
@@ -6252,6 +6252,72 @@ const declineChatJoinRequest: ApiMethod = {
       },
       description: {
         markdown: 'Unique identifier of the target user',
+      },
+      required: true,
+    },
+  ],
+  returnType: {
+    type: 'bool',
+    literal: true,
+  },
+}
+
+const answerChatJoinRequestQuery: ApiMethod = {
+  name: 'answerChatJoinRequestQuery',
+  description: {
+    markdown: 'Use this method to process a received chat join request query. Returns _True_ on success.',
+  },
+  parameters: [
+    {
+      name: 'chat_join_request_query_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the join request query',
+      },
+      required: true,
+    },
+    {
+      name: 'result',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Result of the query. Must be either “approve” to allow the user to join the chat, “decline” to disallow the user to join the chat, or “queue” to leave the decision to other administrators.',
+      },
+      required: true,
+    },
+  ],
+  returnType: {
+    type: 'bool',
+    literal: true,
+  },
+}
+
+const sendChatJoinRequestWebApp: ApiMethod = {
+  name: 'sendChatJoinRequestWebApp',
+  description: {
+    markdown: 'Use this method to process a received chat join request query by showing a Mini App to the user before deciding the outcome. Returns _True_ on success.',
+  },
+  parameters: [
+    {
+      name: 'chat_join_request_query_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the join request query',
+      },
+      required: true,
+    },
+    {
+      name: 'web_app_url',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The URL of the Mini App to be opened',
       },
       required: true,
     },
@@ -6925,7 +6991,7 @@ const createForumTopic: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Color of the topic icon in RGB format. Currently, must be one of 7322096 (0x6FB9F0), 16766590 (0xFFD67E), 13338331 (0xCB86DB), 9367192 (0x8EEE98), 16749490 (0xFF93B2), or 16478047 (0xFB6F5F)',
+        markdown: 'Color of the topic icon in RGB format. Currently, must be one of 7322096 (0x6FB9F0), 16766590 (0xFFD67E), 13338331 (0xCB86DB), 9367192 (0x8EEE98), 16749490 (0xFF93B2), or 16478047 (0xFB6F5F).',
       },
       required: false,
     },
@@ -6986,7 +7052,7 @@ const editForumTopic: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'New topic name, 0-128 characters. If not specified or empty, the current name of the topic will be kept',
+        markdown: 'New topic name, 0-128 characters. If not specified or empty, the current name of the topic will be kept.',
       },
       required: false,
     },
@@ -6996,7 +7062,7 @@ const editForumTopic: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'New unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api#getforumtopiciconstickers) to get all allowed custom emoji identifiers. Pass an empty string to remove the icon. If not specified, the current icon will be kept',
+        markdown: 'New unique identifier of the custom emoji shown as the topic icon. Use [getForumTopicIconStickers](https://core.telegram.org/bots/api#getforumtopiciconstickers) to get all allowed custom emoji identifiers. Pass an empty string to remove the icon. If not specified, the current icon will be kept.',
       },
       required: false,
     },
@@ -7389,7 +7455,7 @@ const answerCallbackQuery: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'Text of the notification. If not specified, nothing will be shown to the user, 0-200 characters',
+        markdown: 'Text of the notification. If not specified, nothing will be shown to the user, 0-200 characters.',
       },
       required: false,
     },
@@ -7678,7 +7744,7 @@ const setMyCommands: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands',
+        markdown: 'A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands.',
       },
       required: false,
     },
@@ -7712,7 +7778,7 @@ const deleteMyCommands: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands',
+        markdown: 'A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands.',
       },
       required: false,
     },
@@ -7976,7 +8042,7 @@ const setChatMenuButton: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target private chat. If not specified, default bot\'s menu button will be changed',
+        markdown: 'Unique identifier for the target private chat. If not specified, the bot\'s default menu button will be changed.',
       },
       required: false,
     },
@@ -7987,7 +8053,7 @@ const setChatMenuButton: ApiMethod = {
         name: 'MenuButton',
       },
       description: {
-        markdown: 'An object for the bot\'s new menu button. Defaults to [MenuButtonDefault](https://core.telegram.org/bots/api#menubuttondefault)',
+        markdown: 'An object for the bot\'s new menu button. Defaults to [MenuButtonDefault](https://core.telegram.org/bots/api#menubuttondefault).',
       },
       required: false,
     },
@@ -8010,7 +8076,7 @@ const getChatMenuButton: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier for the target private chat. If not specified, default bot\'s menu button will be returned',
+        markdown: 'Unique identifier for the target private chat. If not specified, the bot\'s default menu button will be returned.',
       },
       required: false,
     },
@@ -8514,7 +8580,7 @@ const deleteBusinessMessages: ApiMethod = {
         },
       },
       description: {
-        markdown: 'An array of 1-100 identifiers of messages to delete. All messages must be from the same chat. See [deleteMessage](https://core.telegram.org/bots/api#deletemessage) for limitations on which messages can be deleted',
+        markdown: 'An array of 1-100 identifiers of messages to delete. All messages must be from the same chat. See [deleteMessage](https://core.telegram.org/bots/api#deletemessage) for limitations on which messages can be deleted.',
       },
       required: true,
     },
@@ -8923,7 +8989,7 @@ const getBusinessAccountGifts: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'The maximum number of gifts to be returned; 1-100. Defaults to 100',
+        markdown: 'The maximum number of gifts to be returned; 1-100. Defaults to 100.',
       },
       required: false,
     },
@@ -9026,7 +9092,7 @@ const getUserGifts: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'The maximum number of gifts to be returned; 1-100. Defaults to 100',
+        markdown: 'The maximum number of gifts to be returned; 1-100. Defaults to 100.',
       },
       required: false,
     },
@@ -9157,7 +9223,7 @@ const getChatGifts: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'The maximum number of gifts to be returned; 1-100. Defaults to 100',
+        markdown: 'The maximum number of gifts to be returned; 1-100. Defaults to 100.',
       },
       required: false,
     },
@@ -9812,7 +9878,7 @@ const savePreparedKeyboardButton: ApiMethod = {
         name: 'KeyboardButton',
       },
       description: {
-        markdown: 'An object describing the button to be saved. The button must be of the type _request\\_users_, _request\\_chat_, or _request\\_managed\\_bot_',
+        markdown: 'An object describing the button to be saved. The button must be of the type _request\\_users_, _request\\_chat_, or _request\\_managed\\_bot_.',
       },
       required: true,
     },
@@ -9826,7 +9892,7 @@ const savePreparedKeyboardButton: ApiMethod = {
 const editMessageText: ApiMethod = {
   name: 'editMessageText',
   description: {
-    markdown: 'Use this method to edit text and [game](https://core.telegram.org/bots/api#games) messages. On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api#message) is returned, otherwise _True_ is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within **48 hours** from the time they were sent.',
+    markdown: 'Use this method to edit text, rich and [game](https://core.telegram.org/bots/api#games) messages. On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api#message) is returned, otherwise _True_ is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within **48 hours** from the time they were sent.',
   },
   parameters: [
     {
@@ -9863,7 +9929,7 @@ const editMessageText: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit',
+        markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit.',
       },
       required: false,
     },
@@ -9873,7 +9939,7 @@ const editMessageText: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
+        markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message.',
       },
       required: false,
     },
@@ -9883,9 +9949,9 @@ const editMessageText: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'New text of the message, 1-4096 characters after entities parsing',
+        markdown: 'New text of the message, 1-4096 characters after entity parsing; required if _rich\\_message_ isn\'t specified',
       },
-      required: true,
+      required: false,
     },
     {
       name: 'parse_mode',
@@ -9937,13 +10003,24 @@ const editMessageText: ApiMethod = {
       required: false,
     },
     {
+      name: 'rich_message',
+      type: {
+        type: 'api-type',
+        name: 'InputRichMessage',
+      },
+      description: {
+        markdown: 'New rich content of the message; required if _text_ isn\'t specified',
+      },
+      required: false,
+    },
+    {
       name: 'reply_markup',
       type: {
         type: 'api-type',
         name: 'InlineKeyboardMarkup',
       },
       description: {
-        markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).',
+        markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)',
       },
       required: false,
     },
@@ -10003,7 +10080,7 @@ const editMessageCaption: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit',
+        markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit.',
       },
       required: false,
     },
@@ -10013,7 +10090,7 @@ const editMessageCaption: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
+        markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message.',
       },
       required: false,
     },
@@ -10082,7 +10159,7 @@ const editMessageCaption: ApiMethod = {
         name: 'InlineKeyboardMarkup',
       },
       description: {
-        markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).',
+        markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)',
       },
       required: false,
     },
@@ -10105,7 +10182,7 @@ const editMessageCaption: ApiMethod = {
 const editMessageMedia: ApiMethod = {
   name: 'editMessageMedia',
   description: {
-    markdown: 'Use this method to edit animation, audio, document, live photo, photo, or video messages, or to add media to text messages. If a message is part of a message album, then it can be edited only to an audio for audio albums, only to a document for document albums and to a photo, a live photo, or a video otherwise. When an inline message is edited, a new file can\'t be uploaded; use a previously uploaded file via its file\\_id or specify a URL. On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api#message) is returned, otherwise _True_ is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within **48 hours** from the time they were sent.',
+    markdown: 'Use this method to edit animation, audio, document, live photo, photo, or video messages, or to replace a text or a rich message with a media. If a message is part of a message album, then it can be edited only to an audio for audio albums, only to a document for document albums and to a photo, a live photo, or a video otherwise. When an inline message is edited, a new file can\'t be uploaded; use a previously uploaded file via its file\\_id or specify a URL. On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api#message) is returned, otherwise _True_ is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within **48 hours** from the time they were sent.',
   },
   parameters: [
     {
@@ -10142,7 +10219,7 @@ const editMessageMedia: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit',
+        markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit.',
       },
       required: false,
     },
@@ -10152,7 +10229,7 @@ const editMessageMedia: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
+        markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message.',
       },
       required: false,
     },
@@ -10174,7 +10251,7 @@ const editMessageMedia: ApiMethod = {
         name: 'InlineKeyboardMarkup',
       },
       description: {
-        markdown: 'An object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).',
+        markdown: 'An object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)',
       },
       required: false,
     },
@@ -10234,7 +10311,7 @@ const editMessageLiveLocation: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit',
+        markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit.',
       },
       required: false,
     },
@@ -10244,7 +10321,7 @@ const editMessageLiveLocation: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
+        markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message.',
       },
       required: false,
     },
@@ -10274,7 +10351,7 @@ const editMessageLiveLocation: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'New period in seconds during which the location can be updated, starting from the message send date. If 0x7FFFFFFF is specified, then the location can be updated forever. Otherwise, the new value must not exceed the current _live\\_period_ by more than a day, and the live location expiration date must remain within the next 90 days. If not specified, then _live\\_period_ remains unchanged',
+        markdown: 'New period in seconds during which the location can be updated, starting from the message send date. If 0x7FFFFFFF is specified, then the location can be updated forever. Otherwise, the new value must not exceed the current _live\\_period_ by more than a day, and the live location expiration date must remain within the next 90 days. If not specified, then _live\\_period_ remains unchanged.',
       },
       required: false,
     },
@@ -10315,7 +10392,7 @@ const editMessageLiveLocation: ApiMethod = {
         name: 'InlineKeyboardMarkup',
       },
       description: {
-        markdown: 'An object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).',
+        markdown: 'An object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)',
       },
       required: false,
     },
@@ -10375,7 +10452,7 @@ const stopMessageLiveLocation: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message with live location to stop',
+        markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message with live location to stop.',
       },
       required: false,
     },
@@ -10385,7 +10462,7 @@ const stopMessageLiveLocation: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
+        markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message.',
       },
       required: false,
     },
@@ -10396,7 +10473,7 @@ const stopMessageLiveLocation: ApiMethod = {
         name: 'InlineKeyboardMarkup',
       },
       description: {
-        markdown: 'An object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).',
+        markdown: 'An object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)',
       },
       required: false,
     },
@@ -10529,7 +10606,7 @@ const editMessageReplyMarkup: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit',
+        markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the message to edit.',
       },
       required: false,
     },
@@ -10539,7 +10616,7 @@ const editMessageReplyMarkup: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
+        markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message.',
       },
       required: false,
     },
@@ -10550,7 +10627,7 @@ const editMessageReplyMarkup: ApiMethod = {
         name: 'InlineKeyboardMarkup',
       },
       description: {
-        markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).',
+        markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)',
       },
       required: false,
     },
@@ -10621,7 +10698,7 @@ const stopPoll: ApiMethod = {
         name: 'InlineKeyboardMarkup',
       },
       description: {
-        markdown: 'An object for a new message [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).',
+        markdown: 'An object for a new message [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)',
       },
       required: false,
     },
@@ -10664,7 +10741,7 @@ const approveSuggestedPost: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Point in time (Unix timestamp) when the post is expected to be published; omit if the date has already been specified when the suggested post was created. If specified, then the date must be not more than 2678400 seconds (30 days) in the future',
+        markdown: 'Point in time (Unix timestamp) when the post is expected to be published; omit if the date has already been specified when the suggested post was created. If specified, then the date must be not more than 2678400 seconds (30 days) in the future.',
       },
       required: false,
     },
@@ -10792,7 +10869,7 @@ const deleteMessages: ApiMethod = {
         },
       },
       description: {
-        markdown: 'An array of 1-100 identifiers of messages to delete. See [deleteMessage](https://core.telegram.org/bots/api#deletemessage) for limitations on which messages can be deleted',
+        markdown: 'An array of 1-100 identifiers of messages to delete. See [deleteMessage](https://core.telegram.org/bots/api#deletemessage) for limitations on which messages can be deleted.',
       },
       required: true,
     },
@@ -10823,7 +10900,7 @@ const deleteMessageReaction: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@username`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -10884,7 +10961,7 @@ const deleteAllMessageReactions: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Unique identifier for the target chat or username of the target supergroup (in the format `@username`)',
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
       },
       required: true,
     },
@@ -11083,7 +11160,7 @@ const sendSticker: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },
@@ -11684,7 +11761,7 @@ const setCustomEmojiStickerSetThumbnail: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'Custom emoji identifier of a sticker from the sticker set; pass an empty string to drop the thumbnail and use the first sticker as the thumbnail.',
+        markdown: 'Custom emoji identifier of a sticker from the sticker set; pass an empty string to drop the thumbnail and use the first sticker as the thumbnail',
       },
       required: false,
     },
@@ -11708,6 +11785,222 @@ const deleteStickerSet: ApiMethod = {
       },
       description: {
         markdown: 'Sticker set name',
+      },
+      required: true,
+    },
+  ],
+  returnType: {
+    type: 'bool',
+    literal: true,
+  },
+}
+
+const sendRichMessage: ApiMethod = {
+  name: 'sendRichMessage',
+  description: {
+    markdown: 'Use this method to send rich messages. If the message contains a block with a media element, then the bot must have the right to send the media to the chat. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.',
+  },
+  parameters: [
+    {
+      name: 'business_connection_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
+      },
+      required: false,
+    },
+    {
+      name: 'chat_id',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+          },
+          {
+            type: 'str',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`',
+      },
+      required: true,
+    },
+    {
+      name: 'message_thread_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only',
+      },
+      required: false,
+    },
+    {
+      name: 'direct_messages_topic_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
+      },
+      required: false,
+    },
+    {
+      name: 'rich_message',
+      type: {
+        type: 'api-type',
+        name: 'InputRichMessage',
+      },
+      description: {
+        markdown: 'The message to be sent',
+      },
+      required: true,
+    },
+    {
+      name: 'disable_notification',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.',
+      },
+      required: false,
+    },
+    {
+      name: 'protect_content',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Protects the contents of the sent message from forwarding and saving',
+      },
+      required: false,
+    },
+    {
+      name: 'allow_paid_broadcast',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot\'s balance.',
+      },
+      required: false,
+    },
+    {
+      name: 'message_effect_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the message effect to be added to the message; for private chats only',
+      },
+      required: false,
+    },
+    {
+      name: 'suggested_post_parameters',
+      type: {
+        type: 'api-type',
+        name: 'SuggestedPostParameters',
+      },
+      description: {
+        markdown: 'A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
+      },
+      required: false,
+    },
+    {
+      name: 'reply_parameters',
+      type: {
+        type: 'api-type',
+        name: 'ReplyParameters',
+      },
+      description: {
+        markdown: 'Description of the message to reply to',
+      },
+      required: false,
+    },
+    {
+      name: 'reply_markup',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'api-type',
+            name: 'InlineKeyboardMarkup',
+          },
+          {
+            type: 'api-type',
+            name: 'ReplyKeyboardMarkup',
+          },
+          {
+            type: 'api-type',
+            name: 'ReplyKeyboardRemove',
+          },
+          {
+            type: 'api-type',
+            name: 'ForceReply',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
+      },
+      required: false,
+    },
+  ],
+  returnType: {
+    type: 'api-type',
+    name: 'Message',
+  },
+}
+
+const sendRichMessageDraft: ApiMethod = {
+  name: 'sendRichMessageDraft',
+  description: {
+    markdown: 'Use this method to stream a partial rich message to a user while the message is being generated. Note that the streamed draft is ephemeral and acts as a temporary 30-second preview - once the output is finalized, you **must** call [sendRichMessage](https://core.telegram.org/bots/api#sendrichmessage) with the complete message to persist it in the user\'s chat. Returns _True_ on success.',
+  },
+  parameters: [
+    {
+      name: 'chat_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier for the target private chat',
+      },
+      required: true,
+    },
+    {
+      name: 'message_thread_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier for the target message thread',
+      },
+      required: false,
+    },
+    {
+      name: 'draft_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier of the message draft; must be non-zero. Changes to drafts with the same identifier are animated.',
+      },
+      required: true,
+    },
+    {
+      name: 'rich_message',
+      type: {
+        type: 'api-type',
+        name: 'InputRichMessage',
+      },
+      description: {
+        markdown: 'The partial message to be streamed',
       },
       required: true,
     },
@@ -11933,7 +12226,7 @@ const sendInvoice: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'Unique deep-linking parameter. If left empty, **forwarded copies** of the sent message will have a _Pay_ button, allowing multiple users to pay directly from the forwarded message, using the same invoice. If non-empty, forwarded copies of the sent message will have a _URL_ button with a deep link to the bot (instead of a _Pay_ button), with the value used as the start parameter',
+        markdown: 'Unique deep-linking parameter. If left empty, **forwarded copies** of the sent message will have a _Pay_ button, allowing multiple users to pay directly from the forwarded message, using the same invoice. If non-empty, forwarded copies of the sent message will have a _URL_ button with a deep link to the bot (instead of a _Pay_ button), with the value used as the start parameter.',
       },
       required: false,
     },
@@ -12790,7 +13083,7 @@ const setGameScore: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters',
+        markdown: 'Pass _True_ if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters.',
       },
       required: false,
     },
@@ -12810,7 +13103,7 @@ const setGameScore: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat',
+        markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat.',
       },
       required: false,
     },
@@ -12820,7 +13113,7 @@ const setGameScore: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the sent message',
+        markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the sent message.',
       },
       required: false,
     },
@@ -12830,7 +13123,7 @@ const setGameScore: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
+        markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message.',
       },
       required: false,
     },
@@ -12872,7 +13165,7 @@ const getGameHighScores: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat',
+        markdown: 'Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat.',
       },
       required: false,
     },
@@ -12882,7 +13175,7 @@ const getGameHighScores: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the sent message',
+        markdown: 'Required if _inline\\_message\\_id_ is not specified. Identifier of the sent message.',
       },
       required: false,
     },
@@ -12892,7 +13185,7 @@ const getGameHighScores: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message',
+        markdown: 'Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message.',
       },
       required: false,
     },
@@ -12965,6 +13258,8 @@ export const methods = {
   revokeChatInviteLink,
   approveChatJoinRequest,
   declineChatJoinRequest,
+  answerChatJoinRequestQuery,
+  sendChatJoinRequestWebApp,
   setChatPhoto,
   deleteChatPhoto,
   setChatTitle,
@@ -13076,6 +13371,8 @@ export const methods = {
   setStickerSetThumbnail,
   setCustomEmojiStickerSetThumbnail,
   deleteStickerSet,
+  sendRichMessage,
+  sendRichMessageDraft,
   answerInlineQuery,
   sendInvoice,
   createInvoiceLink,
