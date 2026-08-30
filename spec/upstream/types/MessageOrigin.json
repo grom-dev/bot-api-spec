@@ -1,0 +1,5 @@
+{
+  "name": "MessageOrigin",
+  "description": "This object describes the origin of a message. It can be one of\n\n-   [MessageOriginUser](https://core.telegram.org/bots/api#messageoriginuser)\n-   [MessageOriginHiddenUser](https://core.telegram.org/bots/api#messageoriginhiddenuser)\n-   [MessageOriginChat](https://core.telegram.org/bots/api#messageoriginchat)\n-   [MessageOriginChannel](https://core.telegram.org/bots/api#messageoriginchannel)",
+  "fields": null
+}

@@ -1,0 +1,30 @@
+{
+  "name": "PaidMediaPreview",
+  "description": "The paid media isn't available before the payment.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the paid media, always “preview”"
+    },
+    {
+      "name": "width",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Media width as defined by the sender"
+    },
+    {
+      "name": "height",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Media height as defined by the sender"
+    },
+    {
+      "name": "duration",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Duration of the media in seconds as defined by the sender"
+    }
+  ]
+}

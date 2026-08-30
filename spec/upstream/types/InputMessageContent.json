@@ -1,0 +1,5 @@
+{
+  "name": "InputMessageContent",
+  "description": "This object represents the content of a message to be sent as a result of an inline query. Telegram clients currently support the following types:\n\n-   [InputTextMessageContent](https://core.telegram.org/bots/api#inputtextmessagecontent)\n-   [InputRichMessageContent](https://core.telegram.org/bots/api#inputrichmessagecontent)\n-   [InputLocationMessageContent](https://core.telegram.org/bots/api#inputlocationmessagecontent)\n-   [InputVenueMessageContent](https://core.telegram.org/bots/api#inputvenuemessagecontent)\n-   [InputContactMessageContent](https://core.telegram.org/bots/api#inputcontactmessagecontent)\n-   [InputInvoiceMessageContent](https://core.telegram.org/bots/api#inputinvoicemessagecontent)",
+  "fields": null
+}

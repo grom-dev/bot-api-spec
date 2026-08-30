@@ -1,0 +1,18 @@
+{
+  "name": "RichTextSuperscript",
+  "description": "A superscript text.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the rich text, always “superscript”"
+    },
+    {
+      "name": "text",
+      "rawType": "RichText",
+      "required": true,
+      "description": "The text"
+    }
+  ]
+}

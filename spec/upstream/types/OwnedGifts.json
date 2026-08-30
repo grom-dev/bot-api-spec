@@ -1,0 +1,24 @@
+{
+  "name": "OwnedGifts",
+  "description": "Contains the list of gifts received and owned by a user or a chat.",
+  "fields": [
+    {
+      "name": "total_count",
+      "rawType": "Integer",
+      "required": true,
+      "description": "The total number of gifts owned by the user or the chat"
+    },
+    {
+      "name": "gifts",
+      "rawType": "Array of OwnedGift",
+      "required": true,
+      "description": "The list of gifts"
+    },
+    {
+      "name": "next_offset",
+      "rawType": "String",
+      "required": false,
+      "description": "Offset for the next request. If empty, then there are no more results."
+    }
+  ]
+}

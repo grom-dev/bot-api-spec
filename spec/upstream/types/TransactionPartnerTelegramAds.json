@@ -1,0 +1,12 @@
+{
+  "name": "TransactionPartnerTelegramAds",
+  "description": "Describes a withdrawal transaction to the Telegram Ads platform.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the transaction partner, always “telegram\\_ads”"
+    }
+  ]
+}

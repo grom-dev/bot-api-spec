@@ -1,0 +1,39 @@
+{
+  "fields": {
+    "id": {
+      "type": {
+        "type": "int53"
+      },
+      "description": "Unique identifier for this chat."
+    },
+    "type": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "private"
+          },
+          {
+            "type": "str",
+            "literal": "group"
+          },
+          {
+            "type": "str",
+            "literal": "supergroup"
+          },
+          {
+            "type": "str",
+            "literal": "channel"
+          }
+        ]
+      }
+    },
+    "linked_chat_id": {
+      "type": {
+        "type": "int53"
+      },
+      "description": "Unique identifier for the linked chat, i.e. the discussion group identifier for a channel and vice versa; for supergroups and channel chats."
+    }
+  }
+}

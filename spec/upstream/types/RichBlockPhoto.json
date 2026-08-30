@@ -1,0 +1,30 @@
+{
+  "name": "RichBlockPhoto",
+  "description": "A block with a photo, corresponding to the HTML tag `<photo>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “photo”"
+    },
+    {
+      "name": "photo",
+      "rawType": "Array of PhotoSize",
+      "required": true,
+      "description": "Available sizes of the photo"
+    },
+    {
+      "name": "has_spoiler",
+      "rawType": "True",
+      "required": false,
+      "description": "_True_, if the media preview is covered by a spoiler animation"
+    },
+    {
+      "name": "caption",
+      "rawType": "RichBlockCaption",
+      "required": false,
+      "description": "Caption of the block"
+    }
+  ]
+}

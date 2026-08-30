@@ -1,0 +1,11 @@
+{
+  "returnType": {
+    "type": "api-type",
+    "name": "SentGuestMessage"
+  },
+  "parameters": {
+    "result": {
+      "description": "An object describing the message to be sent"
+    }
+  }
+}

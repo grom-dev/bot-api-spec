@@ -1,0 +1,12 @@
+{
+  "name": "StarTransactions",
+  "description": "Contains a list of Telegram Star transactions.",
+  "fields": [
+    {
+      "name": "transactions",
+      "rawType": "Array of StarTransaction",
+      "required": true,
+      "description": "The list of transactions"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "RichBlockParagraph"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockSectionHeading"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockPreformatted"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockFooter"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockDivider"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockMathematicalExpression"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockAnchor"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockList"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockBlockQuotation"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockPullQuotation"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockCollage"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockSlideshow"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockTable"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockDetails"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockMap"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockAnimation"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockAudio"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockPhoto"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockVideo"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockVoiceNote"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockThinking"
+    }
+  ]
+}

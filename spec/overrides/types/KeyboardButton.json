@@ -1,0 +1,23 @@
+{
+  "fields": {
+    "style": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "danger"
+          },
+          {
+            "type": "str",
+            "literal": "success"
+          },
+          {
+            "type": "str",
+            "literal": "primary"
+          }
+        ]
+      }
+    }
+  }
+}

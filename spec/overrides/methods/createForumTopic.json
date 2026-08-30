@@ -1,0 +1,39 @@
+{
+  "returnType": {
+    "type": "api-type",
+    "name": "ForumTopic"
+  },
+  "parameters": {
+    "icon_color": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "int32",
+            "literal": 7322096
+          },
+          {
+            "type": "int32",
+            "literal": 16766590
+          },
+          {
+            "type": "int32",
+            "literal": 13338331
+          },
+          {
+            "type": "int32",
+            "literal": 9367192
+          },
+          {
+            "type": "int32",
+            "literal": 16749490
+          },
+          {
+            "type": "int32",
+            "literal": 16478047
+          }
+        ]
+      }
+    }
+  }
+}

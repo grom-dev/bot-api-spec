@@ -1,0 +1,30 @@
+{
+  "name": "pinChatMessage",
+  "description": "Use this method to add a message to the list of pinned messages in a chat. In private chats and channel direct messages chats, all non-service messages can be pinned. Conversely, the bot must be an administrator with the 'can\\_pin\\_messages' right or the 'can\\_edit\\_messages' right to pin messages in groups and channels respectively. Returns _True_ on success.",
+  "parameters": [
+    {
+      "name": "business_connection_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Unique identifier of the business connection on behalf of which the message will be pinned"
+    },
+    {
+      "name": "chat_id",
+      "rawType": "Integer or String",
+      "required": true,
+      "description": "Unique identifier for the target chat or username of the target channel in the format `@username`"
+    },
+    {
+      "name": "message_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Identifier of a message to pin"
+    },
+    {
+      "name": "disable_notification",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ if it is not necessary to send a notification to all chat members about the new pinned message. Notifications are always disabled in channels and private chats."
+    }
+  ]
+}

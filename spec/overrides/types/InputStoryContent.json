@@ -1,0 +1,12 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "InputStoryContentPhoto"
+    },
+    {
+      "type": "api-type",
+      "name": "InputStoryContentVideo"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "OrderInfo",
+  "description": "This object represents information about an order.",
+  "fields": [
+    {
+      "name": "name",
+      "rawType": "String",
+      "required": false,
+      "description": "User name"
+    },
+    {
+      "name": "phone_number",
+      "rawType": "String",
+      "required": false,
+      "description": "User's phone number"
+    },
+    {
+      "name": "email",
+      "rawType": "String",
+      "required": false,
+      "description": "User email"
+    },
+    {
+      "name": "shipping_address",
+      "rawType": "ShippingAddress",
+      "required": false,
+      "description": "User shipping address"
+    }
+  ]
+}

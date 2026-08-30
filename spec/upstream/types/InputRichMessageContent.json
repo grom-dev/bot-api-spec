@@ -1,0 +1,12 @@
+{
+  "name": "InputRichMessageContent",
+  "description": "Represents the [content](https://core.telegram.org/bots/api#inputmessagecontent) of a rich message to be sent as the result of an inline query.",
+  "fields": [
+    {
+      "name": "rich_message",
+      "rawType": "InputRichMessage",
+      "required": true,
+      "description": "The message to be sent"
+    }
+  ]
+}

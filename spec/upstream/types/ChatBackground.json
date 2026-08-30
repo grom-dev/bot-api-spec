@@ -1,0 +1,12 @@
+{
+  "name": "ChatBackground",
+  "description": "This object represents a chat background.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "BackgroundType",
+      "required": true,
+      "description": "Type of the background"
+    }
+  ]
+}

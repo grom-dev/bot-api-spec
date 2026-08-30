@@ -1,0 +1,44 @@
+{
+  "fields": {
+    "type": {
+      "type": {
+        "type": "str",
+        "literal": "video"
+      }
+    },
+    "mime_type": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "text/html"
+          },
+          {
+            "type": "str",
+            "literal": "video/mp4"
+          }
+        ]
+      }
+    },
+    "parse_mode": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "HTML"
+          },
+          {
+            "type": "str",
+            "literal": "MarkdownV2"
+          },
+          {
+            "type": "str",
+            "literal": "Markdown"
+          }
+        ]
+      }
+    }
+  }
+}

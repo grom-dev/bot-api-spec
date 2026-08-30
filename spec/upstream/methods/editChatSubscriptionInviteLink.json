@@ -1,0 +1,24 @@
+{
+  "name": "editChatSubscriptionInviteLink",
+  "description": "Use this method to edit a subscription invite link created by the bot. The bot must have the _can\\_invite\\_users_ administrator rights. Returns the edited invite link as a [ChatInviteLink](https://core.telegram.org/bots/api#chatinvitelink) object.",
+  "parameters": [
+    {
+      "name": "chat_id",
+      "rawType": "Integer or String",
+      "required": true,
+      "description": "Unique identifier for the target chat or username of the target channel in the format `@username`"
+    },
+    {
+      "name": "invite_link",
+      "rawType": "String",
+      "required": true,
+      "description": "The invite link to edit"
+    },
+    {
+      "name": "name",
+      "rawType": "String",
+      "required": false,
+      "description": "Invite link name; 0-32 characters"
+    }
+  ]
+}

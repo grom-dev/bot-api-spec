@@ -1,0 +1,5 @@
+{
+  "name": "ChatBoostSource",
+  "description": "This object describes the source of a chat boost. It can be one of\n\n-   [ChatBoostSourcePremium](https://core.telegram.org/bots/api#chatboostsourcepremium)\n-   [ChatBoostSourceGiftCode](https://core.telegram.org/bots/api#chatboostsourcegiftcode)\n-   [ChatBoostSourceGiveaway](https://core.telegram.org/bots/api#chatboostsourcegiveaway)",
+  "fields": null
+}

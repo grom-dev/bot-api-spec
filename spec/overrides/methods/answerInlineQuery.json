@@ -1,0 +1,14 @@
+{
+  "returnType": {
+    "type": "bool",
+    "literal": true
+  },
+  "parameters": {
+    "results": {
+      "description": "An array of results for the inline query"
+    },
+    "button": {
+      "description": "An object describing a button to be shown above inline query results"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "getStickerSet",
+  "description": "Use this method to get a sticker set. On success, a [StickerSet](https://core.telegram.org/bots/api#stickerset) object is returned.",
+  "parameters": [
+    {
+      "name": "name",
+      "rawType": "String",
+      "required": true,
+      "description": "Name of the sticker set"
+    }
+  ]
+}

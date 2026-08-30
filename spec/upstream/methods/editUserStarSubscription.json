@@ -1,0 +1,24 @@
+{
+  "name": "editUserStarSubscription",
+  "description": "Allows the bot to cancel or re-enable extension of a subscription paid in Telegram Stars. Returns _True_ on success.",
+  "parameters": [
+    {
+      "name": "user_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Identifier of the user whose subscription will be edited"
+    },
+    {
+      "name": "telegram_payment_charge_id",
+      "rawType": "String",
+      "required": true,
+      "description": "Telegram payment identifier for the subscription"
+    },
+    {
+      "name": "is_canceled",
+      "rawType": "Boolean",
+      "required": true,
+      "description": "Pass _True_ to cancel extension of the user subscription; the subscription must be active up to the end of the current subscription period. Pass _False_ to allow the user to re-enable a subscription that was previously canceled by the bot."
+    }
+  ]
+}

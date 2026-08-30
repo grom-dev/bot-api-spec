@@ -1,0 +1,18 @@
+{
+  "name": "deleteMessage",
+  "description": "Use this method to delete a message, including service messages, with the following limitations:\n\n\\- A message can only be deleted if it was sent less than 48 hours ago.\n\n\\- Service messages about a supergroup, channel, or forum topic creation can't be deleted.\n\n\\- A dice message in a private chat can only be deleted if it was sent more than 24 hours ago.\n\n\\- Bots can delete outgoing messages in private chats, groups, and supergroups.\n\n\\- Bots can delete incoming messages in private chats.\n\n\\- Bots granted _can\\_post\\_messages_ permissions can delete outgoing messages in channels.\n\n\\- If the bot is an administrator of a group, it can delete any message there.\n\n\\- If the bot has _can\\_delete\\_messages_ administrator right in a supergroup or a channel, it can delete any message there.\n\n\\- If the bot has _can\\_manage\\_direct\\_messages_ administrator right in a channel, it can delete any message in the corresponding direct messages chat.\n\nReturns _True_ on success.",
+  "parameters": [
+    {
+      "name": "chat_id",
+      "rawType": "Integer or String",
+      "required": true,
+      "description": "Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`"
+    },
+    {
+      "name": "message_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Identifier of the message to delete"
+    }
+  ]
+}

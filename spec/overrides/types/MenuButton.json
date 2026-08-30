@@ -1,0 +1,16 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "MenuButtonCommands"
+    },
+    {
+      "type": "api-type",
+      "name": "MenuButtonWebApp"
+    },
+    {
+      "type": "api-type",
+      "name": "MenuButtonDefault"
+    }
+  ]
+}

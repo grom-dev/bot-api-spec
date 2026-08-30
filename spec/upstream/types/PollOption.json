@@ -1,0 +1,54 @@
+{
+  "name": "PollOption",
+  "description": "This object contains information about one answer option in a poll.",
+  "fields": [
+    {
+      "name": "persistent_id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique identifier of the option, persistent on option addition and deletion"
+    },
+    {
+      "name": "text",
+      "rawType": "String",
+      "required": true,
+      "description": "Option text, 1-100 characters"
+    },
+    {
+      "name": "text_entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "Special entities that appear in the option _text_. Currently, only custom emoji entities are allowed in poll option texts"
+    },
+    {
+      "name": "media",
+      "rawType": "PollMedia",
+      "required": false,
+      "description": "Media added to the poll option"
+    },
+    {
+      "name": "voter_count",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Number of users who voted for this option; may be 0 if unknown"
+    },
+    {
+      "name": "added_by_user",
+      "rawType": "User",
+      "required": false,
+      "description": "User who added the option; omitted if the option wasn't added by a user after poll creation"
+    },
+    {
+      "name": "added_by_chat",
+      "rawType": "Chat",
+      "required": false,
+      "description": "Chat that added the option; omitted if the option wasn't added by a chat after poll creation"
+    },
+    {
+      "name": "addition_date",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Point in time (Unix timestamp) when the option was added; omitted if the option existed in the original poll"
+    }
+  ]
+}

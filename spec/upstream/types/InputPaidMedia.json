@@ -1,0 +1,5 @@
+{
+  "name": "InputPaidMedia",
+  "description": "This object describes the paid media to be sent. Currently, it can be one of\n\n-   [InputPaidMediaLivePhoto](https://core.telegram.org/bots/api#inputpaidmedialivephoto)\n-   [InputPaidMediaPhoto](https://core.telegram.org/bots/api#inputpaidmediaphoto)\n-   [InputPaidMediaVideo](https://core.telegram.org/bots/api#inputpaidmediavideo)",
+  "fields": null
+}

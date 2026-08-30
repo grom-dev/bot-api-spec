@@ -1,0 +1,12 @@
+{
+  "name": "VideoChatParticipantsInvited",
+  "description": "This object represents a service message about new members invited to a video chat.",
+  "fields": [
+    {
+      "name": "users",
+      "rawType": "Array of User",
+      "required": true,
+      "description": "New members that were invited to the video chat"
+    }
+  ]
+}

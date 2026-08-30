@@ -1,0 +1,132 @@
+{
+  "name": "Poll",
+  "description": "This object contains information about a poll.",
+  "fields": [
+    {
+      "name": "id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique poll identifier"
+    },
+    {
+      "name": "question",
+      "rawType": "String",
+      "required": true,
+      "description": "Poll question, 1-300 characters"
+    },
+    {
+      "name": "question_entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "Special entities that appear in the _question_. Currently, only custom emoji entities are allowed in poll questions"
+    },
+    {
+      "name": "options",
+      "rawType": "Array of PollOption",
+      "required": true,
+      "description": "List of poll options"
+    },
+    {
+      "name": "total_voter_count",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Total number of users that voted in the poll"
+    },
+    {
+      "name": "is_closed",
+      "rawType": "Boolean",
+      "required": true,
+      "description": "_True_, if the poll is closed"
+    },
+    {
+      "name": "is_anonymous",
+      "rawType": "Boolean",
+      "required": true,
+      "description": "_True_, if the poll is anonymous"
+    },
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Poll type, currently can be “regular” or “quiz”"
+    },
+    {
+      "name": "allows_multiple_answers",
+      "rawType": "Boolean",
+      "required": true,
+      "description": "_True_, if the poll allows multiple answers"
+    },
+    {
+      "name": "allows_revoting",
+      "rawType": "Boolean",
+      "required": true,
+      "description": "_True_, if the poll allows to change the chosen answer options"
+    },
+    {
+      "name": "members_only",
+      "rawType": "Boolean",
+      "required": true,
+      "description": "_True_ if voting is limited to users who have been members of the chat where the poll was originally sent for more than 24 hours"
+    },
+    {
+      "name": "country_codes",
+      "rawType": "Array of String",
+      "required": false,
+      "description": "A list of two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes indicating the countries from which users can vote in the poll. The country code “FT” is used for users with anonymous numbers. If omitted, then users from any country can participate in the poll."
+    },
+    {
+      "name": "correct_option_ids",
+      "rawType": "Array of Integer",
+      "required": false,
+      "description": "Array of 0-based identifiers of the correct answer options. Available only for polls in quiz mode which are closed or were sent (not forwarded) by the bot or to the private chat with the bot."
+    },
+    {
+      "name": "explanation",
+      "rawType": "String",
+      "required": false,
+      "description": "Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll, 0-200 characters"
+    },
+    {
+      "name": "explanation_entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "Special entities like usernames, URLs, bot commands, etc. that appear in the _explanation_"
+    },
+    {
+      "name": "explanation_media",
+      "rawType": "PollMedia",
+      "required": false,
+      "description": "Media added to the quiz explanation"
+    },
+    {
+      "name": "open_period",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Amount of time in seconds the poll will be active after creation"
+    },
+    {
+      "name": "close_date",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Point in time (Unix timestamp) when the poll will be automatically closed"
+    },
+    {
+      "name": "description",
+      "rawType": "String",
+      "required": false,
+      "description": "Description of the poll; for polls inside the [Message](https://core.telegram.org/bots/api#message) object only"
+    },
+    {
+      "name": "description_entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "Special entities like usernames, URLs, bot commands, etc. that appear in the description"
+    },
+    {
+      "name": "media",
+      "rawType": "PollMedia",
+      "required": false,
+      "description": "Media added to the poll description; for polls inside the [Message](https://core.telegram.org/bots/api#message) object only"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "ChatBoostUpdated",
+  "description": "This object represents a boost added to a chat or changed.",
+  "fields": [
+    {
+      "name": "chat",
+      "rawType": "Chat",
+      "required": true,
+      "description": "Chat which was boosted"
+    },
+    {
+      "name": "boost",
+      "rawType": "ChatBoost",
+      "required": true,
+      "description": "Information about the chat boost"
+    }
+  ]
+}

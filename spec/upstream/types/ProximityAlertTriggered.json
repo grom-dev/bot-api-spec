@@ -1,0 +1,24 @@
+{
+  "name": "ProximityAlertTriggered",
+  "description": "This object represents the content of a service message, sent whenever a user in the chat triggers a proximity alert set by another user.",
+  "fields": [
+    {
+      "name": "traveler",
+      "rawType": "User",
+      "required": true,
+      "description": "User that triggered the alert"
+    },
+    {
+      "name": "watcher",
+      "rawType": "User",
+      "required": true,
+      "description": "User that set the alert"
+    },
+    {
+      "name": "distance",
+      "rawType": "Integer",
+      "required": true,
+      "description": "The distance between the users"
+    }
+  ]
+}

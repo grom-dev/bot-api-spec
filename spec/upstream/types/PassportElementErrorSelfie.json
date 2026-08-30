@@ -1,0 +1,30 @@
+{
+  "name": "PassportElementErrorSelfie",
+  "description": "Represents an issue with the selfie with a document. The error is considered resolved when the file with the selfie changes.",
+  "fields": [
+    {
+      "name": "source",
+      "rawType": "String",
+      "required": true,
+      "description": "Error source, must be _selfie_"
+    },
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "The section of the user's Telegram Passport which has the issue, one of “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”"
+    },
+    {
+      "name": "file_hash",
+      "rawType": "String",
+      "required": true,
+      "description": "Base64-encoded hash of the file with the selfie"
+    },
+    {
+      "name": "message",
+      "rawType": "String",
+      "required": true,
+      "description": "Error message"
+    }
+  ]
+}

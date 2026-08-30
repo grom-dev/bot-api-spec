@@ -1,0 +1,24 @@
+{
+  "name": "getUserProfileAudios",
+  "description": "Use this method to get a list of profile audios for a user. Returns a [UserProfileAudios](https://core.telegram.org/bots/api#userprofileaudios) object.",
+  "parameters": [
+    {
+      "name": "user_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Unique identifier of the target user"
+    },
+    {
+      "name": "offset",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Sequential number of the first audio to be returned. By default, all audios are returned."
+    },
+    {
+      "name": "limit",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Limits the number of audios to be retrieved. Values between 1-100 are accepted. Defaults to 100."
+    }
+  ]
+}

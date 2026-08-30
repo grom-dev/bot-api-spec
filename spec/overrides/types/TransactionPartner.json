@@ -1,0 +1,32 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "TransactionPartnerUser"
+    },
+    {
+      "type": "api-type",
+      "name": "TransactionPartnerChat"
+    },
+    {
+      "type": "api-type",
+      "name": "TransactionPartnerAffiliateProgram"
+    },
+    {
+      "type": "api-type",
+      "name": "TransactionPartnerFragment"
+    },
+    {
+      "type": "api-type",
+      "name": "TransactionPartnerTelegramAds"
+    },
+    {
+      "type": "api-type",
+      "name": "TransactionPartnerTelegramApi"
+    },
+    {
+      "type": "api-type",
+      "name": "TransactionPartnerOther"
+    }
+  ]
+}

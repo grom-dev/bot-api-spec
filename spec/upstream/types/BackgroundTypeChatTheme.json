@@ -1,0 +1,18 @@
+{
+  "name": "BackgroundTypeChatTheme",
+  "description": "The background is taken directly from a built-in chat theme.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the background, always “chat\\_theme”"
+    },
+    {
+      "name": "theme_name",
+      "rawType": "String",
+      "required": true,
+      "description": "Name of the chat theme, which is usually an emoji"
+    }
+  ]
+}

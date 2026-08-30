@@ -1,0 +1,36 @@
+{
+  "name": "BackgroundTypeWallpaper",
+  "description": "The background is a wallpaper in the JPEG format.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the background, always “wallpaper”"
+    },
+    {
+      "name": "document",
+      "rawType": "Document",
+      "required": true,
+      "description": "Document with the wallpaper"
+    },
+    {
+      "name": "dark_theme_dimming",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Dimming of the background in dark themes, as a percentage; 0-100"
+    },
+    {
+      "name": "is_blurred",
+      "rawType": "True",
+      "required": false,
+      "description": "_True_, if the wallpaper is downscaled to fit in a 450x450 square and then box-blurred with radius 12"
+    },
+    {
+      "name": "is_moving",
+      "rawType": "True",
+      "required": false,
+      "description": "_True_, if the background moves slightly when the device is tilted"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "setStickerPositionInSet",
+  "description": "Use this method to move a sticker in a set created by the bot to a specific position. Returns _True_ on success.",
+  "parameters": [
+    {
+      "name": "sticker",
+      "rawType": "String",
+      "required": true,
+      "description": "File identifier of the sticker"
+    },
+    {
+      "name": "position",
+      "rawType": "Integer",
+      "required": true,
+      "description": "New sticker position in the set, zero-based"
+    }
+  ]
+}

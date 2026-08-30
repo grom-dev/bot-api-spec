@@ -1,0 +1,72 @@
+{
+  "name": "getChatGifts",
+  "description": "Returns the gifts owned by a chat. Returns [OwnedGifts](https://core.telegram.org/bots/api#ownedgifts) on success.",
+  "parameters": [
+    {
+      "name": "chat_id",
+      "rawType": "Integer or String",
+      "required": true,
+      "description": "Unique identifier for the target chat or username of the target channel in the format `@username`"
+    },
+    {
+      "name": "exclude_unsaved",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ to exclude gifts that aren't saved to the chat's profile page. Always _True_, unless the bot has the _can\\_post\\_messages_ administrator right in the channel."
+    },
+    {
+      "name": "exclude_saved",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ to exclude gifts that are saved to the chat's profile page. Always _False_, unless the bot has the _can\\_post\\_messages_ administrator right in the channel."
+    },
+    {
+      "name": "exclude_unlimited",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ to exclude gifts that can be purchased an unlimited number of times"
+    },
+    {
+      "name": "exclude_limited_upgradable",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ to exclude gifts that can be purchased a limited number of times and can be upgraded to unique"
+    },
+    {
+      "name": "exclude_limited_non_upgradable",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ to exclude gifts that can be purchased a limited number of times and can't be upgraded to unique"
+    },
+    {
+      "name": "exclude_from_blockchain",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ to exclude gifts that were assigned from the TON blockchain and can't be resold or transferred in Telegram"
+    },
+    {
+      "name": "exclude_unique",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ to exclude unique gifts"
+    },
+    {
+      "name": "sort_by_price",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ to sort results by gift price instead of send date. Sorting is applied before pagination."
+    },
+    {
+      "name": "offset",
+      "rawType": "String",
+      "required": false,
+      "description": "Offset of the first entry to return as received from the previous request; use an empty string to get the first chunk of results"
+    },
+    {
+      "name": "limit",
+      "rawType": "Integer",
+      "required": false,
+      "description": "The maximum number of gifts to be returned; 1-100. Defaults to 100."
+    }
+  ]
+}

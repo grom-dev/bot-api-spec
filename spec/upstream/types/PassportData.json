@@ -1,0 +1,18 @@
+{
+  "name": "PassportData",
+  "description": "Describes Telegram Passport data shared with the bot by the user.",
+  "fields": [
+    {
+      "name": "data",
+      "rawType": "Array of EncryptedPassportElement",
+      "required": true,
+      "description": "Array with information about documents and other Telegram Passport elements that was shared with the bot"
+    },
+    {
+      "name": "credentials",
+      "rawType": "EncryptedCredentials",
+      "required": true,
+      "description": "Encrypted credentials required to decrypt the data"
+    }
+  ]
+}

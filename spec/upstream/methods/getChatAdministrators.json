@@ -1,0 +1,18 @@
+{
+  "name": "getChatAdministrators",
+  "description": "Use this method to get a list of administrators in a chat. Returns an Array of [ChatMember](https://core.telegram.org/bots/api#chatmember) objects.",
+  "parameters": [
+    {
+      "name": "chat_id",
+      "rawType": "Integer or String",
+      "required": true,
+      "description": "Unique identifier for the target chat or username of the target supergroup or channel in the format `@username`"
+    },
+    {
+      "name": "return_bots",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ to additionally receive all bots that are administrators of the chat. By default, bots other than the current bot are omitted."
+    }
+  ]
+}

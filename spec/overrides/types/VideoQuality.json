@@ -1,0 +1,29 @@
+{
+  "fields": {
+    "codec": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "h264"
+          },
+          {
+            "type": "str",
+            "literal": "h265"
+          },
+          {
+            "type": "str",
+            "literal": "av01"
+          }
+        ]
+      }
+    },
+    "file_size": {
+      "type": {
+        "type": "int53"
+      },
+      "description": "File size in bytes."
+    }
+  }
+}

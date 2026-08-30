@@ -1,0 +1,24 @@
+{
+  "name": "RichBlockPreformatted",
+  "description": "A preformatted text block, corresponding to the nested HTML tags `<pre>` and `<code>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “pre”"
+    },
+    {
+      "name": "text",
+      "rawType": "RichText",
+      "required": true,
+      "description": "Text of the block"
+    },
+    {
+      "name": "language",
+      "rawType": "String",
+      "required": false,
+      "description": "The programming language of the text"
+    }
+  ]
+}

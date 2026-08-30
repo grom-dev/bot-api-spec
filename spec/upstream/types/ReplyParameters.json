@@ -1,0 +1,60 @@
+{
+  "name": "ReplyParameters",
+  "description": "Describes reply parameters for the message that is being sent.",
+  "fields": [
+    {
+      "name": "message_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Identifier of the message that will be replied to in the current chat, or in the chat _chat\\_id_ if it is specified"
+    },
+    {
+      "name": "chat_id",
+      "rawType": "Integer or String",
+      "required": false,
+      "description": "If the message to be replied to is from a different chat, unique identifier for the chat or username of the bot, supergroup or channel in the format `@username`. Not supported for messages sent on behalf of a business account and messages from channel direct messages chats."
+    },
+    {
+      "name": "allow_sending_without_reply",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ if the message should be sent even if the specified message to be replied to is not found. Always _False_ for replies in another chat or forum topic. Always _True_ for messages sent on behalf of a business account."
+    },
+    {
+      "name": "quote",
+      "rawType": "String",
+      "required": false,
+      "description": "Quoted part of the message to be replied to; 0-1024 characters after entities parsing. The quote must be an exact substring of the message to be replied to, including _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, _custom\\_emoji_, and _date\\_time_ entities. The message will fail to send if the quote isn't found in the original message."
+    },
+    {
+      "name": "quote_parse_mode",
+      "rawType": "String",
+      "required": false,
+      "description": "Mode for parsing entities in the quote. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details."
+    },
+    {
+      "name": "quote_entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "A JSON-serialized list of special entities that appear in the quote. It can be specified instead of _quote\\_parse\\_mode_."
+    },
+    {
+      "name": "quote_position",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Position of the quote in the original message in UTF-16 code units"
+    },
+    {
+      "name": "checklist_task_id",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Identifier of the specific checklist task to be replied to"
+    },
+    {
+      "name": "poll_option_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Persistent identifier of the specific poll option to be replied to"
+    }
+  ]
+}

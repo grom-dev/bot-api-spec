@@ -1,0 +1,12 @@
+{
+  "name": "MenuButtonCommands",
+  "description": "Represents a menu button, which opens the bot's list of commands.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the button, must be _commands_"
+    }
+  ]
+}

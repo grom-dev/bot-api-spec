@@ -1,0 +1,19 @@
+{
+  "fields": {
+    "reason": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "post_deleted"
+          },
+          {
+            "type": "str",
+            "literal": "payment_refunded"
+          }
+        ]
+      }
+    }
+  }
+}

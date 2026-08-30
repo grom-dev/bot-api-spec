@@ -1,0 +1,5 @@
+{
+  "name": "MaybeInaccessibleMessage",
+  "description": "This object describes a message that can be inaccessible to the bot. It can be one of\n\n-   [Message](https://core.telegram.org/bots/api#message)\n-   [InaccessibleMessage](https://core.telegram.org/bots/api#inaccessiblemessage)",
+  "fields": null
+}

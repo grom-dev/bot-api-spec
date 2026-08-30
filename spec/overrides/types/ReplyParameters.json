@@ -1,0 +1,26 @@
+{
+  "fields": {
+    "quote_parse_mode": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "HTML"
+          },
+          {
+            "type": "str",
+            "literal": "MarkdownV2"
+          },
+          {
+            "type": "str",
+            "literal": "Markdown"
+          }
+        ]
+      }
+    },
+    "quote_entities": {
+      "description": "An array of special entities that appear in the quote. It can be specified instead of _quote\\_parse\\_mode_."
+    }
+  }
+}

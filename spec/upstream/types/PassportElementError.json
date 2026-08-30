@@ -1,0 +1,5 @@
+{
+  "name": "PassportElementError",
+  "description": "This object represents an error in the Telegram Passport element which was submitted that should be resolved by the user. It should be one of:\n\n-   [PassportElementErrorDataField](https://core.telegram.org/bots/api#passportelementerrordatafield)\n-   [PassportElementErrorFrontSide](https://core.telegram.org/bots/api#passportelementerrorfrontside)\n-   [PassportElementErrorReverseSide](https://core.telegram.org/bots/api#passportelementerrorreverseside)\n-   [PassportElementErrorSelfie](https://core.telegram.org/bots/api#passportelementerrorselfie)\n-   [PassportElementErrorFile](https://core.telegram.org/bots/api#passportelementerrorfile)\n-   [PassportElementErrorFiles](https://core.telegram.org/bots/api#passportelementerrorfiles)\n-   [PassportElementErrorTranslationFile](https://core.telegram.org/bots/api#passportelementerrortranslationfile)\n-   [PassportElementErrorTranslationFiles](https://core.telegram.org/bots/api#passportelementerrortranslationfiles)\n-   [PassportElementErrorUnspecified](https://core.telegram.org/bots/api#passportelementerrorunspecified)",
+  "fields": null
+}

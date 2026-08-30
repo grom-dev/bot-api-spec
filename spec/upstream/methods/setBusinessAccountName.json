@@ -1,0 +1,24 @@
+{
+  "name": "setBusinessAccountName",
+  "description": "Changes the first and last name of a managed business account. Requires the _can\\_change\\_name_ business bot right. Returns _True_ on success.",
+  "parameters": [
+    {
+      "name": "business_connection_id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique identifier of the business connection"
+    },
+    {
+      "name": "first_name",
+      "rawType": "String",
+      "required": true,
+      "description": "The new value of the first name for the business account; 1-64 characters"
+    },
+    {
+      "name": "last_name",
+      "rawType": "String",
+      "required": false,
+      "description": "The new value of the last name for the business account; 0-64 characters"
+    }
+  ]
+}

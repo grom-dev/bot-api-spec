@@ -1,0 +1,84 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultCachedAudio"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultCachedDocument"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultCachedGif"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultCachedMpeg4Gif"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultCachedPhoto"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultCachedSticker"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultCachedVideo"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultCachedVoice"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultArticle"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultAudio"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultContact"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultGame"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultDocument"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultGif"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultLocation"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultMpeg4Gif"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultPhoto"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultVenue"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultVideo"
+    },
+    {
+      "type": "api-type",
+      "name": "InlineQueryResultVoice"
+    }
+  ]
+}

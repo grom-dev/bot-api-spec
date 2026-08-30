@@ -1,0 +1,5 @@
+{
+  "name": "ChatMember",
+  "description": "This object contains information about one member of a chat. Currently, the following 6 types of chat members are supported:\n\n-   [ChatMemberOwner](https://core.telegram.org/bots/api#chatmemberowner)\n-   [ChatMemberAdministrator](https://core.telegram.org/bots/api#chatmemberadministrator)\n-   [ChatMemberMember](https://core.telegram.org/bots/api#chatmembermember)\n-   [ChatMemberRestricted](https://core.telegram.org/bots/api#chatmemberrestricted)\n-   [ChatMemberLeft](https://core.telegram.org/bots/api#chatmemberleft)\n-   [ChatMemberBanned](https://core.telegram.org/bots/api#chatmemberbanned)",
+  "fields": null
+}

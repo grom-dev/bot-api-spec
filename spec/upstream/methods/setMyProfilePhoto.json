@@ -1,0 +1,12 @@
+{
+  "name": "setMyProfilePhoto",
+  "description": "Changes the profile photo of the bot. Returns _True_ on success.",
+  "parameters": [
+    {
+      "name": "photo",
+      "rawType": "InputProfilePhoto",
+      "required": true,
+      "description": "The new profile photo to set"
+    }
+  ]
+}

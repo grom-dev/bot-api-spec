@@ -1,0 +1,102 @@
+{
+  "name": "InlineQueryResultVideo",
+  "description": "Represents a link to a page containing an embedded video player or a video file. By default, this video file will be sent by the user with an optional caption. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the video.\n\n> If an InlineQueryResultVideo message contains an embedded video (e.g., YouTube), you **must** replace its content using _input\\_message\\_content_.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the result, must be _video_"
+    },
+    {
+      "name": "id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique identifier for this result, 1-64 bytes"
+    },
+    {
+      "name": "video_url",
+      "rawType": "String",
+      "required": true,
+      "description": "A valid URL for the embedded video player or video file"
+    },
+    {
+      "name": "mime_type",
+      "rawType": "String",
+      "required": true,
+      "description": "MIME type of the content of the video URL, “text/html” or “video/mp4”"
+    },
+    {
+      "name": "thumbnail_url",
+      "rawType": "String",
+      "required": true,
+      "description": "URL of the thumbnail (JPEG only) for the video"
+    },
+    {
+      "name": "title",
+      "rawType": "String",
+      "required": true,
+      "description": "Title for the result"
+    },
+    {
+      "name": "caption",
+      "rawType": "String",
+      "required": false,
+      "description": "Caption of the video to be sent, 0-1024 characters after entities parsing"
+    },
+    {
+      "name": "parse_mode",
+      "rawType": "String",
+      "required": false,
+      "description": "Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details."
+    },
+    {
+      "name": "caption_entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_"
+    },
+    {
+      "name": "show_caption_above_media",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_, if the caption must be shown above the message media"
+    },
+    {
+      "name": "video_width",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Video width"
+    },
+    {
+      "name": "video_height",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Video height"
+    },
+    {
+      "name": "video_duration",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Video duration in seconds"
+    },
+    {
+      "name": "description",
+      "rawType": "String",
+      "required": false,
+      "description": "Short description of the result"
+    },
+    {
+      "name": "reply_markup",
+      "rawType": "InlineKeyboardMarkup",
+      "required": false,
+      "description": "[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message"
+    },
+    {
+      "name": "input_message_content",
+      "rawType": "InputMessageContent",
+      "required": false,
+      "description": "Content of the message to be sent instead of the video. This field is **required** if InlineQueryResultVideo is used to send an HTML-page as a result (e.g., a YouTube video)."
+    }
+  ]
+}

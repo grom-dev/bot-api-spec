@@ -1,0 +1,5 @@
+{
+  "name": "InputPollOptionMedia",
+  "description": "This object represents the content of a poll option to be sent. It should be one of\n\n-   [InputMediaAnimation](https://core.telegram.org/bots/api#inputmediaanimation)\n-   [InputMediaLink](https://core.telegram.org/bots/api#inputmedialink)\n-   [InputMediaLivePhoto](https://core.telegram.org/bots/api#inputmedialivephoto)\n-   [InputMediaLocation](https://core.telegram.org/bots/api#inputmedialocation)\n-   [InputMediaPhoto](https://core.telegram.org/bots/api#inputmediaphoto)\n-   [InputMediaSticker](https://core.telegram.org/bots/api#inputmediasticker)\n-   [InputMediaVenue](https://core.telegram.org/bots/api#inputmediavenue)\n-   [InputMediaVideo](https://core.telegram.org/bots/api#inputmediavideo)",
+  "fields": null
+}

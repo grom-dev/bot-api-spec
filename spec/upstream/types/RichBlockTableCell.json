@@ -1,0 +1,42 @@
+{
+  "name": "RichBlockTableCell",
+  "description": "Cell in a table.",
+  "fields": [
+    {
+      "name": "text",
+      "rawType": "RichText",
+      "required": false,
+      "description": "Text in the cell. If omitted, then the cell is invisible."
+    },
+    {
+      "name": "is_header",
+      "rawType": "True",
+      "required": false,
+      "description": "_True_, if the cell is a header cell"
+    },
+    {
+      "name": "colspan",
+      "rawType": "Integer",
+      "required": false,
+      "description": "The number of columns the cell spans if it is bigger than 1"
+    },
+    {
+      "name": "rowspan",
+      "rawType": "Integer",
+      "required": false,
+      "description": "The number of rows the cell spans if it is bigger than 1"
+    },
+    {
+      "name": "align",
+      "rawType": "String",
+      "required": true,
+      "description": "Horizontal cell content alignment. Currently, must be one of “left”, “center”, or “right”."
+    },
+    {
+      "name": "valign",
+      "rawType": "String",
+      "required": true,
+      "description": "Vertical cell content alignment. Currently, must be one of “top”, “middle”, or “bottom”."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "OwnedGiftRegular"
+    },
+    {
+      "type": "api-type",
+      "name": "OwnedGiftUnique"
+    }
+  ]
+}

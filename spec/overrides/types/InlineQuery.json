@@ -1,0 +1,31 @@
+{
+  "fields": {
+    "chat_type": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "sender"
+          },
+          {
+            "type": "str",
+            "literal": "private"
+          },
+          {
+            "type": "str",
+            "literal": "group"
+          },
+          {
+            "type": "str",
+            "literal": "supergroup"
+          },
+          {
+            "type": "str",
+            "literal": "channel"
+          }
+        ]
+      }
+    }
+  }
+}

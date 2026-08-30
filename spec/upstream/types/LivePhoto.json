@@ -1,0 +1,54 @@
+{
+  "name": "LivePhoto",
+  "description": "This object represents a live photo.",
+  "fields": [
+    {
+      "name": "photo",
+      "rawType": "Array of PhotoSize",
+      "required": false,
+      "description": "Available sizes of the corresponding static photo"
+    },
+    {
+      "name": "file_id",
+      "rawType": "String",
+      "required": true,
+      "description": "Identifier for the video file which can be used to download or reuse the file"
+    },
+    {
+      "name": "file_unique_id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique identifier for the video file which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file."
+    },
+    {
+      "name": "width",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Video width as defined by the sender"
+    },
+    {
+      "name": "height",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Video height as defined by the sender"
+    },
+    {
+      "name": "duration",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Duration of the video in seconds as defined by the sender"
+    },
+    {
+      "name": "mime_type",
+      "rawType": "String",
+      "required": false,
+      "description": "MIME type of the file as defined by the sender"
+    },
+    {
+      "name": "file_size",
+      "rawType": "Integer",
+      "required": false,
+      "description": "File size in bytes. It can be bigger than 2^31 and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a signed 64-bit integer or double-precision float type are safe for storing this value."
+    }
+  ]
+}

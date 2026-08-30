@@ -1,0 +1,31 @@
+{
+  "fields": {
+    "type": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "a"
+          },
+          {
+            "type": "str",
+            "literal": "A"
+          },
+          {
+            "type": "str",
+            "literal": "i"
+          },
+          {
+            "type": "str",
+            "literal": "I"
+          },
+          {
+            "type": "str",
+            "literal": "1"
+          }
+        ]
+      }
+    }
+  }
+}

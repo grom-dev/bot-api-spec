@@ -1,0 +1,18 @@
+{
+  "name": "PaidMediaPhoto",
+  "description": "The paid media is a photo.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the paid media, always “photo”"
+    },
+    {
+      "name": "photo",
+      "rawType": "Array of PhotoSize",
+      "required": true,
+      "description": "The photo"
+    }
+  ]
+}

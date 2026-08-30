@@ -1,0 +1,78 @@
+{
+  "name": "sendDice",
+  "description": "Use this method to send an animated emoji that will display a random value. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.",
+  "parameters": [
+    {
+      "name": "business_connection_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Unique identifier of the business connection on behalf of which the message will be sent"
+    },
+    {
+      "name": "chat_id",
+      "rawType": "Integer or String",
+      "required": true,
+      "description": "Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`"
+    },
+    {
+      "name": "message_thread_id",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only"
+    },
+    {
+      "name": "direct_messages_topic_id",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat"
+    },
+    {
+      "name": "emoji",
+      "rawType": "String",
+      "required": false,
+      "description": "Emoji on which the dice throw animation is based. Currently, must be one of “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”, “![🎯](//telegram.org/img/emoji/40/F09F8EAF.png)”, “![🏀](//telegram.org/img/emoji/40/F09F8F80.png)”, “![⚽](//telegram.org/img/emoji/40/E29ABD.png)”, “![🎳](//telegram.org/img/emoji/40/F09F8EB3.png)”, or “![🎰](//telegram.org/img/emoji/40/F09F8EB0.png)”. Dice can have values 1-6 for “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”, “![🎯](//telegram.org/img/emoji/40/F09F8EAF.png)” and “![🎳](//telegram.org/img/emoji/40/F09F8EB3.png)”, values 1-5 for “![🏀](//telegram.org/img/emoji/40/F09F8F80.png)” and “![⚽](//telegram.org/img/emoji/40/E29ABD.png)”, and values 1-64 for “![🎰](//telegram.org/img/emoji/40/F09F8EB0.png)”. Defaults to “![🎲](//telegram.org/img/emoji/40/F09F8EB2.png)”."
+    },
+    {
+      "name": "disable_notification",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound."
+    },
+    {
+      "name": "protect_content",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Protects the contents of the sent message from forwarding"
+    },
+    {
+      "name": "allow_paid_broadcast",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance."
+    },
+    {
+      "name": "message_effect_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Unique identifier of the message effect to be added to the message; for private chats only"
+    },
+    {
+      "name": "suggested_post_parameters",
+      "rawType": "SuggestedPostParameters",
+      "required": false,
+      "description": "A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined."
+    },
+    {
+      "name": "reply_parameters",
+      "rawType": "ReplyParameters",
+      "required": false,
+      "description": "Description of the message to reply to"
+    },
+    {
+      "name": "reply_markup",
+      "rawType": "InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply",
+      "required": false,
+      "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user."
+    }
+  ]
+}

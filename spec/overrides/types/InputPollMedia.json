@@ -1,0 +1,36 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "InputMediaAnimation"
+    },
+    {
+      "type": "api-type",
+      "name": "InputMediaAudio"
+    },
+    {
+      "type": "api-type",
+      "name": "InputMediaDocument"
+    },
+    {
+      "type": "api-type",
+      "name": "InputMediaLivePhoto"
+    },
+    {
+      "type": "api-type",
+      "name": "InputMediaLocation"
+    },
+    {
+      "type": "api-type",
+      "name": "InputMediaPhoto"
+    },
+    {
+      "type": "api-type",
+      "name": "InputMediaVenue"
+    },
+    {
+      "type": "api-type",
+      "name": "InputMediaVideo"
+    }
+  ]
+}

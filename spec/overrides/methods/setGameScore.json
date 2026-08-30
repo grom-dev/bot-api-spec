@@ -1,0 +1,15 @@
+{
+  "returnType": {
+    "type": "union",
+    "types": [
+      {
+        "type": "api-type",
+        "name": "Message"
+      },
+      {
+        "type": "bool",
+        "literal": true
+      }
+    ]
+  }
+}

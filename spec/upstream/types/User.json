@@ -1,0 +1,114 @@
+{
+  "name": "User",
+  "description": "This object represents a Telegram user or bot.",
+  "fields": [
+    {
+      "name": "id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Unique identifier for this user or bot. This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a 64-bit integer or double-precision float type are safe for storing this identifier."
+    },
+    {
+      "name": "is_bot",
+      "rawType": "Boolean",
+      "required": true,
+      "description": "_True_, if this user is a bot"
+    },
+    {
+      "name": "first_name",
+      "rawType": "String",
+      "required": true,
+      "description": "User's or bot's first name"
+    },
+    {
+      "name": "last_name",
+      "rawType": "String",
+      "required": false,
+      "description": "User's or bot's last name"
+    },
+    {
+      "name": "username",
+      "rawType": "String",
+      "required": false,
+      "description": "User's or bot's username"
+    },
+    {
+      "name": "language_code",
+      "rawType": "String",
+      "required": false,
+      "description": "[IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) of the user's language"
+    },
+    {
+      "name": "is_premium",
+      "rawType": "True",
+      "required": false,
+      "description": "_True_, if this user is a Telegram Premium user"
+    },
+    {
+      "name": "added_to_attachment_menu",
+      "rawType": "True",
+      "required": false,
+      "description": "_True_, if this user added the bot to the attachment menu"
+    },
+    {
+      "name": "can_join_groups",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the bot can be invited to groups. Returned only in [getMe](https://core.telegram.org/bots/api#getme)."
+    },
+    {
+      "name": "can_read_all_group_messages",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if [privacy mode](https://core.telegram.org/bots/features#privacy-mode) is disabled for the bot. Returned only in [getMe](https://core.telegram.org/bots/api#getme)."
+    },
+    {
+      "name": "supports_guest_queries",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the bot supports guest queries from chats it is not a member of. Returned only in [getMe](https://core.telegram.org/bots/api#getme)."
+    },
+    {
+      "name": "supports_inline_queries",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the bot supports inline queries. Returned only in [getMe](https://core.telegram.org/bots/api#getme)."
+    },
+    {
+      "name": "can_connect_to_business",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the bot can be connected to a user account to manage it. Returned only in [getMe](https://core.telegram.org/bots/api#getme)."
+    },
+    {
+      "name": "has_main_web_app",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the bot has a main Web App. Returned only in [getMe](https://core.telegram.org/bots/api#getme)."
+    },
+    {
+      "name": "has_topics_enabled",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the bot has forum topic mode enabled in private chats. Returned only in [getMe](https://core.telegram.org/bots/api#getme)."
+    },
+    {
+      "name": "allows_users_to_create_topics",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the bot allows users to create and delete topics in private chats. Returned only in [getMe](https://core.telegram.org/bots/api#getme)."
+    },
+    {
+      "name": "can_manage_bots",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if other bots can be created to be controlled by the bot. Returned only in [getMe](https://core.telegram.org/bots/api#getme)."
+    },
+    {
+      "name": "supports_join_request_queries",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the bot supports join request queries and can be assigned to process them. Returned only in [getMe](https://core.telegram.org/bots/api#getme)."
+    }
+  ]
+}

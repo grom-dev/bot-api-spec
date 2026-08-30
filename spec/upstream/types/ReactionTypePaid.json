@@ -1,0 +1,12 @@
+{
+  "name": "ReactionTypePaid",
+  "description": "The reaction is paid.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the reaction, always “paid”"
+    }
+  ]
+}

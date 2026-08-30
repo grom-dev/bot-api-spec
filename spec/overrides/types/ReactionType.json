@@ -1,0 +1,16 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "ReactionTypeEmoji"
+    },
+    {
+      "type": "api-type",
+      "name": "ReactionTypeCustomEmoji"
+    },
+    {
+      "type": "api-type",
+      "name": "ReactionTypePaid"
+    }
+  ]
+}

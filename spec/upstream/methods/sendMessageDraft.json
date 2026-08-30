@@ -1,0 +1,42 @@
+{
+  "name": "sendMessageDraft",
+  "description": "Use this method to stream a partial message to a user while the message is being generated. Note that the streamed draft is ephemeral and acts as a temporary 30-second preview - once the output is finalized, you **must** call [sendMessage](https://core.telegram.org/bots/api#sendmessage) with the complete message to persist it in the user's chat. Returns _True_ on success.",
+  "parameters": [
+    {
+      "name": "chat_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Unique identifier for the target private chat"
+    },
+    {
+      "name": "message_thread_id",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Unique identifier for the target message thread"
+    },
+    {
+      "name": "draft_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Unique identifier of the message draft; must be non-zero. Changes to drafts with the same identifier are animated."
+    },
+    {
+      "name": "text",
+      "rawType": "String",
+      "required": false,
+      "description": "Text of the message to be sent, 0-4096 characters after entities parsing. Pass an empty text to show a “Thinking…” placeholder."
+    },
+    {
+      "name": "parse_mode",
+      "rawType": "String",
+      "required": false,
+      "description": "Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details."
+    },
+    {
+      "name": "entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "A JSON-serialized list of special entities that appear in message text, which can be specified instead of _parse\\_mode_"
+    }
+  ]
+}

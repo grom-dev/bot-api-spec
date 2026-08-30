@@ -1,0 +1,23 @@
+{
+  "returnType": {
+    "type": "union",
+    "types": [
+      {
+        "type": "api-type",
+        "name": "Message"
+      },
+      {
+        "type": "bool",
+        "literal": true
+      }
+    ]
+  },
+  "parameters": {
+    "media": {
+      "description": "An object for a new media content of the message"
+    },
+    "reply_markup": {
+      "description": "An object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)"
+    }
+  }
+}

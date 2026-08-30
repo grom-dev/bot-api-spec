@@ -1,0 +1,18 @@
+{
+  "name": "RichTextStrikethrough",
+  "description": "A strikethrough text.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the rich text, always “strikethrough”"
+    },
+    {
+      "name": "text",
+      "rawType": "RichText",
+      "required": true,
+      "description": "The text"
+    }
+  ]
+}

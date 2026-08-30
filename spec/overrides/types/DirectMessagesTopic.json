@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "topic_id": {
+      "type": {
+        "type": "int53"
+      },
+      "description": "Unique identifier of the topic."
+    }
+  }
+}

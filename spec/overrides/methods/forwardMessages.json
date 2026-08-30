@@ -1,0 +1,14 @@
+{
+  "returnType": {
+    "type": "array",
+    "of": {
+      "type": "api-type",
+      "name": "MessageId"
+    }
+  },
+  "parameters": {
+    "message_ids": {
+      "description": "An array of 1-100 identifiers of messages in the chat _from\\_chat\\_id_ to forward. The identifiers must be specified in a strictly increasing order."
+    }
+  }
+}

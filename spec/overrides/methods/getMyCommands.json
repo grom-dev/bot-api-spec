@@ -1,0 +1,14 @@
+{
+  "returnType": {
+    "type": "array",
+    "of": {
+      "type": "api-type",
+      "name": "BotCommand"
+    }
+  },
+  "parameters": {
+    "scope": {
+      "description": "An object, describing scope of users. Defaults to [BotCommandScopeDefault](https://core.telegram.org/bots/api#botcommandscopedefault)."
+    }
+  }
+}

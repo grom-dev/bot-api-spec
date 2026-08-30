@@ -1,0 +1,24 @@
+{
+  "name": "RichTextCashtag",
+  "description": "A cashtag.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the rich text, always “cashtag”"
+    },
+    {
+      "name": "text",
+      "rawType": "RichText",
+      "required": true,
+      "description": "The text"
+    },
+    {
+      "name": "cashtag",
+      "rawType": "String",
+      "required": true,
+      "description": "The cashtag"
+    }
+  ]
+}

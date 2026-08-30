@@ -1,0 +1,48 @@
+{
+  "name": "PreCheckoutQuery",
+  "description": "This object contains information about an incoming pre-checkout query.",
+  "fields": [
+    {
+      "name": "id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique query identifier"
+    },
+    {
+      "name": "from",
+      "rawType": "User",
+      "required": true,
+      "description": "User who sent the query"
+    },
+    {
+      "name": "currency",
+      "rawType": "String",
+      "required": true,
+      "description": "Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90)"
+    },
+    {
+      "name": "total_amount",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Total price in the _smallest units_ of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the _exp_ parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies)."
+    },
+    {
+      "name": "invoice_payload",
+      "rawType": "String",
+      "required": true,
+      "description": "Bot-specified invoice payload"
+    },
+    {
+      "name": "shipping_option_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Identifier of the shipping option chosen by the user"
+    },
+    {
+      "name": "order_info",
+      "rawType": "OrderInfo",
+      "required": false,
+      "description": "Order information provided by the user"
+    }
+  ]
+}

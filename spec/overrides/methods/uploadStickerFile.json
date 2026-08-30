@@ -1,0 +1,27 @@
+{
+  "returnType": {
+    "type": "api-type",
+    "name": "File"
+  },
+  "parameters": {
+    "sticker_format": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "static"
+          },
+          {
+            "type": "str",
+            "literal": "animated"
+          },
+          {
+            "type": "str",
+            "literal": "video"
+          }
+        ]
+      }
+    }
+  }
+}

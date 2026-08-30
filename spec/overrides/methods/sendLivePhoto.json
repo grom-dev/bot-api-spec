@@ -1,0 +1,17 @@
+{
+  "returnType": {
+    "type": "api-type",
+    "name": "Message"
+  },
+  "parameters": {
+    "caption_entities": {
+      "description": "An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_"
+    },
+    "suggested_post_parameters": {
+      "description": "An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined."
+    },
+    "reply_markup": {
+      "description": "Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user."
+    }
+  }
+}

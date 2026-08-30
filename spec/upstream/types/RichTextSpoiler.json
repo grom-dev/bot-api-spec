@@ -1,0 +1,18 @@
+{
+  "name": "RichTextSpoiler",
+  "description": "A text covered by a spoiler.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the rich text, always “spoiler”"
+    },
+    {
+      "name": "text",
+      "rawType": "RichText",
+      "required": true,
+      "description": "The text"
+    }
+  ]
+}

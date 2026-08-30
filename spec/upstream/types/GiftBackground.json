@@ -1,0 +1,24 @@
+{
+  "name": "GiftBackground",
+  "description": "This object describes the background of a gift.",
+  "fields": [
+    {
+      "name": "center_color",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Center color of the background in RGB format"
+    },
+    {
+      "name": "edge_color",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Edge color of the background in RGB format"
+    },
+    {
+      "name": "text_color",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Text color of the background in RGB format"
+    }
+  ]
+}

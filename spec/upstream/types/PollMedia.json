@@ -1,0 +1,66 @@
+{
+  "name": "PollMedia",
+  "description": "At most **one** of the optional fields can be present in any given object.",
+  "fields": [
+    {
+      "name": "animation",
+      "rawType": "Animation",
+      "required": false,
+      "description": "Media is an animation, information about the animation"
+    },
+    {
+      "name": "audio",
+      "rawType": "Audio",
+      "required": false,
+      "description": "Media is an audio file, information about the file; currently, can't be received in a poll option"
+    },
+    {
+      "name": "document",
+      "rawType": "Document",
+      "required": false,
+      "description": "Media is a general file, information about the file; currently, can't be received in a poll option"
+    },
+    {
+      "name": "link",
+      "rawType": "Link",
+      "required": false,
+      "description": "The HTTP link attached to the poll option"
+    },
+    {
+      "name": "live_photo",
+      "rawType": "LivePhoto",
+      "required": false,
+      "description": "Media is a live photo, information about the live photo"
+    },
+    {
+      "name": "location",
+      "rawType": "Location",
+      "required": false,
+      "description": "Media is a shared location, information about the location"
+    },
+    {
+      "name": "photo",
+      "rawType": "Array of PhotoSize",
+      "required": false,
+      "description": "Media is a photo, available sizes of the photo"
+    },
+    {
+      "name": "sticker",
+      "rawType": "Sticker",
+      "required": false,
+      "description": "Media is a sticker, information about the sticker; currently, for poll options only"
+    },
+    {
+      "name": "venue",
+      "rawType": "Venue",
+      "required": false,
+      "description": "Media is a venue, information about the venue"
+    },
+    {
+      "name": "video",
+      "rawType": "Video",
+      "required": false,
+      "description": "Media is a video, information about the video"
+    }
+  ]
+}

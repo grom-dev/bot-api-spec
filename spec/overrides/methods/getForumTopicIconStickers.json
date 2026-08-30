@@ -1,0 +1,9 @@
+{
+  "returnType": {
+    "type": "array",
+    "of": {
+      "type": "api-type",
+      "name": "Sticker"
+    }
+  }
+}

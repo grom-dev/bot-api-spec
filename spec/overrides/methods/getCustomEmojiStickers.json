@@ -1,0 +1,14 @@
+{
+  "returnType": {
+    "type": "array",
+    "of": {
+      "type": "api-type",
+      "name": "Sticker"
+    }
+  },
+  "parameters": {
+    "custom_emoji_ids": {
+      "description": "An array of custom emoji identifiers. At most 200 custom emoji identifiers can be specified."
+    }
+  }
+}

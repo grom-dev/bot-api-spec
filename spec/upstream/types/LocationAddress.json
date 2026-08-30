@@ -1,0 +1,30 @@
+{
+  "name": "LocationAddress",
+  "description": "Describes the physical address of a location.",
+  "fields": [
+    {
+      "name": "country_code",
+      "rawType": "String",
+      "required": true,
+      "description": "The two-letter ISO 3166-1 alpha-2 country code of the country where the location is located"
+    },
+    {
+      "name": "state",
+      "rawType": "String",
+      "required": false,
+      "description": "State of the location"
+    },
+    {
+      "name": "city",
+      "rawType": "String",
+      "required": false,
+      "description": "City of the location"
+    },
+    {
+      "name": "street",
+      "rawType": "String",
+      "required": false,
+      "description": "Street address of the location"
+    }
+  ]
+}

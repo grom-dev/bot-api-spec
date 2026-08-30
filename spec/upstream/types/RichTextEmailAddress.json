@@ -1,0 +1,24 @@
+{
+  "name": "RichTextEmailAddress",
+  "description": "A text with an email address.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the rich text, always “email\\_address”"
+    },
+    {
+      "name": "text",
+      "rawType": "RichText",
+      "required": true,
+      "description": "The text"
+    },
+    {
+      "name": "email_address",
+      "rawType": "String",
+      "required": true,
+      "description": "The email address"
+    }
+  ]
+}

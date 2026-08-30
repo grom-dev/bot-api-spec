@@ -1,0 +1,24 @@
+{
+  "name": "Birthdate",
+  "description": "Describes the birthdate of a user.",
+  "fields": [
+    {
+      "name": "day",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Day of the user's birth; 1-31"
+    },
+    {
+      "name": "month",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Month of the user's birth; 1-12"
+    },
+    {
+      "name": "year",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Year of the user's birth"
+    }
+  ]
+}

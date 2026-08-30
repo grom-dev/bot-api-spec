@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "currency": {
+      "type": {
+        "type": "str",
+        "literal": "XTR"
+      }
+    }
+  }
+}

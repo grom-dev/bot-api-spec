@@ -1,0 +1,30 @@
+{
+  "name": "InputMediaLocation",
+  "description": "Represents a location to be sent.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the media, must be _location_"
+    },
+    {
+      "name": "latitude",
+      "rawType": "Float",
+      "required": true,
+      "description": "Latitude of the location"
+    },
+    {
+      "name": "longitude",
+      "rawType": "Float",
+      "required": true,
+      "description": "Longitude of the location"
+    },
+    {
+      "name": "horizontal_accuracy",
+      "rawType": "Float",
+      "required": false,
+      "description": "The radius of uncertainty for the location, measured in meters; 0-1500"
+    }
+  ]
+}

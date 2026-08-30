@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "status": {
+      "type": {
+        "type": "str",
+        "literal": "left"
+      }
+    }
+  }
+}

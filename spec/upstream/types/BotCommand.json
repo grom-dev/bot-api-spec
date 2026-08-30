@@ -1,0 +1,18 @@
+{
+  "name": "BotCommand",
+  "description": "This object represents a bot command.",
+  "fields": [
+    {
+      "name": "command",
+      "rawType": "String",
+      "required": true,
+      "description": "Text of the command; 1-32 characters. Can contain only lowercase English letters, digits and underscores."
+    },
+    {
+      "name": "description",
+      "rawType": "String",
+      "required": true,
+      "description": "Description of the command; 1-256 characters"
+    }
+  ]
+}

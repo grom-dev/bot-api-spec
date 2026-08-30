@@ -1,0 +1,11 @@
+{
+  "returnType": {
+    "type": "bool",
+    "literal": true
+  },
+  "parameters": {
+    "shipping_options": {
+      "description": "Required if _ok_ is _True_. An array of available shipping options."
+    }
+  }
+}

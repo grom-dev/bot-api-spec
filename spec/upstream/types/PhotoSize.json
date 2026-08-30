@@ -1,0 +1,36 @@
+{
+  "name": "PhotoSize",
+  "description": "This object represents one size of a photo or a [file](https://core.telegram.org/bots/api#document) / [sticker](https://core.telegram.org/bots/api#sticker) thumbnail.",
+  "fields": [
+    {
+      "name": "file_id",
+      "rawType": "String",
+      "required": true,
+      "description": "Identifier for this file, which can be used to download or reuse the file"
+    },
+    {
+      "name": "file_unique_id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file."
+    },
+    {
+      "name": "width",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Photo width"
+    },
+    {
+      "name": "height",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Photo height"
+    },
+    {
+      "name": "file_size",
+      "rawType": "Integer",
+      "required": false,
+      "description": "File size in bytes"
+    }
+  ]
+}

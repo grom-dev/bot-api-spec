@@ -1,0 +1,11 @@
+{
+  "returnType": {
+    "type": "bool",
+    "literal": true
+  },
+  "parameters": {
+    "permissions": {
+      "description": "An object for new default chat permissions"
+    }
+  }
+}

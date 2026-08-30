@@ -1,0 +1,18 @@
+{
+  "name": "InputStoryContentPhoto",
+  "description": "Describes a photo to post as a story.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the content, must be _photo_"
+    },
+    {
+      "name": "photo",
+      "rawType": "String",
+      "required": true,
+      "description": "The photo to post as a story. The photo must be of the size 1080x1920 and must not exceed 10 MB. The photo can't be reused and can only be uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the photo was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)"
+    }
+  ]
+}

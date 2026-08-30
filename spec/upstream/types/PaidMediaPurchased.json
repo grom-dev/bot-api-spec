@@ -1,0 +1,18 @@
+{
+  "name": "PaidMediaPurchased",
+  "description": "This object contains information about a paid media purchase.",
+  "fields": [
+    {
+      "name": "from",
+      "rawType": "User",
+      "required": true,
+      "description": "User who purchased the media"
+    },
+    {
+      "name": "paid_media_payload",
+      "rawType": "String",
+      "required": true,
+      "description": "Bot-specified paid media payload"
+    }
+  ]
+}

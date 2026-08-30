@@ -1,0 +1,42 @@
+{
+  "name": "InputChecklist",
+  "description": "Describes a checklist to create.",
+  "fields": [
+    {
+      "name": "title",
+      "rawType": "String",
+      "required": true,
+      "description": "Title of the checklist; 1-255 characters after entities parsing"
+    },
+    {
+      "name": "parse_mode",
+      "rawType": "String",
+      "required": false,
+      "description": "Mode for parsing entities in the title. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details."
+    },
+    {
+      "name": "title_entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "List of special entities that appear in the title, which can be specified instead of parse\\_mode. Currently, only _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, _custom\\_emoji_, and _date\\_time_ entities are allowed."
+    },
+    {
+      "name": "tasks",
+      "rawType": "Array of InputChecklistTask",
+      "required": true,
+      "description": "List of 1-30 tasks in the checklist"
+    },
+    {
+      "name": "others_can_add_tasks",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ if other users can add tasks to the checklist"
+    },
+    {
+      "name": "others_can_mark_tasks_as_done",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ if other users can mark tasks as done or not done in the checklist"
+    }
+  ]
+}

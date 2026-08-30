@@ -1,0 +1,20 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "MessageOriginUser"
+    },
+    {
+      "type": "api-type",
+      "name": "MessageOriginHiddenUser"
+    },
+    {
+      "type": "api-type",
+      "name": "MessageOriginChat"
+    },
+    {
+      "type": "api-type",
+      "name": "MessageOriginChannel"
+    }
+  ]
+}

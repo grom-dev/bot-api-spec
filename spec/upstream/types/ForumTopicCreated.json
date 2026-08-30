@@ -1,0 +1,30 @@
+{
+  "name": "ForumTopicCreated",
+  "description": "This object represents a service message about a new forum topic created in the chat.",
+  "fields": [
+    {
+      "name": "name",
+      "rawType": "String",
+      "required": true,
+      "description": "Name of the topic"
+    },
+    {
+      "name": "icon_color",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Color of the topic icon in RGB format"
+    },
+    {
+      "name": "icon_custom_emoji_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Unique identifier of the custom emoji shown as the topic icon"
+    },
+    {
+      "name": "is_name_implicit",
+      "rawType": "True",
+      "required": false,
+      "description": "_True_, if the name of the topic wasn't specified explicitly by its creator and likely needs to be changed by the bot"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "GiftInfo",
+  "description": "Describes a service message about a regular gift that was sent or received.",
+  "fields": [
+    {
+      "name": "gift",
+      "rawType": "Gift",
+      "required": true,
+      "description": "Information about the gift"
+    },
+    {
+      "name": "owned_gift_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Unique identifier of the received gift for the bot; only present for gifts received on behalf of business accounts"
+    },
+    {
+      "name": "convert_star_count",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Number of Telegram Stars that can be claimed by the receiver by converting the gift; omitted if conversion to Telegram Stars is impossible"
+    },
+    {
+      "name": "prepaid_upgrade_star_count",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Number of Telegram Stars that were prepaid for the ability to upgrade the gift"
+    },
+    {
+      "name": "is_upgrade_separate",
+      "rawType": "True",
+      "required": false,
+      "description": "_True_, if the gift's upgrade was purchased after the gift was sent"
+    },
+    {
+      "name": "can_be_upgraded",
+      "rawType": "True",
+      "required": false,
+      "description": "_True_, if the gift can be upgraded to a unique gift"
+    },
+    {
+      "name": "text",
+      "rawType": "String",
+      "required": false,
+      "description": "Text of the message that was added to the gift"
+    },
+    {
+      "name": "entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "Special entities that appear in the text"
+    },
+    {
+      "name": "is_private",
+      "rawType": "True",
+      "required": false,
+      "description": "_True_, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them"
+    },
+    {
+      "name": "unique_gift_number",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Unique number reserved for this gift when upgraded. See the _number_ field in [UniqueGift](https://core.telegram.org/bots/api#uniquegift)."
+    }
+  ]
+}

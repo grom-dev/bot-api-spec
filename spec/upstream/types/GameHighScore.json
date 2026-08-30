@@ -1,0 +1,24 @@
+{
+  "name": "GameHighScore",
+  "description": "This object represents one row of the high scores table for a game.",
+  "fields": [
+    {
+      "name": "position",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Position in high score table for the game"
+    },
+    {
+      "name": "user",
+      "rawType": "User",
+      "required": true,
+      "description": "User"
+    },
+    {
+      "name": "score",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Score"
+    }
+  ]
+}

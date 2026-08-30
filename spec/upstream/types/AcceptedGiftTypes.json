@@ -1,0 +1,36 @@
+{
+  "name": "AcceptedGiftTypes",
+  "description": "This object describes the types of gifts that can be gifted to a user or a chat.",
+  "fields": [
+    {
+      "name": "unlimited_gifts",
+      "rawType": "Boolean",
+      "required": true,
+      "description": "_True_, if unlimited regular gifts are accepted"
+    },
+    {
+      "name": "limited_gifts",
+      "rawType": "Boolean",
+      "required": true,
+      "description": "_True_, if limited regular gifts are accepted"
+    },
+    {
+      "name": "unique_gifts",
+      "rawType": "Boolean",
+      "required": true,
+      "description": "_True_, if unique gifts or gifts that can be upgraded to unique for free are accepted"
+    },
+    {
+      "name": "premium_subscription",
+      "rawType": "Boolean",
+      "required": true,
+      "description": "_True_, if a Telegram Premium subscription is accepted"
+    },
+    {
+      "name": "gifts_from_channels",
+      "rawType": "Boolean",
+      "required": true,
+      "description": "_True_, if transfers of unique gifts from channels are accepted"
+    }
+  ]
+}

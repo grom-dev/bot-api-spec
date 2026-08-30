@@ -1,0 +1,30 @@
+{
+  "name": "StoryAreaTypeWeather",
+  "description": "Describes a story area containing weather information. Currently, a story can have up to 3 weather areas.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the area, always “weather”"
+    },
+    {
+      "name": "temperature",
+      "rawType": "Float",
+      "required": true,
+      "description": "Temperature, in degree Celsius"
+    },
+    {
+      "name": "emoji",
+      "rawType": "String",
+      "required": true,
+      "description": "Emoji representing the weather"
+    },
+    {
+      "name": "background_color",
+      "rawType": "Integer",
+      "required": true,
+      "description": "A color of the area background in the ARGB format"
+    }
+  ]
+}

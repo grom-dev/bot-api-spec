@@ -1,0 +1,24 @@
+{
+  "name": "RichBlockCollage",
+  "description": "A collage, corresponding to the custom HTML tag `<tg-collage>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “collage”"
+    },
+    {
+      "name": "blocks",
+      "rawType": "Array of RichBlock",
+      "required": true,
+      "description": "Elements of the collage"
+    },
+    {
+      "name": "caption",
+      "rawType": "RichBlockCaption",
+      "required": false,
+      "description": "Caption of the block"
+    }
+  ]
+}

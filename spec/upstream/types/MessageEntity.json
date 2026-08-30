@@ -1,0 +1,60 @@
+{
+  "name": "MessageEntity",
+  "description": "This object represents one special entity in a text message. For example, hashtags, usernames, URLs, etc.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the entity. Currently, can be “mention” (`@username`), “hashtag” (`#hashtag` or `#hashtag@chatusername`), “cashtag” (`$USD` or `$USD@chatusername`), “bot\\_command” (`/start@jobs_bot`), “url” (`https://telegram.org`), “email” (`do-not-reply@telegram.org`), “phone\\_number” (`+1-212-555-0123`), “bold” (**bold text**), “italic” (_italic text_), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “blockquote” (block quotation), “expandable\\_blockquote” (collapsed-by-default block quotation), “code” (monowidth string), “pre” (monowidth block), “text\\_link” (for clickable text URLs), “text\\_mention” (for users [without usernames](https://telegram.org/blog/edit#new-mentions)), “custom\\_emoji” (for inline custom emoji stickers), or “date\\_time” (for formatted date and time)."
+    },
+    {
+      "name": "offset",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Offset in [UTF-16 code units](https://core.telegram.org/api/entities#entity-length) to the start of the entity"
+    },
+    {
+      "name": "length",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Length of the entity in [UTF-16 code units](https://core.telegram.org/api/entities#entity-length)"
+    },
+    {
+      "name": "url",
+      "rawType": "String",
+      "required": false,
+      "description": "For “text\\_link” only, URL that will be opened after user taps on the text"
+    },
+    {
+      "name": "user",
+      "rawType": "User",
+      "required": false,
+      "description": "For “text\\_mention” only, the mentioned user"
+    },
+    {
+      "name": "language",
+      "rawType": "String",
+      "required": false,
+      "description": "For “pre” only, the programming language of the entity text"
+    },
+    {
+      "name": "custom_emoji_id",
+      "rawType": "String",
+      "required": false,
+      "description": "For “custom\\_emoji” only, unique identifier of the custom emoji. Use [getCustomEmojiStickers](https://core.telegram.org/bots/api#getcustomemojistickers) to get full information about the sticker."
+    },
+    {
+      "name": "unix_time",
+      "rawType": "Integer",
+      "required": false,
+      "description": "For “date\\_time” only, the Unix time associated with the entity"
+    },
+    {
+      "name": "date_time_format",
+      "rawType": "String",
+      "required": false,
+      "description": "For “date\\_time” only, the string that defines the formatting of the date and time. See [date-time entity formatting](https://core.telegram.org/bots/api#date-time-entity-formatting) for more details."
+    }
+  ]
+}

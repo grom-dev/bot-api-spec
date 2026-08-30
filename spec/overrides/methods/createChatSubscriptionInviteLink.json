@@ -1,0 +1,14 @@
+{
+  "returnType": {
+    "type": "api-type",
+    "name": "ChatInviteLink"
+  },
+  "parameters": {
+    "subscription_period": {
+      "type": {
+        "type": "int32",
+        "literal": 2592000
+      }
+    }
+  }
+}

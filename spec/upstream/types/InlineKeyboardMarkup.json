@@ -1,0 +1,12 @@
+{
+  "name": "InlineKeyboardMarkup",
+  "description": "This object represents an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) that appears right next to the message it belongs to.",
+  "fields": [
+    {
+      "name": "inline_keyboard",
+      "rawType": "Array of Array of InlineKeyboardButton",
+      "required": true,
+      "description": "Array of button rows, each represented by an Array of [InlineKeyboardButton](https://core.telegram.org/bots/api#inlinekeyboardbutton) objects"
+    }
+  ]
+}

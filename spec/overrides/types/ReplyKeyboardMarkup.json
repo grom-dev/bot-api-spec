@@ -1,0 +1,24 @@
+{
+  "fields": {
+    "keyboard": {
+      "type": {
+        "type": "array",
+        "of": {
+          "type": "array",
+          "of": {
+            "type": "union",
+            "types": [
+              {
+                "type": "str"
+              },
+              {
+                "type": "api-type",
+                "name": "KeyboardButton"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

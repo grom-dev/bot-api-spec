@@ -1,0 +1,27 @@
+{
+  "fields": {
+    "point": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "forehead"
+          },
+          {
+            "type": "str",
+            "literal": "eyes"
+          },
+          {
+            "type": "str",
+            "literal": "mouth"
+          },
+          {
+            "type": "str",
+            "literal": "chin"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -4379,6 +4379,7 @@ const PaidMediaLivePhoto = t({
       name: 'type',
       type: {
         type: 'str',
+        literal: 'live_photo',
       },
       description: {
         markdown: 'Type of the paid media, always “live\\_photo”',

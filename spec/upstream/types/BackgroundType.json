@@ -1,0 +1,5 @@
+{
+  "name": "BackgroundType",
+  "description": "This object describes the type of a background. Currently, it can be one of\n\n-   [BackgroundTypeFill](https://core.telegram.org/bots/api#backgroundtypefill)\n-   [BackgroundTypeWallpaper](https://core.telegram.org/bots/api#backgroundtypewallpaper)\n-   [BackgroundTypePattern](https://core.telegram.org/bots/api#backgroundtypepattern)\n-   [BackgroundTypeChatTheme](https://core.telegram.org/bots/api#backgroundtypechattheme)",
+  "fields": null
+}

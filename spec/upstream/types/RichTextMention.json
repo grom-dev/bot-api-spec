@@ -1,0 +1,24 @@
+{
+  "name": "RichTextMention",
+  "description": "A mention by a username.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the rich text, always “mention”"
+    },
+    {
+      "name": "text",
+      "rawType": "RichText",
+      "required": true,
+      "description": "The text"
+    },
+    {
+      "name": "username",
+      "rawType": "String",
+      "required": true,
+      "description": "The username"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "TransactionPartnerTelegramApi",
+  "description": "Describes a transaction with payment for [paid broadcasting](https://core.telegram.org/bots/api#paid-broadcasts).",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the transaction partner, always “telegram\\_api”"
+    },
+    {
+      "name": "request_count",
+      "rawType": "Integer",
+      "required": true,
+      "description": "The number of successful requests that exceeded regular limits and were therefore billed"
+    }
+  ]
+}
