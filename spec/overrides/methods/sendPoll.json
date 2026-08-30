@@ -72,6 +72,25 @@
     "explanation_entities": {
       "description": "An array of special entities that appear in the poll explanation. It can be specified instead of _explanation\\_parse\\_mode_."
     },
+    "description_parse_mode": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "HTML"
+          },
+          {
+            "type": "str",
+            "literal": "MarkdownV2"
+          },
+          {
+            "type": "str",
+            "literal": "Markdown"
+          }
+        ]
+      }
+    },
     "description_entities": {
       "description": "An array of special entities that appear in the poll description, which can be specified instead of _description\\_parse\\_mode_"
     },

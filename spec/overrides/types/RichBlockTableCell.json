@@ -1,0 +1,42 @@
+{
+  "fields": {
+    "align": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "left"
+          },
+          {
+            "type": "str",
+            "literal": "center"
+          },
+          {
+            "type": "str",
+            "literal": "right"
+          }
+        ]
+      }
+    },
+    "valign": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "top"
+          },
+          {
+            "type": "str",
+            "literal": "middle"
+          },
+          {
+            "type": "str",
+            "literal": "bottom"
+          }
+        ]
+      }
+    }
+  }
+}

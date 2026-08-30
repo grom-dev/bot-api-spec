@@ -4,14 +4,14 @@
     "name": "Message"
   },
   "parameters": {
+    "ephemeral_message_parameters": {
+      "description": "An object containing the parameters of the ephemeral message to send"
+    },
     "suggested_post_parameters": {
       "description": "An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined."
     },
     "reply_markup": {
       "description": "Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user."
-    },
-    "ephemeral_message_parameters": {
-      "description": "An object containing the parameters of the ephemeral message to send"
     }
   }
 }

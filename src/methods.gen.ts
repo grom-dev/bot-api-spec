@@ -1392,7 +1392,21 @@ const sendLivePhoto: ApiMethod = {
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the video caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -4521,7 +4535,21 @@ const sendPoll: ApiMethod = {
     {
       name: 'description_parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the poll description. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -12529,7 +12557,7 @@ const sendRichMessage: ApiMethod = {
         name: 'SuggestedPostParameters',
       },
       description: {
-        markdown: 'A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
+        markdown: 'An object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.',
       },
       required: false,
     },
@@ -12568,7 +12596,7 @@ const sendRichMessage: ApiMethod = {
         ],
       },
       description: {
-        markdown: 'Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
+        markdown: 'Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user.',
       },
       required: false,
     },

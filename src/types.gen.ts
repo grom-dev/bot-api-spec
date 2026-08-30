@@ -14395,7 +14395,21 @@ const InputMediaLivePhoto = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the live photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -17214,7 +17228,21 @@ const RichBlockTableCell = t({
     {
       name: 'align',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'left',
+          },
+          {
+            type: 'str',
+            literal: 'center',
+          },
+          {
+            type: 'str',
+            literal: 'right',
+          },
+        ],
       },
       description: {
         markdown: 'Horizontal cell content alignment. Currently, must be one of “left”, “center”, or “right”.',
@@ -17224,7 +17252,21 @@ const RichBlockTableCell = t({
     {
       name: 'valign',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'top',
+          },
+          {
+            type: 'str',
+            literal: 'middle',
+          },
+          {
+            type: 'str',
+            literal: 'bottom',
+          },
+        ],
       },
       description: {
         markdown: 'Vertical cell content alignment. Currently, must be one of “top”, “middle”, or “bottom”.',
