@@ -1,0 +1,18 @@
+{
+  "name": "BotCommandScopeChatAdministrators",
+  "description": "Represents the [scope](https://core.telegram.org/bots/api#botcommandscope) of bot commands, covering all administrators of a specific group or supergroup chat.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Scope type, must be _chat\\_administrators_"
+    },
+    {
+      "name": "chat_id",
+      "rawType": "Integer or String",
+      "required": true,
+      "description": "Unique identifier for the target chat or username of the target supergroup in the format `@username`. Channel direct messages chats and channel chats aren't supported."
+    }
+  ]
+}

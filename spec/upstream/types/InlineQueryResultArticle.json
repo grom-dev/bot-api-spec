@@ -1,0 +1,66 @@
+{
+  "name": "InlineQueryResultArticle",
+  "description": "Represents a link to an article or web page.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the result, must be _article_"
+    },
+    {
+      "name": "id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique identifier for this result, 1-64 Bytes"
+    },
+    {
+      "name": "title",
+      "rawType": "String",
+      "required": true,
+      "description": "Title of the result"
+    },
+    {
+      "name": "input_message_content",
+      "rawType": "InputMessageContent",
+      "required": true,
+      "description": "Content of the message to be sent"
+    },
+    {
+      "name": "reply_markup",
+      "rawType": "InlineKeyboardMarkup",
+      "required": false,
+      "description": "[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message"
+    },
+    {
+      "name": "url",
+      "rawType": "String",
+      "required": false,
+      "description": "URL of the result"
+    },
+    {
+      "name": "description",
+      "rawType": "String",
+      "required": false,
+      "description": "Short description of the result"
+    },
+    {
+      "name": "thumbnail_url",
+      "rawType": "String",
+      "required": false,
+      "description": "Url of the thumbnail for the result"
+    },
+    {
+      "name": "thumbnail_width",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Thumbnail width"
+    },
+    {
+      "name": "thumbnail_height",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Thumbnail height"
+    }
+  ]
+}

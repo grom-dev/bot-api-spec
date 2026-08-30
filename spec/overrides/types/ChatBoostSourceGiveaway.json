@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "source": {
+      "type": {
+        "type": "str",
+        "literal": "giveaway"
+      }
+    }
+  }
+}

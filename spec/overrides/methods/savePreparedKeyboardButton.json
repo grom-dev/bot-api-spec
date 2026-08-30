@@ -1,0 +1,11 @@
+{
+  "returnType": {
+    "type": "api-type",
+    "name": "PreparedKeyboardButton"
+  },
+  "parameters": {
+    "button": {
+      "description": "An object describing the button to be saved. The button must be of the type _request\\_users_, _request\\_chat_, or _request\\_managed\\_bot_."
+    }
+  }
+}

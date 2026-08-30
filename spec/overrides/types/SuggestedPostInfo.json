@@ -1,0 +1,23 @@
+{
+  "fields": {
+    "state": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "pending"
+          },
+          {
+            "type": "str",
+            "literal": "approved"
+          },
+          {
+            "type": "str",
+            "literal": "declined"
+          }
+        ]
+      }
+    }
+  }
+}

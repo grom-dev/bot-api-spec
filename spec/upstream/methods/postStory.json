@@ -1,0 +1,60 @@
+{
+  "name": "postStory",
+  "description": "Posts a story on behalf of a managed business account. Requires the _can\\_manage\\_stories_ business bot right. Returns [Story](https://core.telegram.org/bots/api#story) on success.",
+  "parameters": [
+    {
+      "name": "business_connection_id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique identifier of the business connection"
+    },
+    {
+      "name": "content",
+      "rawType": "InputStoryContent",
+      "required": true,
+      "description": "Content of the story"
+    },
+    {
+      "name": "active_period",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Period after which the story is moved to the archive, in seconds; must be one of `6 * 3600`, `12 * 3600`, `86400`, or `2 * 86400`"
+    },
+    {
+      "name": "caption",
+      "rawType": "String",
+      "required": false,
+      "description": "Caption of the story, 0-2048 characters after entities parsing"
+    },
+    {
+      "name": "parse_mode",
+      "rawType": "String",
+      "required": false,
+      "description": "Mode for parsing entities in the story caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details."
+    },
+    {
+      "name": "caption_entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "A JSON-serialized list of special entities that appear in the caption, which can be specified instead of _parse\\_mode_"
+    },
+    {
+      "name": "areas",
+      "rawType": "Array of StoryArea",
+      "required": false,
+      "description": "A JSON-serialized list of clickable areas to be shown on the story"
+    },
+    {
+      "name": "post_to_chat_page",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ to keep the story accessible after it expires"
+    },
+    {
+      "name": "protect_content",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ if the content of the story must be protected from forwarding and screenshotting"
+    }
+  ]
+}

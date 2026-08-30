@@ -1,0 +1,30 @@
+{
+  "name": "UniqueGiftBackdropColors",
+  "description": "This object describes the colors of the backdrop of a unique gift.",
+  "fields": [
+    {
+      "name": "center_color",
+      "rawType": "Integer",
+      "required": true,
+      "description": "The color in the center of the backdrop in RGB format"
+    },
+    {
+      "name": "edge_color",
+      "rawType": "Integer",
+      "required": true,
+      "description": "The color on the edges of the backdrop in RGB format"
+    },
+    {
+      "name": "symbol_color",
+      "rawType": "Integer",
+      "required": true,
+      "description": "The color to be applied to the symbol in RGB format"
+    },
+    {
+      "name": "text_color",
+      "rawType": "Integer",
+      "required": true,
+      "description": "The color for the text on the backdrop in RGB format"
+    }
+  ]
+}

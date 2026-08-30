@@ -1,0 +1,5 @@
+{
+  "name": "InputProfilePhoto",
+  "description": "This object describes a profile photo to set. Currently, it can be one of\n\n-   [InputProfilePhotoStatic](https://core.telegram.org/bots/api#inputprofilephotostatic)\n-   [InputProfilePhotoAnimated](https://core.telegram.org/bots/api#inputprofilephotoanimated)",
+  "fields": null
+}

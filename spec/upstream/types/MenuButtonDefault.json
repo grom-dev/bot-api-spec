@@ -1,0 +1,12 @@
+{
+  "name": "MenuButtonDefault",
+  "description": "Describes that no specific value for the menu button was set.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the button, must be _default_"
+    }
+  ]
+}

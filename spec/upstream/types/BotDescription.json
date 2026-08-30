@@ -1,0 +1,12 @@
+{
+  "name": "BotDescription",
+  "description": "This object represents the bot's description.",
+  "fields": [
+    {
+      "name": "description",
+      "rawType": "String",
+      "required": true,
+      "description": "The bot's description"
+    }
+  ]
+}

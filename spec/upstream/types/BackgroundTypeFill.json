@@ -1,0 +1,24 @@
+{
+  "name": "BackgroundTypeFill",
+  "description": "The background is automatically filled based on the selected colors.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the background, always “fill”"
+    },
+    {
+      "name": "fill",
+      "rawType": "BackgroundFill",
+      "required": true,
+      "description": "The background fill"
+    },
+    {
+      "name": "dark_theme_dimming",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Dimming of the background in dark themes, as a percentage; 0-100"
+    }
+  ]
+}

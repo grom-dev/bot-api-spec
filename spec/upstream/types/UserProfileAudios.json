@@ -1,0 +1,18 @@
+{
+  "name": "UserProfileAudios",
+  "description": "This object represents the audios displayed on a user's profile.",
+  "fields": [
+    {
+      "name": "total_count",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Total number of profile audios for the target user"
+    },
+    {
+      "name": "audios",
+      "rawType": "Array of Audio",
+      "required": true,
+      "description": "Requested profile audios"
+    }
+  ]
+}

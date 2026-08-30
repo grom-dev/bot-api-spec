@@ -1,0 +1,12 @@
+{
+  "name": "RevenueWithdrawalStatePending",
+  "description": "The withdrawal is in progress.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the state, always “pending”"
+    }
+  ]
+}

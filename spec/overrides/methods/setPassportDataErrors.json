@@ -1,0 +1,11 @@
+{
+  "returnType": {
+    "type": "bool",
+    "literal": true
+  },
+  "parameters": {
+    "errors": {
+      "description": "An array describing the errors"
+    }
+  }
+}

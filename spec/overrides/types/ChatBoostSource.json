@@ -1,0 +1,16 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "ChatBoostSourcePremium"
+    },
+    {
+      "type": "api-type",
+      "name": "ChatBoostSourceGiftCode"
+    },
+    {
+      "type": "api-type",
+      "name": "ChatBoostSourceGiveaway"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "fields": {
+    "type": {
+      "type": {
+        "type": "str",
+        "literal": "document"
+      }
+    },
+    "parse_mode": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "HTML"
+          },
+          {
+            "type": "str",
+            "literal": "MarkdownV2"
+          },
+          {
+            "type": "str",
+            "literal": "Markdown"
+          }
+        ]
+      }
+    },
+    "mime_type": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "application/pdf"
+          },
+          {
+            "type": "str",
+            "literal": "application/zip"
+          }
+        ]
+      }
+    }
+  }
+}

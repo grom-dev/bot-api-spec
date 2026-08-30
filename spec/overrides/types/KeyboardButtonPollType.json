@@ -1,0 +1,19 @@
+{
+  "fields": {
+    "type": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "quiz"
+          },
+          {
+            "type": "str",
+            "literal": "regular"
+          }
+        ]
+      }
+    }
+  }
+}

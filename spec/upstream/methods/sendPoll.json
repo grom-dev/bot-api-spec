@@ -1,0 +1,210 @@
+{
+  "name": "sendPoll",
+  "description": "Use this method to send a native poll. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.",
+  "parameters": [
+    {
+      "name": "business_connection_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Unique identifier of the business connection on behalf of which the message will be sent"
+    },
+    {
+      "name": "chat_id",
+      "rawType": "Integer or String",
+      "required": true,
+      "description": "Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`. Polls can't be sent to channel direct messages chats."
+    },
+    {
+      "name": "message_thread_id",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only"
+    },
+    {
+      "name": "question",
+      "rawType": "String",
+      "required": true,
+      "description": "Poll question, 1-300 characters"
+    },
+    {
+      "name": "question_parse_mode",
+      "rawType": "String",
+      "required": false,
+      "description": "Mode for parsing entities in the question. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Currently, only custom emoji entities are allowed."
+    },
+    {
+      "name": "question_entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "A JSON-serialized list of special entities that appear in the poll question. It can be specified instead of _question\\_parse\\_mode_."
+    },
+    {
+      "name": "options",
+      "rawType": "Array of InputPollOption",
+      "required": true,
+      "description": "A JSON-serialized list of 1-12 answer options"
+    },
+    {
+      "name": "is_anonymous",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the poll needs to be anonymous, defaults to _True_"
+    },
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": false,
+      "description": "Poll type, “quiz” or “regular”, defaults to “regular”"
+    },
+    {
+      "name": "allows_multiple_answers",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_, if the poll allows multiple answers, defaults to _False_"
+    },
+    {
+      "name": "allows_revoting",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_, if the poll allows to change chosen answer options, defaults to _False_ for quizzes and to _True_ for regular polls"
+    },
+    {
+      "name": "shuffle_options",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_, if the poll options must be shown in random order"
+    },
+    {
+      "name": "allow_adding_options",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_, if answer options can be added to the poll after creation; not supported for anonymous polls and quizzes"
+    },
+    {
+      "name": "hide_results_until_closes",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_, if poll results must be shown only after the poll closes"
+    },
+    {
+      "name": "members_only",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_, if voting is limited to users who have been members of the chat where the poll is being sent for more than 24 hours; for channel chats only"
+    },
+    {
+      "name": "country_codes",
+      "rawType": "Array of String",
+      "required": false,
+      "description": "A JSON-serialized list of 0-12 two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes indicating the countries from which users can vote in the poll; for channel chats only. Use “FT” as a country code to allow users with anonymous numbers to vote. If omitted or empty, then users from any country can participate in the poll."
+    },
+    {
+      "name": "correct_option_ids",
+      "rawType": "Array of Integer",
+      "required": false,
+      "description": "A JSON-serialized list of monotonically increasing 0-based identifiers of the correct answer options, required for polls in quiz mode"
+    },
+    {
+      "name": "explanation",
+      "rawType": "String",
+      "required": false,
+      "description": "Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll, 0-200 characters with at most 2 line feeds after entities parsing"
+    },
+    {
+      "name": "explanation_parse_mode",
+      "rawType": "String",
+      "required": false,
+      "description": "Mode for parsing entities in the explanation. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details."
+    },
+    {
+      "name": "explanation_entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "A JSON-serialized list of special entities that appear in the poll explanation. It can be specified instead of _explanation\\_parse\\_mode_."
+    },
+    {
+      "name": "explanation_media",
+      "rawType": "InputPollMedia",
+      "required": false,
+      "description": "Media added to the quiz explanation"
+    },
+    {
+      "name": "open_period",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Amount of time in seconds the poll will be active after creation, 5-2628000. Can't be used together with _close\\_date_."
+    },
+    {
+      "name": "close_date",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Point in time (Unix timestamp) when the poll will be automatically closed. Must be at least 5 and no more than 2628000 seconds in the future. Can't be used together with _open\\_period_."
+    },
+    {
+      "name": "is_closed",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ if the poll needs to be immediately closed. This can be useful for poll preview."
+    },
+    {
+      "name": "description",
+      "rawType": "String",
+      "required": false,
+      "description": "Description of the poll to be sent, 0-1024 characters after entities parsing"
+    },
+    {
+      "name": "description_parse_mode",
+      "rawType": "String",
+      "required": false,
+      "description": "Mode for parsing entities in the poll description. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details."
+    },
+    {
+      "name": "description_entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "A JSON-serialized list of special entities that appear in the poll description, which can be specified instead of _description\\_parse\\_mode_"
+    },
+    {
+      "name": "media",
+      "rawType": "InputPollMedia",
+      "required": false,
+      "description": "Media added to the poll description"
+    },
+    {
+      "name": "disable_notification",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound."
+    },
+    {
+      "name": "protect_content",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Protects the contents of the sent message from forwarding and saving"
+    },
+    {
+      "name": "allow_paid_broadcast",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance."
+    },
+    {
+      "name": "message_effect_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Unique identifier of the message effect to be added to the message; for private chats only"
+    },
+    {
+      "name": "reply_parameters",
+      "rawType": "ReplyParameters",
+      "required": false,
+      "description": "Description of the message to reply to"
+    },
+    {
+      "name": "reply_markup",
+      "rawType": "InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply",
+      "required": false,
+      "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user."
+    }
+  ]
+}

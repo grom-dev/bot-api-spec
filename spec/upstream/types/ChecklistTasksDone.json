@@ -1,0 +1,24 @@
+{
+  "name": "ChecklistTasksDone",
+  "description": "Describes a service message about checklist tasks marked as done or not done.",
+  "fields": [
+    {
+      "name": "checklist_message",
+      "rawType": "Message",
+      "required": false,
+      "description": "Message containing the checklist whose tasks were marked as done or not done. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply."
+    },
+    {
+      "name": "marked_as_done_task_ids",
+      "rawType": "Array of Integer",
+      "required": false,
+      "description": "Identifiers of the tasks that were marked as done"
+    },
+    {
+      "name": "marked_as_not_done_task_ids",
+      "rawType": "Array of Integer",
+      "required": false,
+      "description": "Identifiers of the tasks that were marked as not done"
+    }
+  ]
+}

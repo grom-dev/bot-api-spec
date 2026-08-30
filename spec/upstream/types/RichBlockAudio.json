@@ -1,0 +1,24 @@
+{
+  "name": "RichBlockAudio",
+  "description": "A block with a music file, corresponding to the HTML tag `<audio>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “audio”"
+    },
+    {
+      "name": "audio",
+      "rawType": "Audio",
+      "required": true,
+      "description": "The audio"
+    },
+    {
+      "name": "caption",
+      "rawType": "RichBlockCaption",
+      "required": false,
+      "description": "Caption of the block"
+    }
+  ]
+}

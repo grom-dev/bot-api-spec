@@ -1,0 +1,48 @@
+{
+  "name": "UniqueGiftInfo",
+  "description": "Describes a service message about a unique gift that was sent or received.",
+  "fields": [
+    {
+      "name": "gift",
+      "rawType": "UniqueGift",
+      "required": true,
+      "description": "Information about the gift"
+    },
+    {
+      "name": "origin",
+      "rawType": "String",
+      "required": true,
+      "description": "Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, “resale” for gifts bought from other users, “gifted\\_upgrade” for upgrades purchased after the gift was sent, or “offer” for gifts bought or sold through gift purchase offers."
+    },
+    {
+      "name": "last_resale_currency",
+      "rawType": "String",
+      "required": false,
+      "description": "For gifts bought from other users, the currency in which the payment for the gift was done. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins."
+    },
+    {
+      "name": "last_resale_amount",
+      "rawType": "Integer",
+      "required": false,
+      "description": "For gifts bought from other users, the price paid for the gift in either Telegram Stars or nanotoncoins"
+    },
+    {
+      "name": "owned_gift_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Unique identifier of the received gift for the bot; only present for gifts received on behalf of business accounts"
+    },
+    {
+      "name": "transfer_star_count",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Number of Telegram Stars that must be paid to transfer the gift; omitted if the bot cannot transfer the gift"
+    },
+    {
+      "name": "next_transfer_date",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now."
+    }
+  ]
+}

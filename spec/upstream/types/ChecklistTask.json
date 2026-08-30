@@ -1,0 +1,42 @@
+{
+  "name": "ChecklistTask",
+  "description": "Describes a task in a checklist.",
+  "fields": [
+    {
+      "name": "id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Unique identifier of the task"
+    },
+    {
+      "name": "text",
+      "rawType": "String",
+      "required": true,
+      "description": "Text of the task"
+    },
+    {
+      "name": "text_entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "Special entities that appear in the task text"
+    },
+    {
+      "name": "completed_by_user",
+      "rawType": "User",
+      "required": false,
+      "description": "User that completed the task; omitted if the task wasn't completed by a user"
+    },
+    {
+      "name": "completed_by_chat",
+      "rawType": "Chat",
+      "required": false,
+      "description": "Chat that completed the task; omitted if the task wasn't completed by a chat"
+    },
+    {
+      "name": "completion_date",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Point in time (Unix timestamp) when the task was completed; 0 if the task wasn't completed"
+    }
+  ]
+}

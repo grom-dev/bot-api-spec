@@ -1,0 +1,33 @@
+{
+  "returnType": {
+    "type": "api-type",
+    "name": "Story"
+  },
+  "parameters": {
+    "parse_mode": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "HTML"
+          },
+          {
+            "type": "str",
+            "literal": "MarkdownV2"
+          },
+          {
+            "type": "str",
+            "literal": "Markdown"
+          }
+        ]
+      }
+    },
+    "caption_entities": {
+      "description": "An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_"
+    },
+    "areas": {
+      "description": "An array of clickable areas to be shown on the story"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "returnType": {
+    "type": "bool",
+    "literal": true
+  },
+  "parameters": {
+    "rights": {
+      "description": "An object describing new default administrator rights. If not specified, the default administrator rights will be cleared."
+    }
+  }
+}

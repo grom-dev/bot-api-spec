@@ -1,0 +1,46 @@
+{
+  "fields": {
+    "origin": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "upgrade"
+          },
+          {
+            "type": "str",
+            "literal": "transfer"
+          },
+          {
+            "type": "str",
+            "literal": "resale"
+          },
+          {
+            "type": "str",
+            "literal": "gifted_upgrade"
+          },
+          {
+            "type": "str",
+            "literal": "offer"
+          }
+        ]
+      }
+    },
+    "last_resale_currency": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "XTR"
+          },
+          {
+            "type": "str",
+            "literal": "TON"
+          }
+        ]
+      }
+    }
+  }
+}

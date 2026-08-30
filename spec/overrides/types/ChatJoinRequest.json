@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "user_chat_id": {
+      "type": {
+        "type": "int53"
+      },
+      "description": "Identifier of a private chat with the user who sent the join request.  The bot can use this identifier for 5 minutes to send messages until the join request is processed, assuming no other administrator contacted the user."
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "name": "InlineQueryResultVenue",
+  "description": "Represents a venue. By default, the venue will be sent by the user. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the venue.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the result, must be _venue_"
+    },
+    {
+      "name": "id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique identifier for this result, 1-64 Bytes"
+    },
+    {
+      "name": "latitude",
+      "rawType": "Float",
+      "required": true,
+      "description": "Latitude of the venue location in degrees"
+    },
+    {
+      "name": "longitude",
+      "rawType": "Float",
+      "required": true,
+      "description": "Longitude of the venue location in degrees"
+    },
+    {
+      "name": "title",
+      "rawType": "String",
+      "required": true,
+      "description": "Title of the venue"
+    },
+    {
+      "name": "address",
+      "rawType": "String",
+      "required": true,
+      "description": "Address of the venue"
+    },
+    {
+      "name": "foursquare_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Foursquare identifier of the venue if known"
+    },
+    {
+      "name": "foursquare_type",
+      "rawType": "String",
+      "required": false,
+      "description": "Foursquare type of the venue, if known. (For example, “arts\\_entertainment/default”, “arts\\_entertainment/aquarium” or “food/icecream”.)"
+    },
+    {
+      "name": "google_place_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Google Places identifier of the venue"
+    },
+    {
+      "name": "google_place_type",
+      "rawType": "String",
+      "required": false,
+      "description": "Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)"
+    },
+    {
+      "name": "reply_markup",
+      "rawType": "InlineKeyboardMarkup",
+      "required": false,
+      "description": "[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message"
+    },
+    {
+      "name": "input_message_content",
+      "rawType": "InputMessageContent",
+      "required": false,
+      "description": "Content of the message to be sent instead of the venue"
+    },
+    {
+      "name": "thumbnail_url",
+      "rawType": "String",
+      "required": false,
+      "description": "Url of the thumbnail for the result"
+    },
+    {
+      "name": "thumbnail_width",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Thumbnail width"
+    },
+    {
+      "name": "thumbnail_height",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Thumbnail height"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "ChatBoostAdded",
+  "description": "This object represents a service message about a user boosting a chat.",
+  "fields": [
+    {
+      "name": "boost_count",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Number of boosts added by the user"
+    }
+  ]
+}

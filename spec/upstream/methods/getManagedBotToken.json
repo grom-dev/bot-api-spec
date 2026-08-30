@@ -1,0 +1,12 @@
+{
+  "name": "getManagedBotToken",
+  "description": "Use this method to get the token of a managed bot. Returns the token as _String_ on success.",
+  "parameters": [
+    {
+      "name": "user_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "User identifier of the managed bot whose token will be returned"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "InputProfilePhotoStatic"
+    },
+    {
+      "type": "api-type",
+      "name": "InputProfilePhotoAnimated"
+    }
+  ]
+}

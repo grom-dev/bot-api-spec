@@ -1,0 +1,102 @@
+{
+  "name": "ChatPermissions",
+  "description": "Describes actions that a non-administrator user is allowed to take in a chat.",
+  "fields": [
+    {
+      "name": "can_send_messages",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user is allowed to send text messages, rich messages, contacts, giveaways, giveaway winners, invoices, locations and venues"
+    },
+    {
+      "name": "can_send_audios",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user is allowed to send audios"
+    },
+    {
+      "name": "can_send_documents",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user is allowed to send documents"
+    },
+    {
+      "name": "can_send_photos",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user is allowed to send photos"
+    },
+    {
+      "name": "can_send_videos",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user is allowed to send videos"
+    },
+    {
+      "name": "can_send_video_notes",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user is allowed to send video notes"
+    },
+    {
+      "name": "can_send_voice_notes",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user is allowed to send voice notes"
+    },
+    {
+      "name": "can_send_polls",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user is allowed to send polls and checklists"
+    },
+    {
+      "name": "can_send_other_messages",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user is allowed to send animations, games, stickers and use inline bots"
+    },
+    {
+      "name": "can_add_web_page_previews",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user is allowed to add web page previews to their messages"
+    },
+    {
+      "name": "can_react_to_messages",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user is allowed to react to messages. If omitted, defaults to the value of _can\\_send\\_messages_."
+    },
+    {
+      "name": "can_edit_tag",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user is allowed to edit their own tag. If omitted, defaults to the value of _can\\_pin\\_messages_."
+    },
+    {
+      "name": "can_change_info",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user is allowed to change the chat title, photo and other settings. Ignored in public supergroups."
+    },
+    {
+      "name": "can_invite_users",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user is allowed to invite new users to the chat"
+    },
+    {
+      "name": "can_pin_messages",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user is allowed to pin messages. Ignored in public supergroups."
+    },
+    {
+      "name": "can_manage_topics",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user is allowed to create forum topics. If omitted defaults to the value of can\\_pin\\_messages."
+    }
+  ]
+}

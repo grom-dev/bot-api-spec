@@ -1,0 +1,54 @@
+{
+  "name": "ChatMemberUpdated",
+  "description": "This object represents changes in the status of a chat member.",
+  "fields": [
+    {
+      "name": "chat",
+      "rawType": "Chat",
+      "required": true,
+      "description": "Chat the user belongs to"
+    },
+    {
+      "name": "from",
+      "rawType": "User",
+      "required": true,
+      "description": "Performer of the action, which resulted in the change"
+    },
+    {
+      "name": "date",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Date the change was done in Unix time"
+    },
+    {
+      "name": "old_chat_member",
+      "rawType": "ChatMember",
+      "required": true,
+      "description": "Previous information about the chat member"
+    },
+    {
+      "name": "new_chat_member",
+      "rawType": "ChatMember",
+      "required": true,
+      "description": "New information about the chat member"
+    },
+    {
+      "name": "invite_link",
+      "rawType": "ChatInviteLink",
+      "required": false,
+      "description": "Chat invite link, which was used by the user to join the chat; for joining by invite link events only"
+    },
+    {
+      "name": "via_join_request",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user joined the chat after sending a direct join request without using an invite link and being approved by an administrator"
+    },
+    {
+      "name": "via_chat_folder_invite_link",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the user joined the chat via a chat folder invite link"
+    }
+  ]
+}

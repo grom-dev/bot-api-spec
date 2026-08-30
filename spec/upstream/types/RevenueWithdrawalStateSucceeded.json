@@ -1,0 +1,24 @@
+{
+  "name": "RevenueWithdrawalStateSucceeded",
+  "description": "The withdrawal succeeded.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the state, always “succeeded”"
+    },
+    {
+      "name": "date",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Date the withdrawal was completed in Unix time"
+    },
+    {
+      "name": "url",
+      "rawType": "String",
+      "required": true,
+      "description": "An HTTPS URL that can be used to see transaction details"
+    }
+  ]
+}

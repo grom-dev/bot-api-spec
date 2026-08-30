@@ -1,0 +1,24 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "StoryAreaTypeLocation"
+    },
+    {
+      "type": "api-type",
+      "name": "StoryAreaTypeSuggestedReaction"
+    },
+    {
+      "type": "api-type",
+      "name": "StoryAreaTypeLink"
+    },
+    {
+      "type": "api-type",
+      "name": "StoryAreaTypeWeather"
+    },
+    {
+      "type": "api-type",
+      "name": "StoryAreaTypeUniqueGift"
+    }
+  ]
+}

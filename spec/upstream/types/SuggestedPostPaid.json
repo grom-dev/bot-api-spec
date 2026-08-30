@@ -1,0 +1,30 @@
+{
+  "name": "SuggestedPostPaid",
+  "description": "Describes a service message about a successful payment for a suggested post.",
+  "fields": [
+    {
+      "name": "suggested_post_message",
+      "rawType": "Message",
+      "required": false,
+      "description": "Message containing the suggested post. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply."
+    },
+    {
+      "name": "currency",
+      "rawType": "String",
+      "required": true,
+      "description": "Currency in which the payment was made. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins."
+    },
+    {
+      "name": "amount",
+      "rawType": "Integer",
+      "required": false,
+      "description": "The amount of the currency that was received by the channel in nanotoncoins; for payments in toncoins only"
+    },
+    {
+      "name": "star_amount",
+      "rawType": "StarAmount",
+      "required": false,
+      "description": "The amount of Telegram Stars that was received by the channel; for payments in Telegram Stars only"
+    }
+  ]
+}

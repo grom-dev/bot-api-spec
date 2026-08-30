@@ -1,0 +1,48 @@
+{
+  "fields": {
+    "type": {
+      "type": {
+        "type": "str",
+        "literal": "mpeg4_gif"
+      }
+    },
+    "thumbnail_mime_type": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "image/jpeg"
+          },
+          {
+            "type": "str",
+            "literal": "image/gif"
+          },
+          {
+            "type": "str",
+            "literal": "video/mp4"
+          }
+        ]
+      }
+    },
+    "parse_mode": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "HTML"
+          },
+          {
+            "type": "str",
+            "literal": "MarkdownV2"
+          },
+          {
+            "type": "str",
+            "literal": "Markdown"
+          }
+        ]
+      }
+    }
+  }
+}

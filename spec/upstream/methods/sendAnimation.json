@@ -1,0 +1,132 @@
+{
+  "name": "sendAnimation",
+  "description": "Use this method to send animation files (GIF or H.264/MPEG-4 AVC video without sound). On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned. Bots can currently send animation files of up to 50 MB in size, this limit may be changed in the future.",
+  "parameters": [
+    {
+      "name": "business_connection_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Unique identifier of the business connection on behalf of which the message will be sent"
+    },
+    {
+      "name": "chat_id",
+      "rawType": "Integer or String",
+      "required": true,
+      "description": "Unique identifier for the target chat or username of the target bot, supergroup or channel in the format `@username`"
+    },
+    {
+      "name": "message_thread_id",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only"
+    },
+    {
+      "name": "direct_messages_topic_id",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat"
+    },
+    {
+      "name": "animation",
+      "rawType": "InputFile or String",
+      "required": true,
+      "description": "Animation to send. Pass a file\\_id as String to send an animation that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get an animation from the Internet, or upload a new animation using multipart/form-data. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)"
+    },
+    {
+      "name": "duration",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Duration of sent animation in seconds"
+    },
+    {
+      "name": "width",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Animation width"
+    },
+    {
+      "name": "height",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Animation height"
+    },
+    {
+      "name": "thumbnail",
+      "rawType": "InputFile or String",
+      "required": false,
+      "description": "Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the thumbnail was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)"
+    },
+    {
+      "name": "caption",
+      "rawType": "String",
+      "required": false,
+      "description": "Animation caption (may also be used when resending animation by _file\\_id_), 0-1024 characters after entities parsing"
+    },
+    {
+      "name": "parse_mode",
+      "rawType": "String",
+      "required": false,
+      "description": "Mode for parsing entities in the animation caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details."
+    },
+    {
+      "name": "caption_entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "A JSON-serialized list of special entities that appear in the caption, which can be specified instead of _parse\\_mode_"
+    },
+    {
+      "name": "show_caption_above_media",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_, if the caption must be shown above the message media"
+    },
+    {
+      "name": "has_spoiler",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ if the animation needs to be covered with a spoiler animation"
+    },
+    {
+      "name": "disable_notification",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound."
+    },
+    {
+      "name": "protect_content",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Protects the contents of the sent message from forwarding and saving"
+    },
+    {
+      "name": "allow_paid_broadcast",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance."
+    },
+    {
+      "name": "message_effect_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Unique identifier of the message effect to be added to the message; for private chats only"
+    },
+    {
+      "name": "suggested_post_parameters",
+      "rawType": "SuggestedPostParameters",
+      "required": false,
+      "description": "A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined."
+    },
+    {
+      "name": "reply_parameters",
+      "rawType": "ReplyParameters",
+      "required": false,
+      "description": "Description of the message to reply to"
+    },
+    {
+      "name": "reply_markup",
+      "rawType": "InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or ForceReply",
+      "required": false,
+      "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user."
+    }
+  ]
+}

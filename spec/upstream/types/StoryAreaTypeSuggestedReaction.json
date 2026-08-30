@@ -1,0 +1,30 @@
+{
+  "name": "StoryAreaTypeSuggestedReaction",
+  "description": "Describes a story area pointing to a suggested reaction. Currently, a story can have up to 5 suggested reaction areas.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the area, always “suggested\\_reaction”"
+    },
+    {
+      "name": "reaction_type",
+      "rawType": "ReactionType",
+      "required": true,
+      "description": "Type of the reaction"
+    },
+    {
+      "name": "is_dark",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ if the reaction area has a dark background"
+    },
+    {
+      "name": "is_flipped",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ if reaction area corner is flipped"
+    }
+  ]
+}

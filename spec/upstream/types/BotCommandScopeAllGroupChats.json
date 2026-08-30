@@ -1,0 +1,12 @@
+{
+  "name": "BotCommandScopeAllGroupChats",
+  "description": "Represents the [scope](https://core.telegram.org/bots/api#botcommandscope) of bot commands, covering all group and supergroup chats.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Scope type, must be _all\\_group\\_chats_"
+    }
+  ]
+}

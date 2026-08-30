@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "migrate_to_chat_id": {
+      "type": {
+        "type": "int53"
+      },
+      "description": "The group has been migrated to a supergroup with the specified identifier."
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "BotCommandScopeDefault"
+    },
+    {
+      "type": "api-type",
+      "name": "BotCommandScopeAllPrivateChats"
+    },
+    {
+      "type": "api-type",
+      "name": "BotCommandScopeAllGroupChats"
+    },
+    {
+      "type": "api-type",
+      "name": "BotCommandScopeAllChatAdministrators"
+    },
+    {
+      "type": "api-type",
+      "name": "BotCommandScopeChat"
+    },
+    {
+      "type": "api-type",
+      "name": "BotCommandScopeChatAdministrators"
+    },
+    {
+      "type": "api-type",
+      "name": "BotCommandScopeChatMember"
+    }
+  ]
+}

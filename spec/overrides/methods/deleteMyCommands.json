@@ -1,0 +1,11 @@
+{
+  "returnType": {
+    "type": "bool",
+    "literal": true
+  },
+  "parameters": {
+    "scope": {
+      "description": "An object, describing scope of users for which the commands are relevant. Defaults to [BotCommandScopeDefault](https://core.telegram.org/bots/api#botcommandscopedefault)."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "CopyTextButton",
+  "description": "This object represents an inline keyboard button that copies specified text to the clipboard.",
+  "fields": [
+    {
+      "name": "text",
+      "rawType": "String",
+      "required": true,
+      "description": "The text to be copied to the clipboard; 1-256 characters"
+    }
+  ]
+}

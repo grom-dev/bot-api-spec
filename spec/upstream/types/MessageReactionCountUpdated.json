@@ -1,0 +1,30 @@
+{
+  "name": "MessageReactionCountUpdated",
+  "description": "This object represents reaction changes on a message with anonymous reactions.",
+  "fields": [
+    {
+      "name": "chat",
+      "rawType": "Chat",
+      "required": true,
+      "description": "The chat containing the message"
+    },
+    {
+      "name": "message_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Unique message identifier inside the chat"
+    },
+    {
+      "name": "date",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Date of the change in Unix time"
+    },
+    {
+      "name": "reactions",
+      "rawType": "Array of ReactionCount",
+      "required": true,
+      "description": "List of reactions that are present on the message"
+    }
+  ]
+}

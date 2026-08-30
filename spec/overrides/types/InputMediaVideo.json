@@ -1,0 +1,29 @@
+{
+  "fields": {
+    "type": {
+      "type": {
+        "type": "str",
+        "literal": "video"
+      }
+    },
+    "parse_mode": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "HTML"
+          },
+          {
+            "type": "str",
+            "literal": "MarkdownV2"
+          },
+          {
+            "type": "str",
+            "literal": "Markdown"
+          }
+        ]
+      }
+    }
+  }
+}

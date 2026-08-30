@@ -1,0 +1,30 @@
+{
+  "name": "ChatBoostRemoved",
+  "description": "This object represents a boost removed from a chat.",
+  "fields": [
+    {
+      "name": "chat",
+      "rawType": "Chat",
+      "required": true,
+      "description": "Chat which was boosted"
+    },
+    {
+      "name": "boost_id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique identifier of the boost"
+    },
+    {
+      "name": "remove_date",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Point in time (Unix timestamp) when the boost was removed"
+    },
+    {
+      "name": "source",
+      "rawType": "ChatBoostSource",
+      "required": true,
+      "description": "Source of the removed boost"
+    }
+  ]
+}

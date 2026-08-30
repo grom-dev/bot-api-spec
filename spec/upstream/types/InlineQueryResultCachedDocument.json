@@ -1,0 +1,66 @@
+{
+  "name": "InlineQueryResultCachedDocument",
+  "description": "Represents a link to a file stored on the Telegram servers. By default, this file will be sent by the user with an optional caption. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the file.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the result, must be _document_"
+    },
+    {
+      "name": "id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique identifier for this result, 1-64 bytes"
+    },
+    {
+      "name": "title",
+      "rawType": "String",
+      "required": true,
+      "description": "Title for the result"
+    },
+    {
+      "name": "document_file_id",
+      "rawType": "String",
+      "required": true,
+      "description": "A valid file identifier for the file"
+    },
+    {
+      "name": "description",
+      "rawType": "String",
+      "required": false,
+      "description": "Short description of the result"
+    },
+    {
+      "name": "caption",
+      "rawType": "String",
+      "required": false,
+      "description": "Caption of the document to be sent, 0-1024 characters after entities parsing"
+    },
+    {
+      "name": "parse_mode",
+      "rawType": "String",
+      "required": false,
+      "description": "Mode for parsing entities in the document caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details."
+    },
+    {
+      "name": "caption_entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_"
+    },
+    {
+      "name": "reply_markup",
+      "rawType": "InlineKeyboardMarkup",
+      "required": false,
+      "description": "[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message"
+    },
+    {
+      "name": "input_message_content",
+      "rawType": "InputMessageContent",
+      "required": false,
+      "description": "Content of the message to be sent instead of the file"
+    }
+  ]
+}

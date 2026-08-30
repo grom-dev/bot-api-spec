@@ -1,0 +1,11 @@
+{
+  "returnType": {
+    "type": "bool",
+    "literal": true
+  },
+  "parameters": {
+    "keywords": {
+      "description": "An array of 0-20 search keywords for the sticker with total length of up to 64 characters"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "getBusinessAccountStarBalance",
+  "description": "Returns the amount of Telegram Stars owned by a managed business account. Requires the _can\\_view\\_gifts\\_and\\_stars_ business bot right. Returns [StarAmount](https://core.telegram.org/bots/api#staramount) on success.",
+  "parameters": [
+    {
+      "name": "business_connection_id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique identifier of the business connection"
+    }
+  ]
+}

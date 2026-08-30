@@ -1,0 +1,16 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "InputPaidMediaLivePhoto"
+    },
+    {
+      "type": "api-type",
+      "name": "InputPaidMediaPhoto"
+    },
+    {
+      "type": "api-type",
+      "name": "InputPaidMediaVideo"
+    }
+  ]
+}

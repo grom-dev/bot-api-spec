@@ -1,0 +1,66 @@
+{
+  "name": "TransactionPartnerUser",
+  "description": "Describes a transaction with a user.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the transaction partner, always “user”"
+    },
+    {
+      "name": "transaction_type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the transaction, currently one of “invoice\\_payment” for payments via invoices, “paid\\_media\\_payment” for payments for paid media, “gift\\_purchase” for gifts sent by the bot, “premium\\_purchase” for Telegram Premium subscriptions gifted by the bot, “business\\_account\\_transfer” for direct transfers from managed business accounts"
+    },
+    {
+      "name": "user",
+      "rawType": "User",
+      "required": true,
+      "description": "Information about the user"
+    },
+    {
+      "name": "affiliate",
+      "rawType": "AffiliateInfo",
+      "required": false,
+      "description": "Information about the affiliate that received a commission via this transaction. Can be available only for “invoice\\_payment” and “paid\\_media\\_payment” transactions."
+    },
+    {
+      "name": "invoice_payload",
+      "rawType": "String",
+      "required": false,
+      "description": "Bot-specified invoice payload. Can be available only for “invoice\\_payment” transactions."
+    },
+    {
+      "name": "subscription_period",
+      "rawType": "Integer",
+      "required": false,
+      "description": "The duration of the paid subscription. Can be available only for “invoice\\_payment” transactions."
+    },
+    {
+      "name": "paid_media",
+      "rawType": "Array of PaidMedia",
+      "required": false,
+      "description": "Information about the paid media bought by the user; for “paid\\_media\\_payment” transactions only"
+    },
+    {
+      "name": "paid_media_payload",
+      "rawType": "String",
+      "required": false,
+      "description": "Bot-specified paid media payload. Can be available only for “paid\\_media\\_payment” transactions."
+    },
+    {
+      "name": "gift",
+      "rawType": "Gift",
+      "required": false,
+      "description": "The gift sent to the user by the bot; for “gift\\_purchase” transactions only"
+    },
+    {
+      "name": "premium_subscription_duration",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Number of months the gifted Telegram Premium subscription will be active for; for “premium\\_purchase” transactions only"
+    }
+  ]
+}

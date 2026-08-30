@@ -1,0 +1,5 @@
+{
+  "name": "removeMyProfilePhoto",
+  "description": "Removes the profile photo of the bot. Requires no parameters. Returns _True_ on success.",
+  "parameters": null
+}

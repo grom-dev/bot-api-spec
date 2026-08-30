@@ -1,0 +1,18 @@
+{
+  "name": "PaidMediaLivePhoto",
+  "description": "The paid media is a [live photo](https://core.telegram.org/bots/api#livephoto).",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the paid media, always “live\\_photo”"
+    },
+    {
+      "name": "live_photo",
+      "rawType": "LivePhoto",
+      "required": true,
+      "description": "The photo"
+    }
+  ]
+}

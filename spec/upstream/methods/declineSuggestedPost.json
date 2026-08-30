@@ -1,0 +1,24 @@
+{
+  "name": "declineSuggestedPost",
+  "description": "Use this method to decline a suggested post in a direct messages chat. The bot must have the 'can\\_manage\\_direct\\_messages' administrator right in the corresponding channel chat. Returns _True_ on success.",
+  "parameters": [
+    {
+      "name": "chat_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Unique identifier for the target direct messages chat"
+    },
+    {
+      "name": "message_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Identifier of a suggested post message to decline"
+    },
+    {
+      "name": "comment",
+      "rawType": "String",
+      "required": false,
+      "description": "Comment for the creator of the suggested post; 0-128 characters"
+    }
+  ]
+}

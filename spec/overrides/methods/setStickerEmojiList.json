@@ -1,0 +1,11 @@
+{
+  "returnType": {
+    "type": "bool",
+    "literal": true
+  },
+  "parameters": {
+    "emoji_list": {
+      "description": "An array of 1-20 emoji associated with the sticker"
+    }
+  }
+}

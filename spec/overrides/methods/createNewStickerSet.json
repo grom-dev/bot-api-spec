@@ -1,0 +1,30 @@
+{
+  "returnType": {
+    "type": "bool",
+    "literal": true
+  },
+  "parameters": {
+    "stickers": {
+      "description": "An array of 1-50 initial stickers to be added to the sticker set"
+    },
+    "sticker_type": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "regular"
+          },
+          {
+            "type": "str",
+            "literal": "mask"
+          },
+          {
+            "type": "str",
+            "literal": "custom_emoji"
+          }
+        ]
+      }
+    }
+  }
+}

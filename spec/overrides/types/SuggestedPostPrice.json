@@ -1,0 +1,19 @@
+{
+  "fields": {
+    "currency": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "XTR"
+          },
+          {
+            "type": "str",
+            "literal": "TON"
+          }
+        ]
+      }
+    }
+  }
+}

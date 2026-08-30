@@ -1,0 +1,24 @@
+{
+  "name": "InputProfilePhotoAnimated",
+  "description": "An animated profile photo in the MPEG4 format.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the profile photo, must be _animated_"
+    },
+    {
+      "name": "animation",
+      "rawType": "String",
+      "required": true,
+      "description": "The animated profile photo. Profile photos can't be reused and can only be uploaded as a new file, so you can pass “attach://<file\\_attach\\_name>” if the photo was uploaded using multipart/form-data under <file\\_attach\\_name>. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)"
+    },
+    {
+      "name": "main_frame_timestamp",
+      "rawType": "Float",
+      "required": false,
+      "description": "Timestamp in seconds of the frame that will be used as the static profile photo. Defaults to 0.0."
+    }
+  ]
+}

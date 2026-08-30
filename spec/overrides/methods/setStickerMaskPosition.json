@@ -1,0 +1,11 @@
+{
+  "returnType": {
+    "type": "bool",
+    "literal": true
+  },
+  "parameters": {
+    "mask_position": {
+      "description": "An object with the position where the mask should be placed on faces. Omit the parameter to remove the mask position."
+    }
+  }
+}

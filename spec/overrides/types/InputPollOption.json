@@ -1,0 +1,26 @@
+{
+  "fields": {
+    "text_parse_mode": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "HTML"
+          },
+          {
+            "type": "str",
+            "literal": "MarkdownV2"
+          },
+          {
+            "type": "str",
+            "literal": "Markdown"
+          }
+        ]
+      }
+    },
+    "text_entities": {
+      "description": "An array of special entities that appear in the poll option text. It can be specified instead of _text\\_parse\\_mode_."
+    }
+  }
+}

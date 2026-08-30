@@ -1,0 +1,66 @@
+{
+  "name": "EncryptedPassportElement",
+  "description": "Describes documents or other Telegram Passport elements shared with the bot by the user.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Element type. One of “personal\\_details”, “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”, “address”, “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration”, “temporary\\_registration”, “phone\\_number”, “email”."
+    },
+    {
+      "name": "data",
+      "rawType": "String",
+      "required": false,
+      "description": "Base64-encoded encrypted Telegram Passport element data provided by the user; available only for “personal\\_details”, “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport” and “address” types. Can be decrypted and verified using the accompanying [EncryptedCredentials](https://core.telegram.org/bots/api#encryptedcredentials)."
+    },
+    {
+      "name": "phone_number",
+      "rawType": "String",
+      "required": false,
+      "description": "User's verified phone number; available only for “phone\\_number” type"
+    },
+    {
+      "name": "email",
+      "rawType": "String",
+      "required": false,
+      "description": "User's verified email address; available only for “email” type"
+    },
+    {
+      "name": "files",
+      "rawType": "Array of PassportFile",
+      "required": false,
+      "description": "Array of encrypted files with documents provided by the user; available only for “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration” and “temporary\\_registration” types. Files can be decrypted and verified using the accompanying [EncryptedCredentials](https://core.telegram.org/bots/api#encryptedcredentials)."
+    },
+    {
+      "name": "front_side",
+      "rawType": "PassportFile",
+      "required": false,
+      "description": "Encrypted file with the front side of the document, provided by the user; available only for “passport”, “driver\\_license”, “identity\\_card” and “internal\\_passport”. The file can be decrypted and verified using the accompanying [EncryptedCredentials](https://core.telegram.org/bots/api#encryptedcredentials)."
+    },
+    {
+      "name": "reverse_side",
+      "rawType": "PassportFile",
+      "required": false,
+      "description": "Encrypted file with the reverse side of the document, provided by the user; available only for “driver\\_license” and “identity\\_card”. The file can be decrypted and verified using the accompanying [EncryptedCredentials](https://core.telegram.org/bots/api#encryptedcredentials)."
+    },
+    {
+      "name": "selfie",
+      "rawType": "PassportFile",
+      "required": false,
+      "description": "Encrypted file with the selfie of the user holding a document, provided by the user; available if requested for “passport”, “driver\\_license”, “identity\\_card” and “internal\\_passport”. The file can be decrypted and verified using the accompanying [EncryptedCredentials](https://core.telegram.org/bots/api#encryptedcredentials)."
+    },
+    {
+      "name": "translation",
+      "rawType": "Array of PassportFile",
+      "required": false,
+      "description": "Array of encrypted files with translated versions of documents provided by the user; available if requested for “passport”, “driver\\_license”, “identity\\_card”, “internal\\_passport”, “utility\\_bill”, “bank\\_statement”, “rental\\_agreement”, “passport\\_registration” and “temporary\\_registration” types. Files can be decrypted and verified using the accompanying [EncryptedCredentials](https://core.telegram.org/bots/api#encryptedcredentials)."
+    },
+    {
+      "name": "hash",
+      "rawType": "String",
+      "required": true,
+      "description": "Base64-encoded element hash for using in [PassportElementErrorUnspecified](https://core.telegram.org/bots/api#passportelementerrorunspecified)"
+    }
+  ]
+}

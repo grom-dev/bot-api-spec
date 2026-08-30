@@ -38,3 +38,21 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm run typecheck
+
+  spec:
+    name: Spec is reproducible
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # No network: regenerates src/*.gen.ts from the committed spec/ only.
+      - run: pnpm run gen:check
+      - run: pnpm run gen:build
+      - run: git diff --exit-code -- src/

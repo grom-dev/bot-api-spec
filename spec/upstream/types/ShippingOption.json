@@ -1,0 +1,24 @@
+{
+  "name": "ShippingOption",
+  "description": "This object represents one shipping option.",
+  "fields": [
+    {
+      "name": "id",
+      "rawType": "String",
+      "required": true,
+      "description": "Shipping option identifier"
+    },
+    {
+      "name": "title",
+      "rawType": "String",
+      "required": true,
+      "description": "Option title"
+    },
+    {
+      "name": "prices",
+      "rawType": "Array of LabeledPrice",
+      "required": true,
+      "description": "List of price portions"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "setCustomEmojiStickerSetThumbnail",
+  "description": "Use this method to set the thumbnail of a custom emoji sticker set. Returns _True_ on success.",
+  "parameters": [
+    {
+      "name": "name",
+      "rawType": "String",
+      "required": true,
+      "description": "Sticker set name"
+    },
+    {
+      "name": "custom_emoji_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Custom emoji identifier of a sticker from the sticker set; pass an empty string to drop the thumbnail and use the first sticker as the thumbnail"
+    }
+  ]
+}

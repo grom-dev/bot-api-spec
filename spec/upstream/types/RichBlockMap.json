@@ -1,0 +1,42 @@
+{
+  "name": "RichBlockMap",
+  "description": "A block with a map, corresponding to the custom HTML tag `<tg-map>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “map”"
+    },
+    {
+      "name": "location",
+      "rawType": "Location",
+      "required": true,
+      "description": "Location of the center of the map"
+    },
+    {
+      "name": "zoom",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Map zoom level; 13-20"
+    },
+    {
+      "name": "width",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Expected width of the map"
+    },
+    {
+      "name": "height",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Expected height of the map"
+    },
+    {
+      "name": "caption",
+      "rawType": "RichBlockCaption",
+      "required": false,
+      "description": "Caption of the block"
+    }
+  ]
+}

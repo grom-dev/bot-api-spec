@@ -1,0 +1,59 @@
+{
+  "returnType": {
+    "type": "bool",
+    "literal": true
+  },
+  "parameters": {
+    "action": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "typing"
+          },
+          {
+            "type": "str",
+            "literal": "upload_photo"
+          },
+          {
+            "type": "str",
+            "literal": "record_video"
+          },
+          {
+            "type": "str",
+            "literal": "upload_video"
+          },
+          {
+            "type": "str",
+            "literal": "record_voice"
+          },
+          {
+            "type": "str",
+            "literal": "upload_voice"
+          },
+          {
+            "type": "str",
+            "literal": "upload_document"
+          },
+          {
+            "type": "str",
+            "literal": "choose_sticker"
+          },
+          {
+            "type": "str",
+            "literal": "find_location"
+          },
+          {
+            "type": "str",
+            "literal": "record_video_note"
+          },
+          {
+            "type": "str",
+            "literal": "upload_video_note"
+          }
+        ]
+      }
+    }
+  }
+}

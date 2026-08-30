@@ -114,4 +114,19 @@ Descriptions are copied verbatim from the official [Bot API documentation][bot-a
 - "JSON-serialized..." portions are omitted from field/parameter descriptions.
 - "...may have more than 32 significant bits...but it has at most 52 significant bits..." portions are omitted from _Integer_ field/parameter descriptions. Instead, the `type` is set to `int53` for such fields/parameters (as per [TDLib](https://core.telegram.org/tdlib/docs/td__api_8h.html#a6f57ab89c6371535f0fb7fec2d770126)).
 
+## Development
+
+The spec is generated from the [Bot API documentation][bot-api] into
+`src/*.gen.ts`, which are committed and never edited by hand.
+
+```sh
+pnpm gen:fetch  # refresh spec/upstream/ from the documentation
+pnpm gen:check  # report what needs a decision
+pnpm gen:build  # spec/ -> src/*.gen.ts
+```
+
+`spec/upstream/` is a verbatim snapshot of the documentation, so reviewing its
+diff is how upstream changes are reviewed. `spec/overrides/` holds the
+hand-written corrections applied on top of it. See [AGENTS.md](./AGENTS.md).
+
 [bot-api]: https://core.telegram.org/bots/api

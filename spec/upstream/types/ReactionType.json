@@ -1,0 +1,5 @@
+{
+  "name": "ReactionType",
+  "description": "This object describes the type of a reaction. Currently, it can be one of\n\n-   [ReactionTypeEmoji](https://core.telegram.org/bots/api#reactiontypeemoji)\n-   [ReactionTypeCustomEmoji](https://core.telegram.org/bots/api#reactiontypecustomemoji)\n-   [ReactionTypePaid](https://core.telegram.org/bots/api#reactiontypepaid)",
+  "fields": null
+}

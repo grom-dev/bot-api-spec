@@ -1,0 +1,48 @@
+{
+  "name": "setGameScore",
+  "description": "Use this method to set the score of the specified user in a game message. On success, if the message is not an inline message, the [Message](https://core.telegram.org/bots/api#message) is returned, otherwise _True_ is returned. Returns an error, if the new score is not greater than the user's current score in the chat and _force_ is _False_.",
+  "parameters": [
+    {
+      "name": "user_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "User identifier"
+    },
+    {
+      "name": "score",
+      "rawType": "Integer",
+      "required": true,
+      "description": "New score, must be non-negative"
+    },
+    {
+      "name": "force",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters."
+    },
+    {
+      "name": "disable_edit_message",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ if the game message should not be automatically edited to include the current scoreboard"
+    },
+    {
+      "name": "chat_id",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Required if _inline\\_message\\_id_ is not specified. Unique identifier for the target chat."
+    },
+    {
+      "name": "message_id",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Required if _inline\\_message\\_id_ is not specified. Identifier of the sent message."
+    },
+    {
+      "name": "inline_message_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Required if _chat\\_id_ and _message\\_id_ are not specified. Identifier of the inline message."
+    }
+  ]
+}

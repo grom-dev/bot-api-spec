@@ -1,0 +1,12 @@
+{
+  "name": "Link",
+  "description": "Represents an HTTP link.",
+  "fields": [
+    {
+      "name": "url",
+      "rawType": "String",
+      "required": true,
+      "description": "URL of the link"
+    }
+  ]
+}

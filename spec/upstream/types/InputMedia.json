@@ -1,0 +1,5 @@
+{
+  "name": "InputMedia",
+  "description": "This object represents the content of a media message to be sent. It should be one of\n\n-   [InputMediaAnimation](https://core.telegram.org/bots/api#inputmediaanimation)\n-   [InputMediaAudio](https://core.telegram.org/bots/api#inputmediaaudio)\n-   [InputMediaDocument](https://core.telegram.org/bots/api#inputmediadocument)\n-   [InputMediaLivePhoto](https://core.telegram.org/bots/api#inputmedialivephoto)\n-   [InputMediaPhoto](https://core.telegram.org/bots/api#inputmediaphoto)\n-   [InputMediaVideo](https://core.telegram.org/bots/api#inputmediavideo)",
+  "fields": null
+}

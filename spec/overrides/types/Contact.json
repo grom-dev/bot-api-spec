@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "user_id": {
+      "type": {
+        "type": "int53"
+      },
+      "description": "Contact's user identifier in Telegram."
+    }
+  }
+}

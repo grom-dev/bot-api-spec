@@ -1,0 +1,31 @@
+{
+  "returnType": {
+    "type": "api-type",
+    "name": "Story"
+  },
+  "parameters": {
+    "active_period": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "int32",
+            "literal": 21600
+          },
+          {
+            "type": "int32",
+            "literal": 43200
+          },
+          {
+            "type": "int32",
+            "literal": 86400
+          },
+          {
+            "type": "int32",
+            "literal": 172800
+          }
+        ]
+      }
+    }
+  }
+}

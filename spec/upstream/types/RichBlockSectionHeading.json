@@ -1,0 +1,24 @@
+{
+  "name": "RichBlockSectionHeading",
+  "description": "A section heading, corresponding to the HTML tags `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, or `<h6>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “heading”"
+    },
+    {
+      "name": "text",
+      "rawType": "RichText",
+      "required": true,
+      "description": "Text of the block"
+    },
+    {
+      "name": "size",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Relative size of the text font; 1-6, 1 is the largest, 6 is the smallest"
+    }
+  ]
+}

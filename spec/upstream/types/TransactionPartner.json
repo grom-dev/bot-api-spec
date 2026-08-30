@@ -1,0 +1,5 @@
+{
+  "name": "TransactionPartner",
+  "description": "This object describes the source of a transaction, or its recipient for outgoing transactions. Currently, it can be one of\n\n-   [TransactionPartnerUser](https://core.telegram.org/bots/api#transactionpartneruser)\n-   [TransactionPartnerChat](https://core.telegram.org/bots/api#transactionpartnerchat)\n-   [TransactionPartnerAffiliateProgram](https://core.telegram.org/bots/api#transactionpartneraffiliateprogram)\n-   [TransactionPartnerFragment](https://core.telegram.org/bots/api#transactionpartnerfragment)\n-   [TransactionPartnerTelegramAds](https://core.telegram.org/bots/api#transactionpartnertelegramads)\n-   [TransactionPartnerTelegramApi](https://core.telegram.org/bots/api#transactionpartnertelegramapi)\n-   [TransactionPartnerOther](https://core.telegram.org/bots/api#transactionpartnerother)",
+  "fields": null
+}

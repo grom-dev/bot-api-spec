@@ -1,0 +1,30 @@
+{
+  "name": "GiveawayCompleted",
+  "description": "This object represents a service message about the completion of a giveaway without public winners.",
+  "fields": [
+    {
+      "name": "winner_count",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Number of winners in the giveaway"
+    },
+    {
+      "name": "unclaimed_prize_count",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Number of undistributed prizes"
+    },
+    {
+      "name": "giveaway_message",
+      "rawType": "Message",
+      "required": false,
+      "description": "Message with the giveaway that was completed, if it wasn't deleted"
+    },
+    {
+      "name": "is_star_giveaway",
+      "rawType": "True",
+      "required": false,
+      "description": "_True_, if the giveaway is a Telegram Star giveaway. Otherwise, currently, the giveaway is a Telegram Premium giveaway."
+    }
+  ]
+}

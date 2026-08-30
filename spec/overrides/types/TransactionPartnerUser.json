@@ -1,0 +1,37 @@
+{
+  "fields": {
+    "type": {
+      "type": {
+        "type": "str",
+        "literal": "user"
+      }
+    },
+    "transaction_type": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "invoice_payment"
+          },
+          {
+            "type": "str",
+            "literal": "paid_media_payment"
+          },
+          {
+            "type": "str",
+            "literal": "gift_purchase"
+          },
+          {
+            "type": "str",
+            "literal": "premium_purchase"
+          },
+          {
+            "type": "str",
+            "literal": "business_account_transfer"
+          }
+        ]
+      }
+    }
+  }
+}

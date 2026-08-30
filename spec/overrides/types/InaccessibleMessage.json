@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "date": {
+      "type": {
+        "type": "int32",
+        "literal": 0
+      }
+    }
+  }
+}

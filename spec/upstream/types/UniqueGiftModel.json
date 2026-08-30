@@ -1,0 +1,30 @@
+{
+  "name": "UniqueGiftModel",
+  "description": "This object describes the model of a unique gift.",
+  "fields": [
+    {
+      "name": "name",
+      "rawType": "String",
+      "required": true,
+      "description": "Name of the model"
+    },
+    {
+      "name": "sticker",
+      "rawType": "Sticker",
+      "required": true,
+      "description": "The sticker that represents the unique gift"
+    },
+    {
+      "name": "rarity_per_mille",
+      "rawType": "Integer",
+      "required": true,
+      "description": "The number of unique gifts that receive this model for every 1000 gift upgrades. Always 0 for crafted gifts."
+    },
+    {
+      "name": "rarity",
+      "rawType": "String",
+      "required": false,
+      "description": "Rarity of the model if it is a crafted model. Currently, can be “uncommon”, “rare”, “epic”, or “legendary”."
+    }
+  ]
+}

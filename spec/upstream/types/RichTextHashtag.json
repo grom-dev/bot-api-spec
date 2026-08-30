@@ -1,0 +1,24 @@
+{
+  "name": "RichTextHashtag",
+  "description": "A hashtag.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the rich text, always “hashtag”"
+    },
+    {
+      "name": "text",
+      "rawType": "RichText",
+      "required": true,
+      "description": "The text"
+    },
+    {
+      "name": "hashtag",
+      "rawType": "String",
+      "required": true,
+      "description": "The hashtag"
+    }
+  ]
+}

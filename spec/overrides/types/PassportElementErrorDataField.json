@@ -1,0 +1,41 @@
+{
+  "fields": {
+    "source": {
+      "type": {
+        "type": "str",
+        "literal": "data"
+      }
+    },
+    "type": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "personal_details"
+          },
+          {
+            "type": "str",
+            "literal": "passport"
+          },
+          {
+            "type": "str",
+            "literal": "driver_license"
+          },
+          {
+            "type": "str",
+            "literal": "identity_card"
+          },
+          {
+            "type": "str",
+            "literal": "internal_passport"
+          },
+          {
+            "type": "str",
+            "literal": "address"
+          }
+        ]
+      }
+    }
+  }
+}

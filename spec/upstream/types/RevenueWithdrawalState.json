@@ -1,0 +1,5 @@
+{
+  "name": "RevenueWithdrawalState",
+  "description": "This object describes the state of a revenue withdrawal operation. Currently, it can be one of\n\n-   [RevenueWithdrawalStatePending](https://core.telegram.org/bots/api#revenuewithdrawalstatepending)\n-   [RevenueWithdrawalStateSucceeded](https://core.telegram.org/bots/api#revenuewithdrawalstatesucceeded)\n-   [RevenueWithdrawalStateFailed](https://core.telegram.org/bots/api#revenuewithdrawalstatefailed)",
+  "fields": null
+}

@@ -1,0 +1,12 @@
+{
+  "name": "deleteStickerSet",
+  "description": "Use this method to delete a sticker set that was created by the bot. Returns _True_ on success.",
+  "parameters": [
+    {
+      "name": "name",
+      "rawType": "String",
+      "required": true,
+      "description": "Sticker set name"
+    }
+  ]
+}

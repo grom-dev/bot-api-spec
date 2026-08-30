@@ -1,0 +1,18 @@
+{
+  "name": "RichBlockList",
+  "description": "A list of blocks, corresponding to the HTML tag `<ul>` or `<ol>` with multiple nested tags `<li>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “list”"
+    },
+    {
+      "name": "items",
+      "rawType": "Array of RichBlockListItem",
+      "required": true,
+      "description": "Items of the list"
+    }
+  ]
+}

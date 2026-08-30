@@ -1,0 +1,5 @@
+{
+  "name": "InputStoryContent",
+  "description": "This object describes the content of a story to post. Currently, it can be one of\n\n-   [InputStoryContentPhoto](https://core.telegram.org/bots/api#inputstorycontentphoto)\n-   [InputStoryContentVideo](https://core.telegram.org/bots/api#inputstorycontentvideo)",
+  "fields": null
+}

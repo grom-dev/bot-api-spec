@@ -1,0 +1,24 @@
+{
+  "name": "SuggestedPostApproved",
+  "description": "Describes a service message about the approval of a suggested post.",
+  "fields": [
+    {
+      "name": "suggested_post_message",
+      "rawType": "Message",
+      "required": false,
+      "description": "Message containing the suggested post. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply."
+    },
+    {
+      "name": "price",
+      "rawType": "SuggestedPostPrice",
+      "required": false,
+      "description": "Amount paid for the post"
+    },
+    {
+      "name": "send_date",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Date when the post will be published"
+    }
+  ]
+}

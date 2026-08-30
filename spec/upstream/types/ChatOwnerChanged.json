@@ -1,0 +1,12 @@
+{
+  "name": "ChatOwnerChanged",
+  "description": "Describes a service message about an ownership change in the chat.",
+  "fields": [
+    {
+      "name": "new_owner",
+      "rawType": "User",
+      "required": true,
+      "description": "The new owner of the chat"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "ReactionTypeCustomEmoji",
+  "description": "The reaction is based on a custom emoji.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the reaction, always “custom\\_emoji”"
+    },
+    {
+      "name": "custom_emoji_id",
+      "rawType": "String",
+      "required": true,
+      "description": "Custom emoji identifier"
+    }
+  ]
+}

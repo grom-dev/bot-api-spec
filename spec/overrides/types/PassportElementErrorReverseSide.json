@@ -1,0 +1,25 @@
+{
+  "fields": {
+    "source": {
+      "type": {
+        "type": "str",
+        "literal": "reverse_side"
+      }
+    },
+    "type": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "driver_license"
+          },
+          {
+            "type": "str",
+            "literal": "identity_card"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "InputTextMessageContent"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichMessageContent"
+    },
+    {
+      "type": "api-type",
+      "name": "InputLocationMessageContent"
+    },
+    {
+      "type": "api-type",
+      "name": "InputVenueMessageContent"
+    },
+    {
+      "type": "api-type",
+      "name": "InputContactMessageContent"
+    },
+    {
+      "type": "api-type",
+      "name": "InputInvoiceMessageContent"
+    }
+  ]
+}

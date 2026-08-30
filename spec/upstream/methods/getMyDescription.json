@@ -1,0 +1,12 @@
+{
+  "name": "getMyDescription",
+  "description": "Use this method to get the current bot description for the given user language. Returns [BotDescription](https://core.telegram.org/bots/api#botdescription) on success.",
+  "parameters": [
+    {
+      "name": "language_code",
+      "rawType": "String",
+      "required": false,
+      "description": "A two-letter ISO 639-1 language code or an empty string"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "deleteWebhook",
+  "description": "Use this method to remove webhook integration if you decide to switch back to [getUpdates](https://core.telegram.org/bots/api#getupdates). Returns _True_ on success.",
+  "parameters": [
+    {
+      "name": "drop_pending_updates",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ to drop all pending updates"
+    }
+  ]
+}

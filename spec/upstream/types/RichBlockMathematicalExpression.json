@@ -1,0 +1,18 @@
+{
+  "name": "RichBlockMathematicalExpression",
+  "description": "A block with a mathematical expression in LaTeX format, corresponding to the custom HTML tag `<tg-math-block>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “mathematical\\_expression”"
+    },
+    {
+      "name": "expression",
+      "rawType": "String",
+      "required": true,
+      "description": "The mathematical expression in LaTeX format"
+    }
+  ]
+}

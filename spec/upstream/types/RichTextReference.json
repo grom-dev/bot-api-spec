@@ -1,0 +1,24 @@
+{
+  "name": "RichTextReference",
+  "description": "A reference.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the rich text, always “reference”"
+    },
+    {
+      "name": "text",
+      "rawType": "RichText",
+      "required": true,
+      "description": "Text of the reference"
+    },
+    {
+      "name": "name",
+      "rawType": "String",
+      "required": true,
+      "description": "The name of the reference"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "RichTextReferenceLink",
+  "description": "A link to a reference.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the rich text, always “reference\\_link”"
+    },
+    {
+      "name": "text",
+      "rawType": "RichText",
+      "required": true,
+      "description": "The link text"
+    },
+    {
+      "name": "reference_name",
+      "rawType": "String",
+      "required": true,
+      "description": "The name of the reference"
+    }
+  ]
+}

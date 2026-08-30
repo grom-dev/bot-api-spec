@@ -1,0 +1,18 @@
+{
+  "name": "getMyCommands",
+  "description": "Use this method to get the current list of the bot's commands for the given scope and user language. Returns an Array of [BotCommand](https://core.telegram.org/bots/api#botcommand) objects. If commands aren't set, an empty list is returned.",
+  "parameters": [
+    {
+      "name": "scope",
+      "rawType": "BotCommandScope",
+      "required": false,
+      "description": "A JSON-serialized object, describing scope of users. Defaults to [BotCommandScopeDefault](https://core.telegram.org/bots/api#botcommandscopedefault)."
+    },
+    {
+      "name": "language_code",
+      "rawType": "String",
+      "required": false,
+      "description": "A two-letter ISO 639-1 language code or an empty string"
+    }
+  ]
+}

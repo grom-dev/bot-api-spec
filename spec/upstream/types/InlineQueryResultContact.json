@@ -1,0 +1,72 @@
+{
+  "name": "InlineQueryResultContact",
+  "description": "Represents a contact with a phone number. By default, this contact will be sent by the user. Alternatively, you can use _input\\_message\\_content_ to send a message with the specified content instead of the contact.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the result, must be _contact_"
+    },
+    {
+      "name": "id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique identifier for this result, 1-64 Bytes"
+    },
+    {
+      "name": "phone_number",
+      "rawType": "String",
+      "required": true,
+      "description": "Contact's phone number"
+    },
+    {
+      "name": "first_name",
+      "rawType": "String",
+      "required": true,
+      "description": "Contact's first name"
+    },
+    {
+      "name": "last_name",
+      "rawType": "String",
+      "required": false,
+      "description": "Contact's last name"
+    },
+    {
+      "name": "vcard",
+      "rawType": "String",
+      "required": false,
+      "description": "Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes"
+    },
+    {
+      "name": "reply_markup",
+      "rawType": "InlineKeyboardMarkup",
+      "required": false,
+      "description": "[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message"
+    },
+    {
+      "name": "input_message_content",
+      "rawType": "InputMessageContent",
+      "required": false,
+      "description": "Content of the message to be sent instead of the contact"
+    },
+    {
+      "name": "thumbnail_url",
+      "rawType": "String",
+      "required": false,
+      "description": "Url of the thumbnail for the result"
+    },
+    {
+      "name": "thumbnail_width",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Thumbnail width"
+    },
+    {
+      "name": "thumbnail_height",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Thumbnail height"
+    }
+  ]
+}

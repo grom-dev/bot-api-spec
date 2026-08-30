@@ -1,0 +1,12 @@
+{
+  "name": "unpinAllGeneralForumTopicMessages",
+  "description": "Use this method to clear the list of pinned messages in a General forum topic. The bot must be an administrator in the chat for this to work and must have the _can\\_pin\\_messages_ administrator right in the supergroup. Returns _True_ on success.",
+  "parameters": [
+    {
+      "name": "chat_id",
+      "rawType": "Integer or String",
+      "required": true,
+      "description": "Unique identifier for the target chat or username of the target supergroup in the format `@username`"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "PassportElementErrorDataField"
+    },
+    {
+      "type": "api-type",
+      "name": "PassportElementErrorFrontSide"
+    },
+    {
+      "type": "api-type",
+      "name": "PassportElementErrorReverseSide"
+    },
+    {
+      "type": "api-type",
+      "name": "PassportElementErrorSelfie"
+    },
+    {
+      "type": "api-type",
+      "name": "PassportElementErrorFile"
+    },
+    {
+      "type": "api-type",
+      "name": "PassportElementErrorFiles"
+    },
+    {
+      "type": "api-type",
+      "name": "PassportElementErrorTranslationFile"
+    },
+    {
+      "type": "api-type",
+      "name": "PassportElementErrorTranslationFiles"
+    },
+    {
+      "type": "api-type",
+      "name": "PassportElementErrorUnspecified"
+    }
+  ]
+}

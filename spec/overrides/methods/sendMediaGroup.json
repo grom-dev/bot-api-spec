@@ -1,0 +1,42 @@
+{
+  "returnType": {
+    "type": "array",
+    "of": {
+      "type": "api-type",
+      "name": "Message"
+    }
+  },
+  "parameters": {
+    "media": {
+      "type": {
+        "type": "array",
+        "of": {
+          "type": "union",
+          "types": [
+            {
+              "type": "api-type",
+              "name": "InputMediaAudio"
+            },
+            {
+              "type": "api-type",
+              "name": "InputMediaDocument"
+            },
+            {
+              "type": "api-type",
+              "name": "InputMediaLivePhoto"
+            },
+            {
+              "type": "api-type",
+              "name": "InputMediaPhoto"
+            },
+            {
+              "type": "api-type",
+              "name": "InputMediaVideo"
+            }
+          ]
+        }
+      },
+      "description": "An array describing messages to be sent, must include 2-10 items"
+    }
+  }
+}

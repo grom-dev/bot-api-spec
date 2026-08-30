@@ -1,0 +1,78 @@
+{
+  "name": "GiveawayWinners",
+  "description": "This object represents a message about the completion of a giveaway with public winners.",
+  "fields": [
+    {
+      "name": "chat",
+      "rawType": "Chat",
+      "required": true,
+      "description": "The chat that created the giveaway"
+    },
+    {
+      "name": "giveaway_message_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Identifier of the message with the giveaway in the chat"
+    },
+    {
+      "name": "winners_selection_date",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Point in time (Unix timestamp) when winners of the giveaway were selected"
+    },
+    {
+      "name": "winner_count",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Total number of winners in the giveaway"
+    },
+    {
+      "name": "winners",
+      "rawType": "Array of User",
+      "required": true,
+      "description": "List of up to 100 winners of the giveaway"
+    },
+    {
+      "name": "additional_chat_count",
+      "rawType": "Integer",
+      "required": false,
+      "description": "The number of other chats the user had to join in order to be eligible for the giveaway"
+    },
+    {
+      "name": "prize_star_count",
+      "rawType": "Integer",
+      "required": false,
+      "description": "The number of Telegram Stars that were split between giveaway winners; for Telegram Star giveaways only"
+    },
+    {
+      "name": "premium_subscription_month_count",
+      "rawType": "Integer",
+      "required": false,
+      "description": "The number of months the Telegram Premium subscription won from the giveaway will be active for; for Telegram Premium giveaways only"
+    },
+    {
+      "name": "unclaimed_prize_count",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Number of undistributed prizes"
+    },
+    {
+      "name": "only_new_members",
+      "rawType": "True",
+      "required": false,
+      "description": "_True_, if only users who had joined the chats after the giveaway started were eligible to win"
+    },
+    {
+      "name": "was_refunded",
+      "rawType": "True",
+      "required": false,
+      "description": "_True_, if the giveaway was canceled because the payment for it was refunded"
+    },
+    {
+      "name": "prize_description",
+      "rawType": "String",
+      "required": false,
+      "description": "Description of additional giveaway prize"
+    }
+  ]
+}

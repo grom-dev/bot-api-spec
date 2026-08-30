@@ -1,0 +1,35 @@
+{
+  "fields": {
+    "emoji": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "🎲"
+          },
+          {
+            "type": "str",
+            "literal": "🎯"
+          },
+          {
+            "type": "str",
+            "literal": "🎳"
+          },
+          {
+            "type": "str",
+            "literal": "🏀"
+          },
+          {
+            "type": "str",
+            "literal": "⚽"
+          },
+          {
+            "type": "str",
+            "literal": "🎰"
+          }
+        ]
+      }
+    }
+  }
+}

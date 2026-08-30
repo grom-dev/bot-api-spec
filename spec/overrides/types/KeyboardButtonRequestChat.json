@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "user_administrator_rights": {
+      "description": "An object listing the required administrator rights of the user in the chat. The rights must be a superset of _bot\\_administrator\\_rights_. If not specified, no additional restrictions are applied."
+    },
+    "bot_administrator_rights": {
+      "description": "An object listing the required administrator rights of the bot in the chat. The rights must be a subset of _user\\_administrator\\_rights_. If not specified, no additional restrictions are applied."
+    }
+  }
+}

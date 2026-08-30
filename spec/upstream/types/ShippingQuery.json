@@ -1,0 +1,30 @@
+{
+  "name": "ShippingQuery",
+  "description": "This object contains information about an incoming shipping query.",
+  "fields": [
+    {
+      "name": "id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique query identifier"
+    },
+    {
+      "name": "from",
+      "rawType": "User",
+      "required": true,
+      "description": "User who sent the query"
+    },
+    {
+      "name": "invoice_payload",
+      "rawType": "String",
+      "required": true,
+      "description": "Bot-specified invoice payload"
+    },
+    {
+      "name": "shipping_address",
+      "rawType": "ShippingAddress",
+      "required": true,
+      "description": "User specified shipping address"
+    }
+  ]
+}

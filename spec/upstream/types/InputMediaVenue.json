@@ -1,0 +1,60 @@
+{
+  "name": "InputMediaVenue",
+  "description": "Represents a venue to be sent.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the media, must be _venue_"
+    },
+    {
+      "name": "latitude",
+      "rawType": "Float",
+      "required": true,
+      "description": "Latitude of the location"
+    },
+    {
+      "name": "longitude",
+      "rawType": "Float",
+      "required": true,
+      "description": "Longitude of the location"
+    },
+    {
+      "name": "title",
+      "rawType": "String",
+      "required": true,
+      "description": "Name of the venue"
+    },
+    {
+      "name": "address",
+      "rawType": "String",
+      "required": true,
+      "description": "Address of the venue"
+    },
+    {
+      "name": "foursquare_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Foursquare identifier of the venue"
+    },
+    {
+      "name": "foursquare_type",
+      "rawType": "String",
+      "required": false,
+      "description": "Foursquare type of the venue, if known. (For example, “arts\\_entertainment/default”, “arts\\_entertainment/aquarium” or “food/icecream”.)"
+    },
+    {
+      "name": "google_place_id",
+      "rawType": "String",
+      "required": false,
+      "description": "Google Places identifier of the venue"
+    },
+    {
+      "name": "google_place_type",
+      "rawType": "String",
+      "required": false,
+      "description": "Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)"
+    }
+  ]
+}

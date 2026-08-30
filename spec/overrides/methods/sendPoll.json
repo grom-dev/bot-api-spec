@@ -1,0 +1,82 @@
+{
+  "returnType": {
+    "type": "api-type",
+    "name": "Message"
+  },
+  "parameters": {
+    "question_parse_mode": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "HTML"
+          },
+          {
+            "type": "str",
+            "literal": "MarkdownV2"
+          },
+          {
+            "type": "str",
+            "literal": "Markdown"
+          }
+        ]
+      }
+    },
+    "question_entities": {
+      "description": "An array of special entities that appear in the poll question. It can be specified instead of _question\\_parse\\_mode_."
+    },
+    "options": {
+      "description": "An array of 1-12 answer options"
+    },
+    "type": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "quiz"
+          },
+          {
+            "type": "str",
+            "literal": "regular"
+          }
+        ]
+      }
+    },
+    "country_codes": {
+      "description": "An array of 0-12 two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes indicating the countries from which users can vote in the poll; for channel chats only. Use “FT” as a country code to allow users with anonymous numbers to vote. If omitted or empty, then users from any country can participate in the poll."
+    },
+    "correct_option_ids": {
+      "description": "An array of monotonically increasing 0-based identifiers of the correct answer options, required for polls in quiz mode"
+    },
+    "explanation_parse_mode": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "HTML"
+          },
+          {
+            "type": "str",
+            "literal": "MarkdownV2"
+          },
+          {
+            "type": "str",
+            "literal": "Markdown"
+          }
+        ]
+      }
+    },
+    "explanation_entities": {
+      "description": "An array of special entities that appear in the poll explanation. It can be specified instead of _explanation\\_parse\\_mode_."
+    },
+    "description_entities": {
+      "description": "An array of special entities that appear in the poll description, which can be specified instead of _description\\_parse\\_mode_"
+    },
+    "reply_markup": {
+      "description": "Additional interface options. An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user."
+    }
+  }
+}

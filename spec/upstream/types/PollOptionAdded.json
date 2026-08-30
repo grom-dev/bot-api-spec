@@ -1,0 +1,30 @@
+{
+  "name": "PollOptionAdded",
+  "description": "Describes a service message about an option added to a poll.",
+  "fields": [
+    {
+      "name": "poll_message",
+      "rawType": "MaybeInaccessibleMessage",
+      "required": false,
+      "description": "Message containing the poll to which the option was added, if known. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply."
+    },
+    {
+      "name": "option_persistent_id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique identifier of the added option"
+    },
+    {
+      "name": "option_text",
+      "rawType": "String",
+      "required": true,
+      "description": "Option text"
+    },
+    {
+      "name": "option_text_entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "Special entities that appear in the _option\\_text_"
+    }
+  ]
+}

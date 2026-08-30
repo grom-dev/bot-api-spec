@@ -1,0 +1,23 @@
+{
+  "fields": {
+    "type": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "regular"
+          },
+          {
+            "type": "str",
+            "literal": "mask"
+          },
+          {
+            "type": "str",
+            "literal": "custom_emoji"
+          }
+        ]
+      }
+    }
+  }
+}

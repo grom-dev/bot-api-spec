@@ -1,0 +1,36 @@
+{
+  "name": "editMessageChecklist",
+  "description": "Use this method to edit a checklist on behalf of a connected business account. On success, the edited [Message](https://core.telegram.org/bots/api#message) is returned.",
+  "parameters": [
+    {
+      "name": "business_connection_id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique identifier of the business connection on behalf of which the message will be sent"
+    },
+    {
+      "name": "chat_id",
+      "rawType": "Integer or String",
+      "required": true,
+      "description": "Unique identifier for the target chat or username of the target bot in the format `@username`"
+    },
+    {
+      "name": "message_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Unique identifier for the target message"
+    },
+    {
+      "name": "checklist",
+      "rawType": "InputChecklist",
+      "required": true,
+      "description": "A JSON-serialized object for the new checklist"
+    },
+    {
+      "name": "reply_markup",
+      "rawType": "InlineKeyboardMarkup",
+      "required": false,
+      "description": "A JSON-serialized object for the new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) for the message"
+    }
+  ]
+}

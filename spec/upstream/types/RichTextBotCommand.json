@@ -1,0 +1,24 @@
+{
+  "name": "RichTextBotCommand",
+  "description": "A bot command.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the rich text, always “bot\\_command”"
+    },
+    {
+      "name": "text",
+      "rawType": "RichText",
+      "required": true,
+      "description": "The text"
+    },
+    {
+      "name": "bot_command",
+      "rawType": "String",
+      "required": true,
+      "description": "The bot command"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "ChatMemberOwner"
+    },
+    {
+      "type": "api-type",
+      "name": "ChatMemberAdministrator"
+    },
+    {
+      "type": "api-type",
+      "name": "ChatMemberMember"
+    },
+    {
+      "type": "api-type",
+      "name": "ChatMemberRestricted"
+    },
+    {
+      "type": "api-type",
+      "name": "ChatMemberLeft"
+    },
+    {
+      "type": "api-type",
+      "name": "ChatMemberBanned"
+    }
+  ]
+}

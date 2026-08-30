@@ -1,0 +1,14 @@
+{
+  "returnType": {
+    "type": "api-type",
+    "name": "Message"
+  },
+  "parameters": {
+    "checklist": {
+      "description": "An object for the new checklist"
+    },
+    "reply_markup": {
+      "description": "An object for the new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) for the message"
+    }
+  }
+}

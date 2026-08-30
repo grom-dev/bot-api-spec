@@ -1,0 +1,18 @@
+{
+  "name": "getUserChatBoosts",
+  "description": "Use this method to get the list of boosts added to a chat by a user. Requires administrator rights in the chat. Returns a [UserChatBoosts](https://core.telegram.org/bots/api#userchatboosts) object.",
+  "parameters": [
+    {
+      "name": "chat_id",
+      "rawType": "Integer or String",
+      "required": true,
+      "description": "Unique identifier for the chat or username of the channel in the format `@username`"
+    },
+    {
+      "name": "user_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Unique identifier of the target user"
+    }
+  ]
+}

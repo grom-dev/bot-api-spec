@@ -1,0 +1,53 @@
+{
+  "fields": {
+    "source": {
+      "type": {
+        "type": "str",
+        "literal": "translation_file"
+      }
+    },
+    "type": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "passport"
+          },
+          {
+            "type": "str",
+            "literal": "driver_license"
+          },
+          {
+            "type": "str",
+            "literal": "identity_card"
+          },
+          {
+            "type": "str",
+            "literal": "internal_passport"
+          },
+          {
+            "type": "str",
+            "literal": "utility_bill"
+          },
+          {
+            "type": "str",
+            "literal": "bank_statement"
+          },
+          {
+            "type": "str",
+            "literal": "rental_agreement"
+          },
+          {
+            "type": "str",
+            "literal": "passport_registration"
+          },
+          {
+            "type": "str",
+            "literal": "temporary_registration"
+          }
+        ]
+      }
+    }
+  }
+}

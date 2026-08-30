@@ -1,0 +1,12 @@
+{
+  "name": "MessageAutoDeleteTimerChanged",
+  "description": "This object represents a service message about a change in auto-delete timer settings.",
+  "fields": [
+    {
+      "name": "message_auto_delete_time",
+      "rawType": "Integer",
+      "required": true,
+      "description": "New auto-delete time for messages in the chat; in seconds"
+    }
+  ]
+}

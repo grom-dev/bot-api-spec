@@ -1,0 +1,11 @@
+{
+  "returnType": {
+    "type": "api-type",
+    "name": "Poll"
+  },
+  "parameters": {
+    "reply_markup": {
+      "description": "An object for a new message [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)"
+    }
+  }
+}

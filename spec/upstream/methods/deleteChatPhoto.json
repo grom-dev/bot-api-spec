@@ -1,0 +1,12 @@
+{
+  "name": "deleteChatPhoto",
+  "description": "Use this method to delete a chat photo. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns _True_ on success.",
+  "parameters": [
+    {
+      "name": "chat_id",
+      "rawType": "Integer or String",
+      "required": true,
+      "description": "Unique identifier for the target chat or username of the target channel in the format `@username`"
+    }
+  ]
+}

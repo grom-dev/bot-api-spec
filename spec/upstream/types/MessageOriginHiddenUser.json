@@ -1,0 +1,24 @@
+{
+  "name": "MessageOriginHiddenUser",
+  "description": "The message was originally sent by an unknown user.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the message origin, always “hidden\\_user”"
+    },
+    {
+      "name": "date",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Date the message was sent originally in Unix time"
+    },
+    {
+      "name": "sender_user_name",
+      "rawType": "String",
+      "required": true,
+      "description": "Name of the user that sent the message originally"
+    }
+  ]
+}

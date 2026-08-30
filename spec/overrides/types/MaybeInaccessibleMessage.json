@@ -1,0 +1,12 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "Message"
+    },
+    {
+      "type": "api-type",
+      "name": "InaccessibleMessage"
+    }
+  ]
+}

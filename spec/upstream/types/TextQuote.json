@@ -1,0 +1,30 @@
+{
+  "name": "TextQuote",
+  "description": "This object contains information about the quoted part of a message that is replied to by the given message.",
+  "fields": [
+    {
+      "name": "text",
+      "rawType": "String",
+      "required": true,
+      "description": "Text of the quoted part of a message that is replied to by the given message"
+    },
+    {
+      "name": "entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "Special entities that appear in the quote. Currently, only _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, _custom\\_emoji_, and _date\\_time_ entities are kept in quotes."
+    },
+    {
+      "name": "position",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Approximate quote position in the original message in UTF-16 code units as specified by the sender"
+    },
+    {
+      "name": "is_manual",
+      "rawType": "True",
+      "required": false,
+      "description": "_True_, if the quote was chosen manually by the message sender. Otherwise, the quote was added automatically by the server."
+    }
+  ]
+}

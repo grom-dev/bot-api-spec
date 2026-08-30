@@ -1,0 +1,5 @@
+{
+  "name": "StoryAreaType",
+  "description": "Describes the type of a clickable area on a story. Currently, it can be one of\n\n-   [StoryAreaTypeLocation](https://core.telegram.org/bots/api#storyareatypelocation)\n-   [StoryAreaTypeSuggestedReaction](https://core.telegram.org/bots/api#storyareatypesuggestedreaction)\n-   [StoryAreaTypeLink](https://core.telegram.org/bots/api#storyareatypelink)\n-   [StoryAreaTypeWeather](https://core.telegram.org/bots/api#storyareatypeweather)\n-   [StoryAreaTypeUniqueGift](https://core.telegram.org/bots/api#storyareatypeuniquegift)",
+  "fields": null
+}

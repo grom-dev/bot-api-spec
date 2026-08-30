@@ -1,0 +1,18 @@
+{
+  "name": "PaidMediaVideo",
+  "description": "The paid media is a video.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the paid media, always “video”"
+    },
+    {
+      "name": "video",
+      "rawType": "Video",
+      "required": true,
+      "description": "The video"
+    }
+  ]
+}

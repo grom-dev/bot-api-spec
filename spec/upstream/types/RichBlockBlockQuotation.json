@@ -1,0 +1,24 @@
+{
+  "name": "RichBlockBlockQuotation",
+  "description": "A block quotation, corresponding to the HTML tag `<blockquote>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “blockquote”"
+    },
+    {
+      "name": "blocks",
+      "rawType": "Array of RichBlock",
+      "required": true,
+      "description": "Content of the block"
+    },
+    {
+      "name": "credit",
+      "rawType": "RichText",
+      "required": false,
+      "description": "Credit of the block"
+    }
+  ]
+}

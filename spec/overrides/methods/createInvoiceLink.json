@@ -1,0 +1,19 @@
+{
+  "returnType": {
+    "type": "str"
+  },
+  "parameters": {
+    "prices": {
+      "description": "Price breakdown, an array of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in [Telegram Stars](https://t.me/BotNews/90)."
+    },
+    "subscription_period": {
+      "type": {
+        "type": "int32",
+        "literal": 2592000
+      }
+    },
+    "suggested_tip_amounts": {
+      "description": "An array of suggested amounts of tips in the _smallest units_ of the currency (integer, **not** float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed _max\\_tip\\_amount_."
+    }
+  }
+}

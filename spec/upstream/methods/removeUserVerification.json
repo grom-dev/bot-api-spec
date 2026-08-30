@@ -1,0 +1,12 @@
+{
+  "name": "removeUserVerification",
+  "description": "Removes verification from a user who is currently verified [on behalf of the organization](https://telegram.org/verify#third-party-verification) represented by the bot. Returns _True_ on success.",
+  "parameters": [
+    {
+      "name": "user_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Unique identifier of the target user"
+    }
+  ]
+}

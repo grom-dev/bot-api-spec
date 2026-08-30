@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "file_size": {
+      "type": {
+        "type": "int53"
+      },
+      "description": "File size in bytes."
+    }
+  }
+}

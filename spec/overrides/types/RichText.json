@@ -1,0 +1,114 @@
+{
+  "oneOf": [
+    {
+      "type": "str"
+    },
+    {
+      "type": "array",
+      "of": {
+        "type": "api-type",
+        "name": "RichText"
+      }
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextBold"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextItalic"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextUnderline"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextStrikethrough"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextSpoiler"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextDateTime"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextTextMention"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextSubscript"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextSuperscript"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextMarked"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextCode"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextCustomEmoji"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextMathematicalExpression"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextUrl"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextEmailAddress"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextPhoneNumber"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextBankCardNumber"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextMention"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextHashtag"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextCashtag"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextBotCommand"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextAnchor"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextAnchorLink"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextReference"
+    },
+    {
+      "type": "api-type",
+      "name": "RichTextReferenceLink"
+    }
+  ]
+}

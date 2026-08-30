@@ -1,0 +1,12 @@
+{
+  "name": "ManagedBotCreated",
+  "description": "This object contains information about the bot that was created to be managed by the current bot.",
+  "fields": [
+    {
+      "name": "bot",
+      "rawType": "User",
+      "required": true,
+      "description": "Information about the bot. The bot's token can be fetched using the method [getManagedBotToken](https://core.telegram.org/bots/api#getmanagedbottoken)."
+    }
+  ]
+}

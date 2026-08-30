@@ -1,0 +1,11 @@
+{
+  "returnType": {
+    "type": "api-type",
+    "name": "Message"
+  },
+  "parameters": {
+    "suggested_post_parameters": {
+      "description": "An object containing the parameters of the suggested post to send; for direct messages chats only"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Gifts",
+  "description": "This object represent a list of gifts.",
+  "fields": [
+    {
+      "name": "gifts",
+      "rawType": "Array of Gift",
+      "required": true,
+      "description": "The list of gifts"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "RichBlockVoiceNote",
+  "description": "A block with a voice note, corresponding to the HTML tag `<audio>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “voice\\_note”"
+    },
+    {
+      "name": "voice_note",
+      "rawType": "Voice",
+      "required": true,
+      "description": "The voice note"
+    },
+    {
+      "name": "caption",
+      "rawType": "RichBlockCaption",
+      "required": false,
+      "description": "Caption of the block"
+    }
+  ]
+}

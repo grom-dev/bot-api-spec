@@ -1,0 +1,12 @@
+{
+  "name": "getChatMenuButton",
+  "description": "Use this method to get the current value of the bot's menu button in a private chat, or the default menu button. Returns [MenuButton](https://core.telegram.org/bots/api#menubutton) on success.",
+  "parameters": [
+    {
+      "name": "chat_id",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Unique identifier for the target private chat. If not specified, the bot's default menu button will be returned."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "BackgroundTypeFill"
+    },
+    {
+      "type": "api-type",
+      "name": "BackgroundTypeWallpaper"
+    },
+    {
+      "type": "api-type",
+      "name": "BackgroundTypePattern"
+    },
+    {
+      "type": "api-type",
+      "name": "BackgroundTypeChatTheme"
+    }
+  ]
+}

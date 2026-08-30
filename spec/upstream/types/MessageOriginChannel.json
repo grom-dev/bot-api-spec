@@ -1,0 +1,36 @@
+{
+  "name": "MessageOriginChannel",
+  "description": "The message was originally sent to a channel chat.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the message origin, always “channel”"
+    },
+    {
+      "name": "date",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Date the message was sent originally in Unix time"
+    },
+    {
+      "name": "chat",
+      "rawType": "Chat",
+      "required": true,
+      "description": "Channel chat to which the message was originally sent"
+    },
+    {
+      "name": "message_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Unique message identifier inside the chat"
+    },
+    {
+      "name": "author_signature",
+      "rawType": "String",
+      "required": false,
+      "description": "Signature of the original post author"
+    }
+  ]
+}

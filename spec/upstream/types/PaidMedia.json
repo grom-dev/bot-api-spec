@@ -1,0 +1,5 @@
+{
+  "name": "PaidMedia",
+  "description": "This object describes paid media. Currently, it can be one of\n\n-   [PaidMediaLivePhoto](https://core.telegram.org/bots/api#paidmedialivephoto)\n-   [PaidMediaPhoto](https://core.telegram.org/bots/api#paidmediaphoto)\n-   [PaidMediaPreview](https://core.telegram.org/bots/api#paidmediapreview)\n-   [PaidMediaVideo](https://core.telegram.org/bots/api#paidmediavideo)",
+  "fields": null
+}

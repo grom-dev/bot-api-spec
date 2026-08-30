@@ -1,0 +1,24 @@
+{
+  "name": "MessageOriginUser",
+  "description": "The message was originally sent by a known user.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the message origin, always “user”"
+    },
+    {
+      "name": "date",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Date the message was sent originally in Unix time"
+    },
+    {
+      "name": "sender_user",
+      "rawType": "User",
+      "required": true,
+      "description": "User that sent the message originally"
+    }
+  ]
+}

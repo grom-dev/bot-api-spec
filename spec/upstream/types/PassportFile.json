@@ -1,0 +1,30 @@
+{
+  "name": "PassportFile",
+  "description": "This object represents a file uploaded to Telegram Passport. Currently all Telegram Passport files are in JPEG format when decrypted and don't exceed 10MB.",
+  "fields": [
+    {
+      "name": "file_id",
+      "rawType": "String",
+      "required": true,
+      "description": "Identifier for this file, which can be used to download or reuse the file"
+    },
+    {
+      "name": "file_unique_id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique identifier for this file, which is supposed to be the same over time and for different bots. Can't be used to download or reuse the file."
+    },
+    {
+      "name": "file_size",
+      "rawType": "Integer",
+      "required": true,
+      "description": "File size in bytes"
+    },
+    {
+      "name": "file_date",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Unix time when the file was uploaded"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "TransactionPartnerOther",
+  "description": "Describes a transaction with an unknown source or recipient.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the transaction partner, always “other”"
+    }
+  ]
+}

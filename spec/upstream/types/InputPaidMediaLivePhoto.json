@@ -1,0 +1,24 @@
+{
+  "name": "InputPaidMediaLivePhoto",
+  "description": "The paid media to send is a live photo.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the media, must be _live\\_photo_"
+    },
+    {
+      "name": "media",
+      "rawType": "String",
+      "required": true,
+      "description": "Video of the live photo to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended) or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files). Sending live photos by a URL is currently unsupported."
+    },
+    {
+      "name": "photo",
+      "rawType": "String",
+      "required": true,
+      "description": "The static photo to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended) or pass “attach://<file\\_attach\\_name>” to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files). Sending live photos by a URL is currently unsupported."
+    }
+  ]
+}

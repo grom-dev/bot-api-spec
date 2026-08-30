@@ -1,0 +1,30 @@
+{
+  "name": "InlineQueryResultGame",
+  "description": "Represents a [Game](https://core.telegram.org/bots/api#games).",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the result, must be _game_"
+    },
+    {
+      "name": "id",
+      "rawType": "String",
+      "required": true,
+      "description": "Unique identifier for this result, 1-64 bytes"
+    },
+    {
+      "name": "game_short_name",
+      "rawType": "String",
+      "required": true,
+      "description": "Short name of the game"
+    },
+    {
+      "name": "reply_markup",
+      "rawType": "InlineKeyboardMarkup",
+      "required": false,
+      "description": "[Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message"
+    }
+  ]
+}

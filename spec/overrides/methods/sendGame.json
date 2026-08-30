@@ -1,0 +1,11 @@
+{
+  "returnType": {
+    "type": "api-type",
+    "name": "Message"
+  },
+  "parameters": {
+    "reply_markup": {
+      "description": "An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards). If empty, one 'Play game\\_title' button will be shown. If not empty, the first button must launch the game."
+    }
+  }
+}
