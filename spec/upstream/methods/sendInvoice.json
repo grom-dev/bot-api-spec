@@ -66,7 +66,7 @@
       "name": "suggested_tip_amounts",
       "rawType": "Array of Integer",
       "required": false,
-      "description": "A JSON-serialized array of suggested amounts of tips in the _smallest units_ of the currency (integer, **not** float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed _max\\_tip\\_amount_."
+      "description": "A JSON-serialized Array of suggested amounts of tips in the _smallest units_ of the currency (integer, **not** float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed _max\\_tip\\_amount_."
     },
     {
       "name": "start_parameter",

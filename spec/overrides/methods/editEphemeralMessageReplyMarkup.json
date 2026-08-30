@@ -1,0 +1,11 @@
+{
+  "returnType": {
+    "type": "bool",
+    "literal": true
+  },
+  "parameters": {
+    "reply_markup": {
+      "description": "An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)"
+    }
+  }
+}

@@ -13,6 +13,12 @@
       "rawType": "String",
       "required": true,
       "description": "Description of the command; 1-256 characters"
+    },
+    {
+      "name": "is_ephemeral",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "_True_, if the command sends an ephemeral message, which can be seen only by the sender of the message and the bot"
     }
   ]
 }

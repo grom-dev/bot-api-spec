@@ -301,6 +301,28 @@ const Update = t({
       },
       required: false,
     },
+    {
+      name: 'subscription',
+      type: {
+        type: 'api-type',
+        name: 'BotSubscriptionUpdated',
+      },
+      description: {
+        markdown: 'User payment subscription has changed',
+      },
+      required: false,
+    },
+    {
+      name: 'stopped_message_generation',
+      type: {
+        type: 'api-type',
+        name: 'MessageGenerationStopped',
+      },
+      description: {
+        markdown: 'A user asked the bot to stop the generation of a message',
+      },
+      required: false,
+    },
   ],
 })
 
@@ -1284,6 +1306,17 @@ const ChatFullInfo = t({
       },
       required: false,
     },
+    {
+      name: 'community',
+      type: {
+        type: 'api-type',
+        name: 'Community',
+      },
+      description: {
+        markdown: 'The [Community](https://core.telegram.org/bots/api#community) to which the chat belongs',
+      },
+      required: false,
+    },
   ],
 })
 
@@ -1299,7 +1332,7 @@ const Message = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Unique message identifier inside this chat. In specific instances (e.g., message containing a video sent to a big chat), the server might automatically schedule a message instead of sending it immediately. In such cases, this field will be 0 and the relevant message will be unusable until it is actually sent.',
+        markdown: 'Unique message identifier inside this chat; 0 for ephemeral messages. In specific instances (e.g., a message containing a video sent to a big chat), the server might automatically schedule a message instead of sending it immediately. In such cases, this field will be 0 and the relevant message will be unusable until it is actually sent.',
       },
       required: true,
     },
@@ -1374,6 +1407,27 @@ const Message = t({
       },
       description: {
         markdown: 'Tag or custom title of the sender of the message; for supergroups only',
+      },
+      required: false,
+    },
+    {
+      name: 'receiver_user',
+      type: {
+        type: 'api-type',
+        name: 'User',
+      },
+      description: {
+        markdown: 'For ephemeral messages, the user who received the message',
+      },
+      required: false,
+    },
+    {
+      name: 'ephemeral_message_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'For ephemeral messages, identifier of the ephemeral message inside this chat. The identifier may be reused for another ephemeral message after the message is deleted or expires.',
       },
       required: false,
     },
@@ -1458,7 +1512,7 @@ const Message = t({
         name: 'Message',
       },
       description: {
-        markdown: 'For replies in the same chat and message thread, the original message. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain further _reply\\_to\\_message_ fields even if it itself is a reply.',
+        markdown: 'For replies in the same chat and message thread, the original message. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain further _reply\\_to\\_message_ fields even if it itself is a reply. If the message is a reply to an ephemeral message, then this field may be omitted.',
       },
       required: false,
     },
@@ -2219,7 +2273,7 @@ const Message = t({
         name: 'ProximityAlertTriggered',
       },
       description: {
-        markdown: 'Service message. A user in the chat triggered another user\'s proximity alert while sharing Live Location.',
+        markdown: 'Service message: a user in the chat triggered another user\'s proximity alert while sharing Live Location',
       },
       required: false,
     },
@@ -2264,6 +2318,39 @@ const Message = t({
       },
       description: {
         markdown: 'Service message: tasks were added to a checklist',
+      },
+      required: false,
+    },
+    {
+      name: 'community_chat_added',
+      type: {
+        type: 'api-type',
+        name: 'CommunityChatAdded',
+      },
+      description: {
+        markdown: 'Service message: chat or bot added to a [Community](https://core.telegram.org/bots/api#community)',
+      },
+      required: false,
+    },
+    {
+      name: 'community_chat_joined',
+      type: {
+        type: 'api-type',
+        name: 'CommunityChatJoined',
+      },
+      description: {
+        markdown: 'Service message: chat was joined by a user from a [Community](https://core.telegram.org/bots/api#community)',
+      },
+      required: false,
+    },
+    {
+      name: 'community_chat_removed',
+      type: {
+        type: 'api-type',
+        name: 'CommunityChatRemoved',
+      },
+      description: {
+        markdown: 'Service message: chat or bot removed from a [Community](https://core.telegram.org/bots/api#community)',
       },
       required: false,
     },
@@ -3178,9 +3265,9 @@ const ReplyParameters = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Identifier of the message that will be replied to in the current chat, or in the chat _chat\\_id_ if it is specified',
+        markdown: 'Identifier of the message that will be replied to in the current chat, or in the chat _chat\\_id_ if it is specified. Required if _ephemeral\\_message\\_id_ isn\'t specified.',
       },
-      required: true,
+      required: false,
     },
     {
       name: 'chat_id',
@@ -3196,7 +3283,17 @@ const ReplyParameters = t({
         ],
       },
       description: {
-        markdown: 'If the message to be replied to is from a different chat, unique identifier for the chat or username of the bot, supergroup or channel in the format `@username`. Not supported for messages sent on behalf of a business account and messages from channel direct messages chats.',
+        markdown: 'If the message to be replied to is from a different chat, unique identifier for the chat or username of the bot, supergroup or channel in the format `@username`. Not supported for messages sent on behalf of a business account, messages from channel direct messages chats and ephemeral messages.',
+      },
+      required: false,
+    },
+    {
+      name: 'ephemeral_message_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the incoming ephemeral message that will be replied to in the current chat. A reply to an ephemeral message must itself be an ephemeral message. An ephemeral message may only be replied to within 15 seconds of being sent. Required if _message\\_id_ isn\'t specified.',
       },
       required: false,
     },
@@ -3206,7 +3303,7 @@ const ReplyParameters = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_ if the message should be sent even if the specified message to be replied to is not found. Always _False_ for replies in another chat or forum topic. Always _True_ for messages sent on behalf of a business account.',
+        markdown: 'Pass _True_ if the message should be sent even if the specified message to be replied to is not found. Always _False_ for replies in another chat or forum topic, and sent ephemeral messages. Always _True_ for messages sent on behalf of a business account.',
       },
       required: false,
     },
@@ -3216,7 +3313,7 @@ const ReplyParameters = t({
         type: 'str',
       },
       description: {
-        markdown: 'Quoted part of the message to be replied to; 0-1024 characters after entities parsing. The quote must be an exact substring of the message to be replied to, including _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, _custom\\_emoji_, and _date\\_time_ entities. The message will fail to send if the quote isn\'t found in the original message.',
+        markdown: 'Quoted part of the message to be replied to; 0-1024 characters after entities parsing. The quote must be an exact substring of the message to be replied to, including _bold_, _italic_, _underline_, _strikethrough_, _spoiler_, _custom\\_emoji_, and _date\\_time_ entities. The message will fail to send if the quote isn\'t found in the original message. Ignored for ephemeral messages.',
       },
       required: false,
     },
@@ -3285,6 +3382,45 @@ const ReplyParameters = t({
       },
       description: {
         markdown: 'Persistent identifier of the specific poll option to be replied to',
+      },
+      required: false,
+    },
+  ],
+})
+
+const EphemeralMessageParameters = t({
+  name: 'EphemeralMessageParameters',
+  description: {
+    markdown: '',
+  },
+  fields: [
+    {
+      name: 'receiver_user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the user who will receive the message. It is not guaranteed that the user will receive the message, especially if they are offline. See [here](https://core.telegram.org/bots/api#ephemeral-messages-and-commands) for more details.',
+      },
+      required: true,
+    },
+    {
+      name: 'callback_query_id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Identifier of the callback query which triggered the message, if any',
+      },
+      required: false,
+    },
+    {
+      name: 'replace_callback_query_message',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the ephemeral message must be shown in place of the original message. Must be _False_ for callback queries from ephemeral messages, which must be edited using regular _editEphemeralMessage…_ methods.',
       },
       required: false,
     },
@@ -4185,7 +4321,7 @@ const Video = t({
 const VideoNote = t({
   name: 'VideoNote',
   description: {
-    markdown: 'This object represents a [video message](https://telegram.org/blog/video-messages-and-telescope) (available in Telegram apps as of [v.4.0](https://telegram.org/blog/video-messages-and-telescope)).',
+    markdown: 'This object represents a [video message](https://telegram.org/blog/video-messages-and-telescope).',
   },
   fields: [
     {
@@ -5638,86 +5774,6 @@ const InputChecklist = t({
   ],
 })
 
-const ChecklistTasksDone = t({
-  name: 'ChecklistTasksDone',
-  description: {
-    markdown: 'Describes a service message about checklist tasks marked as done or not done.',
-  },
-  fields: [
-    {
-      name: 'checklist_message',
-      type: {
-        type: 'api-type',
-        name: 'Message',
-      },
-      description: {
-        markdown: 'Message containing the checklist whose tasks were marked as done or not done. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply.',
-      },
-      required: false,
-    },
-    {
-      name: 'marked_as_done_task_ids',
-      type: {
-        type: 'array',
-        of: {
-          type: 'int32',
-        },
-      },
-      description: {
-        markdown: 'Identifiers of the tasks that were marked as done',
-      },
-      required: false,
-    },
-    {
-      name: 'marked_as_not_done_task_ids',
-      type: {
-        type: 'array',
-        of: {
-          type: 'int32',
-        },
-      },
-      description: {
-        markdown: 'Identifiers of the tasks that were marked as not done',
-      },
-      required: false,
-    },
-  ],
-})
-
-const ChecklistTasksAdded = t({
-  name: 'ChecklistTasksAdded',
-  description: {
-    markdown: 'Describes a service message about tasks added to a checklist.',
-  },
-  fields: [
-    {
-      name: 'checklist_message',
-      type: {
-        type: 'api-type',
-        name: 'Message',
-      },
-      description: {
-        markdown: 'Message containing the checklist to which the tasks were added. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply.',
-      },
-      required: false,
-    },
-    {
-      name: 'tasks',
-      type: {
-        type: 'array',
-        of: {
-          type: 'api-type',
-          name: 'ChecklistTask',
-        },
-      },
-      description: {
-        markdown: 'List of tasks added to the checklist',
-      },
-      required: true,
-    },
-  ],
-})
-
 const Location = t({
   name: 'Location',
   description: {
@@ -6001,6 +6057,86 @@ const ManagedBotUpdated = t({
       },
       description: {
         markdown: 'Information about the bot. Token of the bot can be fetched using the method [getManagedBotToken](https://core.telegram.org/bots/api#getmanagedbottoken).',
+      },
+      required: true,
+    },
+  ],
+})
+
+const BotSubscriptionUpdated = t({
+  name: 'BotSubscriptionUpdated',
+  description: {
+    markdown: 'This object contains information about changes to a user payment subscription toward the current bot.',
+  },
+  fields: [
+    {
+      name: 'user',
+      type: {
+        type: 'api-type',
+        name: 'User',
+      },
+      description: {
+        markdown: 'User who subscribed for payments toward the bot',
+      },
+      required: true,
+    },
+    {
+      name: 'invoice_payload',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Bot-specified invoice payload',
+      },
+      required: true,
+    },
+    {
+      name: 'state',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The new state of the subscription. Currently, it can be one of “canceled” if the user canceled the subscription, “active” if the user re-enabled a previously canceled subscription, or “failed” if payment for the subscription failed.',
+      },
+      required: true,
+    },
+  ],
+})
+
+const MessageGenerationStopped = t({
+  name: 'MessageGenerationStopped',
+  description: {
+    markdown: 'This object describes an update about a user stopping message generation.',
+  },
+  fields: [
+    {
+      name: 'chat',
+      type: {
+        type: 'api-type',
+        name: 'Chat',
+      },
+      description: {
+        markdown: 'Chat in which the message is generated',
+      },
+      required: true,
+    },
+    {
+      name: 'message_thread_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier of the message thread in which the message is generated',
+      },
+      required: false,
+    },
+    {
+      name: 'draft_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Unique identifier of the message draft which was stopped',
       },
       required: true,
     },
@@ -6521,6 +6657,134 @@ const ChatBackground = t({
   ],
 })
 
+const ChecklistTasksDone = t({
+  name: 'ChecklistTasksDone',
+  description: {
+    markdown: 'Describes a service message about checklist tasks marked as done or not done.',
+  },
+  fields: [
+    {
+      name: 'checklist_message',
+      type: {
+        type: 'api-type',
+        name: 'Message',
+      },
+      description: {
+        markdown: 'Message containing the checklist whose tasks were marked as done or not done. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply.',
+      },
+      required: false,
+    },
+    {
+      name: 'marked_as_done_task_ids',
+      type: {
+        type: 'array',
+        of: {
+          type: 'int32',
+        },
+      },
+      description: {
+        markdown: 'Identifiers of the tasks that were marked as done',
+      },
+      required: false,
+    },
+    {
+      name: 'marked_as_not_done_task_ids',
+      type: {
+        type: 'array',
+        of: {
+          type: 'int32',
+        },
+      },
+      description: {
+        markdown: 'Identifiers of the tasks that were marked as not done',
+      },
+      required: false,
+    },
+  ],
+})
+
+const ChecklistTasksAdded = t({
+  name: 'ChecklistTasksAdded',
+  description: {
+    markdown: 'Describes a service message about tasks added to a checklist.',
+  },
+  fields: [
+    {
+      name: 'checklist_message',
+      type: {
+        type: 'api-type',
+        name: 'Message',
+      },
+      description: {
+        markdown: 'Message containing the checklist to which the tasks were added. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the _reply\\_to\\_message_ field even if it itself is a reply.',
+      },
+      required: false,
+    },
+    {
+      name: 'tasks',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'ChecklistTask',
+        },
+      },
+      description: {
+        markdown: 'List of tasks added to the checklist',
+      },
+      required: true,
+    },
+  ],
+})
+
+const CommunityChatAdded = t({
+  name: 'CommunityChatAdded',
+  description: {
+    markdown: 'Describes a service message about a chat or a bot being added to a community.',
+  },
+  fields: [
+    {
+      name: 'community',
+      type: {
+        type: 'api-type',
+        name: 'Community',
+      },
+      description: {
+        markdown: 'The new community to which the chat or the bot belongs',
+      },
+      required: true,
+    },
+  ],
+})
+
+const CommunityChatJoined = t({
+  name: 'CommunityChatJoined',
+  description: {
+    markdown: 'Describes a service message about a chat being joined by a user from a community.',
+  },
+  fields: [
+    {
+      name: 'community',
+      type: {
+        type: 'api-type',
+        name: 'Community',
+      },
+      description: {
+        markdown: 'The community from which the chat was joined',
+      },
+      required: true,
+    },
+  ],
+})
+
+const CommunityChatRemoved = t({
+  name: 'CommunityChatRemoved',
+  description: {
+    markdown: 'Describes a service message about a chat or a bot being removed from a community. Currently holds no information.',
+  },
+  fields: [],
+})
+
 const ForumTopicCreated = t({
   name: 'ForumTopicCreated',
   description: {
@@ -6930,7 +7194,7 @@ const DirectMessagePriceChanged = t({
         type: 'bool',
       },
       description: {
-        markdown: '_True_, if direct messages are enabled for the channel chat; false otherwise',
+        markdown: '_True_, if direct messages are enabled for the channel chat; _False_ otherwise',
       },
       required: true,
     },
@@ -7082,7 +7346,7 @@ const SuggestedPostPaid = t({
         ],
       },
       description: {
-        markdown: 'Currency in which the payment was made. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins.',
+        markdown: 'Currency in which the payment was made. Currently, one of “XTR” for Telegram Stars or “TON” for TON grams.',
       },
       required: true,
     },
@@ -7092,7 +7356,7 @@ const SuggestedPostPaid = t({
         type: 'int32',
       },
       description: {
-        markdown: 'The amount of the currency that was received by the channel in nanotoncoins; for payments in toncoins only',
+        markdown: 'The amount of the currency that was received by the channel in nanograms; for payments in TON grams only',
       },
       required: false,
     },
@@ -7545,7 +7809,7 @@ const SuggestedPostPrice = t({
         ],
       },
       description: {
-        markdown: 'Currency in which the post will be paid. Currently, must be one of “XTR” for Telegram Stars or “TON” for toncoins.',
+        markdown: 'Currency in which the post will be paid. Currently, must be one of “XTR” for Telegram Stars or “TON” for TON grams.',
       },
       required: true,
     },
@@ -7555,7 +7819,7 @@ const SuggestedPostPrice = t({
         type: 'int32',
       },
       description: {
-        markdown: 'The amount of the currency that will be paid for the post in the _smallest units_ of the currency, i.e. Telegram Stars or nanotoncoins. Currently, price in Telegram Stars must be between 5 and 100000, and price in nanotoncoins must be between 10000000 and 10000000000000.',
+        markdown: 'The amount of the currency that will be paid for the post in the _smallest units_ of the currency, i.e. Telegram Stars or nanograms. Currently, price in Telegram Stars must be between 5 and 100000, and price in nanograms must be between 10000000 and 10000000000000.',
       },
       required: true,
     },
@@ -7850,7 +8114,7 @@ const ReplyKeyboardMarkup = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Requests clients to always show the keyboard when the regular keyboard is hidden. Defaults to _false_, in which case the custom keyboard can be hidden and opened with a keyboard icon.',
+        markdown: 'Requests clients to always show the keyboard when the regular keyboard is hidden. Defaults to _False_, in which case the custom keyboard can be hidden and opened with a keyboard icon.',
       },
       required: false,
     },
@@ -7860,7 +8124,7 @@ const ReplyKeyboardMarkup = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Requests clients to resize the keyboard vertically for optimal fit (e.g., make the keyboard smaller if there are just two rows of buttons). Defaults to _false_, in which case the custom keyboard is always of the same height as the app\'s standard keyboard.',
+        markdown: 'Requests clients to resize the keyboard vertically for optimal fit (e.g., make the keyboard smaller if there are just two rows of buttons). Defaults to _False_, in which case the custom keyboard is always of the same height as the app\'s standard keyboard.',
       },
       required: false,
     },
@@ -7870,7 +8134,7 @@ const ReplyKeyboardMarkup = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Requests clients to hide the keyboard as soon as it\'s been used. The keyboard will still be available, but clients will automatically display the usual letter-keyboard in the chat - the user can press a special button in the input field to see the custom keyboard again. Defaults to _false_.',
+        markdown: 'Requests clients to hide the keyboard as soon as it\'s been used. The keyboard will still be available, but clients will automatically display the usual letter-keyboard in the chat - the user can press a special button in the input field to see the custom keyboard again. Defaults to _False_.',
       },
       required: false,
     },
@@ -7891,6 +8155,16 @@ const ReplyKeyboardMarkup = t({
       },
       description: {
         markdown: 'Use this parameter if you want to show the keyboard to specific users only. Targets: 1) users that are @mentioned in the _text_ of the [Message](https://core.telegram.org/bots/api#message) object; 2) if the bot\'s message is a reply to a message in the same chat and forum topic, sender of the original message.\n\n_Example:_ A user requests to change the bot\'s language, bot replies to the request with a keyboard to select the new language. Other users in the group don\'t see the keyboard.',
+      },
+      required: false,
+    },
+    {
+      name: 'force_reply',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the reply interface must be shown to the user, as if they had manually selected the bot\'s message and tapped \'Reply\'',
       },
       required: false,
     },
@@ -8346,6 +8620,16 @@ const InlineKeyboardMarkup = t({
       },
       required: true,
     },
+    {
+      name: 'force_reply',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the reply interface must be shown to the user, as if they had manually selected the bot\'s message and tapped \'Reply\'. The value of the field can\'t be changed when the inline keyboard is edited.',
+      },
+      required: false,
+    },
   ],
 })
 
@@ -8437,7 +8721,7 @@ const InlineKeyboardButton = t({
         name: 'LoginUrl',
       },
       description: {
-        markdown: 'An HTTPS URL used to automatically authorize the user. Can be used as a replacement for the [Telegram Login Widget](https://core.telegram.org/widgets/login).',
+        markdown: 'An HTTPS URL used to automatically authorize the user. Can be used as a replacement for the [Telegram Login Widget](https://core.telegram.org/widgets/login). Not supported for ephemeral messages.',
       },
       required: false,
     },
@@ -8504,13 +8788,24 @@ const InlineKeyboardButton = t({
       },
       required: false,
     },
+    {
+      name: 'disabled',
+      type: {
+        type: 'api-type',
+        name: 'DisabledButton',
+      },
+      description: {
+        markdown: 'If set, then the button is disabled and does nothing',
+      },
+      required: false,
+    },
   ],
 })
 
 const LoginUrl = t({
   name: 'LoginUrl',
   description: {
-    markdown: 'This object represents a parameter of the inline keyboard button used to automatically authorize a user. Serves as a great replacement for the [Telegram Login Widget](https://core.telegram.org/widgets/login) when the user is coming from Telegram. All the user needs to do is tap/click a button and confirm that they want to log in:\n\n[![TITLE](/file/811140909/1631/20k1Z53eiyY.23995/c541e89b74253623d9 "TITLE")](https://core.telegram.org/file/811140015/1734/8VZFkwWXalM.97872/6127fa62d8a0bf2b3c)\n\nTelegram apps support these buttons as of [version 5.7](https://telegram.org/blog/privacy-discussions-web-bots#meet-seamless-web-bots).\n\n> Sample bot: [@discussbot](https://t.me/discussbot)',
+    markdown: 'This object represents a parameter of the inline keyboard button used to automatically authorize a user. It serves as a great replacement for the [Telegram Login Widget](https://core.telegram.org/widgets/login) when the user is coming from Telegram. All the user needs to do is tap/click a button and confirm that they want to log in:\n\n[![TITLE](/file/811140909/1631/20k1Z53eiyY.23995/c541e89b74253623d9 "TITLE")](https://core.telegram.org/file/811140015/1734/8VZFkwWXalM.97872/6127fa62d8a0bf2b3c)\n\n> Sample bot: [@DiscussBot](https://t.me/discussbot)',
   },
   fields: [
     {
@@ -8539,7 +8834,7 @@ const LoginUrl = t({
         type: 'str',
       },
       description: {
-        markdown: 'Username of a bot, which will be used for user authorization. See [Setting up a bot](https://core.telegram.org/widgets/login#setting-up-a-bot) for more details. If not specified, the current bot\'s username will be assumed. The _url_\'s domain must be the same as the domain linked with the bot. See [Linking your domain to the bot](https://core.telegram.org/widgets/login#linking-your-domain-to-the-bot) for more details.',
+        markdown: 'Username of a bot, which will be used for user authorization; not supported in [RichMessageButton](https://core.telegram.org/bots/api#richmessagebutton). See [Setting up a bot](https://core.telegram.org/widgets/login#setting-up-a-bot) for more details. If not specified, the current bot\'s username will be assumed. The _url_\'s domain must be the same as the domain linked with the bot. See [Linking your domain to the bot](https://core.telegram.org/widgets/login#linking-your-domain-to-the-bot) for more details.',
       },
       required: false,
     },
@@ -8634,6 +8929,14 @@ const CopyTextButton = t({
   ],
 })
 
+const DisabledButton = t({
+  name: 'DisabledButton',
+  description: {
+    markdown: 'This object represents a disabled button which does nothing. Currently holds no information.',
+  },
+  fields: [],
+})
+
 const CallbackQuery = t({
   name: 'CallbackQuery',
   description: {
@@ -8708,7 +9011,7 @@ const CallbackQuery = t({
         type: 'str',
       },
       description: {
-        markdown: 'Short name of a [Game](https://core.telegram.org/bots/api#games) to be returned, serves as the unique identifier for the game',
+        markdown: 'Short name of a [Game](https://core.telegram.org/bots/api#game) to be returned, serves as the unique identifier for the game',
       },
       required: false,
     },
@@ -8728,7 +9031,7 @@ const ForceReply = t({
         literal: true,
       },
       description: {
-        markdown: 'Shows reply interface to the user, as if they manually selected the bot\'s message and tapped \'Reply\'',
+        markdown: 'Shows reply interface to the user, as if they had manually selected the bot\'s message and tapped \'Reply\'',
       },
       required: true,
     },
@@ -8751,6 +9054,35 @@ const ForceReply = t({
         markdown: 'Use this parameter if you want to force reply from specific users only. Targets: 1) users that are @mentioned in the _text_ of the [Message](https://core.telegram.org/bots/api#message) object; 2) if the bot\'s message is a reply to a message in the same chat and forum topic, sender of the original message.',
       },
       required: false,
+    },
+  ],
+})
+
+const Community = t({
+  name: 'Community',
+  description: {
+    markdown: 'Represents a community (a group of chats).',
+  },
+  fields: [
+    {
+      name: 'id',
+      type: {
+        type: 'int53',
+      },
+      description: {
+        markdown: 'Unique identifier for this community.',
+      },
+      required: true,
+    },
+    {
+      name: 'name',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Name of the community',
+      },
+      required: true,
     },
   ],
 })
@@ -9096,9 +9428,19 @@ const ChatAdministratorRights = t({
         type: 'bool',
       },
       description: {
-        markdown: '_True_, if the administrator can edit the tags of regular members; for groups and supergroups only. If omitted defaults to the value of can\\_pin\\_messages.',
+        markdown: '_True_, if the administrator can edit the tags of regular members; for groups and supergroups only',
       },
       required: false,
+    },
+    {
+      name: 'can_send_welcome_messages',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if the administrator can manage chat welcome messages or directly send them in the case of bots',
+      },
+      required: true,
     },
   ],
 })
@@ -9485,9 +9827,19 @@ const ChatMemberAdministrator = t({
         type: 'bool',
       },
       description: {
-        markdown: '_True_, if the administrator can edit the tags of regular members; for groups and supergroups only. If omitted defaults to the value of can\\_pin\\_messages.',
+        markdown: '_True_, if the administrator can edit the tags of regular members; for groups and supergroups only',
       },
       required: false,
+    },
+    {
+      name: 'can_send_welcome_messages',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if the administrator can manage chat welcome messages or directly send them in the case of bots',
+      },
+      required: true,
     },
     {
       name: 'custom_title',
@@ -9921,7 +10273,7 @@ const ChatJoinRequest = t({
         type: 'str',
       },
       description: {
-        markdown: 'Identifier of the join request query. If present, then the bot must call [sendChatJoinRequestWebApp](https://core.telegram.org/bots/api#sendchatjoinrequestwebapp) or directly call [answerChatJoinRequestQuery](https://core.telegram.org/bots/api#answerchatjoinrequestquery) within 10 seconds.',
+        markdown: 'Identifier of the join request query; for bots assigned to process join requests only. If present, then the bot must call [sendChatJoinRequestWebApp](https://core.telegram.org/bots/api#sendchatjoinrequestwebapp) or directly call [answerChatJoinRequestQuery](https://core.telegram.org/bots/api#answerchatjoinrequestquery) within 10 seconds.',
       },
       required: false,
     },
@@ -10090,7 +10442,7 @@ const ChatPermissions = t({
         type: 'bool',
       },
       description: {
-        markdown: '_True_, if the user is allowed to create forum topics. If omitted defaults to the value of can\\_pin\\_messages.',
+        markdown: '_True_, if the user is allowed to create forum topics. If omitted, defaults to the value of can\\_pin\\_messages.',
       },
       required: false,
     },
@@ -11854,6 +12206,41 @@ const UniqueGiftInfo = t({
       required: true,
     },
     {
+      name: 'text',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Text of the message that was added to the gift',
+      },
+      required: false,
+    },
+    {
+      name: 'entities',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'MessageEntity',
+        },
+      },
+      description: {
+        markdown: 'Special entities that appear in the text',
+      },
+      required: false,
+    },
+    {
+      name: 'is_private',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them',
+      },
+      required: false,
+    },
+    {
       name: 'last_resale_currency',
       type: {
         type: 'union',
@@ -11869,7 +12256,7 @@ const UniqueGiftInfo = t({
         ],
       },
       description: {
-        markdown: 'For gifts bought from other users, the currency in which the payment for the gift was done. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins.',
+        markdown: 'For gifts bought from other users, the currency in which the payment for the gift was done. Currently, one of “XTR” for Telegram Stars or “TON” for TON grams.',
       },
       required: false,
     },
@@ -11879,7 +12266,7 @@ const UniqueGiftInfo = t({
         type: 'int32',
       },
       description: {
-        markdown: 'For gifts bought from other users, the price paid for the gift in either Telegram Stars or nanotoncoins',
+        markdown: 'For gifts bought from other users, the price paid for the gift in either Telegram Stars or nanograms',
       },
       required: false,
     },
@@ -12397,6 +12784,16 @@ const BotCommand = t({
         markdown: 'Description of the command; 1-256 characters',
       },
       required: true,
+    },
+    {
+      name: 'is_ephemeral',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: '_True_, if the command sends an ephemeral message, which can be seen only by the sender of the message and the bot',
+      },
+      required: false,
     },
   ],
 })
@@ -13657,7 +14054,7 @@ const InputMediaAnimation = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -13998,7 +14395,21 @@ const InputMediaLivePhoto = t({
     {
       name: 'parse_mode',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
       },
       description: {
         markdown: 'Mode for parsing entities in the live photo caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
@@ -14025,7 +14436,7 @@ const InputMediaLivePhoto = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -14172,7 +14583,7 @@ const InputMediaPhoto = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -14438,7 +14849,7 @@ const InputMediaVideo = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -14489,6 +14900,93 @@ const InputMediaVideo = t({
       },
       description: {
         markdown: 'Pass _True_ if the video needs to be covered with a spoiler animation',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputMediaVoiceNote = t({
+  name: 'InputMediaVoiceNote',
+  description: {
+    markdown: 'Represents a voice message file to be sent.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Type of the media, must be _voice\\_note_',
+      },
+      required: true,
+    },
+    {
+      name: 'media',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'File to send. Pass a file\\_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass "attach://<file\\_attach\\_name>" to upload a new one using multipart/form-data under <file\\_attach\\_name> name. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Caption of the voice message to be sent, 0-1024 characters after entities parsing',
+      },
+      required: false,
+    },
+    {
+      name: 'parse_mode',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Mode for parsing entities in the voice message caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
+      },
+      required: false,
+    },
+    {
+      name: 'caption_entities',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'MessageEntity',
+        },
+      },
+      description: {
+        markdown: 'List of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
+      },
+      required: false,
+    },
+    {
+      name: 'duration',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Duration of the voice message in seconds',
       },
       required: false,
     },
@@ -15317,16 +15815,30 @@ const RichMessage = t({
 const InputRichMessage = t({
   name: 'InputRichMessage',
   description: {
-    markdown: 'Describes a rich message to be sent. Exactly **one** of the fields _html_ or _markdown_ must be used.',
+    markdown: 'Describes a rich message to be sent. Exactly **one** of the fields _html_, _markdown_, or _blocks_ must be used.',
   },
   fields: [
+    {
+      name: 'blocks',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'InputRichBlock',
+        },
+      },
+      description: {
+        markdown: 'Content of the rich message to send described as a list of blocks',
+      },
+      required: false,
+    },
     {
       name: 'html',
       type: {
         type: 'str',
       },
       description: {
-        markdown: 'Content of the rich message to send described using HTML formatting. See [rich message formatting options](https://core.telegram.org/bots/api#rich-message-formatting-options) for more details.',
+        markdown: 'Content of the rich message to send described using HTML formatting. See [rich message formatting options](https://core.telegram.org/bots/api#rich-message-formatting-options) for more details. Use _media_ field to specify the media used in the message.',
       },
       required: false,
     },
@@ -15336,7 +15848,21 @@ const InputRichMessage = t({
         type: 'str',
       },
       description: {
-        markdown: 'Content of the rich message to send described using Markdown formatting. See [rich message formatting options](https://core.telegram.org/bots/api#rich-message-formatting-options) for more details.',
+        markdown: 'Content of the rich message to send described using Markdown formatting. See [rich message formatting options](https://core.telegram.org/bots/api#rich-message-formatting-options) for more details. Use _media_ field to specify the media used in the message.',
+      },
+      required: false,
+    },
+    {
+      name: 'media',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'InputRichMessageMedia',
+        },
+      },
+      description: {
+        markdown: 'List of media that are specified in the _markdown_ or _html_ fields using `tg://photo?id=`, `tg://video?id=`, `tg://document?id=`, and `tg://audio?id=` links',
       },
       required: false,
     },
@@ -15363,10 +15889,190 @@ const InputRichMessage = t({
   ],
 })
 
+const InputRichMessageMedia = t({
+  name: 'InputRichMessageMedia',
+  description: {
+    markdown: 'Describes a media element embedded in an outgoing rich message.',
+  },
+  fields: [
+    {
+      name: 'id',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Unique identifier of the media used in a `tg://photo?id=`, `tg://video?id=`, `tg://document?id=`, or `tg://audio?id=` link. 1-64 characters, only `A-Z`, `a-z`, `0-9`, `_` and `-` are allowed.',
+      },
+      required: true,
+    },
+    {
+      name: 'media',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'api-type',
+            name: 'InputMediaAnimation',
+          },
+          {
+            type: 'api-type',
+            name: 'InputMediaAudio',
+          },
+          {
+            type: 'api-type',
+            name: 'InputMediaDocument',
+          },
+          {
+            type: 'api-type',
+            name: 'InputMediaPhoto',
+          },
+          {
+            type: 'api-type',
+            name: 'InputMediaVideo',
+          },
+          {
+            type: 'api-type',
+            name: 'InputMediaVoiceNote',
+          },
+        ],
+      },
+      description: {
+        markdown: 'The media to be sent. Everything except the media itself and its properties is ignored.',
+      },
+      required: true,
+    },
+  ],
+})
+
+const RichMessageButton = t({
+  name: 'RichMessageButton',
+  description: {
+    markdown: 'This object represents a button in a [RichMessage](https://core.telegram.org/bots/api#richmessage). Exactly one of the fields other than _text_ and _style_ must be used to specify the type of the button.',
+  },
+  fields: [
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Text of the button. May contain only plain text, [RichTextCustomEmoji](https://core.telegram.org/bots/api#richtextcustomemoji) and [RichTextDateTime](https://core.telegram.org/bots/api#richtextdatetime) entities.',
+      },
+      required: true,
+    },
+    {
+      name: 'style',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Style of the button. Must be one of “danger”, “success”, “primary”, or “link” (the button is shown as a regular link without borders). Apps may use theme-specific colors for the button background and text based on the style. The style “link” is allowed only for callback buttons.',
+      },
+      required: false,
+    },
+    {
+      name: 'url',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'HTTP or tg:// URL to be opened when the button is pressed. Links `tg://user?id=<user_id>` can be used to mention a user by their identifier without using a username, if this is allowed by their privacy settings.',
+      },
+      required: false,
+    },
+    {
+      name: 'callback_data',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'Data to be sent in a [callback query](https://core.telegram.org/bots/api#callbackquery) to the bot when the button is pressed, 1-64 bytes',
+      },
+      required: false,
+    },
+    {
+      name: 'web_app',
+      type: {
+        type: 'api-type',
+        name: 'WebAppInfo',
+      },
+      description: {
+        markdown: 'Description of the [Web App](https://core.telegram.org/bots/webapps) that will be launched when the user presses the button. The Web App will be able to send an arbitrary message on behalf of the user using the method [answerWebAppQuery](https://core.telegram.org/bots/api#answerwebappquery). Available only in private chats between a user and the bot. Not supported for messages sent on behalf of a business account.',
+      },
+      required: false,
+    },
+    {
+      name: 'login_url',
+      type: {
+        type: 'api-type',
+        name: 'LoginUrl',
+      },
+      description: {
+        markdown: 'An HTTPS URL used to automatically authorize the user. Can be used as a replacement for the [Telegram Login Widget](https://core.telegram.org/widgets/login). Not supported for ephemeral messages.',
+      },
+      required: false,
+    },
+    {
+      name: 'switch_inline_query',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'If set, pressing the button will prompt the user to select one of their chats, open that chat and insert the bot\'s username and the specified inline query in the input field. May be empty, in which case just the bot\'s username will be inserted. Not supported for messages sent in channel direct messages chats and on behalf of a business account.',
+      },
+      required: false,
+    },
+    {
+      name: 'switch_inline_query_current_chat',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'If set, pressing the button will insert the bot\'s username and the specified inline query in the current chat\'s input field. May be empty, in which case only the bot\'s username will be inserted. Not supported in channels and for messages sent in channel direct messages chats and on behalf of a business account.',
+      },
+      required: false,
+    },
+    {
+      name: 'switch_inline_query_chosen_chat',
+      type: {
+        type: 'api-type',
+        name: 'SwitchInlineQueryChosenChat',
+      },
+      description: {
+        markdown: 'If set, pressing the button will prompt the user to select one of their chats of the specified type, open that chat and insert the bot\'s username and the specified inline query in the input field. Not supported for messages sent in channel direct messages chats and on behalf of a business account.',
+      },
+      required: false,
+    },
+    {
+      name: 'copy_text',
+      type: {
+        type: 'api-type',
+        name: 'CopyTextButton',
+      },
+      description: {
+        markdown: 'A button that copies the specified text to the clipboard',
+      },
+      required: false,
+    },
+    {
+      name: 'disabled',
+      type: {
+        type: 'api-type',
+        name: 'DisabledButton',
+      },
+      description: {
+        markdown: 'If set, then the button is disabled and does nothing',
+      },
+      required: false,
+    },
+  ],
+})
+
 const RichText = t({
   name: 'RichText',
   description: {
-    markdown: 'This object represents a rich formatted text. Currently, it can be either a String for plain text, an Array of [RichText](https://core.telegram.org/bots/api#richtext), or any of the following types:\n\n-   [RichTextBold](https://core.telegram.org/bots/api#richtextbold)\n-   [RichTextItalic](https://core.telegram.org/bots/api#richtextitalic)\n-   [RichTextUnderline](https://core.telegram.org/bots/api#richtextunderline)\n-   [RichTextStrikethrough](https://core.telegram.org/bots/api#richtextstrikethrough)\n-   [RichTextSpoiler](https://core.telegram.org/bots/api#richtextspoiler)\n-   [RichTextDateTime](https://core.telegram.org/bots/api#richtextdatetime)\n-   [RichTextTextMention](https://core.telegram.org/bots/api#richtexttextmention)\n-   [RichTextSubscript](https://core.telegram.org/bots/api#richtextsubscript)\n-   [RichTextSuperscript](https://core.telegram.org/bots/api#richtextsuperscript)\n-   [RichTextMarked](https://core.telegram.org/bots/api#richtextmarked)\n-   [RichTextCode](https://core.telegram.org/bots/api#richtextcode)\n-   [RichTextCustomEmoji](https://core.telegram.org/bots/api#richtextcustomemoji)\n-   [RichTextMathematicalExpression](https://core.telegram.org/bots/api#richtextmathematicalexpression)\n-   [RichTextUrl](https://core.telegram.org/bots/api#richtexturl)\n-   [RichTextEmailAddress](https://core.telegram.org/bots/api#richtextemailaddress)\n-   [RichTextPhoneNumber](https://core.telegram.org/bots/api#richtextphonenumber)\n-   [RichTextBankCardNumber](https://core.telegram.org/bots/api#richtextbankcardnumber)\n-   [RichTextMention](https://core.telegram.org/bots/api#richtextmention)\n-   [RichTextHashtag](https://core.telegram.org/bots/api#richtexthashtag)\n-   [RichTextCashtag](https://core.telegram.org/bots/api#richtextcashtag)\n-   [RichTextBotCommand](https://core.telegram.org/bots/api#richtextbotcommand)\n-   [RichTextAnchor](https://core.telegram.org/bots/api#richtextanchor)\n-   [RichTextAnchorLink](https://core.telegram.org/bots/api#richtextanchorlink)\n-   [RichTextReference](https://core.telegram.org/bots/api#richtextreference)\n-   [RichTextReferenceLink](https://core.telegram.org/bots/api#richtextreferencelink)',
+    markdown: 'This object represents a rich formatted text. Currently, it can be either a String for plain text, an Array of [RichText](https://core.telegram.org/bots/api#richtext), or any of the following types:\n\n-   [RichTextBold](https://core.telegram.org/bots/api#richtextbold)\n-   [RichTextItalic](https://core.telegram.org/bots/api#richtextitalic)\n-   [RichTextUnderline](https://core.telegram.org/bots/api#richtextunderline)\n-   [RichTextStrikethrough](https://core.telegram.org/bots/api#richtextstrikethrough)\n-   [RichTextSpoiler](https://core.telegram.org/bots/api#richtextspoiler)\n-   [RichTextDateTime](https://core.telegram.org/bots/api#richtextdatetime)\n-   [RichTextTextMention](https://core.telegram.org/bots/api#richtexttextmention)\n-   [RichTextSubscript](https://core.telegram.org/bots/api#richtextsubscript)\n-   [RichTextSuperscript](https://core.telegram.org/bots/api#richtextsuperscript)\n-   [RichTextMarked](https://core.telegram.org/bots/api#richtextmarked)\n-   [RichTextCode](https://core.telegram.org/bots/api#richtextcode)\n-   [RichTextCustomEmoji](https://core.telegram.org/bots/api#richtextcustomemoji)\n-   [RichTextMathematicalExpression](https://core.telegram.org/bots/api#richtextmathematicalexpression)\n-   [RichTextUrl](https://core.telegram.org/bots/api#richtexturl)\n-   [RichTextEmailAddress](https://core.telegram.org/bots/api#richtextemailaddress)\n-   [RichTextPhoneNumber](https://core.telegram.org/bots/api#richtextphonenumber)\n-   [RichTextBankCardNumber](https://core.telegram.org/bots/api#richtextbankcardnumber)\n-   [RichTextMention](https://core.telegram.org/bots/api#richtextmention)\n-   [RichTextHashtag](https://core.telegram.org/bots/api#richtexthashtag)\n-   [RichTextCashtag](https://core.telegram.org/bots/api#richtextcashtag)\n-   [RichTextBotCommand](https://core.telegram.org/bots/api#richtextbotcommand)\n-   [RichTextButton](https://core.telegram.org/bots/api#richtextbutton)\n-   [RichTextAnchor](https://core.telegram.org/bots/api#richtextanchor)\n-   [RichTextAnchorLink](https://core.telegram.org/bots/api#richtextanchorlink)\n-   [RichTextReference](https://core.telegram.org/bots/api#richtextreference)\n-   [RichTextReferenceLink](https://core.telegram.org/bots/api#richtextreferencelink)',
   },
   oneOf: [
     {
@@ -15462,6 +16168,10 @@ const RichText = t({
     {
       type: 'api-type',
       name: 'RichTextBotCommand',
+    },
+    {
+      type: 'api-type',
+      name: 'RichTextButton',
     },
     {
       type: 'api-type',
@@ -16252,6 +16962,37 @@ const RichTextBotCommand = t({
   ],
 })
 
+const RichTextButton = t({
+  name: 'RichTextButton',
+  description: {
+    markdown: 'A button.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'button',
+      },
+      description: {
+        markdown: 'Type of the rich text, always “button”',
+      },
+      required: true,
+    },
+    {
+      name: 'button',
+      type: {
+        type: 'api-type',
+        name: 'RichMessageButton',
+      },
+      description: {
+        markdown: 'The button',
+      },
+      required: true,
+    },
+  ],
+})
+
 const RichTextAnchor = t({
   name: 'RichTextAnchor',
   description: {
@@ -16487,7 +17228,21 @@ const RichBlockTableCell = t({
     {
       name: 'align',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'left',
+          },
+          {
+            type: 'str',
+            literal: 'center',
+          },
+          {
+            type: 'str',
+            literal: 'right',
+          },
+        ],
       },
       description: {
         markdown: 'Horizontal cell content alignment. Currently, must be one of “left”, “center”, or “right”.',
@@ -16497,7 +17252,21 @@ const RichBlockTableCell = t({
     {
       name: 'valign',
       type: {
-        type: 'str',
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'top',
+          },
+          {
+            type: 'str',
+            literal: 'middle',
+          },
+          {
+            type: 'str',
+            literal: 'bottom',
+          },
+        ],
       },
       description: {
         markdown: 'Vertical cell content alignment. Currently, must be one of “top”, “middle”, or “bottom”.',
@@ -16607,7 +17376,7 @@ const RichBlockListItem = t({
 const RichBlock = t({
   name: 'RichBlock',
   description: {
-    markdown: 'This object represents a block in a rich formatted message. Currently, it can be any of the following types:\n\n-   [RichBlockParagraph](https://core.telegram.org/bots/api#richblockparagraph)\n-   [RichBlockSectionHeading](https://core.telegram.org/bots/api#richblocksectionheading)\n-   [RichBlockPreformatted](https://core.telegram.org/bots/api#richblockpreformatted)\n-   [RichBlockFooter](https://core.telegram.org/bots/api#richblockfooter)\n-   [RichBlockDivider](https://core.telegram.org/bots/api#richblockdivider)\n-   [RichBlockMathematicalExpression](https://core.telegram.org/bots/api#richblockmathematicalexpression)\n-   [RichBlockAnchor](https://core.telegram.org/bots/api#richblockanchor)\n-   [RichBlockList](https://core.telegram.org/bots/api#richblocklist)\n-   [RichBlockBlockQuotation](https://core.telegram.org/bots/api#richblockblockquotation)\n-   [RichBlockPullQuotation](https://core.telegram.org/bots/api#richblockpullquotation)\n-   [RichBlockCollage](https://core.telegram.org/bots/api#richblockcollage)\n-   [RichBlockSlideshow](https://core.telegram.org/bots/api#richblockslideshow)\n-   [RichBlockTable](https://core.telegram.org/bots/api#richblocktable)\n-   [RichBlockDetails](https://core.telegram.org/bots/api#richblockdetails)\n-   [RichBlockMap](https://core.telegram.org/bots/api#richblockmap)\n-   [RichBlockAnimation](https://core.telegram.org/bots/api#richblockanimation)\n-   [RichBlockAudio](https://core.telegram.org/bots/api#richblockaudio)\n-   [RichBlockPhoto](https://core.telegram.org/bots/api#richblockphoto)\n-   [RichBlockVideo](https://core.telegram.org/bots/api#richblockvideo)\n-   [RichBlockVoiceNote](https://core.telegram.org/bots/api#richblockvoicenote)\n-   [RichBlockThinking](https://core.telegram.org/bots/api#richblockthinking)',
+    markdown: 'This object represents a block in a rich formatted message. Currently, it can be any of the following types:\n\n-   [RichBlockParagraph](https://core.telegram.org/bots/api#richblockparagraph)\n-   [RichBlockSectionHeading](https://core.telegram.org/bots/api#richblocksectionheading)\n-   [RichBlockPreformatted](https://core.telegram.org/bots/api#richblockpreformatted)\n-   [RichBlockFooter](https://core.telegram.org/bots/api#richblockfooter)\n-   [RichBlockDivider](https://core.telegram.org/bots/api#richblockdivider)\n-   [RichBlockMathematicalExpression](https://core.telegram.org/bots/api#richblockmathematicalexpression)\n-   [RichBlockAnchor](https://core.telegram.org/bots/api#richblockanchor)\n-   [RichBlockList](https://core.telegram.org/bots/api#richblocklist)\n-   [RichBlockBlockQuotation](https://core.telegram.org/bots/api#richblockblockquotation)\n-   [RichBlockExpandableBlockQuotation](https://core.telegram.org/bots/api#richblockexpandableblockquotation)\n-   [RichBlockPullQuotation](https://core.telegram.org/bots/api#richblockpullquotation)\n-   [RichBlockCollage](https://core.telegram.org/bots/api#richblockcollage)\n-   [RichBlockSlideshow](https://core.telegram.org/bots/api#richblockslideshow)\n-   [RichBlockTable](https://core.telegram.org/bots/api#richblocktable)\n-   [RichBlockDetails](https://core.telegram.org/bots/api#richblockdetails)\n-   [RichBlockMap](https://core.telegram.org/bots/api#richblockmap)\n-   [RichBlockButtons](https://core.telegram.org/bots/api#richblockbuttons)\n-   [RichBlockAnimation](https://core.telegram.org/bots/api#richblockanimation)\n-   [RichBlockAudio](https://core.telegram.org/bots/api#richblockaudio)\n-   [RichBlockDocument](https://core.telegram.org/bots/api#richblockdocument)\n-   [RichBlockPhoto](https://core.telegram.org/bots/api#richblockphoto)\n-   [RichBlockVideo](https://core.telegram.org/bots/api#richblockvideo)\n-   [RichBlockVoiceNote](https://core.telegram.org/bots/api#richblockvoicenote)\n-   [RichBlockThinking](https://core.telegram.org/bots/api#richblockthinking)',
   },
   oneOf: [
     {
@@ -16648,6 +17417,10 @@ const RichBlock = t({
     },
     {
       type: 'api-type',
+      name: 'RichBlockExpandableBlockQuotation',
+    },
+    {
+      type: 'api-type',
       name: 'RichBlockPullQuotation',
     },
     {
@@ -16672,11 +17445,19 @@ const RichBlock = t({
     },
     {
       type: 'api-type',
+      name: 'RichBlockButtons',
+    },
+    {
+      type: 'api-type',
       name: 'RichBlockAnimation',
     },
     {
       type: 'api-type',
       name: 'RichBlockAudio',
+    },
+    {
+      type: 'api-type',
+      name: 'RichBlockDocument',
     },
     {
       type: 'api-type',
@@ -17000,6 +17781,48 @@ const RichBlockBlockQuotation = t({
   ],
 })
 
+const RichBlockExpandableBlockQuotation = t({
+  name: 'RichBlockExpandableBlockQuotation',
+  description: {
+    markdown: 'A block quotation, corresponding to the HTML tag `<blockquote>` with custom attribute `"expandable"`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'expandable_blockquote',
+      },
+      description: {
+        markdown: 'Type of the block, always “expandable\\_blockquote”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Content of the block',
+      },
+      required: true,
+    },
+    {
+      name: 'credit',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Credit of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
 const RichBlockPullQuotation = t({
   name: 'RichBlockPullQuotation',
   description: {
@@ -17189,6 +18012,17 @@ const RichBlockTable = t({
       required: false,
     },
     {
+      name: 'is_compact',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: '_True_, if table cells have smaller indents',
+      },
+      required: false,
+    },
+    {
       name: 'caption',
       type: {
         type: 'api-type',
@@ -17292,7 +18126,7 @@ const RichBlockMap = t({
         type: 'int32',
       },
       description: {
-        markdown: 'Map zoom level; 13-20',
+        markdown: 'Map zoom level',
       },
       required: true,
     },
@@ -17324,6 +18158,64 @@ const RichBlockMap = t({
       },
       description: {
         markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const RichBlockButtons = t({
+  name: 'RichBlockButtons',
+  description: {
+    markdown: 'A block containing a list of buttons that are shown in one row, corresponding to the custom HTML tag `<tg-button-row>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'buttons',
+      },
+      description: {
+        markdown: 'Type of the block, always “buttons”',
+      },
+      required: true,
+    },
+    {
+      name: 'buttons',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'RichMessageButton',
+        },
+      },
+      description: {
+        markdown: 'The buttons',
+      },
+      required: true,
+    },
+    {
+      name: 'align',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'left',
+          },
+          {
+            type: 'str',
+            literal: 'center',
+          },
+          {
+            type: 'str',
+            literal: 'right',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Horizontal alignment of the buttons. Currently, must be one of “left”, “center”, or “right”.',
       },
       required: false,
     },
@@ -17425,10 +18317,52 @@ const RichBlockAudio = t({
   ],
 })
 
+const RichBlockDocument = t({
+  name: 'RichBlockDocument',
+  description: {
+    markdown: 'A block with a general file, corresponding to the custom HTML tag `<tg-document>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'document',
+      },
+      description: {
+        markdown: 'Type of the block, always “document”',
+      },
+      required: true,
+    },
+    {
+      name: 'document',
+      type: {
+        type: 'api-type',
+        name: 'Document',
+      },
+      description: {
+        markdown: 'The document',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
 const RichBlockPhoto = t({
   name: 'RichBlockPhoto',
   description: {
-    markdown: 'A block with a photo, corresponding to the HTML tag `<photo>`.',
+    markdown: 'A block with a photo, corresponding to the HTML tag `<img>`.',
   },
   fields: [
     {
@@ -17579,7 +18513,7 @@ const RichBlockVoiceNote = t({
 const RichBlockThinking = t({
   name: 'RichBlockThinking',
   description: {
-    markdown: 'A block with a “Thinking…” placeholder, corresponding to the custom HTML tag `<tg-thinking>`. The block may be used only in [sendRichMessageDraft](https://core.telegram.org/bots/api#sendrichmessagedraft), therefore it can\'t be received in messages. See [](https://t.me/addemoji/AIActions)[https://t.me/addemoji/AIActions](https://t.me/addemoji/AIActions) for examples of custom emoji, which are recommended for usage in the block.',
+    markdown: 'A block with a “Thinking…” placeholder, corresponding to the custom HTML tag `<tg-thinking>`. The block may be used only in [sendRichMessageDraft](https://core.telegram.org/bots/api#sendrichmessagedraft), therefore it can\'t be received in messages. See [](https://t.me/addemoji/AIActions)[https://t.me/addemoji/AIActions](https://t.me/addemoji/AIActions) for examples of custom emoji that are recommended for usage in the block.',
   },
   fields: [
     {
@@ -17600,7 +18534,1226 @@ const RichBlockThinking = t({
         name: 'RichText',
       },
       description: {
-        markdown: 'Text of the block. See [](https://t.me/addemoji/AIActions)[https://t.me/addemoji/AIActions](https://t.me/addemoji/AIActions) for examples of custom emoji, which are recommended for usage in the block.',
+        markdown: 'Text of the block. See [](https://t.me/addemoji/AIActions)[https://t.me/addemoji/AIActions](https://t.me/addemoji/AIActions) for examples of custom emoji that are recommended for usage in the block.',
+      },
+      required: true,
+    },
+  ],
+})
+
+const InputRichBlockListItem = t({
+  name: 'InputRichBlockListItem',
+  description: {
+    markdown: 'An item of a list to be sent.',
+  },
+  fields: [
+    {
+      name: 'blocks',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'InputRichBlock',
+        },
+      },
+      description: {
+        markdown: 'The content of the item',
+      },
+      required: true,
+    },
+    {
+      name: 'has_checkbox',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: 'Pass _True_ if the item has a checkbox',
+      },
+      required: false,
+    },
+    {
+      name: 'is_checked',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: 'Pass _True_ if the item has a checked checkbox',
+      },
+      required: false,
+    },
+    {
+      name: 'value',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'For ordered lists, the numeric value of the item label',
+      },
+      required: false,
+    },
+    {
+      name: 'type',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'a',
+          },
+          {
+            type: 'str',
+            literal: 'A',
+          },
+          {
+            type: 'str',
+            literal: 'i',
+          },
+          {
+            type: 'str',
+            literal: 'I',
+          },
+          {
+            type: 'str',
+            literal: '1',
+          },
+        ],
+      },
+      description: {
+        markdown: 'For ordered lists, the type of the item label; must be one of “a” for lowercase letters, “A” for uppercase letters, “i” for lowercase Roman numerals, “I” for uppercase Roman numerals, or “1” for decimal numbers',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlock = t({
+  name: 'InputRichBlock',
+  description: {
+    markdown: 'This object represents a block in a rich formatted message to be sent. Currently, it can be any of the following types:\n\n-   [InputRichBlockParagraph](https://core.telegram.org/bots/api#inputrichblockparagraph)\n-   [InputRichBlockSectionHeading](https://core.telegram.org/bots/api#inputrichblocksectionheading)\n-   [InputRichBlockPreformatted](https://core.telegram.org/bots/api#inputrichblockpreformatted)\n-   [InputRichBlockFooter](https://core.telegram.org/bots/api#inputrichblockfooter)\n-   [InputRichBlockDivider](https://core.telegram.org/bots/api#inputrichblockdivider)\n-   [InputRichBlockMathematicalExpression](https://core.telegram.org/bots/api#inputrichblockmathematicalexpression)\n-   [InputRichBlockAnchor](https://core.telegram.org/bots/api#inputrichblockanchor)\n-   [InputRichBlockList](https://core.telegram.org/bots/api#inputrichblocklist)\n-   [InputRichBlockBlockQuotation](https://core.telegram.org/bots/api#inputrichblockblockquotation)\n-   [InputRichBlockExpandableBlockQuotation](https://core.telegram.org/bots/api#inputrichblockexpandableblockquotation)\n-   [InputRichBlockPullQuotation](https://core.telegram.org/bots/api#inputrichblockpullquotation)\n-   [InputRichBlockCollage](https://core.telegram.org/bots/api#inputrichblockcollage)\n-   [InputRichBlockSlideshow](https://core.telegram.org/bots/api#inputrichblockslideshow)\n-   [InputRichBlockTable](https://core.telegram.org/bots/api#inputrichblocktable)\n-   [InputRichBlockDetails](https://core.telegram.org/bots/api#inputrichblockdetails)\n-   [InputRichBlockMap](https://core.telegram.org/bots/api#inputrichblockmap)\n-   [InputRichBlockButtons](https://core.telegram.org/bots/api#inputrichblockbuttons)\n-   [InputRichBlockAnimation](https://core.telegram.org/bots/api#inputrichblockanimation)\n-   [InputRichBlockAudio](https://core.telegram.org/bots/api#inputrichblockaudio)\n-   [InputRichBlockDocument](https://core.telegram.org/bots/api#inputrichblockdocument)\n-   [InputRichBlockPhoto](https://core.telegram.org/bots/api#inputrichblockphoto)\n-   [InputRichBlockVideo](https://core.telegram.org/bots/api#inputrichblockvideo)\n-   [InputRichBlockVoiceNote](https://core.telegram.org/bots/api#inputrichblockvoicenote)\n-   [InputRichBlockThinking](https://core.telegram.org/bots/api#inputrichblockthinking)',
+  },
+  oneOf: [
+    {
+      type: 'api-type',
+      name: 'InputRichBlockParagraph',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockSectionHeading',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockPreformatted',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockFooter',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockDivider',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockMathematicalExpression',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockAnchor',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockList',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockBlockQuotation',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockExpandableBlockQuotation',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockPullQuotation',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockCollage',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockSlideshow',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockTable',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockDetails',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockMap',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockButtons',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockAnimation',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockAudio',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockDocument',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockPhoto',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockVideo',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockVoiceNote',
+    },
+    {
+      type: 'api-type',
+      name: 'InputRichBlockThinking',
+    },
+  ],
+})
+
+const InputRichBlockParagraph = t({
+  name: 'InputRichBlockParagraph',
+  description: {
+    markdown: 'A text paragraph, corresponding to the HTML tag `<p>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'paragraph',
+      },
+      description: {
+        markdown: 'Type of the block, always “paragraph”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Text of the block',
+      },
+      required: true,
+    },
+  ],
+})
+
+const InputRichBlockSectionHeading = t({
+  name: 'InputRichBlockSectionHeading',
+  description: {
+    markdown: 'A section heading, corresponding to the HTML tags `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, or `<h6>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'heading',
+      },
+      description: {
+        markdown: 'Type of the block, always “heading”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Text of the block',
+      },
+      required: true,
+    },
+    {
+      name: 'size',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Relative size of the text font; 1-6, 1 is the largest, 6 is the smallest',
+      },
+      required: true,
+    },
+  ],
+})
+
+const InputRichBlockPreformatted = t({
+  name: 'InputRichBlockPreformatted',
+  description: {
+    markdown: 'A preformatted text block, corresponding to the nested HTML tags `<pre>` and `<code>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'pre',
+      },
+      description: {
+        markdown: 'Type of the block, always “pre”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Text of the block',
+      },
+      required: true,
+    },
+    {
+      name: 'language',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The programming language of the text',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlockFooter = t({
+  name: 'InputRichBlockFooter',
+  description: {
+    markdown: 'A footer, corresponding to the HTML tag `<footer>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'footer',
+      },
+      description: {
+        markdown: 'Type of the block, always “footer”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Text of the block',
+      },
+      required: true,
+    },
+  ],
+})
+
+const InputRichBlockDivider = t({
+  name: 'InputRichBlockDivider',
+  description: {
+    markdown: 'A divider, corresponding to the HTML tag `<hr/>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'divider',
+      },
+      description: {
+        markdown: 'Type of the block, always “divider”',
+      },
+      required: true,
+    },
+  ],
+})
+
+const InputRichBlockMathematicalExpression = t({
+  name: 'InputRichBlockMathematicalExpression',
+  description: {
+    markdown: 'A block with a mathematical expression in LaTeX format, corresponding to the custom HTML tag `<tg-math-block>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'mathematical_expression',
+      },
+      description: {
+        markdown: 'Type of the block, always “mathematical\\_expression”',
+      },
+      required: true,
+    },
+    {
+      name: 'expression',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The mathematical expression in LaTeX format',
+      },
+      required: true,
+    },
+  ],
+})
+
+const InputRichBlockAnchor = t({
+  name: 'InputRichBlockAnchor',
+  description: {
+    markdown: 'A block with an anchor, corresponding to the HTML tag `<a>` with the attribute `name`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'anchor',
+      },
+      description: {
+        markdown: 'Type of the block, always “anchor”',
+      },
+      required: true,
+    },
+    {
+      name: 'name',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'The name of the anchor',
+      },
+      required: true,
+    },
+  ],
+})
+
+const InputRichBlockList = t({
+  name: 'InputRichBlockList',
+  description: {
+    markdown: 'A list of blocks, corresponding to the HTML tag `<ul>` or `<ol>` with multiple nested tags `<li>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'list',
+      },
+      description: {
+        markdown: 'Type of the block, always “list”',
+      },
+      required: true,
+    },
+    {
+      name: 'items',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'InputRichBlockListItem',
+        },
+      },
+      description: {
+        markdown: 'Items of the list',
+      },
+      required: true,
+    },
+  ],
+})
+
+const InputRichBlockBlockQuotation = t({
+  name: 'InputRichBlockBlockQuotation',
+  description: {
+    markdown: 'A block quotation, corresponding to the HTML tag `<blockquote>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'blockquote',
+      },
+      description: {
+        markdown: 'Type of the block, always “blockquote”',
+      },
+      required: true,
+    },
+    {
+      name: 'blocks',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'InputRichBlock',
+        },
+      },
+      description: {
+        markdown: 'Content of the block',
+      },
+      required: true,
+    },
+    {
+      name: 'credit',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Credit of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlockExpandableBlockQuotation = t({
+  name: 'InputRichBlockExpandableBlockQuotation',
+  description: {
+    markdown: 'A block quotation, corresponding to the HTML tag `<blockquote>` with custom attribute `"expandable"`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'expandable_blockquote',
+      },
+      description: {
+        markdown: 'Type of the block, always “expandable\\_blockquote”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Content of the block',
+      },
+      required: true,
+    },
+    {
+      name: 'credit',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Credit of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlockPullQuotation = t({
+  name: 'InputRichBlockPullQuotation',
+  description: {
+    markdown: 'A quotation with centered text, loosely corresponding to the HTML tag `<aside>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'pullquote',
+      },
+      description: {
+        markdown: 'Type of the block, always “pullquote”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Text of the block',
+      },
+      required: true,
+    },
+    {
+      name: 'credit',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Credit of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlockCollage = t({
+  name: 'InputRichBlockCollage',
+  description: {
+    markdown: 'A collage, corresponding to the custom HTML tag `<tg-collage>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'collage',
+      },
+      description: {
+        markdown: 'Type of the block, always “collage”',
+      },
+      required: true,
+    },
+    {
+      name: 'blocks',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'InputRichBlock',
+        },
+      },
+      description: {
+        markdown: 'Elements of the collage',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlockSlideshow = t({
+  name: 'InputRichBlockSlideshow',
+  description: {
+    markdown: 'A slideshow, corresponding to the custom HTML tag `<tg-slideshow>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'slideshow',
+      },
+      description: {
+        markdown: 'Type of the block, always “slideshow”',
+      },
+      required: true,
+    },
+    {
+      name: 'blocks',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'InputRichBlock',
+        },
+      },
+      description: {
+        markdown: 'Elements of the slideshow',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlockTable = t({
+  name: 'InputRichBlockTable',
+  description: {
+    markdown: 'A table, corresponding to the HTML tag `<table>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'table',
+      },
+      description: {
+        markdown: 'Type of the block, always “table”',
+      },
+      required: true,
+    },
+    {
+      name: 'cells',
+      type: {
+        type: 'array',
+        of: {
+          type: 'array',
+          of: {
+            type: 'api-type',
+            name: 'RichBlockTableCell',
+          },
+        },
+      },
+      description: {
+        markdown: 'Cells of the table',
+      },
+      required: true,
+    },
+    {
+      name: 'is_bordered',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: 'Pass _True_ if the table has borders',
+      },
+      required: false,
+    },
+    {
+      name: 'is_striped',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: 'Pass _True_ if the table is striped',
+      },
+      required: false,
+    },
+    {
+      name: 'is_compact',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: 'Pass _True_ if table cells must have smaller indents',
+      },
+      required: false,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Caption of the table',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlockDetails = t({
+  name: 'InputRichBlockDetails',
+  description: {
+    markdown: 'An expandable block for details disclosure, corresponding to the HTML tag `<details>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'details',
+      },
+      description: {
+        markdown: 'Type of the block, always “details”',
+      },
+      required: true,
+    },
+    {
+      name: 'summary',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Always shown summary of the block',
+      },
+      required: true,
+    },
+    {
+      name: 'blocks',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'InputRichBlock',
+        },
+      },
+      description: {
+        markdown: 'Content of the block',
+      },
+      required: true,
+    },
+    {
+      name: 'is_open',
+      type: {
+        type: 'bool',
+        literal: true,
+      },
+      description: {
+        markdown: 'Pass _True_ if the content of the block is visible by default',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlockMap = t({
+  name: 'InputRichBlockMap',
+  description: {
+    markdown: 'A block with a map, corresponding to the custom HTML tag `<tg-map>`. The map\'s width and height must not exceed 10000 in total. The width and height ratio must be at most 20.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'map',
+      },
+      description: {
+        markdown: 'Type of the block, always “map”',
+      },
+      required: true,
+    },
+    {
+      name: 'location',
+      type: {
+        type: 'api-type',
+        name: 'Location',
+      },
+      description: {
+        markdown: 'Location of the center of the map',
+      },
+      required: true,
+    },
+    {
+      name: 'zoom',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Map zoom level; 0-24',
+      },
+      required: false,
+    },
+    {
+      name: 'width',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Map width; 0-10000',
+      },
+      required: false,
+    },
+    {
+      name: 'height',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Map height; 0-10000',
+      },
+      required: false,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlockButtons = t({
+  name: 'InputRichBlockButtons',
+  description: {
+    markdown: 'A block containing a list of buttons that are shown in one row, corresponding to the custom HTML tag `<tg-button-row>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'buttons',
+      },
+      description: {
+        markdown: 'Type of the block, always “buttons”',
+      },
+      required: true,
+    },
+    {
+      name: 'buttons',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'RichMessageButton',
+        },
+      },
+      description: {
+        markdown: 'List of 1-8 buttons to send',
+      },
+      required: true,
+    },
+    {
+      name: 'align',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'left',
+          },
+          {
+            type: 'str',
+            literal: 'center',
+          },
+          {
+            type: 'str',
+            literal: 'right',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Horizontal alignment of the buttons. Currently, must be one of “left”, “center”, or “right”.',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlockAnimation = t({
+  name: 'InputRichBlockAnimation',
+  description: {
+    markdown: 'A block with an animation, corresponding to the HTML tag `<video>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'animation',
+      },
+      description: {
+        markdown: 'Type of the block, always “animation”',
+      },
+      required: true,
+    },
+    {
+      name: 'animation',
+      type: {
+        type: 'api-type',
+        name: 'InputMediaAnimation',
+      },
+      description: {
+        markdown: 'The animation. Caption is ignored.',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlockAudio = t({
+  name: 'InputRichBlockAudio',
+  description: {
+    markdown: 'A block with a music file, corresponding to the HTML tag `<audio>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'audio',
+      },
+      description: {
+        markdown: 'Type of the block, always “audio”',
+      },
+      required: true,
+    },
+    {
+      name: 'audio',
+      type: {
+        type: 'api-type',
+        name: 'InputMediaAudio',
+      },
+      description: {
+        markdown: 'The audio. Caption is ignored.',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlockDocument = t({
+  name: 'InputRichBlockDocument',
+  description: {
+    markdown: 'A block with a general file, corresponding to the custom HTML tag `<tg-document>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'document',
+      },
+      description: {
+        markdown: 'Type of the block, always “document”',
+      },
+      required: true,
+    },
+    {
+      name: 'document',
+      type: {
+        type: 'api-type',
+        name: 'InputMediaDocument',
+      },
+      description: {
+        markdown: 'The document. Caption is ignored.',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlockPhoto = t({
+  name: 'InputRichBlockPhoto',
+  description: {
+    markdown: 'A block with a photo, corresponding to the HTML tag `<img>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'photo',
+      },
+      description: {
+        markdown: 'Type of the block, always “photo”',
+      },
+      required: true,
+    },
+    {
+      name: 'photo',
+      type: {
+        type: 'api-type',
+        name: 'InputMediaPhoto',
+      },
+      description: {
+        markdown: 'The photo. Caption is ignored.',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlockVideo = t({
+  name: 'InputRichBlockVideo',
+  description: {
+    markdown: 'A block with a video, corresponding to the HTML tag `<video>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'video',
+      },
+      description: {
+        markdown: 'Type of the block, always “video”',
+      },
+      required: true,
+    },
+    {
+      name: 'video',
+      type: {
+        type: 'api-type',
+        name: 'InputMediaVideo',
+      },
+      description: {
+        markdown: 'The video. Caption is ignored.',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlockVoiceNote = t({
+  name: 'InputRichBlockVoiceNote',
+  description: {
+    markdown: 'A block with a voice note, corresponding to the HTML tag `<audio>`.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'voice_note',
+      },
+      description: {
+        markdown: 'Type of the block, always “voice\\_note”',
+      },
+      required: true,
+    },
+    {
+      name: 'voice_note',
+      type: {
+        type: 'api-type',
+        name: 'InputMediaVoiceNote',
+      },
+      description: {
+        markdown: 'The voice note. Caption is ignored.',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'api-type',
+        name: 'RichBlockCaption',
+      },
+      description: {
+        markdown: 'Caption of the block',
+      },
+      required: false,
+    },
+  ],
+})
+
+const InputRichBlockThinking = t({
+  name: 'InputRichBlockThinking',
+  description: {
+    markdown: 'A block with a “Thinking…” placeholder, corresponding to the custom HTML tag `<tg-thinking>`. The block may be used only in [sendRichMessageDraft](https://core.telegram.org/bots/api#sendrichmessagedraft), therefore it can\'t be received in messages. See [](https://t.me/addemoji/AIActions)[https://t.me/addemoji/AIActions](https://t.me/addemoji/AIActions) for examples of custom emoji that are recommended for usage in the block.',
+  },
+  fields: [
+    {
+      name: 'type',
+      type: {
+        type: 'str',
+        literal: 'thinking',
+      },
+      description: {
+        markdown: 'Type of the block, always “thinking”',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'api-type',
+        name: 'RichText',
+      },
+      description: {
+        markdown: 'Text of the block. See [](https://t.me/addemoji/AIActions)[https://t.me/addemoji/AIActions](https://t.me/addemoji/AIActions) for examples of custom emoji that are recommended for usage in the block.',
       },
       required: true,
     },
@@ -18082,7 +20235,7 @@ const InlineQueryResultPhoto = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -18276,7 +20429,7 @@ const InlineQueryResultGif = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -18470,7 +20623,7 @@ const InlineQueryResultMpeg4Gif = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -18630,7 +20783,7 @@ const InlineQueryResultVideo = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -19588,7 +21741,7 @@ const InlineQueryResultContact = t({
 const InlineQueryResultGame = t({
   name: 'InlineQueryResultGame',
   description: {
-    markdown: 'Represents a [Game](https://core.telegram.org/bots/api#games).',
+    markdown: 'Represents a [Game](https://core.telegram.org/bots/api#game).',
   },
   fields: [
     {
@@ -19747,7 +21900,7 @@ const InlineQueryResultCachedPhoto = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -19877,7 +22030,7 @@ const InlineQueryResultCachedGif = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -20007,7 +22160,7 @@ const InlineQueryResultCachedMpeg4Gif = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -20339,7 +22492,7 @@ const InlineQueryResultCachedVideo = t({
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -20712,7 +22865,7 @@ const InputRichMessageContent = t({
         name: 'InputRichMessage',
       },
       description: {
-        markdown: 'The message to be sent',
+        markdown: 'The message to be sent. Only previously uploaded files may be used in the message.',
       },
       required: true,
     },
@@ -23548,6 +25701,7 @@ export const types = {
   TextQuote,
   ExternalReplyInfo,
   ReplyParameters,
+  EphemeralMessageParameters,
   MessageOrigin,
   MessageOriginUser,
   MessageOriginHiddenUser,
@@ -23583,8 +25737,6 @@ export const types = {
   Checklist,
   InputChecklistTask,
   InputChecklist,
-  ChecklistTasksDone,
-  ChecklistTasksAdded,
   Location,
   Venue,
   WebAppData,
@@ -23592,6 +25744,8 @@ export const types = {
   MessageAutoDeleteTimerChanged,
   ManagedBotCreated,
   ManagedBotUpdated,
+  BotSubscriptionUpdated,
+  MessageGenerationStopped,
   PollOptionAdded,
   PollOptionDeleted,
   ChatBoostAdded,
@@ -23605,6 +25759,11 @@ export const types = {
   BackgroundTypePattern,
   BackgroundTypeChatTheme,
   ChatBackground,
+  ChecklistTasksDone,
+  ChecklistTasksAdded,
+  CommunityChatAdded,
+  CommunityChatJoined,
+  CommunityChatRemoved,
   ForumTopicCreated,
   ForumTopicClosed,
   ForumTopicEdited,
@@ -23651,8 +25810,10 @@ export const types = {
   LoginUrl,
   SwitchInlineQueryChosenChat,
   CopyTextButton,
+  DisabledButton,
   CallbackQuery,
   ForceReply,
+  Community,
   ChatPhoto,
   ChatInviteLink,
   ChatAdministratorRights,
@@ -23753,6 +25914,7 @@ export const types = {
   InputMediaSticker,
   InputMediaVenue,
   InputMediaVideo,
+  InputMediaVoiceNote,
   InputPaidMedia,
   InputPaidMediaLivePhoto,
   InputPaidMediaPhoto,
@@ -23769,6 +25931,8 @@ export const types = {
   InputSticker,
   RichMessage,
   InputRichMessage,
+  InputRichMessageMedia,
+  RichMessageButton,
   RichText,
   RichTextBold,
   RichTextItalic,
@@ -23791,6 +25955,7 @@ export const types = {
   RichTextHashtag,
   RichTextCashtag,
   RichTextBotCommand,
+  RichTextButton,
   RichTextAnchor,
   RichTextAnchorLink,
   RichTextReference,
@@ -23808,18 +25973,47 @@ export const types = {
   RichBlockAnchor,
   RichBlockList,
   RichBlockBlockQuotation,
+  RichBlockExpandableBlockQuotation,
   RichBlockPullQuotation,
   RichBlockCollage,
   RichBlockSlideshow,
   RichBlockTable,
   RichBlockDetails,
   RichBlockMap,
+  RichBlockButtons,
   RichBlockAnimation,
   RichBlockAudio,
+  RichBlockDocument,
   RichBlockPhoto,
   RichBlockVideo,
   RichBlockVoiceNote,
   RichBlockThinking,
+  InputRichBlockListItem,
+  InputRichBlock,
+  InputRichBlockParagraph,
+  InputRichBlockSectionHeading,
+  InputRichBlockPreformatted,
+  InputRichBlockFooter,
+  InputRichBlockDivider,
+  InputRichBlockMathematicalExpression,
+  InputRichBlockAnchor,
+  InputRichBlockList,
+  InputRichBlockBlockQuotation,
+  InputRichBlockExpandableBlockQuotation,
+  InputRichBlockPullQuotation,
+  InputRichBlockCollage,
+  InputRichBlockSlideshow,
+  InputRichBlockTable,
+  InputRichBlockDetails,
+  InputRichBlockMap,
+  InputRichBlockButtons,
+  InputRichBlockAnimation,
+  InputRichBlockAudio,
+  InputRichBlockDocument,
+  InputRichBlockPhoto,
+  InputRichBlockVideo,
+  InputRichBlockVoiceNote,
+  InputRichBlockThinking,
   InlineQuery,
   InlineQueryResultsButton,
   InlineQueryResult,

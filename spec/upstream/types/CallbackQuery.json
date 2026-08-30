@@ -42,7 +42,7 @@
       "name": "game_short_name",
       "rawType": "String",
       "required": false,
-      "description": "Short name of a [Game](https://core.telegram.org/bots/api#games) to be returned, serves as the unique identifier for the game"
+      "description": "Short name of a [Game](https://core.telegram.org/bots/api#game) to be returned, serves as the unique identifier for the game"
     }
   ]
 }

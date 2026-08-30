@@ -1,0 +1,24 @@
+{
+  "name": "InputRichBlockAnimation",
+  "description": "A block with an animation, corresponding to the HTML tag `<video>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “animation”"
+    },
+    {
+      "name": "animation",
+      "rawType": "InputMediaAnimation",
+      "required": true,
+      "description": "The animation. Caption is ignored."
+    },
+    {
+      "name": "caption",
+      "rawType": "RichBlockCaption",
+      "required": false,
+      "description": "Caption of the block"
+    }
+  ]
+}

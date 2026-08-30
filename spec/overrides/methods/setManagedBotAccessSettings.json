@@ -5,7 +5,7 @@
   },
   "parameters": {
     "added_user_ids": {
-      "description": "An array of up to 10 identifiers of users who will have access to the bot in addition to its owner. Ignored if _is\\_access\\_restricted_ is false."
+      "description": "An array of up to 10 identifiers of users who will have access to the bot in addition to its owner. Ignored if _is\\_access\\_restricted_ is _False_."
     }
   }
 }

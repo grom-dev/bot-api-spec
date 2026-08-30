@@ -1,0 +1,24 @@
+{
+  "name": "InputRichBlockPullQuotation",
+  "description": "A quotation with centered text, loosely corresponding to the HTML tag `<aside>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “pullquote”"
+    },
+    {
+      "name": "text",
+      "rawType": "RichText",
+      "required": true,
+      "description": "Text of the block"
+    },
+    {
+      "name": "credit",
+      "rawType": "RichText",
+      "required": false,
+      "description": "Credit of the block"
+    }
+  ]
+}

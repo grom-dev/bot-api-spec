@@ -18,7 +18,7 @@
       "name": "shipping_options",
       "rawType": "Array of ShippingOption",
       "required": false,
-      "description": "Required if _ok_ is _True_. A JSON-serialized array of available shipping options."
+      "description": "Required if _ok_ is _True_. A JSON-serialized Array of available shipping options."
     },
     {
       "name": "error_message",

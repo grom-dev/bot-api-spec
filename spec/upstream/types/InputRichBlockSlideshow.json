@@ -1,0 +1,24 @@
+{
+  "name": "InputRichBlockSlideshow",
+  "description": "A slideshow, corresponding to the custom HTML tag `<tg-slideshow>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “slideshow”"
+    },
+    {
+      "name": "blocks",
+      "rawType": "Array of InputRichBlock",
+      "required": true,
+      "description": "Elements of the slideshow"
+    },
+    {
+      "name": "caption",
+      "rawType": "RichBlockCaption",
+      "required": false,
+      "description": "Caption of the block"
+    }
+  ]
+}

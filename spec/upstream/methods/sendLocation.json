@@ -27,6 +27,12 @@
       "description": "Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat"
     },
     {
+      "name": "ephemeral_message_parameters",
+      "rawType": "EphemeralMessageParameters",
+      "required": false,
+      "description": "A JSON-serialized object containing the parameters of the ephemeral message to send"
+    },
+    {
       "name": "latitude",
       "rawType": "Float",
       "required": true,
@@ -48,7 +54,7 @@
       "name": "live_period",
       "rawType": "Integer",
       "required": false,
-      "description": "Period in seconds during which the location will be updated (see [Live Locations](https://telegram.org/blog/live-locations), should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely"
+      "description": "Period in seconds during which the location will be updated (see [Live Locations](https://telegram.org/blog/live-locations)), must be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely. Must be 0 for ephemeral messages."
     },
     {
       "name": "heading",

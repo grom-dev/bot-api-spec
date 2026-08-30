@@ -1,6 +1,6 @@
 {
   "name": "sendVideoNote",
-  "description": "As of [v.4.0](https://telegram.org/blog/video-messages-and-telescope), Telegram clients support rounded square MPEG4 videos of up to 1 minute long. Use this method to send video messages. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.",
+  "description": "Use this method to send a rounded square MPEG4 video of up to 1 minute long. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.",
   "parameters": [
     {
       "name": "business_connection_id",
@@ -25,6 +25,12 @@
       "rawType": "Integer",
       "required": false,
       "description": "Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat"
+    },
+    {
+      "name": "ephemeral_message_parameters",
+      "rawType": "EphemeralMessageParameters",
+      "required": false,
+      "description": "A JSON-serialized object containing the parameters of the ephemeral message to send"
     },
     {
       "name": "video_note",

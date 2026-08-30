@@ -12,7 +12,7 @@
       "name": "errors",
       "rawType": "Array of PassportElementError",
       "required": true,
-      "description": "A JSON-serialized array describing the errors"
+      "description": "A JSON-serialized Array describing the errors"
     }
   ]
 }

@@ -1,0 +1,5 @@
+{
+  "name": "DisabledButton",
+  "description": "This object represents a disabled button which does nothing. Currently holds no information.",
+  "fields": null
+}

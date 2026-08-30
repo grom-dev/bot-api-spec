@@ -6,7 +6,7 @@
       "name": "are_direct_messages_enabled",
       "rawType": "Boolean",
       "required": true,
-      "description": "_True_, if direct messages are enabled for the channel chat; false otherwise"
+      "description": "_True_, if direct messages are enabled for the channel chat; _False_ otherwise"
     },
     {
       "name": "direct_message_star_count",

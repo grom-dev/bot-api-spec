@@ -18,7 +18,7 @@
       "name": "zoom",
       "rawType": "Integer",
       "required": true,
-      "description": "Map zoom level; 13-20"
+      "description": "Map zoom level"
     },
     {
       "name": "width",

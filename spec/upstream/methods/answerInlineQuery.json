@@ -12,7 +12,7 @@
       "name": "results",
       "rawType": "Array of InlineQueryResult",
       "required": true,
-      "description": "A JSON-serialized array of results for the inline query"
+      "description": "A JSON-serialized Array of results for the inline query"
     },
     {
       "name": "cache_time",

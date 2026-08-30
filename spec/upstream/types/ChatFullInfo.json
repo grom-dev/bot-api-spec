@@ -313,6 +313,12 @@
       "rawType": "User",
       "required": false,
       "description": "The bot that processes join request queries in the chat. The field is only available to chat administrators."
+    },
+    {
+      "name": "community",
+      "rawType": "Community",
+      "required": false,
+      "description": "The [Community](https://core.telegram.org/bots/api#community) to which the chat belongs"
     }
   ]
 }

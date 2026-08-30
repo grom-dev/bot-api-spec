@@ -1,0 +1,42 @@
+{
+  "name": "InputRichBlockTable",
+  "description": "A table, corresponding to the HTML tag `<table>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “table”"
+    },
+    {
+      "name": "cells",
+      "rawType": "Array of Array of RichBlockTableCell",
+      "required": true,
+      "description": "Cells of the table"
+    },
+    {
+      "name": "is_bordered",
+      "rawType": "True",
+      "required": false,
+      "description": "Pass _True_ if the table has borders"
+    },
+    {
+      "name": "is_striped",
+      "rawType": "True",
+      "required": false,
+      "description": "Pass _True_ if the table is striped"
+    },
+    {
+      "name": "is_compact",
+      "rawType": "True",
+      "required": false,
+      "description": "Pass _True_ if table cells must have smaller indents"
+    },
+    {
+      "name": "caption",
+      "rawType": "RichText",
+      "required": false,
+      "description": "Caption of the table"
+    }
+  ]
+}

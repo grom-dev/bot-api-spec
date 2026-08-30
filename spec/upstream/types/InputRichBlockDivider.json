@@ -1,0 +1,12 @@
+{
+  "name": "InputRichBlockDivider",
+  "description": "A divider, corresponding to the HTML tag `<hr/>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “divider”"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "InputRichBlockListItem",
+  "description": "An item of a list to be sent.",
+  "fields": [
+    {
+      "name": "blocks",
+      "rawType": "Array of InputRichBlock",
+      "required": true,
+      "description": "The content of the item"
+    },
+    {
+      "name": "has_checkbox",
+      "rawType": "True",
+      "required": false,
+      "description": "Pass _True_ if the item has a checkbox"
+    },
+    {
+      "name": "is_checked",
+      "rawType": "True",
+      "required": false,
+      "description": "Pass _True_ if the item has a checked checkbox"
+    },
+    {
+      "name": "value",
+      "rawType": "Integer",
+      "required": false,
+      "description": "For ordered lists, the numeric value of the item label"
+    },
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": false,
+      "description": "For ordered lists, the type of the item label; must be one of “a” for lowercase letters, “A” for uppercase letters, “i” for lowercase Roman numerals, “I” for uppercase Roman numerals, or “1” for decimal numbers"
+    }
+  ]
+}

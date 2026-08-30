@@ -7,6 +7,12 @@
       "rawType": "Array of Array of InlineKeyboardButton",
       "required": true,
       "description": "Array of button rows, each represented by an Array of [InlineKeyboardButton](https://core.telegram.org/bots/api#inlinekeyboardbutton) objects"
+    },
+    {
+      "name": "force_reply",
+      "rawType": "Boolean",
+      "required": false,
+      "description": "Pass _True_ if the reply interface must be shown to the user, as if they had manually selected the bot's message and tapped 'Reply'. The value of the field can't be changed when the inline keyboard is edited."
     }
   ]
 }

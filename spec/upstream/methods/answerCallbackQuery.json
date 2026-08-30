@@ -18,7 +18,7 @@
       "name": "show_alert",
       "rawType": "Boolean",
       "required": false,
-      "description": "If _True_, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to _false_."
+      "description": "If _True_, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to _False_."
     },
     {
       "name": "url",
@@ -30,7 +30,7 @@
       "name": "cache_time",
       "rawType": "Integer",
       "required": false,
-      "description": "The maximum amount of time in seconds that the result of the callback query may be cached client-side. Telegram apps will support caching starting in version 3.14. Defaults to 0."
+      "description": "The maximum amount of time in seconds that the result of the callback query may be cached client-side. Defaults to 0."
     }
   ]
 }

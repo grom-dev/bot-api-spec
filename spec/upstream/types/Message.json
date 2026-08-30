@@ -6,7 +6,7 @@
       "name": "message_id",
       "rawType": "Integer",
       "required": true,
-      "description": "Unique message identifier inside this chat. In specific instances (e.g., message containing a video sent to a big chat), the server might automatically schedule a message instead of sending it immediately. In such cases, this field will be 0 and the relevant message will be unusable until it is actually sent."
+      "description": "Unique message identifier inside this chat; 0 for ephemeral messages. In specific instances (e.g., a message containing a video sent to a big chat), the server might automatically schedule a message instead of sending it immediately. In such cases, this field will be 0 and the relevant message will be unusable until it is actually sent."
     },
     {
       "name": "message_thread_id",
@@ -49,6 +49,18 @@
       "rawType": "String",
       "required": false,
       "description": "Tag or custom title of the sender of the message; for supergroups only"
+    },
+    {
+      "name": "receiver_user",
+      "rawType": "User",
+      "required": false,
+      "description": "For ephemeral messages, the user who received the message"
+    },
+    {
+      "name": "ephemeral_message_id",
+      "rawType": "Integer",
+      "required": false,
+      "description": "For ephemeral messages, identifier of the ephemeral message inside this chat. The identifier may be reused for another ephemeral message after the message is deleted or expires."
     },
     {
       "name": "date",
@@ -96,7 +108,7 @@
       "name": "reply_to_message",
       "rawType": "Message",
       "required": false,
-      "description": "For replies in the same chat and message thread, the original message. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain further _reply\\_to\\_message_ fields even if it itself is a reply."
+      "description": "For replies in the same chat and message thread, the original message. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain further _reply\\_to\\_message_ fields even if it itself is a reply. If the message is a reply to an ephemeral message, then this field may be omitted."
     },
     {
       "name": "external_reply",
@@ -510,7 +522,7 @@
       "name": "proximity_alert_triggered",
       "rawType": "ProximityAlertTriggered",
       "required": false,
-      "description": "Service message. A user in the chat triggered another user's proximity alert while sharing Live Location."
+      "description": "Service message: a user in the chat triggered another user's proximity alert while sharing Live Location"
     },
     {
       "name": "boost_added",
@@ -535,6 +547,24 @@
       "rawType": "ChecklistTasksAdded",
       "required": false,
       "description": "Service message: tasks were added to a checklist"
+    },
+    {
+      "name": "community_chat_added",
+      "rawType": "CommunityChatAdded",
+      "required": false,
+      "description": "Service message: chat or bot added to a [Community](https://core.telegram.org/bots/api#community)"
+    },
+    {
+      "name": "community_chat_joined",
+      "rawType": "CommunityChatJoined",
+      "required": false,
+      "description": "Service message: chat was joined by a user from a [Community](https://core.telegram.org/bots/api#community)"
+    },
+    {
+      "name": "community_chat_removed",
+      "rawType": "CommunityChatRemoved",
+      "required": false,
+      "description": "Service message: chat or bot removed from a [Community](https://core.telegram.org/bots/api#community)"
     },
     {
       "name": "direct_message_price_changed",

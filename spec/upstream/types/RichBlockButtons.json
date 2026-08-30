@@ -1,0 +1,24 @@
+{
+  "name": "RichBlockButtons",
+  "description": "A block containing a list of buttons that are shown in one row, corresponding to the custom HTML tag `<tg-button-row>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “buttons”"
+    },
+    {
+      "name": "buttons",
+      "rawType": "Array of RichMessageButton",
+      "required": true,
+      "description": "The buttons"
+    },
+    {
+      "name": "align",
+      "rawType": "String",
+      "required": false,
+      "description": "Horizontal alignment of the buttons. Currently, must be one of “left”, “center”, or “right”."
+    }
+  ]
+}
