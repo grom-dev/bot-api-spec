@@ -277,6 +277,17 @@ const sendMessage: ApiMethod = {
       required: false,
     },
     {
+      name: 'ephemeral_message_parameters',
+      type: {
+        type: 'api-type',
+        name: 'EphemeralMessageParameters',
+      },
+      description: {
+        markdown: 'An object containing the parameters of the ephemeral message to send',
+      },
+      required: false,
+    },
+    {
       name: 'text',
       type: {
         type: 'str',
@@ -565,7 +576,7 @@ const forwardMessage: ApiMethod = {
 const forwardMessages: ApiMethod = {
   name: 'forwardMessages',
   description: {
-    markdown: 'Use this method to forward multiple messages of any kind. If some of the specified messages can\'t be found or forwarded, they are skipped. Service messages and messages with protected content can\'t be forwarded. Album grouping is kept for forwarded messages. On success, an array of [MessageId](https://core.telegram.org/bots/api#messageid) of the sent messages is returned.',
+    markdown: 'Use this method to forward multiple messages of any kind. If some of the specified messages can\'t be found or forwarded, they are skipped. Service messages and messages with protected content can\'t be forwarded. Album grouping is kept for forwarded messages. On success, an Array of [MessageId](https://core.telegram.org/bots/api#messageid) of the sent messages is returned.',
   },
   parameters: [
     {
@@ -670,7 +681,7 @@ const forwardMessages: ApiMethod = {
 const copyMessage: ApiMethod = {
   name: 'copyMessage',
   description: {
-    markdown: 'Use this method to copy messages of any kind. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can\'t be copied. A quiz [poll](https://core.telegram.org/bots/api#poll) can be copied only if the value of the field _correct\\_option\\_id_ is known to the bot. The method is analogous to the method [forwardMessage](https://core.telegram.org/bots/api#forwardmessage), but the copied message doesn\'t have a link to the original message. Returns the [MessageId](https://core.telegram.org/bots/api#messageid) of the sent message on success.',
+    markdown: 'Use this method to copy messages of any kind. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can\'t be copied. A quiz [poll](https://core.telegram.org/bots/api#poll) can be copied only if the value of the field _correct\\_option\\_ids_ is known to the bot. The method is analogous to the method [forwardMessage](https://core.telegram.org/bots/api#forwardmessage), but the copied message doesn\'t have a link to the original message. Returns the [MessageId](https://core.telegram.org/bots/api#messageid) of the sent message on success.',
   },
   parameters: [
     {
@@ -803,7 +814,7 @@ const copyMessage: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media. Ignored if a new caption isn\'t specified.',
+        markdown: 'Pass _True_ if the caption must be shown above the message media. Ignored if a new caption isn\'t specified.',
       },
       required: false,
     },
@@ -907,7 +918,7 @@ const copyMessage: ApiMethod = {
 const copyMessages: ApiMethod = {
   name: 'copyMessages',
   description: {
-    markdown: 'Use this method to copy messages of any kind. If some of the specified messages can\'t be found or copied, they are skipped. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can\'t be copied. A quiz [poll](https://core.telegram.org/bots/api#poll) can be copied only if the value of the field _correct\\_option\\_id_ is known to the bot. The method is analogous to the method [forwardMessages](https://core.telegram.org/bots/api#forwardmessages), but the copied messages don\'t have a link to the original message. Album grouping is kept for copied messages. On success, an array of [MessageId](https://core.telegram.org/bots/api#messageid) of the sent messages is returned.',
+    markdown: 'Use this method to copy messages of any kind. If some of the specified messages can\'t be found or copied, they are skipped. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can\'t be copied. A quiz [poll](https://core.telegram.org/bots/api#poll) can be copied only if the value of the field _correct\\_option\\_ids_ is known to the bot. The method is analogous to the method [forwardMessages](https://core.telegram.org/bots/api#forwardmessages), but the copied messages don\'t have a link to the original message. Album grouping is kept for copied messages. On success, an Array of [MessageId](https://core.telegram.org/bots/api#messageid) of the sent messages is returned.',
   },
   parameters: [
     {
@@ -1074,6 +1085,17 @@ const sendPhoto: ApiMethod = {
       required: false,
     },
     {
+      name: 'ephemeral_message_parameters',
+      type: {
+        type: 'api-type',
+        name: 'EphemeralMessageParameters',
+      },
+      description: {
+        markdown: 'An object containing the parameters of the ephemeral message to send',
+      },
+      required: false,
+    },
+    {
       name: 'photo',
       type: {
         type: 'union',
@@ -1145,7 +1167,7 @@ const sendPhoto: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -1311,6 +1333,17 @@ const sendLivePhoto: ApiMethod = {
       required: false,
     },
     {
+      name: 'ephemeral_message_parameters',
+      type: {
+        type: 'api-type',
+        name: 'EphemeralMessageParameters',
+      },
+      description: {
+        markdown: 'An object containing the parameters of the ephemeral message to send',
+      },
+      required: false,
+    },
+    {
       name: 'live_photo',
       type: {
         type: 'union',
@@ -1386,7 +1419,7 @@ const sendLivePhoto: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -1548,6 +1581,17 @@ const sendAudio: ApiMethod = {
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
+      },
+      required: false,
+    },
+    {
+      name: 'ephemeral_message_parameters',
+      type: {
+        type: 'api-type',
+        name: 'EphemeralMessageParameters',
+      },
+      description: {
+        markdown: 'An object containing the parameters of the ephemeral message to send',
       },
       required: false,
     },
@@ -1817,6 +1861,17 @@ const sendDocument: ApiMethod = {
       required: false,
     },
     {
+      name: 'ephemeral_message_parameters',
+      type: {
+        type: 'api-type',
+        name: 'EphemeralMessageParameters',
+      },
+      description: {
+        markdown: 'An object containing the parameters of the ephemeral message to send',
+      },
+      required: false,
+    },
+    {
       name: 'document',
       type: {
         type: 'union',
@@ -2062,6 +2117,17 @@ const sendVideo: ApiMethod = {
       required: false,
     },
     {
+      name: 'ephemeral_message_parameters',
+      type: {
+        type: 'api-type',
+        name: 'EphemeralMessageParameters',
+      },
+      description: {
+        markdown: 'An object containing the parameters of the ephemeral message to send',
+      },
+      required: false,
+    },
+    {
       name: 'video',
       type: {
         type: 'union',
@@ -2209,7 +2275,7 @@ const sendVideo: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -2385,6 +2451,17 @@ const sendAnimation: ApiMethod = {
       required: false,
     },
     {
+      name: 'ephemeral_message_parameters',
+      type: {
+        type: 'api-type',
+        name: 'EphemeralMessageParameters',
+      },
+      description: {
+        markdown: 'An object containing the parameters of the ephemeral message to send',
+      },
+      required: false,
+    },
+    {
       name: 'animation',
       type: {
         type: 'union',
@@ -2504,7 +2581,7 @@ const sendAnimation: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -2666,6 +2743,17 @@ const sendVoice: ApiMethod = {
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
+      },
+      required: false,
+    },
+    {
+      name: 'ephemeral_message_parameters',
+      type: {
+        type: 'api-type',
+        name: 'EphemeralMessageParameters',
+      },
+      description: {
+        markdown: 'An object containing the parameters of the ephemeral message to send',
       },
       required: false,
     },
@@ -2845,7 +2933,7 @@ const sendVoice: ApiMethod = {
 const sendVideoNote: ApiMethod = {
   name: 'sendVideoNote',
   description: {
-    markdown: 'As of [v.4.0](https://telegram.org/blog/video-messages-and-telescope), Telegram clients support rounded square MPEG4 videos of up to 1 minute long. Use this method to send video messages. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.',
+    markdown: 'Use this method to send a rounded square MPEG4 video of up to 1 minute long. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.',
   },
   parameters: [
     {
@@ -2893,6 +2981,17 @@ const sendVideoNote: ApiMethod = {
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
+      },
+      required: false,
+    },
+    {
+      name: 'ephemeral_message_parameters',
+      type: {
+        type: 'api-type',
+        name: 'EphemeralMessageParameters',
+      },
+      description: {
+        markdown: 'An object containing the parameters of the ephemeral message to send',
       },
       required: false,
     },
@@ -3191,7 +3290,7 @@ const sendPaidMedia: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media',
+        markdown: 'Pass _True_ if the caption must be shown above the message media',
       },
       required: false,
     },
@@ -3285,7 +3384,7 @@ const sendPaidMedia: ApiMethod = {
 const sendMediaGroup: ApiMethod = {
   name: 'sendMediaGroup',
   description: {
-    markdown: 'Use this method to send a group of photos, live photos, videos, documents or audios as an album. Documents and audio files can be only grouped in an album with messages of the same type. On success, an array of [Message](https://core.telegram.org/bots/api#message) objects that were sent is returned.',
+    markdown: 'Use this method to send a group of photos, live photos, videos, documents or audios as an album. Documents and audio files can be only grouped in an album with messages of the same type. On success, an Array of [Message](https://core.telegram.org/bots/api#message) objects that were sent is returned.',
   },
   parameters: [
     {
@@ -3487,6 +3586,17 @@ const sendLocation: ApiMethod = {
       required: false,
     },
     {
+      name: 'ephemeral_message_parameters',
+      type: {
+        type: 'api-type',
+        name: 'EphemeralMessageParameters',
+      },
+      description: {
+        markdown: 'An object containing the parameters of the ephemeral message to send',
+      },
+      required: false,
+    },
+    {
       name: 'latitude',
       type: {
         type: 'float',
@@ -3522,7 +3632,7 @@ const sendLocation: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Period in seconds during which the location will be updated (see [Live Locations](https://telegram.org/blog/live-locations), should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely',
+        markdown: 'Period in seconds during which the location will be updated (see [Live Locations](https://telegram.org/blog/live-locations)), must be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely. Must be 0 for ephemeral messages.',
       },
       required: false,
     },
@@ -3694,6 +3804,17 @@ const sendVenue: ApiMethod = {
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
+      },
+      required: false,
+    },
+    {
+      name: 'ephemeral_message_parameters',
+      type: {
+        type: 'api-type',
+        name: 'EphemeralMessageParameters',
+      },
+      description: {
+        markdown: 'An object containing the parameters of the ephemeral message to send',
       },
       required: false,
     },
@@ -3925,6 +4046,17 @@ const sendContact: ApiMethod = {
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
+      },
+      required: false,
+    },
+    {
+      name: 'ephemeral_message_parameters',
+      type: {
+        type: 'api-type',
+        name: 'EphemeralMessageParameters',
+      },
+      description: {
+        markdown: 'An object containing the parameters of the ephemeral message to send',
       },
       required: false,
     },
@@ -4207,7 +4339,7 @@ const sendPoll: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the poll allows multiple answers, defaults to _False_',
+        markdown: 'Pass _True_ if the poll allows multiple answers, defaults to _False_',
       },
       required: false,
     },
@@ -4217,7 +4349,7 @@ const sendPoll: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the poll allows to change chosen answer options, defaults to _False_ for quizzes and to _True_ for regular polls',
+        markdown: 'Pass _True_ if the poll allows to change chosen answer options, defaults to _False_ for quizzes and to _True_ for regular polls',
       },
       required: false,
     },
@@ -4227,7 +4359,7 @@ const sendPoll: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the poll options must be shown in random order',
+        markdown: 'Pass _True_ if the poll options must be shown in random order',
       },
       required: false,
     },
@@ -4237,7 +4369,7 @@ const sendPoll: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if answer options can be added to the poll after creation; not supported for anonymous polls and quizzes',
+        markdown: 'Pass _True_ if answer options can be added to the poll after creation; not supported for anonymous polls and quizzes',
       },
       required: false,
     },
@@ -4247,7 +4379,7 @@ const sendPoll: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if poll results must be shown only after the poll closes',
+        markdown: 'Pass _True_ if poll results must be shown only after the poll closes',
       },
       required: false,
     },
@@ -4257,7 +4389,7 @@ const sendPoll: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if voting is limited to users who have been members of the chat where the poll is being sent for more than 24 hours; for channel chats only',
+        markdown: 'Pass _True_ if voting is limited to users who have been members of the chat where the poll is being sent for more than 24 hours; for channel chats only',
       },
       required: false,
     },
@@ -4830,7 +4962,7 @@ const sendMessageDraft: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier of the message draft; must be non-zero. Changes to drafts with the same identifier are animated.',
+        markdown: 'Unique identifier of the message draft; must be non-zero. Changes to drafts with the same identifier are animated. Otherwise, the draft is replaced without animation.',
       },
       required: true,
     },
@@ -4879,6 +5011,26 @@ const sendMessageDraft: ApiMethod = {
       },
       description: {
         markdown: 'An array of special entities that appear in message text, which can be specified instead of _parse\\_mode_',
+      },
+      required: false,
+    },
+    {
+      name: 'can_stop',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to show the user a button to stop further drafts. The bot will receive an [Update](https://core.telegram.org/bots/api#update) “stopped\\_message\\_generation” if the user presses the button.',
+      },
+      required: false,
+    },
+    {
+      name: 'keep_on_stop',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to keep the draft in the chat when the button is pressed. The draft will still disappear after a short time or if the bot sends a message. To fully preserve the partial draft, the bot should send it as a new message.',
       },
       required: false,
     },
@@ -5601,6 +5753,16 @@ const promoteChatMember: ApiMethod = {
       },
       required: false,
     },
+    {
+      name: 'can_send_welcome_messages',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the administrator can manage chat welcome messages or directly send them in the case of bots',
+      },
+      required: false,
+    },
   ],
   returnType: {
     type: 'bool',
@@ -6298,7 +6460,7 @@ const answerChatJoinRequestQuery: ApiMethod = {
 const sendChatJoinRequestWebApp: ApiMethod = {
   name: 'sendChatJoinRequestWebApp',
   description: {
-    markdown: 'Use this method to process a received chat join request query by showing a Mini App to the user before deciding the outcome. Returns _True_ on success.',
+    markdown: 'Use this method to process a received chat join request query by showing a Mini App to the user before deciding the outcome. Call [answerChatJoinRequestQuery](https://core.telegram.org/bots/api#answerchatjoinrequestquery) to resolve the join request query based on the user interaction with the Mini App. Returns _True_ on success.',
   },
   parameters: [
     {
@@ -6317,7 +6479,7 @@ const sendChatJoinRequestWebApp: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'The URL of the Mini App to be opened',
+        markdown: 'An HTTPS URL of a Web App to be opened with additional data as specified in [Initializing Web Apps](https://core.telegram.org/bots/webapps#initializing-mini-apps)',
       },
       required: true,
     },
@@ -6734,7 +6896,7 @@ const getChatAdministrators: ApiMethod = {
 const getChatMemberCount: ApiMethod = {
   name: 'getChatMemberCount',
   description: {
-    markdown: 'Use this method to get the number of members in a chat. Returns _Int_ on success.',
+    markdown: 'Use this method to get the number of members in a chat. Returns _Integer_ on success.',
   },
   parameters: [
     {
@@ -6805,7 +6967,7 @@ const getChatMember: ApiMethod = {
 const getUserPersonalChatMessages: ApiMethod = {
   name: 'getUserPersonalChatMessages',
   description: {
-    markdown: 'Use this method to get the last messages from the personal chat (i.e., the chat currently added to their profile) of a given user. On success, an array of [Message](https://core.telegram.org/bots/api#message) objects is returned.',
+    markdown: 'Use this method to get the last messages from the personal chat (i.e., the chat currently added to their profile) of a given user. On success, an Array of [Message](https://core.telegram.org/bots/api#message) objects is returned.',
   },
   parameters: [
     {
@@ -7465,7 +7627,7 @@ const answerCallbackQuery: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'If _True_, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to _false_.',
+        markdown: 'If _True_, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to _False_.',
       },
       required: false,
     },
@@ -7485,7 +7647,7 @@ const answerCallbackQuery: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'The maximum amount of time in seconds that the result of the callback query may be cached client-side. Telegram apps will support caching starting in version 3.14. Defaults to 0.',
+        markdown: 'The maximum amount of time in seconds that the result of the callback query may be cached client-side. Defaults to 0.',
       },
       required: false,
     },
@@ -7683,7 +7845,7 @@ const setManagedBotAccessSettings: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if only selected users can access the bot. The bot\'s owner can always access it.',
+        markdown: 'Pass _True_ if only selected users can access the bot. The bot\'s owner can always access it.',
       },
       required: true,
     },
@@ -7696,7 +7858,7 @@ const setManagedBotAccessSettings: ApiMethod = {
         },
       },
       description: {
-        markdown: 'An array of up to 10 identifiers of users who will have access to the bot in addition to its owner. Ignored if _is\\_access\\_restricted_ is false.',
+        markdown: 'An array of up to 10 identifiers of users who will have access to the bot in addition to its owner. Ignored if _is\\_access\\_restricted_ is _False_.',
       },
       required: false,
     },
@@ -8799,7 +8961,7 @@ const setBusinessAccountGiftSettings: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if a button for sending a gift to the user or by the business account must always be shown in the input field',
+        markdown: 'Pass _True_ if a button for sending a gift to the user or by the business account must always be shown in the input field',
       },
       required: true,
     },
@@ -10009,7 +10171,7 @@ const editMessageText: ApiMethod = {
         name: 'InputRichMessage',
       },
       description: {
-        markdown: 'New rich content of the message; required if _text_ isn\'t specified',
+        markdown: 'New rich content of the message; required if _text_ isn\'t specified. Direct upload of new files and explicit upload of files by a URL isn\'t supported when an inline message is edited.',
       },
       required: false,
     },
@@ -10148,7 +10310,7 @@ const editMessageCaption: ApiMethod = {
         type: 'bool',
       },
       description: {
-        markdown: 'Pass _True_, if the caption must be shown above the message media. Supported only for animation, photo and video messages.',
+        markdown: 'Pass _True_ if the caption must be shown above the message media. Supported only for animation, photo and video messages.',
       },
       required: false,
     },
@@ -10240,7 +10402,7 @@ const editMessageMedia: ApiMethod = {
         name: 'InputMedia',
       },
       description: {
-        markdown: 'An object for a new media content of the message',
+        markdown: 'An object for the new media content of the message',
       },
       required: true,
     },
@@ -10709,6 +10871,393 @@ const stopPoll: ApiMethod = {
   },
 }
 
+const editEphemeralMessageText: ApiMethod = {
+  name: 'editEphemeralMessageText',
+  description: {
+    markdown: 'Use this method to edit an ephemeral text or rich message. Note that it is not guaranteed that the user will receive the message edit event, especially if they are offline. On success, _True_ is returned.',
+  },
+  parameters: [
+    {
+      name: 'chat_id',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+          },
+          {
+            type: 'str',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
+      },
+      required: true,
+    },
+    {
+      name: 'receiver_user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the user who received the message',
+      },
+      required: true,
+    },
+    {
+      name: 'ephemeral_message_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the ephemeral message to edit',
+      },
+      required: true,
+    },
+    {
+      name: 'text',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'New text of the message, 1-4096 characters after entity parsing; required if _rich\\_message_ isn\'t specified',
+      },
+      required: false,
+    },
+    {
+      name: 'parse_mode',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
+      },
+      required: false,
+    },
+    {
+      name: 'entities',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'MessageEntity',
+        },
+      },
+      description: {
+        markdown: 'An array of special entities that appear in message text, which can be specified instead of _parse\\_mode_',
+      },
+      required: false,
+    },
+    {
+      name: 'rich_message',
+      type: {
+        type: 'api-type',
+        name: 'InputRichMessage',
+      },
+      description: {
+        markdown: 'New rich content of the message; required if _text_ isn\'t specified',
+      },
+      required: false,
+    },
+    {
+      name: 'link_preview_options',
+      type: {
+        type: 'api-type',
+        name: 'LinkPreviewOptions',
+      },
+      description: {
+        markdown: 'Link preview generation options for the message',
+      },
+      required: false,
+    },
+    {
+      name: 'reply_markup',
+      type: {
+        type: 'api-type',
+        name: 'InlineKeyboardMarkup',
+      },
+      description: {
+        markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)',
+      },
+      required: false,
+    },
+  ],
+  returnType: {
+    type: 'bool',
+    literal: true,
+  },
+}
+
+const editEphemeralMessageMedia: ApiMethod = {
+  name: 'editEphemeralMessageMedia',
+  description: {
+    markdown: 'Use this method to edit the media of an ephemeral message. Note that it is not guaranteed that the user will receive the message edit event, especially if they are offline. On success, _True_ is returned.',
+  },
+  parameters: [
+    {
+      name: 'chat_id',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+          },
+          {
+            type: 'str',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
+      },
+      required: true,
+    },
+    {
+      name: 'receiver_user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the user who received the message',
+      },
+      required: true,
+    },
+    {
+      name: 'ephemeral_message_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the ephemeral message to edit',
+      },
+      required: true,
+    },
+    {
+      name: 'media',
+      type: {
+        type: 'api-type',
+        name: 'InputMedia',
+      },
+      description: {
+        markdown: 'An object for the new media content of the message',
+      },
+      required: true,
+    },
+    {
+      name: 'reply_markup',
+      type: {
+        type: 'api-type',
+        name: 'InlineKeyboardMarkup',
+      },
+      description: {
+        markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)',
+      },
+      required: false,
+    },
+  ],
+  returnType: {
+    type: 'bool',
+    literal: true,
+  },
+}
+
+const editEphemeralMessageCaption: ApiMethod = {
+  name: 'editEphemeralMessageCaption',
+  description: {
+    markdown: 'Use this method to edit the caption of an ephemeral message. Note that it is not guaranteed that the user will receive the message edit event, especially if they are offline. On success, _True_ is returned.',
+  },
+  parameters: [
+    {
+      name: 'chat_id',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+          },
+          {
+            type: 'str',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
+      },
+      required: true,
+    },
+    {
+      name: 'receiver_user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the user who received the message',
+      },
+      required: true,
+    },
+    {
+      name: 'ephemeral_message_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the ephemeral message to edit',
+      },
+      required: true,
+    },
+    {
+      name: 'caption',
+      type: {
+        type: 'str',
+      },
+      description: {
+        markdown: 'New caption of the message, 0-1024 characters after entities parsing',
+      },
+      required: false,
+    },
+    {
+      name: 'parse_mode',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'str',
+            literal: 'HTML',
+          },
+          {
+            type: 'str',
+            literal: 'MarkdownV2',
+          },
+          {
+            type: 'str',
+            literal: 'Markdown',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Mode for parsing entities in the message caption. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.',
+      },
+      required: false,
+    },
+    {
+      name: 'caption_entities',
+      type: {
+        type: 'array',
+        of: {
+          type: 'api-type',
+          name: 'MessageEntity',
+        },
+      },
+      description: {
+        markdown: 'An array of special entities that appear in the caption, which can be specified instead of _parse\\_mode_',
+      },
+      required: false,
+    },
+    {
+      name: 'show_caption_above_media',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ if the caption must be shown above the message media. Supported only for animation, photo and video messages.',
+      },
+      required: false,
+    },
+    {
+      name: 'reply_markup',
+      type: {
+        type: 'api-type',
+        name: 'InlineKeyboardMarkup',
+      },
+      description: {
+        markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)',
+      },
+      required: false,
+    },
+  ],
+  returnType: {
+    type: 'bool',
+    literal: true,
+  },
+}
+
+const editEphemeralMessageReplyMarkup: ApiMethod = {
+  name: 'editEphemeralMessageReplyMarkup',
+  description: {
+    markdown: 'Use this method to edit only the reply markup of an ephemeral message. Note that it is not guaranteed that the user will receive the message edit event, especially if they are offline. On success, _True_ is returned.',
+  },
+  parameters: [
+    {
+      name: 'chat_id',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+          },
+          {
+            type: 'str',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
+      },
+      required: true,
+    },
+    {
+      name: 'receiver_user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the user who received the message',
+      },
+      required: true,
+    },
+    {
+      name: 'ephemeral_message_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the ephemeral message to edit',
+      },
+      required: true,
+    },
+    {
+      name: 'reply_markup',
+      type: {
+        type: 'api-type',
+        name: 'InlineKeyboardMarkup',
+      },
+      description: {
+        markdown: 'An object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)',
+      },
+      required: false,
+    },
+  ],
+  returnType: {
+    type: 'bool',
+    literal: true,
+  },
+}
+
 const approveSuggestedPost: ApiMethod = {
   name: 'approveSuggestedPost',
   description: {
@@ -10870,6 +11419,57 @@ const deleteMessages: ApiMethod = {
       },
       description: {
         markdown: 'An array of 1-100 identifiers of messages to delete. See [deleteMessage](https://core.telegram.org/bots/api#deletemessage) for limitations on which messages can be deleted.',
+      },
+      required: true,
+    },
+  ],
+  returnType: {
+    type: 'bool',
+    literal: true,
+  },
+}
+
+const deleteEphemeralMessage: ApiMethod = {
+  name: 'deleteEphemeralMessage',
+  description: {
+    markdown: 'Use this method to delete an ephemeral message. Note that it is not guaranteed that the user will receive the message deletion event, especially if they are offline. Returns _True_ on success.',
+  },
+  parameters: [
+    {
+      name: 'chat_id',
+      type: {
+        type: 'union',
+        types: [
+          {
+            type: 'int32',
+          },
+          {
+            type: 'str',
+          },
+        ],
+      },
+      description: {
+        markdown: 'Unique identifier for the target chat or username of the target supergroup in the format `@username`',
+      },
+      required: true,
+    },
+    {
+      name: 'receiver_user_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the user who received the message',
+      },
+      required: true,
+    },
+    {
+      name: 'ephemeral_message_id',
+      type: {
+        type: 'int32',
+      },
+      description: {
+        markdown: 'Identifier of the ephemeral message to delete',
       },
       required: true,
     },
@@ -11043,6 +11643,17 @@ const sendSticker: ApiMethod = {
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
+      },
+      required: false,
+    },
+    {
+      name: 'ephemeral_message_parameters',
+      type: {
+        type: 'api-type',
+        name: 'EphemeralMessageParameters',
+      },
+      description: {
+        markdown: 'An object containing the parameters of the ephemeral message to send',
       },
       required: false,
     },
@@ -11807,7 +12418,7 @@ const sendRichMessage: ApiMethod = {
         type: 'str',
       },
       description: {
-        markdown: 'Unique identifier of the business connection on behalf of which the message will be sent',
+        markdown: 'Unique identifier of the business connection on behalf of which the message will be sent. Bot can send rich messages on behalf of a business account only if the corresponding user can send rich messages.',
       },
       required: false,
     },
@@ -11846,6 +12457,17 @@ const sendRichMessage: ApiMethod = {
       },
       description: {
         markdown: 'Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat',
+      },
+      required: false,
+    },
+    {
+      name: 'ephemeral_message_parameters',
+      type: {
+        type: 'api-type',
+        name: 'EphemeralMessageParameters',
+      },
+      description: {
+        markdown: 'An object containing the parameters of the ephemeral message to send',
       },
       required: false,
     },
@@ -11989,7 +12611,7 @@ const sendRichMessageDraft: ApiMethod = {
         type: 'int32',
       },
       description: {
-        markdown: 'Unique identifier of the message draft; must be non-zero. Changes to drafts with the same identifier are animated.',
+        markdown: 'Unique identifier of the message draft; must be non-zero. Changes to drafts with the same identifier are animated. Otherwise, the draft is replaced without animation.',
       },
       required: true,
     },
@@ -12000,9 +12622,29 @@ const sendRichMessageDraft: ApiMethod = {
         name: 'InputRichMessage',
       },
       description: {
-        markdown: 'The partial message to be streamed',
+        markdown: 'The partial message to be streamed. Direct upload of new files and explicit upload of files by a URL isn\'t supported.',
       },
       required: true,
+    },
+    {
+      name: 'can_stop',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to show the user a button to stop further drafts. The bot will receive an [Update](https://core.telegram.org/bots/api#update) “stopped\\_message\\_generation” if the user presses the button.',
+      },
+      required: false,
+    },
+    {
+      name: 'keep_on_stop',
+      type: {
+        type: 'bool',
+      },
+      description: {
+        markdown: 'Pass _True_ to keep the draft in the chat when the button is pressed. The draft will still disappear after a short time or if the bot sends a message. To fully preserve the partial draft, the bot should send it as a new message.',
+      },
+      required: false,
     },
   ],
   returnType: {
@@ -13349,10 +13991,15 @@ export const methods = {
   editMessageChecklist,
   editMessageReplyMarkup,
   stopPoll,
+  editEphemeralMessageText,
+  editEphemeralMessageMedia,
+  editEphemeralMessageCaption,
+  editEphemeralMessageReplyMarkup,
   approveSuggestedPost,
   declineSuggestedPost,
   deleteMessage,
   deleteMessages,
+  deleteEphemeralMessage,
   deleteMessageReaction,
   deleteAllMessageReactions,
   sendSticker,

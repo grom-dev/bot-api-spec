@@ -102,7 +102,13 @@
       "name": "can_manage_tags",
       "rawType": "Boolean",
       "required": false,
-      "description": "_True_, if the administrator can edit the tags of regular members; for groups and supergroups only. If omitted defaults to the value of can\\_pin\\_messages."
+      "description": "_True_, if the administrator can edit the tags of regular members; for groups and supergroups only"
+    },
+    {
+      "name": "can_send_welcome_messages",
+      "rawType": "Boolean",
+      "required": true,
+      "description": "_True_, if the administrator can manage chat welcome messages or directly send them in the case of bots"
     }
   ]
 }

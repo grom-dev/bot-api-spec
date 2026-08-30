@@ -1,0 +1,24 @@
+{
+  "name": "InputRichBlockDocument",
+  "description": "A block with a general file, corresponding to the custom HTML tag `<tg-document>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “document”"
+    },
+    {
+      "name": "document",
+      "rawType": "InputMediaDocument",
+      "required": true,
+      "description": "The document. Caption is ignored."
+    },
+    {
+      "name": "caption",
+      "rawType": "RichBlockCaption",
+      "required": false,
+      "description": "Caption of the block"
+    }
+  ]
+}

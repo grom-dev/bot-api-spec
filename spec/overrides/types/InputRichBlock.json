@@ -1,0 +1,100 @@
+{
+  "oneOf": [
+    {
+      "type": "api-type",
+      "name": "InputRichBlockParagraph"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockSectionHeading"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockPreformatted"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockFooter"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockDivider"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockMathematicalExpression"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockAnchor"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockList"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockBlockQuotation"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockExpandableBlockQuotation"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockPullQuotation"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockCollage"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockSlideshow"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockTable"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockDetails"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockMap"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockButtons"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockAnimation"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockAudio"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockDocument"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockPhoto"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockVideo"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockVoiceNote"
+    },
+    {
+      "type": "api-type",
+      "name": "InputRichBlockThinking"
+    }
+  ]
+}

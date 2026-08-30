@@ -1,0 +1,24 @@
+{
+  "name": "InputRichBlockVoiceNote",
+  "description": "A block with a voice note, corresponding to the HTML tag `<audio>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “voice\\_note”"
+    },
+    {
+      "name": "voice_note",
+      "rawType": "InputMediaVoiceNote",
+      "required": true,
+      "description": "The voice note. Caption is ignored."
+    },
+    {
+      "name": "caption",
+      "rawType": "RichBlockCaption",
+      "required": false,
+      "description": "Caption of the block"
+    }
+  ]
+}

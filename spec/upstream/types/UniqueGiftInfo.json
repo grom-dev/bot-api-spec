@@ -15,16 +15,34 @@
       "description": "Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, “resale” for gifts bought from other users, “gifted\\_upgrade” for upgrades purchased after the gift was sent, or “offer” for gifts bought or sold through gift purchase offers."
     },
     {
+      "name": "text",
+      "rawType": "String",
+      "required": false,
+      "description": "Text of the message that was added to the gift"
+    },
+    {
+      "name": "entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "Special entities that appear in the text"
+    },
+    {
+      "name": "is_private",
+      "rawType": "True",
+      "required": false,
+      "description": "_True_, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them"
+    },
+    {
       "name": "last_resale_currency",
       "rawType": "String",
       "required": false,
-      "description": "For gifts bought from other users, the currency in which the payment for the gift was done. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins."
+      "description": "For gifts bought from other users, the currency in which the payment for the gift was done. Currently, one of “XTR” for Telegram Stars or “TON” for TON grams."
     },
     {
       "name": "last_resale_amount",
       "rawType": "Integer",
       "required": false,
-      "description": "For gifts bought from other users, the price paid for the gift in either Telegram Stars or nanotoncoins"
+      "description": "For gifts bought from other users, the price paid for the gift in either Telegram Stars or nanograms"
     },
     {
       "name": "owned_gift_id",

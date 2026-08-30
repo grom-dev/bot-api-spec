@@ -1,0 +1,12 @@
+{
+  "name": "CommunityChatJoined",
+  "description": "Describes a service message about a chat being joined by a user from a community.",
+  "fields": [
+    {
+      "name": "community",
+      "rawType": "Community",
+      "required": true,
+      "description": "The community from which the chat was joined"
+    }
+  ]
+}

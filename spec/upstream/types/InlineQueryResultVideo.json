@@ -60,7 +60,7 @@
       "name": "show_caption_above_media",
       "rawType": "Boolean",
       "required": false,
-      "description": "Pass _True_, if the caption must be shown above the message media"
+      "description": "Pass _True_ if the caption must be shown above the message media"
     },
     {
       "name": "video_width",

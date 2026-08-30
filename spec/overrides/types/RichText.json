@@ -96,6 +96,10 @@
     },
     {
       "type": "api-type",
+      "name": "RichTextButton"
+    },
+    {
+      "type": "api-type",
       "name": "RichTextAnchor"
     },
     {

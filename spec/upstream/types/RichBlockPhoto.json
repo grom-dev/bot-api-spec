@@ -1,6 +1,6 @@
 {
   "name": "RichBlockPhoto",
-  "description": "A block with a photo, corresponding to the HTML tag `<photo>`.",
+  "description": "A block with a photo, corresponding to the HTML tag `<img>`.",
   "fields": [
     {
       "name": "type",

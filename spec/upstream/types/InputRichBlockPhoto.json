@@ -1,0 +1,24 @@
+{
+  "name": "InputRichBlockPhoto",
+  "description": "A block with a photo, corresponding to the HTML tag `<img>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “photo”"
+    },
+    {
+      "name": "photo",
+      "rawType": "InputMediaPhoto",
+      "required": true,
+      "description": "The photo. Caption is ignored."
+    },
+    {
+      "name": "caption",
+      "rawType": "RichBlockCaption",
+      "required": false,
+      "description": "Caption of the block"
+    }
+  ]
+}

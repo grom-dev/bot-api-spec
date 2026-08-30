@@ -1,0 +1,60 @@
+{
+  "name": "editEphemeralMessageText",
+  "description": "Use this method to edit an ephemeral text or rich message. Note that it is not guaranteed that the user will receive the message edit event, especially if they are offline. On success, _True_ is returned.",
+  "parameters": [
+    {
+      "name": "chat_id",
+      "rawType": "Integer or String",
+      "required": true,
+      "description": "Unique identifier for the target chat or username of the target supergroup in the format `@username`"
+    },
+    {
+      "name": "receiver_user_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Identifier of the user who received the message"
+    },
+    {
+      "name": "ephemeral_message_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Identifier of the ephemeral message to edit"
+    },
+    {
+      "name": "text",
+      "rawType": "String",
+      "required": false,
+      "description": "New text of the message, 1-4096 characters after entity parsing; required if _rich\\_message_ isn't specified"
+    },
+    {
+      "name": "parse_mode",
+      "rawType": "String",
+      "required": false,
+      "description": "Mode for parsing entities in the message text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details."
+    },
+    {
+      "name": "entities",
+      "rawType": "Array of MessageEntity",
+      "required": false,
+      "description": "A JSON-serialized list of special entities that appear in message text, which can be specified instead of _parse\\_mode_"
+    },
+    {
+      "name": "rich_message",
+      "rawType": "InputRichMessage",
+      "required": false,
+      "description": "New rich content of the message; required if _text_ isn't specified"
+    },
+    {
+      "name": "link_preview_options",
+      "rawType": "LinkPreviewOptions",
+      "required": false,
+      "description": "Link preview generation options for the message"
+    },
+    {
+      "name": "reply_markup",
+      "rawType": "InlineKeyboardMarkup",
+      "required": false,
+      "description": "A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)"
+    }
+  ]
+}

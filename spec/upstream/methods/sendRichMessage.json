@@ -6,7 +6,7 @@
       "name": "business_connection_id",
       "rawType": "String",
       "required": false,
-      "description": "Unique identifier of the business connection on behalf of which the message will be sent"
+      "description": "Unique identifier of the business connection on behalf of which the message will be sent. Bot can send rich messages on behalf of a business account only if the corresponding user can send rich messages."
     },
     {
       "name": "chat_id",
@@ -25,6 +25,12 @@
       "rawType": "Integer",
       "required": false,
       "description": "Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat"
+    },
+    {
+      "name": "ephemeral_message_parameters",
+      "rawType": "EphemeralMessageParameters",
+      "required": false,
+      "description": "A JSON-serialized object containing the parameters of the ephemeral message to send"
     },
     {
       "name": "rich_message",

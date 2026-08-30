@@ -1,0 +1,18 @@
+{
+  "name": "InputRichBlockAnchor",
+  "description": "A block with an anchor, corresponding to the HTML tag `<a>` with the attribute `name`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “anchor”"
+    },
+    {
+      "name": "name",
+      "rawType": "String",
+      "required": true,
+      "description": "The name of the anchor"
+    }
+  ]
+}

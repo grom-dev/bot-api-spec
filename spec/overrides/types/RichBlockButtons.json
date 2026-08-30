@@ -1,0 +1,29 @@
+{
+  "fields": {
+    "type": {
+      "type": {
+        "type": "str",
+        "literal": "buttons"
+      }
+    },
+    "align": {
+      "type": {
+        "type": "union",
+        "types": [
+          {
+            "type": "str",
+            "literal": "left"
+          },
+          {
+            "type": "str",
+            "literal": "center"
+          },
+          {
+            "type": "str",
+            "literal": "right"
+          }
+        ]
+      }
+    }
+  }
+}

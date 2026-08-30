@@ -1,0 +1,24 @@
+{
+  "name": "MessageGenerationStopped",
+  "description": "This object describes an update about a user stopping message generation.",
+  "fields": [
+    {
+      "name": "chat",
+      "rawType": "Chat",
+      "required": true,
+      "description": "Chat in which the message is generated"
+    },
+    {
+      "name": "message_thread_id",
+      "rawType": "Integer",
+      "required": false,
+      "description": "Unique identifier of the message thread in which the message is generated"
+    },
+    {
+      "name": "draft_id",
+      "rawType": "Integer",
+      "required": true,
+      "description": "Unique identifier of the message draft which was stopped"
+    }
+  ]
+}

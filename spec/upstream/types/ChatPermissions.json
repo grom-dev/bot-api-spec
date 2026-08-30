@@ -96,7 +96,7 @@
       "name": "can_manage_topics",
       "rawType": "Boolean",
       "required": false,
-      "description": "_True_, if the user is allowed to create forum topics. If omitted defaults to the value of can\\_pin\\_messages."
+      "description": "_True_, if the user is allowed to create forum topics. If omitted, defaults to the value of can\\_pin\\_messages."
     }
   ]
 }

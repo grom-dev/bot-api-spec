@@ -27,6 +27,12 @@
       "description": "_True_, if the table is striped"
     },
     {
+      "name": "is_compact",
+      "rawType": "True",
+      "required": false,
+      "description": "_True_, if table cells have smaller indents"
+    },
+    {
       "name": "caption",
       "rawType": "RichText",
       "required": false,

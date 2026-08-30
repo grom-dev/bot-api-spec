@@ -1,0 +1,30 @@
+{
+  "name": "InputRichBlockDetails",
+  "description": "An expandable block for details disclosure, corresponding to the HTML tag `<details>`.",
+  "fields": [
+    {
+      "name": "type",
+      "rawType": "String",
+      "required": true,
+      "description": "Type of the block, always “details”"
+    },
+    {
+      "name": "summary",
+      "rawType": "RichText",
+      "required": true,
+      "description": "Always shown summary of the block"
+    },
+    {
+      "name": "blocks",
+      "rawType": "Array of InputRichBlock",
+      "required": true,
+      "description": "Content of the block"
+    },
+    {
+      "name": "is_open",
+      "rawType": "True",
+      "required": false,
+      "description": "Pass _True_ if the content of the block is visible by default"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "BotSubscriptionUpdated",
+  "description": "This object contains information about changes to a user payment subscription toward the current bot.",
+  "fields": [
+    {
+      "name": "user",
+      "rawType": "User",
+      "required": true,
+      "description": "User who subscribed for payments toward the bot"
+    },
+    {
+      "name": "invoice_payload",
+      "rawType": "String",
+      "required": true,
+      "description": "Bot-specified invoice payload"
+    },
+    {
+      "name": "state",
+      "rawType": "String",
+      "required": true,
+      "description": "The new state of the subscription. Currently, it can be one of “canceled” if the user canceled the subscription, “active” if the user re-enabled a previously canceled subscription, or “failed” if payment for the subscription failed."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "name": "getChatMemberCount",
-  "description": "Use this method to get the number of members in a chat. Returns _Int_ on success.",
+  "description": "Use this method to get the number of members in a chat. Returns _Integer_ on success.",
   "parameters": [
     {
       "name": "chat_id",

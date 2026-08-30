@@ -27,6 +27,12 @@
       "description": "Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat"
     },
     {
+      "name": "ephemeral_message_parameters",
+      "rawType": "EphemeralMessageParameters",
+      "required": false,
+      "description": "A JSON-serialized object containing the parameters of the ephemeral message to send"
+    },
+    {
       "name": "video",
       "rawType": "InputFile or String",
       "required": true,
@@ -90,7 +96,7 @@
       "name": "show_caption_above_media",
       "rawType": "Boolean",
       "required": false,
-      "description": "Pass _True_, if the caption must be shown above the message media"
+      "description": "Pass _True_ if the caption must be shown above the message media"
     },
     {
       "name": "has_spoiler",

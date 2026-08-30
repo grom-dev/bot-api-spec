@@ -38,6 +38,10 @@
     },
     {
       "type": "api-type",
+      "name": "RichBlockExpandableBlockQuotation"
+    },
+    {
+      "type": "api-type",
       "name": "RichBlockPullQuotation"
     },
     {
@@ -62,11 +66,19 @@
     },
     {
       "type": "api-type",
+      "name": "RichBlockButtons"
+    },
+    {
+      "type": "api-type",
       "name": "RichBlockAnimation"
     },
     {
       "type": "api-type",
       "name": "RichBlockAudio"
+    },
+    {
+      "type": "api-type",
+      "name": "RichBlockDocument"
     },
     {
       "type": "api-type",

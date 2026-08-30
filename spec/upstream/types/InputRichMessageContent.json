@@ -6,7 +6,7 @@
       "name": "rich_message",
       "rawType": "InputRichMessage",
       "required": true,
-      "description": "The message to be sent"
+      "description": "The message to be sent. Only previously uploaded files may be used in the message."
     }
   ]
 }

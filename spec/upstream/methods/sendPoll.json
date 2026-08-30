@@ -60,37 +60,37 @@
       "name": "allows_multiple_answers",
       "rawType": "Boolean",
       "required": false,
-      "description": "Pass _True_, if the poll allows multiple answers, defaults to _False_"
+      "description": "Pass _True_ if the poll allows multiple answers, defaults to _False_"
     },
     {
       "name": "allows_revoting",
       "rawType": "Boolean",
       "required": false,
-      "description": "Pass _True_, if the poll allows to change chosen answer options, defaults to _False_ for quizzes and to _True_ for regular polls"
+      "description": "Pass _True_ if the poll allows to change chosen answer options, defaults to _False_ for quizzes and to _True_ for regular polls"
     },
     {
       "name": "shuffle_options",
       "rawType": "Boolean",
       "required": false,
-      "description": "Pass _True_, if the poll options must be shown in random order"
+      "description": "Pass _True_ if the poll options must be shown in random order"
     },
     {
       "name": "allow_adding_options",
       "rawType": "Boolean",
       "required": false,
-      "description": "Pass _True_, if answer options can be added to the poll after creation; not supported for anonymous polls and quizzes"
+      "description": "Pass _True_ if answer options can be added to the poll after creation; not supported for anonymous polls and quizzes"
     },
     {
       "name": "hide_results_until_closes",
       "rawType": "Boolean",
       "required": false,
-      "description": "Pass _True_, if poll results must be shown only after the poll closes"
+      "description": "Pass _True_ if poll results must be shown only after the poll closes"
     },
     {
       "name": "members_only",
       "rawType": "Boolean",
       "required": false,
-      "description": "Pass _True_, if voting is limited to users who have been members of the chat where the poll is being sent for more than 24 hours; for channel chats only"
+      "description": "Pass _True_ if voting is limited to users who have been members of the chat where the poll is being sent for more than 24 hours; for channel chats only"
     },
     {
       "name": "country_codes",

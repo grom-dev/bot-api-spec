@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "id": {
+      "type": {
+        "type": "int53"
+      },
+      "description": "Unique identifier for this community."
+    }
+  }
+}
