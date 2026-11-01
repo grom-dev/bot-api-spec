@@ -140,7 +140,12 @@ export function analyzeSpec(snapshot: Snapshot, overrides: Overrides): Array<Iss
 export async function analyzeChanges(overrides: Overrides): Promise<Array<Issue>> {
   let status: string
   try {
-    const { stdout } = await exec('git', ['status', '--porcelain', '--', 'spec/upstream'], { cwd: ROOT_DIR })
+    const { stdout } = await exec('git', [
+      'status',
+      '--porcelain',
+      '--',
+      'spec/upstream',
+    ], { cwd: ROOT_DIR })
     status = stdout
   }
   catch {
@@ -158,7 +163,9 @@ export async function analyzeChanges(overrides: Overrides): Promise<Array<Issue>
       continue
     const [, dir, name] = parsed as unknown as [string, 'methods' | 'types', string]
     const entity = `${dir}/${name}`
-    const hasOverride = dir === 'methods' ? overrides.methods.has(name) : overrides.types.has(name)
+    const hasOverride = dir === 'methods'
+      ? overrides.methods.has(name)
+      : overrides.types.has(name)
 
     if (index === 'D' || worktree === 'D') {
       issues.push({ level: 'review', entity, message: 'no longer documented upstream' })

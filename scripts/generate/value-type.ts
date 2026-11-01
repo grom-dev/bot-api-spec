@@ -28,15 +28,39 @@ export type RawValueType
     | { type: 'union', types: Array<RawValueType> }
 
 export const valueTypeSchema: z.ZodType<RawValueType> = z.lazy(() => z.discriminatedUnion('type', [
-  z.strictObject({ type: z.literal('str'), literal: z.string().optional() }),
-  z.strictObject({ type: z.literal('bool'), literal: z.boolean().optional() }),
-  z.strictObject({ type: z.literal('int32'), literal: z.number().int().optional() }),
-  z.strictObject({ type: z.literal('int53') }),
-  z.strictObject({ type: z.literal('float') }),
-  z.strictObject({ type: z.literal('input-file') }),
-  z.strictObject({ type: z.literal('api-type'), name: z.string() }),
-  z.strictObject({ type: z.literal('array'), of: valueTypeSchema }),
-  z.strictObject({ type: z.literal('union'), types: z.array(valueTypeSchema) }),
+  z.strictObject({
+    type: z.literal('str'),
+    literal: z.string().optional(),
+  }),
+  z.strictObject({
+    type: z.literal('bool'),
+    literal: z.boolean().optional(),
+  }),
+  z.strictObject({
+    type: z.literal('int32'),
+    literal: z.number().int().optional(),
+  }),
+  z.strictObject({
+    type: z.literal('int53'),
+  }),
+  z.strictObject({
+    type: z.literal('float'),
+  }),
+  z.strictObject({
+    type: z.literal('input-file'),
+  }),
+  z.strictObject({
+    type: z.literal('api-type'),
+    name: z.string(),
+  }),
+  z.strictObject({
+    type: z.literal('array'),
+    of: valueTypeSchema,
+  }),
+  z.strictObject({
+    type: z.literal('union'),
+    types: z.array(valueTypeSchema),
+  }),
 ]))
 
 const WHITESPACE = /\s+/
@@ -90,7 +114,9 @@ function parseParts(parts: Array<string>): RawValueType | null {
       case 'Float': return { type: 'float' }
       case 'InputFile': return { type: 'input-file' }
       default:
-        return PASCAL_CASE.test(part) ? { type: 'api-type', name: part } : null
+        return PASCAL_CASE.test(part)
+          ? { type: 'api-type', name: part }
+          : null
     }
   }
   return null

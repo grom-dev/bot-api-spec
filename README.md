@@ -119,6 +119,11 @@ Descriptions are copied verbatim from the official [Bot API documentation][bot-a
 The spec is generated from the [Bot API documentation][bot-api] into
 `src/*.gen.ts`, which are committed and never edited by hand.
 
+Builds and type checks use TypeScript 7 through the `@typescript/native` npm
+alias. The `typescript` dependency aliases `@typescript/typescript6` to provide
+the compiler API required by typescript-eslint, following the
+[TypeScript migration guidance](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/#running-side-by-side-with-typescript-6.0).
+
 ```sh
 pnpm gen:fetch  # refresh spec/upstream/ from the documentation
 pnpm gen:check  # report what needs a decision

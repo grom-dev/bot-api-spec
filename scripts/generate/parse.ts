@@ -92,14 +92,18 @@ export function parseSnapshot($: CheerioAPI, url: string, version: string): Snap
       methods.push({
         name,
         description,
-        parameters: table ? membersFromTable($, $(table), 'method', name) : null,
+        parameters: table
+          ? membersFromTable($, $(table), 'method', name)
+          : null,
       })
     }
     else {
       types.push({
         name,
         description,
-        fields: table ? membersFromTable($, $(table), 'type', name) : null,
+        fields: table
+          ? membersFromTable($, $(table), 'type', name)
+          : null,
       })
     }
   }
@@ -199,7 +203,12 @@ function membersFromTable(
   assert.ok(one($table).tagName === 'table')
   const $th = $table.find('thead > tr > th')
   const columns = kind === 'method'
-    ? ['Parameter', 'Type', 'Required', 'Description']
+    ? [
+        'Parameter',
+        'Type',
+        'Required',
+        'Description',
+      ]
     : ['Field', 'Type', 'Description']
   assert.ok(
     $th.length === columns.length,
@@ -227,7 +236,12 @@ function membersFromTable(
           }
           throw new Error(`cannot parse "Required": ${$td.eq(2).text()}`)
         })()
-        return { name, rawType, required, description: toMarkdown($, $td.eq(3)) }
+        return {
+          name,
+          rawType,
+          required,
+          description: toMarkdown($, $td.eq(3)),
+        }
       }
 
       let description = toMarkdown($, $td.eq(2))
