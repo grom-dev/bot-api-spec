@@ -46,8 +46,13 @@ export function resolveTypes(snapshot: Snapshot, overrides: Overrides): Array<Ap
   return snapshot.types.map((type) => {
     const override = overrides.types.get(type.name)
     const description = { markdown: override?.description ?? type.description }
-    if (override?.oneOf !== undefined)
-      return { name: type.name, description, oneOf: override.oneOf.map(asValueType) }
+    if (override?.oneOf !== undefined) {
+      return {
+        name: type.name,
+        description,
+        oneOf: override.oneOf.map(asValueType),
+      }
+    }
     return {
       name: type.name,
       description,

@@ -43,9 +43,14 @@ async function fetch(): Promise<void> {
 
 async function check(): Promise<number> {
   const [snapshot, overrides] = [await readSnapshot(), await readOverrides()]
-  const issues = [...analyzeSpec(snapshot, overrides), ...await analyzeChanges(overrides)]
+  const issues = [
+    ...analyzeSpec(snapshot, overrides),
+    ...await analyzeChanges(overrides),
+  ]
   console.info(formatReport(issues))
-  return issues.some(({ level }) => level === 'blocker') ? 1 : 0
+  return issues.some(({ level }) => level === 'blocker')
+    ? 1
+    : 0
 }
 
 async function build({ format = true }: { format?: boolean } = {}): Promise<void> {
@@ -68,7 +73,14 @@ async function build({ format = true }: { format?: boolean } = {}): Promise<void
     // them their final, stable formatting. Running it here keeps the committed
     // output a pure function of spec/.
     console.info('Formatting generated modules')
-    await exec('pnpm', ['exec', 'eslint', '--fix', '--no-warn-ignored', MODULE_TYPES_PATH, MODULE_METHODS_PATH], {
+    await exec('pnpm', [
+      'exec',
+      'eslint',
+      '--fix',
+      '--no-warn-ignored',
+      MODULE_TYPES_PATH,
+      MODULE_METHODS_PATH,
+    ], {
       cwd: ROOT_DIR,
       maxBuffer: 64 * 1024 * 1024,
     })
